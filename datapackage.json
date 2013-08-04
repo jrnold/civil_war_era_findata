@@ -1,6 +1,6 @@
 {
     "name": "civil_war_era_findata",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "title": "Civil War (US) Era Financial Market Data",
     "description": "Miscellaneous financial and economic data from the during the U.S. Civil War\n\nThis is by no means a complete collection of available data, but consists of some datasets that I found or collected for my own research.",
     "licenses": [
@@ -46,6 +46,18 @@
 			"description": "If data are missing, the reason for the missing data, e.g. Sunday or a holiday.",
 			"type": "string"
 		    }
+		]
+	    }
+	},
+	{
+	    "path": "data/holidays.csv",
+	    "description": "New York market holidays (1860-1879)\n\nThe list of holidays largely comes from the days Mitchell (1908). It is extended back to 1860. During this era, the market appears to have been open on Saturdays, and the only regularly observed holidays were Christmas, New Years, Independence Day and sometimes Thanksgiving (after 1862)."
+	    "schema": {
+		"fields": [
+		    {"id": "date",
+		    "type": "date"},
+		    {"id": "description", 
+		     "description": "Reason the market was closed."}
 		]
 	    }
 	}
