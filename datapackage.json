@@ -1,0 +1,53 @@
+{
+    "name": "civil_war_era_findata",
+    "version": "0.0.1",
+    "title": "Civil War (US) Era Financial Market Data",
+    "description": "Miscellaneous financial and economic data from the during the U.S. Civil War\n\nThis is by no means a complete collection of available data, but consists of some datasets that I found or collected for my own research.",
+    "licenses": [
+        {
+            "id": "odc-by",
+            "url": "http://opendatacommons.org/licenses/by/"
+        }
+    ],
+    "maintainers": [
+        {
+            "name": "Jeffrey B. Arnold",
+            "email": "jeffrey.arnold@gmail.com"
+        }
+    ],
+    "sources": [
+	{"name": "EH.net Greenback.series",
+	 "web": "http://eh.net/databases/greenback/"},
+	{"name": "Mitchell, Wesley C., 1908. A history of the Greenbacks. Chicago: University of Chicago Press."}
+    ],
+    "resources": [
+	{
+	    "path": "data/greenbacks.csv",
+	    "description": "Daily price of greenbacks in gold in New York (1862-1879)\nThe price of greenbacks comes from Mitchel (1908), which was put in machine format by Willard et. al. and made available on http://eh.net/databases/greenback/. The data here correct several mistakes in that data.",
+	    "schema": {
+		"fields": [
+		    {
+			"id": "date",
+			"description": "Date",
+			"type": "date"
+		    },
+		    {
+			"id": "high",
+			"description": "Daily high price (gold dollars per 100 greenbacks)",
+			"type": "number"
+		    },
+		    {
+			"id": "low",
+			"description": "Daily low price (gold dollars per 100 greenbacks)",
+			"type": "number"
+		    },
+		    {
+			"id": "comment",
+			"description": "If data are missing, the reason for the missing data, e.g. Sunday or a holiday.",
+			"type": "string"
+		    }
+		]
+	    }
+	}
+    ]
+}
