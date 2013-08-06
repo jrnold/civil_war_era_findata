@@ -1,0 +1,22 @@
+path: data/mitchell_price_index.yaml
+description: Mitchell (1903) price index, 1860-1865 (quarterly)
+source: Mitchell (1903), Tables XIII and XIV
+schema:
+  fields:
+    - id: year
+      type: integer
+    - id: quarter
+      type: integer
+      description: In the original table months are listed: January, April, July and October.
+    - id: index1
+      type: number
+      description: Price index. Before averaging series for different varieties of the same commodity
+    - id: index2
+      type: number
+      description: Price index. After averaging series for different varieties of the same commodity
+    - id: index3
+      type: number
+      description: Price index, fter averaging also series for cotton and cotton textiles
+    - id: index4
+      type: number
+      description: Like index3, but using median instead of mean.

@@ -1,0 +1,11 @@
+path: data/michell_avg_interest_rates_per_month.csv
+description: Interest rates in New York Money Market, 1860-1865 average rates per month for call loans
+source: Mitchell (1903, p. 367), Table LVIII.II.
+schema: 
+  fields:
+    - id: year
+      type: integer
+    - id: month
+      type: integer
+    - id: rate
+      type: number

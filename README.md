@@ -6,4 +6,5 @@ This is by no means a complete collection of available data, but consists of som
 
 
 - `data/greenbacks.csv`: Daily exchange rates of greenbacks to gold dollars in New York, 1862-1879. Mitchell (1908) data
+- `data/holidays.csv`: New York market holidays: 1860-1879
 
