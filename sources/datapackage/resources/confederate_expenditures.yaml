@@ -1,0 +1,26 @@
+path: data/confederate_expenditures.csv
+description: Confederate States of America expenditure
+source: "Ball (1991), p. 259."
+schema:
+  fields:
+    - id: start_date
+      type: date
+      description: Start date of expenditures period
+    - id: end_date
+      type: date
+      description: End date of expenditures period
+    - id: war
+      type: number
+      description: "War department expenditures (millions). This includes a cumulative average of 50 million in 1862, 100 million in 1863, 200 million in 1864, and 313 million in 1865."
+    - id: navy
+      type: number
+      description: "Naval department expenditures (millions)"
+    - id: civil
+      type: number
+      description: "Civil department expenditures (millions)"
+    - id: public_debt
+      type: number
+      description: "Public debt servicing (millions). This excludes cancecellation of treasury notes funded into bonds; including interest in the public debt and redemption of call certificates, due bonds, note issues, and the like."
+    - id: total
+      type: number
+      description: "Total expenditures. Equal to `war` + `navy` + `civil` + `public_debt`."

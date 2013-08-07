@@ -1,0 +1,8 @@
+"path": "data/holidays.csv"
+"description": "New York market holidays (1860-1879)\n\nThe list of holidays largely comes from the days Mitchell (1908). It is extended back to 1860. During this era, the market appears to have been open on Saturdays, and the only regularly observed holidays were Christmas, New Years, Independence Day and sometimes Thanksgiving (after 1862)."
+schema:
+  fields:
+    - id: date
+      type: date
+    - id: description
+      type: string

@@ -1,0 +1,18 @@
+"name": "civil_war_era_findata"
+"version": "0.0.2"
+"title": "Civil War (US) Era Financial Market Data"
+"description": "Miscellaneous financial and economic data from the during the U.S. Civil War\n\nThis is by no means a complete collection of available data, but consists of some datasets that I found or collected for my own research."
+"licenses":
+    -  "id": "odc-by"
+       "url": "http://opendatacommons.org/licenses/by/"
+"maintainers": 
+    - name: "Jeffrey B. Arnold"
+      "email": "jeffrey.arnold@gmail.com"
+"sources": 
+  - "name": "EH.net Greenback.series"
+    "web": "http://eh.net/databases/greenback/"
+  - "name": "Mitchell, Wesley C., 1908. \"Gold, Prices, and Wages Under the Greenback Standard.\" The University Press."
+    "web": "http://books.google.com/books?id=fqkRAAAAYAAJ"
+  - "name": "Mitchell, Wesley C., 1903. \"A history of the greenbacks: with special reference to the economic consequences of their issue: 1862-65.\" Chicago: University of Chicago Press."
+    "web": "http://books.google.com/books?id=ElAuAAAAYAAJ"
+
