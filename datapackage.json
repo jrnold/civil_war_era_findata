@@ -15,6 +15,12 @@
     {
       "web": "http://books.google.com/books?id=lq92AAAAMAAJ", 
       "name": "Ball, Douglas, 1991. \"Financial Failure and Confederate Defeat.\" University of Illinois Press. ISBN: 9780252017551"
+    }, 
+    {
+      "name": "Bankers' Magazine and Statistical Register"
+    }, 
+    {
+      "name": "The Merchants' Magazine and Commercial Review"
     }
   ], 
   "maintainers": [
@@ -62,7 +68,7 @@
       }
     }, 
     {
-      "source": "Mitchell (1903, p. 367), Table LVIII.II.", 
+      "source": "Mitchell (1903, p. 367) Table LVIII.II. http://books.google.com/books?id=ElAuAAAAYAAJ&dq=mitchell%201903&pg=PA367", 
       "path": "data/michell_avg_interest_rates_per_month.csv", 
       "description": "Interest rates in New York Money Market, 1860-1865 average rates per month for call loans", 
       "schema": {
@@ -181,7 +187,7 @@
       }
     }, 
     {
-      "source": "Mitchell (1903, p. 367), Table LVIII.I.", 
+      "source": "Mitchell (1903, p. 367), Table LVIII.I. http://books.google.com/books?id=ElAuAAAAYAAJ&dq=mitchell%201903&pg=PA367", 
       "path": "data/michell_avg_interest_rates_per_year.csv", 
       "description": "Interest rates in New York Money Market, 1860-1865, average rates per year", 
       "schema": {
@@ -205,6 +211,82 @@
           {
             "type": "number", 
             "id": "prime_fisher"
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "data/bankers_loans.csv", 
+      "description": "Price data for U.S. government and state bonds 1855-1865.\n\nThese data appear in tables in the *Notes on the Money Market* section \nof the *Bankers' Magazine* for volumes 10-19. The description of the tables\nnoted that these were \"the highest cash prices offered ... for the Government \nand leading state securities in the market.\" `June 22, 1864 <http://books.google.com/books?id=lGAmAQAAIAAJ&pg=PA78>`__.\n\nThe prices appear are nominal (not gold) dollars, and were dirty prices for the most part.\n", 
+      "schema": {
+        "fields": [
+          {
+            "type": "string", 
+            "id": "bond", 
+            "description": "Name of the bond"
+          }, 
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date of the price"
+          }, 
+          {
+            "type": "date", 
+            "id": "issue", 
+            "description": "Date of the issue from which the price data come."
+          }, 
+          {
+            "type": "string", 
+            "id": "url", 
+            "description": "Google books URL to the source of the data."
+          }, 
+          {
+            "type": "integer", 
+            "id": "volume", 
+            "description": "Volume of Bankers' Magazine from the the data come"
+          }, 
+          {
+            "type": "number", 
+            "id": "value", 
+            "description": "Price of bond. In nominal dollars for a bond with a face value of 100 dollars."
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "data/merchants_us_paper.csv", 
+      "description": "Price data for U.S. bonds and notes from the Merchants Magazine, 1862-1865\n\nThese data appear in tables entitled \"Prices United States Paper\" appearing\nin the section \"Commercial Chronicle and Review\" of the *Merchants' Magazine\nand Commercial Review*. \n\nThe Merhcants' Magazine only began quoting prices of US paper in 1862.\n", 
+      "schema": {
+        "fields": [
+          {
+            "type": "string", 
+            "id": "bond", 
+            "description": "Name of the bond"
+          }, 
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date of the price"
+          }, 
+          {
+            "type": "string", 
+            "id": "issue", 
+            "description": "Issue from which the price data come."
+          }, 
+          {
+            "type": "string", 
+            "id": "url", 
+            "description": "Google books URL to the source of the data."
+          }, 
+          {
+            "type": "number", 
+            "id": "value", 
+            "description": "Price of bond. In nominal dollars for a bond with a face value of 100 dollars."
+          }, 
+          {
+            "type": "string", 
+            "id": "notes", 
+            "description": "Any notes about the data"
           }
         ]
       }

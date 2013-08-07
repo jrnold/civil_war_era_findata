@@ -1,6 +1,6 @@
 path: data/michell_avg_interest_rates_per_year.csv
 description: Interest rates in New York Money Market, 1860-1865, average rates per year
-source: Mitchell (1903, p. 367), Table LVIII.I.
+source: "Mitchell (1903, p. 367), Table LVIII.I. http://books.google.com/books?id=ElAuAAAAYAAJ&dq=mitchell%201903&pg=PA367"
 schema: 
   fields:
     - id: year

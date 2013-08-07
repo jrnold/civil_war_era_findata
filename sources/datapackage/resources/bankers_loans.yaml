@@ -1,0 +1,31 @@
+path: "data/bankers_loans.csv"
+description: |
+  Price data for U.S. government and state bonds 1855-1865.
+  
+  These data appear in tables in the *Notes on the Money Market* section 
+  of the *Bankers' Magazine* for volumes 10-19. The description of the tables
+  noted that these were "the highest cash prices offered ... for the Government 
+  and leading state securities in the market." `June 22, 1864 <http://books.google.com/books?id=lGAmAQAAIAAJ&pg=PA78>`__.
+
+  The prices appear are nominal (not gold) dollars, and were dirty prices for the most part.
+
+schema:
+  fields:
+    - id: bond
+      type: string
+      description: Name of the bond
+    - id: date
+      type: date
+      description: Date of the price
+    - id: issue
+      type: date
+      description: Date of the issue from which the price data come.
+    - id: url
+      type: string
+      description: Google books URL to the source of the data.
+    - id: volume
+      type: integer
+      description: "Volume of Bankers' Magazine from the the data come"
+    - id: value
+      type: number
+      description: "Price of bond. In nominal dollars for a bond with a face value of 100 dollars."

@@ -1,0 +1,30 @@
+path: "data/merchants_us_paper.csv"
+description: |
+  Price data for U.S. bonds and notes from the Merchants Magazine, 1862-1865
+
+  These data appear in tables entitled "Prices United States Paper" appearing
+  in the section "Commercial Chronicle and Review" of the *Merchants' Magazine
+  and Commercial Review*. 
+
+  The Merhcants' Magazine only began quoting prices of US paper in 1862.
+  
+schema:
+  fields:
+    - id: bond
+      type: string
+      description: Name of the bond
+    - id: date
+      type: date
+      description: Date of the price
+    - id: issue
+      type: string
+      description: Issue from which the price data come.
+    - id: url
+      type: string
+      description: Google books URL to the source of the data.
+    - id: value
+      type: number
+      description: "Price of bond. In nominal dollars for a bond with a face value of 100 dollars."
+    - id: notes
+      type: string
+      description: "Any notes about the data"
