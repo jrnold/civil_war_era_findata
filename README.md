@@ -4,3 +4,4 @@ Miscellaneous financial and economic datasets from the period around the U.S. Ci
 
 This is by no means a complete collection of available data, but consists of some datasets that I found or collected for my own research.
 
+This dataset follows the [Data Package](http://www.dataprotocols.org/en/latest/data-packages.html) standard.
