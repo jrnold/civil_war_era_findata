@@ -7,6 +7,7 @@ description: |
 
   These data extend the original data by setting it to -1 for 1864Q4 and 1865Q1 although the Burdekin and Langdana analysis stops in 1864Q3 due to a lack of data in other variables.
 
+source: "Burdekin and Langdana (1993), p. 367-368."
 schema:
   fields:
     - id: year
