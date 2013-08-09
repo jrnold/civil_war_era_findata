@@ -1,5 +1,5 @@
 "name": "civil_war_era_findata"
-"version": "0.0.2"
+"version": "0.0.3"
 "title": "Civil War (US) Era Financial Market Data"
 "description": "Miscellaneous financial and economic data from the during the U.S. Civil War\n\nThis is by no means a complete collection of available data, but consists of some datasets that I found or collected for my own research."
 "licenses":
@@ -20,3 +20,8 @@
   - name: "Bankers' Magazine and Statistical Register"
   - name: "The Merchants' Magazine and Commercial Review"
   - name: "Burdekin, Richard C.K. and Farrokh K. Langdana, \"War Finance in the Southern Confederacy: 1861-1865\", *Explorations in Economic History*, 30, pp 352-376"
+  - name: "McCandless, George T., Jr. 1996. \"Money, Expectations, and the U.S. Civil War\" *American Economic Review*, 86.3, pp. 661-671."
+    web: "http://www.jstor.org/stable/2118219"
+  - name: "Gregor W. Smith and R. Todd Smith (1997). Greenback-Gold Returns and Expectations of Resumption, 1862-1879. The Journal of Economic History, 57, pp 697-717. doi:10.1017/S0022050700019100."
+    web: "http://journals.cambridge.org/article_S0022050700019100"
+

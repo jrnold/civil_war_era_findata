@@ -1,0 +1,32 @@
+path: data/events_smith_smith.csv
+description: |
+  
+  War news and wartime financial news
+
+  Events from Smith and Smith (1997), "Table 1: War News" (p. 706) and "Table 2:
+  Wartime Financial News" (p. 707).
+
+  The set of events are constructed from those events mentioned in Mitchell (1903), pt. 2, chapter 3, as influencing the price of gold.
+
+sources:
+  - name: "Gregor W. Smith and R. Todd Smith (1997). Greenback-Gold Returns and Expectations of Resumption, 1862-1879. The Journal of Economic History, 57, pp 697-717. doi:10.1017/S0022050700019100."
+    web: "http://journals.cambridge.org/article_S0022050700019100"
+schema:
+  fields:
+    - id: war_news
+      description: "If true, then war or diplomatic news, else financial news"
+      type: boolean
+    - id: event_number
+      description: "Event identification number. Unique within `war_news`. Same as the row number in the original table."
+      type: integer
+    - id: start_date
+      type: date
+      description: "Event start date"
+    - id: end_date
+      type: date
+      description: "Event end date"
+    - id: unfavorable
+      type: boolean
+      description: "If true, then a Union defat, adverse rumor, or news of difficulties in Union finances, such as further issues of greenbacks. If False, then a Union victory, favorable political news, or improvements in Union public finances.
+      
+

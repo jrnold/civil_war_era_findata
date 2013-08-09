@@ -1,0 +1,37 @@
+"war_news","event_number","start_date","end_date","event","unfavorable"
+1,1,"1862-08-11","1862-08-11","Cedar Mountain",1
+1,2,"1862-08-30","1862-08-30","Second Bull Run",1
+1,3,"1862-09-03","1862-09-03","Jackson in Baltimore Rumor",1
+1,4,"1862-12-13","1862-12-13","Fredericksburg",1
+1,5,"1863-04-01","1863-04-01","Yazoo expedition",1
+1,6,"1863-05-05","1863-05-07","Chancellorsville",1
+1,7,"1863-09-20","1863-09-20","Chickamauga",1
+1,8,"1864-05-03","1864-05-03","French troops in Mexico",1
+1,9,"1864-07-11","1864-07-11","Early near Washington",1
+1,10,"1864-12-28","1864-12-28","Fort Fisher",1
+1,11,"1862-07-30","1862-07-30","British non-intervention news",0
+1,12,"1863-02-10","1863-02-10","peace rumour",0
+1,13,"1863-07-06","1863-07-06","Gettysburg",0
+1,14,"1863-07-07","1863-07-07","Vicksburg surrender",0
+1,15,"1863-07-15","1863-07-15","Port Hudson",0
+1,16,"1863-11-23","1863-11-25","Chattanooga",0
+1,17,"1864-09-03","1864-09-03","Atlanta",0
+1,18,"1865-01-19","1865-01-19","peace rumour",0
+1,19,"1865-03-14","1865-03-14","Sherman news",0
+1,20,"1865-03-16","1865-03-16","Richmond rumour",0
+1,21,"1865-06-19","1865-06-19","British non-recognition",0
+0,1,"1862-06-12","1862-06-12","2nd legal tender act announced",1
+0,2,"1862-07-08","1862-07-08","final vote on second act",1
+0,3,"1863-01-08","1863-01-08","WM recommends third act",1
+0,4,"1863-01-14","1863-01-14","House resolution on third act",1
+0,5,"1863-01-17","1863-01-17","army pay crisis",1
+0,6,"1863-01-26","1863-01-26","House passes 3rd legal tender act",1
+0,7,"1863-04-16","1863-04-16","Senate passes gold bill",1
+0,8,"1863-06-14","1863-06-14","House passes gold bill",1
+0,9,"1862-03-17","1862-03-17","Treasury gold sales approved",0
+0,10,"1863-03-25","1863-03-25","Cooke bond sales success",0
+0,11,"1863-04-15","1863-04-21","Chase gold sales",0
+0,12,"1863-05-20","1863-05-20","Chase gold sales",0
+0,13,"1863-10-22","1863-10-22","foreign gold rumour",0
+0,14,"1864-09-10","1864-09-10","successful loan issue",0
+0,15,"1865-03-08","1865-03-08","McCulloch's nomination",0

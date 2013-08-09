@@ -1,0 +1,47 @@
+path: data/events_mccandless.csv
+description: |
+  Major military and non-military events of the Civil War
+
+  Appendix Tables 2 "Major military events of Civil War" and 3 "Major non-military events of the Civil War" in McCandless (1996), p. 670.
+
+  The sources of these events are 
+
+  - Pratt, Fletcher. Ordeal by Fire. New York: William Sloane, 1948.
+  - Catton, Bruce. The Civil War. New York: Fairfax, 1971.
+  - Guinnane, Timothy W. and Rosen, Harvey S. and Willard, Kristen L, "Turning Points in the Civil War: Views from the Greenback Market. American Economic Review. 1996.
+
+schema:
+  fields:
+    - id: military
+      type: boolean
+      description: "Military or non-military event"
+    - id: number
+      type: integer
+      description: "Event number (unique within military and non-military categories); corresponding to row in the table."
+    - id: time-period
+      type: string
+      description: "Time period of the event"
+    - id: event_name
+      type: string
+      description: "Event description"
+    - id: north
+      type: boolean
+      description: "Did the event favor the North in the war?"
+    - id: question
+      type: boolean
+      description: "Was there uncertainty about whether the event favored the north?"
+    - id: catton
+      type: boolean
+      description: "Source of event was Catton (1971)"
+    - id: pratt
+      type: boolean
+      description: "Source of event was Pratt (1948)"
+    - id: guinnane
+      type: boolean
+      description: "Source of event was Guinnane et al (1996)"
+    - id: start_date
+      type: date
+      description: "Start date of event"
+    - id: end_date
+      type: date
+      description: "End date of event"
