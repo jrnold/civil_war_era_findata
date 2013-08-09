@@ -1,0 +1,18 @@
+path: data/burdekin_langdana_war.csv
+description: |
+  Confederate War News from Burdekin and Langdana (1993)
+  
+  This is set to +1 for 1863Q3 after Chancellorsville and during Lee's
+  Maryland campaign, -1 for 1862Q2 (Peninsula Campaign), 1863:4 (Gettysburg and Vicksburg) and 1864:1 (costly battle of Chickamagua).  Their guideline for constructing the dummy was Schwab (1901, ch 9) major 'crises of confidence' in Richmond. The dummy variable is set to 0 in 1864:2 and 1864:3 due to the stalled Overland and Petersburg campaigns and the nomination of McClellan. 
+
+  These data extend the original data by setting it to -1 for 1864Q4 and 1865Q1 although the Burdekin and Langdana analysis stops in 1864Q3 due to a lack of data in other variables.
+
+schema:
+  fields:
+    - id: year
+      type: integer
+    - id: quarter
+      type: integer
+    - id: war
+      type: integer
+      description: "Equal to -1 if the war trend is favoring the Union, +1 if it favoring the Confederacy, and 0 otherwise."
