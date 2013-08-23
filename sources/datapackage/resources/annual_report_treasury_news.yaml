@@ -1,0 +1,20 @@
+path: "data/annual_report_treasury_news.csv"
+description: |
+  For all Annual Reports of the Treasury issued during the Civil War, the dates on which New York markets responded.
+
+schema:
+  fields:
+    - id: treasury_report
+      type: string
+      description: |
+        Name of the treasury report. This corresponds to the url "https://fraser.stlouisfed.org/docs/publications/treasar/%s.pdf"
+    - id: treasury_report_date
+      type: date
+      description: Date on the report
+    - id: market_news_date
+      type: date
+      description: Date on which the New York market responded to the news in the treasury report.
+    - id: news_source
+      type: string
+      description: |
+        Citation to New York Times article used to justify the coding of ``market_news_date``.
