@@ -167,6 +167,29 @@
       }
     }, 
     {
+      "path": "data/bankers_magazine_notes_from_money_market_url.csv", 
+      "description": "URL's of the \"Notes from the Money Market\" sections of the *Bankers' Magazine*\n\nIn the *Bankers' Magazine* most financial data appeared in tables in a section\ntitled \"Notes from the Money Market\". This table contains Google Books URLs to \neach section for volumes 10-20 (1855-1866)\n", 
+      "schema": {
+        "fields": [
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date of Notes from the Money Market section."
+          }, 
+          {
+            "type": "integer", 
+            "id": "volume", 
+            "description": "Volume of the Bankers' Magazine"
+          }, 
+          {
+            "type": "string", 
+            "id": "url", 
+            "description": "Google Books URL to the first page of that section"
+          }
+        ]
+      }
+    }, 
+    {
       "path": "data/events_mccandless.csv", 
       "description": "Major military and non-military events of the Civil War\n\nAppendix Tables 2 \"Major military events of Civil War\" and 3 \"Major non-military events of the Civil War\" in McCandless (1996), p. 670.\n\nThe sources of these events are \n\n- Pratt, Fletcher. Ordeal by Fire. New York: William Sloane, 1948.\n- Catton, Bruce. The Civil War. New York: Fairfax, 1971.\n- Guinnane, Timothy W. and Rosen, Harvey S. and Willard, Kristen L, \"Turning Points in the Civil War: Views from the Greenback Market. American Economic Review. 1996.\n", 
       "schema": {
@@ -345,6 +368,69 @@
             "type": "number", 
             "id": "index4", 
             "description": "Like index3, but using median instead of mean."
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "bankers_magazine_govt_bonds_quotes_in_text.yaml", 
+      "description": "Quotes of government, state and city bonds appearing in the text of the \"Notes from the Money Market\" (1855-1866)\n\nAlthough quotes for government and state bonds appeared in tables in the \"Notes from the Money Market section\" often other, presumably less traded, assets were quoted in the text of the section.  \n", 
+      "schema": {
+        "fields": [
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date on the byline of the \"Notes from the Money Market\" section.\n"
+          }, 
+          {
+            "type": "integer", 
+            "id": "volume", 
+            "description": "Volume of the Bankers' Magazine"
+          }, 
+          {
+            "type": "string", 
+            "id": "url", 
+            "description": "URL to the Bankers' Magazine page of the article in which the quotation appears."
+          }, 
+          {
+            "type": "string", 
+            "id": "description", 
+            "description": "The name of the bond similar to how it appeared in the text."
+          }, 
+          {
+            "type": "string", 
+            "id": "issuer", 
+            "description": "The name of th issuer of the bond. \"US\" or the name of the state or city.\n"
+          }, 
+          {
+            "type": "string", 
+            "id": "price_string", 
+            "descripton": "String form of the price. Either a number, or something 100 @ 101 in which the first number is the low or bid price, and the second number is the high or ask price.\n"
+          }, 
+          {
+            "type": "number", 
+            "id": "low_price", 
+            "description": "Low price (in nominal dollars)"
+          }, 
+          {
+            "type": "number", 
+            "id": "high_price", 
+            "description": "High price (in nominal dollars)"
+          }, 
+          {
+            "type": "boolean", 
+            "id": "table", 
+            "description": "Occastionally the Bankers Magazine included ad hoc tables of quotations of bonds not usually quoted. This field is true if the quotation appeared in one of those tables.\n"
+          }, 
+          {
+            "type": "string", 
+            "id": "comment", 
+            "description": "Comment"
+          }, 
+          {
+            "type": "string", 
+            "id": "asset", 
+            "description": "An attempt to match the quotation to specific bond issues. Incomplete and preliminary."
           }
         ]
       }

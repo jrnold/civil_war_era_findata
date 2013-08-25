@@ -1,0 +1,20 @@
+path: "data/bankers_magazine_notes_from_money_market_url.csv"
+description: |
+  URL's of the "Notes from the Money Market" sections of the *Bankers' Magazine*
+
+  In the *Bankers' Magazine* most financial data appeared in tables in a section
+  titled "Notes from the Money Market". This table contains Google Books URLs to 
+  each section for volumes 10-20 (1855-1866)
+
+schema:
+  fields:
+    - id: date
+      type: date
+      description: Date of Notes from the Money Market section.
+    - id: volume
+      type: integer
+      description: "Volume of the Bankers' Magazine"
+    - id: url
+      type: string
+      description: "Google Books URL to the first page of that section"
+

@@ -1,0 +1,45 @@
+path: "bankers_magazine_govt_bonds_quotes_in_text.yaml"
+description: |
+  Quotes of government, state and city bonds appearing in the text of the "Notes from the Money Market" (1855-1866)
+
+  Although quotes for government and state bonds appeared in tables in the "Notes from the Money Market section" often other, presumably less traded, assets were quoted in the text of the section.  
+
+schema:
+  fields:
+    - id: date
+      type: date
+      description: |
+        Date on the byline of the "Notes from the Money Market" section.
+    - id: volume
+      type: integer
+      description: "Volume of the Bankers' Magazine"
+    - id: url
+      type: string
+      description: "URL to the Bankers' Magazine page of the article in which the quotation appears."
+    - id: description
+      type: string
+      description: The name of the bond similar to how it appeared in the text.
+    - id: issuer
+      type: string
+      description: |
+        The name of th issuer of the bond. "US" or the name of the state or city.
+    - id: price_string
+      type: string
+      descripton: |
+        String form of the price. Either a number, or something 100 @ 101 in which the first number is the low or bid price, and the second number is the high or ask price.
+    - id: low_price
+      type: number
+      description: Low price (in nominal dollars)
+    - id: high_price
+      type: number
+      description: High price (in nominal dollars)
+    - id: table
+      type: boolean
+      description: |
+        Occastionally the Bankers Magazine included ad hoc tables of quotations of bonds not usually quoted. This field is true if the quotation appeared in one of those tables.
+    - id: comment
+      type: string
+      description: Comment
+    - id: asset
+      type: string
+      description: An attempt to match the quotation to specific bond issues. Incomplete and preliminary. 
