@@ -40,7 +40,7 @@
       "email": "jeffrey.arnold@gmail.com"
     }
   ], 
-  "version": "0.0.4", 
+  "version": "0.0.5", 
   "description": "Miscellaneous financial and economic data from the during the U.S. Civil War\n\nThis is by no means a complete collection of available data, but consists of some datasets that I found or collected for my own research.", 
   "title": "Civil War (US) Era Financial Market Data", 
   "licenses": [
