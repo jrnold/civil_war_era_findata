@@ -1,0 +1,27 @@
+path: data/mitchell_events.csv
+description: |
+  Mitchell's Factors Which Affected the Gold Price of the Currency
+  
+  The events listed by Mitchell (1903) as having impacts on specie value of greenbacks.
+
+source: Mitchell (1903), Part II, Chapter 3.2, pp 199-207.
+schema:
+  fields: 
+    - id: category
+      type: string
+      description: "Category of the event.\nOne of \"money supply\", \"finance\", \"politics\", \"foreign affairs\", or \"war\""
+    - id: start_date
+      type: date
+      description: "Start date of the event (when news reaches the market)"
+    - id: end_date
+      type: date
+      description: "End date of the event (when news reaches the market)\nThis may be missing if the news is incorporated in one day."
+    - id: description
+      type: string
+      description: "Description of the event"
+    - id: page
+      type: string
+      description: "Page in Mitchell (1903) on which the event is described"
+    - id: good
+      type: boolean
+      description: "If true, then the event was good for the Union (rise in the price of currency in gold)"

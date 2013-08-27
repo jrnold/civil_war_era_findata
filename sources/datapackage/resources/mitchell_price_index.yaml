@@ -1,4 +1,4 @@
-path: data/mitchell_price_index.yaml
+path: data/mitchell_price_index.csv
 description: Mitchell (1903) price index, 1860-1865 (quarterly)
 source: Mitchell (1903), Tables XIII and XIV
 schema:
