@@ -40,7 +40,7 @@
       "email": "jeffrey.arnold@gmail.com"
     }
   ], 
-  "version": "0.0.5", 
+  "version": "0.1.0", 
   "description": "Miscellaneous financial and economic data from the during the U.S. Civil War\n\nThis is by no means a complete collection of available data, but consists of some datasets that I found or collected for my own research.", 
   "title": "Civil War (US) Era Financial Market Data", 
   "licenses": [
@@ -50,287 +50,6 @@
     }
   ], 
   "resources": [
-    {
-      "path": "data/annual_report_treasury_news.csv", 
-      "description": "For all Annual Reports of the Treasury issued during the Civil War, the dates on which New York markets responded.\n", 
-      "schema": {
-        "fields": [
-          {
-            "type": "string", 
-            "id": "treasury_report", 
-            "description": "Name of the treasury report. This corresponds to the url \"https://fraser.stlouisfed.org/docs/publications/treasar/%s.pdf\"\n"
-          }, 
-          {
-            "type": "date", 
-            "id": "treasury_report_date", 
-            "description": "Date on the report"
-          }, 
-          {
-            "type": "date", 
-            "id": "market_news_date", 
-            "description": "Date on which the New York market responded to the news in the treasury report."
-          }, 
-          {
-            "type": "string", 
-            "id": "news_source", 
-            "description": "Citation to New York Times article used to justify the coding of ``market_news_date``.\n"
-          }
-        ]
-      }
-    }, 
-    {
-      "path": "data/bankers_loans.csv", 
-      "description": "Price data for U.S. government and state bonds 1855-1865.\n\nThese data appear in tables in the *Notes on the Money Market* section \nof the *Bankers' Magazine* for volumes 10-19. The description of the tables\nnoted that these were \"the highest cash prices offered ... for the Government \nand leading state securities in the market.\" `June 22, 1864 <http://books.google.com/books?id=lGAmAQAAIAAJ&pg=PA78>`__.\n\nThe prices appear are nominal (not gold) dollars, and were dirty prices for the most part.\n", 
-      "schema": {
-        "fields": [
-          {
-            "type": "string", 
-            "id": "bond", 
-            "description": "Name of the bond"
-          }, 
-          {
-            "type": "date", 
-            "id": "date", 
-            "description": "Date of the price"
-          }, 
-          {
-            "type": "date", 
-            "id": "issue", 
-            "description": "Date of the issue from which the price data come."
-          }, 
-          {
-            "type": "string", 
-            "id": "url", 
-            "description": "Google books URL to the source of the data."
-          }, 
-          {
-            "type": "integer", 
-            "id": "volume", 
-            "description": "Volume of Bankers' Magazine from the the data come"
-          }, 
-          {
-            "type": "number", 
-            "id": "value", 
-            "description": "Price of bond. In nominal dollars for a bond with a face value of 100 dollars."
-          }
-        ]
-      }
-    }, 
-    {
-      "path": "bankers_magazine_govt_bonds_quotes_in_text.yaml", 
-      "description": "Quotes of government, state and city bonds appearing in the text of the \"Notes from the Money Market\" (1855-1866)\n\nAlthough quotes for government and state bonds appeared in tables in the \"Notes from the Money Market section\" often other, presumably less traded, assets were quoted in the text of the section.  \n", 
-      "schema": {
-        "fields": [
-          {
-            "type": "date", 
-            "id": "date", 
-            "description": "Date on the byline of the \"Notes from the Money Market\" section.\n"
-          }, 
-          {
-            "type": "integer", 
-            "id": "volume", 
-            "description": "Volume of the Bankers' Magazine"
-          }, 
-          {
-            "type": "string", 
-            "id": "url", 
-            "description": "URL to the Bankers' Magazine page of the article in which the quotation appears."
-          }, 
-          {
-            "type": "string", 
-            "id": "description", 
-            "description": "The name of the bond similar to how it appeared in the text."
-          }, 
-          {
-            "type": "string", 
-            "id": "issuer", 
-            "description": "The name of th issuer of the bond. \"US\" or the name of the state or city.\n"
-          }, 
-          {
-            "type": "string", 
-            "id": "price_string", 
-            "descripton": "String form of the price. Either a number, or something 100 @ 101 in which the first number is the low or bid price, and the second number is the high or ask price.\n"
-          }, 
-          {
-            "type": "number", 
-            "id": "low_price", 
-            "description": "Low price (in nominal dollars)"
-          }, 
-          {
-            "type": "number", 
-            "id": "high_price", 
-            "description": "High price (in nominal dollars)"
-          }, 
-          {
-            "type": "boolean", 
-            "id": "table", 
-            "description": "Occastionally the Bankers Magazine included ad hoc tables of quotations of bonds not usually quoted. This field is true if the quotation appeared in one of those tables.\n"
-          }, 
-          {
-            "type": "string", 
-            "id": "comment", 
-            "description": "Comment"
-          }, 
-          {
-            "type": "string", 
-            "id": "asset", 
-            "description": "An attempt to match the quotation to specific bond issues. Incomplete and preliminary."
-          }
-        ]
-      }
-    }, 
-    {
-      "path": "data/bankers_magazine_notes_from_money_market_url.csv", 
-      "description": "URL's of the \"Notes from the Money Market\" sections of the *Bankers' Magazine*\n\nIn the *Bankers' Magazine* most financial data appeared in tables in a section\ntitled \"Notes from the Money Market\". This table contains Google Books URLs to \neach section for volumes 10-20 (1855-1866)\n", 
-      "schema": {
-        "fields": [
-          {
-            "type": "date", 
-            "id": "date", 
-            "description": "Date of Notes from the Money Market section."
-          }, 
-          {
-            "type": "integer", 
-            "id": "volume", 
-            "description": "Volume of the Bankers' Magazine"
-          }, 
-          {
-            "type": "string", 
-            "id": "url", 
-            "description": "Google Books URL to the first page of that section"
-          }
-        ]
-      }
-    }, 
-    {
-      "source": "Burdekin and Langdana (1993), p. 367-368.", 
-      "path": "data/burdekin_langdana_war.csv", 
-      "description": "Confederate War News from Burdekin and Langdana (1993)\n\nThis is set to +1 for 1863Q3 after Chancellorsville and during Lee's\nMaryland campaign, -1 for 1862Q2 (Peninsula Campaign), 1863:4 (Gettysburg and Vicksburg) and 1864:1 (costly battle of Chickamagua).  Their guideline for constructing the dummy was Schwab (1901, ch 9) major 'crises of confidence' in Richmond. The dummy variable is set to 0 in 1864:2 and 1864:3 due to the stalled Overland and Petersburg campaigns and the nomination of McClellan. \n\nThese data extend the original data by setting it to -1 for 1864Q4 and 1865Q1 although the Burdekin and Langdana analysis stops in 1864Q3 due to a lack of data in other variables.\n", 
-      "schema": {
-        "fields": [
-          {
-            "type": "integer", 
-            "id": "year"
-          }, 
-          {
-            "type": "integer", 
-            "id": "quarter"
-          }, 
-          {
-            "type": "integer", 
-            "id": "war", 
-            "description": "Equal to -1 if the war trend is favoring the Union, +1 if it favoring the Confederacy, and 0 otherwise."
-          }
-        ]
-      }
-    }, 
-    {
-      "source": "Ball (1991), p. 259.", 
-      "path": "data/confederate_expenditures.csv", 
-      "description": "Confederate States of America expenditure", 
-      "schema": {
-        "fields": [
-          {
-            "type": "date", 
-            "id": "start_date", 
-            "description": "Start date of expenditures period"
-          }, 
-          {
-            "type": "date", 
-            "id": "end_date", 
-            "description": "End date of expenditures period"
-          }, 
-          {
-            "type": "number", 
-            "id": "war", 
-            "description": "War department expenditures (millions). This includes a cumulative average of 50 million in 1862, 100 million in 1863, 200 million in 1864, and 313 million in 1865."
-          }, 
-          {
-            "type": "number", 
-            "id": "navy", 
-            "description": "Naval department expenditures (millions)"
-          }, 
-          {
-            "type": "number", 
-            "id": "civil", 
-            "description": "Civil department expenditures (millions)"
-          }, 
-          {
-            "type": "number", 
-            "id": "public_debt", 
-            "description": "Public debt servicing (millions). This excludes cancecellation of treasury notes funded into bonds; including interest in the public debt and redemption of call certificates, due bonds, note issues, and the like."
-          }, 
-          {
-            "type": "number", 
-            "id": "total", 
-            "description": "Total expenditures. Equal to `war` + `navy` + `civil` + `public_debt`."
-          }
-        ]
-      }
-    }, 
-    {
-      "path": "data/events_mccandless.csv", 
-      "description": "Major military and non-military events of the Civil War\n\nAppendix Tables 2 \"Major military events of Civil War\" and 3 \"Major non-military events of the Civil War\" in McCandless (1996), p. 670.\n\nThe sources of these events are \n\n- Pratt, Fletcher. Ordeal by Fire. New York: William Sloane, 1948.\n- Catton, Bruce. The Civil War. New York: Fairfax, 1971.\n- Guinnane, Timothy W. and Rosen, Harvey S. and Willard, Kristen L, \"Turning Points in the Civil War: Views from the Greenback Market. American Economic Review. 1996.\n", 
-      "schema": {
-        "fields": [
-          {
-            "type": "boolean", 
-            "id": "military", 
-            "description": "Military or non-military event"
-          }, 
-          {
-            "type": "integer", 
-            "id": "number", 
-            "description": "Event number (unique within military and non-military categories); corresponding to row in the table."
-          }, 
-          {
-            "type": "string", 
-            "id": "time-period", 
-            "description": "Time period of the event"
-          }, 
-          {
-            "type": "string", 
-            "id": "event_name", 
-            "description": "Event description"
-          }, 
-          {
-            "type": "boolean", 
-            "id": "north", 
-            "description": "Did the event favor the North in the war?"
-          }, 
-          {
-            "type": "boolean", 
-            "id": "question", 
-            "description": "Was there uncertainty about whether the event favored the north?"
-          }, 
-          {
-            "type": "boolean", 
-            "id": "catton", 
-            "description": "Source of event was Catton (1971)"
-          }, 
-          {
-            "type": "boolean", 
-            "id": "pratt", 
-            "description": "Source of event was Pratt (1948)"
-          }, 
-          {
-            "type": "boolean", 
-            "id": "guinnane", 
-            "description": "Source of event was Guinnane et al (1996)"
-          }, 
-          {
-            "type": "date", 
-            "id": "start_date", 
-            "description": "Start date of event"
-          }, 
-          {
-            "type": "date", 
-            "id": "end_date", 
-            "description": "End date of event"
-          }
-        ]
-      }
-    }, 
     {
       "path": "data/events_smith_smith.csv", 
       "sources": [
@@ -399,60 +118,6 @@
       }
     }, 
     {
-      "path": "data/holidays.csv", 
-      "description": "New York market holidays (1860-1879)\n\nThe list of holidays largely comes from the days Mitchell (1908). It is extended back to 1860. During this era, the market appears to have been open on Saturdays, and the only regularly observed holidays were Christmas, New Years, Independence Day and sometimes Thanksgiving (after 1862).", 
-      "schema": {
-        "fields": [
-          {
-            "type": "date", 
-            "id": "date"
-          }, 
-          {
-            "type": "string", 
-            "id": "description"
-          }
-        ]
-      }
-    }, 
-    {
-      "path": "data/merchants_us_paper.csv", 
-      "description": "Price data for U.S. bonds and notes from the Merchants Magazine, 1862-1865\n\nThese data appear in tables entitled \"Prices United States Paper\" appearing\nin the section \"Commercial Chronicle and Review\" of the *Merchants' Magazine\nand Commercial Review*. \n\nThe Merhcants' Magazine only began quoting prices of US paper in 1862.\n", 
-      "schema": {
-        "fields": [
-          {
-            "type": "string", 
-            "id": "bond", 
-            "description": "Name of the bond"
-          }, 
-          {
-            "type": "date", 
-            "id": "date", 
-            "description": "Date of the price"
-          }, 
-          {
-            "type": "string", 
-            "id": "issue", 
-            "description": "Issue from which the price data come."
-          }, 
-          {
-            "type": "string", 
-            "id": "url", 
-            "description": "Google books URL to the source of the data."
-          }, 
-          {
-            "type": "number", 
-            "id": "value", 
-            "description": "Price of bond. In nominal dollars for a bond with a face value of 100 dollars."
-          }, 
-          {
-            "type": "string", 
-            "id": "notes", 
-            "description": "Any notes about the data"
-          }
-        ]
-      }
-    }, 
-    {
       "source": "Mitchell (1903, p. 367) Table LVIII.II. http://books.google.com/books?id=ElAuAAAAYAAJ&dq=mitchell%201903&pg=PA367", 
       "path": "data/michell_avg_interest_rates_per_month.csv", 
       "description": "Interest rates in New York Money Market, 1860-1865 average rates per month for call loans", 
@@ -474,9 +139,188 @@
       }
     }, 
     {
-      "source": "Mitchell (1903, p. 367), Table LVIII.I. http://books.google.com/books?id=ElAuAAAAYAAJ&dq=mitchell%201903&pg=PA367", 
-      "path": "data/michell_avg_interest_rates_per_year.csv", 
-      "description": "Interest rates in New York Money Market, 1860-1865, average rates per year", 
+      "path": "data/annual_report_treasury_news.csv", 
+      "description": "For all Annual Reports of the Treasury issued during the Civil War, the dates on which New York markets responded.\n", 
+      "schema": {
+        "fields": [
+          {
+            "type": "string", 
+            "id": "treasury_report", 
+            "description": "Name of the treasury report. This corresponds to the url \"https://fraser.stlouisfed.org/docs/publications/treasar/%s.pdf\"\n"
+          }, 
+          {
+            "type": "date", 
+            "id": "treasury_report_date", 
+            "description": "Date on the report"
+          }, 
+          {
+            "type": "date", 
+            "id": "market_news_date", 
+            "description": "Date on which the New York market responded to the news in the treasury report."
+          }, 
+          {
+            "type": "string", 
+            "id": "news_source", 
+            "description": "Citation to New York Times article used to justify the coding of ``market_news_date``.\n"
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "data/bankers_magazine_notes_from_money_market_url.csv", 
+      "description": "URL's of the \"Notes from the Money Market\" sections of the *Bankers' Magazine*\n\nIn the *Bankers' Magazine* most financial data appeared in tables in a section\ntitled \"Notes from the Money Market\". This table contains Google Books URLs to \neach section for volumes 10-20 (1855-1866)\n", 
+      "schema": {
+        "fields": [
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date of Notes from the Money Market section."
+          }, 
+          {
+            "type": "integer", 
+            "id": "volume", 
+            "description": "Volume of the Bankers' Magazine"
+          }, 
+          {
+            "type": "string", 
+            "id": "url", 
+            "description": "Google Books URL to the first page of that section"
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "data/events_mccandless.csv", 
+      "description": "Major military and non-military events of the Civil War\n\nAppendix Tables 2 \"Major military events of Civil War\" and 3 \"Major non-military events of the Civil War\" in McCandless (1996), p. 670.\n\nThe sources of these events are \n\n- Pratt, Fletcher. Ordeal by Fire. New York: William Sloane, 1948.\n- Catton, Bruce. The Civil War. New York: Fairfax, 1971.\n- Guinnane, Timothy W. and Rosen, Harvey S. and Willard, Kristen L, \"Turning Points in the Civil War: Views from the Greenback Market. American Economic Review. 1996.\n", 
+      "schema": {
+        "fields": [
+          {
+            "type": "boolean", 
+            "id": "military", 
+            "description": "Military or non-military event"
+          }, 
+          {
+            "type": "integer", 
+            "id": "number", 
+            "description": "Event number (unique within military and non-military categories); corresponding to row in the table."
+          }, 
+          {
+            "type": "string", 
+            "id": "time-period", 
+            "description": "Time period of the event"
+          }, 
+          {
+            "type": "string", 
+            "id": "event_name", 
+            "description": "Event description"
+          }, 
+          {
+            "type": "boolean", 
+            "id": "north", 
+            "description": "Did the event favor the North in the war?"
+          }, 
+          {
+            "type": "boolean", 
+            "id": "question", 
+            "description": "Was there uncertainty about whether the event favored the north?"
+          }, 
+          {
+            "type": "boolean", 
+            "id": "catton", 
+            "description": "Source of event was Catton (1971)"
+          }, 
+          {
+            "type": "boolean", 
+            "id": "pratt", 
+            "description": "Source of event was Pratt (1948)"
+          }, 
+          {
+            "type": "boolean", 
+            "id": "guinnane", 
+            "description": "Source of event was Guinnane et al (1996)"
+          }, 
+          {
+            "type": "date", 
+            "id": "start_date", 
+            "description": "Start date of event"
+          }, 
+          {
+            "type": "date", 
+            "id": "end_date", 
+            "description": "End date of event"
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "data/holidays.csv", 
+      "description": "New York market holidays (1860-1879)\n\nThe list of holidays largely comes from the days Mitchell (1908). It is extended back to 1860. During this era, the market appears to have been open on Saturdays, and the only regularly observed holidays were Christmas, New Years, Independence Day and sometimes Thanksgiving (after 1862).", 
+      "schema": {
+        "fields": [
+          {
+            "type": "date", 
+            "id": "date"
+          }, 
+          {
+            "type": "string", 
+            "id": "description"
+          }
+        ]
+      }
+    }, 
+    {
+      "source": "Ball (1991), p. 259.", 
+      "path": "data/confederate_expenditures.csv", 
+      "description": "Confederate States of America expenditure", 
+      "schema": {
+        "fields": [
+          {
+            "type": "date", 
+            "id": "start_date", 
+            "description": "Start date of expenditures period"
+          }, 
+          {
+            "type": "date", 
+            "id": "end_date", 
+            "description": "End date of expenditures period"
+          }, 
+          {
+            "type": "number", 
+            "id": "war", 
+            "description": "War department expenditures (millions). This includes a cumulative average of 50 million in 1862, 100 million in 1863, 200 million in 1864, and 313 million in 1865."
+          }, 
+          {
+            "type": "number", 
+            "id": "navy", 
+            "description": "Naval department expenditures (millions)"
+          }, 
+          {
+            "type": "number", 
+            "id": "civil", 
+            "description": "Civil department expenditures (millions)"
+          }, 
+          {
+            "type": "number", 
+            "id": "public_debt", 
+            "description": "Public debt servicing (millions). This excludes cancecellation of treasury notes funded into bonds; including interest in the public debt and redemption of call certificates, due bonds, note issues, and the like."
+          }, 
+          {
+            "type": "number", 
+            "id": "total", 
+            "description": "Total expenditures. Equal to `war` + `navy` + `civil` + `public_debt`."
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "data/bond_metadata.json", 
+      "description": "Bond Metadata\n\nContains issue dates, coupon periods, maturity, cashflow, etc. data about bond issues for which there is price data.\n\n- Many quoted price series may correspond to multiple bond similar issues. \n- Callable bonds (10-40s and 5-20s) have multiple entries, one for a potential call in each year.\n- Metadata on state bonds is rather scarce. \n  Sometimes a range of years is known; in which case, there is a bond issue for each year.\n  If no range is known, then a bond issue for each potential year is used (based on the empirical distribution of all bonds for which maturity years are known).\n\nThe data are an ``object``, with an \nEach bond issue is an ``object`` containting the following entries.\n\n- ``cashflows``: ``object``\n  - ``date``: ``array``. Date of cashflow. %Y-%m-%d.\n  - ``cashflows``: ``array``. amount of cashflow in gold dollars\n- ``interest``: ``number``. Annual interest rate\n- ``periods``: ``array``. Each entry is an ``object`` with keys ``month`` and ``day`` for the month and day of a periodic payment.\n- ``issue_date``: Date of issue. %Y-%m-%d.\n- ``maturity_date``: Date of maturity. %Y-%m-%d.\n- ``call``: For callable bonds, ``TRUE`` if a date before maturity, ``FALSE`` if maturity.\n", 
+      "format": "json"
+    }, 
+    {
+      "source": "Burdekin and Langdana (1993), p. 367-368.", 
+      "path": "data/burdekin_langdana_war.csv", 
+      "description": "Confederate War News from Burdekin and Langdana (1993)\n\nThis is set to +1 for 1863Q3 after Chancellorsville and during Lee's\nMaryland campaign, -1 for 1862Q2 (Peninsula Campaign), 1863:4 (Gettysburg and Vicksburg) and 1864:1 (costly battle of Chickamagua).  Their guideline for constructing the dummy was Schwab (1901, ch 9) major 'crises of confidence' in Richmond. The dummy variable is set to 0 in 1864:2 and 1864:3 due to the stalled Overland and Petersburg campaigns and the nomination of McClellan. \n\nThese data extend the original data by setting it to -1 for 1864Q4 and 1865Q1 although the Burdekin and Langdana analysis stops in 1864Q3 due to a lack of data in other variables.\n", 
       "schema": {
         "fields": [
           {
@@ -484,20 +328,13 @@
             "id": "year"
           }, 
           {
-            "type": "number", 
-            "id": "call_elliott"
+            "type": "integer", 
+            "id": "quarter"
           }, 
           {
-            "type": "number", 
-            "id": "call_newspapers"
-          }, 
-          {
-            "type": "number", 
-            "id": "sixty_days_elliott"
-          }, 
-          {
-            "type": "number", 
-            "id": "prime_fisher"
+            "type": "integer", 
+            "id": "war", 
+            "description": "Equal to -1 if the war trend is favoring the Union, +1 if it favoring the Confederacy, and 0 otherwise."
           }
         ]
       }
@@ -541,6 +378,69 @@
       }
     }, 
     {
+      "path": "bankers_magazine_govt_bonds_quotes_in_text.yaml", 
+      "description": "Quotes of government, state and city bonds appearing in the text of the \"Notes from the Money Market\" (1855-1866)\n\nAlthough quotes for government and state bonds appeared in tables in the \"Notes from the Money Market section\" often other, presumably less traded, assets were quoted in the text of the section.  \n", 
+      "schema": {
+        "fields": [
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date on the byline of the \"Notes from the Money Market\" section.\n"
+          }, 
+          {
+            "type": "integer", 
+            "id": "volume", 
+            "description": "Volume of the Bankers' Magazine"
+          }, 
+          {
+            "type": "string", 
+            "id": "url", 
+            "description": "URL to the Bankers' Magazine page of the article in which the quotation appears."
+          }, 
+          {
+            "type": "string", 
+            "id": "description", 
+            "description": "The name of the bond similar to how it appeared in the text."
+          }, 
+          {
+            "type": "string", 
+            "id": "issuer", 
+            "description": "The name of th issuer of the bond. \"US\" or the name of the state or city.\n"
+          }, 
+          {
+            "type": "string", 
+            "id": "price_string", 
+            "descripton": "String form of the price. Either a number, or something 100 @ 101 in which the first number is the low or bid price, and the second number is the high or ask price.\n"
+          }, 
+          {
+            "type": "number", 
+            "id": "low_price", 
+            "description": "Low price (in nominal dollars)"
+          }, 
+          {
+            "type": "number", 
+            "id": "high_price", 
+            "description": "High price (in nominal dollars)"
+          }, 
+          {
+            "type": "boolean", 
+            "id": "table", 
+            "description": "Occastionally the Bankers Magazine included ad hoc tables of quotations of bonds not usually quoted. This field is true if the quotation appeared in one of those tables.\n"
+          }, 
+          {
+            "type": "string", 
+            "id": "comment", 
+            "description": "Comment"
+          }, 
+          {
+            "type": "string", 
+            "id": "asset", 
+            "description": "An attempt to match the quotation to specific bond issues. Incomplete and preliminary."
+          }
+        ]
+      }
+    }, 
+    {
       "source": "Mitchell (1903), Part II, Chapter 3.2, pp 199-207.", 
       "path": "data/mitchell_events.csv", 
       "description": "Mitchell's Factors Which Affected the Gold Price of the Currency\n\nThe events listed by Mitchell (1903) as having impacts on specie value of greenbacks.\n", 
@@ -575,6 +475,111 @@
             "type": "boolean", 
             "id": "good", 
             "description": "If true, then the event was good for the Union (rise in the price of currency in gold)"
+          }
+        ]
+      }
+    }, 
+    {
+      "source": "Mitchell (1903, p. 367), Table LVIII.I. http://books.google.com/books?id=ElAuAAAAYAAJ&dq=mitchell%201903&pg=PA367", 
+      "path": "data/michell_avg_interest_rates_per_year.csv", 
+      "description": "Interest rates in New York Money Market, 1860-1865, average rates per year", 
+      "schema": {
+        "fields": [
+          {
+            "type": "integer", 
+            "id": "year"
+          }, 
+          {
+            "type": "number", 
+            "id": "call_elliott"
+          }, 
+          {
+            "type": "number", 
+            "id": "call_newspapers"
+          }, 
+          {
+            "type": "number", 
+            "id": "sixty_days_elliott"
+          }, 
+          {
+            "type": "number", 
+            "id": "prime_fisher"
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "data/bankers_loans.csv", 
+      "description": "Price data for U.S. government and state bonds 1855-1865.\n\nThese data appear in tables in the *Notes on the Money Market* section \nof the *Bankers' Magazine* for volumes 10-19. The description of the tables\nnoted that these were \"the highest cash prices offered ... for the Government \nand leading state securities in the market.\" `June 22, 1864 <http://books.google.com/books?id=lGAmAQAAIAAJ&pg=PA78>`__.\n\nThe prices appear are nominal (not gold) dollars, and were dirty prices for the most part.\n", 
+      "schema": {
+        "fields": [
+          {
+            "type": "string", 
+            "id": "bond", 
+            "description": "Name of the bond"
+          }, 
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date of the price"
+          }, 
+          {
+            "type": "date", 
+            "id": "issue", 
+            "description": "Date of the issue from which the price data come."
+          }, 
+          {
+            "type": "string", 
+            "id": "url", 
+            "description": "Google books URL to the source of the data."
+          }, 
+          {
+            "type": "integer", 
+            "id": "volume", 
+            "description": "Volume of Bankers' Magazine from the the data come"
+          }, 
+          {
+            "type": "number", 
+            "id": "value", 
+            "description": "Price of bond. In nominal dollars for a bond with a face value of 100 dollars."
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "data/merchants_us_paper.csv", 
+      "description": "Price data for U.S. bonds and notes from the Merchants Magazine, 1862-1865\n\nThese data appear in tables entitled \"Prices United States Paper\" appearing\nin the section \"Commercial Chronicle and Review\" of the *Merchants' Magazine\nand Commercial Review*. \n\nThe Merhcants' Magazine only began quoting prices of US paper in 1862.\n", 
+      "schema": {
+        "fields": [
+          {
+            "type": "string", 
+            "id": "bond", 
+            "description": "Name of the bond"
+          }, 
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date of the price"
+          }, 
+          {
+            "type": "string", 
+            "id": "issue", 
+            "description": "Issue from which the price data come."
+          }, 
+          {
+            "type": "string", 
+            "id": "url", 
+            "description": "Google books URL to the source of the data."
+          }, 
+          {
+            "type": "number", 
+            "id": "value", 
+            "description": "Price of bond. In nominal dollars for a bond with a face value of 100 dollars."
+          }, 
+          {
+            "type": "string", 
+            "id": "notes", 
+            "description": "Any notes about the data"
           }
         ]
       }

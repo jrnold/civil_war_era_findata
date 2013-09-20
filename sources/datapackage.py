@@ -1,18 +1,25 @@
 import yaml
 import json
 import glob
-import os.path
+from os.path import join
 
-if __name__ == '__main__':
-    with open('datapackage/root.yaml', 'r') as f:
-        print("reading datapackage/root.yaml")
+import sys
+
+def main(src, dst):
+    with open(join(src, 'root.yaml'), 'r') as f:
+        print("reading root.yaml")
         data = yaml.load(f)
     data['resources'] = []
-    for filename in glob.glob('datapackage/resources/*.yaml'):
+    for filename in glob.glob('%s/resources/*.yaml' % src):
         print("reading %s" % filename)
         with open(filename, 'r') as f:
             res = yaml.load(f)
             data['resources'].append(res)
-    with open('../datapackage.json', 'w') as f:
-        print("writing to ../datapackage.json")
+    with open(dst, 'w') as f:
+        print("writing to %s" % dst)
         json.dump(data, f, indent = 2)
+
+if __name__ == '__main__':
+    srcdir = sys.argv[1]
+    outfile = sys.argv[2]
+    main(srcdir, outfile)

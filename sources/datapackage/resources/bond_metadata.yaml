@@ -1,0 +1,25 @@
+path: "data/bond_metadata.json"
+format: "json"
+description: |
+  Bond Metadata
+
+  Contains issue dates, coupon periods, maturity, cashflow, etc. data about bond issues for which there is price data.
+
+  - Many quoted price series may correspond to multiple bond similar issues. 
+  - Callable bonds (10-40s and 5-20s) have multiple entries, one for a potential call in each year.
+  - Metadata on state bonds is rather scarce. 
+    Sometimes a range of years is known; in which case, there is a bond issue for each year.
+    If no range is known, then a bond issue for each potential year is used (based on the empirical distribution of all bonds for which maturity years are known).
+
+  The data are an ``object``, with an 
+  Each bond issue is an ``object`` containting the following entries.
+
+  - ``cashflows``: ``object``
+    - ``date``: ``array``. Date of cashflow. %Y-%m-%d.
+    - ``cashflows``: ``array``. amount of cashflow in gold dollars
+  - ``interest``: ``number``. Annual interest rate
+  - ``periods``: ``array``. Each entry is an ``object`` with keys ``month`` and ``day`` for the month and day of a periodic payment.
+  - ``issue_date``: Date of issue. %Y-%m-%d.
+  - ``maturity_date``: Date of maturity. %Y-%m-%d.
+  - ``call``: For callable bonds, ``TRUE`` if a date before maturity, ``FALSE`` if maturity.
+  
