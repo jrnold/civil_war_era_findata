@@ -1,4 +1,4 @@
-path: "data/bankers_loans.csv"
+path: "data/bankers_magazine_state_govt_loans.csv"
 description: |
   Price data for U.S. government and state bonds 1855-1865.
   
@@ -11,9 +11,9 @@ description: |
 
 schema:
   fields:
-    - id: bond
+    - id: series
       type: string
-      description: Name of the bond
+      description: Name of the price series
     - id: date
       type: date
       description: Date of the price
@@ -26,6 +26,10 @@ schema:
     - id: volume
       type: integer
       description: "Volume of Bankers' Magazine from the the data come"
-    - id: value
+    - id: price_paper
       type: number
-      description: "Price of bond. In nominal dollars for a bond with a face value of 100 dollars."
+      description: "Price of bond in paper dollars. Face value = 100"
+    - id: price_gold
+      type: number
+      description: "Price of bond in gold dollars"
+

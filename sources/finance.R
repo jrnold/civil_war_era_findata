@@ -1,19 +1,24 @@
+#' Interpolate time series using tsSmooth
+ts_interpolate <- function (x, ...) {
+    xhat <- tsSmooth(StructTS(x, ...))[, 1]
+    ifelse(is.na(x), xhat, x)
+}
+
+#' Is it the last day of month?
 last_dom <- function(x) {
     month(x) != month(x + days(1))
 }
 
+#' Is day the last day of february
 last_day_of_feb <- function(x) {
     (month(x) == 2) & last_dom(x)
 }
 
-##' Number of days using 30/360 day count
-##'
-##' Calculates the difference in days between two dates using the US
-##' 30/360 day count, i.e. treating the year as 12 months of 30 days.
-##'
-##' @param time2 Date 1.
-##' @param time1 Date 2
-##' @return \code{numeric}
+#' Number of days using 30/360 day count
+#'
+#' Calculates the difference in days between two dates using the US
+#' 30/360 day count, i.e. treating the year as 12 months of 30 days.
+#'
 difftime_30_360 <- function(time2, time1) {
     d1 <- mday(time1)
     d2 <- mday(time2)
@@ -83,12 +88,12 @@ next_date <- function(x, table) {
     }
 }
 
-##' Since the prices listed in the Bankers' Magazine often do not explicitly
-##' state the bond issue, there are multiple issues for each price. This applies
-##' weights to each issue price. They are equally weighted with some exceptions
-##'
-##' - Five-twenties. Use only the old issue (1862's) since they are quoted
-##'   1862-2-19 to 1864-12-26.
+#' Since the prices listed in the Bankers' Magazine often do not explicitly
+#' state the bond issue, there are multiple issues for each price. This applies
+#' weights to each issue price. They are equally weighted with some exceptions
+#'
+#' - Five-twenties. Use only the old issue (1862's) since they are quoted
+#'   1862-2-19 to 1864-12-26.
 bond_weights <-
     list(us_1868 =
          data.frame(issue = c("sixes_18680101", "sixes_18680701"),
@@ -182,6 +187,7 @@ bond_weights <-
                       "indiana_five_18070191", "indiana_five_18070192"))
          )
 
+#' Calculate weights for bond issues for each price series
 weight_bond_issues <- function(x) {
     k <- as.character(x$bond[1])
     if (k == "us_1868") {
@@ -213,6 +219,21 @@ weight_bond_issues <- function(x) {
     }
 }
 
+#' Calculate accrued for a bond
+accrued_interest <- function(issue, cashflows, date, face=100, ...) {
+    datelist <- as.Date(sort(c(cashflows$issued, cashflows$cf$date)),
+                        as.Date("1970-1-1"))
+    lastcoupon <- prev_date(as.Date(date), datelist)
+    if (!is.na(lastcoupon)) {
+        n <- length(cashflows$periods)
+        factor <- difftime_30_360(date, lastcoupon) / 360
+        (factor * cashflows$interest * face)
+    } else {
+        0
+    }
+}
+
+#' Calculate accrued for a bond
 calc_gold_yield <- function(issue, date, gold, searchint=c(-1, 1), ...) {
   price <- gold
   x <- cashflows[[as.character(issue)]]$cf
@@ -240,18 +261,5 @@ calc_gold_yield <- function(issue, date, gold, searchint=c(-1, 1), ...) {
     data.frame(yield = NA, duration=NA, maturity = NA, current=NA,
                accrued = 0, clean_price = price)
   }
-}
-
-accrued_interest <- function(issue, cashflows, date, face=100, ...) {
-    datelist <- as.Date(sort(c(cashflows$issued, cashflows$cf$date)),
-                        as.Date("1970-1-1"))
-    lastcoupon <- prev_date(as.Date(date), datelist)
-    if (!is.na(lastcoupon)) {
-        n <- length(cashflows$periods)
-        factor <- difftime_30_360(date, lastcoupon) / 360
-        (factor * cashflows$interest * face)
-    } else {
-        0
-    }
 }
 

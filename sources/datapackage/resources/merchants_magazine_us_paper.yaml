@@ -1,4 +1,4 @@
-path: "data/merchants_us_paper.csv"
+path: "data/merchants_magazine_us_paper.csv"
 description: |
   Price data for U.S. bonds and notes from the Merchants Magazine, 1862-1865
 
@@ -22,9 +22,12 @@ schema:
     - id: url
       type: string
       description: Google books URL to the source of the data.
-    - id: value
-      type: number
-      description: "Price of bond. In nominal dollars for a bond with a face value of 100 dollars."
     - id: notes
       type: string
       description: "Any notes about the data"
+    - id: price_paper
+      type: number
+      description: "Price of bond in nominal (paper) dollars. Face value = 100."
+    - id: price_gold
+      type: number
+      description: "Price of bond in gold dollars."

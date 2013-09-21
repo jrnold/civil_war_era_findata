@@ -40,7 +40,7 @@
       "email": "jeffrey.arnold@gmail.com"
     }
   ], 
-  "version": "0.1.0", 
+  "version": "1.0.0", 
   "description": "Miscellaneous financial and economic data from the during the U.S. Civil War\n\nThis is by no means a complete collection of available data, but consists of some datasets that I found or collected for my own research.", 
   "title": "Civil War (US) Era Financial Market Data", 
   "licenses": [
@@ -113,6 +113,10 @@
             "comment": "If data are missing, the reason for the missing data, e.g. Sunday or a holiday.", 
             "type": "string", 
             "id": "comment"
+          }, 
+          {
+            "id": "mean", 
+            "description": "Daily mean price (gold dollars per 100 greenbacks)\n\nThe mean is calculated as exp(0.5 * (log(low) + log(high)))\n"
           }
         ]
       }
@@ -318,6 +322,35 @@
       "format": "json"
     }, 
     {
+      "path": "data/greenbacks_fill.csv", 
+      "description": "Daily price of greenbacks in gold in New York (1862-1879) with imputed missing values.\n\nThis table uses the data from ``greenbacks`` and fills in the missing observations using a the smoothed values of a local level model.\n", 
+      "name": "greenbacks_fill", 
+      "schema": {
+        "fields": [
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date"
+          }, 
+          {
+            "type": "number", 
+            "id": "high", 
+            "description": "Daily high price (gold dollars per 100 greenbacks)"
+          }, 
+          {
+            "type": "number", 
+            "id": "low", 
+            "description": "Daily low price (gold dollars per 100 greenbacks)"
+          }, 
+          {
+            "type": "number", 
+            "id": "mean", 
+            "description": "Daily mean price (gold dollars per 100 greenbacks)\n\nThe mean is calculated as exp(0.5 * (log(low) + log(high)))\n"
+          }
+        ]
+      }
+    }, 
+    {
       "source": "Burdekin and Langdana (1993), p. 367-368.", 
       "path": "data/burdekin_langdana_war.csv", 
       "description": "Confederate War News from Burdekin and Langdana (1993)\n\nThis is set to +1 for 1863Q3 after Chancellorsville and during Lee's\nMaryland campaign, -1 for 1862Q2 (Peninsula Campaign), 1863:4 (Gettysburg and Vicksburg) and 1864:1 (costly battle of Chickamagua).  Their guideline for constructing the dummy was Schwab (1901, ch 9) major 'crises of confidence' in Richmond. The dummy variable is set to 0 in 1864:2 and 1864:3 due to the stalled Overland and Petersburg campaigns and the nomination of McClellan. \n\nThese data extend the original data by setting it to -1 for 1864Q4 and 1865Q1 although the Burdekin and Langdana analysis stops in 1864Q3 due to a lack of data in other variables.\n", 
@@ -441,6 +474,49 @@
       }
     }, 
     {
+      "path": "data/bankers_magazine_state_govt_loans.csv", 
+      "description": "Price data for U.S. government and state bonds 1855-1865.\n\nThese data appear in tables in the *Notes on the Money Market* section \nof the *Bankers' Magazine* for volumes 10-19. The description of the tables\nnoted that these were \"the highest cash prices offered ... for the Government \nand leading state securities in the market.\" `June 22, 1864 <http://books.google.com/books?id=lGAmAQAAIAAJ&pg=PA78>`__.\n\nThe prices appear are nominal (not gold) dollars, and were dirty prices for the most part.\n", 
+      "schema": {
+        "fields": [
+          {
+            "type": "string", 
+            "id": "series", 
+            "description": "Name of the price series"
+          }, 
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date of the price"
+          }, 
+          {
+            "type": "date", 
+            "id": "issue", 
+            "description": "Date of the issue from which the price data come."
+          }, 
+          {
+            "type": "string", 
+            "id": "url", 
+            "description": "Google books URL to the source of the data."
+          }, 
+          {
+            "type": "integer", 
+            "id": "volume", 
+            "description": "Volume of Bankers' Magazine from the the data come"
+          }, 
+          {
+            "type": "number", 
+            "id": "price_paper", 
+            "description": "Price of bond in paper dollars. Face value = 100"
+          }, 
+          {
+            "type": "number", 
+            "id": "price_gold", 
+            "description": "Price of bond in gold dollars"
+          }
+        ]
+      }
+    }, 
+    {
       "source": "Mitchell (1903), Part II, Chapter 3.2, pp 199-207.", 
       "path": "data/mitchell_events.csv", 
       "description": "Mitchell's Factors Which Affected the Gold Price of the Currency\n\nThe events listed by Mitchell (1903) as having impacts on specie value of greenbacks.\n", 
@@ -509,45 +585,7 @@
       }
     }, 
     {
-      "path": "data/bankers_loans.csv", 
-      "description": "Price data for U.S. government and state bonds 1855-1865.\n\nThese data appear in tables in the *Notes on the Money Market* section \nof the *Bankers' Magazine* for volumes 10-19. The description of the tables\nnoted that these were \"the highest cash prices offered ... for the Government \nand leading state securities in the market.\" `June 22, 1864 <http://books.google.com/books?id=lGAmAQAAIAAJ&pg=PA78>`__.\n\nThe prices appear are nominal (not gold) dollars, and were dirty prices for the most part.\n", 
-      "schema": {
-        "fields": [
-          {
-            "type": "string", 
-            "id": "bond", 
-            "description": "Name of the bond"
-          }, 
-          {
-            "type": "date", 
-            "id": "date", 
-            "description": "Date of the price"
-          }, 
-          {
-            "type": "date", 
-            "id": "issue", 
-            "description": "Date of the issue from which the price data come."
-          }, 
-          {
-            "type": "string", 
-            "id": "url", 
-            "description": "Google books URL to the source of the data."
-          }, 
-          {
-            "type": "integer", 
-            "id": "volume", 
-            "description": "Volume of Bankers' Magazine from the the data come"
-          }, 
-          {
-            "type": "number", 
-            "id": "value", 
-            "description": "Price of bond. In nominal dollars for a bond with a face value of 100 dollars."
-          }
-        ]
-      }
-    }, 
-    {
-      "path": "data/merchants_us_paper.csv", 
+      "path": "data/merchants_magazine_us_paper.csv", 
       "description": "Price data for U.S. bonds and notes from the Merchants Magazine, 1862-1865\n\nThese data appear in tables entitled \"Prices United States Paper\" appearing\nin the section \"Commercial Chronicle and Review\" of the *Merchants' Magazine\nand Commercial Review*. \n\nThe Merhcants' Magazine only began quoting prices of US paper in 1862.\n", 
       "schema": {
         "fields": [
@@ -572,14 +610,19 @@
             "description": "Google books URL to the source of the data."
           }, 
           {
-            "type": "number", 
-            "id": "value", 
-            "description": "Price of bond. In nominal dollars for a bond with a face value of 100 dollars."
-          }, 
-          {
             "type": "string", 
             "id": "notes", 
             "description": "Any notes about the data"
+          }, 
+          {
+            "type": "number", 
+            "id": "price_paper", 
+            "description": "Price of bond in nominal (paper) dollars. Face value = 100."
+          }, 
+          {
+            "type": "number", 
+            "id": "price_gold", 
+            "description": "Price of bond in gold dollars."
           }
         ]
       }

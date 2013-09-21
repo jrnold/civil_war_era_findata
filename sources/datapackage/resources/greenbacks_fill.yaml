@@ -1,5 +1,10 @@
-"path": "data/greenbacks.csv"
-"description": "Daily price of greenbacks in gold in New York (1862-1879)\nThe price of greenbacks comes from Mitchel (1908), which was put in machine format by Willard et. al. and made available on http://eh.net/databases/greenback/. The data here correct several mistakes in that data."
+"path": "data/greenbacks_fill.csv"
+"name": "greenbacks_fill"
+"description": |
+  Daily price of greenbacks in gold in New York (1862-1879) with imputed missing values.
+
+  This table uses the data from ``greenbacks`` and fills in the missing observations using a the smoothed values of a local level model.
+
 "schema": 
   fields:
     - "id": "date"
@@ -11,11 +16,9 @@
     - "id": "low"
       description: "Daily low price (gold dollars per 100 greenbacks)"
       type: number
-    - id: comment
-      comment: "If data are missing, the reason for the missing data, e.g. Sunday or a holiday."
-      type: string
     - "id": "mean"
       description: |
         Daily mean price (gold dollars per 100 greenbacks)
         
         The mean is calculated as exp(0.5 * (log(low) + log(high)))
+      type: number
