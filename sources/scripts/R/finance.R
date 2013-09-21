@@ -1,3 +1,6 @@
+library("lubridate")
+library("plyr")
+
 #' Interpolate time series using tsSmooth
 ts_interpolate <- function (x, ...) {
     xhat <- tsSmooth(StructTS(x, ...))[, 1]
