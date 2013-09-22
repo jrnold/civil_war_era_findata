@@ -1,20 +1,24 @@
 library("plyr")
+library("reshape2")
 library("RJSONIO")
 library("doMC")
 registerDoMC()
 
+sysargs <- commandArgs(TRUE)
+bankers_file <- sysargs[1]
+bond_metadata_file <- sysargs[2]
+outfile <- sysargs[3]
+
 source("sources/scripts/R/finance.R")
 
-bankers <- mutate(read.csv("data/bankers_magazine_govt_state_loans.csv"),
+#' Load prerequisite data
+bankers <- mutate(read.csv(bankers_file),
                   date = as.Date(date, "%Y-%m-%d"))
 for (i in c("issue", "url", "volume")) {
     bankers[[i]] <- NULL
 }
 
-greenbacks <- mutate(read.csv("data/greenbacks_fill.csv"),
-                     date = as.Date(date, "%Y-%m-%d"))
-
-con <- file("data/bond_metadata.json", "r")
+con <- file(bond_metadata_file, "r")
 bond_metadata <- fromJSON(con)
 close(con)
 
@@ -164,6 +168,9 @@ MATCH_BONDS[["indiana_6pct"]] <-
         data.frame(bond = bonds, wgt = 1 / length(bonds))
     }
 
+#' Calculate accrued interest
+#'
+#' Return the accrued interest at date.
 accrued_interest <- function(cashflows, issue_date, ncoupons, interest, date, face=100, ...) {
     datelist <- as.Date(sort(c(issue_date, cashflows$date)), as.Date("1970-1-1"))
     lastcoupon <- prev_date(as.Date(date), datelist)
@@ -215,7 +222,7 @@ FUN2 <- function(bond, date, price_gold_dirty, price_paper_dirty, series, ..., M
     ret
 }
 
-FUN <- function(series, date, price_gold, price_paper, ..., METADATA) {
+FUN <- function(series, date, price_gold, price_paper, ..., METADATA, MATCH_BONDS) {
     bonds <- MATCH_BONDS[[as.character(series)]](date)
     bonds$series <- series
     bonds$date <- date
@@ -224,4 +231,11 @@ FUN <- function(series, date, price_gold, price_paper, ..., METADATA) {
     mdply(bonds, FUN2, METADATA=bond_metadata)
 }
 
-ret <- mdply(bankers, FUN, METADATA = bond_metadata)
+fields <- c("series", "date", "bond", "price_paper_dirty", "price_gold_dirty",
+            "price_paper_clean", "price_gold_clean", "accrued", "current_yield",
+            "yield", "maturity", "duration")
+
+yields <- mdply(bankers, FUN, METADATA = bond_metadata, MATCH_BONDS=MATCH_BONDS,
+                .parallel = TRUE)
+yields <- arrange(yields, series, date, bond)
+write.csv(yields[ , fields], file = outfile, row.names = FALSE, na="")

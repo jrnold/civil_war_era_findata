@@ -5,6 +5,8 @@ from os.path import join
 
 import sys
 
+
+
 def main(src, dst):
     with open(join(src, 'root.yaml'), 'r') as f:
         print("reading root.yaml")

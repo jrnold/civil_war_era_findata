@@ -217,47 +217,10 @@ weight_bond_issues <- function(x) {
     }
 }
 
-#' Calculate accrued for a bond
-accrued_interest <- function(issue, cashflows, date, face=100, ...) {
-    datelist <- as.Date(sort(c(cashflows$issued, cashflows$cf$date)),
-                        as.Date("1970-1-1"))
+#' Return the accrued interest at date.
+accrued_interest <- function(cashflows, issue_date, ncoupons, interest, date, face=100, ...) {
+    datelist <- as.Date(sort(c(issue_date, cashflows$date)), as.Date("1970-1-1"))
     lastcoupon <- prev_date(as.Date(date), datelist)
-    if (!is.na(lastcoupon)) {
-        n <- length(cashflows$periods)
-        factor <- difftime_30_360(date, lastcoupon) / 360
-        (factor * cashflows$interest * face)
-    } else {
-        0
-    }
+    factor <- difftime_30_360(date, lastcoupon) / 360
+    (factor * interest * face)
 }
-
-#' Calculate accrued for a bond
-calc_gold_yield <- function(issue, date, gold, searchint=c(-1, 1), ...) {
-  price <- gold
-  x <- cashflows[[as.character(issue)]]$cf
-  x <- x[x$date > date, , drop=FALSE]
-  if (nrow(x)) {
-    ## Accrued interest
-    accrued <- accrued_interest(issue, date)
-    clean_price <- price - accrued
-    
-    m <- difftime_30_360(x$date, date) / 360
-    res <- bond_yields(c(-price, x$cashflow), c(0, m), searchint = searchint)
-    if (is(res, "try-error")) {
-      ytm <- NA
-    } else {
-      ytm <- res
-    }
-    ## Macaulay duration
-    duration <- macaulay_duration(x$cashflow, m, ytm, clean_sprice)
-    ## Current yield
-    current <- current_yield(issue, clean_price)
-    data.frame(yield = ytm, duration = duration,
-               maturity = max(m), current = current, accrued = accrued,
-               clean_price = clean_price)
-  } else {
-    data.frame(yield = NA, duration=NA, maturity = NA, current=NA,
-               accrued = 0, clean_price = price)
-  }
-}
-

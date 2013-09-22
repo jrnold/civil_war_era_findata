@@ -40,7 +40,7 @@
       "email": "jeffrey.arnold@gmail.com"
     }
   ], 
-  "version": "1.0.0", 
+  "version": "3.0.0", 
   "description": "Miscellaneous financial and economic data from the during the U.S. Civil War\n\nThis is by no means a complete collection of available data, but consists of some datasets that I found or collected for my own research.", 
   "title": "Civil War (US) Era Financial Market Data", 
   "licenses": [
@@ -623,6 +623,74 @@
             "type": "number", 
             "id": "mean", 
             "description": "Daily mean price (gold dollars per 100 greenbacks)\n\nThe mean is calculated as exp(0.5 * (log(low) + log(high)))\n"
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "data/bankers_magazine_state_govt_loans_yields.csv", 
+      "description": "Yield data for U.S. government and state bonds 1855-1865.\n\nFor the price series listed in ``bankers_magazine_state_govt_loans``, calculate clean and dirty prices, accrued interest, yields, duration, and maturity.\n\nThe price quotations in the original source do not uniquely match a bond issue, so each price series may be matched to multiple bonds.\n", 
+      "schema": {
+        "fields": [
+          {
+            "type": "string", 
+            "id": "series", 
+            "description": "Name of the price series"
+          }, 
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date of the price"
+          }, 
+          {
+            "type": "string", 
+            "id": "bond", 
+            "description": "Name of the bond"
+          }, 
+          {
+            "type": "number", 
+            "id": "price_paper_dirty", 
+            "description": "Dirty price of bond in paper dollars. Face value = 100"
+          }, 
+          {
+            "type": "number", 
+            "id": "price_gold_dirty", 
+            "description": "Dirty price of bond in gold dollars"
+          }, 
+          {
+            "type": "number", 
+            "id": "price_paper_clean", 
+            "description": "Clean price of bond in gold dollars"
+          }, 
+          {
+            "type": "number", 
+            "id": "price_gold_clean", 
+            "description": "Clean price of bond in gold dollars"
+          }, 
+          {
+            "type": "number", 
+            "id": "accrued", 
+            "description": "Accrued interest in gold dollars"
+          }, 
+          {
+            "type": "number", 
+            "id": "current_yield", 
+            "description": "Current yield"
+          }, 
+          {
+            "type": "number", 
+            "id": "yield", 
+            "description": "Yield to maturity"
+          }, 
+          {
+            "type": "number", 
+            "id": "maturity", 
+            "description": "Maturity in years"
+          }, 
+          {
+            "type": "number", 
+            "id": "duration", 
+            "description": "Macualay (modified) duration"
           }
         ]
       }
