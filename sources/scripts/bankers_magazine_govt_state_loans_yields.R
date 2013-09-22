@@ -1,5 +1,8 @@
 library("plyr")
 library("RJSONIO")
+library("doMC")
+registerDoMC()
+
 source("sources/scripts/R/finance.R")
 
 bankers <- mutate(read.csv("data/bankers_magazine_govt_state_loans.csv"),
@@ -11,8 +14,9 @@ for (i in c("issue", "url", "volume")) {
 greenbacks <- mutate(read.csv("data/greenbacks_fill.csv"),
                      date = as.Date(date, "%Y-%m-%d"))
 
-bond_metadata <- fromJSON(file("data/bond_metadata.json", "r"))
-
+con <- file("data/bond_metadata.json", "r")
+bond_metadata <- fromJSON(con)
+close(con)
 
 #' # Series -> BONDS weights
 MATCH_BONDS <- list()
@@ -154,12 +158,6 @@ MATCH_BONDS[["tennessee_6pct"]] <-
         data.frame(bond = bonds, wgt = 1 / length(bonds))
     }
 
-MATCH_BONDS[["tennessee_6pct"]] <-
-    function(date) {
-        bonds <- grep("tennessee_six", names(bond_metadata), value=TRUE)
-        data.frame(bond = bonds, wgt = 1 / length(bonds))
-    }
-
 MATCH_BONDS[["indiana_6pct"]] <-
     function(date) {
         bonds <- grep("indiana_six", names(bond_metadata), value=TRUE)
@@ -169,36 +167,61 @@ MATCH_BONDS[["indiana_6pct"]] <-
 accrued_interest <- function(cashflows, issue_date, ncoupons, interest, date, face=100, ...) {
     datelist <- as.Date(sort(c(issue_date, cashflows$date)), as.Date("1970-1-1"))
     lastcoupon <- prev_date(as.Date(date), datelist)
-    if (!is.na(lastcoupon)) {
-        n <- length(ncoupons)
-        factor <- difftime_30_360(date, lastcoupon) / 360
-        (factor * interest * face)
-    } else {
-        0
-    }
+    factor <- difftime_30_360(date, lastcoupon) / 360
+    (factor * interest * face)
 }
 
 #' # Generate Yields
-FUN2 <- function(bond, date, price_gold, price_paper, ...) {
+FUN2 <- function(bond, date, price_gold_dirty, price_paper_dirty, series, ..., METADATA) {
+    bond <- as.character(bond)
     searchint <- c(-100, 100)
-    metadata <- bond_metadata[[bond]]
-    cashflows <- mutate(metadata$cashflows,
+    metadata <- METADATA[[bond]]
+    cashflows <- mutate(data.frame(metadata$cashflows),
                         date = as.Date(date, "%Y-%m-%d"))
+    cashflows2 <- cashflows[cashflows$date > date, , drop=FALSE]
     issue_date <- metadata$issue_date
     if (!is.null(issue_date)) issue_date <- as.Date(issue_date, "%Y-%m-%d")
     ncoupons <- length(metadata$periods)
     interest <- metadata$interest
-    data.frame(accrued_interest = accrued_interest(cashflows, issue_date, ncoupons, interest, date))
+    gold_2_paper <- price_paper_dirty / price_gold_dirty
+    accrued <- accrued_interest(cashflows, issue_date, ncoupons, interest, date)
+    price_gold_clean <- price_gold_dirty - accrued
+    price_paper_clean <- price_paper_dirty - gold_2_paper * accrued
+    ## yield to maturity
+    m <- difftime_30_360(cashflows2$date, date) / 360
+    if (!is.na(price_gold_dirty)) {
+        ytm <- try(ytm(c(-price_gold_dirty, cashflows2$amount), c(0, m), searchint = searchint))
+        if (is(ytm, "try-error")) {
+            print(sprintf("%s %s %s %f", series, bond, date, price_gold_dirty))
+            ytm <- NA
+        }
+        duration <- macaulay_duration(cashflows2$amount, m, ytm, price_gold_clean)
+    } else {
+        ytm <- NA
+        duration <- NA
+    }
+    ## ## Duration
+    ## duration <- NA
+    ## Current yield
+    current_yield <- (interest * 100) / price_gold_clean
+    ret <- 
+        data.frame(accrued = accrued,
+                   price_gold_clean = price_gold_clean,
+                   price_paper_clean = price_paper_clean,
+                   yield = ytm,
+                   current_yield = current_yield,
+                   duration = duration,
+                   maturity = max(m))
+    ret
 }
 
-FUN <- function(series, date, price_gold, price_paper, ...) {
-    bonds <- MATCH_BONDS[[series]](date)
+FUN <- function(series, date, price_gold, price_paper, ..., METADATA) {
+    bonds <- MATCH_BONDS[[as.character(series)]](date)
+    bonds$series <- series
     bonds$date <- date
     bonds$price_gold_dirty <- price_gold
     bonds$price_paper_dirty <- price_paper
-    #mdply(bonds, FUN2)
-    bonds
+    mdply(bonds, FUN2, METADATA=bond_metadata)
 }
 
-
-ret <- mdply(bankers, FUN)
+ret <- mdply(bankers, FUN, METADATA = bond_metadata)

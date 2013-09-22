@@ -23,18 +23,6 @@ generate_cashflow_2 <- function(issue, n_coupons, coupon,
     data.frame(date = dates, amount = cf)
 }
 
-#' Calculate accrued interest with 30/360 US method
-#' -------------------------------------------------
-#'
-#' Accrued interest is
-#'
-#' Interest = Rate * Prinicipal * 30/360(date1, date2)
-#' 
-accrued_interest <- function(date, lastpay, rate, prin = 100) {
-    (difftime_30_360(date, lastpay) / 360) * rate * prin
-}
-
-
 
 #' - ``coupons`` stores cashflows
 #' - ``bonds`` stores relationship between bonds.
@@ -68,11 +56,11 @@ coupons$us_sixes_18680701 <-
 #' -----------------
 #'
 coupons$us_fives_18740101 <-
-    list(cashflows = generate_cashflow_1(as.Date("1874-1-1"), 15 * 2, 2.5),
+    list(cashflows = generate_cashflow_1(as.Date("1874-1-1"), 15 * 2 + 1, 2.5),
          interest = 0.05,
          periods = list(list(month = 1, day = 1), list(month = 7, day = 1)),
          maturity_date = as.Date("1874-1-1"),
-         issue_date = as.Date("1859-1-1"))
+         issue_date = as.Date("1858-7-1"))
 
 #' Sixes of 1881
 #' ------------------
@@ -228,7 +216,7 @@ coupons$california_seven_18770701 <-
 #' :Payable: Jan, Jul
 #' :Redeemable: 1874
 
-coupons$ohio_18740701 <-
+coupons$ohio_six_18740701 <-
     list(cashflows = generate_cashflow_1(as.Date("1874-7-1"), 35 * 2, 3),
          interest = 0.06,
          maturity_date = as.Date("1874-7-1"),
@@ -278,7 +266,7 @@ for (year in 1869:1872) {
 for (year in 1869:1892) {
     bondname <- sprintf("louisiana_six_%d0701", year)
     coupons[[bondname]] <-
-        list(cashflows = generate_cashflow_1(as.Date(sprintf("%d-7-1", year)), 35 * 2, 3),
+        list(cashflows = generate_cashflow_1(as.Date(sprintf("%d-7-1", year)), 40 * 2, 3),
              maturity_date = as.Date(sprintf("%d-7-1", year)),
              issue_date = NA,
              interest = 0.06,
@@ -337,7 +325,7 @@ coupons$pennsylvania_six_18730801 <-
 for (year in 1885:1890) {
     bondname <- sprintf("virginia_six_%d0701", year)
     coupons[[bondname]] <-
-        list(cashflows = generate_cashflow_1(as.Date(sprintf("%d-7-1", year)), 35 * 2, 3),
+        list(cashflows = generate_cashflow_1(as.Date(sprintf("%d-7-1", year)), 40 * 2, 3),
              maturity_date = as.Date(sprintf("%s-8-1", year)),
              issue_date = NA,
              interest = 0.06,
@@ -354,7 +342,7 @@ for (year in 1885:1890) {
 for (year in 1885:1892) {
     bondname <- sprintf("tennessee_six_%d0701", year)
     coupons[[bondname]] <-
-        list(cashflows = generate_cashflow_1(as.Date(sprintf("%d-7-1", year)), 35 * 2, 3),
+        list(cashflows = generate_cashflow_1(as.Date(sprintf("%d-7-1", year)), 40 * 2, 3),
              maturity_date = as.Date(sprintf("%s-7-1", year)),
              issue_date = NA,
              interest = 0.06,
@@ -371,7 +359,7 @@ for (year in 1885:1892) {
 for (year in 1869:1892) {
     bondname <- sprintf("indiana_five_%d0701", year)
     coupons[[bondname]] <-
-        list(cashflows = generate_cashflow_1(as.Date(sprintf("%d-7-1", year)), 35 * 2, 2.5),
+        list(cashflows = generate_cashflow_1(as.Date(sprintf("%d-7-1", year)), 40 * 2, 2.5),
              maturity_date = as.Date(sprintf("%s-7-1", year)),
              issue_date = NA,
              interest = 0.05,
@@ -387,7 +375,7 @@ for (year in 1869:1892) {
 #' :issued: known to be issued in 1861. Mentioned in June.
 
 coupons$indiana_six_18810501 <-
-    list(cashflows = generate_cashflow_1(as.Date("1881-11-1"), 20 * 2, 3),
+    list(cashflows = generate_cashflow_1(as.Date("1881-11-1"), 30 * 2, 3),
          maturity_date = as.Date(sprintf("%s-11-01", year)),
          issue_date = NA,
          interest = 0.06,

@@ -45,13 +45,8 @@ difftime_30_360 <- function(time2, time1) {
 }
 
 
-#' Calculate Duration Yield
-#'
-#' @param x Vector of cashflows
-#' @param m Vector of times until cash flows.
-#' @param searchint See \code{\link{uniroot}}.
-#' @param tol See \code{\link{uniroot}}.
-bond_yields <- function(x, m, searchint = c(-1, 1), tol = 1e-10) {
+#' Calculate Duration Yield (Yield to maturity)
+ytm <- function(x, m, searchint = c(-1, 1), tol = 1e-10) {
     pvcashflows <- function(y) {
         t(x) %*% exp(-m * y)
     }
