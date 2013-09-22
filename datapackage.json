@@ -40,7 +40,7 @@
       "email": "jeffrey.arnold@gmail.com"
     }
   ], 
-  "version": "3.0.0", 
+  "version": "3.1.0", 
   "description": "Miscellaneous financial and economic data from the during the U.S. Civil War\n\nThis is by no means a complete collection of available data, but consists of some datasets that I found or collected for my own research.", 
   "title": "Civil War (US) Era Financial Market Data", 
   "licenses": [
@@ -69,6 +69,33 @@
             "type": "string", 
             "id": "url", 
             "description": "Google Books URL to the first page of that section"
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "data/greenback_yields.csv", 
+      "description": "Yield of a greenback held until specie conversion on 1879-1-1", 
+      "schema": {
+        "fields": [
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date"
+          }, 
+          {
+            "type": "number", 
+            "id": "high", 
+            "description": "Yield to maturity of daily high price"
+          }, 
+          {
+            "type": "number", 
+            "id": "low", 
+            "description": "Yield to maturity of daily low price"
+          }, 
+          {
+            "id": "mean", 
+            "description": "Yield to maturity of daily mean price"
           }
         ]
       }

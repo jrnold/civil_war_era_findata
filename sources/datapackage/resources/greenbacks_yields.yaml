@@ -1,0 +1,15 @@
+"path": "data/greenback_yields.csv"
+"description": "Yield of a greenback held until specie conversion on 1879-1-1"
+"schema": 
+  fields:
+    - "id": "date"
+      "description": "Date"
+      "type": "date"
+    - "id": "high"
+      "description": "Yield to maturity of daily high price"
+      type: number
+    - "id": "low"
+      description: "Yield to maturity of daily low price"
+      type: number
+    - "id": "mean"
+      description: "Yield to maturity of daily mean price"

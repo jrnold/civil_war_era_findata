@@ -12,6 +12,7 @@ DATA += data/bankers_magazine_govt_state_loans.csv
 DATA += data/bankers_magazine_govt_state_loans_yields.csv
 DATA += data/merchants_magazine_us_paper.csv
 DATA += data/merchants_magazine_us_paper_yields.csv
+DATA += data/greenback_yields.csv
 
 all: build
 
@@ -41,4 +42,7 @@ data/merchants_magazine_us_paper.csv: merchants_magazine_us_paper.R sources/data
 	$(R) $^ $@
 
 data/merchants_magazine_us_paper_yields.csv: merchants_magazine_us_paper_yields.R data/merchants_magazine_us_paper.csv data/bond_metadata.json
+	$(R) $^ $@
+
+data/greenback_yields.csv: greenback_yields.R data/greenbacks.csv
 	$(R) $^ $@
