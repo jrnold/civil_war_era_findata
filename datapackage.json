@@ -1,4 +1,6 @@
 {
+  "description": "Miscellaneous financial and economic data from the during the U.S. Civil War\n\nThis is by no means a complete collection of available data, but consists of some datasets that I found or collected for my own research.", 
+  "title": "Civil War (US) Era Financial Market Data", 
   "sources": [
     {
       "web": "http://eh.net/databases/greenback/", 
@@ -41,18 +43,19 @@
     }
   ], 
   "version": "3.1.0", 
-  "description": "Miscellaneous financial and economic data from the during the U.S. Civil War\n\nThis is by no means a complete collection of available data, but consists of some datasets that I found or collected for my own research.", 
-  "title": "Civil War (US) Era Financial Market Data", 
+  "last_modified": "2013-09-28T15:17:35.550124", 
   "licenses": [
     {
       "url": "http://opendatacommons.org/licenses/by/", 
       "id": "odc-by"
     }
   ], 
+  "homepage": "https://github.com/jrnold/civil_war_era_findata", 
   "resources": [
     {
       "path": "data/bankers_magazine_notes_from_money_market_url.csv", 
       "description": "URL's of the \"Notes from the Money Market\" sections of the *Bankers' Magazine*\n\nIn the *Bankers' Magazine* most financial data appeared in tables in a section\ntitled \"Notes from the Money Market\". This table contains Google Books URLs to \neach section for volumes 10-20 (1855-1866)\n", 
+      "name": "bankers_magazine_notes_from_money_market_url", 
       "schema": {
         "fields": [
           {
@@ -76,6 +79,7 @@
     {
       "path": "data/greenback_yields.csv", 
       "description": "Yield of a greenback held until specie conversion on 1879-1-1", 
+      "name": "greenbacks_yields", 
       "schema": {
         "fields": [
           {
@@ -103,6 +107,7 @@
     {
       "path": "data/merchants_magazine_us_paper.csv", 
       "description": "Price data for U.S. bonds and notes from the Merchants Magazine, 1862-1865\n\nThese data appear in tables entitled \"Prices United States Paper\" appearing\nin the section \"Commercial Chronicle and Review\" of the *Merchants' Magazine\nand Commercial Review*. \n\nThe Merhcants' Magazine only began quoting prices of US paper in 1862.\n", 
+      "name": "merchants_magazine_us_paper", 
       "schema": {
         "fields": [
           {
@@ -147,6 +152,7 @@
       "source": "Burdekin and Langdana (1993), p. 367-368.", 
       "path": "data/burdekin_langdana_war.csv", 
       "description": "Confederate War News from Burdekin and Langdana (1993)\n\nThis is set to +1 for 1863Q3 after Chancellorsville and during Lee's\nMaryland campaign, -1 for 1862Q2 (Peninsula Campaign), 1863:4 (Gettysburg and Vicksburg) and 1864:1 (costly battle of Chickamagua).  Their guideline for constructing the dummy was Schwab (1901, ch 9) major 'crises of confidence' in Richmond. The dummy variable is set to 0 in 1864:2 and 1864:3 due to the stalled Overland and Petersburg campaigns and the nomination of McClellan. \n\nThese data extend the original data by setting it to -1 for 1864Q4 and 1865Q1 although the Burdekin and Langdana analysis stops in 1864Q3 due to a lack of data in other variables.\n", 
+      "name": "burdekin_langdana_1993_war", 
       "schema": {
         "fields": [
           {
@@ -174,6 +180,7 @@
         }
       ], 
       "description": "\nWar news and wartime financial news\n\nEvents from Smith and Smith (1997), \"Table 1: War News\" (p. 706) and \"Table 2:\nWartime Financial News\" (p. 707).\n\nThe set of events are constructed from those events mentioned in Mitchell (1903), pt. 2, chapter 3, as influencing the price of gold.\n", 
+      "name": "events_smith_smith", 
       "schema": {
         "fields": [
           {
@@ -207,11 +214,13 @@
     {
       "path": "data/bond_metadata.json", 
       "description": "Bond Metadata\n\nContains issue dates, coupon periods, maturity, cashflow, etc. data about bond issues for which there is price data.\n\n- Many quoted price series may correspond to multiple bond similar issues. \n- Callable bonds (10-40s and 5-20s) have multiple entries, one for a potential call in each year.\n- Metadata on state bonds is rather scarce. \n  Sometimes a range of years is known; in which case, there is a bond issue for each year.\n  If no range is known, then a bond issue for each potential year is used (based on the empirical distribution of all bonds for which maturity years are known).\n\nThe data are an ``object``, with an \nEach bond issue is an ``object`` containting the following entries.\n\n- ``cashflows``: ``object``\n  - ``date``: ``array``. Date of cashflow. %Y-%m-%d.\n  - ``cashflows``: ``array``. amount of cashflow in gold dollars\n- ``interest``: ``number``. Annual interest rate\n- ``periods``: ``array``. Each entry is an ``object`` with keys ``month`` and ``day`` for the month and day of a periodic payment.\n- ``issue_date``: Date of issue. %Y-%m-%d.\n- ``maturity_date``: Date of maturity. %Y-%m-%d.\n- ``call``: For callable bonds, ``TRUE`` if a date before maturity, ``FALSE`` if maturity.\n", 
+      "name": "bond_metadata", 
       "format": "json"
     }, 
     {
       "path": "data/bankers_magazine_state_govt_loans.csv", 
       "description": "Price data for U.S. government and state bonds 1855-1865.\n\nThese data appear in tables in the *Notes on the Money Market* section \nof the *Bankers' Magazine* for volumes 10-19. The description of the tables\nnoted that these were \"the highest cash prices offered ... for the Government \nand leading state securities in the market.\" `June 22, 1864 <http://books.google.com/books?id=lGAmAQAAIAAJ&pg=PA78>`__.\n\nThe prices appear are nominal (not gold) dollars, and were dirty prices for the most part.\n", 
+      "name": "bankers_magazine_state_govt_loans", 
       "schema": {
         "fields": [
           {
@@ -255,6 +264,7 @@
     {
       "path": "data/greenbacks.csv", 
       "description": "Daily price of greenbacks in gold in New York (1862-1879)\nThe price of greenbacks comes from Mitchel (1908), which was put in machine format by Willard et. al. and made available on http://eh.net/databases/greenback/. The data here correct several mistakes in that data.", 
+      "name": "greenbacks", 
       "schema": {
         "fields": [
           {
@@ -287,6 +297,7 @@
     {
       "path": "data/events_mccandless.csv", 
       "description": "Major military and non-military events of the Civil War\n\nAppendix Tables 2 \"Major military events of Civil War\" and 3 \"Major non-military events of the Civil War\" in McCandless (1996), p. 670.\n\nThe sources of these events are \n\n- Pratt, Fletcher. Ordeal by Fire. New York: William Sloane, 1948.\n- Catton, Bruce. The Civil War. New York: Fairfax, 1971.\n- Guinnane, Timothy W. and Rosen, Harvey S. and Willard, Kristen L, \"Turning Points in the Civil War: Views from the Greenback Market. American Economic Review. 1996.\n", 
+      "name": "events_mccandless", 
       "schema": {
         "fields": [
           {
@@ -350,6 +361,7 @@
     {
       "path": "bankers_magazine_govt_bonds_quotes_in_text.yaml", 
       "description": "Quotes of government, state and city bonds appearing in the text of the \"Notes from the Money Market\" (1855-1866)\n\nAlthough quotes for government and state bonds appeared in tables in the \"Notes from the Money Market section\" often other, presumably less traded, assets were quoted in the text of the section.  \n", 
+      "name": "bankers_magazine_govt_bonds_quotes_in_text", 
       "schema": {
         "fields": [
           {
@@ -414,6 +426,7 @@
       "source": "Mitchell (1903), Part II, Chapter 3.2, pp 199-207.", 
       "path": "data/mitchell_events.csv", 
       "description": "Mitchell's Factors Which Affected the Gold Price of the Currency\n\nThe events listed by Mitchell (1903) as having impacts on specie value of greenbacks.\n", 
+      "name": "mitchell_events", 
       "schema": {
         "fields": [
           {
@@ -453,6 +466,7 @@
       "source": "Ball (1991), p. 259.", 
       "path": "data/confederate_expenditures.csv", 
       "description": "Confederate States of America expenditure", 
+      "name": "confederate_expenditures", 
       "schema": {
         "fields": [
           {
@@ -496,6 +510,7 @@
     {
       "path": "data/annual_report_treasury_news.csv", 
       "description": "For all Annual Reports of the Treasury issued during the Civil War, the dates on which New York markets responded.\n", 
+      "name": "annual_report_treasury_news", 
       "schema": {
         "fields": [
           {
@@ -524,6 +539,7 @@
     {
       "path": "data/holidays.csv", 
       "description": "New York market holidays (1860-1879)\n\nThe list of holidays largely comes from the days Mitchell (1908). It is extended back to 1860. During this era, the market appears to have been open on Saturdays, and the only regularly observed holidays were Christmas, New Years, Independence Day and sometimes Thanksgiving (after 1862).", 
+      "name": "holidays", 
       "schema": {
         "fields": [
           {
@@ -541,6 +557,7 @@
       "source": "Mitchell (1903, p. 367), Table LVIII.I. http://books.google.com/books?id=ElAuAAAAYAAJ&dq=mitchell%201903&pg=PA367", 
       "path": "data/michell_avg_interest_rates_per_year.csv", 
       "description": "Interest rates in New York Money Market, 1860-1865, average rates per year", 
+      "name": "mitchell_avg_interest_rates_per_year", 
       "schema": {
         "fields": [
           {
@@ -570,6 +587,7 @@
       "source": "Mitchell (1903, p. 367) Table LVIII.II. http://books.google.com/books?id=ElAuAAAAYAAJ&dq=mitchell%201903&pg=PA367", 
       "path": "data/michell_avg_interest_rates_per_month.csv", 
       "description": "Interest rates in New York Money Market, 1860-1865 average rates per month for call loans", 
+      "name": "mitchell_avg_interest_rates_per_month", 
       "schema": {
         "fields": [
           {
@@ -591,6 +609,7 @@
       "source": "Mitchell (1903), Tables XIII and XIV", 
       "path": "data/mitchell_price_index.csv", 
       "description": "Mitchell (1903) price index, 1860-1865 (quarterly)", 
+      "name": "mitchell_price_index", 
       "schema": {
         "fields": [
           {
@@ -657,6 +676,7 @@
     {
       "path": "data/bankers_magazine_state_govt_loans_yields.csv", 
       "description": "Yield data for U.S. government and state bonds 1855-1865.\n\nFor the price series listed in ``bankers_magazine_state_govt_loans``, calculate clean and dirty prices, accrued interest, yields, duration, and maturity.\n\nThe price quotations in the original source do not uniquely match a bond issue, so each price series may be matched to multiple bonds.\n", 
+      "name": "bankers_magazine_state_govt_loans_yields", 
       "schema": {
         "fields": [
           {

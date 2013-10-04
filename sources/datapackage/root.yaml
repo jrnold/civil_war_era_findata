@@ -8,6 +8,7 @@
 "maintainers": 
     - name: "Jeffrey B. Arnold"
       "email": "jeffrey.arnold@gmail.com"
+"homepage": "https://github.com/jrnold/civil_war_era_findata"
 "sources": 
   - "name": "EH.net Greenback.series"
     "web": "http://eh.net/databases/greenback/"
