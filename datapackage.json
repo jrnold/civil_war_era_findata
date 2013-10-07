@@ -34,6 +34,13 @@
     {
       "web": "http://journals.cambridge.org/article_S0022050700019100", 
       "name": "Gregor W. Smith and R. Todd Smith (1997). Greenback-Gold Returns and Expectations of Resumption, 1862-1879. The Journal of Economic History, 57, pp 697-717. doi:10.1017/S0022050700019100."
+    }, 
+    {
+      "url": "https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1861_2.pdf", 
+      "name": "U. S. Department of the Treasury, (1861) \"Annual Report of the Secretary of the Treasury on the State of the Finances, July 4, 1861\"."
+    }, 
+    {
+      "name": "Godfrey, J.M. (1978) \"Monetary Expansion in the Confederacy\""
     }
   ], 
   "maintainers": [
@@ -42,8 +49,8 @@
       "email": "jeffrey.arnold@gmail.com"
     }
   ], 
-  "version": "3.1.0", 
-  "last_modified": "2013-09-28T15:17:35.550124", 
+  "version": "3.2.0", 
+  "last_modified": "2013-10-06T22:56:48.698190", 
   "licenses": [
     {
       "url": "http://opendatacommons.org/licenses/by/", 
@@ -149,6 +156,60 @@
       }
     }, 
     {
+      "description": "Confederate Expenditures\n\nIn Ball (1991), this is Table 24. \"Confederate Expenditures\".\nThe original note to the table:\n\n   Sources: Raphael P. Thian, Reports of the Secretary of the Secretary of the Treasury of the\n   Confederate States of America 1861-1865 (Washington, D.C.: Privately published, 1878),\n   Reports dated March 14, 1862, January 10, 1862, April 11, 1863, May 2, 1864, November 7,\n   1864, pp. 61, 99, 177, 257, 353.\n", 
+      "sources": [
+        {
+          "name": "Ball, Douglas, 1991. \"Financial Failure and Confederate Defeat.\" University of Illinois Press. ISBN: 9780252017551, Table 24, p. 259"
+        }
+      ], 
+      "keywords": [
+        "Confederate States of America", 
+        "Fiscal policy", 
+        "Government spending"
+      ], 
+      "path": "data/ball1991_us_war_financing.csv", 
+      "schema": {
+        "fields": [
+          {
+            "type": "date", 
+            "id": "start_date", 
+            "description": "Start date"
+          }, 
+          {
+            "type": "date", 
+            "id": "end_date", 
+            "description": "End date"
+          }, 
+          {
+            "type": "number", 
+            "id": "war", 
+            "description": "War Department expenditures in millions\n\nFor periods Feb 18, 1862 and later, \"includes cumulative arrearages of $50 million\nin 1862; $100 million in 1863, $200 million in 1864, and $313 million in 1865\n"
+          }, 
+          {
+            "type": "number", 
+            "id": "navy", 
+            "description": "Navy Department expenditures in millions"
+          }, 
+          {
+            "type": "number", 
+            "id": "civil", 
+            "description": "Civil Department expenditures in millions"
+          }, 
+          {
+            "type": "number", 
+            "id": "public_debt", 
+            "description": "Public debt expenditures in millions\n\nExcludes cancellation of treasury notes funded into bonds; including interest on \nthe public debt and redemption of call certificates, due bonds, note issues, and the like.\n"
+          }, 
+          {
+            "type": "number", 
+            "id": "total", 
+            "description": "Total expenditures in millions"
+          }
+        ]
+      }, 
+      "name": "ball1991_confederate_expenditures"
+    }, 
+    {
       "source": "Burdekin and Langdana (1993), p. 367-368.", 
       "path": "data/burdekin_langdana_war.csv", 
       "description": "Confederate War News from Burdekin and Langdana (1993)\n\nThis is set to +1 for 1863Q3 after Chancellorsville and during Lee's\nMaryland campaign, -1 for 1862Q2 (Peninsula Campaign), 1863:4 (Gettysburg and Vicksburg) and 1864:1 (costly battle of Chickamagua).  Their guideline for constructing the dummy was Schwab (1901, ch 9) major 'crises of confidence' in Richmond. The dummy variable is set to 0 in 1864:2 and 1864:3 due to the stalled Overland and Petersburg campaigns and the nomination of McClellan. \n\nThese data extend the original data by setting it to -1 for 1864Q4 and 1865Q1 although the Burdekin and Langdana analysis stops in 1864Q3 due to a lack of data in other variables.\n", 
@@ -212,6 +273,45 @@
       }
     }, 
     {
+      "path": "data/godfrey1978_us_war_financing.csv", 
+      "sources": [
+        {
+          "name": "Godfrey, J.M. (1978) \"Monetary Expansion in the Confederacy\", p. 35"
+        }
+      ], 
+      "description": "Sources of financing of the Revolutionary War, War of 1812, and Civil War\n", 
+      "name": "godfrey1978_us_war_financing", 
+      "schema": {
+        "fields": [
+          {
+            "type": "string", 
+            "id": "war", 
+            "description": "War name"
+          }, 
+          {
+            "type": "number", 
+            "id": "taxes", 
+            "description": "Percentage of war financed by taxes"
+          }, 
+          {
+            "type": "currency", 
+            "id": "loans", 
+            "description": "Percentage of war financed by loans"
+          }, 
+          {
+            "type": "number", 
+            "id": "taxes", 
+            "description": "Percentage of war financed by currency issues"
+          }, 
+          {
+            "type": "number", 
+            "id": "taxes", 
+            "description": "Percentage of war financed by other means"
+          }
+        ]
+      }
+    }, 
+    {
       "path": "data/bond_metadata.json", 
       "description": "Bond Metadata\n\nContains issue dates, coupon periods, maturity, cashflow, etc. data about bond issues for which there is price data.\n\n- Many quoted price series may correspond to multiple bond similar issues. \n- Callable bonds (10-40s and 5-20s) have multiple entries, one for a potential call in each year.\n- Metadata on state bonds is rather scarce. \n  Sometimes a range of years is known; in which case, there is a bond issue for each year.\n  If no range is known, then a bond issue for each potential year is used (based on the empirical distribution of all bonds for which maturity years are known).\n\nThe data are an ``object``, with an \nEach bond issue is an ``object`` containting the following entries.\n\n- ``cashflows``: ``object``\n  - ``date``: ``array``. Date of cashflow. %Y-%m-%d.\n  - ``cashflows``: ``array``. amount of cashflow in gold dollars\n- ``interest``: ``number``. Annual interest rate\n- ``periods``: ``array``. Each entry is an ``object`` with keys ``month`` and ``day`` for the month and day of a periodic payment.\n- ``issue_date``: Date of issue. %Y-%m-%d.\n- ``maturity_date``: Date of maturity. %Y-%m-%d.\n- ``call``: For callable bonds, ``TRUE`` if a date before maturity, ``FALSE`` if maturity.\n", 
       "name": "bond_metadata", 
@@ -257,6 +357,66 @@
             "type": "number", 
             "id": "price_gold", 
             "description": "Price of bond in gold dollars"
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "data/auction_18610322.csv", 
+      "sources": [
+        {
+          "url": "https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1861_2.pdf", 
+          "name": "U. S. Department of the Treasury, (1861) \"Annual Report of the Secretary of the Treasury on the State of the Finances, July 4, 1861\"."
+        }
+      ], 
+      "description": "Bid level data from the Auction of the Sixes of 1881 from the notice of March 22, 1861.\n", 
+      "name": "auction_18610322", 
+      "schema": {
+        "fields": [
+          {
+            "type": "number", 
+            "id": "page", 
+            "description": "Source page number of the observation"
+          }, 
+          {
+            "type": "number", 
+            "id": "bid_number", 
+            "description": "Bid number. Bids can consist of multiple amounts and values"
+          }, 
+          {
+            "type": "string", 
+            "id": "name", 
+            "description": "Name of the bidder"
+          }, 
+          {
+            "type": "string", 
+            "id": "residence", 
+            "description": "Location of residence of the bidder"
+          }, 
+          {
+            "type": "number", 
+            "id": "amount", 
+            "description": "Amount of the bid in dollars."
+          }, 
+          {
+            "type": "number", 
+            "id": "value", 
+            "description": "Value of the bid in dollars. Par = 100."
+          }, 
+          {
+            "type": "number", 
+            "id": "accepted", 
+            "description": "Total amount of bids accepted"
+          }, 
+          {
+            "type": "number", 
+            "id": "rejected", 
+            "description": "Total amount of bids rejected"
+          }, 
+          {
+            "type": "boolean", 
+            "id": "errors", 
+            "description": "Error in the original data"
           }
         ]
       }
@@ -458,6 +618,66 @@
             "type": "boolean", 
             "id": "good", 
             "description": "If true, then the event was good for the Union (rise in the price of currency in gold)"
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "bankers_magazine_govt_bonds_quotes_in_text.yaml", 
+      "sources": [
+        {
+          "url": "https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1861_2.pdf", 
+          "name": "U. S. Department of the Treasury, (1861) \"Annual Report of the Secretary of the Treasury on the State of the Finances, July 4, 1861\"."
+        }
+      ], 
+      "description": "Bid level data from the Auction of the Sixes of 1881 from the notice of February 13, 1861\n", 
+      "name": "auction_18610213", 
+      "schema": {
+        "fields": [
+          {
+            "type": "number", 
+            "id": "page", 
+            "description": "Source page number of the observation"
+          }, 
+          {
+            "type": "number", 
+            "id": "bid_number", 
+            "description": "Bid number. Bids can consist of multiple amounts and values"
+          }, 
+          {
+            "type": "string", 
+            "id": "name", 
+            "description": "Name of the bidder"
+          }, 
+          {
+            "type": "string", 
+            "id": "residence", 
+            "description": "Location of residence of the bidder"
+          }, 
+          {
+            "type": "number", 
+            "id": "amount", 
+            "description": "Amount of the bid in dollars."
+          }, 
+          {
+            "type": "number", 
+            "id": "value", 
+            "description": "Value of the bid in dollars. Par = 100."
+          }, 
+          {
+            "type": "number", 
+            "id": "accepted", 
+            "description": "Total amount of bids accepted"
+          }, 
+          {
+            "type": "number", 
+            "id": "rejected", 
+            "description": "Total amount of bids rejected"
+          }, 
+          {
+            "type": "boolean", 
+            "id": "errors", 
+            "description": "Error in the original data"
           }
         ]
       }

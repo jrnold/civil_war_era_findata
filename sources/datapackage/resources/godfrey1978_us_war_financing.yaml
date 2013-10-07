@@ -1,0 +1,24 @@
+path: data/godfrey1978_us_war_financing.csv
+description: |
+  Sources of financing of the Revolutionary War, War of 1812, and Civil War
+
+sources: 
+  - name: "Godfrey, J.M. (1978) \"Monetary Expansion in the Confederacy\", p. 35"
+schema:
+  fields:
+    - id: war
+      type: string
+      description: "War name"
+    - id: taxes
+      type: number
+      description: "Percentage of war financed by taxes"
+    - id: loans
+      type: currency
+      description: "Percentage of war financed by loans"
+    - id: taxes
+      type: number
+      description: "Percentage of war financed by currency issues"
+    - id: taxes
+      type: number
+      description: "Percentage of war financed by other means"
+  

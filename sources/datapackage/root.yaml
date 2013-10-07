@@ -1,5 +1,5 @@
 "name": "civil_war_era_findata"
-"version": "3.1.0"
+"version": "3.2.0"
 "title": "Civil War (US) Era Financial Market Data"
 "description": "Miscellaneous financial and economic data from the during the U.S. Civil War\n\nThis is by no means a complete collection of available data, but consists of some datasets that I found or collected for my own research."
 "licenses":
@@ -27,4 +27,4 @@
     web: "http://journals.cambridge.org/article_S0022050700019100"
   - name: "U. S. Department of the Treasury, (1861) \"Annual Report of the Secretary of the Treasury on the State of the Finances, July 4, 1861\"."
     url: "https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1861_2.pdf"
-
+  - name: "Godfrey, J.M. (1978) \"Monetary Expansion in the Confederacy\""

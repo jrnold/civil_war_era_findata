@@ -1,0 +1,47 @@
+path: data/ball1991_us_war_financing.csv
+description: |
+  Confederate Expenditures
+
+  In Ball (1991), this is Table 24. "Confederate Expenditures".
+  The original note to the table:
+  
+     Sources: Raphael P. Thian, Reports of the Secretary of the Secretary of the Treasury of the
+     Confederate States of America 1861-1865 (Washington, D.C.: Privately published, 1878),
+     Reports dated March 14, 1862, January 10, 1862, April 11, 1863, May 2, 1864, November 7,
+     1864, pp. 61, 99, 177, 257, 353.
+
+keywords: ["Confederate States of America", "Fiscal policy", "Government spending"]
+sources: 
+  - name: "Ball, Douglas, 1991. \"Financial Failure and Confederate Defeat.\" University of Illinois Press. ISBN: 9780252017551, Table 24, p. 259"
+schema:
+  fields:
+    - id: start_date
+      type: date
+      description: "Start date"
+    - id: end_date
+      type: date
+      description: "End date"
+    - id: war
+      type: number
+      description: |
+        War Department expenditures in millions
+
+        For periods Feb 18, 1862 and later, "includes cumulative arrearages of $50 million
+        in 1862; $100 million in 1863, $200 million in 1864, and $313 million in 1865
+    - id: navy
+      type: number
+      description: "Navy Department expenditures in millions"
+    - id: civil
+      type: number
+      description: "Civil Department expenditures in millions"
+    - id: public_debt
+      type: number
+      description: |
+        Public debt expenditures in millions
+        
+        Excludes cancellation of treasury notes funded into bonds; including interest on 
+        the public debt and redemption of call certificates, due bonds, note issues, and the like.
+    - id: total
+      type: number
+      description: "Total expenditures in millions"
+
