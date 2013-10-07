@@ -25,4 +25,6 @@
     web: "http://www.jstor.org/stable/2118219"
   - name: "Gregor W. Smith and R. Todd Smith (1997). Greenback-Gold Returns and Expectations of Resumption, 1862-1879. The Journal of Economic History, 57, pp 697-717. doi:10.1017/S0022050700019100."
     web: "http://journals.cambridge.org/article_S0022050700019100"
+  - name: "U. S. Department of the Treasury, (1861) \"Annual Report of the Secretary of the Treasury on the State of the Finances, July 4, 1861\"."
+    url: "https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1861_2.pdf"
 

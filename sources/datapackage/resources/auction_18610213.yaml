@@ -1,0 +1,36 @@
+path: "bankers_magazine_govt_bonds_quotes_in_text.yaml"
+description: |
+  Bid level data from the Auction of the Sixes of 1881 from the notice of February 13, 1861
+sources: 
+  - name: "U. S. Department of the Treasury, (1861) \"Annual Report of the Secretary of the Treasury on the State of the Finances, July 4, 1861\"."
+    url: "https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1861_2.pdf"
+schema:
+  fields:
+    - id: page
+      type: number
+      description: "Source page number of the observation"
+    - id: bid_number
+      type: number
+      description: "Bid number. Bids can consist of multiple amounts and values"
+    - id: name
+      type: string
+      description: "Name of the bidder"
+    - id: residence
+      type: string
+      description: "Location of residence of the bidder"
+    - id: amount
+      type: number
+      description: "Amount of the bid in dollars."
+    - id: value
+      type: number
+      description: "Value of the bid in dollars. Par = 100."
+    - id: accepted
+      type: number
+      description: "Total amount of bids accepted"
+    - id: rejected
+      type: number
+      description: "Total amount of bids rejected"
+    - id: errors
+      type: boolean
+      description: "Error in the original data"
+      

@@ -9,8 +9,10 @@ Welcome to Civil-War Era Financial Data's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
+   :glob: 
 
+   pages/*.rst
 
 
 Indices and tables
