@@ -1,0 +1,32 @@
+path: data/dewey1918_deficit_1862_1865.csv
+description: |
+  United States receipts and expenditures, 1862-1865
+
+  Table on page 330 of Dewey (1918)
+
+sources:
+  - name: "Dewy, Davis Rich (1918), \"Financial History of the United States\", p. 330"
+    url: "http://books.google.com/books?id=l3oaAAAAMAAJ&pg=PA330"
+  
+schema:
+  fields:
+    - id: year
+      type: number
+      description: "Year"
+    - id: receipts_taxes
+      type: number
+      description: "Receipts in taxes (millions of dollars)"
+    - id: receipts_miscellanoues
+      type: number
+      description: "Receipts, miscellanoues (including sales of public land) (millions of dollars)"
+    - id: receipts_total
+      type: number
+      description: "Receipts, total (millions of dollars)"
+    - id: expenditures
+      type: number
+      description: "Expenditures (millions of dollars)"
+    - id: deficit
+      type: number
+      description: "Deficit (millions of dollars)"
+  
+  

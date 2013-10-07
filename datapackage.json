@@ -50,7 +50,7 @@
     }
   ], 
   "version": "3.2.0", 
-  "last_modified": "2013-10-06T22:56:48.698190", 
+  "last_modified": "2013-10-06T23:28:24.143919", 
   "licenses": [
     {
       "url": "http://opendatacommons.org/licenses/by/", 
@@ -417,6 +417,51 @@
             "type": "boolean", 
             "id": "errors", 
             "description": "Error in the original data"
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "data/dewey1918_expenditures_1862_1865.csv", 
+      "sources": [
+        {
+          "url": "http://books.google.com/books?id=l3oaAAAAMAAJ", 
+          "name": "Dewy, Davis Rich (1918), \"Financial History of the United States\", p. 329"
+        }
+      ], 
+      "description": "United States expenditures 1862-1865\n\nTable on page 329 of Dewey (1918)\n", 
+      "name": "dewey1918_expenditures_1862_1865", 
+      "schema": {
+        "fields": [
+          {
+            "type": "number", 
+            "id": "year", 
+            "description": "year"
+          }, 
+          {
+            "type": "number", 
+            "id": "war", 
+            "description": "War department expenditures (millions of dollars)"
+          }, 
+          {
+            "type": "number", 
+            "id": "navy", 
+            "description": "Navy department expenditures (millions of dollars)"
+          }, 
+          {
+            "type": "number", 
+            "id": "miscellaneous", 
+            "description": "Miscellaneous expenditures, including Indians and Pensions (millions of dollars)"
+          }, 
+          {
+            "type": "number", 
+            "id": "interest", 
+            "description": "Interest expenditures (millions of dollars)"
+          }, 
+          {
+            "type": "number", 
+            "id": "total", 
+            "description": "Total expenditures (millions of dollars)"
           }
         ]
       }
@@ -889,6 +934,51 @@
             "type": "number", 
             "id": "mean", 
             "description": "Daily mean price (gold dollars per 100 greenbacks)\n\nThe mean is calculated as exp(0.5 * (log(low) + log(high)))\n"
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "data/dewey1918_deficit_1862_1865.csv", 
+      "sources": [
+        {
+          "url": "http://books.google.com/books?id=l3oaAAAAMAAJ&pg=PA330", 
+          "name": "Dewy, Davis Rich (1918), \"Financial History of the United States\", p. 330"
+        }
+      ], 
+      "description": "United States receipts and expenditures, 1862-1865\n\nTable on page 330 of Dewey (1918)\n", 
+      "name": "dewey1918_deficit_1862_1865", 
+      "schema": {
+        "fields": [
+          {
+            "type": "number", 
+            "id": "year", 
+            "description": "Year"
+          }, 
+          {
+            "type": "number", 
+            "id": "receipts_taxes", 
+            "description": "Receipts in taxes (millions of dollars)"
+          }, 
+          {
+            "type": "number", 
+            "id": "receipts_miscellanoues", 
+            "description": "Receipts, miscellanoues (including sales of public land) (millions of dollars)"
+          }, 
+          {
+            "type": "number", 
+            "id": "receipts_total", 
+            "description": "Receipts, total (millions of dollars)"
+          }, 
+          {
+            "type": "number", 
+            "id": "expenditures", 
+            "description": "Expenditures (millions of dollars)"
+          }, 
+          {
+            "type": "number", 
+            "id": "deficit", 
+            "description": "Deficit (millions of dollars)"
           }
         ]
       }

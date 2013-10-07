@@ -1,0 +1,32 @@
+path: data/dewey1918_expenditures_1862_1865.csv
+description: |
+  United States expenditures 1862-1865
+
+  Table on page 329 of Dewey (1918)
+
+sources:
+  - name: "Dewy, Davis Rich (1918), \"Financial History of the United States\", p. 329"
+    url: http://books.google.com/books?id=l3oaAAAAMAAJ
+  
+schema:
+  fields:
+    - id: year
+      type: number
+      description: year
+    - id: war
+      type: number
+      description: "War department expenditures (millions of dollars)"
+    - id: navy
+      type: number
+      description: "Navy department expenditures (millions of dollars)"
+    - id: miscellaneous
+      type: number
+      description: "Miscellaneous expenditures, including Indians and Pensions (millions of dollars)"
+    - id: interest
+      type: number
+      description: "Interest expenditures (millions of dollars)"
+    - id: total
+      type: number
+      description: "Total expenditures (millions of dollars)"
+  
+  
