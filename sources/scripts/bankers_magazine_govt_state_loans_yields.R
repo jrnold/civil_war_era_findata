@@ -231,7 +231,7 @@ FUN <- function(series, date, price_gold, price_paper, ..., METADATA, MATCH_BOND
     mdply(bonds, FUN2, METADATA=bond_metadata)
 }
 
-fields <- c("series", "date", "bond", "price_paper_dirty", "price_gold_dirty",
+fields <- c("series", "date", "bond", "wgt", "price_paper_dirty", "price_gold_dirty",
             "price_paper_clean", "price_gold_clean", "accrued", "current_yield",
             "yield", "maturity", "duration")
 

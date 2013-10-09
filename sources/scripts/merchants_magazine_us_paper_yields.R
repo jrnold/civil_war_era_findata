@@ -10,7 +10,6 @@ bond_metadata_file <- sysargs[2]
 outfile <- sysargs[3]
 
 source("sources/scripts/R/finance.R")
-
 #' Load prerequisite data
 merchants <- mutate(read.csv(merchants_file),
                   date = as.Date(date, "%Y-%m-%d"))
@@ -158,6 +157,7 @@ oneyr_old1 <-
                   & date < as.Date("1863-3-3"),
                   c(series, date, price_paper, price_gold)),
            bond = "us_one_year_notes_1863",
+           wgt = 1,
            price_paper_dirty = price_paper,
            price_gold_dirty = price_gold,
            price_paper = NULL,
@@ -175,6 +175,7 @@ oneyr_old2 <-
                   & date >= as.Date("1863-3-3"),
                   c(series, date, price_paper, price_gold)),
            bond = "us_one_year_notes_1863",
+           wgt = 1,
            price_paper_dirty = price_paper,
            price_gold_dirty = price_gold,
            price_paper = NULL,
@@ -191,6 +192,7 @@ oneyr_new <-
     mutate(subset(merchants, series == "oneyr_new",
                   c(series, date, price_paper, price_gold)),
            bond = "us_one_year_notes_1863",
+           wgt = 1,
            price_paper_dirty = price_paper,
            price_gold_dirty = price_gold,
            price_paper = NULL,
@@ -217,7 +219,8 @@ coupons <- mdply(subset(merchants,
                  FUN, METADATA = bond_metadata,
                 MATCH_BONDS=MATCH_BONDS)
 
-fields <- c("series", "date", "bond", "price_paper_dirty", "price_gold_dirty",
+fields <- c("series", "date", "bond", "wgt",
+            "price_paper_dirty", "price_gold_dirty",
             "price_paper_clean", "price_gold_clean", "accrued", "current_yield",
             "yield", "maturity", "duration")
 yields <- rbind.fill(coupons,

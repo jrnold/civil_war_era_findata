@@ -49,8 +49,8 @@
       "email": "jeffrey.arnold@gmail.com"
     }
   ], 
-  "version": "3.3.0", 
-  "last_modified": "2013-10-06T23:31:40.477158", 
+  "version": "4.0.0", 
+  "last_modified": "2013-10-09T14:18:28.303772", 
   "licenses": [
     {
       "url": "http://opendatacommons.org/licenses/by/", 
@@ -156,6 +156,80 @@
       }
     }, 
     {
+      "path": "data/bankers_magazine_state_govt_loans_yields.csv", 
+      "description": "Yield data for U.S. government and state bonds 1855-1865.\n\nFor the price series listed in ``bankers_magazine_state_govt_loans``, calculate clean and dirty prices, accrued interest, yields, duration, and maturity.\n\nThe price quotations in the original source do not uniquely match a bond issue, so each price series may be matched to multiple bonds.\n", 
+      "name": "merchants_magazine_us_paper_yields", 
+      "schema": {
+        "fields": [
+          {
+            "type": "string", 
+            "id": "series", 
+            "description": "Name of the price series"
+          }, 
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date of the price"
+          }, 
+          {
+            "type": "string", 
+            "id": "bond", 
+            "description": "Name of the bond"
+          }, 
+          {
+            "type": "number", 
+            "id": "wgt", 
+            "description": "Weight to apply to each bond in the series. \n\nFor ``five_twenty`` and ``ten_forty`` these are 1 / n for all possible redemption years between \nthe possible du\n\nFor other series with multiple bonds, the weight is equal to the proportion of that bond in terms\nof dollars to all other bonds matching that series.\nThis method is especially suspect for ``seven_thirties``.\n"
+          }, 
+          {
+            "type": "number", 
+            "id": "price_paper_dirty", 
+            "description": "Dirty price of bond in paper dollars. Face value = 100"
+          }, 
+          {
+            "type": "number", 
+            "id": "price_gold_dirty", 
+            "description": "Dirty price of bond in gold dollars"
+          }, 
+          {
+            "type": "number", 
+            "id": "price_paper_clean", 
+            "description": "Clean price of bond in gold dollars"
+          }, 
+          {
+            "type": "number", 
+            "id": "price_gold_clean", 
+            "description": "Clean price of bond in gold dollars"
+          }, 
+          {
+            "type": "number", 
+            "id": "accrued", 
+            "description": "Accrued interest in gold dollars"
+          }, 
+          {
+            "type": "number", 
+            "id": "current_yield", 
+            "description": "Current yield"
+          }, 
+          {
+            "type": "number", 
+            "id": "yield", 
+            "description": "Yield to maturity\n\nThe yields produced for ``seven_thirties`` and ``oneyr_old`` bonds is suspect and should not be trusted.\n"
+          }, 
+          {
+            "type": "number", 
+            "id": "maturity", 
+            "description": "Maturity in years"
+          }, 
+          {
+            "type": "number", 
+            "id": "duration", 
+            "description": "Macualay (modified) duration"
+          }
+        ]
+      }
+    }, 
+    {
       "description": "Confederate Expenditures\n\nIn Ball (1991), this is Table 24. \"Confederate Expenditures\".\nThe original note to the table:\n\n   Sources: Raphael P. Thian, Reports of the Secretary of the Secretary of the Treasury of the\n   Confederate States of America 1861-1865 (Washington, D.C.: Privately published, 1878),\n   Reports dated March 14, 1862, January 10, 1862, April 11, 1863, May 2, 1864, November 7,\n   1864, pp. 61, 99, 177, 257, 353.\n", 
       "sources": [
         {
@@ -228,6 +302,80 @@
             "type": "integer", 
             "id": "war", 
             "description": "Equal to -1 if the war trend is favoring the Union, +1 if it favoring the Confederacy, and 0 otherwise."
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "data/merchants_magazine_state_govt_loans_yields.csv", 
+      "description": "Yield data for U.S. government and state bonds 1855-1865 (price series level)\n\nPrices quoted in the *Merchant's Magazine* can correspond to multiple bond issues.\n``merchants_magazine_state_govt_loans_yields`` shows yields, maturity, etc. for all\nbonds associated with a price series.\nThis table aggregates back to the price series level, by taking the weighted mean (using ``wgt``)\nfor each numerical column.\n", 
+      "name": "merchants_magazine_us_paper_yields_2", 
+      "schema": {
+        "fields": [
+          {
+            "type": "string", 
+            "id": "series", 
+            "description": "Name of the price series"
+          }, 
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date of the price"
+          }, 
+          {
+            "type": "string", 
+            "id": "bond", 
+            "description": "Name of the bond"
+          }, 
+          {
+            "type": "number", 
+            "id": "wgt", 
+            "description": "Weight to apply to each bond in the series. \n\nFor ``five_twenty`` and ``ten_forty`` these are 1 / n for all possible redemption years between \nthe possible du\n\nFor other series with multiple bonds, the weight is equal to the proportion of that bond in terms\nof dollars to all other bonds matching that series.\nThis method is especially suspect for ``seven_thirties``.\n"
+          }, 
+          {
+            "type": "number", 
+            "id": "price_paper_dirty", 
+            "description": "Dirty price of bond in paper dollars. Face value = 100"
+          }, 
+          {
+            "type": "number", 
+            "id": "price_gold_dirty", 
+            "description": "Dirty price of bond in gold dollars"
+          }, 
+          {
+            "type": "number", 
+            "id": "price_paper_clean", 
+            "description": "Clean price of bond in gold dollars"
+          }, 
+          {
+            "type": "number", 
+            "id": "price_gold_clean", 
+            "description": "Clean price of bond in gold dollars"
+          }, 
+          {
+            "type": "number", 
+            "id": "accrued", 
+            "description": "Accrued interest in gold dollars"
+          }, 
+          {
+            "type": "number", 
+            "id": "current_yield", 
+            "description": "Current yield"
+          }, 
+          {
+            "type": "number", 
+            "id": "yield", 
+            "description": "Yield to maturity\n\nThe yields produced for ``seven_thirties`` and ``oneyr_old`` bonds is suspect and should not be trusted.\n"
+          }, 
+          {
+            "type": "number", 
+            "id": "maturity", 
+            "description": "Maturity in years"
+          }, 
+          {
+            "type": "number", 
+            "id": "duration", 
+            "description": "Macualay (modified) duration"
           }
         ]
       }

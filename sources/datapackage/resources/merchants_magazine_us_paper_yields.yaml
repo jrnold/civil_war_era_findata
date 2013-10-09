@@ -1,0 +1,61 @@
+path: "data/bankers_magazine_state_govt_loans_yields.csv"
+description: |
+  Yield data for U.S. government and state bonds 1855-1865.
+
+  For the price series listed in ``bankers_magazine_state_govt_loans``, calculate clean and dirty prices, accrued interest, yields, duration, and maturity.
+
+  The price quotations in the original source do not uniquely match a bond issue, so each price series may be matched to multiple bonds.
+
+schema:
+  fields:
+    - id: series
+      type: string
+      description: Name of the price series
+    - id: date
+      type: date
+      description: Date of the price
+    - id: bond
+      type: string
+      description: Name of the bond
+    - id: wgt
+      type: number
+      description: |
+        Weight to apply to each bond in the series. 
+
+        For ``five_twenty`` and ``ten_forty`` these are 1 / n for all possible redemption years between 
+        the possible du
+
+        For other series with multiple bonds, the weight is equal to the proportion of that bond in terms
+        of dollars to all other bonds matching that series.
+        This method is especially suspect for ``seven_thirties``.
+        
+    - id: price_paper_dirty
+      type: number
+      description: "Dirty price of bond in paper dollars. Face value = 100"
+    - id: price_gold_dirty
+      type: number
+      description: "Dirty price of bond in gold dollars"
+    - id: price_paper_clean
+      type: number
+      description: "Clean price of bond in gold dollars"
+    - id: price_gold_clean
+      type: number
+      description: "Clean price of bond in gold dollars"
+    - id: accrued
+      type: number
+      description: "Accrued interest in gold dollars"
+    - id: current_yield
+      type: number
+      description: "Current yield"
+    - id: yield
+      type: number
+      description: |
+        Yield to maturity
+      
+        The yields produced for ``seven_thirties`` and ``oneyr_old`` bonds is suspect and should not be trusted.
+    - id: maturity
+      type: number
+      description: "Maturity in years"
+    - id: duration
+      type: number
+      description: "Macualay (modified) duration"

@@ -474,13 +474,9 @@ coupons$georgia_six_18720701 <-
 #'
 #' Assume date of 1879 as in Davis and Pecquet (1990)
 
-NULL
-
 #' Petersburg
 #' -------------
 #'
 #' Don't have a date, so assume the same date at Richmond.
 
-NULL
-
-cat(toJSON(coupons, asIs = FALSE), file = outfile)
+cat(toJSON(coupons, asIs = FALSE), "\n", file = outfile)
