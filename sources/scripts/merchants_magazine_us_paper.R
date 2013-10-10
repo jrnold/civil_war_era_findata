@@ -2,6 +2,8 @@
 #'
 #' Adds price in gold. Gold prices come from ``greenbacks_fill``.
 library(plyr)
+source("sources/scripts/R/misc.R")
+
 args <- commandArgs(TRUE)
 src <- args[1]
 dst <- args[2]
@@ -20,4 +22,4 @@ merchants <- mutate(merchants,
                   price_paper = value,
                   price_gold = price_paper / gold,
                   value = NULL, gold = NULL)
-write.csv(merchants, file = dst, row.names = FALSE)
+write.csv2(merchants, file = dst)

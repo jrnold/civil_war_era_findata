@@ -1,15 +1,13 @@
 library("plyr")
 library("reshape2")
 library("RJSONIO")
-library("doMC")
-registerDoMC()
+source("sources/scripts/R/finance.R")
+source("sources/scripts/R/misc.R")
 
 sysargs <- commandArgs(TRUE)
 bankers_file <- sysargs[1]
 bond_metadata_file <- sysargs[2]
 outfile <- sysargs[3]
-
-source("sources/scripts/R/finance.R")
 
 #' Load prerequisite data
 bankers <- mutate(read.csv(bankers_file),
@@ -177,7 +175,6 @@ accrued_interest <- function(cashflows, issue_date, ncoupons, interest, date, fa
     factor <- difftime_30_360(date, lastcoupon) / 360
     (factor * interest * face)
 }
-
 #' # Generate Yields
 FUN2 <- function(bond, date, price_gold_dirty, price_paper_dirty, series, ..., METADATA) {
     bond <- as.character(bond)
@@ -238,4 +235,4 @@ fields <- c("series", "date", "bond", "wgt", "price_paper_dirty", "price_gold_di
 yields <- mdply(bankers, FUN, METADATA = bond_metadata, MATCH_BONDS=MATCH_BONDS,
                 .parallel = TRUE)
 yields <- arrange(yields, series, date, bond)
-write.csv(yields[ , fields], file = outfile, row.names = FALSE, na="")
+write.csv2(yields[ , fields], file = outfile)

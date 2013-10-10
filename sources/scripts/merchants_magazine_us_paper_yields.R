@@ -1,15 +1,14 @@
 library("plyr")
 library("reshape2")
 library("RJSONIO")
-library("doMC")
-registerDoMC()
+source("sources/scripts/R/misc.R")
+source("sources/scripts/R/finance.R")
 
 sysargs <- commandArgs(TRUE)
 merchants_file <- sysargs[1]
 bond_metadata_file <- sysargs[2]
 outfile <- sysargs[3]
 
-source("sources/scripts/R/finance.R")
 #' Load prerequisite data
 merchants <- mutate(read.csv(merchants_file),
                   date = as.Date(date, "%Y-%m-%d"))
@@ -227,5 +226,4 @@ yields <- rbind.fill(coupons,
                      oneyr_new, oneyr_old1, oneyr_old2)
 
 yields <- arrange(yields, series, date, bond)
-write.csv(yields[ , fields], file = outfile,
-          row.names = FALSE, na="")
+write.csv2(yields[ , fields], file = outfile)

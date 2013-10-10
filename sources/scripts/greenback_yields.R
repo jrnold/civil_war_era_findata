@@ -1,7 +1,8 @@
 #' Yields on Greenbacks held until 1879-1-1
 library("plyr")
-args <- commandArgs(TRUE)
+source("sources/scripts/R/misc.R")
 
+args <- commandArgs(TRUE)
 infile <- "data/greenbacks.csv"
 infile <- args[1]
 outfile <- args[2]
@@ -19,4 +20,4 @@ greenback_yields <-
            high = - log(high / 100) / maturity,
            mean = - log(mean / 100) / maturity)
 
-write.csv(greenback_yields, file = outfile, row.names = FALSE)
+write.csv2(greenback_yields, file = outfile)

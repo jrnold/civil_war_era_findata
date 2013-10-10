@@ -2,8 +2,9 @@
 #'
 #' Uses greenback data from ``greeenbacks``. Fills in missing
 #' data using the smoothed values of a ``StructTS`` local level model.
-source("sources/scripts/R/finance.R")
 library(plyr)
+source("sources/scripts/R/finance.R")
+source("sources/scripts/R/misc.R")
 
 args <- commandArgs(TRUE)
 src <- args[1]
@@ -15,4 +16,4 @@ greenbacks <-
          low = exp(ts_interpolate(log(low), "trend")),
          high = exp(ts_interpolate(log(high), "trend")))
 greenbacks$comment <- NULL
-write.csv(greenbacks, file=dst, row.names=FALSE)
+write.csv(greenbacks, file=dst)
