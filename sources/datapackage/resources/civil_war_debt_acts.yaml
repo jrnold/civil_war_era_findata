@@ -1,0 +1,22 @@
+path: data/civil_war_debt_acts.csv
+description: |
+  List of acts to issue debt to fund the Civil War.
+sources:
+  - name: "United States. Dept. of the Treasury, (1866), Annual Report of the Secretary of the Treasury on the State of the Finances, December 3, 1866"
+    url: http://fraser.stlouisfed.org/publication/?pid=194
+schema:
+  fields:
+    - id: act
+      type: string
+      description: "Name of the act"
+    - id: date
+      type: date  
+      description: "Date the act was approved"
+    - id: interest
+      type: number
+      description: |
+        Authorized increase in interest-bearing debt in (millions of dollars).
+    - id: non_interest
+      type: number
+      description: |
+        Authorized increase in non-interest bearing debt in (millions of dollars).

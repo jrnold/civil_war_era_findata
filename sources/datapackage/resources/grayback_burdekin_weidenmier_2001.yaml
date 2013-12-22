@@ -1,0 +1,29 @@
+path: "data/grayback_burdekin_weidenmier_2001.csv"
+description: |
+  Price of gold in Confederate Dollars from Burdekin and Weidenmier (2001)
+
+  Biweekly series of the price of a gold dollar in
+  Confederate paper dollars in Richmond and Houston, from `Eh.net
+  Biweekly Data on the Confederate Note Price of a Gold Dollar in
+  Richmond and Houston
+  <http://eh.net/files/databases/weidenmier.finance.confederacy.us.goldata.xls>`_
+  and used in [BurdekinWeidenmier2001]_.
+
+sources:
+  - name: |
+      Weidenmier, Marc D., 2002. "Turning Points in the U. S. Civil War: Views from the Grayback Market", Southern Economic Journal
+    url: http://www.jstor.org/stable/1061497.
+schema:
+  fields:
+    - id: date
+      type: date
+      description: Date
+    - id: richmond
+      type: number
+      description: Price of gold in Confederate dollars in Richmond
+    - id: houston_old
+      type: number
+      description: Price of gold in Confederate dollars in Houston (old series)
+    - id: houston_new
+      type: number
+      description: Price of gold in Confederate dollars in Houston (new series)

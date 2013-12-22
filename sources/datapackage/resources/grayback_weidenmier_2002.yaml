@@ -1,0 +1,74 @@
+path: "data/grayback_weidenmier_2002.csv"
+description: |
+    Price of gold in Confederate Dollars (Graybacks) from Weidenmier (2002)
+
+    This price series is from the same sources as `grayback_weidenmier_2`,
+    but only includes Richmond prices, is higher frequency (weekly rather
+    than biweekly), and includes a longer range of dates. 
+
+    From Weidenmier (2002), p. 878
+
+       An extensive search of more than a dozen newspapers yielded a
+       series of 486 grayback prices from public auctions and private
+       brokerage trades in Richmond between May 27, 1861, and February 15,
+       1865.
+
+    From Weidenmier (2002), footnote 2, p. 878
+
+        All quotes are taken from Richmond except during some
+        stretches in the summer and fall of 1864 when Richmond
+        newspapers stopped reporting money prices. These periods are
+        filled in by gold price quotations from the nearby Wilmington,
+        North Carolina, money market, whose prices were often quoted
+        in the Richmond newspapers.  Newspapers from Petersburg, North
+        Carolina, Virginia,Mobile, Alabama, Wilmington, Virginia,
+        Raleigh, North Carolina, Lynchburg, Augusta, Georgia,
+        Columbus, Georgia, and Charleston, South Carolina, were also
+        examined for price quotes from the Richmond market(see
+        Appendix).Often, these papers would quote trades not reported
+        in the Richmond newspapers.  In addition, secondary markets
+        existed in most of these cities, although these gold exchanges
+        tended to be considerably less liquid than the Richmond
+        market.
+
+    From Weidenmier (2002), p. 890,
+
+        Grayback/gold price quotations were taken from the following
+        newspapers:Richmond Dispatch, Richmond Examiner, Richmond
+        Whig, Richmond Enquirer, Petersburg Express,
+        Wilmington Journal, Columbus Daily-Sun,
+        Charleston Mercury,Lynchburg Virginian,and the Mobile
+        Tribune.Richmondgrayback/gold price quotations were also
+        cross-checked against prices in the Raleigh, Augusta,and Mobile
+        gold markets using the following newspapers: Raleigh
+        Weekly Register, Mobile Tribune,Mobile Advertiser and Register,
+        and Augusta Daily Constitutionalist.  
+
+sources:
+  - name: |
+      Weidenmier, Marc D., 2002. "Turning Points in the U. S. Civil War: Views from the Grayback Market", Southern Economic Journal.
+    url: http://www.jstor.org/stable/1061497.
+schema:
+  fields:
+    - id: date
+      type: date
+      description: Date
+    - id: price
+      type: number
+      description: Price of gold in Confederate dollars in Richmond
+    - id: wilmington
+      type: boolean
+      description: |
+        Prices were not reported in the Richmond newspapers for these
+        particular dates. The gaps were filled in with grayback/ gold
+        price quotations from the Wilmington,North Carolina,money
+        market.All Wilmington gold prices quotations are taken from the
+        Wilmington Daily Journal.
+    - id: imputed
+      type: boolean
+      description: |
+        Grayback/gold price quotations were unavailable for these
+        particular weeks. The grayback price of gold has been for dates
+        assuming a constant price from the last available trade.
+        interpolated these particular 
+    

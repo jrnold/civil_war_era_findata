@@ -1,0 +1,66 @@
+path: "data/confederate_bonds.csv"
+description: |
+  Confederate interest rates 1861-1865
+
+  Interest rates from Table 2 in Davis and Pecquet (1990).
+
+  The note from the original data  (p. 147) reads
+
+    Five price series form the basis for the calculations used in this article. The five series
+    are the Confederate dollar prices of a gold dollar; bonds from the $100 million loan;
+    bonds from the $15 million loan; Virginia state bonds; and Richmond city bonds. The
+    data come from market reports in Richmond newspapers, including the Richmond
+    Whig, the Richmond Sentinel, the Richmond Enquirer, and the Richmond Dispatch. We
+    also have some quotations for railroad bonds from these papers. The data for the
+    summer months of 1864 come from the Wilmington Journal of Wilmington, NC, due to
+    a lack of bond price quotations in the Richmond market. The bond quotations were
+    taken from reports as near as possible to mid-month. Gold price quotations were taken
+    nearest the date of bond quotation from the $100 million loan. When a range was given
+    we took the upper bound for the long-term rate, and when more than one quote was
+    available on a particular maturity date or on gold an average was taken. The gold prices
+    for two dates-August 1863 and October 1864-were obtained by interpolation using
+    data from Richard Todd as a guide.
+
+    In order to calculate yields to maturity it is necessary to have a maturity date. The day
+    and month of maturity were not known for any issue so we used mid-year, July 1. The
+    $15 million loan matured in 1871. There were various maturity dates for the other issues.
+    For the $100 million loan there were many maturity dates. When maturity dates were
+    reported we used the issues that matured in 1881, or the year nearest to that date
+    because it was the most often reported. For about the first year and a half of the period
+    under study the maturity dates on bonds from the $100 million loan were unspecified.
+    We took this to mean that the yield curve was flat and so used 1881 as the maturity date.
+    The maturity date was seldom given for the Virginia state and Richmond city bonds, so
+    we chose the year 1887. In that year some bonds did mature, and it was roughly the
+    average maturity date for the dated long-term issues that we do have. Some experimen-
+    tation with alternative dates revealed that the arguments and conclusions of the text are
+    not sensitive to different maturity dates.
+
+    The actual market date was used in the calculation of the yield to maturity. All of the
+    raw data are available on request from the authors. The data used to construct the
+    diagrams are presented in Table 2.
+sources:
+  - name: "Davis, George K. and Gary M. Pecquet, \"Interest Rates in the Civil War South\", *The Journal of Economic History*, 50.1, pp 133-148"
+    url: http://www.jstor.org/stable/2123441
+schema:
+  fields:
+    - id: date
+      type: date
+      description: Date
+    - id: bond100
+      type: number
+      description: $100 Million Bonds (Gold Yield)
+    - id: bond15
+      type: number
+      description: $15 Million Bonds (Gold Yield)
+    - id: richmond
+      type: number
+      description: Richmond Bonds (Gold Yield)
+    - id: virginia
+      type: number
+      description: Virginia Bonds (Gold Yield)
+    - id: rate
+      type: number
+      description: Interest Rate; yield is the Confederate Dollar Yield on the $100 million loan.
+    - id: gold
+      type: number
+      description: Gold price

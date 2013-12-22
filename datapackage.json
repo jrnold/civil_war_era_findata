@@ -49,8 +49,8 @@
       "email": "jeffrey.arnold@gmail.com"
     }
   ], 
-  "version": "4.1.0", 
-  "last_modified": "2013-10-10T13:38:19.437479", 
+  "version": "5.0.0", 
+  "last_modified": "2013-12-21T20:13:40.179518", 
   "licenses": [
     {
       "url": "http://opendatacommons.org/licenses/by/", 
@@ -79,6 +79,76 @@
             "type": "string", 
             "id": "url", 
             "description": "Google Books URL to the first page of that section"
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "data/grayback_weidenmier_2002.csv", 
+      "sources": [
+        {
+          "url": "http://www.jstor.org/stable/1061497.", 
+          "name": "Weidenmier, Marc D., 2002. \"Turning Points in the U. S. Civil War: Views from the Grayback Market\", Southern Economic Journal.\n"
+        }
+      ], 
+      "description": "Price of gold in Confederate Dollars (Graybacks) from Weidenmier (2002)\n\nThis price series is from the same sources as `grayback_weidenmier_2`,\nbut only includes Richmond prices, is higher frequency (weekly rather\nthan biweekly), and includes a longer range of dates. \n\nFrom Weidenmier (2002), p. 878\n\n   An extensive search of more than a dozen newspapers yielded a\n   series of 486 grayback prices from public auctions and private\n   brokerage trades in Richmond between May 27, 1861, and February 15,\n   1865.\n\nFrom Weidenmier (2002), footnote 2, p. 878\n\n    All quotes are taken from Richmond except during some\n    stretches in the summer and fall of 1864 when Richmond\n    newspapers stopped reporting money prices. These periods are\n    filled in by gold price quotations from the nearby Wilmington,\n    North Carolina, money market, whose prices were often quoted\n    in the Richmond newspapers.  Newspapers from Petersburg, North\n    Carolina, Virginia,Mobile, Alabama, Wilmington, Virginia,\n    Raleigh, North Carolina, Lynchburg, Augusta, Georgia,\n    Columbus, Georgia, and Charleston, South Carolina, were also\n    examined for price quotes from the Richmond market(see\n    Appendix).Often, these papers would quote trades not reported\n    in the Richmond newspapers.  In addition, secondary markets\n    existed in most of these cities, although these gold exchanges\n    tended to be considerably less liquid than the Richmond\n    market.\n\nFrom Weidenmier (2002), p. 890,\n\n    Grayback/gold price quotations were taken from the following\n    newspapers:Richmond Dispatch, Richmond Examiner, Richmond\n    Whig, Richmond Enquirer, Petersburg Express,\n    Wilmington Journal, Columbus Daily-Sun,\n    Charleston Mercury,Lynchburg Virginian,and the Mobile\n    Tribune.Richmondgrayback/gold price quotations were also\n    cross-checked against prices in the Raleigh, Augusta,and Mobile\n    gold markets using the following newspapers: Raleigh\n    Weekly Register, Mobile Tribune,Mobile Advertiser and Register,\n    and Augusta Daily Constitutionalist.  \n", 
+      "name": "grayback_weidenmier_2002", 
+      "schema": {
+        "fields": [
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date"
+          }, 
+          {
+            "type": "number", 
+            "id": "price", 
+            "description": "Price of gold in Confederate dollars in Richmond"
+          }, 
+          {
+            "type": "boolean", 
+            "id": "wilmington", 
+            "description": "Prices were not reported in the Richmond newspapers for these\nparticular dates. The gaps were filled in with grayback/ gold\nprice quotations from the Wilmington,North Carolina,money\nmarket.All Wilmington gold prices quotations are taken from the\nWilmington Daily Journal.\n"
+          }, 
+          {
+            "type": "boolean", 
+            "id": "imputed", 
+            "description": "Grayback/gold price quotations were unavailable for these\nparticular weeks. The grayback price of gold has been for dates\nassuming a constant price from the last available trade.\ninterpolated these particular \n"
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "data/civil_war_debt_acts.csv", 
+      "sources": [
+        {
+          "url": "http://fraser.stlouisfed.org/publication/?pid=194", 
+          "name": "United States. Dept. of the Treasury, (1866), Annual Report of the Secretary of the Treasury on the State of the Finances, December 3, 1866"
+        }
+      ], 
+      "description": "List of acts to issue debt to fund the Civil War.\n", 
+      "name": "civil_war_debt_acts", 
+      "schema": {
+        "fields": [
+          {
+            "type": "string", 
+            "id": "act", 
+            "description": "Name of the act"
+          }, 
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date the act was approved"
+          }, 
+          {
+            "type": "number", 
+            "id": "interest", 
+            "description": "Authorized increase in interest-bearing debt in (millions of dollars).\n"
+          }, 
+          {
+            "type": "number", 
+            "id": "non_interest", 
+            "description": "Authorized increase in non-interest bearing debt in (millions of dollars).\n"
           }
         ]
       }
@@ -460,10 +530,95 @@
       }
     }, 
     {
+      "path": "data/grayback_burdekin_weidenmier_2001.csv", 
+      "sources": [
+        {
+          "url": "http://www.jstor.org/stable/1061497.", 
+          "name": "Weidenmier, Marc D., 2002. \"Turning Points in the U. S. Civil War: Views from the Grayback Market\", Southern Economic Journal\n"
+        }
+      ], 
+      "description": "Price of gold in Confederate Dollars from Burdekin and Weidenmier (2001)\n\nBiweekly series of the price of a gold dollar in\nConfederate paper dollars in Richmond and Houston, from `Eh.net\nBiweekly Data on the Confederate Note Price of a Gold Dollar in\nRichmond and Houston\n<http://eh.net/files/databases/weidenmier.finance.confederacy.us.goldata.xls>`_\nand used in [BurdekinWeidenmier2001]_.\n", 
+      "name": "grayback_burdekin_weidenmier_2001", 
+      "schema": {
+        "fields": [
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date"
+          }, 
+          {
+            "type": "number", 
+            "id": "richmond", 
+            "description": "Price of gold in Confederate dollars in Richmond"
+          }, 
+          {
+            "type": "number", 
+            "id": "houston_old", 
+            "description": "Price of gold in Confederate dollars in Houston (old series)"
+          }, 
+          {
+            "type": "number", 
+            "id": "houston_new", 
+            "description": "Price of gold in Confederate dollars in Houston (new series)"
+          }
+        ]
+      }
+    }, 
+    {
       "path": "data/bond_metadata.json", 
       "description": "Bond Metadata\n\nContains issue dates, coupon periods, maturity, cashflow, etc. data about bond issues for which there is price data.\n\n- Many quoted price series may correspond to multiple bond similar issues. \n- Callable bonds (10-40s and 5-20s) have multiple entries, one for a potential call in each year.\n- Metadata on state bonds is rather scarce. \n  Sometimes a range of years is known; in which case, there is a bond issue for each year.\n  If no range is known, then a bond issue for each potential year is used (based on the empirical distribution of all bonds for which maturity years are known).\n\nThe data are an ``object``, with an \nEach bond issue is an ``object`` containting the following entries.\n\n- ``cashflows``: ``object``\n  - ``date``: ``array``. Date of cashflow. %Y-%m-%d.\n  - ``cashflows``: ``array``. amount of cashflow in gold dollars\n- ``interest``: ``number``. Annual interest rate\n- ``periods``: ``array``. Each entry is an ``object`` with keys ``month`` and ``day`` for the month and day of a periodic payment.\n- ``issue_date``: Date of issue. %Y-%m-%d.\n- ``maturity_date``: Date of maturity. %Y-%m-%d.\n- ``call``: For callable bonds, ``TRUE`` if a date before maturity, ``FALSE`` if maturity.\n", 
       "name": "bond_metadata", 
       "format": "json"
+    }, 
+    {
+      "path": "data/confederate_bonds.csv", 
+      "sources": [
+        {
+          "url": "http://www.jstor.org/stable/2123441", 
+          "name": "Davis, George K. and Gary M. Pecquet, \"Interest Rates in the Civil War South\", *The Journal of Economic History*, 50.1, pp 133-148"
+        }
+      ], 
+      "description": "Confederate interest rates 1861-1865\n\nInterest rates from Table 2 in Davis and Pecquet (1990).\n\nThe note from the original data  (p. 147) reads\n\n  Five price series form the basis for the calculations used in this article. The five series\n  are the Confederate dollar prices of a gold dollar; bonds from the $100 million loan;\n  bonds from the $15 million loan; Virginia state bonds; and Richmond city bonds. The\n  data come from market reports in Richmond newspapers, including the Richmond\n  Whig, the Richmond Sentinel, the Richmond Enquirer, and the Richmond Dispatch. We\n  also have some quotations for railroad bonds from these papers. The data for the\n  summer months of 1864 come from the Wilmington Journal of Wilmington, NC, due to\n  a lack of bond price quotations in the Richmond market. The bond quotations were\n  taken from reports as near as possible to mid-month. Gold price quotations were taken\n  nearest the date of bond quotation from the $100 million loan. When a range was given\n  we took the upper bound for the long-term rate, and when more than one quote was\n  available on a particular maturity date or on gold an average was taken. The gold prices\n  for two dates-August 1863 and October 1864-were obtained by interpolation using\n  data from Richard Todd as a guide.\n\n  In order to calculate yields to maturity it is necessary to have a maturity date. The day\n  and month of maturity were not known for any issue so we used mid-year, July 1. The\n  $15 million loan matured in 1871. There were various maturity dates for the other issues.\n  For the $100 million loan there were many maturity dates. When maturity dates were\n  reported we used the issues that matured in 1881, or the year nearest to that date\n  because it was the most often reported. For about the first year and a half of the period\n  under study the maturity dates on bonds from the $100 million loan were unspecified.\n  We took this to mean that the yield curve was flat and so used 1881 as the maturity date.\n  The maturity date was seldom given for the Virginia state and Richmond city bonds, so\n  we chose the year 1887. In that year some bonds did mature, and it was roughly the\n  average maturity date for the dated long-term issues that we do have. Some experimen-\n  tation with alternative dates revealed that the arguments and conclusions of the text are\n  not sensitive to different maturity dates.\n\n  The actual market date was used in the calculation of the yield to maturity. All of the\n  raw data are available on request from the authors. The data used to construct the\n  diagrams are presented in Table 2.\n", 
+      "name": "confederate_bnods", 
+      "schema": {
+        "fields": [
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date"
+          }, 
+          {
+            "type": "number", 
+            "id": "bond100", 
+            "description": "$100 Million Bonds (Gold Yield)"
+          }, 
+          {
+            "type": "number", 
+            "id": "bond15", 
+            "description": "$15 Million Bonds (Gold Yield)"
+          }, 
+          {
+            "type": "number", 
+            "id": "richmond", 
+            "description": "Richmond Bonds (Gold Yield)"
+          }, 
+          {
+            "type": "number", 
+            "id": "virginia", 
+            "description": "Virginia Bonds (Gold Yield)"
+          }, 
+          {
+            "type": "number", 
+            "id": "rate", 
+            "description": "Interest Rate; yield is the Confederate Dollar Yield on the $100 million loan."
+          }, 
+          {
+            "type": "number", 
+            "id": "gold", 
+            "description": "Gold price"
+          }
+        ]
+      }
     }, 
     {
       "path": "data/bankers_magazine_state_govt_loans.csv", 
@@ -610,6 +765,31 @@
             "type": "number", 
             "id": "total", 
             "description": "Total expenditures (millions of dollars)"
+          }
+        ]
+      }
+    }, 
+    {
+      "path": "data/grayback_mccandless.csv", 
+      "sources": [
+        {
+          "url": "http://www.jstor.org/stable/2118219", 
+          "name": "McCandless, George T., Jr. 1996, \"Money, Expectations, and the U.S. Civil War\", *American Economic Review*"
+        }
+      ], 
+      "description": "Price of Gold in Confederate Currency (Graybacks) from McCandless\n\nBiweekly grayback price series from McCandless (1996), Appendix Table\n1, p. 669.\n\n    The data for the South comes from a newspaper column (of unknown\n    origin) found glued into a blank back page of the Virginia State\n    Library's copy of Ernest A. Smith's (1901) The History of the\n    Confederate Treasury.\n\n    As best I can tell, this Southern data set has not been used\n    before. The standardreference is from the Hammond papers, a copy\n    of a card issued by the Wm. B. Isaacs & Co., bankers with monthly\n    prices for the North on one side and for the South on the\n    other. This is the source of the frequently referenced Southern\n    prices in Todd's Confederate Finance. An additional source of\n    Southern prices is from a letter to the New York Evening Post of\n    August 4, 1896 where prices are given for every 10 days. The\n    author of the letter is identified only as E. C. M. The data from\n    the Isaccs and ECM sources are similar to what I use.\n\nWeidenmier (2002) discusses problems with this series, contrasting it \nwith his data.\n\n    Problems with the grayback series is that it reports constant prices\n    for weeks at a time, is of unknown origin for an unknown market, is\n    inconsistent with the New York Evening Post price series (On Jan 1,\n    1865 the Post lists a price of 34 for 1 while McCandless reports 60\n    for 1), and it is unclear whether they are bid or ask prices. \\textcite{Weidenmier2002}\n", 
+      "name": "grayback_ecm", 
+      "schema": {
+        "fields": [
+          {
+            "type": "date", 
+            "id": "date", 
+            "description": "Date"
+          }, 
+          {
+            "type": "price", 
+            "id": "price", 
+            "description": "Price of gold in Confederate dollars"
           }
         ]
       }

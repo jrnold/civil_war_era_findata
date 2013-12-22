@@ -1,0 +1,43 @@
+path: "data/grayback_mccandless.csv"
+description: |
+  Price of Gold in Confederate Currency (Graybacks) from McCandless
+
+  Biweekly grayback price series from McCandless (1996), Appendix Table
+  1, p. 669.
+
+      The data for the South comes from a newspaper column (of unknown
+      origin) found glued into a blank back page of the Virginia State
+      Library's copy of Ernest A. Smith's (1901) The History of the
+      Confederate Treasury.
+
+      As best I can tell, this Southern data set has not been used
+      before. The standardreference is from the Hammond papers, a copy
+      of a card issued by the Wm. B. Isaacs & Co., bankers with monthly
+      prices for the North on one side and for the South on the
+      other. This is the source of the frequently referenced Southern
+      prices in Todd's Confederate Finance. An additional source of
+      Southern prices is from a letter to the New York Evening Post of
+      August 4, 1896 where prices are given for every 10 days. The
+      author of the letter is identified only as E. C. M. The data from
+      the Isaccs and ECM sources are similar to what I use.
+
+  Weidenmier (2002) discusses problems with this series, contrasting it 
+  with his data.
+
+      Problems with the grayback series is that it reports constant prices
+      for weeks at a time, is of unknown origin for an unknown market, is
+      inconsistent with the New York Evening Post price series (On Jan 1,
+      1865 the Post lists a price of 34 for 1 while McCandless reports 60
+      for 1), and it is unclear whether they are bid or ask prices. \textcite{Weidenmier2002}
+
+sources:
+  - name: "McCandless, George T., Jr. 1996, \"Money, Expectations, and the U.S. Civil War\", *American Economic Review*"
+    url: http://www.jstor.org/stable/2118219
+schema:
+  fields:
+    - id: date
+      type: date
+      description: Date
+    - id: price
+      type: price
+      description: Price of gold in Confederate dollars
