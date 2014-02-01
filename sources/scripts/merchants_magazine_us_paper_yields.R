@@ -155,7 +155,7 @@ oneyr_old1 <-
                   series == "oneyr_old"
                   & date < as.Date("1863-3-3"),
                   c(series, date, price_paper, price_gold)),
-           bond = "us_one_year_notes_1863",
+           bond = "us_one_year_notes_1862",
            wgt = 1,
            price_paper_dirty = price_paper,
            price_gold_dirty = price_gold,
@@ -173,7 +173,7 @@ oneyr_old2 <-
                   series == "oneyr_old"
                   & date >= as.Date("1863-3-3"),
                   c(series, date, price_paper, price_gold)),
-           bond = "us_one_year_notes_1863",
+           bond = "us_one_year_notes_1862",
            wgt = 1,
            price_paper_dirty = price_paper,
            price_gold_dirty = price_gold,

@@ -4,6 +4,14 @@ Treasury Auctions
 
 The data contain bids and amounts from several Treasury auctions.
 
+Other auctions data to be included later
+
+- Sixes of 1848: `Treasury Report 1848, M., p. 325 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1848.pdf#pg=52>`__
+- Loan of 1847: `Treasury Report 1847, No. 3, p. 215 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1847.pdf#pg=98>`__
+- Loan of 10 million at 5 percent opened at the Treasury Department October 22, 1860.
+  `Treasury Report 1860, No 48, p. 481 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1860.pdf#pg=481>`__.  
+
+
 Auctions of the Sixes of 1881 issued under the Act of February 8, 1861
 ========================================================================
 
@@ -198,7 +206,7 @@ The notice of this issue, Treasury Report, pp. 52-53
     treasurer at Boston, New York, or Philadelphia, on or before the 25th
     day of May, now current; but if any accepted bidder shall desire to
     deposit at any other point, his request will be considered.
-    On the receipt here of the proper certificates showing such deposit,'
+    On the receipt here of the proper certificates showing such deposit,
     certificates of inscribed stock will be issued to the successful bidders
     or their assignees for the amounts to which they may be entitled, in
     sums of one thousand, five thousand^ and ten thousand dollars each,
@@ -216,7 +224,7 @@ The notice of this issue, Treasury Report, pp. 52-53
     on that day to the accepted bidder, or his assigns or attorney, by the
     depository with whom the principal was deposited.
     The proposals under this notice should be endorsed on the envelopes
-    '^Proposals for loan of 8th February, 1861," and addressed to the
+    "^Proposals for loan of 8th February, 1861," and addressed to the
     Secretary of the Treasury ; or they may be put under cover to the
     assistant treasurer at New York, who will forward them to this department^
     . They should be sent in season to be opened and decided
@@ -265,7 +273,7 @@ The notice is from p. 50.
   Sealed proposals will be received at this department, until 10 o'clock
   on Thursday morning, the 11th instant, for four million nine hundred
   and one thousand dollars in treasury notes, or any part thereof, bearing
-  interest at six per cent, per annum, payable semi-annually^ redeemable
+  interest at six per cent, per annum, payable semi-annually, redeemable
   in two years, receivable for public dues, or, at the option of the bidder,
   convertible into six per cent, bonds of the United States. Said notes
   to be issued under the authority of the acts of Congress approved February 8, 1861, and March 2, 1861.
@@ -283,6 +291,80 @@ The notice is from p. 50.
   S. P . CHASE,
   *Secretary of the Treasury*.
 
+=================================  
+Auction of October 22, 1860
+=================================
 
+An auction for the Loan of 1860 (Act of June 22, 1860) (`DeKnight p. 77 <http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA77>`__, `Bayley p. 75 <http://books.google.com/books?id=Ce4JAAAAIAAJ&printsec=frontcover&pg=PA75>`__, `p. 150  <http://books.google.com/books?id=Ce4JAAAAIAAJ&printsec=frontcover&pg=PA150>`__).
 
-..  LocalWords:  lst ap th assignees centum indorsed ditional proximo
+During the auction, concerns about the war increased and many bidders forfeited their deposits, and the loan was withdrawn from the market. Only 7,022,00 was issued.
+
+Bids were listed in the Treasuary Report, 1861.
+
+The proposal read,
+
+    REPORT ON THE FINANCES.
+    
+    No, 48.
+    
+    OFFICIAL,
+    Proposals for loan of ten million dollars.
+    
+    TREASURY DEPARTMENT, September, 1860.
+    
+    Sealed proposals will be received at this department until 12
+    o'clock, noon, of Monday, the 22d day of October next, for ten
+    millions of dollars of stock of the United States, to be issued
+    under the act of Congress of the 22d of June last, authorizing a
+    loan and providing for the redemption of treasury notes, at which
+    time the proposals will be opened and decided. The stock will be
+    reimbursable in ten years from the first day of January next, and
+    will bear interest at five per Centura per annura, payable
+    semi-annually, on the first days of January and July of each year.
+    
+    No offer will be accepted below par, and none for any fraction of
+    one thousand dollars. Nor will any offer be considered unless one
+    per centum of the amount thereof is deposited with a depositary of
+    the United States, subject to the order of the Secretary of the
+    Treasury.  The certificate of such deposit must accompany the
+    proposals. In all cases the offers must be unconditional, without
+    reference to other offers, and must state the rate of premium
+    offered.  The proposals should be indorsed on the outside,
+    "Proposals for Loan of 1860," and be addressed "to the Secretary
+    of the Treasury, Washington, D. C."
+    
+    The best bidders under the foregoing conditions, for the aggregate
+    sum of ten millions of dollars, will be immediately informed by mail
+    of the acceptance of their offers, and they must deposit the amount so
+    accepted, with the premium thereon, with the Treasurer of the United
+    States, or the assistant treasurer at Boston, New York, Philadelphia,
+    Charleston, New Orleans, or St. Louis, on or before the twenty-second
+    day of November next. Should successful bidders desire to deposit
+    at other points, their wishes will be duly considered on being stated
+    to this department.
+    
+    Certificates of inscribed stock will be issued in sums not less
+    than one thousand dollars each to the successful bidders, or their
+    assigns, for the principal so deposited, carrying interest at the
+    rate of five per Centum from the date of such deposit. Such stock
+    will be transferable on the books of the treasury, agreeably to
+    the regulations of the department.  Should any of, the successful
+    bidders require certificates of stock with coupons of semi-annual
+    interest payable thereon from the 1st of January next, such
+    certificates will be issued with such coupons attached in sums of
+    one thousand dollars each ;.and such coupon stock, instead of
+    being transferable on the books of the treasury, may be assigned
+    and transferred by the delivery of the certificates. The interest
+    on the last named stock, from the date of the deposit to the first
+    day of January next, will be paid to the successful bidder or his
+    attorney by the depositary with whom the principal was deposited.
+    The preliminary deposit of one per Centura, required upon all
+    proposals under this notice, will be included in the deposits of
+    principal and premium made by successful bidders, and will be
+    immediately directed to be returned to the unsuccessful bidders.
+    
+    HOWELL COBB, *Secretary of the Treasury*
+    
+    
+ ..  LocalWords:  lst ap th assignees centum indorsed ditional proximo
+..  LocalWords:  23d 2d 2lst 22d gress Centura annura fers Cen tura
