@@ -1,0 +1,459 @@
+bid_no,name,city,state,amount,bid,accepted,declined,row,page
+1,G. F Wonk & Co,Philadelphia,PA,5,4.125,5,0,1,206
+1,G. F Wonk & Co,Philadelphia,PA,6,4,6,0,2,206
+1,G. F Wonk & Co,Philadelphia,PA,10,3.75,10,0,3,206
+1,G. F Wonk & Co,Philadelphia,PA,5,3.875,5,0,4,206
+1,G. F Wonk & Co,Philadelphia,PA,13,3.06,13,0,5,206
+1,G. F Wonk & Co,Philadelphia,PA,6,3.375,6,0,6,206
+1,G. F Wonk & Co,Philadelphia,PA,5,3,0,5,7,206
+2,"Jay, Cooke & Co.",Washington,DC,200,4,200,0,8,206
+2,"Jay, Cooke & Co.",Washington,DC,200,3.75,200,0,9,206
+2,"Jay, Cooke & Co.",Washington,DC,200,3.625,200,0,10,206
+2,"Jay, Cooke & Co.",Washington,DC,100,3.5,100,0,11,206
+2,"Jay, Cooke & Co.",Washington,DC,50,3.3,50,0,12,206
+2,"Jay, Cooke & Co.",Washington,DC,50,3.25,50,0,13,206
+2,"Jay, Cooke & Co.",Washington,DC,50,3.125,50,0,14,206
+2,"Jay, Cooke & Co.",Washington,DC,250,3.05,148.6,101.4,15,206
+2,"Jay, Cooke & Co.",Washington,DC,150,3,0,150,16,206
+2,"Jay, Cooke & Co.",Washington,DC,250,2.75,0,250,17,206
+3,Gebhard Fire Insurance Company,Washington,DC,5,4.05,5,0,18,206
+3,Gebhard Fire Insurance Company,Washington,DC,5,3.875,5,0,19,206
+3,Gebhard Fire Insurance Company,Washington,DC,5,3.625,5,0,20,206
+3,Gebhard Fire Insurance Company,Washington,DC,5,3.375,5,0,21,206
+3,Gebhard Fire Insurance Company,Washington,DC,5,3.125,5,0,22,206
+4,Florence & Conant,Washington,DC,1,4,1,0,23,206
+5,G. D. Rosengarten,Philadelphia,PA,5,4,5,0,24,206
+6,Jacob L. Smith,Philadelphia,PA,0.75,4,0.75,0,25,206
+7,C. S. Darrow,Boston,MA,1,4,1,0,26,206
+8,Vermilye & Co.,New York,NY,10,4,10,0,27,206
+8,Vermilye & Co.,New York,NY,50,3.8,50,0,28,206
+8,Vermilye & Co.,New York,NY,20,3.75,20,0,29,206
+8,Vermilye & Co.,New York,NY,20,3.6,20,0,30,206
+8,Vermilye & Co.,New York,NY,50,3.55,50,0,31,206
+8,Vermilye & Co.,New York,NY,20,3.5,20,0,32,206
+8,Vermilye & Co.,New York,NY,100,3.31,100,0,33,206
+8,Vermilye & Co.,New York,NY,20,3.1,20,0,34,206
+8,Vermilye & Co.,New York,NY,50,3.05,29.7,20.3,35,206
+8,Vermilye & Co.,New York,NY,10,3,0,10,36,206
+8,Vermilye & Co.,New York,NY,20,2.9,0,20,37,206
+8,Vermilye & Co.,New York,NY,50,2.8,0,50,38,206
+8,Vermilye & Co.,New York,NY,50,2.6,0,50,39,206
+8,Vermilye & Co.,New York,NY,20,2.55,0,20,40,206
+8,Vermilye & Co.,New York,NY,10,2.5,0,10,41,206
+9,Richard Vallant,New York,NY,7.5,4,7.5,0,42,206
+10,Farmers and Mechanics' Bank,Philadelphia,PA,50,3.85,50,0,43,206
+10,Farmers and Mechanics' Bank,Philadelphia,PA,100,3.65,100,0,44,206
+10,Farmers and Mechanics' Bank,Philadelphia,PA,100,3.35,100,0,45,206
+10,Farmers and Mechanics' Bank,Philadelphia,PA,250,2.85,0,250,46,206
+11,E. W. Clark & Co.,Philadelphia,PA,25,3.79,25,0,47,206
+11,E. W. Clark & Co.,Philadelphia,PA,50,3.57,50,0,48,206
+11,E. W. Clark & Co.,Philadelphia,PA,50,3.29,50,0,49,206
+11,E. W. Clark & Co.,Philadelphia,PA,50,3.06,50,0,50,206
+12,John Gardner,Boston,MA,2,3.75,2,0,51,206
+12,John Gardner,Boston,MA,3,3.5,3,0,52,206
+13,"Brewster, Sweet & Co.",Boston,MA,15,3.75,15,0,53,206
+13,"Brewster, Sweet & Co.",Boston,MA,100,3.5,100,0,54,206
+13,"Brewster, Sweet & Co.",Boston,MA,100,3.25,100,0,55,206
+13,"Brewster, Sweet & Co.",Boston,MA,100,3.125,100,0,56,206
+13,"Brewster, Sweet & Co.",Boston,MA,10,3.125,10,0,57,206
+14,"G. S. Robbins & Sons, agents",New York,NY,20,3.75,20,0,58,206
+14,"G. S. Robbins & Sons, agents",New York,NY,20,3.5,20,0,59,206
+15,Roosevelt & Son,New York,NY,100,3.75,100,0,60,206
+15,Roosevelt & Son,New York,NY,100,3.5,100,0,61,206
+15,Roosevelt & Son,New York,NY,100,3.25,100,0,62,206
+16,Jeremiah Pangburn,New York,,5,3.7,5,0,63,206
+17,Benjamin Tomes,New York,,5.55,3.6,5.55,0,64,206
+17,Benjamin Tomes,New York,,5,3.4,5,0,65,206
+18,Daniel Le Roy,New York,,5,3.55,5,0,66,206
+18,Daniel Le Roy,New York,,5,3.4,5,0,67,206
+19,Thomas V. C. Morgan,Philadelphia,PA,1.6,3.6,1.6,0,68,206
+20,"Edward Haight, president",New York,NY,150,3.55,150,0,69,206
+20,"Edward Haight, president",New York,NY,150,3.3,150,0,70,206
+20,"Edward Haight, president",New York,NY,150,3.05,89.2,60.8,71,206
+21,James A. Cowing,New York,NY,25,3.55,25,0,72,206
+21,James A. Cowing,New York,NY,,,0,0,1,207
+22,Samuel A. Way,Boston,MA,10,3.5,10,0,2,207
+22,Samuel A. Way,Boston,MA,10,3,0,10,3,207
+22,Samuel A. Way,Boston,MA,20,2.5,0,20,4,207
+22,Samuel A. Way,Boston,MA,10,1.5,0,10,5,207
+23,Cambridge City Bank,Cambridge,MA,10,3.5,10,0,6,207
+24,Henry P. Ketchum,New York,NY,10,3.5,10,0,7,207
+25,"Read, Drexel & Co.",New York,NY,21,3.5,21,0,8,207
+25,"Read, Drexel & Co.",New York,NY,50,3,0,50,9,207
+25,"Read, Drexel & Co.",New York,NY,754,2.85,0,754,10,207
+25,"Read, Drexel & Co.",New York,NY,50,2.1,0,50,11,207
+25,"Read, Drexel & Co.",New York,NY,75,2,0,75,12,207
+25,"Read, Drexel & Co.",New York,NY,50,1,0,50,13,207
+26,J. De Riegles,Cincinnati,OH,0.25,3.5,0.25,0,14,207
+27,Benkard & Hutton,New York,NY,250,3.5,250,0,15,207
+27,Benkard & Hutton,New York,NY,250,3.375,250,0,16,207
+27,Benkard & Hutton,New York,NY,250,3.25,250,0,17,207
+27,Benkard & Hutton,New York,NY,250,3.125,250,0,18,207
+28,T. D. Amstrong,Mount Holly,NJ,5,3.5,5,0,19,207
+28,T. D. Amstrong,Mount Holly,NJ,5,3,0,5,20,207
+29,"H. C. Young, cashier",Philadelphia,PA,25,3.5,25,0,21,207
+29,"H. C. Young, cashier",Philadelphia,PA,25,3,0,25,22,207
+29,"H. C. Young, cashier",Philadelphia,PA,25,2.5,0,25,23,207
+29,"H. C. Young, cashier",Philadelphia,PA,25,2,0,25,24,207
+30,William Amer,Philadelphia,PA,5,3.5,5,0,25,207
+30,William Amer,Philadelphia,PA,5,3.25,5,0,26,207
+31,"F. Tomes, Jr. ",New York,NY,5,3.5,5,0,27,207
+32,George W. Welsh,New York,NY,10,3.5,10,0,28,207
+33,"Jay, Cooke & Co.",Washington,DC,25,3.5,25,0,29,207
+33,"Jay, Cooke & Co.",Washington,DC,25,3.25,25,0,30,207
+33,"Jay, Cooke & Co.",Washington,DC,25,3.125,25,0,31,207
+33,"Jay, Cooke & Co.",Washington,DC,25,3,0,25,32,207
+34,"Clarke, Dodge & Co.",New York,NY,50,3.5,50,0,33,207
+34,"Clarke, Dodge & Co.",New York,NY,100,3.375,100,0,34,207
+34,"Clarke, Dodge & Co.",New York,NY,100,3.25,100,0,35,207
+34,"Clarke, Dodge & Co.",New York,NY,100,3.125,100,0,36,207
+35,Judd Linseed and Sperm Oil Co.,,,50,3.5,50,0,37,207
+36,George and Samuel Brown,,,25,3.5,25,0,38,207
+36,George and Samuel Brown,,,25,3.25,25,0,39,207
+36,George and Samuel Brown,,,25,3,0,25,40,207
+36,George and Samuel Brown,,,25,2.75,0,25,41,207
+37,"John De Voo, executor",,,3.4,3.5,3.4,0,42,207
+38,Clarkson Brothers,,,10,3.41,10,0,43,207
+38,Clarkson Brothers,,,10,3.17,10,0,44,207
+38,Clarkson Brothers,,,10,3.15,10,0,45,207
+38,Clarkson Brothers,,,10,3.1,10,0,46,207
+39,James H. Banker,,,20,3.4,20,0,47,207
+39,James H. Banker,,,20,3.375,20,0,48,207
+39,James H. Banker,,,20,3.335,20,0,49,207
+39,James H. Banker,,,20,3.1,20,0,50,207
+39,James H. Banker,,,20,3,0,20,51,207
+40,Stuart & Brother,Philadelphia,PA,25,3.38,25,0,52,207
+40,Stuart & Brother,Philadelphia,PA,25,3.02,0,25,53,207
+40,Stuart & Brother,Philadelphia,PA,25,2.9,0,25,54,207
+40,Stuart & Brother,Philadelphia,PA,25,2.8,0,25,55,207
+41,Corn Exchange Bank,,,20,3.375,20,0,56,207
+41,Corn Exchange Bank,,,20,3.25,20,0,57,207
+41,Corn Exchange Bank,,,20,3.125,20,0,58,207
+41,Corn Exchange Bank,,,20,3,0,20,59,207
+41,Corn Exchange Bank,,,20,2.75,0,20,60,207
+42,Robert Suyvesant,New York,NY,0.5,3.375,0.5,0,61,207
+42,Robert Suyvesant,New York,NY,0.5,2.65,0,0.5,62,207
+43,Drexel & Co.,Philadelphia,PA,150,3.375,150,0,63,207
+43,Drexel & Co.,Philadelphia,PA,250,3.02,0,250,64,207
+43,Drexel & Co.,Philadelphia,PA,150,2.91,0,150,65,207
+43,Drexel & Co.,Philadelphia,PA,150,2.8,0,150,66,207
+44,"Livermore, Clews & Co.",New York,NY,5,3.375,5,0,67,207
+44,"Livermore, Clews & Co.",New York,NY,10,3.25,10,0,68,207
+44,"Livermore, Clews & Co.",New York,NY,20,3.125,20,0,69,207
+44,"Livermore, Clews & Co.",New York,NY,30,3.1,30,0,70,207
+44,"Livermore, Clews & Co.",New York,NY,30,3.05,17.8,12.2,71,207
+44,"Livermore, Clews & Co.",New York,NY,50,3.01,0,50,72,207
+44,"Livermore, Clews & Co.",New York,NY,50,3,0,50,73,207
+45,E. D. Stanton,,,100,3.36,100,0,74,207
+45,E. D. Stanton,,,100,3.3,100,0,75,207
+45,E. D. Stanton,,,100,3.25,100,0,76,207
+46,James F. Penniman,,,3,3.35,3,0,77,207
+47,Merchants' Bank,,,50,3.35,50,0,78,207
+47,Merchants' Bank,,,50,3.25,50,0,79,207
+47,Merchants' Bank,,,50,2.9,0,50,80,207
+47,Merchants' Bank,,,50,2.75,0,50,81,207
+47,Merchants' Bank,New York,NY,100,2.5,0,100,1,208
+48,E. L. Boles,,,6,3.33,6,0,2,208
+49,"J. Van Duzer, president",,,20,3.31,20,0,3,208
+49,"J. Van Duzer, president",,,20,3.26,20,0,4,208
+49,"J. Van Duzer, president",,,20,3.13,20,0,5,208
+49,"J. Van Duzer, president",,,20,2.96,0,20,6,208
+49,"J. Van Duzer, president",,,20,2.76,0,20,7,208
+50,G. S. Robbins & Son,,,157,3.3,157,0,8,208
+50,G. S. Robbins & Son,,,150,3.2,150,0,9,208
+51,"John P. Yelverton, cashier",,,250,3.27,250,0,10,208
+51,"John P. Yelverton, cashier",,,250,3.23,250,0,11,208
+52,"Rittenhouse, Fant & Co.",Washington,DC,20,3.26,20,0,12,208
+52,"Rittenhouse, Fant & Co.",Washington,DC,20,3.25,20,0,13,208
+52,"Rittenhouse, Fant & Co.",Washington,DC,180,3.05,107.1,72.9,14,208
+52,"Rittenhouse, Fant & Co.",Washington,DC,30,2.52,0,30,15,208
+53,"O. H. Schreiner, cashier",,,25,3.26,25,0,16,208
+53,"O. H. Schreiner, cashier",,,25,3.06,25,0,17,208
+53,"O. H. Schreiner, cashier",,,25,2.76,0,25,18,208
+53,"O. H. Schreiner, cashier",,,25,2.56,0,25,19,208
+54,"E. W. Tallman, cashier",,,50,3.26,50,0,20,208
+54,"E. W. Tallman, cashier",,,50,3.2,50,0,21,208
+54,"E. W. Tallman, cashier",,,50,3.1,50,0,22,208
+54,"E. W. Tallman, cashier",,,50,3.05,29.7,20.3,23,208
+55,"Ward, Campbell & Co.",,,60,3.25,60,0,24,208
+55,"Ward, Campbell & Co.",,,420,3.05,249.7,170.3,25,208
+55,"Ward, Campbell & Co.",,,10,3,0,10,26,208
+55,"Ward, Campbell & Co.",,,250,2.75,0,250,27,208
+55,"Ward, Campbell & Co.",,,510,2.5,0,510,28,208
+56,B. M. Freleigh,Saugerties,NY,10,3.25,10,0,29,208
+56,B. M. Freleigh,Saugerties,NY,5,3.125,5,0,30,208
+56,B. M. Freleigh,Saugerties,NY,5,2.76,0,5,31,208
+57,John Gulliver,Philadelphia,PA,2,3.25,2,0,32,208
+58,D. C. Spooner,,,10,3.25,10,0,33,208
+59,"De Coursey, Lafourcade & Co.",,,6,3.25,6,0,34,208
+60,"E. Whitehouse, Son & Morrison",,,75,3.25,75,0,35,208
+60,"E. Whitehouse, Son & Morrison",,,90,3,0,90,36,208
+61,Benjamin H. Field,,,10,3.25,10,0,37,208
+61,Benjamin H. Field,,,10,2,0,10,38,208
+61,Benjamin H. Field,,,20,1,0,20,39,208
+62,Charles P. Gulick,,,2.5,3.25,2.5,0,40,208
+63,Mutual Life Insurance Company,,,100,3.25,100,0,41,208
+63,Mutual Life Insurance Company,,,100,3,0,100,42,208
+63,Mutual Life Insurance Company,,,100,2.75,0,100,43,208
+63,Mutual Life Insurance Company,,,100,2.5,0,100,44,208
+63,Mutual Life Insurance Company,,,100,2,0,100,45,208
+64,"G. S. Robbins & Sons, trustees",,,40,3.25,40,0,46,208
+64,"G. S. Robbins & Sons, trustees",,,40,2.9,0,40,47,208
+65,John Ponder,Washington,DC,25,3.25,25,0,48,208
+66,Thompson Brothers,New York,,500,3.21,500,0,49,208
+66,Thompson Brothers,New York,,300,3.17,300,0,50,208
+66,Thompson Brothers,New York,,200,3.07,200,0,51,208
+67,"Livermore, Clews & Co.",,,50,3.17,50,0,52,208
+67,"Livermore, Clews & Co.",,,150,3.13,150,0,53,208
+67,"Livermore, Clews & Co.",,,55,3.07,55,0,54,208
+68,E. W. Dunham,,,50,3.17,50,0,55,208
+68,E. W. Dunham,,,50,3.01,0,50,56,208
+68,E. W. Dunham,,,50,2.79,0,50,57,208
+69,Edward J. King,,,5,3.16,5,0,58,208
+69,Edward J. King,,,5,2.53,0,5,59,208
+69,Edward J. King,,,5,2.27,0,5,60,208
+70,"Livermore, Clews & Co.",,,100,3.15,100,0,61,208
+70,"Livermore, Clews & Co.",,,300,3.13,300,0,62,208
+70,"Livermore, Clews & Co.",,,100,3.11,100,0,63,208
+71,John Olmstead,Yonkers,NY,10,3.15,10,0,64,208
+71,John Olmstead,Yonkers,NY,10,2.8,0,10,65,208
+71,John Olmstead,Yonkers,NY,10,2.15,0,10,66,208
+72,Samuel F. Ashton,Philadelphia,PA,10,3.125,10,0,67,208
+73,Manhattan Savings Institution,New York,NY,125,3.125,125,0,68,208
+74,"Henry F. Vail, cashier",,,650,3.1,650,0,69,208
+74,"Henry F. Vail, cashier",,,650,3,0,650,70,208
+74,"Henry F. Vail, cashier",,,600,2.75,0,600,71,208
+74,"Henry F. Vail, cashier",,,600,2.5,0,600,72,208
+74,"Henry F. Vail, cashier",,,500,2.25,0,500,73,208
+75,William Barton,Brooklyn,NY,5,3.1,5,0,74,208
+75,William Barton,Brooklyn,NY,5,2.5,0,5,75,208
+76,"W. H. Cox, cashier",New York,NY,25,3.1,25,0,76,208
+76,"W. H. Cox, cashier",New York,NY,227.5,3,0,227.5,77,208
+76,"W. H. Cox, cashier",New York,NY,210,2.5,0,210,78,208
+76,"W. H. Cox, cashier",New York,NY,10,1.5,0,10,79,208
+77,Joseph Jones,Philadelphia,PA,26,3.1,26,0,80,208
+77,Joseph Jones,Philadelphia,PA,2,3,0,2,1,209
+78,"Winslow, Lanier & Co. and C. P. Culver",New York,NY,250,3.1,250,0,2,209
+78,"Winslow, Lanier & Co. and C. P. Culver",New York,NY,350,3,0,350,3,209
+78,"Winslow, Lanier & Co. and C. P. Culver",New York,NY,200,2.9,0,200,4,209
+78,"Winslow, Lanier & Co. and C. P. Culver",New York,NY,100,2.5,0,100,5,209
+78,"Winslow, Lanier & Co. and C. P. Culver",New York,NY,100,2.25,0,100,6,209
+79,Underhill & Haven,,,5,3.07,5,0,7,209
+79,Underhill & Haven,,,5,2.97,0,5,8,209
+79,Underhill & Haven,,,5,2.77,0,5,9,209
+79,Underhill & Haven,,,5,2.67,0,5,10,209
+79,Underhill & Haven,,,5,2.57,0,5,11,209
+79,Underhill & Haven,,,5,2.47,0,5,12,209
+79,Underhill & Haven,,,5,2.37,0,5,13,209
+79,Underhill & Haven,,,5,2.27,0,5,14,209
+79,Underhill & Haven,,,5,2.17,0,5,15,209
+79,Underhill & Haven,,,5,1.97,0,5,16,209
+79,Underhill & Haven,,,5,1.77,0,5,17,209
+79,Underhill & Haven,,,5,1.57,0,5,18,209
+80,American Exchange Bank,,,750,3.05,445.9,304.1,19,209
+81,"W. H. Cox, cashier",,,25,3.05,14.9,10.1,20,209
+82,Fearing & Dalton,,,25,3.05,14.9,10.1,21,209
+82,Fearing & Dalton,,,25,3,0,25,22,209
+82,Fearing & Dalton,,,25,2.95,0,25,23,209
+83,"Ketchum, Son & Co., for themselves and others",,,4642.5,3.05,2760.3,1882.2,24,209
+83,"Ketchum, Son & Co., for themselves and others",,,107.5,3.05,63.9,43.6,25,209
+83,"Ketchum, Son & Co., for themselves and others",,,50,3.05,29.7,20.3,26,209
+83,"Ketchum, Son & Co., for themselves and others",,,25,2.4,0,25,27,209
+83,"Ketchum, Son & Co., for themselves and others",,,15,1.01,0,15,28,209
+83,"Ketchum, Son & Co., for themselves and others",,,100,2.07,0,100,29,209
+84,"Anthony Halsey, cashier",,,130,3.05,77.3,52.7,30,209
+84,"Anthony Halsey, cashier",,,25,2.76,0,25,31,209
+84,"Anthony Halsey, cashier",,,25,2.26,0,25,32,209
+84,"Anthony Halsey, cashier",,,20,1.76,0,20,33,209
+85,Ward & Co,,,50,3.05,29.7,20.3,34,209
+85,Ward & Co,,,50,2.85,0,50,35,209
+85,Ward & Co,,,50,2.65,0,50,36,209
+85,Ward & Co,,,50,2.15,0,50,37,209
+86,Franklin Haven,Boston,MA,500,3.025,0,500,38,209
+86,Franklin Haven,Boston,MA,500,2.77,0,500,39,209
+87,Samuel Rea,,,0.2,3,0,0.2,40,209
+88,Ira Steward,,,0.1,3,0,0.1,41,209
+89,Naumkeag Bank,Salem,MA,100,3,0,100,42,209
+90,W. Ropes & Co.,Boston,MA,10,3,0,10,43,209
+90,W. Ropes & Co.,Boston,MA,10,2.5,0,10,44,209
+90,W. Ropes & Co.,Boston,MA,10,2,0,10,45,209
+90,W. Ropes & Co.,Boston,MA,10,1,0,10,46,209
+90,W. Ropes & Co.,Boston,MA,10,0,0,10,47,209
+91,John E. Kendall,Washington,DC,4,3,0,4,48,209
+92,M. A. Flakenburgh,Jersey City,NJ,0.5,3,0,0.5,49,209
+93,J. C. Lewis,Washington,DC,0.1,3,0,0.1,50,209
+93,J. C. Lewis,Washington,DC,0.2,2,0,0.2,51,209
+93,J. C. Lewis,Washington,DC,0.1,1,0,0.1,52,209
+94,Christopher Becker,New York,NY,5,3,0,5,53,209
+95,J. B. Orton,,,2.5,3,0,2.5,54,209
+95,J. B. Orton,,,2.5,2.75,0,2.5,55,209
+96,C. S. Underwood,Washington,DC,0.4,3,0,0.4,56,209
+97,Riggs & Co.,,,100,3,0,100,57,209
+98,William P. Dole,,,0.4,3,0,0.4,58,209
+99,Anna G. Dudley,,,0.15,3,0,0.15,59,209
+100,Boyleston Bank,Boston,MA,40,3,0,40,60,209
+101,"James E. Southworth, president",New York,NY,25,3,0,25,61,209
+101,"James E. Southworth, president",New York,NY,25,2.88,0,25,62,209
+102,Dater & Timpson,,,20,3,0,20,63,209
+103,Metacomet Bank,Fall River,MA,15,3,0,15,64,209
+103,Metacomet Bank,Fall River,MA,15,2.75,0,15,65,209
+103,Metacomet Bank,Fall River,MA,15,2.5,0,15,66,209
+103,Metacomet Bank,Fall River,MA,15,2.25,0,15,67,209
+104,Henry W. Shaw,New York,NY,1,3,0,1,68,209
+105,"Allen Danforth, treasurer",Boston,MA,10,3,0,10,69,209
+105,"Allen Danforth, treasurer",Boston,MA,10,2.5,0,10,70,209
+105,"Allen Danforth, treasurer",Boston,MA,10,2,0,10,71,209
+106,Rebecca Nathans,Philadelphia,PA,3,3,0,3,72,209
+107,John L. Rogers,New York,NY,20,3,0,20,73,209
+108,Thomas Lamb,Boston,MA,25,3,0,25,74,209
+108,Thomas Lamb,Boston,MA,25,2.75,0,25,75,209
+109,Charles H. Delavan,New York,NY,15,3,0,15,76,209
+109,Charles H. Delavan,New York,NY,15,2.75,0,15,77,209
+109,Charles H. Delavan,New York,NY,20,2.5,0,20,78,209
+109,Charles H. Delavan,New York,NY,30,2.25,0,30,79,209
+110,J. M. Goddard,New York,NY,1.5,3,0,1.5,1,210
+111,"Otis Daniel, for estate of M. Grant",,,10,3,0,10,2,210
+111,"Otis Daniel, for estate of M. Grant",,,10,2,0,10,3,210
+112,E. L. Ketsey,,,0.25,3,0,0.25,4,210
+113,Alfonso Deschowitz,,,10,3,0,10,5,210
+114,John Wadsworth,,,10,3,0,10,6,210
+114,John Wadsworth,,,10,2.75,0,10,7,210
+115,J. F. De Lanier,,,100,3,0,100,8,210
+115,J. F. De Lanier,,,100,2.9,0,100,9,210
+116,"F. M. Harris, cashier",,,25,3,0,25,10,210
+116,"F. M. Harris, cashier",,,25,2.75,0,25,11,210
+116,"F. M. Harris, cashier",,,25,2.5,0,25,12,210
+116,"F. M. Harris, cashier",,,25,2.25,0,25,13,210
+116,"F. M. Harris, cashier",,,25,2,0,25,14,210
+117,East River Savings Institution,,,25,3,0,25,15,210
+117,East River Savings Institution,,,25,2.5,0,25,16,210
+118,Lewis Johnson & Co. ,Washington,DC,200,2.95,0,200,17,210
+118,Lewis Johnson & Co. ,Washington,DC,50,2.7,0,50,18,210
+118,Lewis Johnson & Co. ,Washington,DC,100,2.625,0,100,19,210
+119,"Livermore, Clews & Co.",New York,NY,5,2.9,0,5,20,210
+119,"Livermore, Clews & Co.",New York,NY,5,2.875,0,5,21,210
+119,"Livermore, Clews & Co.",New York,NY,8,2.75,0,8,22,210
+119,"Livermore, Clews & Co.",New York,NY,5,2.625,0,5,23,210
+119,"Livermore, Clews & Co.",New York,NY,5,2.6,0,5,24,210
+119,"Livermore, Clews & Co.",New York,NY,3,2.55,0,3,25,210
+119,"Livermore, Clews & Co.",New York,NY,84,2.5,0,84,26,210
+119,"Livermore, Clews & Co.",New York,NY,40,2.4,0,40,27,210
+119,"Livermore, Clews & Co.",New York,NY,5,2.375,0,5,28,210
+119,"Livermore, Clews & Co.",New York,NY,40,1.9,0,40,29,210
+120,J. E. Park,Dowington,PA,5,2.875,0,5,30,210
+121,Philip Speyer & Co.,New York,NY,5,2.77,0,5,31,210
+121,Philip Speyer & Co.,New York,NY,5,2.76,0,5,32,210
+121,Philip Speyer & Co.,New York,NY,5,2.75,0,5,33,210
+121,Philip Speyer & Co.,New York,NY,5,2.73,0,5,34,210
+121,Philip Speyer & Co.,New York,NY,5,2.71,0,5,35,210
+121,Philip Speyer & Co.,New York,NY,5,2.68,0,5,36,210
+121,Philip Speyer & Co.,New York,NY,10,2.64,0,10,37,210
+121,Philip Speyer & Co.,New York,NY,10,2.62,0,10,38,210
+121,Philip Speyer & Co.,New York,NY,10,2.59,0,10,39,210
+121,Philip Speyer & Co.,New York,NY,10,2.56,0,10,40,210
+121,Philip Speyer & Co.,New York,NY,10,2.52,0,10,41,210
+121,Philip Speyer & Co.,New York,NY,20,2.51,0,20,42,210
+122,Webster Bank,Boston,MA,75,2.75,0,75,43,210
+122,Webster Bank,Boston,MA,75,2.625,0,75,44,210
+122,Webster Bank,Boston,MA,75,2.56,0,75,45,210
+122,Webster Bank,Boston,MA,75,2.375,0,75,46,210
+122,Webster Bank,Boston,MA,100,2.25,0,100,47,210
+123,Maria McGregor,New York,NY,7,2.75,0,7,48,210
+124,Home Insurance Company,,,25,2.75,0,25,49,210
+124,Home Insurance Company,,,25,2.55,0,25,50,210
+124,Home Insurance Company,,,25,2.3,0,25,51,210
+124,Home Insurance Company,,,25,2,0,25,52,210
+125,"Augustus A. L. Chase, cashier",,,3,2.6,0,3,53,210
+126,John P. Elton,Waterbury,CT,10,2.6,0,10,54,210
+126,John P. Elton,Waterbury,CT,15,2.5,0,15,55,210
+127,S. & W. Welsh,Philadelphia,PA,100,2.5,0,100,56,210
+128,New England Bank,,,40,2.5,0,40,57,210
+128,New England Bank,,,40,2,0,40,58,210
+128,New England Bank,,,80,1.5,0,80,59,210
+128,New England Bank,,,80,1,0,80,60,210
+128,New England Bank,,,10,0.5,0,10,61,210
+129,Miners' Bank,Possville,PA,50,2.5,0,50,62,210
+130,G. W. Berrian,Jersey City,NJ,8,2.5,0,8,63,210
+131,Josiah P. Cook,Boston,MA,10,2.5,0,10,64,210
+132,E. L. Bushnell,New York,NY,5,2.5,0,5,65,210
+132,E. L. Bushnell,New York,NY,5,2,0,5,66,210
+132,E. L. Bushnell,New York,NY,5,1.5,0,5,67,210
+132,E. L. Bushnell,New York,NY,5,1,0,5,68,210
+133,Nathan Nathans,Philadelphia,PA,1,2.5,0,1,69,210
+134,J. Amory Davis,Boston,MA,25,2.5,0,25,70,210
+135,Otis Daniel,,,10,2.5,0,10,71,210
+135,Otis Daniel,,,10,2,0,10,72,210
+135,Otis Daniel,,,10,1,0,10,73,210
+136,James W. Harris,,,1,2.5,0,1,74,210
+137,Samuel F. Ashton,Philadelphia,PA,10,2.5,0,10,75,210
+138,John T. Vincent,Washington,DC,1,2.5,0,1,76,210
+139,John Blake,New York,NY,1,2.5,0,1,77,210
+140,"Joseph M. Price, cashier",,,50,2.5,0,50,78,210
+141,"George S. Robbins & Sons, trustees",,,40,2.5,0,40,79,210
+142,"James Gallatin, president",New York,NY,50,2.5,0,50,1,211
+143,W. H. Slocum,,,10,2.5,0,10,2,211
+144,"Bliss, Williams & Co.",,,25,2.3,0,25,3,211
+144,"Bliss, Williams & Co.",,,25,2.25,0,25,4,211
+144,"Bliss, Williams & Co.",,,50,2.05,0,50,5,211
+144,"Bliss, Williams & Co.",,,25,1.9,0,25,6,211
+144,"Bliss, Williams & Co.",,,25,1.75,0,25,7,211
+145,Charles Stoddard,Boston,MA,6,2.25,0,6,8,211
+146,"F. S. Bayley, cashier",Springfield,MA,5,2.25,0,5,9,211
+146,"F. S. Bayley, cashier",Springfield,MA,5,2,0,5,10,211
+146,"F. S. Bayley, cashier",Springfield,MA,5,1.75,0,5,11,211
+146,"F. S. Bayley, cashier",Springfield,MA,5,1.5,0,5,12,211
+146,"F. S. Bayley, cashier",Springfield,MA,5,1.25,0,5,13,211
+147,B. F. Mansfield,New York,NY,5,2.2,0,5,14,211
+147,B. F. Mansfield,New York,NY,5,1.5,0,5,15,211
+148,Underhill & Haven,,,20,2.2,0,20,16,211
+149,Hamilton Fire Insurance Co.,,,25,2.1,0,25,17,211
+150,National Bank,Boston,MA,70,2,0,70,18,211
+151,Bank of America,New York,NY,500,2,0,500,19,211
+151,Bank of America,New York,NY,10,2,0,10,20,211
+152,George A. Black,,,1,2,0,1,21,211
+153,A. E. Giles,Boston,MA,1,2,0,1,22,211
+154,William Wright,Philadelphia,PA,15,2,0,15,23,211
+155,Joseph Hutchinson,Washington,DC,2,2,0,2,24,211
+155,Joseph Hutchinson,Washington,DC,2,1.3,0,2,25,211
+155,Joseph Hutchinson,Washington,DC,2,1,0,2,26,211
+155,Joseph Hutchinson,Washington,DC,2,0,0,2,27,211
+156,Leaman Thompson,Albany,NY,5,2,0,5,28,211
+157,Albany Exchange Bank,,,20,2,0,20,29,211
+157,Albany Exchange Bank,,,20,1.5,0,20,30,211
+157,Albany Exchange Bank,,,20,1,0,20,31,211
+158,Robert White,Boston,MA,3,2,0,3,32,211
+159,Thomas Trueman,New York,NY,0.5,2,0,0.5,33,211
+160,Amanda McLean,Washington,DC,1,2,0,1,34,211
+161,Isaac Sweetser,Boston,MA,1,2,0,1,35,211
+162,John Slattery,New York,,10,2,0,10,36,211
+162,John Slattery,New York,,10,0,0,10,37,211
+163,Jefferson Branch State Bank of Ohio,...,OH,31,2,0,31,38,211
+164,Charles W. Swartz,Washington,DC,0.5,1.75,0,0.5,39,211
+165,"Isaac W. Blain, for himself and others",New York,NY,4.5,1.5,0,4.5,40,211
+166,Hostetter & Smith,Pittsburg,PA,10,1.25,0,10,41,211
+167,Clarkson & Co.,New York,NY,5,1.01,0,5,42,211
+167,Clarkson & Co.,New York,NY,10,0.01,0,10,43,211
+168,J. Kendall,Boston,MA,2,1,0,2,44,211
+169,John H. Robinson,Paterson,NJ,0.2,1,0,0.2,45,211
+170,A. B. Johnson,Utica,NY,10,1,0,10,46,211
+171,Francis Jago,Philadelphia,PA,4,1,0,4,47,211
+172,George B. Milton,Boston,MA,1,1,0,1,48,211
+173,V. de Amerilla,Philadelphia,PA,0.3,1,0,0.3,49,211
+174,Seth Caldwell,Worcester,MA,1,1,0,1,50,211
+175,Brevoort Fire Insurance Co.,New York,NY,10,1,0,10,51,211
+175,Brevoort Fire Insurance Co.,New York,NY,10,0.5,0,10,52,211
+175,Brevoort Fire Insurance Co.,New York,NY,10,0,0,10,53,211
+176,C. T. Willard,Philadelphia,PA,0.05,1,0,0.05,54,211
+177,Albany Exchange Bank,Albany,NY,20,0.75,0,20,55,211
+177,Albany Exchange Bank,Albany,NY,20,0.5,0,20,56,211
+178,George W. Utennehle,Washington,NY,6,0,0,6,57,211
+179,S. J. Goss,,,0.75,0,0,0.75,58,211
+180,Henry H. Bownell,New Haven,CT,3,0,0,3,59,211
+181,White & Hill,Nashua,NH,5,0,0,5,60,211
+182,Henry S. Milton,Boston,MA,1,0,0,1,61,211
+183,Pemberton Smith,Philadelphia,PA,3,0,0,3,62,211
+184,G. F. Hunting,Boston,MA,0.4,0,0,0.4,63,211
+185,W. M. Webster,Philadelphia,PA,2.2,0,0,2.2,64,211
+186,J. M. Balisse,New York,NY,1,0,0,1,65,211
+187,J. M. Hines,Shippensburg,PA,1,0,0,1,66,211
+188,Mrs. S. E. Edwards,Philadelphia,PA,2,0,0,2,67,211

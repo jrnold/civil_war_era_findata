@@ -8,9 +8,80 @@ Other auctions data to be included later
 
 - Sixes of 1848: `Treasury Report 1848, M., p. 325 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1848.pdf#pg=52>`__
 - Loan of 1847: `Treasury Report 1847, No. 3, p. 215 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1847.pdf#pg=98>`__
-- Loan of 10 million at 5 percent opened at the Treasury Department October 22, 1860.
-  `Treasury Report 1860, No 48, p. 481 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1860.pdf#pg=481>`__.  
 
+Auction of October 22, 1860
+=================================
+
+An auction for the Loan of 1860 (Act of June 22, 1860) (`DeKnight p. 77 <http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA77>`__, `Bayley p. 75 <http://books.google.com/books?id=Ce4JAAAAIAAJ&printsec=frontcover&pg=PA75>`__, `p. 150  <http://books.google.com/books?id=Ce4JAAAAIAAJ&printsec=frontcover&pg=PA150>`__).
+
+During the auction, concerns about the war increased and many bidders forfeited their deposits, and the loan was withdrawn from the market. Only 7,022,00 was issued.
+
+Bids were listed in the Treasuary Report, 1861.
+
+The proposal read,
+
+    REPORT ON THE FINANCES.
+    
+    No, 48.
+    
+    OFFICIAL,
+    Proposals for loan of ten million dollars.
+    
+    TREASURY DEPARTMENT, September, 1860.
+    
+    Sealed proposals will be received at this department until 12
+    o'clock, noon, of Monday, the 22d day of October next, for ten
+    millions of dollars of stock of the United States, to be issued
+    under the act of Congress of the 22d of June last, authorizing a
+    loan and providing for the redemption of treasury notes, at which
+    time the proposals will be opened and decided. The stock will be
+    reimbursable in ten years from the first day of January next, and
+    will bear interest at five per Centura per annura, payable
+    semi-annually, on the first days of January and July of each year.
+    
+    No offer will be accepted below par, and none for any fraction of
+    one thousand dollars. Nor will any offer be considered unless one
+    per centum of the amount thereof is deposited with a depositary of
+    the United States, subject to the order of the Secretary of the
+    Treasury.  The certificate of such deposit must accompany the
+    proposals. In all cases the offers must be unconditional, without
+    reference to other offers, and must state the rate of premium
+    offered.  The proposals should be indorsed on the outside,
+    "Proposals for Loan of 1860," and be addressed "to the Secretary
+    of the Treasury, Washington, D. C."
+    
+    The best bidders under the foregoing conditions, for the aggregate
+    sum of ten millions of dollars, will be immediately informed by mail
+    of the acceptance of their offers, and they must deposit the amount so
+    accepted, with the premium thereon, with the Treasurer of the United
+    States, or the assistant treasurer at Boston, New York, Philadelphia,
+    Charleston, New Orleans, or St. Louis, on or before the twenty-second
+    day of November next. Should successful bidders desire to deposit
+    at other points, their wishes will be duly considered on being stated
+    to this department.
+    
+    Certificates of inscribed stock will be issued in sums not less
+    than one thousand dollars each to the successful bidders, or their
+    assigns, for the principal so deposited, carrying interest at the
+    rate of five per Centum from the date of such deposit. Such stock
+    will be transferable on the books of the treasury, agreeably to
+    the regulations of the department.  Should any of, the successful
+    bidders require certificates of stock with coupons of semi-annual
+    interest payable thereon from the 1st of January next, such
+    certificates will be issued with such coupons attached in sums of
+    one thousand dollars each ;.and such coupon stock, instead of
+    being transferable on the books of the treasury, may be assigned
+    and transferred by the delivery of the certificates. The interest
+    on the last named stock, from the date of the deposit to the first
+    day of January next, will be paid to the successful bidder or his
+    attorney by the depositary with whom the principal was deposited.
+    The preliminary deposit of one per Centura, required upon all
+    proposals under this notice, will be included in the deposits of
+    principal and premium made by successful bidders, and will be
+    immediately directed to be returned to the unsuccessful bidders.
+    
+    HOWELL COBB, *Secretary of the Treasury*
+  
 
 Auctions of the Sixes of 1881 issued under the Act of February 8, 1861
 ========================================================================
@@ -291,80 +362,105 @@ The notice is from p. 50.
   S. P . CHASE,
   *Secretary of the Treasury*.
 
-=================================  
-Auction of October 22, 1860
-=================================
+    
 
-An auction for the Loan of 1860 (Act of June 22, 1860) (`DeKnight p. 77 <http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA77>`__, `Bayley p. 75 <http://books.google.com/books?id=Ce4JAAAAIAAJ&printsec=frontcover&pg=PA75>`__, `p. 150  <http://books.google.com/books?id=Ce4JAAAAIAAJ&printsec=frontcover&pg=PA150>`__).
+November 10, 1862    
+===========================
 
-During the auction, concerns about the war increased and many bidders forfeited their deposits, and the loan was withdrawn from the market. Only 7,022,00 was issued.
+:Notice: Nov 10, 1862
+:Due: Nov 17, 1862
 
-Bids were listed in the Treasuary Report, 1861.
+Data come from the Treasury Annual Report 1862, No. 13, pp. 206--211.
 
-The proposal read,
+Proposal "Treasury Report 1862, No. 13, p. 205":
 
-    REPORT ON THE FINANCES.
-    
-    No, 48.
-    
-    OFFICIAL,
-    Proposals for loan of ten million dollars.
-    
-    TREASURY DEPARTMENT, September, 1860.
-    
-    Sealed proposals will be received at this department until 12
-    o'clock, noon, of Monday, the 22d day of October next, for ten
-    millions of dollars of stock of the United States, to be issued
-    under the act of Congress of the 22d of June last, authorizing a
-    loan and providing for the redemption of treasury notes, at which
-    time the proposals will be opened and decided. The stock will be
-    reimbursable in ten years from the first day of January next, and
-    will bear interest at five per Centura per annura, payable
-    semi-annually, on the first days of January and July of each year.
-    
-    No offer will be accepted below par, and none for any fraction of
-    one thousand dollars. Nor will any offer be considered unless one
-    per centum of the amount thereof is deposited with a depositary of
-    the United States, subject to the order of the Secretary of the
-    Treasury.  The certificate of such deposit must accompany the
-    proposals. In all cases the offers must be unconditional, without
-    reference to other offers, and must state the rate of premium
-    offered.  The proposals should be indorsed on the outside,
-    "Proposals for Loan of 1860," and be addressed "to the Secretary
-    of the Treasury, Washington, D. C."
-    
-    The best bidders under the foregoing conditions, for the aggregate
-    sum of ten millions of dollars, will be immediately informed by mail
-    of the acceptance of their offers, and they must deposit the amount so
-    accepted, with the premium thereon, with the Treasurer of the United
-    States, or the assistant treasurer at Boston, New York, Philadelphia,
-    Charleston, New Orleans, or St. Louis, on or before the twenty-second
-    day of November next. Should successful bidders desire to deposit
-    at other points, their wishes will be duly considered on being stated
-    to this department.
-    
-    Certificates of inscribed stock will be issued in sums not less
-    than one thousand dollars each to the successful bidders, or their
-    assigns, for the principal so deposited, carrying interest at the
-    rate of five per Centum from the date of such deposit. Such stock
-    will be transferable on the books of the treasury, agreeably to
-    the regulations of the department.  Should any of, the successful
-    bidders require certificates of stock with coupons of semi-annual
-    interest payable thereon from the 1st of January next, such
-    certificates will be issued with such coupons attached in sums of
-    one thousand dollars each ;.and such coupon stock, instead of
-    being transferable on the books of the treasury, may be assigned
-    and transferred by the delivery of the certificates. The interest
-    on the last named stock, from the date of the deposit to the first
-    day of January next, will be paid to the successful bidder or his
-    attorney by the depositary with whom the principal was deposited.
-    The preliminary deposit of one per Centura, required upon all
-    proposals under this notice, will be included in the deposits of
-    principal and premium made by successful bidders, and will be
-    immediately directed to be returned to the unsuccessful bidders.
-    
-    HOWELL COBB, *Secretary of the Treasury*
-    
-    
+   NATIONAL LOAN—SEVEN-THIRTY BONDS.
+
+   Proposals will be received at the Treasury Department until 12
+   o'clock of Monday, the 17th instant, and then opened for thirteen
+   millions four hundred and twenty thousand five hundred and fifty
+   dollars, ($13,420,550,) being the whole amount of 7.30 three years
+   bonds authorized by law and remaining .undisposed of. These bonds
+   will be of the issue of October 1, 1861, and will have the coupon
+   due April 1, 1863, attached. The accrued interest from October 1,
+   1862, to date of payment will be required to be paid in gold coin
+   or in United States legal tender notes. Offers for any amount not
+   less than one bond of fifty dollars will be considered, but the
+   department will be at liberty to decline all proposals not regarded
+   as advantageous to the government.
+
+   Ten per cent, of each amount offered must be deposited with an
+   assistant treasurer, and will be forfeited in case of acceptance of
+   proposal and non-payment of the balance within ten days from date
+   of notice of acceptance.
+
+   All deposits on account of proposal not accepted will be
+   immediately returned to the offerers. On receiving deposits the
+   assistant treasurers will, when any deposit may be made, issue
+   duplicate certificates—the original of which he will deliver to the
+   offerer, by whom it must be sent, with his proposal, to the
+   Secretary of the Treasury. No proposal will be considered in
+   absence of such a certificate ; nor will any proposal be
+   received after 12 o'clock of the day fixed for the opening.
+
+   S.P.CHASE,
+   Secretary of the Treasury
+
+Auction of June 4, 1864
+========================
+
+:notice: June 4, 1864
+:opened: June 15, 1864	 
+
+This was an auction for 75 million in 6-percent stock payable in 1881. 
+
+Aggregate amount of bids was about 75 million. The bids were between
+par and 8 per cent premium. The treasury accepted all bids above 4
+percent premium; totalling about 42 million dollars.
+`Banker's Magazine, Vol XIV, July 1864
+<http://books.google.com/books?id=lGAmAQAAIAAJ&pg=PA1>`__, p. 1.
+The remaining bids 
+
+Full set of bids were listed in *The New York Times* on June 16, 1864, p. 1 and Jun 19, 1864, p. 1. 
+
+- THE SEVENTY-FIVE MILLION LOAN. (1864, Jun 19). New York Times (1857-1922). Retrieved from http://search.proquest.com/docview/91850788?accountid=10747
+- THE $75,000,000 LOAN. (1864, Jun 16). New York Times (1857-1922). Retrieved from http://search.proquest.com/docview/91813248?accountid=10747
+
+Auction of August 30, 1864
+===========================
+
+Auction for the remaining balance of the 75 million that was not auctions off in the June 4, 1864 auction.
+
+The notice from `Banker's Magazine
+<http://books.google.com/books?pg=PA317&id=lGAmAQAAIAAJ>`__, p. 317.
+
+  Treasury Department, August 30,1864.
+
+  "Sealed offers will be received at this department, under the act of
+  March 8, 1868, until noon of Friday, the 9lh of September. 1864, for
+  bonds of the United States, to the amount of about thirty-one and a
+  half millions of dollars, being the amount of unaccepted offers
+  undisposed of under the notice of proposals for loan, dated 6th June
+  last. The bonds will bear an annual interest of six per centum,
+  payable semi-annually in coin on the first days of July and January
+  of each year, and redeemable after the 30th of June, 1881."
+
+The bids were for nearly 73 millions.   `Banker's Magazine
+<http://books.google.com/books?pg=PA317&id=lGAmAQAAIAAJ>`__, states
+
+Some bids listed *NYT* Sep 11, 1864, p. 1. "News from Washington". Sep 10, 1864, p.1. Checked Sept
+9-13 and did not find any other bids.
+
+- NEWS FROM WASHINGTON. (1864, Sep 10). New York Times (1857-1922). Retrieved from http://search.proquest.com/docview/91838946?accountid=10747 (partial bids)
+- MONETARY AFFAIRS. (1864, Sep 10). New York Times (1857-1922). Retrieved from http://search.proquest.com/docview/91829810?accountid=10747
+- NEWS FROM WASHINGTON. (1864, Sep 11). New York Times (1857-1922). Retrieved from http://search.proquest.com/docview/91857909?accountid=10747 (partial bids)
+- THE VERY LATEST. (1864, Sep 12). Chicago Tribune (1860-1872). Retrieved from http://search.proquest.com/docview/175439682?accountid=10747
+- The new government loan--bids for nearly &73,000,000--names of successful bidders. (1864, Sep 12). The Boston Herald (1846-1865). Retrieved from http://search.proquest.com/docview/506580623?accountid=10747
+- NEWS FROM WASHINGTON. (1864, Sep 11). The New York Herald (1840-1865). Retrieved from http://search.proquest.com/docview/505717437?accountid=10747
+- NEWS FROM WASHINGTON. (1864, Sep 10). The New York Herald (1840-1865). Retrieved from http://search.proquest.com/docview/505713762?accountid=10747
+
+
+
  ..  LocalWords:  lst ap th assignees centum indorsed ditional proximo
 ..  LocalWords:  23d 2d 2lst 22d gress Centura annura fers Cen tura
+..  LocalWords:  undisposed
