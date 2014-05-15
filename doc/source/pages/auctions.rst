@@ -6,8 +6,9 @@ The data contain bids and amounts from several Treasury auctions.
 
 Other auctions data to be included later
 
-- Sixes of 1848: `Treasury Report 1848, M., p. 325 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1848.pdf#pg=52>`__
-- Loan of 1847: `Treasury Report 1847, No. 3, p. 215 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1847.pdf#pg=98>`__
+- Sixes of 1848: `Treasury Report 1848, M., p. 325 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1848.pdf#page=52>`__
+- Loan of 1847: `Treasury Report 1847, No. 3, p. 215 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1847.pdf#page=98>`__
+- Loan of 1843  `Treasury Report 1843, Table E, p. 629 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1843.pd#page=34>`__
 
 Auction of October 22, 1860
 =================================
@@ -16,7 +17,7 @@ An auction for the Loan of 1860 (Act of June 22, 1860) (`DeKnight p. 77 <http://
 
 During the auction, concerns about the war increased and many bidders forfeited their deposits, and the loan was withdrawn from the market. Only 7,022,00 was issued.
 
-Bids were listed in the Treasuary Report, 1861.
+Bids were listed in the `Treasuary Report, 1861, No. 48, pp. 482-483 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1860.pdf#page=482>`__
 
 The proposal read,
 
