@@ -1,5 +1,49 @@
-library("RJSONIO")
+library("jsonlite")
 library("lubridate")
+
+#'
+#'
+#' Noll
+#'
+#' - Description
+#' - Authorizing Acts
+#' - Liability: e.g. "Public Debt"
+#' - Issued for: e.g. "United States Treasury"
+#' - Instrument Type: "Note", "Bond"
+#' - Conditions
+#'
+#'    - Interest
+#'    - Maturity
+#'    - Redeemable
+#'    - Callable
+#'    - Payable: gold coin, specie
+#'    - Sold at:
+#'
+#' - Denominiations
+#' - Issues
+#' - Source
+#'
+#'
+#' - name:
+#' - page: on Bayley
+#' - date of statute
+#' - length: in years
+#' - due:
+#' - amount authorized
+#' - amount issued
+#' - sold at
+#' - interest rate
+#' - interest payment; semi-annual
+#' 
+#'
+#'
+#' ## Sources
+#'
+#' - Bayley
+#' - DeKnight
+#' - Annual Reports of the Secretary of the Treasury
+#' - Franklin Nolls, http://franklinnoll.com/Treasury-Securities-Knowledgebase.html, "Treasury Security Knowledge Base"
+#' 
 
 args <- commandArgs(TRUE)
 outfile <- args[1]
@@ -7,7 +51,7 @@ outfile <- args[1]
 setMethod("toJSON", "Date",
           function(x, ...) callGeneric(format(x, "%Y-%m-%d"), ...))
 
-#' #' start from redemption date
+#' Generate a number of cashflows startint from the redemption date
 generate_cashflow_1 <- function(redemption, n_coupons, coupon,
                                 face=100, period = 6) {
     dates <- sort(redemption - months(0:(n_coupons - 1) * period))
@@ -15,7 +59,7 @@ generate_cashflow_1 <- function(redemption, n_coupons, coupon,
     data.frame(date = dates, amount = cf)
 }
 
-#' Start from issue date
+#' Generate a number of cashflows starting from the issue date
 generate_cashflow_2 <- function(issue, n_coupons, coupon,
                                 face=100, period = 6) {
     dates <- sort(issue + months(1:n_coupons * period))
@@ -28,32 +72,82 @@ generate_cashflow_2 <- function(issue, n_coupons, coupon,
 #' - ``bonds`` stores relationship between bonds.
 coupons <- list()
 
-#' US Bonds
-#' =====================
-
-#' Sixes of 1868
-#' -----------------
 #'
-#' Due in Jan
+#' # US Bonds
+#' 
 
+#'
+#' ## Sixes of 1867-68
+#'
+#' Reedemable on Jan 1, 1868
+#' Issued under the loan of 1847.
+#' 
 coupons$us_sixes_18680101 <-
     list(cashflows = generate_cashflow_1(as.Date("1868-1-1"), 20 * 2, 3),
          interest = 0.06,
          periods = list(c(1, 1), c(7, 1)),
          maturity_date = as.Date("1868-1-1"),
-         issue_date = as.Date("1861-1-1"))
+         issue_date = as.Date("1847-7-1"))
 
-#' Due in July
-
+#'
+#' Reedemable on Jul 1, 1868
+#' 
+#' 
 coupons$us_sixes_18680701 <-
     list(cashflows = generate_cashflow_1(as.Date("1868-7-1"), 20 * 2, 3),
          interest = 0.06,
          periods = list(list(month = 1, day = 1), list(month = 7, day = 1)),
          maturity_date = as.Date("1868-7-1"),
+         issue_date = as.Date("1848-1-1"))
+
+#'
+#' ## Texas Indemnity (Fives of 1865)
+#'
+#' Issued under the Act of Sept 9, 1850.
+#' Authorized the issue of 10 million at 5 percent interest, redeemable in 15 years (Jan 1, 1865).
+#' 5 million were issued.
+#' This was issued to idemnify Texas for the relinquishment of her claims.
+#' 
+#' - https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf p. 42
+coupons[["us_texas_indemnity"]] <-
+    list(cashflows = generate_cashflow_1(as.Date("1865-1-1"), 15 * 2, 2.5),
+         interest = 0.05,
+         periods = list(list(month = 1, day = 1), list(month = 7, day = 1)),
+         maturity_date = as.Date("1865-1-1"),
+         issue_date = as.Date("1850-1-1"))
+
+#'
+#' ## Sixes of 1871 (Loan of 1860)
+#'
+#' Issued under the Act of Dec 17, 1860.
+#' Interest of 5 percent per annum; 10 year redemption (Jan 1, 1871).
+#' 21 mn aurhorized but only 7,022,000 issued.
+#' 
+#' - https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf p. 42
+#' 
+coupons[["us_fives_18710101"]] <-
+    list(cashflows = generate_cashflow_1(as.Date("1871-1-1"), 10 * 2, 2.5),
+         interest = 0.05,
+         periods = list(list(month = 1, day = 1), list(month = 7, day = 1)),
+         maturity_date = as.Date("1871-1-1"),
          issue_date = as.Date("1861-1-1"))
 
-#' Fives of 1874
-#' -----------------
+#'
+#' ## Oregon War Loan
+#'
+#' Issued under the Act of Mar 2, 1861 to repay the states of Oregon and Washington for expenses in the Indian wars of 1855-56.
+#' 6 percent interest, 20 year maturity. Jul 1, 1881.
+#' 2.8 mn authorized, only about 1.1 mn issued. 
+#' 
+coupons[["us_oregon_war"]] <-
+    list(cashflows = generate_cashflow_1(as.Date("1881-1-1"), 20 * 2, 3),
+         interest = 0.06,
+         periods = list(list(month = 1, day = 1), list(month = 7, day = 1)),
+         maturity_date = as.Date("1881-1-1"),
+         issue_date = as.Date("1861-7-1"))
+
+#'
+#' ## Fives of 1874
 #'
 coupons$us_fives_18740101 <-
     list(cashflows = generate_cashflow_1(as.Date("1874-1-1"), 15 * 2 + 1, 2.5),
@@ -83,14 +177,18 @@ coupons$us_sixes_18810701 <-
          maturity_date = as.Date("1881-7-1"),
          issue_date = as.Date("1861-7-1"))
 
-#' Seven-Thirties
-#' ------------------
 #'
-#' Seven Thirties of 1861
+#' ## Seven-Thirties of 1861
 #'
 #' - 1864-08-19
 #' - 1864-10-01
 #'
+#' Seven thirties were convertible to 6's of 1881 at par upon maturity.
+#'
+#' - [Commerical Chronicle and Review, July 1867](http://books.google.com/books?id=pk81AQAAMAAJpg=PA75)
+#' - [Commercial and Financial Chronicle, Aug 17, 1867](http://books.google.com/books?id=e3FAAQAAMAAJ&dq=seven%20thirties&pg=PA198)
+#' 
+
 #' Seven Thirties of 1864 and 1865
 #' (Acts of June 30, 1864 and March 3, 1865)
 #'
@@ -135,9 +233,9 @@ coupons$us_seven_thirties_18680715  <-
          issue_date = as.Date("1865-07-15"))
 
 
-#' Ten-Forties
-#' -------------
 #'
+#' ## Ten-Forties
+#' 
 for (year in 10:40) {
   yyyy <- 1864 + year
   bondname <- sprintf("us_ten_forty_%d0301_call", yyyy)
@@ -151,12 +249,11 @@ for (year in 10:40) {
 
 }
 
-#' Five Twenties
-#' ------------------
 #'
-#' of 1862
+#' ## Five Twenties of 1862
+#'
 #' 1st possible redemption is 5 years. Interest = 6
-
+#' 
 for (year in 5:20) {
   yyyy <- 1862 + year
   bondname <- sprintf("us_five_twenty_1862_%d0501_call", yyyy)
@@ -169,7 +266,9 @@ for (year in 5:20) {
              issue_date = as.Date("1862-5-1"))
 }
 
-#' of 1864
+#'
+#' ## Five Twenties of 1864
+#' 
 for (year in 5:20) {
   yyyy <- 1864 + year
   bondname <- sprintf("us_five_twenty_1864_%d1101_call", yyyy)
@@ -181,10 +280,12 @@ for (year in 5:20) {
          issue_date = as.Date("1864-11-1"))
 }
 
-################################
+#'
+#' # State Bonds (NYC)
+#' 
 
-#' California 1870
-#' ------------------
+#'
+#' ## California 1870
 #'
 #' :interest: 7
 #' :payable: Jan, Jul
@@ -196,8 +297,9 @@ coupons$california_seven_18700701 <-
          issue_date = NA,
          periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
 
-#' California 1877
-#' -----------------
+#'
+#' ## California 1877
+#' 
 #'
 #' :interest: 7
 #' :payable: Jan, Jul
@@ -209,8 +311,8 @@ coupons$california_seven_18770701 <-
          issue_date = NA,
          periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
 
-#' Ohio 1874
-#' -----------------
+#'
+#' ## Ohio 1874
 #'
 #' :interest: 6
 #' :Payable: Jan, Jul
@@ -223,8 +325,8 @@ coupons$ohio_six_18740701 <-
          issue_date = NA,
          periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
 
-#' Ohio 1886
-#' -----------------
+#'
+#' ## Ohio 1886
 #'
 #' :interest: 6 per cent
 #' :Payable: Jan, Jul
@@ -237,8 +339,8 @@ coupons$ohio_six_18860701 <-
          issue_date = NA,
          periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
 
-#' Kentucky 6's
-#' -----------------
+#'
+#' ## Kentucky 6's
 #' 
 #' :interest: 6
 #' :Payable: Jan, Jul
@@ -254,8 +356,9 @@ for (year in 1869:1872) {
              periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
 }
 
-#' Louisiana
-#' -----------
+#'
+#'
+#' ## Louisiana
 #'
 #' :interest: 6
 #' :Payable: Jan, Jul
@@ -273,8 +376,8 @@ for (year in 1869:1892) {
              periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
 }
 
-#' Missouri
-#' --------------
+#'
+#' ## Missouri
 #'
 #' interest 6 per cent
 #' redeemable in 1872
@@ -287,8 +390,8 @@ coupons$missouri_six_18720701 <-
          interest = 0.06,
          periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
 
-#' North Carolina
-#' ----------------
+#'
+#' ## North Carolina
 #'
 #' interest 6 per cent
 #' payable jan, jul
@@ -301,8 +404,8 @@ coupons$north_carolina_six_18730701 <-
          interest = 0.06,
          periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
 
-#' Pennsylvania
-#' ----------------
+#'
+#' ## Pennsylvania
 #'
 #' :interest: 6 per cent
 #' :redeemable: 1873
@@ -315,8 +418,8 @@ coupons$pennsylvania_six_18730801 <-
          interest = 0.06,
          periods = list(list(month = 2, day = 1), list(month = 8, day = 1)))
 
-#' Virginia
-#' -----------
+#'
+#' ## Virginia
 #'
 #' :Interest: 6
 #' :payable: Jan, Jul
@@ -332,8 +435,8 @@ for (year in 1885:1890) {
              periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
 }
 
-#' Tennessee
-#' ------------
+#'
+#' ## Tennessee
 #'
 #' :Interest: 6
 #' :payable: Jan, Jul
@@ -349,8 +452,8 @@ for (year in 1885:1892) {
              periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
 }
 
-#' Indiana 5
-#' -------------
+#'
+#' ## Indiana 5
 #'
 #' :interest: 5
 #' :payable: Jan, Jul
@@ -366,8 +469,8 @@ for (year in 1869:1892) {
              periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
 }
 
-#' Indiana 6's
-#' ---------------
+#'
+#' ## Indiana 6's
 #'
 #' :interest: 6
 #' :payable: May, Nov
@@ -381,8 +484,8 @@ coupons$indiana_six_18810501 <-
          interest = 0.06,
          periods = list(list(month = 5, day = 1), list(month = 11, day = 1)))
 
-#' Georgia
-#' -------------
+#'
+#' ## Georgia
 #'
 #' :interest: 6
 #' :payable: Jan, Jul
@@ -395,8 +498,12 @@ coupons$georgia_six_18720701 <-
          interest = 0.06,
          periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
 
-## #' Confederate 5 million loan
-## #' --------------------------
+
+#'
+#' # Confederate Bonds
+#' 
+
+## #' ## Confederate 5 million loan
 ## #'
 ## #' Act of Feb 28, 1861, Specie Loan
 ## #'
