@@ -3,7 +3,9 @@ library("lubridate")
 
 #'
 #'
-#' Noll
+#' ## Noll
+#'
+#' Each entry in (Treasury Securities Knowledge Base Contains)[http://www.franklinnoll.com/Treasury-Securities-Knowledgebase.html].
 #'
 #' - Description
 #' - Authorizing Acts
@@ -23,6 +25,9 @@ library("lubridate")
 #' - Issues
 #' - Source
 #'
+#' ## Early NYSE Govt Securities Data
+#'
+#' From Yale International Center for Finanace data [Old New York Stock Exchange 1815-1925](http://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/historical-newyork) data on 
 #'
 #' - name:
 #' - page: on Bayley
@@ -180,22 +185,17 @@ coupons$us_sixes_18810701 <-
 #'
 #' ## Seven-Thirties of 1861
 #'
-#' - 1864-08-19
-#' - 1864-10-01
+#' - Redeemable on 1864-08-19
+#' - Redeemable on 1864-10-01
+#' 
 #'
 #' Seven thirties were convertible to 6's of 1881 at par upon maturity.
 #'
 #' - [Commerical Chronicle and Review, July 1867](http://books.google.com/books?id=pk81AQAAMAAJpg=PA75)
 #' - [Commercial and Financial Chronicle, Aug 17, 1867](http://books.google.com/books?id=e3FAAQAAMAAJ&dq=seven%20thirties&pg=PA198)
+#' - [Banders Magainze, June 1864, p. 940](http://books.google.com/books?id=D14mAQAAIAAJ&pa=940), "Notice to the Holders of the Three Years 7-30 Notes".
+#' - Interest payable in specie, but principal payable in *currency*. George Harrington, "Payment of the Five Twenties in Gold", [Banker's Magazine](http://books.google.com/books?id=D14mAQAAIAAJ&pa=10).
 #' 
-
-#' Seven Thirties of 1864 and 1865
-#' (Acts of June 30, 1864 and March 3, 1865)
-#'
-#' - 1867-8-15
-#' - 1868-6-15
-#' - 1868-7-15
-
 coupons$us_seven_thirties_18640819  <-
     list(cashflows = generate_cashflow_1(as.Date("1864-8-19"), 3 * 2, 7.3 / 2),
          interest = 0.073,
@@ -210,6 +210,15 @@ coupons$us_seven_thirties_18641001  <-
          periods = list(list(month = 4, day = 1), list(month = 10, day = 1)),
          maturity_date = as.Date("1864-10-01"),
          issue_date = as.Date("1861-10-1"))
+
+
+#' Seven Thirties of 1864 and 1865
+#' (Acts of June 30, 1864 and March 3, 1865)
+#'
+#' - 1867-8-15
+#' - 1868-6-15
+#' - 1868-7-15
+
 
 coupons$us_seven_thirties_18670815  <-
     list(cashflows = generate_cashflow_1(as.Date("1867-08-15"), 3 * 2, 7.3 / 2),
@@ -234,7 +243,17 @@ coupons$us_seven_thirties_18680715  <-
 
 
 #'
-#' ## Ten-Forties
+#' ## Ten-Forties of 1864
+#'
+#' Issued under the act of March 3, 1864.
+#' Paid interest of 5 percent
+#'
+#' - Noll, Vol. 6, page 178. <http://www.franklinnoll.com/Vol_6.pdf#page=178>
+#' - DeKnight, 93. 
+#' - Bayley, 164. 
+#' - Annual Report of the Secretary of the Treasury, 1864: 80. 
+#' - Annual Report of the Secretary of the Treasury, 1868: 262. 
+#' - Annual Report of the Secretary of the Treasury, 1869: 296.
 #' 
 for (year in 10:40) {
   yyyy <- 1864 + year
@@ -253,6 +272,8 @@ for (year in 10:40) {
 #' ## Five Twenties of 1862
 #'
 #' 1st possible redemption is 5 years. Interest = 6
+#'
+#' - Interest and principal payable in specie. George Harrington, "Payment of the Five Twenties in Gold", [Banker's Magazine](http://books.google.com/books?id=D14mAQAAIAAJ&pa=10).
 #' 
 for (year in 5:20) {
   yyyy <- 1862 + year
