@@ -1,7 +1,7 @@
 library("jsonlite")
 library("lubridate")
 
-#'
+#' This generates metadata about each bond issue.
 #'
 #' ## Noll
 #'
