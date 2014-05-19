@@ -1,53 +1,12 @@
+#' # Bond Metadata
+#' 
 library("jsonlite")
 library("lubridate")
+library("dplyr")
 
+#'
 #' This generates metadata about each bond issue.
-#'
-#' ## Noll
-#'
-#' Each entry in (Treasury Securities Knowledge Base Contains)[http://www.franklinnoll.com/Treasury-Securities-Knowledgebase.html].
-#'
-#' - Description
-#' - Authorizing Acts
-#' - Liability: e.g. "Public Debt"
-#' - Issued for: e.g. "United States Treasury"
-#' - Instrument Type: "Note", "Bond"
-#' - Conditions
-#'
-#'    - Interest
-#'    - Maturity
-#'    - Redeemable
-#'    - Callable
-#'    - Payable: gold coin, specie
-#'    - Sold at:
-#'
-#' - Denominiations
-#' - Issues
-#' - Source
-#'
-#' ## Early NYSE Govt Securities Data
-#'
-#' From Yale International Center for Finanace data [Old New York Stock Exchange 1815-1925](http://som.yale.edu/faculty-research/our-centers-initiatives/international-center-finance/data/historical-newyork) data on 
-#'
-#' - name:
-#' - page: on Bayley
-#' - date of statute
-#' - length: in years
-#' - due:
-#' - amount authorized
-#' - amount issued
-#' - sold at
-#' - interest rate
-#' - interest payment; semi-annual
-#' 
-#'
-#'
-#' ## Sources
-#'
-#' - Bayley
-#' - DeKnight
-#' - Annual Reports of the Secretary of the Treasury
-#' - Franklin Nolls, http://franklinnoll.com/Treasury-Securities-Knowledgebase.html, "Treasury Security Knowledge Base"
+#' This is not a complete listing of government and state bond issues during this period (and in fact includes entries for "virtual bonds" used in computations), but includes the metadata about cashflows on bonds needed to compute yields.
 #' 
 
 args <- commandArgs(TRUE)
@@ -56,434 +15,630 @@ outfile <- args[1]
 setMethod("toJSON", "Date",
           function(x, ...) callGeneric(format(x, "%Y-%m-%d"), ...))
 
-#' Generate a number of cashflows startint from the redemption date
-generate_cashflow_1 <- function(redemption, n_coupons, coupon,
-                                face=100, period = 6) {
-    dates <- sort(redemption - months(0:(n_coupons - 1) * period))
-    cf <- c(rep(coupon, length(dates) - 1), face + coupon)
-    data.frame(date = dates, amount = cf)
+#' Some helper functions to generate a number of cashflows starting from the redemption date
+generate_cashflows <-
+    function(redemption, 
+             interest,
+             coupons,
+             period = 2,
+             face=100,
+             specie_interest=TRUE, specie_principal=TRUE)
+{
+    monthperiod <- 12 %/% 2
+    dates <- redemption - months((coupons - 1):0) * monthperiod
+    coupon_payment = face * interest / period
+    data.frame(date = c(dates, redemption),
+               amount = c(rep(coupon_payment, coupons), face),
+               specie = c(rep(specie_interest, coupons),
+               specie_principal))
 }
 
-#' Generate a number of cashflows starting from the issue date
-generate_cashflow_2 <- function(issue, n_coupons, coupon,
-                                face=100, period = 6) {
-    dates <- sort(issue + months(1:n_coupons * period))
-    cf <- c(rep(coupon, length(dates) - 1), face + coupon)
-    data.frame(date = dates, amount = cf)
+generate_cashflows_years <-
+    function(redemption, 
+             interest,
+             years,
+             period = 2,
+             ...)
+{
+    coupons <- period * years
+    generate_cashflows(redemption,
+                        interest,
+                        coupons,
+                        ...)
 }
 
+generate_cashflows_period <-
+    function(redemption,
+             interest,
+             issue_date,
+             period = 2,
+             ...)
+{
+    monthperiod <- 12 %/% period 
+    x <- interval(issue + days(1), redemption, tz = "GMT")
+    coupons <- abs(x %/% months(monthperiod))
+    generate_cashflows(redemption,
+                         interest,
+                         coupons,
+                         period = period,
+                         ...)
+}
 
-#' - ``coupons`` stores cashflows
-#' - ``bonds`` stores relationship between bonds.
-coupons <- list()
+#' stores data on bonds
+bonds <- list()
 
 #'
-#' # US Bonds
+#' ## United States Government
+#' 
+#' ### Sources
+#'
+#' - Bayley, Rafael Arroyo (1882) *The National Loans of the United States: From July 4, 1776, to June 30, 1880*, U.S. Government Printing Office, <http://books.google.com/books?id=OQ9AAAAAYAAJ>
+#' - De Knight, William F. (1900) *History of the currency of the country and of the loans of the United States, from the earliest period to June 30, 1900* <http://books.google.com/books?id=0cQmAQAAMAAJ>.
+#' - Annual Reports of the Secretary of the Treasury, 
+#' - Franklin Nolls, "Treasury Security Knowledge Base", http://franklinnoll.com/Treasury-Securities-Knowledgebase.html
+#' - *Bankers' Magazine* issues
+#' - *Merchants' Magazine and Commercial Chronicle* issues
 #' 
 
 #'
-#' ## Sixes of 1867-68
+#' ### Sixes of 1867 (Loan of 1847)
 #'
-#' Reedemable on Jan 1, 1868
-#' Issued under the loan of 1847.
-#' 
-coupons$us_sixes_18680101 <-
-    list(cashflows = generate_cashflow_1(as.Date("1868-1-1"), 20 * 2, 3),
-         interest = 0.06,
-         periods = list(c(1, 1), c(7, 1)),
+#' Issued under the Act of Jan 28, 1847.
+#' 6 percent interest semiannually, mauturity of 20 years (1 July 1847).
+#'
+#' - Bayley [p. 72](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA72), [p. 145-146](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA145)
+#' - De Knight [p. 72-73](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA72)
+bonds[["us_sixes_18680101"]] <-
+    list(cashflows =
+         generate_cashflows(as.Date("1868-1-1"),
+                            coupons = 20 * 2,
+                            interest = 0.06),
+         interst = 0.06,
+         periods = list(list(month = 1, day = 1),
+         list(month = 7, day = 1)),
          maturity_date = as.Date("1868-1-1"),
          issue_date = as.Date("1847-7-1"))
 
 #'
-#' Reedemable on Jul 1, 1868
+#' ### Sixes of 1868
+#'
+#' Issued under the Act of 31 March 1848 (9 Stat 217).
+#' 6 percent interest payable semi-annually; maturity 20 years (1 July 1868).
 #' 
-#' 
-coupons$us_sixes_18680701 <-
-    list(cashflows = generate_cashflow_1(as.Date("1868-7-1"), 20 * 2, 3),
+#' - Bayley [p. 73](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA73), [p. 147-148](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA147)
+#' - De Knight [p. 73-74](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA73)
+bonds[["us_sixes_18680701"]] <-
+    list(cashflows =
+         generate_cashflows(as.Date("1868-7-1"),
+                            coupons = 20 * 2,
+                            interest = 0.06),
          interest = 0.06,
          periods = list(list(month = 1, day = 1), list(month = 7, day = 1)),
          maturity_date = as.Date("1868-7-1"),
          issue_date = as.Date("1848-1-1"))
 
 #'
-#' ## Texas Indemnity (Fives of 1865)
+#' ### Texas Indemnity (Fives of 1865)
 #'
-#' Issued under the Act of Sept 9, 1850.
-#' Authorized the issue of 10 million at 5 percent interest, redeemable in 15 years (Jan 1, 1865).
-#' 5 million were issued.
+#' Issued under the Act of Sept 9, 1850 (9 Stat 447).
 #' This was issued to idemnify Texas for the relinquishment of her claims.
-#' 
-#' - https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf p. 42
-coupons[["us_texas_indemnity"]] <-
-    list(cashflows = generate_cashflow_1(as.Date("1865-1-1"), 15 * 2, 2.5),
+#' Interest of 5 percent, payable semi-annually; maturity of 14 years (Jan 1, 1865)
+#'
+#' - Bayley [p. 73-74](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA73), [148-149](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA148)
+#' - De Knight [p. 74-75](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA74]
+#' - Annual Report of the Treasury 1863, [p. 42](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf#page=50)
+bonds[["us_texas_indemnity"]] <-
+    list(cashflows =
+         generate_cashflows_years(as.Date("1865-1-1"),
+         years = 15, interest = 0.05),
          interest = 0.05,
-         periods = list(list(month = 1, day = 1), list(month = 7, day = 1)),
+         periods = list(list(month = 1, day = 1),
+         list(month = 7, day = 1)),
          maturity_date = as.Date("1865-1-1"),
          issue_date = as.Date("1850-1-1"))
 
 #'
-#' ## Sixes of 1871 (Loan of 1860)
+#' ### Fives of 1871 (Loan of 1860)
 #'
-#' Issued under the Act of Dec 17, 1860.
-#' Interest of 5 percent per annum; 10 year redemption (Jan 1, 1871).
-#' 21 mn aurhorized but only 7,022,000 issued.
+#' Issued under the Act of June 22, 1860 (12 Stat 79).
+#' Interest of 5 percent, payable semi-annually; length of 10 years (Jan 1, 1871).
 #' 
-#' - https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf p. 42
+#' - Bayley [p. 75](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA75), [150](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA150)
+#' - De Knight [p. 77](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA77]
+#' - Annual Report of the Treasury 1863, [p. 42](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf#page=50)
 #' 
-coupons[["us_fives_18710101"]] <-
-    list(cashflows = generate_cashflow_1(as.Date("1871-1-1"), 10 * 2, 2.5),
+bonds[["us_fives_18710101"]] <-
+    list(cashflows =
+         generate_cashflows_years(as.Date("1871-1-1"),
+                                  10, interest = 0.05),
          interest = 0.05,
-         periods = list(list(month = 1, day = 1), list(month = 7, day = 1)),
+         periods =
+         list(list(month = 1, day = 1),
+              list(month = 7, day = 1)),
          maturity_date = as.Date("1871-1-1"),
          issue_date = as.Date("1861-1-1"))
 
 #'
-#' ## Oregon War Loan
+#' ### Oregon War Loan
 #'
-#' Issued under the Act of Mar 2, 1861 to repay the states of Oregon and Washington for expenses in the Indian wars of 1855-56.
-#' 6 percent interest, 20 year maturity. Jul 1, 1881.
-#' 2.8 mn authorized, only about 1.1 mn issued. 
+#' Issued under the Act of Mar 2, 1861 (12 Stat 198) to repay the states of Oregon and Washington for expenses in the Indian wars of 1855-56.
+#' 6 percent interest paid semi-annually, length of 20 years (Jul 1, 1881).
 #' 
-coupons[["us_oregon_war"]] <-
-    list(cashflows = generate_cashflow_1(as.Date("1881-1-1"), 20 * 2, 3),
+#' - Bayley [p. 77-78](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA77), [152](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA152)
+#' - De Knight [p. 80-81](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA80]
+#' - Annual Report of the Treasury 1863, [p. 42](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf#page=50)
+bonds[["us_oregon_war"]] <-
+    list(cashflows =
+         generate_cashflows_years(as.Date("1881-1-1"),
+                                  years = 20, interest = 0.06),
          interest = 0.06,
-         periods = list(list(month = 1, day = 1), list(month = 7, day = 1)),
+         periods = list(list(month = 1, day = 1),
+         list(month = 7, day = 1)),
          maturity_date = as.Date("1881-1-1"),
          issue_date = as.Date("1861-7-1"))
 
 #'
-#' ## Fives of 1874
+#' ### Fives of 1874 (Loan of 1858)
 #'
-coupons$us_fives_18740101 <-
-    list(cashflows = generate_cashflow_1(as.Date("1874-1-1"), 15 * 2 + 1, 2.5),
+#' Authorized under the Act of June 14, 1858.
+#' 5 percent interest, payable semi-annually.
+#' Length of 15 years (Jan 1, 1874).
+#' 
+#' - Bayley [p. 74](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA74), [149-150](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA149)
+#' - De Knight [p. 76](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA76]
+#' - Annual Report of the Treasury 1863, [p. 42-43](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf#page=50)
+bonds[["us_fives_18740101"]] <-
+    list(cashflows =
+         generate_cashflows(as.Date("1874-1-1"),
+                            coupons = 15 * 2 + 1,
+                            interest = 0.05),
          interest = 0.05,
-         periods = list(list(month = 1, day = 1), list(month = 7, day = 1)),
+         periods = list(list(month = 1, day = 1),
+         list(month = 7, day = 1)),
          maturity_date = as.Date("1874-1-1"),
          issue_date = as.Date("1858-7-1"))
 
-#' Sixes of 1881
-#' ------------------
 #'
-#' Redeemable in Jan
-
-coupons$us_sixes_18810101 <-
-    list(cashflows = generate_cashflow_1(as.Date("1881-1-1"), 20 * 2, 3),
+#' ### Sixes of 1881 (Loan of February 1861)
+#'
+#' Authorized under the Act of Feb 8, 1861 (12 Stat 129).
+#' 6 percent semi-annually; length of 20 years (Jan 1, 1861).
+#'
+#' - Bayley [p. 76](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA76), [151](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA149)
+#' - De Knight [p. 78-79](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA78]
+#' - Annual Report of the Treasury 1863, [p. 42-43](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf#page=50)
+#' - Noll, Vol 5, [p. 511](http://franklinnoll.com/Vol_6.pdf#page=512)
+bonds[["us_sixes_18810101"]] <-
+    list(cashflows =
+         generate_cashflows_years(as.Date("1881-1-1"),
+                                  years = 20,
+                                  interest = 0.06),
          interest = 0.06,
-         periods = list(list(month = 1, day = 1), list(month = 7, day = 1)),
+         periods = list(list(month = 1, day = 1),
+         list(month = 7, day = 1)),
          maturity_date = as.Date("1881-1-1"),
          issue_date = as.Date("1861-1-1"))
 
-#' Redeemable in July
-
-coupons$us_sixes_18810701 <-
-    list(cashflows = generate_cashflow_1(as.Date("1881-7-1"), 20 * 2, 3),
+#'
+#' ### Sixes of 1881 (Loan of July and August 1861)
+#'
+#' Authorized under the Acts of July 17, 1861 (12 Stat 259) and
+#' August 5, 1861.
+#' 6 percent semi-annually; length of 20 years (July 1, 1861).
+#'
+#' - Bayley [p. 78-79](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA78), [152-153](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA152)
+#' - De Knight [p. 81-82](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA81]
+#' - Noll, Vol 5, [p. 512](http://franklinnoll.com/Vol_6.pdf#page=513)
+#' - Annual Report of the Treasury 1863, [p. 44-45](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf#page=52)
+bonds[["us_sixes_18810701"]] <-
+    list(cashflows =
+         generate_cashflows_years(as.Date("1881-7-1"),
+                                  years = 20, interest = 0.06),
          interest = 0.06,
-         periods = list(list(month = 1, day = 1), list(month = 7, day = 1)),
+         periods = list(list(month = 1, day = 1),
+         list(month = 7, day = 1)),
          maturity_date = as.Date("1881-7-1"),
          issue_date = as.Date("1861-7-1"))
 
 #'
-#' ## Seven-Thirties of 1861
+#' ### Seven-Thirties of 1861
 #'
+#' Authorized under the Act of July 17, 1861 (12 Stat 259).
+#' 7.30 percent payable semiannually in specie;
+#' length of 3 years, although convertible to a longer bond.
+#' There were two issues:
+#' 
 #' - Redeemable on 1864-08-19
 #' - Redeemable on 1864-10-01
-#' 
 #'
-#' Seven thirties were convertible to 6's of 1881 at par upon maturity.
+#' At maturity seven thirties could be either converted to face value in *legal tender* (not specie),
+#' or converted to 6's of 1881 (maturing on July 1, 1881) at par upon maturity.
+#' If converted to a 6 percent bond, the 1st interest payment of the 6 percent bond will be July 1864.
 #'
+#' - Beyeley [p. 78](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA78), [154-155](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA154)
+#' - De Knight [p. 83](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA83)
+#' - Annual Report of the Treasury 1863, [p. 44-45](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf#page=52)
+#' - Noll, Vol 6, [p. 156](http://franklinnoll.com/Vol_6.pdf#page=157)
 #' - [Commerical Chronicle and Review, July 1867](http://books.google.com/books?id=pk81AQAAMAAJpg=PA75)
 #' - [Commercial and Financial Chronicle, Aug 17, 1867](http://books.google.com/books?id=e3FAAQAAMAAJ&dq=seven%20thirties&pg=PA198)
-#' - [Banders Magainze, June 1864, p. 940](http://books.google.com/books?id=D14mAQAAIAAJ&pa=940), "Notice to the Holders of the Three Years 7-30 Notes".
+#' - [Bankers' Magazine, June 1864, p. 940](http://books.google.com/books?id=D14mAQAAIAAJ&pg=940), "Notice to the Holders of the Three Years 7-30 Notes".
 #' - Interest payable in specie, but principal payable in *currency*. George Harrington, "Payment of the Five Twenties in Gold", [Banker's Magazine](http://books.google.com/books?id=D14mAQAAIAAJ&pa=10).
 #' 
-coupons$us_seven_thirties_18640819  <-
-    list(cashflows = generate_cashflow_1(as.Date("1864-8-19"), 3 * 2, 7.3 / 2),
+bonds[["us_seven_thirties_18640819"]]  <-
+    list(cashflows =
+         generate_cashflows_years(as.Date("1864-8-19"),
+                                 years = 3,
+                                 interest = 0.073,
+                                 specie_principal = FALSE),
          interest = 0.073,
-         periods = list(list(month = 2, day = 19), list(month = 8, day = 19)),
+         periods = list(list(month = 2, day = 19),
+         list(month = 8, day = 19)),
          maturity_date = as.Date("1864-8-19"),
          issue_date = as.Date("1861-8-19"))
 
+bonds[["us_seven_thirties_18640819_option"]]  <-
+    local({
+        cashflows <-
+            rbind(filter(bonds[["us_seven_thirties_18640819"]]$cashflows, specie),
+                  filter(bonds[["us_sixes_18810701"]]$cashflows,
+                         date > as.Date("1864-10-01")))
+        list(cashflows = cashflows,
+             interest = NA,
+             maturity_date = as.Date("1881-7-1"),
+             periods = NA,
+             issue_date = as.Date("1861-8-19"))
+    })
+
+
 ## Redeemable on 1864-10-1
-coupons$us_seven_thirties_18641001  <-
-    list(cashflows = generate_cashflow_1(as.Date("1864-10-1"), 3 * 2, 7.3 / 2),
+bonds[["us_seven_thirties_18641001"]]  <-
+    list(cashflows =
+         generate_cashflows_years(as.Date("1864-10-01"),
+                                 years = 3,
+                                 interest = 0.073,
+                                 specie_principal = FALSE),
          interest = 0.073,
-         periods = list(list(month = 4, day = 1), list(month = 10, day = 1)),
+         periods = list(list(month = 4, day = 1),
+         list(month = 10, day = 1)),
          maturity_date = as.Date("1864-10-01"),
-         issue_date = as.Date("1861-10-1"))
+         issue_date = as.Date("1861-10-01"))
 
+bonds[["us_seven_thirties_18641001_option"]]  <-
+    local({
+        cashflows <-
+            rbind(filter(bonds[["us_seven_thirties_18641001"]]$cashflows, specie),
+                  filter(bonds[["us_sixes_18810701"]]$cashflows,
+                         date > as.Date("1864-10-01")))
+        list(cashflows = cashflows,
+             interest = NA,
+             maturity_date = as.Date("1881-7-1"),
+             periods = NA,
+             issue_date = as.Date("1861-10-01"))
+    })
 
-#' Seven Thirties of 1864 and 1865
-#' (Acts of June 30, 1864 and March 3, 1865)
 #'
-#' - 1867-8-15
-#' - 1868-6-15
-#' - 1868-7-15
-
-
-coupons$us_seven_thirties_18670815  <-
-    list(cashflows = generate_cashflow_1(as.Date("1867-08-15"), 3 * 2, 7.3 / 2),
+#' ### Seven Thirties of 1864
+#' 
+#' Authorized under the Act of June 30, 1864 (13 Stat 218).
+#' Paid interest of 7.3% semiannually, with a maturity of 3 years (August 15, 1867).
+#'
+#' These paid 7.30 percent semiannually in lawful currency, with the option on redemption of exchanging it for a bond, redeemable at the pleasure of Government after 5 years, and payable twenty years from July 15, 1868, with interest a 6 percent payable semiannually in coin.
+#'
+#' - Noll , vol 6, [p. 157](http://www.franklinnoll.com/Vol_6.pdf#page=158)
+#' - De Knight [p. 97-98](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA97]
+#' - Bayley [p. 85-87](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA85), [165-166](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA165)
+#' - Annual Report of the Treasury 1867, [p. LIV-LV](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1867.pdf#page=58)
+#' 
+bonds[["us_seven_thirties_18670815"]]  <-
+    list(cashflows =
+         generate_cashflows_years(as.Date("1867-08-15"),
+                                  years = 3,
+                                  interest = 0.073,
+                                  specie_interest = FALSE,
+                                  specie_principal = FALSE),
          interest = 0.073,
-         periods = list(list(month = 2, day = 15), list(month = 8, day = 15)),
+         periods = list(list(month = 2, day = 15),
+         list(month = 8, day = 15)),
          maturity_date = as.Date("1867-08-15"),
-         issue_date = as.Date("1863-08-15"))
+         issue_date = as.Date("1864-08-15"))
 
-coupons$us_seven_thirties_18680615  <-
-    list(cashflows = generate_cashflow_1(as.Date("1868-06-15"), 3 * 2, 7.3 / 2),
+for (i in 5:20) {
+    bonds[[sprintf("us_seven_thirties_18670815_option_%d_year", i)]]  <-
+        local({
+            cf1 <- bonds[["us_seven_thirties_18670815"]]$cashflow
+            yyyy <- i
+            maturity <- as.Date("1867-08-15") + years(yyyy)
+            cashflows <-
+                rbind(cf1[1:(nrow(cf1) - 1), ],
+                      generate_cashflows_years(maturity,
+                                               years = yyyy,
+                                               interest = 0.06))
+            list(cashflows = cashflows,
+                 interest = NA,
+                 periods = list(list(month = 2, day = 15),
+                 list(month = 8, day = 15)),
+                 maturity_date = maturity,
+                 issue_date = as.Date("1864-08-15"))
+        })
+}
+
+#'
+#' ### Seven-thirties of 1865
+#'
+#' Issued under the Act of March 3, 1865 (13 Stat 468).
+#' These notes had a maturity of 3 years and yielded 7.3% payable in lawful currency.
+#' On maturity, the principal would be paid in lawful currency or the note could  be converted to a 6 percent 5-20 at par; interest and principal payable in specie.
+#'
+#' There were two issues: on maturity on 15 June 1865, and one maturing on 15 July 1865.
+#'
+#' - Noll, Vol 6, [p. 158](http://franklinnoll.com/Vol_6.pdf#page=159)
+#' - De Knight [p. 97-98](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA97]
+#' - Bayley [p. 85-87](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA85), [p. 165-66](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA165)
+#' - Annual Report of the Treasury 1867, [p. LIV-LV](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1867.pdf#page=58)
+#' 
+bonds[["us_seven_thirties_18680615"]]  <-
+    list(cashflows =
+         generate_cashflows_years(as.Date("1868-06-15"),
+                                  years = 3,
+                                  interest = 0.073,
+                                  specie_interest = FALSE,
+                                  specie_principal = FALSE),
          interest = 0.073,
-         periods = list(list(month = 12, day = 15), list(month = 6, day = 15)),
+         periods = list(list(month = 6, day = 15),
+         list(month = 12, day = 15)),
          maturity_date = as.Date("1868-06-15"),
-         issue_date = as.Date("1865-6-15"))
+         issue_date = as.Date("1865-08-15"))
 
-coupons$us_seven_thirties_18680715  <-
-    list(cashflows = generate_cashflow_1(as.Date("1868-07-15"), 3 * 2, 7.3 / 2),
+for (i in 5:20) {
+    bonds[[sprintf("us_seven_thirties_18680615_option_%d_year", i)]]  <-
+        local({
+            cf1 <- bonds[["us_seven_thirties_18680615"]]$cashflow
+            yyyy <- i
+            maturity <- as.Date("1868-06-15") + years(yyyy)
+            cashflows <-
+                rbind(cf1[1:(nrow(cf1) - 1), ],
+                      generate_cashflows_years(maturity,
+                                               years = yyyy,
+                                               interest = 0.06))
+            list(cashflows = cashflows,
+                 interest = NA,
+                 periods = list(list(month = 2, day = 15),
+                 list(month = 8, day = 15)),
+                 maturity_date = maturity,
+                 issue_date = as.Date("1865-06-15"))
+        })
+}
+
+bonds[["us_seven_thirties_18680715"]]  <-
+    list(cashflows =
+         generate_cashflows_years(as.Date("1868-07-15"),
+                                  years = 3,
+                                  interest = 0.073,
+                                  specie_interest = FALSE,
+                                  specie_principal = FALSE),
          interest = 0.073,
-         periods = list(list(month = 1, day = 15), list(month = 7, day = 15)),
+         periods = list(list(month = 6, day = 15),
+         list(month = 12, day = 15)),
          maturity_date = as.Date("1868-07-15"),
          issue_date = as.Date("1865-07-15"))
 
+for (i in 5:20) {
+    bonds[[sprintf("us_seven_thirties_18680715_option_%d_year", i)]]  <-
+        local({
+            cf1 <- bonds[["us_seven_thirties_18680715"]]$cashflow
+            yyyy <- i
+            maturity <- as.Date("1868-07-15") + years(yyyy)
+            cashflows <-
+                rbind(cf1[1:(nrow(cf1) - 1), ],
+                      generate_cashflows_years(maturity,
+                                               years = yyyy,
+                                               interest = 0.06))
+            list(cashflows = cashflows,
+                 interest = NA,
+                 periods = list(list(month = 1, day = 15),
+                 list(month = 7, day = 15)),
+                 maturity_date = maturity,
+                 issue_date = as.Date("1865-07-15"))
+        })
+}
+
 
 #'
-#' ## Ten-Forties of 1864
+#' ### Ten-Forties of 1864
 #'
-#' Issued under the act of March 3, 1864.
-#' Paid interest of 5 percent
+#' Issued under the act of March 3, 1864 (13 Stat 13).
+#' Interest of 5 percent, payable semiannually.
+#' Length of 40 years, but callable by the government after 10 years.
 #'
-#' - Noll, Vol. 6, page 178. <http://www.franklinnoll.com/Vol_6.pdf#page=178>
-#' - DeKnight, 93. 
-#' - Bayley, 164. 
-#' - Annual Report of the Secretary of the Treasury, 1864: 80. 
-#' - Annual Report of the Secretary of the Treasury, 1868: 262. 
-#' - Annual Report of the Secretary of the Treasury, 1869: 296.
+#' To account for the callable option on this bond, I generate bonds for all redemption years between 10 and 40.
 #' 
-for (year in 10:40) {
-  yyyy <- 1864 + year
-  bondname <- sprintf("us_ten_forty_%d0301_call", yyyy)
-    coupons[[bondname]] <-
-        list(cashflows = generate_cashflow_2(as.Date("1864-3-1"), year * 2, 2.5),
+#' - Noll, Vol. 6, [p. 178](http://www.franklinnoll.com/Vol_6.pdf#page=179).
+#' - De Knight [p. 93-94](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA93]
+#' - Bayley, [p. 84-85](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA84), [p. 164](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA164)
+#' - Annual Report of the Treasury 1867, [p. LII-LIII](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1867.pdf#page=56)
+#' 
+for (i in 10:40) {
+    issue <- as.Date("1864-3-1")
+    maturity <- issue + years(i)
+    yr <- year(maturity)
+    bondname <- sprintf("us_ten_forty_%d0301_call", yr)
+    bonds[[bondname]] <-
+        list(cashflows =
+             generate_cashflows_years(maturity,
+                                      years = i,
+                                      interest = 0.05),
              interest = 0.05,
-             periods = list(list(month = 3, day = 1), list(month = 9, day = 1)),
-             maturity_date = as.Date(sprintf("%d-3-1", yyyy)),
-             issue_date = as.Date("1864-3-1"),
-             call = (year < 40))
-
+             periods = list(list(month = 3, day = 1),
+             list(month = 9, day = 1)),
+             maturity_date = maturity,
+             issue_date = issue)
 }
 
 #'
-#' ## Five Twenties of 1862
+#' ### Five-Twenties of 1862
 #'
-#' 1st possible redemption is 5 years. Interest = 6
+#' Authorized under the Acts of Feb 25, 1862, 3 March 1864 and 28 January 1865.
+#' 6 percent interest at a maturity of 20 years, callable by the government after 5.
+#' There were some questions as to whether the principal was payable in specie, but several explicit statements by the Treasury that it was.
 #'
-#' - Interest and principal payable in specie. George Harrington, "Payment of the Five Twenties in Gold", [Banker's Magazine](http://books.google.com/books?id=D14mAQAAIAAJ&pa=10).
+#' To account for the call option on this bond, entries are generated for all cashflows for 5 to 20 years.
+#'
+#' - Interest and principal is payable in specie. George Harrington, "Payment of the Five Twenties in Gold", [Banker's Magazine](http://books.google.com/books?id=D14mAQAAIAAJ&pa=10).
+#' - De Knight [p. 85-86](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA85)
+#' - Bayley [79-80](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA79), [155-56](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA155)
+#' - Annual Report of the Treasury 1867, [p. LII-LIII](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1867.pdf#page=56)
+#' - Noll, Vol 5, [p. 297](http://franklinnoll.com/Vol_5.pdf#page=298).
 #' 
-for (year in 5:20) {
-  yyyy <- 1862 + year
-  bondname <- sprintf("us_five_twenty_1862_%d0501_call", yyyy)
-    coupons[[bondname]] <-
-        list(cashflows = generate_cashflow_2(as.Date("1862-5-1"), year * 2, 3),
+for (i in 5:20) {
+    issue <- as.Date("1862-5-1")
+    maturity <- issue + years(i)
+    yr <- year(maturity)
+    bondname <- sprintf("us_five_twenty_%d0501_call", yr)
+    bonds[[bondname]] <-
+        list(cashflows =
+             generate_cashflows_years(maturity,
+                                      years = i,
+                                      interest = 0.06),
              interest = 0.06,
-             periods = list(list(month = 5, day = 1), list(month = 11, day = 1)),
-             call = (year < 20),
-             maturity_date = as.Date(sprintf("%d-05-01", yyyy)),
-             issue_date = as.Date("1862-5-1"))
+             periods = list(list(month = 5, day = 1),
+             list(month = 11, day = 1)),
+             maturity_date = maturity,
+             issue_date = issue)
 }
 
 #'
-#' ## Five Twenties of 1864
+#' ### Five Twenties of June 1864
+#'
+#' Authorized under the Acts of 3 March and 30 June 1864.
+#' These were issued under two acts, but both had the same maturity.
+#' 6 percent interest at a maturity of 20 years, callable by the government after 5.
+#'
+#' To account for the call option on this bond, entries are generated for all cashflows for 5 to 20 years.
+#'
+#' - De Knight [p. 94-95](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA94)
+#' - Bayley [84-86](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA84), [164-165](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA164)
+#' - Noll, Vol 5, [p. 298-299](http://franklinnoll.com/Vol_5.pdf#page=300).
+#' - Annual Report of the Treasury 1867, [p. LII-LIII](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1867.pdf#page=56)
 #' 
-for (year in 5:20) {
-  yyyy <- 1864 + year
-  bondname <- sprintf("us_five_twenty_1864_%d1101_call", yyyy)
-  coupons[[bondname]] <-
-    list(cashflows = generate_cashflow_2(as.Date("1864-11-1"), year * 2, 3),
-         interest = 0.06,
-         periods = list(list(month = 5, day = 1), list(month = 11, day = 1)),
-         maturity_date = as.Date(sprintf("%d-05-01", yyyy)),
-         issue_date = as.Date("1864-11-1"))
+for (i in 5:20) {
+    issue <- as.Date("1864-11-1")
+    maturity <- issue + years(i)
+    yr <- year(maturity)
+    bondname <- sprintf("us_five_twenty_%d0501_call", yr)
+    bonds[[bondname]] <-
+        list(cashflows =
+             generate_cashflows_years(maturity,
+                                      years = i,
+                                      interest = 0.06),
+             interest = 0.06,
+             periods = list(list(month = 5, day = 1),
+             list(month = 11, day = 1)),
+             maturity_date = maturity,
+             issue_date = issue)
 }
 
 #'
-#' # State Bonds (NYC)
+#' ### Five-Twenties of 1865
+#'
+#' Authorized under the Acts of 3 March 1865 and 12 April 1866.
+#' 6 percent interest at a maturity of 20 years, callable by the government after 5.
+#'
+#' To account for the call option on this bond, entries are generated for all cashflows for 5 to 20 years.
+#'
+#' - De Knight [p. 98-99](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA98)
+#' - Bayley [167](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA167)
+#' - Noll, Vol 5, [p. 300](http://franklinnoll.com/Vol_5.pdf#page=301).
+#' - Annual Report of the Treasury 1867, [p. LIV-LV](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1867.pdf#page=58)
+for (i in 5:20) {
+    issue <- as.Date("1865-11-1")
+    maturity <- issue + years(i)
+    yr <- year(maturity)
+    bondname <- sprintf("us_five_twenty_%d0501_call", yr)
+    bonds[[bondname]] <-
+        list(cashflows =
+             generate_cashflows_years(maturity,
+                                      years = i,
+                                      interest = 0.06),
+             interest = 0.06,
+             periods = list(list(month = 5, day = 1),
+             list(month = 11, day = 1)),
+             maturity_date = maturity,
+             issue_date = issue)
+}
+
+#' Set issuer to US for all US govt bonds
+for (i in grep("^us_", names(bonds), value = TRUE)) {
+    bonds[[i]][["issuer"]] <- "US"
+}
+
+#'
+#' ## State and City Bonds
+#'
+#' - Messrs Thomas Denny & Co (1869) "State Stocks in 1868: The Amount Outstanding; The Annual Interest; Interest; When Payable and When Due" in *Bankers' Magazine* April 1869, <http://books.google.com/books?id=2lgmAQAAIAAJ&pg=PA801>.
+#' - "City, County, and Other Bonds" from *Bankers' Magazine*, October 1857, <http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332>.
+#'
+
+#' ### California
 #' 
-
+#' #### 7 percent, 1870
 #'
-#' ## California 1870
+#' Interest of 7 percent, payable semi-annually.
+#' Matures in 1870, unknown when it was issued.
 #'
-#' :interest: 7
-#' :payable: Jan, Jul
-
-coupons$california_seven_18700701 <-
-    list(cashflows = generate_cashflow_1(as.Date("1870-7-1"), 35 * 2, 7 / 2),
+#' - *Bankers' Magazine*, October 1857, <http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332>
+#' 
+bonds[["california_7pct_1870"]] <-
+    list(cashflows =
+         generate_cashflows_years(as.Date("1870-7-1"),
+                                  years = 35,
+                                  interest = 0.07),
          interest = 0.07,
          maturity_date = as.Date("1870-7-1"),
          issue_date = NA,
-         periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
-
+         issuer = "California",         
+         periods = list(list(month = 1, day = 1),
+         list(month = 7, day = 1)))
 #'
-#' ## California 1877
+#' #### 7 percent, 1877
 #' 
+#' Interest of 7 percent, payable semi-annually.
+#' Matures in 1877, unknown when it was issued.
 #'
-#' :interest: 7
-#' :payable: Jan, Jul
-
-coupons$california_seven_18770701 <-
-    list(cashflows = generate_cashflow_1(as.Date("1877-7-1"), 35 * 2, 7 / 2),
+#'
+#' - Denny and Co.
+#' 
+bonds[["california_7pct_1877"]] <-
+    list(cashflows = 
+         generate_cashflows_years(as.Date("1877-7-1"),
+                                  years = 35,
+                                  interest = 0.07),
          interest = 0.07,
          maturity_date = as.Date("1877-7-1"),
          issue_date = NA,
-         periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
+         issuer = "California",
+         periods = list(list(month = 1, day = 1),
+         list(month = 7, day = 1)))
 
 #'
-#' ## Ohio 1874
+#' ### Indiana
 #'
-#' :interest: 6
-#' :Payable: Jan, Jul
-#' :Redeemable: 1874
-
-coupons$ohio_six_18740701 <-
-    list(cashflows = generate_cashflow_1(as.Date("1874-7-1"), 35 * 2, 3),
-         interest = 0.06,
-         maturity_date = as.Date("1874-7-1"),
-         issue_date = NA,
-         periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
-
+#' #### 5 percent
 #'
-#' ## Ohio 1886
+#' 5 percent, payable semiannually (Jan, Jul).
+#' Redemption is unknown.
 #'
-#' :interest: 6 per cent
-#' :Payable: Jan, Jul
-#' :Redeemable: 1886
-
-coupons$ohio_six_18860701 <-
-    list(cashflows = generate_cashflow_1(as.Date("1886-7-1"), 35 * 2, 3),
-         interest = 0.06,
-         maturity_date = as.Date("1886-7-1"),
-         issue_date = NA,
-         periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
-
+#' This is not the 2.5 percent or Canal loans.
 #'
-#' ## Kentucky 6's
+#' - http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332 : no redemption years, payable Jan/Jul.
+#' - Denny & Co: redemption various, payable various.
 #' 
-#' :interest: 6
-#' :Payable: Jan, Jul
-#' :Redeemable: 1869-1872
-
-for (year in 1869:1872) {
-    bondname <- sprintf("kentucky_six_%d0701", year)
-    coupons[[bondname]] <-
-        list(cashflows = generate_cashflow_1(as.Date(sprintf("%d-7-1", year)), 35 * 2, 3),
-             maturity_date = as.Date(sprintf("%d-7-1", year)),
-             issue_date = NA,
-             interest = 0.06,
-             periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
-}
-
-#'
-#'
-#' ## Louisiana
-#'
-#' :interest: 6
-#' :Payable: Jan, Jul
-#' :redeemable: unknown. Calculate for entire support of state bond redemption dates.
-#'
-#' Assume issue_date 35 years.
-
-for (year in 1869:1892) {
-    bondname <- sprintf("louisiana_six_%d0701", year)
-    coupons[[bondname]] <-
-        list(cashflows = generate_cashflow_1(as.Date(sprintf("%d-7-1", year)), 40 * 2, 3),
-             maturity_date = as.Date(sprintf("%d-7-1", year)),
-             issue_date = NA,
-             interest = 0.06,
-             periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
-}
-
-#'
-#' ## Missouri
-#'
-#' interest 6 per cent
-#' redeemable in 1872
-#' payable jan, jul
-
-coupons$missouri_six_18720701 <-
-    list(cashflows = generate_cashflow_1(as.Date("1872-7-1"), 35 * 2, 3),
-         maturity_date = as.Date("1872-7-1"),
-         issue_date = NA,
-         interest = 0.06,
-         periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
-
-#'
-#' ## North Carolina
-#'
-#' interest 6 per cent
-#' payable jan, jul
-#' redeemable in 1873
-
-coupons$north_carolina_six_18730701 <-
-    list(cashflows = generate_cashflow_1(as.Date("1873-7-1"), 35 * 2, 3),
-         maturity_date = as.Date("1873-7-1"),
-         issue_date = NA,
-         interest = 0.06,
-         periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
-
-#'
-#' ## Pennsylvania
-#'
-#' :interest: 6 per cent
-#' :redeemable: 1873
-#' :payable: Feb, Aug
-
-coupons$pennsylvania_six_18730801 <-
-    list(cashflows = generate_cashflow_1(as.Date("1871-8-1"), 35 * 2, 3),
-         maturity_date = as.Date("1873-8-1"),
-         issue_date = NA,
-         interest = 0.06,
-         periods = list(list(month = 2, day = 1), list(month = 8, day = 1)))
-
-#'
-#' ## Virginia
-#'
-#' :Interest: 6
-#' :payable: Jan, Jul
-#' :redeemable: 1885-1890
-
-for (year in 1885:1890) {
-    bondname <- sprintf("virginia_six_%d0701", year)
-    coupons[[bondname]] <-
-        list(cashflows = generate_cashflow_1(as.Date(sprintf("%d-7-1", year)), 40 * 2, 3),
-             maturity_date = as.Date(sprintf("%s-8-1", year)),
-             issue_date = NA,
-             interest = 0.06,
-             periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
-}
-
-#'
-#' ## Tennessee
-#'
-#' :Interest: 6
-#' :payable: Jan, Jul
-#' :redeemable: 1885-1892
-
-for (year in 1885:1892) {
-    bondname <- sprintf("tennessee_six_%d0701", year)
-    coupons[[bondname]] <-
-        list(cashflows = generate_cashflow_1(as.Date(sprintf("%d-7-1", year)), 40 * 2, 3),
-             maturity_date = as.Date(sprintf("%s-7-1", year)),
-             issue_date = NA,
-             interest = 0.06,
-             periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
-}
-
-#'
-#' ## Indiana 5
-#'
-#' :interest: 5
-#' :payable: Jan, Jul
-#' :redeemable: unknown. Use 1869-1892
-
 for (year in 1869:1892) {
     bondname <- sprintf("indiana_five_%d0701", year)
-    coupons[[bondname]] <-
-        list(cashflows = generate_cashflow_1(as.Date(sprintf("%d-7-1", year)), 40 * 2, 2.5),
+    bonds[[bondname]] <-
+        list(cashflows =
+             generate_cashflows_years(as.Date(sprintf("%d-7-1", year)),
+                                      years = 40,
+                                      interest = 0.05),
              maturity_date = as.Date(sprintf("%s-7-1", year)),
              issue_date = NA,
              interest = 0.05,
@@ -491,37 +646,260 @@ for (year in 1869:1892) {
 }
 
 #'
-#' ## Indiana 6's
+#' #### 6 percent (War Loan)
 #'
-#' :interest: 6
-#' :payable: May, Nov
-#' :redeemable: 1881
-#' :issued: known to be issued in 1861. Mentioned in June.
-
-coupons$indiana_six_18810501 <-
-    list(cashflows = generate_cashflow_1(as.Date("1881-11-1"), 30 * 2, 3),
+#' 6 percent, payable semi-annually (May, Nov).
+#' Redeemable in 1881.
+#' Known to be issued in 1861 to fund the war.
+#'
+#' - *Bankers' Magazine*, Vol. 16, p. 79. http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA79
+#' - Denny & Co.
+#' 
+bonds[["indiana_6pct_1881"]] <-
+    list(cashflows =
+         generate_cashflows_years(as.Date("1881-11-1"),
+                                  years = 20,
+                                  interest = 0.06),
          maturity_date = as.Date(sprintf("%s-11-01", year)),
-         issue_date = NA,
+         issue_date = as.Date("1861-11-1"),
          interest = 0.06,
-         periods = list(list(month = 5, day = 1), list(month = 11, day = 1)))
+         periods = list(list(month = 5, day = 1),
+         list(month = 11, day = 1)))
 
 #'
-#' ## Georgia
+#' ### Georgia
 #'
-#' :interest: 6
-#' :payable: Jan, Jul
-#' :redeemable: 1872
-
-coupons$georgia_six_18720701 <-
-    list(cashflows = generate_cashflow_1(as.Date("1872-7-1"), 35 * 2, 3),
+#' 6 percent interest, payable semi-annually.
+#'
+#' - http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332 : redeemable 1872, payable Jan/Jul.
+#' - Denny & Co: redeemable 1868-1887, payable Jan/Jul.
+#' 
+bonds[["georgia_6pct_1872"]] <-
+    list(cashflows =
+         generate_cashflows_years(as.Date("1872-7-1"),
+                                  years = 35,
+                                  interest = 0.06),
          maturity_date = as.Date("1872-07-1"),
          issue_date = NA,
          interest = 0.06,
-         periods = list(list(month = 1, day = 1), list(month = 7, day = 1)))
+         issuer = "Georgia",
+         periods = list(list(month = 1, day = 1),
+         list(month = 7, day = 1)))
+
+#'
+#' ### Kentucky
+#'
+#' #### 6 percent 1868-1885
+#'
+#' In *Bankers' Magazine* quotes of prices, no redemption dates are listed.
+#' 
+#' - http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332 Lists years 1869-72, payable in Jan, Jul.
+#' - Economist 24, 1861 has a redemption year of 1868.
+#' - Denny lists redemption dates between 1868-1885.
+#' 
+for (year in 1868:1885) {
+    bondname <- sprintf("kentucky_6pct_%d", year)
+    bonds[[bondname]] <-
+        list(cashflows =
+             generate_cashflows_years(as.Date(sprintf("%d-7-1", year)),
+                                years = 35,
+                                interest = 0.06),
+             maturity_date = as.Date(sprintf("%d-7-1", year)),
+             issue_date = NA,
+             interest = 0.06,
+             issuer = "Kentucky",
+             periods = list(list(month = 1, day = 1),
+             list(month = 7, day = 1)))
+}
+
+#'
+#'
+#' ### Louisiana
+#'
+#' #### 6 percent
+#'
+#' 6 percent payable semiannually. Various and
+#' 
+#' No redemption years are listed in the *Bankers' Magazine* quotes.
+#'
+#' - http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332 lists diverse.
+#' - Denny lists various
+#' 
+for (year in 1869:1892) {
+    bondname <- sprintf("louisiana_6pct_%d", year)
+    bonds[[bondname]] <-
+        list(cashflows =
+             generate_cashflows_years(as.Date(sprintf("%d-7-1", year)),
+                                      years = 35,
+                                      interest = 0.06),
+             maturity_date = as.Date(sprintf("%d-7-1", year)),
+             issue_date = NA,
+             interest = 0.06,
+             issuer = "Louisiana",
+             periods = list(list(month = 1, day = 1),
+             list(month = 7, day = 1)))
+}
+
+#'
+#' ### Missouri
+#'
+#' Interest of 6 percent payable semiannually (Jan / Jul).
+#' Due on various years.
+#'
+#' - Denny & Co. : redemption 1868-1890
+#' - http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332 : redmeption, 1872.
+#' 
+bonds[["missouri_six_1872"]] <-
+    list(cashflows =
+         generate_cashflows_years(as.Date("1872-7-1"),
+                                 years = 35,
+                                 interest = 0.06),
+         maturity_date = as.Date("1872-7-1"),
+         issue_date = NA,
+         interest = 0.06,
+         issuer = "Missouri",
+         periods = list(list(month = 1, day = 1),
+         list(month = 7, day = 1)))
+
+#'
+#' ### North Carolina
+#'
+#' Interest of 6 percent payable semiannually.
+#'
+#' - *Bankers' Magazine* 1857, http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332 : redemption year 1873.
+#' - Denny & Co : redemption year 1868.
+#' 
+bonds[["north_carolina_6pct_1873"]] <-
+    list(cashflows =
+         generate_cashflows_years(as.Date("1873-7-1"),
+                                  years = 35,
+                                  interest = 0.06),
+         maturity_date = as.Date("1873-7-1"),
+         issue_date = NA,
+         interest = 0.06,
+         issuer = "North Carolina",
+         periods = list(list(month = 1, day = 1),
+         list(month = 7, day = 1)))
+
+#'
+#' ### Ohio 
+#'
+#' #### 6 percent, 1874
+#'
+#' 6 percent, payable semi-annually, matures in 1874.
+#' Jan / July assumed because other 
+#'
+#' - Denny and Co.
+#' - http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332 
+#' 
+bonds[["ohio_6pct_1874"]] <-
+    list(cashflows = 
+         generate_cashflows_years(as.Date("1874-7-1"),
+                                  years = 35,
+                                  interest = 0.06),
+         interest = 0.06,
+         maturity_date = as.Date("1874-7-1"),
+         issue_date = NA,
+         issuer = "Ohio",         
+         periods = list(list(month = 1, day = 1),
+         list(month = 7, day = 1)))
+
+#' 
+#' #### 6 percent, 1886
+#' 
+#' 6 percent, payable semi-annually, matures in 1886.
+#'
+#' - Denny and Co.
+#' - http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332
+#' 
+bonds[["ohio_6pct_1886"]] <-
+    list(cashflows = 
+         generate_cashflows_years(as.Date("1886-7-1"),
+                                  years = 35,
+                                  interest = 0.06),
+         interest = 0.06,
+         maturity_date = as.Date("1886-7-1"),
+         issue_date = NA,
+         issuer = "Ohio",
+         periods = list(list(month = 1, day = 1),
+         list(month = 7, day = 1)))
+
+#'
+#' ### Pennsylvania
+#'
+#' #### 5 percent
+#'
+#' 5 percent interest paid semiannually (Feb, Aug).
+#' 
+#' This is different than the "War Loan" issued to fund the war and had 6 percent interest.
+#' 
+#' - *Bankers' Magazine*, Vol 15, p. 166. http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA166 : explicitly states that interest is paid in August.
+#' - http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332 does not list a redemption year.
+#' - Denny & Co. list various interst rates, but a redemption of 1871.
+bonds[["Pennsylvania_5pct_1871"]] <-
+    list(cashflows =
+         generate_cashflows_years(as.Date("1871-8-1"),
+                                  year = 35,
+                                  interest = 0.05),
+         maturity_date = as.Date("1871-8-1"),
+         issue_date = NA,
+         interest = 0.05,
+         issuer = "Pennsylvania",
+         periods = list(list(month = 2, day = 1),
+         list(month = 8, day = 1)))
+
+#'
+#' ### Tennessee
+#'
+#' 6 percent interest, payable semiannually (unknown or various months, so Jan / Jul will be assumed).
+#'
+#' - http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332. redemption various, payable various.
+#' - Denny & Co: redemption 1885-1892, payable various.
+#' 
+for (year in 1885:1892) {
+    bondname <- sprintf("tennessee_6pct_%d", year)
+    bonds[[bondname]] <-
+        list(cashflows =
+             generate_cashflows_years(as.Date(sprintf("%d-7-1", year)),
+                                     years = 35,
+                                     interest = 0.06),
+             maturity_date = as.Date(sprintf("%s-7-1", year)),
+             issue_date = NA,
+             interest = 0.06,
+             issuer = "Tennessee",
+             periods = list(list(month = 1, day = 1),
+             list(month = 7, day = 1)))
+}
 
 
 #'
-#' # Confederate Bonds
+#' ### Virginia
+#'
+#' 6 percent interest, payable semi-annually (Jan, Jul)
+#' Various redemption years.
+#'
+#' - http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332, redemption 1885-1890.
+#' - Davis and Pecquet (1990), p. 147 use 1887 (average maturity of long-term issues)
+#' - Denny & Co list "various" redemption years. 
+for (year in 1885:1890) {
+    bondname <- sprintf("virginia_6pct_%d", year)
+    bonds[[bondname]] <-
+        list(cashflows =
+             generate_cashflows_years(as.Date(sprintf("%d-7-1", year)),
+                                      years = 40,
+                                      interest = 0.06),
+             maturity_date = as.Date(sprintf("%s-7-1", year)),
+             issue_date = NA,
+             interest = 0.06,
+             issuer = "Virginia",
+             periods = list(list(month = 1, day = 1),
+             list(month = 7, day = 1)))
+}
+
+
+
+#'
+#' ## Confederate
 #' 
 
 ## #' ## Confederate 5 million loan
@@ -536,7 +914,7 @@ coupons$georgia_six_18720701 <-
 
 ## for (year in 5:10) {
 ##     bondname <- sprintf("confed_15mn_%d", year)
-##     coupons[[bondname]] <-
+##     bonds[[bondname]] <-
 ##         list(cashflows = generate_cashflow_2(as.Date("1861-9-1"), year * 2, 4),
 ##              interest = 0.08,
 ##              periods = list(list(month = 3, day = 1), list(month = 9, day = 1)),
@@ -555,7 +933,7 @@ coupons$georgia_six_18720701 <-
 
 ## for (year in 3:20) {
 ##     bondname <- sprintf("confed_100mn_%d", year)
-##     coupons[[bondname]] <-
+##     bonds[[bondname]] <-
 ##         list(cashflows = generate_cashflow_2(as.Date("1861-7-1"), year * 2, 4),
 ##              interest = 0.08,
 ##              periods = list(list(month = 1, day = 1), list(month = 7, day = 1)),
@@ -571,13 +949,13 @@ coupons$georgia_six_18720701 <-
 ## #' on the issue date of the bond.
 ## #'
 ## #' :authorized:
-## #' :maturity: 5 years, but Congress could defer payment up to 30 yrs at smae rate of interest.
+## #' :maturity: 5 years, but Congress could defer payment up to 30 yrs at the same rate of interest.
 ## #' :interest: 8 percent bonds sold until April 21, 1863 and 7 per cent bonds until Aug 1, 1863.
 ## #' :issued: 8 percent: 96 million , 7 percent 76 million.
 
 ## for (year in 5:30) {
 ##     bondname <- sprintf("confed_7_%d", year)
-##     coupons[[bondname]] <-
+##     bonds[[bondname]] <-
 ##         list(cashflows = generate_cashflow_2(as.Date("1863-7-1"), year * 2, 4),
 ##              interest = 0.08,
 ##              periods = list(list(month = 1, day = 1), list(month = 7, day = 1)),
@@ -607,4 +985,4 @@ coupons$georgia_six_18720701 <-
 #'
 #' Don't have a date, so assume the same date at Richmond.
 
-cat(toJSON(coupons, asIs = FALSE), "\n", file = outfile)
+cat(toJSON(bonds, asIs = FALSE), "\n", file = outfile)
