@@ -1,4 +1,4 @@
-library("plyr")
+library("dplyr")
 library("reshape2")
 library("RJSONIO")
 source("sources/scripts/R/misc.R")
@@ -10,15 +10,12 @@ bond_metadata_file <- sysargs[2]
 outfile <- sysargs[3]
 
 #' Load prerequisite data
-merchants <- mutate(read.csv(merchants_file),
-                  date = as.Date(date, "%Y-%m-%d"))
-for (i in c("issue", "url", "volume")) {
-    merchants[[i]] <- NULL
-}
+merchants <-
+    (mutate(read.csv(merchants_file),
+            date = as.Date(date, "%Y-%m-%d"))
+     %.% select(-issue, -url, -volume))
 
-con <- file(bond_metadata_file, "r")
-bond_metadata <- fromJSON(con)
-close(con)
+bond_metadata <- fromJSON(bond_metadata_file)
 
 NOTES <- c("aug_demand", "gold", "gold_low", "gold_high",
            "oneyr_old", "oneyr_new")

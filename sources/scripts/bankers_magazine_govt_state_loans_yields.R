@@ -6,22 +6,23 @@ source("sources/scripts/R/misc.R")
 
 sysargs <- commandArgs(TRUE)
 bankers_file <- sysargs[1]
+bankers_file <- "data/bankers_magazine_govt_state_loans.csv"
 bond_metadata_file <- sysargs[2]
+bond_metadata_file <- "data/bond_metadata.json"
 outfile <- sysargs[3]
 
 #' Load prerequisite data
-bankers <- mutate(read.csv(bankers_file),
-                  date = as.Date(date, "%Y-%m-%d"))
-for (i in c("issue", "url", "volume")) {
-    bankers[[i]] <- NULL
-}
+bankers <-
+    (mutate(read.csv(bankers_file),
+            date = as.Date(date, "%Y-%m-%d"))
+     %.% select(date, series, is_clean, adjust_gold,
+                adjust_paper, price_gold, gold_rate)
+     %.% filter(!is.na(price_gold)))
 
-con <- file(bond_metadata_file, "r")
-bond_metadata <- fromJSON(con)
-close(con)
+bond_metadata <-
+    fromJSON(bond_metadata_file,
+             simplifyDataFrame = FALSE)
 
-#' # Series -> BONDS weights
-MATCH_BONDS <- list()
 
 make_bond_table <- function(bonds) {
     data.frame(bond = bonds, wgt = 1 / length(bonds))
@@ -46,6 +47,8 @@ make_bond_table_dist <- function(pattern, .list, prior_yrs = NULL, prior_n = 1) 
                 bond = sprintf(pattern, year))
      %.% select(bond, wgt))
 }
+
+MATCH_BONDS <- list()
 
 MATCH_BONDS[["california_7pct_1870"]] <-
     function(date) make_bond_table("california_7pct_1870")
@@ -87,7 +90,7 @@ MATCH_BONDS[["indiana_5pct"]] <- function(date) indiana_lookup
 #'
 #' The bond metadata includes years 1868-1885, but the table of bonds in http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332 only lists 1869-72.
 MATCH_BONDS[["kentucky_6pct"]] <-
-    function(date) make_bond_table("kentucky_6pct_%d", 1869:1872)
+    function(date) make_bond_table(sprintf("kentucky_6pct_%d", 1869:1872))
 
 #' For Louisiana, no explicit range of redemption years can be found.
 #' So assume that the probability of a given redemption year is the empirical distribuiton
@@ -100,10 +103,9 @@ MATCH_BONDS[["kentucky_6pct"]] <-
 #'  - Pennsylvania: 1873
 #'  - Virginia: 1885-1890
 #'  - Tennessee: 1885-1892
-#'  dput(transform(ddply(yrs, "yr", summarise, wt = sum(wt)), wt = wt / sum(wt))$wt)
 
-louisinia_lookup <- 
-    make_bond_table_dist("louisinia_6pct_%d",
+louisiana_lookup <- 
+    make_bond_table_dist("louisiana_6pct_%d",
                          list(kentucky = 1869:1872,
                               missouri = 1872,
                               north_carolina = 1873,
@@ -130,7 +132,7 @@ MATCH_BONDS[["pennsylvania_5pct"]] <-
 
 #' US 6 percent 1868 weights derived from value issued
 MATCH_BONDS[["US_6pct_1868"]] <-
-    function(date) data.frame(bond = c("us_sixes_1868_jan", "us_sixes_1868_jul"),
+    function(date) data.frame(bond = c("us_6pct_1868_jan", "us_6pct_1868_jul"),
                               wgt = c(0.590, 0.410))
 
 #' US 6 percent 1881 weights derived from value issued
@@ -150,73 +152,58 @@ MATCH_BONDS[["tennessee_6pct"]] <-
 MATCH_BONDS[["indiana_6pct"]] <-
     function(date) make_bond_table("indiana_6pct_1881")
 
-#' Calculate accrued interest
-#'
-#' Return the accrued interest at date.
-accrued_interest <- function(cashflows, issue_date, ncoupons, interest, date, face=100, ...) {
-    datelist <- as.Date(sort(c(issue_date, cashflows$date)), as.Date("1970-1-1"))
-    lastcoupon <- prev_date(as.Date(date), datelist)
-    factor <- difftime_30_360(date, lastcoupon) / 360
-    (factor * interest * face)
+unmatched <- setdiff(unique(bankers$series), names(MATCH_BONDS))
+if (length(unmatched)) {
+    stop(sprintf("No entries for: %s", paste(unmatched, collapse = ", ")))
 }
-#' # Generate Yields
-FUN2 <- function(bond, date, price_gold_dirty, price_paper_dirty, series, ..., METADATA) {
-    bond <- as.character(bond)
-    searchint <- c(-100, 100)
-    metadata <- METADATA[[bond]]
-    cashflows <- mutate(data.frame(metadata$cashflows),
-                        date = as.Date(date, "%Y-%m-%d"))
-    cashflows2 <- cashflows[cashflows$date > date, , drop=FALSE]
-    issue_date <- metadata$issue_date
-    if (!is.null(issue_date)) issue_date <- as.Date(issue_date, "%Y-%m-%d")
-    ncoupons <- length(metadata$periods)
-    interest <- metadata$interest
-    gold_2_paper <- price_paper_dirty / price_gold_dirty
-    accrued <- accrued_interest(cashflows, issue_date, ncoupons, interest, date)
-    price_gold_clean <- price_gold_dirty - accrued
-    price_paper_clean <- price_paper_dirty - gold_2_paper * accrued
-    ## yield to maturity
-    m <- difftime_30_360(cashflows2$date, date) / 360
-    if (!is.na(price_gold_dirty)) {
-        ytm <- try(ytm(c(-price_gold_dirty, cashflows2$amount), c(0, m), searchint = searchint))
-        if (is(ytm, "try-error")) {
-            print(sprintf("%s %s %s %f", series, bond, date, price_gold_dirty))
-            ytm <- NA
-        }
-        duration <- macaulay_duration(cashflows2$amount, m, ytm, price_gold_clean)
-    } else {
-        ytm <- NA
-        duration <- NA
+
+.data <- plyr::mdply(bankers,
+                     function(series, date, ...) {
+                         MATCH_BONDS[[as.character(series)]](date)
+                     })
+
+make_yields_etc <- 
+    function(date, bond, gold_rate, price_gold, adjust_gold, adjust_paper, is_clean, ..., bond_metadata)
+{
+    metadata <- bond_metadata[[as.character(bond)]]
+    if ("issue_date" %in% metadata) {
+        issue_date <- metadata[["issue_date"]]
+    } else issue_date <- NULL
+    if (! is.null(issue_date) && ! is.na(issue_date)) {
+        issue_date <- as.Date(issue_date, format = "%Y-%m-%d")
     }
-    ## ## Duration
-    ## duration <- NA
-    ## Current yield
-    current_yield <- (interest * 100) / price_gold_clean
-    ret <- 
-        data.frame(accrued = accrued,
-                   price_gold_clean = price_gold_clean,
-                   price_paper_clean = price_paper_clean,
-                   yield = ytm,
-                   current_yield = current_yield,
-                   duration = duration,
-                   maturity = max(m))
-    ret
+    cashflows <-
+        mutate(plyr::ldply(metadata[["cashflows"]],
+                           function(x) as.data.frame(x)),
+               date = as.Date(date, format="%Y-%m-%d"))
+    cashflows <- gold_cashflows(cashflows, gold_rate)
+    accrued <- accrued_interest(date, cashflows, issue_date)
+    price <- price_gold + adjust_gold + adjust_paper / gold_rate
+    if (! is_clean) {
+        price_clean <- price - accrued
+    } else {
+        price_clean <- price
+        price <- price_clean + accrued
+    }
+    yields <- yield_to_maturity2(price, date, cashflows)
+    data.frame(price = price,
+               price_clean = price_clean,
+               accrued_interest = accrued,
+               ytm = as.numeric(yields),
+               duration = attr(yields, "duration"),
+               convexity = attr(yields, "convexity"),
+               maturity = attr(yields, "maturity"))
 }
 
-FUN <- function(series, date, price_gold, price_paper, ..., METADATA, MATCH_BONDS) {
-    bonds <- MATCH_BONDS[[as.character(series)]](date)
-    bonds$series <- series
-    bonds$date <- date
-    bonds$price_gold_dirty <- price_gold
-    bonds$price_paper_dirty <- price_paper
-    mdply(bonds, FUN2, METADATA=bond_metadata)
-}
+## for (i in 1:nrow(.data)) {
+##     plyr::splat(make_yields_etc)(.data[i, ], bond_metadata = bond_metadata)
+## }
+     
+.data2 <-
+    (plyr::mdply(.data, make_yields_etc,
+                bond_metadata = bond_metadata)
+     %.% select(-is_clean, -adjust_gold,
+                -adjust_paper, -price_gold)
+     )
 
-fields <- c("series", "date", "bond", "wgt", "price_paper_dirty", "price_gold_dirty",
-            "price_paper_clean", "price_gold_clean", "accrued", "current_yield",
-            "yield", "maturity", "duration")
-
-yields <- mdply(bankers, FUN, METADATA = bond_metadata, MATCH_BONDS=MATCH_BONDS,
-                .parallel = TRUE)
-yields <- arrange(yields, series, date, bond)
-write.csv2(yields[ , fields], file = outfile)
+write.csv2(.data2, file = outfile)

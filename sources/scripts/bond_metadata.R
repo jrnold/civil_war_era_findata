@@ -93,7 +93,7 @@ bonds[["us_6pct_1868_jan"]] <-
          generate_cashflows(as.Date("1868-1-1"),
                             coupons = 20 * 2,
                             interest = 0.06),
-         interst = 0.06,
+         interest = 0.06,
          periods = list(list(month = 1, day = 1),
          list(month = 7, day = 1)),
          maturity_date = as.Date("1868-1-1"),
@@ -836,13 +836,13 @@ bonds[["ohio_6pct_1886"]] <-
 #' - *Bankers' Magazine*, Vol 15, p. 166. http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA166 : explicitly states that interest is paid in August.
 #' - http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332 does not list a redemption year.
 #' - Denny & Co. list various interst rates, but a redemption of 1871.
-bonds[["Pennsylvania_5pct_1871"]] <-
+bonds[["pennsylvania_5pct_1871"]] <-
     list(cashflows =
          generate_cashflows_years(as.Date("1871-8-1"),
                                   year = 35,
                                   interest = 0.05),
          maturity_date = as.Date("1871-8-1"),
-         issue_date = NA,
+         issue_date = NULL,
          interest = 0.05,
          issuer = "Pennsylvania",
          periods = list(list(month = 2, day = 1),

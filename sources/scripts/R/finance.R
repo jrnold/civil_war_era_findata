@@ -52,13 +52,14 @@ difftime_30_360 <- function(time2, time1) {
 #' @param m vector of cashflow times
 #' @param searchint search interval for the yield
 #' @param ... Passed to \code{\link{uniroot}}
-calc_ytm <- function(price, x, m, searchint = c(0, 1), ...) {
+yield_to_maturity <- function(price, x, m, interval = c(0, 1), ...) {
     pvcashflows <- function(y) {
         price - t(x) %*% exp(-m * y)
     }
-    ytm <- uniroot(pvcashflows, searchint, maxiter = maxiter)$root
-    attr(ytm, "duration") <- -t(x * m) %*% exp(-m * y) / price
-    attr(ytm, "convexity") <- t(x * m^2) %*% exp(-m * y) / price
+    ytm <- uniroot(pvcashflows, interval = interval, ...)$root
+    attr(ytm, "duration") <-  t(x * m) %*% exp(-m * ytm) / price
+    attr(ytm, "convexity") <- t(x * m^2) %*% exp(-m * ytm) / price
+    attr(ytm, "maturity") <- max(m)
     ytm
 }
 
@@ -84,23 +85,15 @@ next_date <- function(x, table) {
     }
 }
 
-#' Return the accrued interest at date.
-accrued_interest <- function(cashflows, issue_date, ncoupons, interest, date, face=100, ...) {
-    datelist <- as.Date(sort(c(issue_date, cashflows$date)), as.Date("1970-1-1"))
-    lastcoupon <- prev_date(as.Date(date), datelist)
-    factor <- difftime_30_360(date, lastcoupon) / 360
-    (factor * interest * face)
-}
-
-#' @param gold_rate gold exchange rate: gold dollars per dollar
+#' @param gold_rate gold exchange rate: dollars per gold_dollar
 gold_cashflows <- function(cashflows, gold_rate) {
     mutate(cashflows,
-           amount = ifelse(specie, amount, amount * gold_rate))
+           amount = ifelse(specie, amount, amount / gold_rate))
 }
 
 normalize_cashflows <- function(effectiveDate, cashflows) {
     (mutate(cashflows,
-           maturity = difftime(date, effectiveDate))
+            maturity = as.integer(difftime(date, effectiveDate, units = "days")) / 365)
      %.% filter(maturity > 0)
      %.% select(maturity, amount)
      )
@@ -126,9 +119,9 @@ prev_coupon <- function(date, cashflows) {
     }
 }
 
-coupon_factor <- function(date, cashflows, issue_date) {
+coupon_factor <- function(date, cashflows, issue_date = NULL) {
     datelist <- sort(cashflows$date)
-    if (! is.na(issue_date)) {
+    if (! is.null(issue_date) && ! is.na(issue_date)) {
         datelist <- c(issue_date, datelist)
     }
     if (date < min(datelist) || date >= max(datelist)) {
@@ -140,4 +133,14 @@ coupon_factor <- function(date, cashflows, issue_date) {
                 / as.integer(difftime(maxdate, mindate, units = "days")))
     }
     ret
+}
+
+accrued_interest <- function(date, cashflows, issue_date = NULL) {
+    (next_coupon(date, cashflows)$coupon
+     * coupon_factor(date, cashflows, issue_date))
+ }
+
+yield_to_maturity2 <- function(price, date, cashflows) {
+    cf <- normalize_cashflows(date, cashflows)
+    yield_to_maturity(price, cf$amount, cf$maturity)
 }
