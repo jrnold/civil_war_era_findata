@@ -11,12 +11,12 @@ description: |
 
 schema:
   fields:
-    - id: series
-      type: string
-      description: Name of the price series
     - id: date
       type: date
       description: Date of the price
+    - id: series
+      type: string
+      description: Name of the price series
     - id: issue
       type: date
       description: Date of the issue from which the price data come.
@@ -26,15 +26,24 @@ schema:
     - id: volume
       type: integer
       description: "Volume of Bankers' Magazine from the the data come"
+    - id: is_clean
+      type: boolean
+      description: "1 if the price is known to be a clean price, otherwise assumed to be a dirty price"
+    - id: adjust_gold
+      type: number
+      description: "Manual price adjustment of bond in gold dollars; used to clean prices beyond accrued interest"
+    - id: adjust_paper
+      type: number
+      description: "Manual price adjustment of bond in nominal dollars; used to clean prices beyond accrued interest"
+    - id: notes
+      type: string
+      description: "Notes"
+    - id: gold_rate
+      type: number
+      description: "Exchange rate of nominal dollars per gold dollar. Used to convert from nominal price to gold price"
     - id: price_paper
       type: number
       description: "Price of bond in paper dollars. Face value = 100"
     - id: price_gold
       type: number
       description: "Price of bond in gold dollars"
-    - id: adjust_gold
-      type: number
-      description: "Manual price adjustment of bond in gold dollars; used to clean prices beyond accrued interest"
-    - id: adjust_price
-      type: number
-      description: "Manual price adjustment of bond in gold dollars; used to clean prices beyond accrued interest"
