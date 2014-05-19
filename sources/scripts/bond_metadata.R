@@ -29,8 +29,8 @@ generate_cashflows <-
     coupon_payment = face * interest / period
     data.frame(date = c(dates, redemption),
                amount = c(rep(coupon_payment, coupons), face),
-               specie = c(rep(specie_interest, coupons),
-               specie_principal))
+               specie = c(rep(specie_interest, coupons), specie_principal),
+               interest = c(rep(TRUE, coupons), FALSE))
 }
 
 generate_cashflows_years <-
@@ -88,7 +88,7 @@ bonds <- list()
 #'
 #' - Bayley [p. 72](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA72), [p. 145-146](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA145)
 #' - De Knight [p. 72-73](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA72)
-bonds[["us_sixes_18680101"]] <-
+bonds[["us_6pct_1868_jan"]] <-
     list(cashflows =
          generate_cashflows(as.Date("1868-1-1"),
                             coupons = 20 * 2,
@@ -107,7 +107,7 @@ bonds[["us_sixes_18680101"]] <-
 #' 
 #' - Bayley [p. 73](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA73), [p. 147-148](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA147)
 #' - De Knight [p. 73-74](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA73)
-bonds[["us_sixes_18680701"]] <-
+bonds[["us_6pct_1868_jul"]] <-
     list(cashflows =
          generate_cashflows(as.Date("1868-7-1"),
                             coupons = 20 * 2,
@@ -147,7 +147,7 @@ bonds[["us_texas_indemnity"]] <-
 #' - De Knight [p. 77](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA77]
 #' - Annual Report of the Treasury 1863, [p. 42](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf#page=50)
 #' 
-bonds[["us_fives_18710101"]] <-
+bonds[["us_5pct_1871"]] <-
     list(cashflows =
          generate_cashflows_years(as.Date("1871-1-1"),
                                   10, interest = 0.05),
@@ -187,7 +187,7 @@ bonds[["us_oregon_war"]] <-
 #' - Bayley [p. 74](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA74), [149-150](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA149)
 #' - De Knight [p. 76](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA76]
 #' - Annual Report of the Treasury 1863, [p. 42-43](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf#page=50)
-bonds[["us_fives_18740101"]] <-
+bonds[["us_5pct_1874"]] <-
     list(cashflows =
          generate_cashflows(as.Date("1874-1-1"),
                             coupons = 15 * 2 + 1,
@@ -208,7 +208,7 @@ bonds[["us_fives_18740101"]] <-
 #' - De Knight [p. 78-79](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA78]
 #' - Annual Report of the Treasury 1863, [p. 42-43](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf#page=50)
 #' - Noll, Vol 5, [p. 511](http://franklinnoll.com/Vol_6.pdf#page=512)
-bonds[["us_sixes_18810101"]] <-
+bonds[["us_6pct_1881_jan"]] <-
     list(cashflows =
          generate_cashflows_years(as.Date("1881-1-1"),
                                   years = 20,
@@ -230,7 +230,7 @@ bonds[["us_sixes_18810101"]] <-
 #' - De Knight [p. 81-82](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA81]
 #' - Noll, Vol 5, [p. 512](http://franklinnoll.com/Vol_6.pdf#page=513)
 #' - Annual Report of the Treasury 1863, [p. 44-45](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf#page=52)
-bonds[["us_sixes_18810701"]] <-
+bonds[["us_6pct_1881_jul"]] <-
     list(cashflows =
          generate_cashflows_years(as.Date("1881-7-1"),
                                   years = 20, interest = 0.06),
@@ -264,7 +264,7 @@ bonds[["us_sixes_18810701"]] <-
 #' - [Bankers' Magazine, June 1864, p. 940](http://books.google.com/books?id=D14mAQAAIAAJ&pg=940), "Notice to the Holders of the Three Years 7-30 Notes".
 #' - Interest payable in specie, but principal payable in *currency*. George Harrington, "Payment of the Five Twenties in Gold", [Banker's Magazine](http://books.google.com/books?id=D14mAQAAIAAJ&pa=10).
 #' 
-bonds[["us_seven_thirties_18640819"]]  <-
+bonds[["us_seven_thirties_1864_aug"]]  <-
     list(cashflows =
          generate_cashflows_years(as.Date("1864-8-19"),
                                  years = 3,
@@ -276,7 +276,7 @@ bonds[["us_seven_thirties_18640819"]]  <-
          maturity_date = as.Date("1864-8-19"),
          issue_date = as.Date("1861-8-19"))
 
-bonds[["us_seven_thirties_18640819_option"]]  <-
+bonds[["us_seven_thirties_1864_aug_option"]]  <-
     local({
         cashflows <-
             rbind(filter(bonds[["us_seven_thirties_18640819"]]$cashflows, specie),
@@ -291,7 +291,7 @@ bonds[["us_seven_thirties_18640819_option"]]  <-
 
 
 ## Redeemable on 1864-10-1
-bonds[["us_seven_thirties_18641001"]]  <-
+bonds[["us_seven_thirties_1864_oct"]]  <-
     list(cashflows =
          generate_cashflows_years(as.Date("1864-10-01"),
                                  years = 3,
@@ -303,11 +303,11 @@ bonds[["us_seven_thirties_18641001"]]  <-
          maturity_date = as.Date("1864-10-01"),
          issue_date = as.Date("1861-10-01"))
 
-bonds[["us_seven_thirties_18641001_option"]]  <-
+bonds[["us_seven_thirties_1864_oct_option"]]  <-
     local({
         cashflows <-
-            rbind(filter(bonds[["us_seven_thirties_18641001"]]$cashflows, specie),
-                  filter(bonds[["us_sixes_18810701"]]$cashflows,
+            rbind(filter(bonds[["us_seven_thirties_1864_oct"]]$cashflows, interest),
+                  filter(bonds[["us_sixes_1881_jun"]]$cashflows,
                          date > as.Date("1864-10-01")))
         list(cashflows = cashflows,
              interest = NA,
@@ -329,7 +329,7 @@ bonds[["us_seven_thirties_18641001_option"]]  <-
 #' - Bayley [p. 85-87](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA85), [165-166](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA165)
 #' - Annual Report of the Treasury 1867, [p. LIV-LV](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1867.pdf#page=58)
 #' 
-bonds[["us_seven_thirties_18670815"]]  <-
+bonds[["us_seven_thirties_1867_aug"]]  <-
     list(cashflows =
          generate_cashflows_years(as.Date("1867-08-15"),
                                   years = 3,
@@ -343,9 +343,9 @@ bonds[["us_seven_thirties_18670815"]]  <-
          issue_date = as.Date("1864-08-15"))
 
 for (i in 5:20) {
-    bonds[[sprintf("us_seven_thirties_18670815_option_%d_year", i)]]  <-
+    bonds[[sprintf("us_seven_thirties_1867_aug_option_%d_year", i)]]  <-
         local({
-            cf1 <- bonds[["us_seven_thirties_18670815"]]$cashflow
+            cf1 <- bonds[["us_seven_thirties_1867_aug"]]$cashflow
             yyyy <- i
             maturity <- as.Date("1867-08-15") + years(yyyy)
             cashflows <-
@@ -376,7 +376,7 @@ for (i in 5:20) {
 #' - Bayley [p. 85-87](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA85), [p. 165-66](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA165)
 #' - Annual Report of the Treasury 1867, [p. LIV-LV](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1867.pdf#page=58)
 #' 
-bonds[["us_seven_thirties_18680615"]]  <-
+bonds[["us_seven_thirties_1868_jun"]]  <-
     list(cashflows =
          generate_cashflows_years(as.Date("1868-06-15"),
                                   years = 3,
@@ -390,9 +390,9 @@ bonds[["us_seven_thirties_18680615"]]  <-
          issue_date = as.Date("1865-08-15"))
 
 for (i in 5:20) {
-    bonds[[sprintf("us_seven_thirties_18680615_option_%d_year", i)]]  <-
+    bonds[[sprintf("us_seven_thirties_1868_jun_option_%d_year", i)]]  <-
         local({
-            cf1 <- bonds[["us_seven_thirties_18680615"]]$cashflow
+            cf1 <- bonds[["us_seven_thirties_1868_jun"]]$cashflow
             yyyy <- i
             maturity <- as.Date("1868-06-15") + years(yyyy)
             cashflows <-
@@ -409,7 +409,7 @@ for (i in 5:20) {
         })
 }
 
-bonds[["us_seven_thirties_18680715"]]  <-
+bonds[["us_seven_thirties_1868_jul"]]  <-
     list(cashflows =
          generate_cashflows_years(as.Date("1868-07-15"),
                                   years = 3,
@@ -423,9 +423,9 @@ bonds[["us_seven_thirties_18680715"]]  <-
          issue_date = as.Date("1865-07-15"))
 
 for (i in 5:20) {
-    bonds[[sprintf("us_seven_thirties_18680715_option_%d_year", i)]]  <-
+    bonds[[sprintf("us_seven_thirties_1868_jul_option_%d_year", i)]]  <-
         local({
-            cf1 <- bonds[["us_seven_thirties_18680715"]]$cashflow
+            cf1 <- bonds[["us_seven_thirties_1868_jul"]]$cashflow
             yyyy <- i
             maturity <- as.Date("1868-07-15") + years(yyyy)
             cashflows <-
@@ -461,7 +461,7 @@ for (i in 10:40) {
     issue <- as.Date("1864-3-1")
     maturity <- issue + years(i)
     yr <- year(maturity)
-    bondname <- sprintf("us_ten_forty_%d0301_call", yr)
+    bondname <- sprintf("us_ten_forty_%d", yr)
     bonds[[bondname]] <-
         list(cashflows =
              generate_cashflows_years(maturity,
@@ -493,7 +493,7 @@ for (i in 5:20) {
     issue <- as.Date("1862-5-1")
     maturity <- issue + years(i)
     yr <- year(maturity)
-    bondname <- sprintf("us_five_twenty_%d0501_call", yr)
+    bondname <- sprintf("us_five_twenty_of_1862_redeemed_%d", yr)
     bonds[[bondname]] <-
         list(cashflows =
              generate_cashflows_years(maturity,
@@ -524,7 +524,7 @@ for (i in 5:20) {
     issue <- as.Date("1864-11-1")
     maturity <- issue + years(i)
     yr <- year(maturity)
-    bondname <- sprintf("us_five_twenty_%d0501_call", yr)
+    bondname <- sprintf("us_five_twenty_of_1864_redeemed_%d", yr)
     bonds[[bondname]] <-
         list(cashflows =
              generate_cashflows_years(maturity,
@@ -553,7 +553,7 @@ for (i in 5:20) {
     issue <- as.Date("1865-11-1")
     maturity <- issue + years(i)
     yr <- year(maturity)
-    bondname <- sprintf("us_five_twenty_%d0501_call", yr)
+    bondname <- sprintf("us_five_twenty_of_1865_redeemed_%d", yr)
     bonds[[bondname]] <-
         list(cashflows =
              generate_cashflows_years(maturity,
@@ -633,7 +633,7 @@ bonds[["california_7pct_1877"]] <-
 #' - Denny & Co: redemption various, payable various.
 #' 
 for (year in 1869:1892) {
-    bondname <- sprintf("indiana_five_%d0701", year)
+    bondname <- sprintf("indiana_5pct_%d", year)
     bonds[[bondname]] <-
         list(cashflows =
              generate_cashflows_years(as.Date(sprintf("%d-7-1", year)),
@@ -747,9 +747,9 @@ for (year in 1869:1892) {
 #' Due on various years.
 #'
 #' - Denny & Co. : redemption 1868-1890
-#' - http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332 : redmeption, 1872.
+#' - http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332 : redemption, 1872.
 #' 
-bonds[["missouri_six_1872"]] <-
+bonds[["missouri_6pct_1872"]] <-
     list(cashflows =
          generate_cashflows_years(as.Date("1872-7-1"),
                                  years = 35,
