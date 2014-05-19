@@ -144,3 +144,27 @@ yield_to_maturity2 <- function(price, date, cashflows) {
     cf <- normalize_cashflows(date, cashflows)
     yield_to_maturity(price, cf$amount, cf$maturity)
 }
+
+make_bond_table <- function(bonds) {
+    data.frame(bond = bonds, wgt = 1 / length(bonds))
+}
+
+make_bond_table_regex <- function(pattern, metadata) {
+    bonds <- grep(pattern, names(metadata), value = TRUE)
+    make_bond_table(bonds)
+}
+
+make_bond_table_dist <- function(pattern, .list, prior_yrs = NULL, prior_n = 1) {
+    .data <- plyr::ldply(.list, function(x) data.frame(year = x, wgt = 1 / length(x)))
+    if (is.null(prior_yrs)) {
+        minyr <- min(.data$year)
+        maxyr <- max(.data$year)
+        prior_yrs <- seq(minyr, maxyr, by = 1)
+    } 
+    .prior <- data.frame(year = prior_yrs, wgt = 1 / length(prior_yrs) * prior_n)
+    (group_by(plyr::rbind.fill(.data, .prior), "year")
+     %.% summarise(wgt = sum(wgt))
+     %.% mutate(wgt = wgt / sum(wgt),
+                bond = sprintf(pattern, year))
+     %.% select(bond, wgt))
+}

@@ -32,4 +32,9 @@ schema:
     - id: price_gold
       type: number
       description: "Price of bond in gold dollars"
-
+    - id: adjust_gold
+      type: number
+      description: "Manual price adjustment of bond in gold dollars; used to clean prices beyond accrued interest"
+    - id: adjust_price
+      type: number
+      description: "Manual price adjustment of bond in gold dollars; used to clean prices beyond accrued interest"

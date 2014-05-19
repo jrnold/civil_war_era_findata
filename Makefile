@@ -1,4 +1,4 @@
-PYTHON = python
+PYTHON = python3
 R = Rscript
 YAMLFILES = $(shell find sources/datapackage -type f -name '*.yaml')
 

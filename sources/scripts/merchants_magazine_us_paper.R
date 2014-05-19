@@ -26,6 +26,7 @@ merchants <-
             price_paper = value,
             price_gold = price_paper / gold_rate,
             adjust_gold = fill_na(adjust_gold),
-            adjust_paper = fill_na(adjust_paper))
+            adjust_paper = fill_na(adjust_paper),
+            is_clean = fill_na(is_clean))
      %.% select(-value))
 write.csv2(merchants, file = dst)

@@ -6,9 +6,9 @@ source("sources/scripts/R/misc.R")
 
 sysargs <- commandArgs(TRUE)
 bankers_file <- sysargs[1]
-bankers_file <- "data/bankers_magazine_govt_state_loans.csv"
+#bankers_file <- "data/bankers_magazine_govt_state_loans.csv"
 bond_metadata_file <- sysargs[2]
-bond_metadata_file <- "data/bond_metadata.json"
+#bond_metadata_file <- "data/bond_metadata.json"
 outfile <- sysargs[3]
 
 #' Load prerequisite data
@@ -24,29 +24,6 @@ bond_metadata <-
              simplifyDataFrame = FALSE)
 
 
-make_bond_table <- function(bonds) {
-    data.frame(bond = bonds, wgt = 1 / length(bonds))
-}
-
-make_bond_table_regex <- function(pattern, metadata) {
-    bonds <- grep(pattern, names(metadata), value = TRUE)
-    make_bond_table(regex)
-}
-
-make_bond_table_dist <- function(pattern, .list, prior_yrs = NULL, prior_n = 1) {
-    .data <- plyr::ldply(.list, function(x) data.frame(year = x, wgt = 1 / length(x)))
-    if (is.null(prior_yrs)) {
-        minyr <- min(.data$year)
-        maxyr <- max(.data$year)
-        prior_yrs <- seq(minyr, maxyr, by = 1)
-    } 
-    .prior <- data.frame(year = prior_yrs, wgt = 1 / length(prior_yrs) * prior_n)
-    (group_by(plyr::rbind.fill(.data, .prior), "year")
-     %.% summarise(wgt = sum(wgt))
-     %.% mutate(wgt = wgt / sum(wgt),
-                bond = sprintf(pattern, year))
-     %.% select(bond, wgt))
-}
 
 MATCH_BONDS <- list()
 

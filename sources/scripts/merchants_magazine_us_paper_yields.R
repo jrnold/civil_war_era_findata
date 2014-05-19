@@ -1,226 +1,196 @@
 library("dplyr")
 library("reshape2")
-library("RJSONIO")
+library("jsonlite")
 source("sources/scripts/R/misc.R")
 source("sources/scripts/R/finance.R")
 
 sysargs <- commandArgs(TRUE)
 merchants_file <- sysargs[1]
+# merchants_file <- "data/merchants_magazine_us_paper.csv"
 bond_metadata_file <- sysargs[2]
+# bond_metadata_file <- "data/bond_metadata.json"
 outfile <- sysargs[3]
 
 #' Load prerequisite data
+BOND_SERIES <- c("fives_1874",
+                 sprintf("sixes_1881_%s", c("reg", "coup")),
+                 sprintf("five_twenty_%s", c("reg", "coup")),
+                 "ten_forty", "seven_thirties")
+
 merchants <-
     (mutate(read.csv(merchants_file),
             date = as.Date(date, "%Y-%m-%d"))
-     %.% select(-issue, -url, -volume))
+     %.% select(date, series, adjust_gold, adjust_paper,
+                price_gold, gold_rate, is_clean)
+     %.% filter(!is.na(price_gold)))
 
-bond_metadata <- fromJSON(bond_metadata_file)
+merchants_bonds <-
+    filter(merchants, series %in% BOND_SERIES)
 
-NOTES <- c("aug_demand", "gold", "gold_low", "gold_high",
-           "oneyr_old", "oneyr_new")
+bond_metadata <-
+    fromJSON(bond_metadata_file,
+             simplifyDataFrame = FALSE)
 
 #' # Series -> BONDS weights
 MATCH_BONDS <- list()
 
 MATCH_BONDS[["fives_1874"]] <-
-    function(date) {
-        bonds <- "us_fives_18740101"
-        data.frame(bond = bonds, wgt = 1 / length(bonds))
-    }
-
-## MATCH_BONDS[["oneyr_old"]] <-
-##     function(date) {
-##         data.frame(bond = bonds, wgt = 1 / length(bonds))
-##     }
-
-## MATCH_BONDS[["oneyr_new"]] <-
-##     function(date) {
-##         data.frame(bond = bonds, wgt = 1 / length(bonds))
-##     }
+    function(date) make_bond_table("us_5pct_1874")
 
 MATCH_BONDS[["sixes_1881_coup"]] <-
     function(date) {
-        bonds <- grep("us_sixes_1881", names(bond_metadata),
-                      value = TRUE)
-        wgts <- c(0.089, 0.911)
-        data.frame(bond = bonds, wgt = wgts)
+        data.frame(bond =
+                   sprintf("us_6pct_1881_%s", c("jan", "jul")),
+                   wgt = c(0.089, 0.911))
     }
 
+#' For the sixes of 1881 apply to Jan and July Sixes of 1881
 MATCH_BONDS[["sixes_1881_reg"]] <-
     function(date) {
-        bonds <- grep("us_sixes_1881", names(bond_metadata),
-                      value = TRUE)
-        wgts <- c(0.089, 0.911)
-        data.frame(bond = bonds, wgt = wgts)
+        data.frame(bond =
+                   sprintf("us_6pct_1881_%s", c("jan", "jul")),
+                   wgt = c(0.089, 0.911))
     }
 
+#' The five-twenties are first quoted in Jan 1, 1865.
+#' So assume that the five-twenties quoted are the five-twenties of 1864, not 1862 or 1865.
 MATCH_BONDS[["five_twenty_coup"]] <-
     function(date) {
-        bonds <- grep("us_five_twenty", names(bond_metadata), value=TRUE)
-        data.frame(bond = bonds, wgt = 1 / length(bonds))
+        make_bond_table_regex("^us_five_twenty_of_1864", bond_metadata)
     }
 
 MATCH_BONDS[["five_twenty_reg"]] <-
     function(date) {
-        bonds <- grep("us_five_twenty", names(bond_metadata), value=TRUE)
-        data.frame(bond = bonds, wgt = 1 / length(bonds))
+        make_bond_table_regex("^us_five_twenty_of_1864", bond_metadata)
     }
 
 MATCH_BONDS[["ten_forty"]] <-
     function(date) {
-        bonds <- grep("us_ten_forty", names(bond_metadata), value=TRUE)
-        data.frame(bond = bonds, wgt = 1 / length(bonds))
+        make_bond_table_regex("^us_ten_forty", bond_metadata)
     }
-
 
 MATCH_BONDS[["seven_thirties"]] <-
     function(date) {
-        if (date < as.Date("1864-8-15")) {
-            data.frame(bond = 
-                       c("us_seven_thirties_18640819",
-                         "us_seven_thirties_18641001"),
-                       wgt = c(0.5, 0.5))
-        } else if (date >= as.Date("1864-8-15")
-                   & date < as.Date("1864-8-19")) {
-            data.frame(bond =
-                       c("us_seven_thirties_18640819",
-                         "us_seven_thirties_18641001",
-                         "us_seven_thirties_18670815"),
-                       wgt = c(0.168, 0.168, 0.664))
-        } else if (date >= as.Date("1864-8-19")
-                   & date < as.Date("1864-10-1")) {
-            data.frame(bond =
-                       c("us_seven_thirties_18641001",
-                         "us_seven_thirties_18670815"),
-                       wgt = c(0.202, 0.798))
-        } else if (date >= as.Date("1864-10-1")) {
-            data.frame(bond = c("us_seven_thirties_18670815"),
-                       wgt = 1)
-        }
+        make_bond_table_regex("^us_ten_forty", bond_metadata)
     }
 
-#' # Generate Yields
-FUN2 <- function(bond, date, price_gold_dirty, price_paper_dirty, series, ..., METADATA) {
-    bond <- as.character(bond)
-    searchint <- c(-100, 100)
-    metadata <- METADATA[[bond]]
-    cashflows <- mutate(data.frame(metadata$cashflows),
-                        date = as.Date(date, "%Y-%m-%d"))
-    cashflows2 <- cashflows[cashflows$date > date, , drop=FALSE]
-    issue_date <- metadata$issue_date
-    if (!is.null(issue_date)) issue_date <- as.Date(issue_date, "%Y-%m-%d")
-    ncoupons <- length(metadata$periods)
-    interest <- metadata$interest
-    gold_2_paper <- price_paper_dirty / price_gold_dirty
-    accrued <- accrued_interest(cashflows, issue_date, ncoupons, interest, date)
-    price_gold_clean <- price_gold_dirty - accrued
-    price_paper_clean <- price_paper_dirty - gold_2_paper * accrued
-    ## yield to maturity
-    m <- difftime_30_360(cashflows2$date, date) / 360
-    if (!is.na(price_gold_dirty)) {
-        ytm <- try(ytm(c(-price_gold_dirty, cashflows2$amount), c(0, m), searchint = searchint))
-        if (is(ytm, "try-error")) {
-            print(sprintf("%s %s %s %f", series, bond, date, price_gold_dirty))
-            ytm <- NA
-        }
-        duration <- macaulay_duration(cashflows2$amount, m, ytm, price_gold_clean)
+MATCH_BONDS[["seven_thirties"]] <-
+    function(date) {
+        rbind(make_bond_table_regex("^us_seven_thirties_1864_(aug|oct)_option", bond_metadata))
+    }
+
+unmatched <- setdiff(unique(merchants_bonds$series), names(MATCH_BONDS))
+if (length(unmatched)) {
+    stop(sprintf("No entries for: %s", paste(unmatched, collapse = ", ")))
+}
+
+make_yields_etc <- 
+    function(date, bond, gold_rate, price_gold, adjust_gold, adjust_paper, is_clean, ..., bond_metadata)
+{
+    metadata <- bond_metadata[[as.character(bond)]]
+    if ("issue_date" %in% metadata) {
+        issue_date <- metadata[["issue_date"]]
+    } else issue_date <- NULL
+    if (! is.null(issue_date) && ! is.na(issue_date)) {
+        issue_date <- as.Date(issue_date, format = "%Y-%m-%d")
+    }
+    cashflows <-
+        mutate(plyr::ldply(metadata[["cashflows"]],
+                           function(x) as.data.frame(x)),
+               date = as.Date(date, format="%Y-%m-%d"))
+    cashflows <- gold_cashflows(cashflows, gold_rate)
+    accrued <- accrued_interest(date, cashflows, issue_date)
+    price <- price_gold + adjust_gold + adjust_paper / gold_rate
+    if (! is_clean) {
+        price_clean <- price - accrued
     } else {
-        ytm <- NA
-        duration <- NA
+        price_clean <- price
+        price <- price_clean + accrued
     }
-    ## ## Duration
-    ## duration <- NA
-    ## Current yield
-    current_yield <- (interest * 100) / price_gold_clean
-    ret <- 
-        data.frame(accrued = accrued,
-                   price_gold_clean = price_gold_clean,
-                   price_paper_clean = price_paper_clean,
-                   yield = ytm,
-                   current_yield = current_yield,
-                   duration = duration,
-                   maturity = max(m))
-    ret
+    yields <- yield_to_maturity2(price, date, cashflows)
+    data.frame(price = price,
+               price_clean = price_clean,
+               accrued_interest = accrued,
+               ytm = as.numeric(yields),
+               duration = attr(yields, "duration"),
+               convexity = attr(yields, "convexity"),
+               maturity = attr(yields, "maturity"))
 }
 
-#' U.S. Certificates of Indebtedness of 1863
-#' Pay 6 percent in specie.
-#' Until Act of March 3, 1863, changed interest payment to specie.
-oneyr_old1 <-
-    mutate(subset(merchants,
-                  series == "oneyr_old"
-                  & date < as.Date("1863-3-3"),
-                  c(series, date, price_paper, price_gold)),
-           bond = "us_one_year_notes_1862",
-           wgt = 1,
-           price_paper_dirty = price_paper,
-           price_gold_dirty = price_gold,
-           price_paper = NULL,
-           price_gold = NULL,
-           price_paper_clean = price_paper_dirty,
-           price_gold_clean = price_gold_dirty,
-           current_yield = 6 / price_gold_dirty,
-           yield = - log(price_gold_dirty / 100),
-           maturity = 1,
-           duration = 1)
-
-oneyr_old2 <-
-    mutate(subset(merchants,
-                  series == "oneyr_old"
-                  & date >= as.Date("1863-3-3"),
-                  c(series, date, price_paper, price_gold)),
-           bond = "us_one_year_notes_1862",
-           wgt = 1,
-           price_paper_dirty = price_paper,
-           price_gold_dirty = price_gold,
-           price_paper = NULL,
-           price_gold = NULL,
-           price_paper_clean = price_paper_dirty,
-           price_gold_clean = price_gold_dirty,
-           interest = 6 * (price_gold_clean / price_paper_clean),
-           current_yield = interest / price_gold_dirty,
-           yield = - log(price_paper_dirty / (100 + interest)),
-           maturity = 1,
-           duration = 1)
-
-oneyr_new <-
-    mutate(subset(merchants, series == "oneyr_new",
-                  c(series, date, price_paper, price_gold)),
-           bond = "us_one_year_notes_1863",
-           wgt = 1,
-           price_paper_dirty = price_paper,
-           price_gold_dirty = price_gold,
-           price_paper = NULL,
-           price_gold = NULL,
-           price_paper_clean = price_paper_dirty,
-           price_gold_clean = price_gold_dirty,
-           current_yield = 5 / price_paper_dirty,
-           yield = - log(price_paper_dirty / 105),
-           maturity = 1,
-           duration = 1)
-
-FUN <- function(series, date, price_gold, price_paper, ..., METADATA, MATCH_BONDS) {
-    bonds <- MATCH_BONDS[[as.character(series)]](date)
-    bonds$series <- series
-    bonds$date <- date
-    bonds$price_gold_dirty <- price_gold
-    bonds$price_paper_dirty <- price_paper
-    mdply(bonds, FUN2, METADATA=bond_metadata)
+match_series_to_bonds <- function(series, date, ...) {
+    MATCH_BONDS[[as.character(series)]](date)
 }
 
-#' Yields for  coupon bonds
-coupons <- mdply(subset(merchants,
-                        ! series %in% NOTES),
-                 FUN, METADATA = bond_metadata,
-                MATCH_BONDS=MATCH_BONDS)
+## for (i in 1:nrow(merchants_bonds)) {
+##     print(i)
+##     plyr::splat(match_series_to_bonds)(merchants_bonds[i, ])
+## }
 
-fields <- c("series", "date", "bond", "wgt",
-            "price_paper_dirty", "price_gold_dirty",
-            "price_paper_clean", "price_gold_clean", "accrued", "current_yield",
-            "yield", "maturity", "duration")
-yields <- rbind.fill(coupons,
-                     oneyr_new, oneyr_old1, oneyr_old2)
+.data <- plyr::mdply(merchants_bonds, match_series_to_bonds)
 
-yields <- arrange(yields, series, date, bond)
-write.csv2(yields[ , fields], file = outfile)
+## for (i in 1:nrow(.data)) {
+##     print(i)
+##     plyr::splat(make_yields_etc)(.data[i, ], bond_metadata = bond_metadata)
+## }
+
+.data2 <-
+    (plyr::mdply(.data, make_yields_etc,
+                bond_metadata = bond_metadata)
+     )
+
+
+#' One year old (Certificates of Indebtedness)
+#'
+#' Issued under the Act of March 1, 1862 (12 Stat 352).
+#' Paid 6 percent interest on maturity (1 year after issue).
+#' Act of March 3, 1863 (12 Stat 710) made the interest payable
+#' in lawful money.n
+#'
+#' Quoted from 1862-3-26 to 1864-3-26. For yield calculates, I will assume that the interest is always payable in lawfult money rather than currency.
+#'
+#' - Bayley, [p. 81](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA81), [p. 158-159](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA158)
+#' - De Knight, [p. 86-87](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA86)
+#' - Noll ? 
+#' - Annual Report of the Treasury 1863, [p. 44-45](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf#page=52)
+#' 
+oneyr_new <- (filter(merchants, series == "oneyr_new")
+              %.% mutate(bond = "us_certificates_indebt_1862",
+                         price = price_gold + adjust_gold + adjust_paper / gold_rate,
+                         price_clean = price,
+                         accrued_interest = NA,
+                         ytm = -log(price / 105 / gold_rate),
+                         duration = 1,
+                         convexity = 1,
+                         maturity = 1))
+
+
+#' One Year New (Treasury Notes of 1863)
+#'
+#' Issued under the Act of March 3, 1863.
+#' Paid interest of 5 percent on maturity (1 year after issue).
+#' Both principal and interest paid in lawful currency.
+#'
+#' These were quoted after 1863-4-25.
+#' 
+#' - Bayley, [p. 82-84](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA82),  [p. 161](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA161)
+#' - De Knight, [p. 88-89](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA88)
+#' - Noll, Vol 8, [p. 304](http://www.franklinnoll.com/Vol_8.pdf#page-305)
+#' - Annual Report of the Treasury 1865, [p. 52-53](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1865.pdf#page=56)
+#' 
+oneyr_old <- (filter(merchants, series == "oneyr_new")
+              %.% mutate(bond = "us_one_year_note_1863",
+                         price = price_gold + adjust_gold + adjust_paper / gold_rate,
+                         price_clean = price,
+                         accrued_interest = 0,
+                         ytm = -log(price / 106 / gold_rate),
+                         duration = 1,
+                         convexity = 1,
+                         maturity = 1))
+
+.data2 <-
+    (do.call(plyr::rbind.fill,
+             list(.data2, oneyr_old, oneyr_new))
+     %.% select(-is_clean, -adjust_gold,
+                -adjust_paper, -price_gold))
+
+write.csv2(.data2, file = outfile)
