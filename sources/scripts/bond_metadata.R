@@ -279,8 +279,8 @@ bonds[["us_seven_thirties_1864_aug"]]  <-
 bonds[["us_seven_thirties_1864_aug_option"]]  <-
     local({
         cashflows <-
-            rbind(filter(bonds[["us_seven_thirties_18640819"]]$cashflows, specie),
-                  filter(bonds[["us_sixes_18810701"]]$cashflows,
+            rbind(filter(bonds[["us_seven_thirties_1864_aug"]]$cashflows, specie),
+                  filter(bonds[["us_6pct_1881_jul"]]$cashflows,
                          date > as.Date("1864-10-01")))
         list(cashflows = cashflows,
              interest = NA,
@@ -307,7 +307,7 @@ bonds[["us_seven_thirties_1864_oct_option"]]  <-
     local({
         cashflows <-
             rbind(filter(bonds[["us_seven_thirties_1864_oct"]]$cashflows, interest),
-                  filter(bonds[["us_sixes_1881_jun"]]$cashflows,
+                  filter(bonds[["us_6pct_1881_jul"]]$cashflows,
                          date > as.Date("1864-10-01")))
         list(cashflows = cashflows,
              interest = NA,
