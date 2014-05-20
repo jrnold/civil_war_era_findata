@@ -6,9 +6,9 @@ source("sources/scripts/R/finance.R")
 
 sysargs <- commandArgs(TRUE)
 merchants_file <- sysargs[1]
-# merchants_file <- "data/merchants_magazine_us_paper.csv"
+merchants_file <- "data/merchants_magazine_us_paper.csv"
 bond_metadata_file <- sysargs[2]
-# bond_metadata_file <- "data/bond_metadata.json"
+bond_metadata_file <- "data/bond_metadata.json"
 outfile <- sysargs[3]
 
 #' Load prerequisite data
@@ -152,18 +152,22 @@ match_series_to_bonds <- function(series, date, ...) {
 #' - De Knight, [p. 86-87](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA86)
 #' - Noll ? 
 #' - Annual Report of the Treasury 1863, [p. 44-45](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf#page=52)
-#' 
-oneyr_new <- (filter(merchants, series == "oneyr_new")
-              %.% mutate(bond = "us_certificates_indebt_1862",
-                         price = price_gold + adjust_gold + adjust_paper / gold_rate,
-                         price_clean = price,
-                         accrued_interest = NA,
-                         ytm = -log(price / 105 / gold_rate),
-                         duration = 1,
-                         convexity = 1,
-                         maturity = 1))
+#'
+oneyr_old <- plyr::ldply(c(0.5, 1),
+                         function(i) {
+                             (filter(merchants, series == "oneyr_old")
+                              %.% mutate(bond = paste0("us_certificates_indebt_1862_maturity_", i),
+                                         wgt = 0.5,
+                                         price = price_gold + adjust_gold + (adjust_paper / gold_rate),
+                                         price_clean = price,
+                                         accrued_interest = NA,
+                                         ytm = -log((price * gold_rate) / 106) / i,
+                                         duration = i,
+                                         convexity = i^2,
+                                         maturity = i))
+                         })
 
-
+#'
 #' One Year New (Treasury Notes of 1863)
 #'
 #' Issued under the Act of March 3, 1863.
@@ -174,18 +178,22 @@ oneyr_new <- (filter(merchants, series == "oneyr_new")
 #' 
 #' - Bayley, [p. 82-84](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA82),  [p. 161](http://books.google.com/books?id=OQ9AAAAAYAAJ&pg=PA161)
 #' - De Knight, [p. 88-89](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA88)
-#' - Noll, Vol 8, [p. 304](http://www.franklinnoll.com/Vol_8.pdf#page-305)
+#' - Noll, Vol 8, [p. 304](http://www.franklinnoll.com/Vol_8.pdf#page=305)
 #' - Annual Report of the Treasury 1865, [p. 52-53](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1865.pdf#page=56)
 #' 
-oneyr_old <- (filter(merchants, series == "oneyr_new")
-              %.% mutate(bond = "us_one_year_note_1863",
-                         price = price_gold + adjust_gold + adjust_paper / gold_rate,
-                         price_clean = price,
-                         accrued_interest = 0,
-                         ytm = -log(price / 106 / gold_rate),
-                         duration = 1,
-                         convexity = 1,
-                         maturity = 1))
+oneyr_new <- plyr::ldply(c(0.5, 1),
+                         function(i) {
+                             (filter(merchants, series == "oneyr_old")
+                              %.% mutate(bond = paste("us_certificates_indebt_1862_maturity_", i),
+                                         wgt = 0.5,
+                                         price = price_gold + adjust_gold + (adjust_paper / gold_rate),
+                                         price_clean = price,
+                                         accrued_interest = NA,
+                                         ytm = -log((price * gold_rate) / 105) / i,
+                                         duration = i,
+                                         convexity = i^2,
+                                         maturity = i))
+                     })
 
 .data2 <-
     (do.call(plyr::rbind.fill,
