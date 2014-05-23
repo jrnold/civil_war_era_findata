@@ -1,0 +1,150 @@
+path: "homer_sylla_table_41.csv"
+title: "Prices and Yields of Long Term High Grade U.S. Bond: 1830-1859"
+description: >-
+  High and low prices from Joseph G. Martin, *Martin's Boston Stock Market*, Boston 1886, p. 127.
+sources: 
+  - name: "Homer, Sydney and Richard Sylla (2005) *A History of Interest Rates*, Wiley, Table 41, pp. 300-301."
+schema:
+  fields:
+    - id: year
+      type: integer
+      label: "Year"
+      
+    - id: us_3pct_1790_price_avg
+      type: number
+      label: "U.S. 3s of 1790, Annual Average Price"
+      source: "Table 41, p. 300"
+    - id: us_3pct_1790_yield_avg
+      type: number
+      label: "U.S. 3s of 1790, Annual Average Current Yield %"
+      source: "Table 41, p. 300"
+      description: "In 1830, if redemption in 1833 was certain, yield at 92.25 was 5.85%"
+    - id: us_3pct_1790_price_low
+      type: number
+      label: "U.S. 3s of 1790, Annual High Price"
+      source: "Table 41, p. 300"
+    - id: us_3pct_1790_price_high
+      type: number
+      label: "U.S. 3s of 1790, Annual Low Price"
+      source: "Table 41, p. 300"
+      
+    - id: us_5pct_1821_1835_price_avg
+      type: number
+      label: "U.S. 5s of 1821-1835, Annual Average Price"
+      source: "Table 41, p. 300"
+    - id: us_5pct_1821_1835_yield_avg
+      type: number
+      label: "U.S. 5s of 1821-1835, Annual Average Current Yield %"
+      source: "Table 41, p. 300"
+    - id: us_5pct_1821_1835_ytm_avg
+      type: number
+      label: "U.S. 5s of 1821-1835, Annual Average Redemption Yield %"
+      source: "Table 41, p. 300"
+    - id: us_5pct_1821_1835_price_high
+      type: number
+      label: "U.S. 5s of 1821-1835, Annual High Price"
+      source: "Table 41, p. 300"
+    - id: us_5pct_1821_1835_price_low
+      type: number
+      label: "U.S. 5s of 1821-1835, Annual Low Price"
+      source: "Table 41, p. 300"
+
+    - id: us_6pct_1842_1863_price_avg
+      type: number
+      label: "U.S. 6s of 1842-1863, Annual Average Price"
+      source: "Table 41, p. 300"
+    - id: us_6pct_1842_1863_yield_avg
+      type: number
+      label: "U.S. 6s of 1842-1863, Annual Average Current Yield, %"
+      source: "Table 41, p. 300"
+    - id: us_6pct_1842_1863_ytm_avg
+      type: number
+      label: "U.S. 6s of 1842-1863, Annual Average Redemption Yield, %"
+      source: "Table 41, p. 300"
+    - id: us_6pct_1842_1863_price_low
+      type: number
+      label: "U.S. 6s of 1842-1863, Annual Low Price"
+      source: "Table 41, p. 300"
+    - id: us_6pct_1842_1863_yield_low
+      type: number
+      label: "U.S. 6s of 1842-1863, Annual Low Current Yield, %"
+      source: "Table 41, p. 300"
+    - id: us_6pct_1842_1863_price_high
+      type: number
+      label: "U.S. 6s of 1842-1863, Annual High Price"
+      source: "Table 41, p. 300"
+    - id: us_6pct_1842_1863_yield_high
+      type: number
+      label: "U.S. 6s of 1842-1863, Annual High Current Yield, %"
+      source: "Table 41, p. 300"
+
+    - id: us_6pct_1848_1868_price_avg
+      type: number
+      label: "U.S. 6s of 1848-1868, Annual Average Price"
+      source: "Table 41, p. 300"
+    - id: us_6pct_1848_1868_yield_avg
+      type: number
+      label: "U.S. 6s of 1848-1868, Annual Average Current Yield, %"
+      source: "Table 41, p. 300"
+    - id: us_6pct_1848_1868_ytm_avg
+      type: number
+      label: "U.S. 6s of 1848-1868, Annual Average Redemption Yield, %"
+      source: "Table 41, p. 300"
+    - id: us_6pct_1848_1868_price_low
+      type: number
+      label: "U.S. 6s of 1848-1868, Annual Low Price"
+      source: "Table 41, p. 300"
+    - id: us_6pct_1848_1868_yield_low
+      type: number
+      label: "U.S. 6s of 1848-1868, Annual Low Current Yield, %"
+      source: "Table 41, p. 300"
+    - id: us_6pct_1848_1868_price_high
+      type: number
+      label: "U.S. 6s of 1848-1868, Annual High Price"
+      source: "Table 41, p. 300"
+    - id: us_6pct_1848_1868_yield_high
+      type: number
+      label: "U.S. 6s of 1848-1868, Annual High Current Yield, %"
+      source: "Table 41, p. 300"
+
+    - id: boston_5pct_price_avg
+      type: number
+      label: "Boston City 5s, Annual Average Price"
+      source: "Table 41, p. 301"
+    - id: boston_5pct_yield_avg
+      type: number
+      label: "Boston City 5s, Annual Average Current Yield, %"
+      source: "Table 41, p. 301"
+    - id: boston_5pct_price_high
+      type: number
+      label: "Boston City 5s, Annual High Price"
+      source: "Table 41, p. 301"
+    - id: boston_5pct_price_low
+      type: number
+      label: "Boston City 5s, Annual Low Price"
+      source: "Table 41, p. 301"
+
+    - id: mass_5pct_price_avg
+      type: number
+      label: "Massachusetts 5s, Annual Average Price"
+      source: "Table 41, p. 301"
+    - id: mass_5pct_yield_avg
+      type: number
+      label: "Massachusetts 5s, Annual Average Current Yield, %"
+      source: "Table 41, p. 301"
+    - id: mass_5pct_price_high
+      type: number
+      label: "Massachusetts 5s, Annual High Price"
+      source: "Table 41, p. 301"
+    - id: mass_5pct_yield_high
+      type: number
+      label: "Massachusetts 5s, Annual High Current Yield, %"
+      source: "Table 41, p. 301"
+    - id: mass_5pct_price_low
+      type: number
+      label: "Massachusetts 5s, Annual Low Price"
+      source: "Table 41, p. 301"
+    - id: mass_5pct_yield_low
+      type: number
+      label: "Massachusetts 5s, Annual Low Current Yield, %"
+      source: "Table 41, p. 301"

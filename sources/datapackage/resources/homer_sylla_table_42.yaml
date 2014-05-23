@@ -1,0 +1,170 @@
+path: "homer_sylla_table_42.csv"
+title: "Prices and Yields of Long Term High Grade U.S. Bonds: 1860-1879"
+description: >
+  
+  Sources: For government bonds: *The Financial Review Annual*, 1921, Wm. B. Dana Co., pp 221-232.
+  New England municipal and high-grade railroad bond averages from Frederick Macaulay, *The Movements of Interest Rates, Bond Yields and Stock Prices*, New York, 1938, NBER, A142ff, A174ff.
+
+sources: 
+  - name: "Homer, Sydney and Richard Sylla (2005) *A History of Interest Rates*, Wiley, Table 42, pp. 305-306."
+schema:
+  fields:
+    - id: year
+      type: integer
+      label: "Year"
+      
+    - id: us_6pct_1848_1868_price_avg
+      type: number
+      label: "U.S. 6s of 1848-1868, Annual Average Price"
+      source: "Table 42, p. 305"
+    - id: us_6pct_1848_1868_yield_avg
+      type: number
+      label: "U.S. 6s of 1848-1868, Annual Average Current Yield, %"
+      source: "Table 42, p. 305"
+    - id: us_6pct_1848_1868_ytm_avg
+      type: number
+      label: "U.S. 6s of 1848-1868, Annual Average Redemption Yield, %"
+      source: "Table 42, p. 305"
+      description: "-1 used for negative yields"
+    - id: us_6pct_1848_1868_price_high
+      type: number
+      label: "U.S. 6s of 1848-1868, Annual High Price"
+      source: "Table 42, p. 305"
+    - id: us_6pct_1848_1868_price_low
+      type: number
+      label: "U.S. 6s of 1848-1868, Annual Low Price"
+      source: "Table 42, p. 305"
+
+    - id: us_6pct_1861_1881_price_avg
+      type: number
+      label: "U.S. 6s of 1861-1881, Annual Average Price"
+      source: "Table 42, p. 305"
+    - id: us_6pct_1861_1881_yield_avg
+      type: number
+      label: "U.S. 6s of 1861-1881, Annual Average Current Yield, %"
+      source: "Table 42, p. 305"
+    - id: us_6pct_1861_1881_ytm_avg
+      type: number
+      label: "U.S. 6s of 1861-1881, Annual Average Redemption Yield, %"
+      source: "Table 42, p. 305"
+      description: "-1 used for negative yields"
+    - id: us_6pct_1861_1881_price_high
+      type: number
+      label: "U.S. 6s of 1861-1881, Annual High Price"
+      source: "Table 42, p. 305"
+    - id: us_6pct_1861_1881_price_low
+      type: number
+      label: "U.S. 6s of 1861-1881, Annual Low Price"
+      source: "Table 42, p. 305"
+
+    - id: us_4_half_pct_1891_price_avg
+      type: number
+      label: "U.S. Refunding 4 1/2s of 1891, Annual Average Price"
+      source: "Table 42, p. 305"
+    - id: us_4_half_pct_1891_yield_avg
+      type: number
+      label: "U.S. Refunding 4 1/2s of 1891, Annual Average Current Yield, %"
+      source: "Table 42, p. 305"
+    - id: us_4_half_pct_1891_ytm_avg
+      type: number
+      label: "U.S. Refunding 4 1/2s of 1891, Annual Average Redemption Yield, %"
+      source: "Table 42, p. 305"
+      description: "-1 used for negative yields"
+    - id: us_4_half_pct_1891_price_high
+      type: number
+      label: "U.S. Refunding 4 1/2s of 1891, Annual High Price"
+      source: "Table 42, p. 305"
+    - id: us_4_half_pct_1891_price_low
+      type: number
+      label: "U.S. Refunding 4 1/2s of 1891, Annual Low Price"
+      source: "Table 42, p. 305"
+    
+    - id: us_5pct_1858_1874_price_avg
+      type: number
+      label: "U.S. 5s of 1858-1874, Annual Average Price"
+      source: "Table 42, p. 305"
+    - id: us_5pct_1858_1874_yield_avg
+      type: number
+      label: "U.S. 5s of 1858-1874, Annual Average Current Yield, %"
+      source: "Table 42, p. 305"
+    - id: us_5pct_1858_1874_ytm_avg
+      type: number
+      label: "U.S. 5s of 1858-1874, Annual Average Redemption Yield, %"
+      source: "Table 42, p. 305"
+    - id: us_5pct_1858_1874_price_high
+      type: number
+      label: "U.S. 5s of 1858-1874, Annual High Price"
+      source: "Table 42, p. 305"
+    - id: us_5pct_1858_1874_price_low
+      type: number
+      label: "U.S. 5s of 1858-1874, Annual Low Price"
+      source: "Table 42, p. 305"
+
+    - id: us_5pct_1864_1874_price_avg
+      type: number
+      label: "U.S. 5s of 1864-1874 (10-40s), Annual Average Price"
+      source: "Table 42, p. 305-306"
+    - id: us_5pct_1864_1874_yield_avg
+      type: number
+      label: "U.S. 5s of 1864-1874 (10-40s), Annual Average Current Yield, %"
+      source: "Table 42, p. 305-306"
+    - id: us_5pct_1864_1874_ytm_avg
+      type: number
+      label: "U.S. 5s of 1864-1874 (10-40s), Annual Average Redemption Yield, %"
+      source: "Table 42, p. 305-306"
+      description: "-1 used for negative yields"
+    - id: us_5pct_1864_1874_price_high
+      type: number
+      label: "U.S. 5s of 1864-1874 (10-40s), Annual High Price"
+      source: "Table 42, p. 305-306"
+    - id: us_5pct_1864_1874_price_low
+      type: number
+      label: "U.S. 5s of 1864-1874 (10-40s), Annual Low Price"
+      source: "Table 42, p. 305-306"
+
+    - id: us_4pct_1907_price_avg
+      type: number
+      label: "U.S. Refunding 4s of 1907, Annual Average Price"
+      source: "Table 42, p. 306"
+    - id: us_4pct_1907_yield_avg
+      type: number
+      label: "U.S. Refunding 4s of 1907, Annual Average Current Yield, %"
+      source: "Table 42, p. 306"
+    - id: us_4pct_1907_ytm_avg
+      type: number
+      label: "U.S. Refunding 4s of 1907, Annual Average Redemption Yield, %"
+      source: "Table 42, p. 306"
+    - id: us_4pct_1907_price_high
+      type: number
+      label: "U.S. Refunding 4s of 1907, Annual High Price"
+      source: "Table 42, p. 306"
+    - id: us_4pct_1907_price_low
+      type: number
+      label: "U.S. Refunding 4s of 1907, Annual Low Price"
+      source: "Table 42, p. 306"
+
+    - id: new_england_yield_avg
+      type: number
+      label: "New England Municipal Bond Yields, Annual Average %"
+      source: "Table 42, p. 306"
+    - id: new_england_yield_low
+      type: number
+      label: "New England Municipal Bond Yields, Low Quarter %"
+      source: "Table 42, p. 306"
+    - id: new_england_yield_high
+      type: number
+      label: "New England Municipal Bond Yields, High Quarter %"
+      source: "Table 42, p. 306"
+
+    - id: railroad_yield_avg
+      type: number
+      label: "Adjusted Average of Higher-Grade Railroad Bond Yields, Annual Average %"
+      source: "Table 42, p. 306"
+    - id: railroad_yield_low
+      type: number
+      label: "Adjusted Average of Higher-Grade Railroad Bond Yields, Low Month %"
+      source: "Table 42, p. 306"
+    - id: railroad_yield_high
+      type: number
+      label: "Adjusted Average of Higher-Grade Railroad Bond Yields, High Month %"
+      source: "Table 42, p. 306"

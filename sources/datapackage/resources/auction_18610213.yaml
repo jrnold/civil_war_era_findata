@@ -1,4 +1,4 @@
-path: "bankers_magazine_govt_bonds_quotes_in_text.yaml"
+path: "bankers_magazine_govt_bonds_quotes_in_text.csv"
 description: |
   Bid level data from the Auction of the Sixes of 1881 from the notice of February 13, 1861
 sources: 
