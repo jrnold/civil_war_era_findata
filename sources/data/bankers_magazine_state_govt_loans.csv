@@ -1,4 +1,4 @@
-series,date,issue,url,volume,value,is_clean,adjust_gold,adjust_paper,notes
+series,date,issue,url,volume,value,is_clean,adjust_gold,adjust_currency,notes
 california_7pct_1870,1855-08-24,1855-09-26,http://books.google.com/books?id=I1gmAQAAIAAJ&pg=PA334,10,87,0,,,
 california_7pct_1870,1855-08-31,1855-09-26,http://books.google.com/books?id=I1gmAQAAIAAJ&pg=PA334,10,87,0,,,
 california_7pct_1870,1855-09-07,1855-09-26,http://books.google.com/books?id=I1gmAQAAIAAJ&pg=PA334,10,88,0,,,

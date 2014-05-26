@@ -20,9 +20,9 @@ BOND_SERIES <- c("fives_1874",
 merchants <-
     (mutate(read.csv(merchants_file),
             date = as.Date(date, "%Y-%m-%d"))
-     %.% select(date, series, adjust_gold, adjust_paper,
+     %>% select(date, series, adjust_gold, adjust_currency,
                 price_gold, gold_rate, is_clean)
-     %.% filter(!is.na(price_gold)))
+     %>% filter(!is.na(price_gold)))
 
 merchants_bonds <-
     filter(merchants, series %in% BOND_SERIES)
@@ -85,7 +85,7 @@ if (length(unmatched)) {
 }
 
 make_yields_etc <- 
-    function(date, bond, gold_rate, price_gold, adjust_gold, adjust_paper, is_clean, ..., bond_metadata)
+    function(date, bond, gold_rate, price_gold, adjust_gold, adjust_currency, is_clean, ..., bond_metadata)
 {
     metadata <- bond_metadata[[as.character(bond)]]
     if ("issue_date" %in% metadata) {
@@ -100,7 +100,7 @@ make_yields_etc <-
                date = as.Date(date, format="%Y-%m-%d"))
     cashflows <- gold_cashflows(cashflows, gold_rate)
     accrued <- accrued_interest(date, cashflows, issue_date)
-    price <- price_gold + adjust_gold + adjust_paper / gold_rate
+    price <- price_gold + adjust_gold + adjust_currency / gold_rate
     if (! is_clean) {
         price_clean <- price - accrued
     } else {
@@ -156,9 +156,9 @@ match_series_to_bonds <- function(series, date, ...) {
 oneyr_old <- plyr::ldply(c(0.5, 1),
                          function(i) {
                              (filter(merchants, series == "oneyr_old")
-                              %.% mutate(bond = paste0("us_certificates_indebt_1862_maturity_", i),
+                              %>% mutate(bond = paste0("us_certificates_indebt_1862_maturity_", i),
                                          wgt = 0.5,
-                                         price = price_gold + adjust_gold + (adjust_paper / gold_rate),
+                                         price = price_gold + adjust_gold + (adjust_currency / gold_rate),
                                          price_clean = price,
                                          accrued_interest = NA,
                                          ytm = -log((price * gold_rate) / 106) / i,
@@ -184,9 +184,9 @@ oneyr_old <- plyr::ldply(c(0.5, 1),
 oneyr_new <- plyr::ldply(c(0.5, 1),
                          function(i) {
                              (filter(merchants, series == "oneyr_old")
-                              %.% mutate(bond = paste("us_certificates_indebt_1862_maturity_", i),
+                              %>% mutate(bond = paste("us_certificates_indebt_1862_maturity_", i),
                                          wgt = 0.5,
-                                         price = price_gold + adjust_gold + (adjust_paper / gold_rate),
+                                         price = price_gold + adjust_gold + (adjust_currency / gold_rate),
                                          price_clean = price,
                                          accrued_interest = NA,
                                          ytm = -log((price * gold_rate) / 105) / i,
@@ -198,7 +198,7 @@ oneyr_new <- plyr::ldply(c(0.5, 1),
 .data2 <-
     (do.call(plyr::rbind.fill,
              list(.data2, oneyr_old, oneyr_new))
-     %.% select(-is_clean, -adjust_gold,
-                -adjust_paper, -price_gold))
+     %>% select(-is_clean, -adjust_gold,
+                -adjust_currency, -price_gold))
 
 write.csv2(.data2, file = outfile)

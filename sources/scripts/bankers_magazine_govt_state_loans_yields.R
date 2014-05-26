@@ -15,9 +15,9 @@ outfile <- sysargs[3]
 bankers <-
     (mutate(read.csv(bankers_file),
             date = as.Date(date, "%Y-%m-%d"))
-     %.% select(date, series, is_clean, adjust_gold,
-                adjust_paper, price_gold, gold_rate)
-     %.% filter(!is.na(price_gold)))
+     %>% select(date, series, is_clean, adjust_gold,
+                adjust_currency, price_gold, gold_rate)
+     %>% filter(!is.na(price_gold)))
 
 bond_metadata <-
     fromJSON(bond_metadata_file,
@@ -140,7 +140,7 @@ if (length(unmatched)) {
                      })
 
 make_yields_etc <- 
-    function(date, bond, gold_rate, price_gold, adjust_gold, adjust_paper, is_clean, ..., bond_metadata)
+    function(date, bond, gold_rate, price_gold, adjust_gold, adjust_currency, is_clean, ..., bond_metadata)
 {
     metadata <- bond_metadata[[as.character(bond)]]
     if ("issue_date" %in% metadata) {
@@ -155,7 +155,7 @@ make_yields_etc <-
                date = as.Date(date, format="%Y-%m-%d"))
     cashflows <- gold_cashflows(cashflows, gold_rate)
     accrued <- accrued_interest(date, cashflows, issue_date)
-    price <- price_gold + adjust_gold + adjust_paper / gold_rate
+    price <- price_gold + adjust_gold + adjust_currency / gold_rate
     if (! is_clean) {
         price_clean <- price - accrued
     } else {
@@ -179,8 +179,8 @@ make_yields_etc <-
 .data2 <-
     (plyr::mdply(.data, make_yields_etc,
                 bond_metadata = bond_metadata)
-     %.% select(-is_clean, -adjust_gold,
-                -adjust_paper, -price_gold)
+     %>% select(-is_clean, -adjust_gold,
+                -adjust_currency, -price_gold)
      )
 
 write.csv2(.data2, file = outfile)

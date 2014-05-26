@@ -94,8 +94,8 @@ gold_cashflows <- function(cashflows, gold_rate) {
 normalize_cashflows <- function(effectiveDate, cashflows) {
     (mutate(cashflows,
             maturity = as.integer(difftime(date, effectiveDate, units = "days")) / 365)
-     %.% filter(maturity > 0)
-     %.% select(maturity, amount)
+     %>% filter(maturity > 0)
+     %>% select(maturity, amount)
      )
 }
 
@@ -163,8 +163,8 @@ make_bond_table_dist <- function(pattern, .list, prior_yrs = NULL, prior_n = 1) 
     } 
     .prior <- data.frame(year = prior_yrs, wgt = 1 / length(prior_yrs) * prior_n)
     (group_by(plyr::rbind.fill(.data, .prior), "year")
-     %.% summarise(wgt = sum(wgt))
-     %.% mutate(wgt = wgt / sum(wgt),
+     %>% summarise(wgt = sum(wgt))
+     %>% mutate(wgt = wgt / sum(wgt),
                 bond = sprintf(pattern, year))
-     %.% select(bond, wgt))
+     %>% select(bond, wgt))
 }

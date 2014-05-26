@@ -1,4 +1,4 @@
-"date","series","issue","url","notes","adjust_gold","adjust_paper","is_clean","gold_rate","price_paper","price_gold"
+"date","series","issue","url","notes","adjust_gold","adjust_currency","is_clean","gold_rate","price_currency","price_gold"
 1862-02-05,"aug_demand","July 1862","http://books.google.com/books?id=u11JAAAAMAAJ&pg=PA34","",0,0,0,1.03434029020972,,
 1862-02-05,"fives_1874","July 1862","http://books.google.com/books?id=u11JAAAAMAAJ&pg=PA34","",0,0,0,1.03434029020972,78.5,75.8937853847731
 1862-02-05,"gold","July 1862","http://books.google.com/books?id=u11JAAAAMAAJ&pg=PA34","",0,0,0,1.03434029020972,,
