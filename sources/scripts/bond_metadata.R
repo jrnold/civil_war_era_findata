@@ -12,9 +12,6 @@ library("dplyr")
 args <- commandArgs(TRUE)
 outfile <- args[1]
 
-setMethod("toJSON", "Date",
-          function(x, ...) callGeneric(format(x, "%Y-%m-%d"), ...))
-
 #' Some helper functions to generate a number of cashflows starting from the redemption date
 generate_cashflows <-
     function(redemption, 
@@ -285,10 +282,8 @@ bonds[["us_seven_thirties_1864_aug_option"]]  <-
         list(cashflows = cashflows,
              interest = NA,
              maturity_date = as.Date("1881-7-1"),
-             periods = NA,
              issue_date = as.Date("1861-8-19"))
     })
-
 
 ## Redeemable on 1864-10-1
 bonds[["us_seven_thirties_1864_oct"]]  <-
@@ -312,7 +307,6 @@ bonds[["us_seven_thirties_1864_oct_option"]]  <-
         list(cashflows = cashflows,
              interest = NA,
              maturity_date = as.Date("1881-7-1"),
-             periods = NA,
              issue_date = as.Date("1861-10-01"))
     })
 
@@ -842,7 +836,7 @@ bonds[["pennsylvania_5pct_1871"]] <-
                                   year = 35,
                                   interest = 0.05),
          maturity_date = as.Date("1871-8-1"),
-         issue_date = NULL,
+         issue_date = NA,
          interest = 0.05,
          issuer = "Pennsylvania",
          periods = list(list(month = 2, day = 1),

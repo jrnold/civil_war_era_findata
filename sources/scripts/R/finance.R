@@ -116,7 +116,7 @@ prev_coupon <- function(date, cashflows) {
 }
 
 coupon_factor <- function(date, cashflows, issue_date = NULL) {
-    datelist <- sort(cashflows$date)
+    datelist <- sort(filter(cashflows, interest)$date)
     if (! is.null(issue_date) && ! is.na(issue_date)) {
         datelist <- c(issue_date, datelist)
     }
@@ -173,11 +173,11 @@ make_yields_etc <-
     function(date, bond, gold_rate, price_gold, adjust_gold, adjust_currency, is_clean, ..., bond_metadata)
 {
     metadata <- bond_metadata[[as.character(bond)]]
-    if ("issue_date" %in% metadata) {
-        issue_date <- metadata[["issue_date"]]
-    } else issue_date <- NULL
-    if (! is.null(issue_date) && ! is.na(issue_date)) {
+    issue_date <- metadata[["issue_date"]]
+    if (! is.na(issue_date) && ! is.null(issue_date)) {
         issue_date <- as.Date(issue_date, format = "%Y-%m-%d")
+    } else {
+        issue_date <- NULL
     }
     cashflows <-
         mutate(plyr::ldply(metadata[["cashflows"]],
@@ -193,7 +193,9 @@ make_yields_etc <-
         price <- price_clean + accrued
     }
     yields <- yield_to_maturity2(price, date, cashflows)
-    if ("periods" %in% names(metadata)) {
+    if ("periods" %in% names(metadata)
+        && length(metadata$periods)
+        && ! is.na(metadata$periods)) {
         current_yield <- calc_current_yield(date, price_clean, cashflows,
                                             length(metadata$periods))
     } else {
