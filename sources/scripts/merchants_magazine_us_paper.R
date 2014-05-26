@@ -27,6 +27,7 @@ merchants <-
             price_gold = price_currency / gold_rate,
             adjust_gold = fill_na(adjust_gold),
             adjust_currency = fill_na(adjust_currency),
-            is_clean = fill_na(is_clean))
+            is_clean = fill_na(is_clean),
+            registered = as.integer(grepl("_reg$", series)))
      %>% select(-value))
 write.csv2(merchants, file = dst)

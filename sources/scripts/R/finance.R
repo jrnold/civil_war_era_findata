@@ -63,10 +63,6 @@ yield_to_maturity <- function(price, x, m, interval = c(0, 1), ...) {
     ytm
 }
 
-current_yield <- function(issue, price, face=100, ...) {
-    current <- face * cashflows[[as.character(issue)]]$interest / price
-}
-
 prev_date <- function(x, table) {
     indic <- which(table <= x)
     if (length(indic)) {
@@ -168,3 +164,48 @@ make_bond_table_dist <- function(pattern, .list, prior_yrs = NULL, prior_n = 1) 
                 bond = sprintf(pattern, year))
      %>% select(bond, wgt))
 }
+
+calc_current_yield <- function(date, clean_price, cashflows, n) {
+    next_coupon(date, cashflows)$coupon * n / clean_price
+}
+
+make_yields_etc <- 
+    function(date, bond, gold_rate, price_gold, adjust_gold, adjust_currency, is_clean, ..., bond_metadata)
+{
+    metadata <- bond_metadata[[as.character(bond)]]
+    if ("issue_date" %in% metadata) {
+        issue_date <- metadata[["issue_date"]]
+    } else issue_date <- NULL
+    if (! is.null(issue_date) && ! is.na(issue_date)) {
+        issue_date <- as.Date(issue_date, format = "%Y-%m-%d")
+    }
+    cashflows <-
+        mutate(plyr::ldply(metadata[["cashflows"]],
+                           function(x) as.data.frame(x)),
+               date = as.Date(date, format="%Y-%m-%d"))
+    cashflows <- gold_cashflows(cashflows, gold_rate)
+    accrued <- accrued_interest(date, cashflows, issue_date)
+    price <- price_gold + adjust_gold + adjust_currency / gold_rate
+    if (! is_clean) {
+        price_clean <- price - accrued
+    } else {
+        price_clean <- price
+        price <- price_clean + accrued
+    }
+    yields <- yield_to_maturity2(price, date, cashflows)
+    if ("periods" %in% names(metadata)) {
+        current_yield <- calc_current_yield(date, price_clean, cashflows,
+                                            length(metadata$periods))
+    } else {
+        current_yield <- NA
+    }
+    data.frame(price = price,
+               price_clean = price_clean,
+               accrued_interest = accrued,
+               current_yield = current_yield,
+               ytm = as.numeric(yields),
+               duration = attr(yields, "duration"),
+               convexity = attr(yields, "convexity"),
+               maturity = attr(yields, "maturity"))
+}
+
