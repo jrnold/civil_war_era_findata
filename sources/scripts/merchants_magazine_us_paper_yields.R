@@ -59,6 +59,11 @@ MATCH_BONDS[["five_twenty_coup"]] <-
         make_bond_table_regex("^us_five_twenty_of_1864", bond_metadata)
     }
 
+MATCH_BONDS[["ten_forty"]] <-
+    function(date) {
+        make_bond_table_regex("^us_ten_forty_", bond_metadata)
+    }
+
 MATCH_BONDS[["five_twenty_reg"]] <-
     function(date) {
         make_bond_table_regex("^us_five_twenty_of_1864", bond_metadata)
