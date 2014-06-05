@@ -1,0 +1,26 @@
+path: "data/martin_sterling_exchange_yearly.csv"
+title: "Rate of Exchange on England at New York (Yearly, 1835-1870)"
+description: |
+  Rate of exchange on England, at New York, for Banker's bills (60 days) with yearly high and low values
+  from 1835 to 1870.
+
+source:
+  name: >
+    Martin, G. Joseph. "Seventy-three Years' History of the Boston Stock Market, from Januay 1, 1798, to January 1, 1871",
+    Boston, p. 27
+  url: "http://books.google.com/books?id=g5jyU-B-nikC&pg=PA27"
+schema:
+  fields:
+    - id: year
+      type: integer
+      label: Year
+    - id: low
+      type: number
+      label: Yearly Low
+    - id: high
+      type: number
+      label: Yearly high
+    - id: gold
+      type: boolean
+      label: Quoted in Gold
+      description: Whether quoted in gold or currency

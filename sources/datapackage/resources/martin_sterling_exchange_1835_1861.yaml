@@ -1,0 +1,26 @@
+path: "data/martin_sterling_exchange_1835_1861.csv"
+title: "Rate of Exchange on England at New York (1835-1861)"
+description: |
+  Rate of exchange on England, at New York, for Banker's bills (60 days), "on or about the 1st of month"
+  from Jan 1, 1835 to Dec 1, 1861.
+
+source:
+  name: >
+    Martin, G. Joseph. "Seventy-three Years' History of the Boston Stock Market, from Januay 1, 1798, to January 1, 1871",
+    Boston, p. 27
+schema:
+  fields:
+    - id: year
+      type: integer
+      label: Year
+    - id: month
+      type: integer
+      label: Month
+    - id: price
+      type: number
+      premium: Premium on exchange
+      description: >
+        Premium in gold dollars for exchange on England at New York, Banker's bills, 60 days.
+    - id: notes
+      type: string
+      premium: Notes

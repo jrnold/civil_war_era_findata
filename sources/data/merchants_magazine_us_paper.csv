@@ -1,4 +1,4 @@
-series,date,issue,url,value,notes,adjust_gold,adjust_paper,is_clean
+series,date,issue,url,value,notes,adjust_gold,adjust_currency,is_clean
 aug_demand,1862-02-05,July 1862,http://books.google.com/books?id=u11JAAAAMAAJ&pg=PA34,,,,,
 fives_1874,1862-02-05,July 1862,http://books.google.com/books?id=u11JAAAAMAAJ&pg=PA34,78.5,,,,
 gold,1862-02-05,July 1862,http://books.google.com/books?id=u11JAAAAMAAJ&pg=PA34,,,,,

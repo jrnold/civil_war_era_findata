@@ -1,4 +1,4 @@
-"date","series","issue","url","volume","is_clean","adjust_gold","adjust_paper","notes","gold_rate","price_paper","price_gold"
+"date","series","issue","url","volume","is_clean","adjust_gold","adjust_currency","notes","gold_rate","price_currency","price_gold"
 1855-08-24,"california_7pct_1870","1855-09-26","http://books.google.com/books?id=I1gmAQAAIAAJ&pg=PA334",10,0,0,0,"",1,87,87
 1855-08-24,"georgia_6pct","1855-09-26","http://books.google.com/books?id=I1gmAQAAIAAJ&pg=PA334",10,1,0,0,"",1,100,100
 1855-08-24,"indiana_5pct","1855-09-26","http://books.google.com/books?id=I1gmAQAAIAAJ&pg=PA334",10,0,0,0,"",1,86,86

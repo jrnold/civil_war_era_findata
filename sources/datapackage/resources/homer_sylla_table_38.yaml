@@ -1,0 +1,37 @@
+path: "homer_sylla_table_38.csv"
+title: "Summary of Long-Term High-Grade American Bond Yields: Nineteenth Century"
+description: |
+  Long and Short Interest Rates for the U.S. in the Eighteenth and Nineteenth Centuries
+  from Homer and Sylla (2005), *A History of Interest Rates*.
+  
+sources: 
+  - name: <
+      Homer, Sydney and Richard Sylla (2005) *A History of Interest Rates*, Wiley, Table 38, pp. 282-283.
+schema:
+  fields:
+    - id: year
+      type: integer
+      label: "Year"
+    - id: federal_govt_new_low
+      type: number
+      label: "Federal Government Bonds, New Issue Yields, % (low)"
+    - id: federal_govt_new_high
+      type: number
+      label: "Federal Government Bonds, New Issue Yields, % (high)"
+    - id: federal_govt_mkt
+      type: number
+      title: "Federal Government Bonds, Selected Market Yields %"
+    - id: new_england_municipal
+      type: number
+      label: "New England Municipal Bond Yields, %"
+      description: |
+        Before 1857, Massachusetts or Boston 5s. After 1857, Macaulay's *Average of New England Municipals*.
+
+    - id: railroad bonds
+      type: number  
+      label: "High Grade Railroad Bond Yields, %"
+    - id: new_york_city_mortgages
+      type: number
+      label: "New York Real Estate Morgages, %"
+      description: "From *Real Estate Analyst*. Row Wenzlick Research Corp of St. Louis."
+
