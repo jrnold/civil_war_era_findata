@@ -155,6 +155,7 @@ make_yields_etc <-
                date = as.Date(date, format="%Y-%m-%d"))
     cashflows <- gold_cashflows(cashflows, gold_rate)
     accrued <- accrued_interest(date, cashflows, issue_date)
+    price_quoted <- price_currency
     price <- price_gold + adjust_gold + adjust_paper / gold_rate
     if (! is_clean) {
         price_clean <- price - accrued
@@ -164,6 +165,7 @@ make_yields_etc <-
     }
     yields <- yield_to_maturity2(price, date, cashflows)
     data.frame(price = price,
+               price_listed = price_listed,
                price_clean = price_clean,
                accrued_interest = accrued,
                ytm = as.numeric(yields),
