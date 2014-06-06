@@ -96,8 +96,8 @@ MATCH_BONDS[["missouri_6pct"]] <-
 MATCH_BONDS[["north_carolina_6pct"]] <-
         function(date) make_bond_table("north_carolina_6pct_1873")
 
-MATCH_BONDS[["ohio_6pct_1874"]] <-
-    function(date) make_bond_table("ohio_6pct_1874")
+MATCH_BONDS[["ohio_6pct_1875"]] <-
+    function(date) make_bond_table("ohio_6pct_1875")
 
 MATCH_BONDS[["ohio_6pct_1886"]] <- 
     function(date) make_bond_table("ohio_6pct_1886")
@@ -136,6 +136,39 @@ if (length(unmatched)) {
                      function(series, date, ...) {
                          MATCH_BONDS[[as.character(series)]](date)
                      })
+
+make_yields_etc <- 
+    function(date, bond, gold_rate, price_gold, adjust_gold, adjust_currency, is_clean, ..., bond_metadata)
+{
+    metadata <- bond_metadata[[as.character(bond)]]
+    if ("issue_date" %in% metadata) {
+        issue_date <- metadata[["issue_date"]]
+    } else issue_date <- NULL
+    if (! is.null(issue_date) && ! is.na(issue_date)) {
+        issue_date <- as.Date(issue_date, format = "%Y-%m-%d")
+    }
+    cashflows <-
+        mutate(plyr::ldply(metadata[["cashflows"]],
+                           function(x) as.data.frame(x)),
+               date = as.Date(date, format="%Y-%m-%d"))
+    cashflows <- gold_cashflows(cashflows, gold_rate)
+    accrued <- accrued_interest(date, cashflows, issue_date)
+    price <- price_gold + adjust_gold + adjust_currency / gold_rate
+    if (! is_clean) {
+        price_clean <- price - accrued
+    } else {
+        price_clean <- price
+        price <- price_clean + accrued
+    }
+    yields <- yield_to_maturity2(price, date, cashflows)
+    data.frame(price = price,
+               price_clean = price_clean,
+               accrued_interest = accrued,
+               ytm = as.numeric(yields),
+               duration = attr(yields, "duration"),
+               convexity = attr(yields, "convexity"),
+               maturity = attr(yields, "maturity"))
+}
 
 ## for (i in 1:nrow(.data)) {
 ##     print(i)

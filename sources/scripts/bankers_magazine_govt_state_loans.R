@@ -22,5 +22,5 @@ bankers <-
             price_gold = price_currency / gold_rate,
             adjust_gold = fill_na(adjust_gold),
             adjust_currency = fill_na(adjust_currency))
-     %>% select(-value))
+     %.% select(-value))
 write.csv2(bankers, file = dst)

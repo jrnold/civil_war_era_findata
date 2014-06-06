@@ -778,21 +778,21 @@ bonds[["north_carolina_6pct_1873"]] <-
 #'
 #' ### Ohio 
 #'
-#' #### 6 percent, 1874
+#' #### 6 percent, 1875
 #'
-#' 6 percent, payable semi-annually, matures in 1874.
+#' 6 percent, payable semi-annually, matures in 1875.
 #' Jan / July assumed because other 
 #'
 #' - Denny and Co.
 #' - http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332 
 #' 
-bonds[["ohio_6pct_1874"]] <-
+bonds[["ohio_6pct_1875"]] <-
     list(cashflows = 
-         generate_cashflows_years(as.Date("1874-7-1"),
+         generate_cashflows_years(as.Date("1875-7-1"),
                                   years = 35,
                                   interest = 0.06),
          interest = 0.06,
-         maturity_date = as.Date("1874-7-1"),
+         maturity_date = as.Date("1875-7-1"),
          issue_date = NA,
          issuer = "Ohio",         
          periods = list(list(month = 1, day = 1),
