@@ -18,6 +18,7 @@ bankers <- merge(bankers, greenbacks, by = "date", all.x = TRUE)
 bankers$gold_rate[bankers$date < as.Date("1862-1-1")] <- 1
 bankers <-
     (mutate(bankers,
+            is_clean = fill_na(is_clean),
             price_currency = value,
             price_gold = price_currency / gold_rate,
             adjust_gold = fill_na(adjust_gold),
