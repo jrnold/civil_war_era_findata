@@ -29,6 +29,6 @@ merchants <-
             adjust_gold = fill_na(adjust_gold),
             adjust_currency = fill_na(adjust_currency),
             is_clean = fill_na(is_clean),
-            registered = as.integer(grepl("_reg$", series)))
+            registered = as.integer(grepl("Reg\\.", series)))
      %>% select(-value))
 write.csv2(merchants, file = dst)
