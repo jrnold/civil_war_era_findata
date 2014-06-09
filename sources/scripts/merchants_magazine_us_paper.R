@@ -6,6 +6,7 @@ source("sources/scripts/R/misc.R")
 
 args <- commandArgs(TRUE)
 src <- args[1]
+src <- "sources/data/merchants_magazine_us_paper.csv"
 dst <- args[2]
 
 greenbacks <-
@@ -17,10 +18,10 @@ merchants <- mutate(read.csv(src),
                      date = as.Date(date, "%Y-%m-%d"))
 merchants <- merge(merchants, greenbacks, by = "date", all.x = TRUE)
 # convert August demand notes from premium to price
-merchants$value[merchants$series == "aug_demand"] <-
-  100 + merchants$value[merchants$series == "aug_demand"]
+merchants$value[merchants$series == "August demand notes"] <-
+  100 + merchants$value[merchants$series == "August demand notes"]
 # no conversion to gold when series is gold
-merchants$gold_rate[merchants$series %in% c("gold_low", "gold_high")] <- 1
+merchants$gold_rate[merchants$series %in% c("Gold", "Gold, low", "Gold, high")] <- 1
 merchants <-
     (mutate(merchants,
             price_currency = value,

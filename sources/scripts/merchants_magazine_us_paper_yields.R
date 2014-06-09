@@ -12,7 +12,7 @@ bond_metadata_file <- sysargs[2]
 outfile <- sysargs[3]
 
 #' Load prerequisite data
-BOND_SERIES <- c("5's 1874",
+BOND_SERIES <- c("5's, 1874",
                  sprintf("6's, 1881 %s", c("Reg.", "Coup.")),
                  sprintf("5-20's, %s", c("Reg.", "Coup.")),
                  "10-40's", "7 3-10, 3 years")
@@ -54,22 +54,24 @@ MATCH_BONDS[["6's, 1881 Reg."]] <-
 
 #' The five-twenties are first quoted in Jan 1, 1865.
 #' So assume that the five-twenties quoted are the five-twenties of 1864, not 1862 or 1865.
-MATCH_BONDS[["five_twenty_coup"]] <-
+MATCH_BONDS[["5-20's, Coup."]] <-
     function(date) {
         make_bond_table_regex("^us_five_twenty_of_1864", bond_metadata)
     }
 
-MATCH_BONDS[["ten_forty"]] <-
+MATCH_BONDS[["5-20's, Reg."]] <-
+    function(date) {
+        make_bond_table_regex("^us_five_twenty_of_1864", bond_metadata)
+    }
+
+
+MATCH_BONDS[["10-40's"]] <-
     function(date) {
         make_bond_table_regex("^us_ten_forty_", bond_metadata)
     }
 
-MATCH_BONDS[["five_twenty_reg"]] <-
-    function(date) {
-        make_bond_table_regex("^us_five_twenty_of_1864", bond_metadata)
-    }
 
-MATCH_BONDS[["seven_thirties"]] <-
+MATCH_BONDS[["7 3-10, 3 years"]] <-
     function(date) {
         rbind(make_bond_table_regex("^us_seven_thirties_1864_(aug|oct)_option", bond_metadata))
     }
