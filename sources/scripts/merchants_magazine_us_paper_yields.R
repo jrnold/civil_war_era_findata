@@ -12,10 +12,10 @@ bond_metadata_file <- sysargs[2]
 outfile <- sysargs[3]
 
 #' Load prerequisite data
-BOND_SERIES <- c("fives_1874",
-                 sprintf("sixes_1881_%s", c("reg", "coup")),
-                 sprintf("five_twenty_%s", c("reg", "coup")),
-                 "ten_forty", "seven_thirties")
+BOND_SERIES <- c("5's 1874",
+                 sprintf("6's, 1881 %s", c("Reg.", "Coup.")),
+                 sprintf("5-20's, %s", c("Reg.", "Coup.")),
+                 "10-40's", "7 3-10, 3 years")
 
 merchants <-
     (mutate(read.csv(merchants_file),
@@ -34,10 +34,10 @@ bond_metadata <-
 #' # Series -> BONDS weights
 MATCH_BONDS <- list()
 
-MATCH_BONDS[["fives_1874"]] <-
+MATCH_BONDS[["5's, 1874"]] <-
     function(date) make_bond_table("us_5pct_1874")
 
-MATCH_BONDS[["sixes_1881_coup"]] <-
+MATCH_BONDS[["6's, 1881 Coup."]] <-
     function(date) {
         data.frame(bond =
                    sprintf("us_6pct_1881_%s", c("jan", "jul")),
@@ -45,7 +45,7 @@ MATCH_BONDS[["sixes_1881_coup"]] <-
     }
 
 #' For the sixes of 1881 apply to Jan and July Sixes of 1881
-MATCH_BONDS[["sixes_1881_reg"]] <-
+MATCH_BONDS[["6's, 1881 Reg."]] <-
     function(date) {
         data.frame(bond =
                    sprintf("us_6pct_1881_%s", c("jan", "jul")),
