@@ -25,17 +25,17 @@ bond_metadata <-
 
 MATCH_BONDS <- list()
 
-MATCH_BONDS[["california_7pct_1870"]] <-
+MATCH_BONDS[["California 7 per cents, 1870"]] <-
     function(date) make_bond_table("california_7pct_1870")
 
-MATCH_BONDS[["california_7pct_1877"]] <-
+MATCH_BONDS[["California 7 per cents, 1877"]] <-
     function(date) make_bond_table("california_7pct_1877")    
 
 #'
 #' The are many possible values of the Georgia issue. Denny & Co list 1868-1887.
 #' However, the table in the Bankers' Magazine in 1857 lists 1872 as the only redemption date.
 #' Assume that Bankers' continues to quote only the 1872 issue.
-MATCH_BONDS[["georgia_6pct"]] <-
+MATCH_BONDS[["Georgia 6 per cents"]] <-
     function(date) make_bond_table("georgia_6pct_1872")
 
 #'
@@ -60,11 +60,11 @@ indiana_lookup <-
                               virginia = 1885:1890,
                               georgia = 1872))
 
-MATCH_BONDS[["indiana_5pct"]] <- function(date) indiana_lookup
+MATCH_BONDS[["Indiana 5 per cents"]] <- function(date) indiana_lookup
 
 #'
 #' The bond metadata includes years 1868-1885, but the table of bonds in http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332 only lists 1869-72.
-MATCH_BONDS[["kentucky_6pct"]] <-
+MATCH_BONDS[["Kentucky 6 per cents"]] <-
     function(date) make_bond_table(sprintf("kentucky_6pct_%d", 1869:1872))
 
 #' For Louisiana, no explicit range of redemption years can be found.
@@ -87,44 +87,44 @@ louisiana_lookup <-
                               pennsylvania = 1871,
                               virginia = 1885:1890,
                               tennessee = 1885:1892))
-MATCH_BONDS[["louisiana_6pct"]] <- function(date) louisiana_lookup
+MATCH_BONDS[["Louisiana 6 per cents"]] <- function(date) louisiana_lookup
 
 #' Denny and Co list 1868-1890, but [Bankers' Magazine 1857](http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332) lists only 1872.
-MATCH_BONDS[["missouri_6pct"]] <-
+MATCH_BONDS[["Missouri 6 per cents"]] <-
         function(date) make_bond_table("missouri_6pct_1872") 
 
-MATCH_BONDS[["north_carolina_6pct"]] <-
+MATCH_BONDS[["North Carolina 6 per cents"]] <-
         function(date) make_bond_table("north_carolina_6pct_1873")
 
-MATCH_BONDS[["ohio_6pct_1875"]] <-
+MATCH_BONDS[["Ohio 6 per cents, 1875"]] <-
     function(date) make_bond_table("ohio_6pct_1875")
 
-MATCH_BONDS[["ohio_6pct_1886"]] <- 
+MATCH_BONDS[["Ohio 6 per cents, 1886"]] <- 
     function(date) make_bond_table("ohio_6pct_1886")
 
-MATCH_BONDS[["pennsylvania_5pct"]] <-
+MATCH_BONDS[["Pennsylvania 5 per cents"]] <-
     function(date) make_bond_table("pennsylvania_5pct_1871")
 
-#' US 6 percent 1868 weights derived from value issued
-MATCH_BONDS[["US_6pct_1868"]] <-
+#' US 6 per cents 1868 weights derived from value issued
+MATCH_BONDS[["U.S. 6 per cents, 1867-8"]] <-
     function(date) data.frame(bond = c("us_6pct_1868_jan", "us_6pct_1868_jul"),
                               wgt = c(0.590, 0.410))
 
-#' US 6 percent 1881 weights derived from value issued
-MATCH_BONDS[["US_6pct_1881"]] <-
+#' US 6 per cents 1881 weights derived from value issued
+MATCH_BONDS[["U.S. 6 per cents, 1881"]] <-
     function(date) data.frame(bond = c("us_6pct_1881_jan", "us_6pct_1881_jul"),
                               wgt = c(0.089, 0.911))
 
-MATCH_BONDS[["US_5pct_1874"]] <-
+MATCH_BONDS[["U.S. 5 per cents, 1874"]] <-
     function(date) data.frame(bond = "us_5pct_1874", wgt = 1)
 
-MATCH_BONDS[["virginia_6pct"]] <-
+MATCH_BONDS[["Virginia 6 per cents"]] <-
         function(date) make_bond_table(sprintf("virginia_6pct_%d", 1885:1890))
 
-MATCH_BONDS[["tennessee_6pct"]] <-
+MATCH_BONDS[["Tennessee 6 per cents"]] <-
     function(date) make_bond_table(sprintf("tennessee_6pct_%d", 1885:1892))
 
-MATCH_BONDS[["indiana_6pct"]] <-
+MATCH_BONDS[["Indiana 6 per cents"]] <-
     function(date) make_bond_table("indiana_6pct_1881")
 
 unmatched <- setdiff(unique(bankers$series), names(MATCH_BONDS))
