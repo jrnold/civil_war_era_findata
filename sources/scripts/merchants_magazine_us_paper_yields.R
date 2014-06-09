@@ -163,7 +163,7 @@ oneyr_old <-
     plyr::ldply(c(6, 12),
                 function(mon) {
                     i <- mon / 12
-                    (filter(merchants, series == "oneyr_old")
+                    (filter(merchants, series == "1 year certificate, Old")
                      %>% mutate(bond = paste0("us_cert_indebt_1862_maturity_", mon, "_mon"),
                                 wgt = 0.5,
                                 price = price_gold + adjust_gold + (adjust_currency / gold_rate),
@@ -195,7 +195,7 @@ oneyr_new <-
     plyr::ldply(c(6, 12),
                 function(mon) {
                     i <- mon / 12
-                    (filter(merchants, series == "oneyr_new")
+                    (filter(merchants, series == "1 year certificate, New")
                      %>% mutate(bond = paste("us_one_year_notes_1863_mature_", mon, "_mon"),
                                 wgt = 0.5,
                                 price = price_gold + adjust_gold + (adjust_currency / gold_rate),
