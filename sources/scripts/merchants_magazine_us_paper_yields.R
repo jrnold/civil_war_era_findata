@@ -108,17 +108,35 @@ match_series_to_bonds <- function(series, date, ...) {
      )
 
 #'
-#' Add current yields for seven_thirties
+#' Add current yields for seven_thirties. This is handled separately because
+#' the coupon payments change before and after they can be converted to the 6's of 1881.
 #'
+#' - 7.3 percent before the option exercised
+#' - (7.3 + 6) / 2 percent in the period before the last 3.65 coupon
+#' - 6 percent after the option exercised
+#' 
 touse <- (.data2[["bond"]] == "us_seven_thirties_1864_aug_option"
           & .data2[["date"]] < as.Date("1864-8-19"))
 .data2[touse, "current_yield"] <- 7.3 / .data2$price_clean[touse]
+
+touse <- (.data2[["bond"]] == "us_seven_thirties_1864_aug_option"
+          & .data2[["date"]] >= as.Date("1864-2-19")
+          & .data2[["date"]] < as.Date("1864-8-19"))
+.data2[touse, "current_yield"] <- 6.65 / .data2$price_clean[touse]
+
 touse <- (.data2[["bond"]] == "us_seven_thirties_1864_aug_option"
           & .data2[["date"]] >= as.Date("1864-8-19"))
 .data2[touse, "current_yield"] <- 6 / .data2$price_clean[touse]
+
 touse <- (.data2[["bond"]] == "us_seven_thirties_1864_oct_option"
           & .data2[["date"]] < as.Date("1864-10-1"))
 .data2[touse, "current_yield"] <- 7.3 / .data2$price_clean[touse]
+
+touse <- (.data2[["bond"]] == "us_seven_thirties_1864_oct_option"
+          & .data2[["date"]] < as.Date("1864-10-1")
+          & .data2[["date"]] >= as.Date("1864-4-1"))
+.data2[touse, "current_yield"] <- 6.65 / .data2$price_clean[touse]
+
 touse <- (.data2[["bond"]] == "us_seven_thirties_1864_oct_option"
           & .data2[["date"]] >= as.Date("1864-10-1"))
 .data2[touse, "current_yield"] <- 6 / .data2$price_clean[touse]

@@ -1,63 +1,63 @@
-path: "data/merchants_magazine_state_govt_loans_yields.csv"
+path: "data/merchants_magazine_us_paper_yields_2.csv"
 description: |
-  Yield data for U.S. government and state bonds 1855-1865 (price series level)
+  Yield data for U.S. government bonds 1862-1865.
 
-  Prices quoted in the *Merchant's Magazine* can correspond to multiple bond issues.
-  ``merchants_magazine_state_govt_loans_yields`` shows yields, maturity, etc. for all
-  bonds associated with a price series.
-  This table aggregates back to the price series level, by taking the weighted mean (using ``wgt``)
-  for each numerical column.
+  For the price series listed in ``merchants_magazine_state_govt_loans_2``, the weighted mean of each variable aggregated by ``series`` and ``date``.
 
 schema:
   fields:
-    - id: series
-      type: string
-      description: Name of the price series
     - id: date
       type: date
       description: Date of the price
-    - id: bond
+      
+    - id: series
       type: string
-      description: Name of the bond
-    - id: wgt
+      description: Name of the price series
+      
+    - id: gold_rate
       type: number
-      description: |
-        Weight to apply to each bond in the series. 
-
-        For ``five_twenty`` and ``ten_forty`` these are 1 / n for all possible redemption years between 
-        the possible du
-
-        For other series with multiple bonds, the weight is equal to the proportion of that bond in terms
-        of dollars to all other bonds matching that series.
-        This method is especially suspect for ``seven_thirties``.
-        
-    - id: price_paper_dirty
-      type: number
-      description: "Dirty price of bond in paper dollars. Face value = 100"
-    - id: price_gold_dirty
+      description: Exchange rate for gold (gold dollars per dollar) used to convert currency prices to gold prices.
+      
+    - id: price
       type: number
       description: "Dirty price of bond in gold dollars"
-    - id: price_paper_clean
+      
+    - id: price_clean
       type: number
       description: "Clean price of bond in gold dollars"
-    - id: price_gold_clean
-      type: number
-      description: "Clean price of bond in gold dollars"
-    - id: accrued
+      
+    - id: accrued_interest
       type: number
       description: "Accrued interest in gold dollars"
+
     - id: current_yield
       type: number
-      description: "Current yield"
-    - id: yield
+      description: "Current yield. Coupon payments per year / clean price"
+
+    - id: ytm
       type: number
-      description: |
+      description: >-
+        
         Yield to maturity
-      
-        The yields produced for ``seven_thirties`` and ``oneyr_old`` bonds is suspect and should not be trusted.
-    - id: maturity
-      type: number
-      description: "Maturity in years"
+
+        The yield to maturity is calculated using continuous compounding and actual days.
+
     - id: duration
       type: number
       description: "Macualay (modified) duration"
+
+    - id: convexity
+      type: number  
+      description: "Bond convexity"
+      
+    - id: maturity
+      type: number
+      description: "Maturity (years)"
+
+    - id: registered
+      type: boolean
+      description: >-
+        
+        Is the price series for a registered bond.
+        In the source, separate prices were quoted for coupon and registered bonds for the 6's of 1881 and Five-twenties.
+        In general, coupon bonds had higher prices than registered bonds due to higher liquidity.

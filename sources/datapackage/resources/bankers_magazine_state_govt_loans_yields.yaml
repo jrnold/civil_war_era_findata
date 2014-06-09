@@ -8,39 +8,58 @@ description: |
 
 schema:
   fields:
-    - id: series
-      type: string
-      description: Name of the price series
     - id: date
       type: date
       description: Date of the price
+      
+    - id: series
+      type: string
+      description: Name of the price series
+      
+    - id: gold_rate
+      type: number
+      description: Exchange rate for gold (gold dollars per dollar) used to convert currency prices to gold prices.
+      
     - id: bond
       type: string
-      description: Name of the bond
-    - id: price_paper_dirty
+      description: >-
+        
+        Name of the bond issue used to calculate yields, etc.
+        Due to ambiguity in how bond  were quoted in this era, a single series can match multiple bonds.
+
+    - id: wgt
       type: number
-      description: "Dirty price of bond in paper dollars. Face value = 100"
-    - id: price_gold_dirty
+      description: >-
+        
+        Probability weight to use when aggregating the multiple bond issues assigned to a price series.
+      
+    - id: price
       type: number
       description: "Dirty price of bond in gold dollars"
-    - id: price_paper_clean
+      
+    - id: price_clean
       type: number
       description: "Clean price of bond in gold dollars"
-    - id: price_gold_clean
-      type: number
-      description: "Clean price of bond in gold dollars"
-    - id: accrued
+      
+    - id: accrued_interest
       type: number
       description: "Accrued interest in gold dollars"
-    - id: current_yield
+
+    - id: ytm
       type: number
-      description: "Current yield"
-    - id: yield
-      type: number
-      description: "Yield to maturity"
-    - id: maturity
-      type: number
-      description: "Maturity in years"
+      description: |
+        Yield to maturity
+
+        The yield to maturity is calculated using continuous compounding and actual days.
+
     - id: duration
       type: number
       description: "Macualay (modified) duration"
+
+    - id: convexity
+      type: number  
+      description: "Bond convexity"
+      
+    - id: maturity
+      type: number
+      description: "Maturity (years)"

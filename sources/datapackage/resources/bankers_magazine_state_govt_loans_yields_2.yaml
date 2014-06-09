@@ -1,0 +1,52 @@
+path: "data/bankers_magazine_state_govt_loans_yields_2.csv"
+description: |
+  Yield data for U.S. government and state bonds 1855-1865.
+
+  This table aggregates the data in ``bankers_magazine_state_govt_loans_yields_2.csv`` by ``series``.
+  Each variable is the weighted mean (using the ``wgt`` column) by ``series`` and ``date``.
+
+
+schema:
+  fields:
+    - id: series
+      type: string
+      description: Name of the price series
+
+    - id: date
+      type: date
+      description: Date of the price
+      
+    - id: gold_rate
+      type: number
+      description: Exchange rate for gold (gold dollars per dollar) used to convert currency prices to gold prices.
+      
+    - id: price
+      type: number
+      description: "Dirty price of bond in gold dollars"
+      
+    - id: price_clean
+      type: number
+      description: "Clean price of bond in gold dollars"
+      
+    - id: accrued_interest
+      type: number
+      description: "Accrued interest in gold dollars"
+
+    - id: ytm
+      type: number
+      description: |
+        Yield to maturity
+
+        The yield to maturity is calculated using continuous compounding and actual days.
+
+    - id: duration
+      type: number
+      description: "Macualay (modified) duration"
+
+    - id: convexity
+      type: number  
+      description: "Bond convexity"
+      
+    - id: maturity
+      type: number
+      description: "Maturity (years)"

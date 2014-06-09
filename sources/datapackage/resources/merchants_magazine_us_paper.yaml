@@ -16,18 +16,19 @@ schema:
     - id: date
       type: date
       description: Date of the price
-    - id: issue
+    - id: journal_issue
       type: string
-      description: Issue from which the price data come.
+      label: Journal issue
+      description: Journal issue, e.g. "Jan 1862", from which the price data come.
     - id: url
       type: string
       description: Google books URL to the source of the data.
     - id: notes
       type: string
       description: "Any notes about the data"
-    - id: price_paper
+    - id: price_currency
       type: number
-      description: "Price of bond in nominal (paper) dollars. Face value = 100."
+      description: "Price of bond in nominal dollars. Face value = 100."
     - id: price_gold
       type: number
       description: "Price of bond in gold dollars."

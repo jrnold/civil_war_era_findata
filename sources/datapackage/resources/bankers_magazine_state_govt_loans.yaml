@@ -32,7 +32,7 @@ schema:
     - id: adjust_gold
       type: number
       description: "Manual price adjustment of bond in gold dollars; used to clean prices beyond accrued interest"
-    - id: adjust_paper
+    - id: adjust_currency
       type: number
       description: "Manual price adjustment of bond in nominal dollars; used to clean prices beyond accrued interest"
     - id: notes
@@ -41,9 +41,9 @@ schema:
     - id: gold_rate
       type: number
       description: "Exchange rate of nominal dollars per gold dollar. Used to convert from nominal price to gold price"
-    - id: price_paper
+    - id: price_currency
       type: number
-      description: "Price of bond in paper dollars. Face value = 100"
+      description: "Price of bond in nominal dollars. Face value = 100"
     - id: price_gold
       type: number
       description: "Price of bond in gold dollars"

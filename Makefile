@@ -34,7 +34,7 @@ data/bond_metadata.json: bond_metadata.R
 data/greenbacks.csv: greenbacks.R sources/data/greenbacks.csv
 data/greenbacks_fill.csv: greenbacks_fill.R data/greenbacks.csv
 sources/scripts/greenbacks_fill.R: sources/scripts/R/finance.R
-data/bankers_magazine_govt_state_loans.csv: bankers_magazine_govt_state_loans.R sources/data/bankers_magazine_state_govt_loans.csv
+data/bankers_magazine_govt_state_loans.csv: bankers_magazine_govt_state_loans.R sources/data/bankers_magazine_govt_state_loans.csv
 data/bankers_magazine_govt_state_loans_yields.csv: bankers_magazine_govt_state_loans_yields.R data/bankers_magazine_govt_state_loans.csv data/bond_metadata.json 
 data/bankers_magazine_govt_state_loans_yields_2.csv: bankers_magazine_govt_state_loans_yields_2.R data/bankers_magazine_govt_state_loans_yields.csv
 data/merchants_magazine_us_paper.csv: merchants_magazine_us_paper.R sources/data/merchants_magazine_us_paper.csv
