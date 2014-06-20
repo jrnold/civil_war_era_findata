@@ -45,3 +45,5 @@ From `August 1861 Bankers' Magazine <http://books.google.com/books?id=B10mAQAAIA
 
 It is unclear when interest rates were resumed; and whether the debt was restructured or defaulted on.
    
+The southern states did pay interest in January 1861; at least Virginia did: http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA810 .
+
