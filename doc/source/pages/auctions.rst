@@ -13,6 +13,10 @@ Other auctions data to be included later
 Auction of October 22, 1860
 =================================
 
+:file: auctions/loan_of_1860.csv
+:call: 1860-09-?
+:opened: 1860-10-22
+
 An auction for the Loan of 1860 (Act of June 22, 1860) (`DeKnight p. 77 <http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA77>`__, `Bayley p. 75 <http://books.google.com/books?id=Ce4JAAAAIAAJ&printsec=frontcover&pg=PA75>`__, `p. 150  <http://books.google.com/books?id=Ce4JAAAAIAAJ&printsec=frontcover&pg=PA150>`__).
 
 During the auction, concerns about the war increased and many bidders forfeited their deposits, and the loan was withdrawn from the market. Only 7,022,00 was issued.
@@ -91,7 +95,7 @@ The Sixes of 1881, issued under the act of February 8, 1861 were auctioned off o
 The auctions are identified by the date of their notice.
 
 
-auction_18610213
+1861-02-13
 ---------------------
 
 The first auction for remaining amount of the Sixes of 1881 issued under the Act of February 6th, 1861.
@@ -161,7 +165,7 @@ Notice from The Treasury Report, pp 19.
   *Secretary of the Treasury*.
 
 
-auction_18610322
+1861-03-22
 ------------------
 
 The second auction for remaining amount of the Sixes of 1881 issued under the Act of February 6th, 1861.
@@ -235,7 +239,7 @@ The notice is from p. 31.
 
 
 
-auction_18610511
+1861-05-11
 ---------------------
 
 The third auction for remaining amount of the Sixes of 1881 issued under the Act of February 6th, 1861. 
@@ -298,7 +302,7 @@ The notice of this issue, Treasury Report, pp. 52-53
     The proposals under this notice should be endorsed on the envelopes
     "^Proposals for loan of 8th February, 1861," and addressed to the
     Secretary of the Treasury ; or they may be put under cover to the
-    assistant treasurer at New York, who will forward them to this department^
+    assistant treasurer at New York, who will forward them to this department
     . They should be sent in season to be opened and decided
     at the time above stated.
     The preliminary deposit of one per cent, required from all bidders
@@ -363,11 +367,17 @@ The notice is from p. 50.
   S. P . CHASE,
   *Secretary of the Treasury*.
 
+Treasury Notes of 1860
+===========================
+
+Authorized under the `Act of Dec 17, 1860 <http://books.google.com/books?id=Ce4JAAAAIAAJ&pg=PA75>`__.
+Issued in January 1861 (Sources: `Treasury Report <http://books.google.com/books?id=Ce4JAAAAIAAJ&pg=PA75>`__, `Bankers' Magazine <http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA670>`__). 
     
 
 November 10, 1862    
 ===========================
 
+:file: auctions/1862-11-10_Treasury_Report.csv
 :Notice: Nov 10, 1862
 :Due: Nov 17, 1862
 

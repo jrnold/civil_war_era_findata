@@ -1,0 +1,206 @@
+name,amount,premium,page,row,accepted
+"Albert, Jacob",80,0.3,216,1,80
+"Albree, John",20,0.25,216,2,20
+"Blake, John B.",4,0.5,216,3,4
+"Bradley, W. C. ",2,1,216,4,2
+"Bank of North America, Philadelphia",200,0.25,216,5,200
+"Best, Anthony",0.3,1,216,6,0.3
+"Burrows, R. J. ",20,0.4,216,7,20
+Bank of Northern Liberties,28,0.125,216,8,28
+"Benson, Alexander & Co.",55,0.125,216,9,55
+Bank of Metropolis,100,0.25,216,10,100
+"Bayly, William F. ",3,0.25,216,11,3
+"Bank, New York State Stock Security",10,0.25,216,12,10
+"Corbin, Abel Rathburn",17,0.5,216,13,17
+Corcoran & Riggs,18000,0.125,216,14,17910.2
+"Clapp, Asa",16,0.5,216,15,16
+"Clagett, Eli",60,0.4,216,16,60
+"Chester, Andrew J.",10,0.8,216,17,10
+"Cohen, I",25,0.25,216,18,25
+"Dalrymple, W. F.",20,0.5,216,19,20
+"Dunbar, Elou",20,0.5,216,20,20
+"Dewey, Charles",3,1.5,216,21,3
+"English, W. H",0.5,1,216,22,0.5
+"Fuller, Galvin P.",3,2,216,23,3
+"Grigsby, Hugh B.",10,0.5,216,24,10
+"Goff, Hiram S.",10,1.1,216,25,10
+"Hutton, G.M. ",10,0.5,216,26,10
+"Heaton, H. W ",3,0.5,216,27,3
+"Haseltine, Jno.",10,0.25,216,28,10
+"Harris, Thomas D.",0.5,0.25,216,29,0.5
+"Haddock, Daniel, Jr.",10,0.25,216,30,10
+"Johnson, Cave ",2.5,1,216,31,2.5
+"Ilsley, Isaac",10,1,216,32,10
+"Jackson, B. L., & Brother",15,0.5,216,33,15
+"Jackson, W. B. ",5,0.5,216,34,5
+"Jones, Philip D. Catesby ",3,1,216,35,3
+"Knapp, Charles ",10,0.5,216,36,10
+"Lane, Jesse ",3,1,216,37,3
+Lamber & McKenzie,10,0.6,216,38,10
+"Leiper, Samuel M.",5,0.75,216,39,5
+"Mattocks, John",5,1.5,216,40,5
+Mitchell & Mure,15,1,216,41,15
+"Millard, J. Edmund",2.5,0.25,216,42,2.5
+"Morrill, Mrs. Mary",1.5,0.6,216,43,1.5
+"Moore, Roger S.",25,1,216,44,25
+"Noyes, David P.",10,1.5,216,45,10
+"Newell, L.",1,0.5,216,46,1
+"Osborn, Isaac",3,0.25,216,47,3
+"O'Donnell, Columbus ",10,0.5,216,48,10
+"Owen, W. L.",10,0.25,216,49,10
+Paul & Brown,12,1,216,50,12
+"Poland, Jenkins & Co .",2.5,1,216,51,2.5
+Provident Institution for Saving for Salisbury and Amesbury ,15,0.25,216,52,15
+"Potter, Barrett ",2,1,216,53,2
+"Pennoyer, James.",16,1,216,54,16
+"Phelps, John .",14,0.375,216,55,14
+"Poincignor, E.",6,2,217,1,6
+"Parker, George & Thomas",20,0.25,217,2,20
+"Riggs, E.",1650,0.15,217,3,1650
+"Reily, Barbara ",1,0.25,217,4,1
+Rosengarter & Denis,10,1,217,5,10
+"Reed, Hezekiah H.",10,0.5,217,6,10
+"Rogers, Evans",10,0.5,217,7,10
+"Phelps, Warren ",1.5,0.5,217,8,1.5
+"Sears, Joshua",15,0.5,217,9,15
+"Smith, Albert",1,0.25,217,10,1
+"Southgate, Isaac ",2,0.125,217,11,2
+"Smith, Richard, (for sundry persons)",16.25,0.25,217,12,16.25
+"Silver, Isaiah.. ",3,0.5,217,13,3
+"Silver, Isaiah",3,0.25,217,14,3
+"Smith, Edwin & Thomas Burton",9,1,217,15,9
+"Thompson, John",500,0.3,217,16,500
+Trustees of the Philip Exeter Academy,10,0.5,217,17,10
+"Thayer, Joseph H.",2.5,0.5,217,18,2.5
+"Vose, F. ",1,0.25,217,19,1
+"Wood, Robert Serrill",1.8,0.125,217,20,1.8
+"White, Henry ",15,0.5,217,21,15
+"White, Arthur E. ",5,0.25,217,22,5
+"Warren, J. W. ",10,0.25,217,23,10
+"White, L. J.",3,0.125,217,24,3
+"White, L. J.",3,0.25,217,25,3
+"White, L. J.",2,0.375,217,26,2
+"White, L. J.",1,0.5,217,27,1
+"White, L. J.",1,0.625,217,28,1
+"White, John",20,1,217,29,20
+"Alnut, James W ",10,0,217,30,0
+"Burrows, R. I. ",20,0,217,31,0
+"Barhydt, D. P. ",0.5,0,217,32,0
+"Blake, John B.",4,0,217,33,0
+"Bodmer, Henry, Jr.",5,0,217,34,0
+"Bradlee, Josiah",60,0,217,35,0
+"Bull, G. W.",5,0,217,36,0
+"Brodhead, Richard",4,0,217,37,0
+"Budd, J.B ",10,0.1,217,38,0
+"Bank, New York State Stock Security",20,0,217,39,0
+"Barnard, Henry.",5,0,217,40,0
+"Bank, Piscataqua, Exchange",10,0,217,41,0
+"Bank, State, at Charlestown",35,0,217,42,0
+"Bishop, James",10,0,217,43,0
+"Bridge, M.",6.1,0,217,44,0
+"Bank, Troy City",63,0,217,45,0
+"Bank, Franklin, Washington, Pennsylvania",10,0,217,46,0
+"Bank, Savings, Buffalo",5,0,217,47,0
+"Clark, M. M. ",20,0,217,48,0
+Chubb & Schenck,112,0.1,217,49,0
+• Chubb & Schenck,30,0,217,50,0
+Camman & Whitehouse,140,0,217,51,0
+"Cohen, I.",10,0,217,52,0
+"Cohen, I.",5,0.07,217,53,0
+"Cherry, William, jr.",1.5,0,217,54,0
+"Campbell, John",3,0,217,55,0
+"Denison, Marcus",25,0,217,56,0
+"Dewey, J. Y.",3,0,218,218,0
+"Delafield, H. & W.",5,0,218,2,0
+"Dowdney, John ",4,0,218,3,0
+"Duhring, Henry",5,0,218,4,0
+"Dohnert, John H.",10,0,218,5,0
+"Euston, William ",12,0,218,6,0
+"English, William H.",0.5,0,218,7,0
+"Fairfax, Henry, sr.",10,0,218,8,0
+"Gaiiagher, James G.",3.5,0,218,9,0
+"Goodwin, Nathaniel ",4,0,218,10,0
+"Goodwin, Jeremiah",5,0.1,218,11,0
+"Gardner, John ",50,0,218,12,0
+"Harris, John S.",2,0,218,13,0
+"Hutchinson, Hiram",60,0,218,14,0
+"Hutchinson, Hiram, (for John Springs) ",20,0,218,15,0
+"Hammond, David",1.5,0,218,16,0
+"Homes, George. ",2,0,218,17,0
+"Hubbard, Henry",5,0,218,18,0
+"Hamilton, John P.",350,0.1,218,19,0
+"Holbrook, S. A ",5,0,218,20,0
+"Huger, Alfred.",2,0,218,21,0
+"Henshaiw, David. ",7000,0.0625,218,22,0
+"Hamilton, John P.",650,0.005,218,23,0
+"Hooper, R. C.",45,0,218,24,0
+"Harrison, H. T.",3,0,218,25,0
+"Ingoldsby, Felix",15,0,218,26,0
+Insurance Company ofthe State of Pennsylvania,20,0.1,218,27,0
+Insurance Company of South Carolina,200,0,218,28,0
+"Jones, Isaac, (as trustee)",14,0,218,29,0
+"Jones, Isaac, (as executor)",20,0,218,30,0
+"Johnson, Ralph C.",50,0,218,31,0
+"Jackson, John",3,0,218,32,0
+"Kellogg, John.",2,0,218,33,0
+"Kent, M.",5,0,218,34,0
+"Loud, Jacob H.",28,0,218,35,0
+"Looper, R. F.",3,0,218,36,0
+"Linebach, Charles F.",0.4,0,218,37,0
+"Lovell, Warren.",6.1,0,218,38,0
+"Lake, Joseph S. & Co.",100,0.1,218,39,0
+"Lake, Joseph S. & Co.",100,0.7,218,40,0
+"Lake, Joseph S. & Co.",200,0.5,218,41,0
+"Lake, Joseph S. & Co.",100,0,218,42,0
+"Lighthall, William ",1,0,218,43,0
+"Langdon, James R.",8,0,218,44,0
+Martin & Co.,30,0,218,45,0
+"Moye, Wyatt",40,0,218,46,0
+"Mims, Caswell ",4,0,218,47,0
+"Mcintosh, George ",75,0,218,48,0
+"McKenzie, Lewis ",10,0,218,49,0
+"Newell, L.",1,0,218,50,0
+"Neely, John",0.4,0,218,51,0
+"Openheim, H. W.",2,0,218,52,0
+"Otis, H. G. ",10,0,218,53,0
+Ohio Life Insurance and TrUst Company of New York.,600,0.05,218,54,0
+"O' Donnell, Columbus ",20,0,218,55,0
+"Patchin, A. D. ",50,0,218,56,0
+"Penn, Daniel",8,0,218,57,0
+"Porter, M. K.",1,0,218,58,0
+"Phelps, Warren",0.5,0,218,59,0
+Paul & Brown J.,5,0,218,60,0
+"Phelps, Lancelot ",1,0,218,61,0
+"Paul, Comgys ",10,0.01,218,62,0
+"Purdy, Elijah F.",0.8,0,218,63,0
+"Prait, E., & Brother",20,0,219,1,0
+"Prentis, Samuel.",4,0,219,2,0
+"Reid, Thomas ",10,0,219,3,0
+"Raymond, Edward A. ",50,0,219,4,0
+"Riordan, James. ",0.5,0,219,5,0
+"Rawlings, W. C. ",10,0,219,6,0
+"Richardson, John.",20,0.1,219,7,0
+"Richardson, John",20,0.01,219,8,0
+"Sears, Joshua",15,0,219,9,0
+"Steward, John",2,0.1,219,10,0
+"Scott, John M.",2.5,0,219,11,0
+"Smith, James",20,0,219,12,0
+"Schroeder, Henry C. J.",2,0,219,13,0
+"Shattuch, George C. ",15,0,219,14,0
+"Suydam, Lambert",40,0.01,219,15,0
+"Sanders, George N. , ",1000,0,219,16,0
+"Travers, John",8,0,219,17,0
+"Tunis, John",5,0,219,18,0
+"Thayer, J. E., & Brother.",36.5,0,219,19,0
+"Ward, John, & M. Morgan",12000,0.0005,219,20,0
+"Winslow & Perkins, two-thirds of loan not absolutely subscribed for",11333.333,0.05,219,21,0
+Winslow & Perkins,1000,0,219,22,0
+"Wright, William.",30,0,219,23,0
+"Wilkins, Jeremiah H.",2,0,219,24,0
+"Waters, F. G., (trustee)",15,0,219,25,0
+"White, Arthur E.",5,0,219,26,0
+"White, J ",20,0,219,27,0
+"White, L. J ",5,0,219,28,0
+"Wolff, C ",5,0,219,29,0
+"Wilson, G. B.",100,0,219,30,0
+"Wilkinson, J.",5,0,219,31,0

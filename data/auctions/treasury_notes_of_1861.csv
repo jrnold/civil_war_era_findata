@@ -1,0 +1,26 @@
+page,bid_number,bidder,residence,amount,value,accepted,rejected
+51,1,Charles H. Baker,Philadelphia,13,100.26,13,0
+51,2,Samuel S. White,Philadelphia,2,100,2,0
+51,3,"Jay, Cooke & Co",Philadelphia,200,100.16,200,0
+51,4,Summer R. Stone,New York,3,100,3,0
+51,5,John P. Elton,"Waterbury, Conn",15,100.03,15,0
+51,5,John P. Elton,"Waterbury, Conn",10,100.01,10,0
+51,6,Bridgeport Savings Bank,"Bridgeport, Conn",10,100,10,0
+51,7,Bank of New York,New York,100,100,100,0
+51,8,Henry W.T. Mali & Co,New York,50,100.01,50,0
+51,9,H. Trowbridge's Sons,"New Haven, Conn",5,100.16,5,0
+51,9,H. Trowbridge's Sons,"New Haven, Conn",5,100.14,5,0
+51,10,Charles Griswold,New York,2,100.27,2,0
+51,11,Wm. H. Marston,New York,10,100.05,10,0
+51,12,Colgate & Hoffman,New York,150,100,150,0
+51,12,Colgate & Hoffman,New York,50,100.05,50,0
+51,13,James G. King's Sons,,100,100,100,0
+51,14,"Read, Drexel & Co",,185,100,185,0
+51,15,R.L. & A. Stuart,,100,100,100,0
+51,15,R.L. & A. Stuart,,10,100,10,0
+51,16,"H. Howard, secretary","Buffalo, N.Y.",100,100,100,0
+51,17,Institution for Savings,"Roxbury, Mass",20,100,20,0
+51,18,Bank of Commerce,New York,2500,100,2500,0
+51,19,S. Hooper and others,Boston,1100,100,1011,89
+51,20,S. Hooper,Boston,350,100,0,350
+51,21,P.P. Pytchlynn,Boston,250,100,250,0
