@@ -1,4 +1,4 @@
-page,bid_number,name,residence,amount,value,accepted,rejected,error
+page,bid_number,bidder,residence,amount,value,accepted,rejected,errors
 54,1,Cammann & Co,New York,50,85,50,,
 54,1,Cammann & Co,New York,10,85.25,10,,
 54,2,Louisa Frisbie,New York,1,86,1,,

@@ -1,4 +1,4 @@
-page,bid_number,name,residence,amount,value,accepted,rejected,errors
+page,bid_number,bidder,residence,amount,value,accepted,rejected,errors
 20,1,Russell N. Isaacs,New York,25,91.5,25,,
 20,2,Charles T. Dix,New York,20,91,20,,
 20,3,Underhill & Haven,New York,5,90.01,,5,
