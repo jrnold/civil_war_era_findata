@@ -1,366 +1,366 @@
-page,bid_number,bidder,residence,amount,value,accepted,rejected,errors
-20,1,Russell N. Isaacs,New York,25,91.5,25,,
-20,2,Charles T. Dix,New York,20,91,20,,
-20,3,Underhill & Haven,New York,5,90.01,,5,
-20,3,Underhill & Haven,New York,5,90.51,5,,
-20,3,Underhill & Haven,New York,5,90.52,5,,
-20,3,Underhill & Haven,New York,5,90.53,5,,
-20,3,Underhill & Haven,New York,5,90.64,5,,
-20,3,Underhill & Haven,New York,5,90.76,5,,
-20,3,Underhill & Haven,New York,5,90.78,5,,
-20,3,Underhill & Haven,New York,5,90.89,5,,
-20,3,Underhill & Haven,New York,5,91.01,5,,
-20,3,Underhill & Haven,New York,5,91.02,5,,
-20,3,Underhill & Haven,New York,5,91.26,5,,
-20,4,"Ketchum, So & Co. (self and others)",New York,2814,90.15,2749,65,
-20,4,"Ketchum, So & Co. (self and others)",New York,50,90,,50,
-20,5,Howland & Aspinwall,New York,150,90,,150,
-20,6,Richard Berry,New York,25,92.5,25,,
-20,7,Mariners' Savings Institution,New York,40,92,40,,
-20,7,Mariners' Savings Institution,New York,10,90.5,10,,
-20,8,Chester W. Chapin,"Springfield, Mass",100,90.3,100,,
-20,9,Thompson Brothers,New York,100,90.5,100,,
-20,10,Samuel C. Thompson,New York,5,88,,5,
-20,10,Samuel C. Thompson,New York,10,89,,10,
-20,10,Samuel C. Thompson,New York,10,90,,10,
-20,11,J. Ludlow Dumont,New York,20,89.5,,20,
-20,11,J. Ludlow Dumont,New York,20,89,,20,
-20,11,J. Ludlow Dumont,New York,20,88,,20,
-21,12,A. Jenkins,New York,5,90.5,5,,
-21,13,Carpenter & Vermilye,New York,25,90,,25,
-21,14,Wm. J. Emmet,New York,10,85,,10,
-21,14,Wm. J. Emmet,New York,10,84,,10,
-21,14,Wm. J. Emmet,New York,10,83,,10,
-21,14,Wm. J. Emmet,New York,10,82,,10,
-21,14,Wm. J. Emmet,New York,10,80,,10,
-21,15,Allan Melville,New York,50,90.25,50,,
-21,16,Field & McLean,New York,25,87.5,,25,
-21,16,Field & McLean,New York,25,90.25,25,,
-21,17,Benjamin Peirce,"Chesterfield Factory, N.H.",3,92,3,,
-21,18,Charles H. Russell,New York,100,90.5,100,,
-21,18,Charles H. Russell,New York,100,91,100,,
-21,19,Henry F. Vail,New York,50,90.5,50,,
-21,20,Bank of Commerce,New York,2500,90,,2500,
-21,21,Robert L. Kennedy,New York,50,90.5,50,,
-21,21,Robert L. Kennedy,New York,50,91,50,,
-21,22,John A. Stevens,New York,50,90.5,50,,
-21,22,John A. Stevens,New York,50,91,50,,
-21,23,John Sampson,New York,50,90.5,50,,
-21,23,John Sampson,New York,50,91,50,,
-21,24,Wm. McBride,New York,20,85.0625,,20,
-21,24,Wm. McBride,New York,15,86.0625,,15,
-21,24,Wm. McBride,New York,10,87.0625,,10,
-21,24,Wm. McBride,New York,10,88.0625,,10,
-21,24,Wm. McBride,New York,5,86,,5,
-21,24,Wm. McBride,New York,5,87,,5,
-21,24,Wm. McBride,New York,5,88,,5,
-21,24,Wm. McBride,New York,10,89,,10,
-21,25,Sherman & Romaine,New York,50,90.26,50,,
-21,26,John P. Elton,"Waterbury, Conn",10,88.03,,10,
-21,26,John P. Elton,"Waterbury, Conn",5,89.68,,5,
-21,26,John P. Elton,"Waterbury, Conn",5,90.27,5,,
-21,26,John P. Elton,"Waterbury, Conn",5,91.38,5,,
-21,27,City Fire Insurance Company,Boston,12,90,,12,
-21,28,G.A. Burbank,"Danville, Vt.",3,80,,3,
-21,29,Bank of Lansingburgh,New York,10,90.25,10,,
-21,30,Julius Y. Dewy,"Montpelier, Vt",1,90.25,1,,
-21,30,Julius Y. Dewy,"Montpelier, Vt",1,90.35,1,,
-22,30,Julius Y. Dewy,"Montpelier, Vt",1,90.45,1,,
-22,30,Julius Y. Dewy,"Montpelier, Vt",1,90.55,1,,
-22,30,Julius Y. Dewy,"Montpelier, Vt",1,90.65,1,,
-22,31,"Brewster, Sweet & Co",Boston,4,91,4,,
-22,31,"Brewster, Sweet & Co",Boston,6,89,,6,
-22,31,"Brewster, Sweet & Co",Boston,10,87,,10,
-22,31,"Brewster, Sweet & Co",Boston,10,85,,10,
-22,32,R.R. Fairchild,New York,30,90.2,30,,
-22,33,V. & J.F. Gilpin & Co.,Philadelphia,6,92.5,6,,
-22,34,Hewlett & Torrance,New York,25,90,,25,
-22,35,Satterlee & Co,New York,135,90.15,132,3,
-22,35,Satterlee & Co,New York,25,90.56,25,,
-22,35,Satterlee & Co,New York,43,89.06,,43,
-22,35,Satterlee & Co,New York,38,88.06,,38,
-22,36,Otis Norcross,Boston,10,90,,10,
-22,37,R.W. Howes,New York,100,90,,100,
-22,37,R.W. Howes,New York,50,89,,50,
-22,37,R.W. Howes,New York,50,88,,50,
-22,37,R.W. Howes,New York,50,87,,50,
-22,37,R.W. Howes,New York,50,86,,50,
-22,37,R.W. Howes,New York,100,85,,100,
-22,37,R.W. Howes,New York,100,84,,100,
-22,38,Stephen G. Fotterall,Philadelphia,10,93,10,,
-22,39,William Tilden,New York,10,90.15,10,,
-22,39,William Tilden,New York,5,87.54,,5,
-22,39,William Tilden,New York,5,85,,5,
-22,40,Hewlett Scudder,New York,2,88,,2,
-22,40,Hewlett Scudder,New York,3,90,,3,
-22,41,Gilbert Oakley,New York,3,87,,3,
-22,41,Gilbert Oakley,New York,2,85,,2,
-22,42,Rufus H. King,"Albany, NY",30,90.05,,30,
-22,42,Rufus H. King,"Albany, NY",25,87.65,,25,
-23,42,Rufus H. King,"Albany, NY",20,87,,20,
-23,43,E.G. Hamilton,New York,10,90,,10,
-23,43,E.G. Hamilton,New York,10,91,10,,
-23,43,E.G. Hamilton,New York,10,91.5,10,,
-23,43,E.G. Hamilton,New York,10,92,10,,
-23,43,E.G. Hamilton,New York,10,92.5,10,,
-23,44,Parker Owen,Philadelphia,5,88.5,,5,
-23,45,Meigs & Greenleaf,New York,25,90,,25,
-23,45,Meigs & Greenleaf,New York,28,90.5,28,,
-23,45,Meigs & Greenleaf,New York,28,91,28,,
-23,45,Meigs & Greenleaf,New York,25,92,25,,
-23,45,Meigs & Greenleaf,New York,4,94,4,,
-23,46,Charles A. Cummings,New York,40,90.6,40,,
-23,47,John B. Budd,Philadelphia,10,92,10,,
-23,47,John B. Budd,Philadelphia,10,91,10,,
-23,47,John B. Budd,Philadelphia,10,90,,10,
-23,48,McKim & Co,Baltimore,20,86,,20,
-23,48,McKim & Co,Baltimore,20,87,,20,
-23,48,McKim & Co,Baltimore,30,88,,30,
-23,48,McKim & Co,Baltimore,30,90,,30,
-23,48,McKim & Co,Baltimore,40,90.25,40,,
-23,48,McKim & Co,Baltimore,10,90.5,10,,
-23,49,W.L. Newberry,Chicago,40,90,,40,
-23,50,Roosevelt & Son,New York,50,90.5,50,,
-23,51,J.H. Thayer,Boston,1,90,,1,
-23,52,Samuel Bobke,New York,4,88,,4,
-23,53,Lewis MacGregor,New York,2,91,2,,
-23,54,Charles H. Delavan,New York,40,88,,40,
-23,55,Eliza D. Delavan,New York,13,90,,13,
-23,56,Jacob St. Loskey,New York,5,93,5,,
-23,57,John Scott Boyd,New York,5,91,5,,
-23,57,John Scott Boyd,New York,5,92,5,,
-23,57,John Scott Boyd,New York,5,92.5,5,,
-23,57,John Scott Boyd,New York,5,93,5,,
-23,57,John Scott Boyd,New York,5,93.5,5,,
-23,58,Evander Childs,New York,2,90,,2,
-23,59,Edgar S. Tweedy,New York,5,90,,5,
-23,60,S.A. Holbrook,"Freeport, Me",5,90,,5,
-23,61,F.W. Streckle,New York,5,90.75,5,,
-24,62,Home Insurance Company,New York,10,90,,10,
-24,62,Home Insurance Company,New York,10,90.5,10,,
-24,62,Home Insurance Company,New York,20,91,20,,
-24,62,Home Insurance Company,New York,10,91.5,10,,
-24,63,J.T. & J.G. Frost & Co.,New York,5,90,,5,
-24,64,Buffalo Savings Bank,Buffalo,20,75,,20,
-24,64,Buffalo Savings Bank,Buffalo,20,80,,20,
-24,64,Buffalo Savings Bank,Buffalo,30,83,,30,
-24,64,Buffalo Savings Bank,Buffalo,30,85,,30,
-24,65,William J. Schenck,new York,10,90,,10,
-24,66,"Clark, Dodge & Co.",New York,10,85.5,,10,
-24,66,"Clark, Dodge & Co.",New York,60,87.25,,60,
-24,66,"Clark, Dodge & Co.",New York,50,88.25,,50,
-24,66,"Clark, Dodge & Co.",New York,30,89.25,,30,
-24,66,"Clark, Dodge & Co.",New York,30,90,,30,
-24,66,"Clark, Dodge & Co.",New York,80,90.25,80,,
-24,66,"Clark, Dodge & Co.",New York,10,90.5,10,,
-24,66,"Clark, Dodge & Co.",New York,10,91.5,10,,
-24,67,J.H. Thayer,Boston,1,91,1,,
-24,67,"Clark, Dodge & Co.",Boston,1,92,1,,
-24,68,"Philip R. Kearney, trustee",New York,5,91,5,,
-24,69,Thomas H. Dudley,"Camden, NJ",6,86.25,,6,
-24,70,Joseph M. Ballestier,New York,2,93,2,,
-24,71,"William R. Merrill, in trust",New York,3,90.1,,3,
-24,72,"William J. Palmer, attorney",Philadelphia,10,85,,10,
-24,73,Thomas F. Andrews,"Washington, DC",20,80.25,,20,
-24,74,Abraham T. Lowe,Boston,10,87.55,,10,
-24,75,Otis Daniell,Boston,10,85,,10,
-24,75,Otis Daniell,Boston,20,87.55,,20,
-24,75,Otis Daniell,Boston,50,90.03,,50,
-24,76,Louis McGregor,New York,2,91,2,,
-24,77,Trevor & Colgate,New York,125,90.15,122,3,
-25,77,Trevor & Colgate,New York,25,90,,25,
-25,78,Jacob St. Loskey,New York,6,90,,6,
-25,79,E.S. Monroe,New York,50,90.5,50,,
-25,79,E.S. Monroe,New York,60,91,60,,
-25,79,E.S. Monroe,New York,50,91.5,50,,
-25,79,E.S. Monroe,New York,10,92,10,,
-25,80,"Sweeny, Rittenhouse, Fant & Co","Washington, DC",100,90.15,100,,
-25,81,William Barton & Son,New York,50,86,,50,
-25,81,William Barton & Son,New York,50,89,,50,
-25,82,Robert M. Strebright,New York,10,90.25,10,,
-25,83,Francis T. Walker & Bro,New York,5,85,,5,
-25,83,Francis T. Walker & Bro,New York,5,86,,5,
-25,83,Francis T. Walker & Bro,New York,5,87,,5,
-25,83,Francis T. Walker & Bro,New York,5,88,,5,
-25,83,Francis T. Walker & Bro,New York,5,89,,5,
-25,83,Francis T. Walker & Bro,New York,10,90,,10,
-25,83,Francis T. Walker & Bro,New York,5,90.03,,5,
-25,84,Edward J. King,New York,25,90,,25,
-25,84,Edward J. King,New York,10,85,,10,
-25,85,A.V. Stout,New York,25,85.75,,25,
-25,85,A.V. Stout,New York,25,86.05,,25,
-25,85,A.V. Stout,New York,25,87.25,,25,
-25,85,A.V. Stout,New York,25,88.05,,25,
-25,86,R.R. Graves & Co,New York,15,90,,15,
-25,87,J.G. Whitney & Co,Boston,10,90,,10,
-25,88,W.H. Slocum,New York,2,88,,2,
-25,89,Francis Leland,New York,30,90,,30,
-25,90,George W. Cuyler,"Palmyra, NY",10,90,,10,
-25,90,George W. Cuyler,"Palmyra, NY",10,88,,10,
-25,90,George W. Cuyler,"Palmyra, NY",10,89,,10,
-25,91,John Hooper & Co.,New York,7,90,,7,
-25,92,Ward & Co. (for others),New York,10,88,,10,
-25,92,Ward & Co. (for others),New York,20,89,,20,
-25,92,Ward & Co. (for others),New York,5,91,5,,
-25,92,Ward & Co. (for others),New York,5,92,5,,
-25,93,J.T. Van Vleck,New York,1,92,1,,
-25,93,J.T. Van Vleck,New York,6,90,,6,
-25,93,J.T. Van Vleck,New York,6,88,,6,
-25,93,J.T. Van Vleck,New York,5,92,5,,1
-26,94,"George Field, cashier",New York,10,86.5,,10,
-26,94,"George Field, cashier",New York,10,88.5,,10,
-26,94,"George Field, cashier",New York,10,90.5,10,,
-26,94,"George Field, cashier",New York,20,85,,20,
-26,94,"George Field, cashier",New York,5,86,,5,
-26,95,E.W. Dunham,New York,25,90,,25,
-26,95,E.W. Dunham,New York,15,90.13,,15,
-26,95,E.W. Dunham,New York,15,90.57,15,,
-26,95,E.W. Dunham,New York,15,91.03,15,,
-26,95,E.W. Dunham,New York,15,91.83,15,,
-26,95,E.W. Dunham,New York,15,92.01,15,,
-26,96,"Merritt, Strang & Co",New York,10,91,10,,
-26,96,"Merritt, Strang & Co",New York,20,92,20,,
-26,96,"Merritt, Strang & Co",New York,10,93,10,,
-26,97,G.C. Stuhr,Brooklyn,2,96,2,,
-26,98,"Read, Drexel & Co",New York,145,90.15,145,,
-26,99,A.J. Glossbrenner,"Washington, DC",4,85.76,,4,
-26,99,A.J. Glossbrenner,"Washington, DC",7,88,,7,
-26,99,A.J. Glossbrenner,"Washington, DC",8,89,,8,
-26,99,A.J. Glossbrenner,"Washington, DC",5,87,,5,
-26,100,J. Benkendorff,New York,10,94.01,10,,
-26,100,J. Benkendorff,New York,10,94.51,10,,
-26,101,"John G. Watmough, Jr.",Philadelphia,25,82,,25,
-26,101,"John G. Watmough, Jr.",Philadelphia,25,83,,25,
-26,101,"John G. Watmough, Jr.",Philadelphia,25,84,,25,
-26,101,"John G. Watmough, Jr.",Philadelphia,25,85,,25,
-26,102,Wm. & John O'Brien,New York,5,90,,5,
-26,102,Wm. & John O'Brien,New York,25,90.26,25,,
-26,102,Wm. & John O'Brien,New York,5,91,5,,
-26,102,Wm. & John O'Brien,New York,31,92.26,31,,
-26,103,"Read, Drexel & Co",New York,1200,90.15,1169,31,
-26,104,G.A. Stone,"Troy, NY",2,82.5,,2,
-27,104,G.A. Stone,"Troy, NY",2,85,,2,
-27,104,G.A. Stone,"Troy, NY",2,87.5,,2,
-27,104,G.A. Stone,"Troy, NY",2,89,,2,
-27,104,G.A. Stone,"Troy, NY",2,90,,2,
-27,104,G.A. Stone,"Troy, NY",2,91,2,,
-27,105,Samuel Sinclair,"Troy, NY",10,90.5,10,,
-27,106,Clarkson Brothers,"Troy, NY",15,90,,15,
-27,106,Clarkson Brothers,"Troy, NY",5,90.625,5,,
-27,106,Clarkson Brothers,"Troy, NY",5,91.125,5,,
-27,106,Clarkson Brothers,"Troy, NY",20,91.625,20,,
-27,106,Clarkson Brothers,"Troy, NY",5,92.125,5,,
-27,107,Thomas Pittis,"Troy, NY",1,90,,1,
-27,108,A.F. Shriver,"Washington, DC",25,80,,25,
-27,108,A.F. Shriver,"Washington, DC",25,85,,25,
-27,108,A.F. Shriver,"Washington, DC",5,90,,5,
-27,108,A.F. Shriver,"Washington, DC",5,95,5,,
-27,109,C.R. Robert,New York,10,90.41,10,,
-27,109,C.R. Robert,New York,10,90.51,10,,
-27,109,C.R. Robert,New York,10,90.76,10,,
-27,109,C.R. Robert,New York,10,90.91,10,,
-27,109,C.R. Robert,New York,10,91.02,10,,
-27,110,Eugene Thompson,New York,2,90,,2,
-27,110,Eugene Thompson,New York,3,87.5,,3,
-27,111,Read & Lathrop,New York,50,90.1,,50,
-27,112,"E. Whitehouse, Son & Morrison",New York,2,90,,2,
-27,112,"E. Whitehouse, Son & Morrison",New York,170,91,170,,
-27,112,"E. Whitehouse, Son & Morrison",New York,20,90.8,20,,
-27,112,"E. Whitehouse, Son & Morrison",New York,15,90.6,15,,
-27,112,"E. Whitehouse, Son & Morrison",New York,100,90.5,100,,
-27,112,"E. Whitehouse, Son & Morrison",New York,20,90.25,20,,
-27,112,"E. Whitehouse, Son & Morrison",New York,20,90.01,,20,
-27,112,"E. Whitehouse, Son & Morrison",New York,10,89.02,,10,
-27,112,"E. Whitehouse, Son & Morrison",New York,10,88.01,,10,
-27,112,"E. Whitehouse, Son & Morrison",New York,15,88,,15,
-27,112,"E. Whitehouse, Son & Morrison",New York,18,87,,18,
-27,113,George N. Farwell,"Clairmont, NH",5,90.25,5,,
-27,114,Spencer K. Green,New York,10,88,,10,
-27,115,"E. Whitehouse, Son & Morrison",New York,50,90.17,50,,
-27,116,Timothy C. Leeds,New York,20,90.06,,20,
-28,116,Timothy C. Leeds,New York,20,88.06,,20,
-28,117,Thomas Griswold,New York,4,88,,4,
-28,118,Clairmont Bank,"Clairmont, NH",10,90.25,10,,
-28,119,G.W. Tew,"Silver Creek, NY",5,80,,5,
-28,119,G.W. Tew,"Silver Creek, NY",5,85,,5,
-28,120,"Clark, Dodge & Co.",New York,60,90.75,60,,
-28,121,J.N. Phelps,New York,60,90.01,,60,
-28,121,J.N. Phelps,New York,20,88,,20,
-28,121,J.N. Phelps,New York,20,86,,20,
-28,122,"George W. Patterson, Jr.","Corning, NY",1,86.55,,1,
-28,122,"George W. Patterson, Jr.","Corning, NY",1,87.55,,1,
-28,122,"George W. Patterson, Jr.","Corning, NY",2,88.55,,2,
-28,122,"George W. Patterson, Jr.","Corning, NY",3,89.55,,3,
-28,122,"George W. Patterson, Jr.","Corning, NY",3,90.55,3,,
-28,122,"George W. Patterson, Jr.","Corning, NY",2,91.55,2,,
-28,122,"George W. Patterson, Jr.","Corning, NY",1,92.55,1,,
-28,122,"George W. Patterson, Jr.","Corning, NY",1,93.55,1,,
-28,122,"George W. Patterson, Jr.","Corning, NY",1,94.55,1,,
-28,123,M. Tuska,New York,6,85,,6,
-28,123,M. Tuska,New York,3,87.5,,3,
-28,123,M. Tuska,New York,3,88,,3,
-28,124,Tuller & Sutterly,Philadelphia,8,91,8,,
-28,125,Benjamin C. White,Boston,7,90,,7,
-28,126,James Egginton,Brooklyn,2,90.5,2,,
-28,127,J.S. & W. Brown,New York,5,80,,5,
-28,127,J.S. & W. Brown,New York,5,85,,5,
-28,128,William Tilden,New York,5,92.3,5,,
-28,129,Philadelphia Contribution Insurance Co.,Philadelphia,40,93.5,40,,
-28,130,Third Avenue Savings Bank,New York,25,85,,25,
-28,130,Third Avenue Savings Bank,New York,25,87.5,,25,
-28,130,Third Avenue Savings Bank,New York,25,90,,25,
-28,130,Third Avenue Savings Bank,New York,25,91,25,,
-29,131,James Tuttle,Boston,30,91.25,30,,
-29,132,James H. Van Allen,New York,50,89,,50,
-29,132,James H. Van Allen,New York,50,89.5,,50,
-29,133,A. Hamilton,Brooklyn,2,90,,2,
-29,134,Charles Aug Davis,New York,300,87.5,,300,
-29,135,Taylor Brothers,New York,10,85,,10,
-29,135,Taylor Brothers,New York,10,86,,10,
-29,135,Taylor Brothers,New York,10,87,,10,
-29,135,Taylor Brothers,New York,10,88,,10,
-29,136,Townsend & Co,Boston,30,78,,30,
-29,137,Bank of the Republic,Boston,30,90.1,,30,
-29,137,Bank of the Republic,Boston,25,91.1,25,,
-29,137,Bank of the Republic,Boston,20,92.1,20,,
-29,137,Bank of the Republic,Boston,15,93.1,15,,
-29,137,Bank of the Republic,Boston,10,94.1,10,,
-29,137,Bank of the Republic,Boston,10,95.1,10,,
-29,137,Bank of the Republic,Boston,10,96.1,10,,
-29,138,"S.H. Alden, president","Albany, NY",60,90.03,,60,
-29,138,"S.H. Alden, president","Albany, NY",30,88,,30,
-29,138,"S.H. Alden, president","Albany, NY",30,87,,30,
-29,139,John W. Champlin,"Mabbettsville, NY",1,90.5,1,,
-29,139,John W. Champlin,"Mabbettsville, NY",1,88,,1,
-29,140,John T. Johnson,New York,100,90.53,100,,
-29,141,E.L. Bolles,New York,3,90.4,3,,
-29,142,Jenkins Van Schaick,New York,30,91.05,30,,
-29,143,R.R. Graves & Co,New York,10,91,10,,
-29,144,Washington MIlls,New York,20,80.01,,20,
-29,144,Washington MIlls,New York,10,81.01,,10,
-29,144,Washington MIlls,New York,10,82.01,,10,
-29,144,Washington MIlls,New York,10,85.01,,10,
-29,145,Surette & Whitney,Boston,10,90.1,,10,
-29,146,Amos P Tapley,Boston,5,87.5,,5,
-29,147,Juan Clemente Las Casas,New York,10,85,,10,
-29,147,Juan Clemente Las Casas,New York,3,88,,3,
-29,147,Juan Clemente Las Casas,New York,2,90,,2,
-29,148,C.F. Knowlson,New York,5,90.1,,5,
-29,148,C.F. Knowlson,New York,15,90.03,,15,
-29,148,C.F. Knowlson,New York,15,90.05,,15,
-29,149,"Ward, Campbell & Co",New York,200,90.27,200,,
-30,149,"Ward, Campbell & Co",New York,100,90.55,100,,
-30,149,"Ward, Campbell & Co",New York,100,90.6,100,,
-30,150,William Griswold,New York,5,90.5,5,,
-30,151,Joseph Woodbridge,Brooklyn,1.25,80,,1.25,
-30,152,C.E. Brewer,New York,30,90.11,,30,
-30,152,C.E. Brewer,New York,40,90.21,40,,
-30,152,C.E. Brewer,New York,40,90.31,40,,
-30,152,C.E. Brewer,New York,40,90.36,40,,
-30,153,M.M. Pownall,New York,100,90.27,100,,
-30,154,F.P. James & Co.,New York,10,90.17,10,,
-30,155,A.D. Williams,New York,5,90.1,,5,
-30,155,A.D. Williams,New York,5,89,,5,
-30,156,Mark A. Nicholls,"Lockport, NY",10,90.18,10,,
-30,156,Mark A. Nicholls,"Lockport, NY",10,90.25,10,,
-30,156,Mark A. Nicholls,"Lockport, NY",5,90.5,5,,
+page,bid_number,bidder,amount,value,accepted,rejected,errors,city,state
+20,1,Russell N. Isaacs,25,91.5,25,,,New York,NY
+20,2,Charles T. Dix,20,91,20,,,New York,NY
+20,3,Underhill & Haven,5,90.01,,5,,New York,NY
+20,3,Underhill & Haven,5,90.51,5,,,New York,NY
+20,3,Underhill & Haven,5,90.52,5,,,New York,NY
+20,3,Underhill & Haven,5,90.53,5,,,New York,NY
+20,3,Underhill & Haven,5,90.64,5,,,New York,NY
+20,3,Underhill & Haven,5,90.76,5,,,New York,NY
+20,3,Underhill & Haven,5,90.78,5,,,New York,NY
+20,3,Underhill & Haven,5,90.89,5,,,New York,NY
+20,3,Underhill & Haven,5,91.01,5,,,New York,NY
+20,3,Underhill & Haven,5,91.02,5,,,New York,NY
+20,3,Underhill & Haven,5,91.26,5,,,New York,NY
+20,4,"Ketchum, So & Co. (self and others)",2814,90.15,2749,65,,New York,NY
+20,4,"Ketchum, So & Co. (self and others)",50,90,,50,,New York,NY
+20,5,Howland & Aspinwall,150,90,,150,,New York,NY
+20,6,Richard Berry,25,92.5,25,,,New York,NY
+20,7,Mariners' Savings Institution,40,92,40,,,New York,NY
+20,7,Mariners' Savings Institution,10,90.5,10,,,New York,NY
+20,8,Chester W. Chapin,100,90.3,100,,,Springfield,MA
+20,9,Thompson Brothers,100,90.5,100,,,New York,NY
+20,10,Samuel C. Thompson,5,88,,5,,New York,NY
+20,10,Samuel C. Thompson,10,89,,10,,New York,NY
+20,10,Samuel C. Thompson,10,90,,10,,New York,NY
+20,11,J. Ludlow Dumont,20,89.5,,20,,New York,NY
+20,11,J. Ludlow Dumont,20,89,,20,,New York,NY
+20,11,J. Ludlow Dumont,20,88,,20,,New York,NY
+21,12,A. Jenkins,5,90.5,5,,,New York,NY
+21,13,Carpenter & Vermilye,25,90,,25,,New York,NY
+21,14,Wm. J. Emmet,10,85,,10,,New York,NY
+21,14,Wm. J. Emmet,10,84,,10,,New York,NY
+21,14,Wm. J. Emmet,10,83,,10,,New York,NY
+21,14,Wm. J. Emmet,10,82,,10,,New York,NY
+21,14,Wm. J. Emmet,10,80,,10,,New York,NY
+21,15,Allan Melville,50,90.25,50,,,New York,NY
+21,16,Field & McLean,25,87.5,,25,,New York,NY
+21,16,Field & McLean,25,90.25,25,,,New York,NY
+21,17,Benjamin Peirce,3,92,3,,,Chesterfield Factory,NH
+21,18,Charles H. Russell,100,90.5,100,,,New York,NY
+21,18,Charles H. Russell,100,91,100,,,New York,NY
+21,19,Henry F. Vail,50,90.5,50,,,New York,NY
+21,20,Bank of Commerce,2500,90,,2500,,New York,NY
+21,21,Robert L. Kennedy,50,90.5,50,,,New York,NY
+21,21,Robert L. Kennedy,50,91,50,,,New York,NY
+21,22,John A. Stevens,50,90.5,50,,,New York,NY
+21,22,John A. Stevens,50,91,50,,,New York,NY
+21,23,John Sampson,50,90.5,50,,,New York,NY
+21,23,John Sampson,50,91,50,,,New York,NY
+21,24,Wm. McBride,20,85.0625,,20,,New York,NY
+21,24,Wm. McBride,15,86.0625,,15,,New York,NY
+21,24,Wm. McBride,10,87.0625,,10,,New York,NY
+21,24,Wm. McBride,10,88.0625,,10,,New York,NY
+21,24,Wm. McBride,5,86,,5,,New York,NY
+21,24,Wm. McBride,5,87,,5,,New York,NY
+21,24,Wm. McBride,5,88,,5,,New York,NY
+21,24,Wm. McBride,10,89,,10,,New York,NY
+21,25,Sherman & Romaine,50,90.26,50,,,New York,NY
+21,26,John P. Elton,10,88.03,,10,,Waterbury,CT
+21,26,John P. Elton,5,89.68,,5,,Waterbury,CT
+21,26,John P. Elton,5,90.27,5,,,Waterbury,CT
+21,26,John P. Elton,5,91.38,5,,,Waterbury,CT
+21,27,City Fire Insurance Company,12,90,,12,,Boston,MA
+21,28,G.A. Burbank,3,80,,3,,Danville,VT
+21,29,Bank of Lansingburgh,10,90.25,10,,,New York,NY
+21,30,Julius Y. Dewy,1,90.25,1,,,Montpelier,VT
+21,30,Julius Y. Dewy,1,90.35,1,,,Montpelier,VT
+22,30,Julius Y. Dewy,1,90.45,1,,,Montpelier,VT
+22,30,Julius Y. Dewy,1,90.55,1,,,Montpelier,VT
+22,30,Julius Y. Dewy,1,90.65,1,,,Montpelier,VT
+22,31,"Brewster, Sweet & Co",4,91,4,,,Boston,MA
+22,31,"Brewster, Sweet & Co",6,89,,6,,Boston,MA
+22,31,"Brewster, Sweet & Co",10,87,,10,,Boston,MA
+22,31,"Brewster, Sweet & Co",10,85,,10,,Boston,MA
+22,32,R.R. Fairchild,30,90.2,30,,,New York,NY
+22,33,V. & J.F. Gilpin & Co.,6,92.5,6,,,Philadelphia,PA
+22,34,Hewlett & Torrance,25,90,,25,,New York,NY
+22,35,Satterlee & Co,135,90.15,132,3,,New York,NY
+22,35,Satterlee & Co,25,90.56,25,,,New York,NY
+22,35,Satterlee & Co,43,89.06,,43,,New York,NY
+22,35,Satterlee & Co,38,88.06,,38,,New York,NY
+22,36,Otis Norcross,10,90,,10,,Boston,MA
+22,37,R.W. Howes,100,90,,100,,New York,NY
+22,37,R.W. Howes,50,89,,50,,New York,NY
+22,37,R.W. Howes,50,88,,50,,New York,NY
+22,37,R.W. Howes,50,87,,50,,New York,NY
+22,37,R.W. Howes,50,86,,50,,New York,NY
+22,37,R.W. Howes,100,85,,100,,New York,NY
+22,37,R.W. Howes,100,84,,100,,New York,NY
+22,38,Stephen G. Fotterall,10,93,10,,,Philadelphia,PA
+22,39,William Tilden,10,90.15,10,,,New York,NY
+22,39,William Tilden,5,87.54,,5,,New York,NY
+22,39,William Tilden,5,85,,5,,New York,NY
+22,40,Hewlett Scudder,2,88,,2,,New York,NY
+22,40,Hewlett Scudder,3,90,,3,,New York,NY
+22,41,Gilbert Oakley,3,87,,3,,New York,NY
+22,41,Gilbert Oakley,2,85,,2,,New York,NY
+22,42,Rufus H. King,30,90.05,,30,,Albany,NY
+22,42,Rufus H. King,25,87.65,,25,,Albany,NY
+23,42,Rufus H. King,20,87,,20,,Albany,NY
+23,43,E.G. Hamilton,10,90,,10,,New York,NY
+23,43,E.G. Hamilton,10,91,10,,,New York,NY
+23,43,E.G. Hamilton,10,91.5,10,,,New York,NY
+23,43,E.G. Hamilton,10,92,10,,,New York,NY
+23,43,E.G. Hamilton,10,92.5,10,,,New York,NY
+23,44,Parker Owen,5,88.5,,5,,Philadelphia,PA
+23,45,Meigs & Greenleaf,25,90,,25,,New York,NY
+23,45,Meigs & Greenleaf,28,90.5,28,,,New York,NY
+23,45,Meigs & Greenleaf,28,91,28,,,New York,NY
+23,45,Meigs & Greenleaf,25,92,25,,,New York,NY
+23,45,Meigs & Greenleaf,4,94,4,,,New York,NY
+23,46,Charles A. Cummings,40,90.6,40,,,New York,NY
+23,47,John B. Budd,10,92,10,,,Philadelphia,PA
+23,47,John B. Budd,10,91,10,,,Philadelphia,PA
+23,47,John B. Budd,10,90,,10,,Philadelphia,PA
+23,48,McKim & Co,20,86,,20,,Baltimore,MD
+23,48,McKim & Co,20,87,,20,,Baltimore,MD
+23,48,McKim & Co,30,88,,30,,Baltimore,MD
+23,48,McKim & Co,30,90,,30,,Baltimore,MD
+23,48,McKim & Co,40,90.25,40,,,Baltimore,MD
+23,48,McKim & Co,10,90.5,10,,,Baltimore,MD
+23,49,W.L. Newberry,40,90,,40,,Chicago,
+23,50,Roosevelt & Son,50,90.5,50,,,New York,NY
+23,51,J.H. Thayer,1,90,,1,,Boston,MA
+23,52,Samuel Bobke,4,88,,4,,New York,NY
+23,53,Lewis MacGregor,2,91,2,,,New York,NY
+23,54,Charles H. Delavan,40,88,,40,,New York,NY
+23,55,Eliza D. Delavan,13,90,,13,,New York,NY
+23,56,Jacob St. Loskey,5,93,5,,,New York,NY
+23,57,John Scott Boyd,5,91,5,,,New York,NY
+23,57,John Scott Boyd,5,92,5,,,New York,NY
+23,57,John Scott Boyd,5,92.5,5,,,New York,NY
+23,57,John Scott Boyd,5,93,5,,,New York,NY
+23,57,John Scott Boyd,5,93.5,5,,,New York,NY
+23,58,Evander Childs,2,90,,2,,New York,NY
+23,59,Edgar S. Tweedy,5,90,,5,,New York,NY
+23,60,S.A. Holbrook,5,90,,5,,"Freeport, Me",
+23,61,F.W. Streckle,5,90.75,5,,,New York,NY
+24,62,Home Insurance Company,10,90,,10,,New York,NY
+24,62,Home Insurance Company,10,90.5,10,,,New York,NY
+24,62,Home Insurance Company,20,91,20,,,New York,NY
+24,62,Home Insurance Company,10,91.5,10,,,New York,NY
+24,63,J.T. & J.G. Frost & Co.,5,90,,5,,New York,NY
+24,64,Buffalo Savings Bank,20,75,,20,,Buffalo,NY
+24,64,Buffalo Savings Bank,20,80,,20,,Buffalo,NY
+24,64,Buffalo Savings Bank,30,83,,30,,Buffalo,NY
+24,64,Buffalo Savings Bank,30,85,,30,,Buffalo,NY
+24,65,William J. Schenck,10,90,,10,,New York,NY
+24,66,"Clark, Dodge & Co.",10,85.5,,10,,New York,NY
+24,66,"Clark, Dodge & Co.",60,87.25,,60,,New York,NY
+24,66,"Clark, Dodge & Co.",50,88.25,,50,,New York,NY
+24,66,"Clark, Dodge & Co.",30,89.25,,30,,New York,NY
+24,66,"Clark, Dodge & Co.",30,90,,30,,New York,NY
+24,66,"Clark, Dodge & Co.",80,90.25,80,,,New York,NY
+24,66,"Clark, Dodge & Co.",10,90.5,10,,,New York,NY
+24,66,"Clark, Dodge & Co.",10,91.5,10,,,New York,NY
+24,67,J.H. Thayer,1,91,1,,,Boston,MA
+24,67,"Clark, Dodge & Co.",1,92,1,,,Boston,MA
+24,68,"Philip R. Kearney, trustee",5,91,5,,,New York,NY
+24,69,Thomas H. Dudley,6,86.25,,6,,Camden,NJ
+24,70,Joseph M. Ballestier,2,93,2,,,New York,NY
+24,71,"William R. Merrill, in trust",3,90.1,,3,,New York,NY
+24,72,"William J. Palmer, attorney",10,85,,10,,Philadelphia,PA
+24,73,Thomas F. Andrews,20,80.25,,20,,Washington,DC
+24,74,Abraham T. Lowe,10,87.55,,10,,Boston,MA
+24,75,Otis Daniell,10,85,,10,,Boston,MA
+24,75,Otis Daniell,20,87.55,,20,,Boston,MA
+24,75,Otis Daniell,50,90.03,,50,,Boston,MA
+24,76,Louis McGregor,2,91,2,,,New York,NY
+24,77,Trevor & Colgate,125,90.15,122,3,,New York,NY
+25,77,Trevor & Colgate,25,90,,25,,New York,NY
+25,78,Jacob St. Loskey,6,90,,6,,New York,NY
+25,79,E.S. Monroe,50,90.5,50,,,New York,NY
+25,79,E.S. Monroe,60,91,60,,,New York,NY
+25,79,E.S. Monroe,50,91.5,50,,,New York,NY
+25,79,E.S. Monroe,10,92,10,,,New York,NY
+25,80,"Sweeny, Rittenhouse, Fant & Co",100,90.15,100,,,Washington,DC
+25,81,William Barton & Son,50,86,,50,,New York,NY
+25,81,William Barton & Son,50,89,,50,,New York,NY
+25,82,Robert M. Strebright,10,90.25,10,,,New York,NY
+25,83,Francis T. Walker & Bro,5,85,,5,,New York,NY
+25,83,Francis T. Walker & Bro,5,86,,5,,New York,NY
+25,83,Francis T. Walker & Bro,5,87,,5,,New York,NY
+25,83,Francis T. Walker & Bro,5,88,,5,,New York,NY
+25,83,Francis T. Walker & Bro,5,89,,5,,New York,NY
+25,83,Francis T. Walker & Bro,10,90,,10,,New York,NY
+25,83,Francis T. Walker & Bro,5,90.03,,5,,New York,NY
+25,84,Edward J. King,25,90,,25,,New York,NY
+25,84,Edward J. King,10,85,,10,,New York,NY
+25,85,A.V. Stout,25,85.75,,25,,New York,NY
+25,85,A.V. Stout,25,86.05,,25,,New York,NY
+25,85,A.V. Stout,25,87.25,,25,,New York,NY
+25,85,A.V. Stout,25,88.05,,25,,New York,NY
+25,86,R.R. Graves & Co,15,90,,15,,New York,NY
+25,87,J.G. Whitney & Co,10,90,,10,,Boston,MA
+25,88,W.H. Slocum,2,88,,2,,New York,NY
+25,89,Francis Leland,30,90,,30,,New York,NY
+25,90,George W. Cuyler,10,90,,10,,Palmyra,NY
+25,90,George W. Cuyler,10,88,,10,,Palmyra,NY
+25,90,George W. Cuyler,10,89,,10,,Palmyra,NY
+25,91,John Hooper & Co.,7,90,,7,,New York,NY
+25,92,Ward & Co. (for others),10,88,,10,,New York,NY
+25,92,Ward & Co. (for others),20,89,,20,,New York,NY
+25,92,Ward & Co. (for others),5,91,5,,,New York,NY
+25,92,Ward & Co. (for others),5,92,5,,,New York,NY
+25,93,J.T. Van Vleck,1,92,1,,,New York,NY
+25,93,J.T. Van Vleck,6,90,,6,,New York,NY
+25,93,J.T. Van Vleck,6,88,,6,,New York,NY
+25,93,J.T. Van Vleck,5,92,5,,,New York,NY
+26,94,"George Field, cashier",10,86.5,,10,,New York,NY
+26,94,"George Field, cashier",10,88.5,,10,,New York,NY
+26,94,"George Field, cashier",10,90.5,10,,,New York,NY
+26,94,"George Field, cashier",20,85,,20,,New York,NY
+26,94,"George Field, cashier",5,86,,5,,New York,NY
+26,95,E.W. Dunham,25,90,,25,,New York,NY
+26,95,E.W. Dunham,15,90.13,,15,,New York,NY
+26,95,E.W. Dunham,15,90.57,15,,,New York,NY
+26,95,E.W. Dunham,15,91.03,15,,,New York,NY
+26,95,E.W. Dunham,15,91.83,15,,,New York,NY
+26,95,E.W. Dunham,15,92.01,15,,,New York,NY
+26,96,"Merritt, Strang & Co",10,91,10,,,New York,NY
+26,96,"Merritt, Strang & Co",20,92,20,,,New York,NY
+26,96,"Merritt, Strang & Co",10,93,10,,,New York,NY
+26,97,G.C. Stuhr,2,96,2,,,Brooklyn,NY
+26,98,"Read, Drexel & Co",145,90.15,145,,,New York,NY
+26,99,A.J. Glossbrenner,4,85.76,,4,,Washington,DC
+26,99,A.J. Glossbrenner,7,88,,7,,Washington,DC
+26,99,A.J. Glossbrenner,8,89,,8,,Washington,DC
+26,99,A.J. Glossbrenner,5,87,,5,,Washington,DC
+26,100,J. Benkendorff,10,94.01,10,,,New York,NY
+26,100,J. Benkendorff,10,94.51,10,,,New York,NY
+26,101,"John G. Watmough, Jr.",25,82,,25,,Philadelphia,PA
+26,101,"John G. Watmough, Jr.",25,83,,25,,Philadelphia,PA
+26,101,"John G. Watmough, Jr.",25,84,,25,,Philadelphia,PA
+26,101,"John G. Watmough, Jr.",25,85,,25,,Philadelphia,PA
+26,102,Wm. & John O'Brien,5,90,,5,,New York,NY
+26,102,Wm. & John O'Brien,25,90.26,25,,,New York,NY
+26,102,Wm. & John O'Brien,5,91,5,,,New York,NY
+26,102,Wm. & John O'Brien,31,92.26,31,,,New York,NY
+26,103,"Read, Drexel & Co",1200,90.15,1169,31,,New York,NY
+26,104,G.A. Stone,2,82.5,,2,,Troy,NY
+27,104,G.A. Stone,2,85,,2,,Troy,NY
+27,104,G.A. Stone,2,87.5,,2,,Troy,NY
+27,104,G.A. Stone,2,89,,2,,Troy,NY
+27,104,G.A. Stone,2,90,,2,,Troy,NY
+27,104,G.A. Stone,2,91,2,,,Troy,NY
+27,105,Samuel Sinclair,10,90.5,10,,,Troy,NY
+27,106,Clarkson Brothers,15,90,,15,,Troy,NY
+27,106,Clarkson Brothers,5,90.625,5,,,Troy,NY
+27,106,Clarkson Brothers,5,91.125,5,,,Troy,NY
+27,106,Clarkson Brothers,20,91.625,20,,,Troy,NY
+27,106,Clarkson Brothers,5,92.125,5,,,Troy,NY
+27,107,Thomas Pittis,1,90,,1,,Troy,NY
+27,108,A.F. Shriver,25,80,,25,,Washington,DC
+27,108,A.F. Shriver,25,85,,25,,Washington,DC
+27,108,A.F. Shriver,5,90,,5,,Washington,DC
+27,108,A.F. Shriver,5,95,5,,,Washington,DC
+27,109,C.R. Robert,10,90.41,10,,,New York,NY
+27,109,C.R. Robert,10,90.51,10,,,New York,NY
+27,109,C.R. Robert,10,90.76,10,,,New York,NY
+27,109,C.R. Robert,10,90.91,10,,,New York,NY
+27,109,C.R. Robert,10,91.02,10,,,New York,NY
+27,110,Eugene Thompson,2,90,,2,,New York,NY
+27,110,Eugene Thompson,3,87.5,,3,,New York,NY
+27,111,Read & Lathrop,50,90.1,,50,,New York,NY
+27,112,"E. Whitehouse, Son & Morrison",2,90,,2,,New York,NY
+27,112,"E. Whitehouse, Son & Morrison",170,91,170,,,New York,NY
+27,112,"E. Whitehouse, Son & Morrison",20,90.8,20,,,New York,NY
+27,112,"E. Whitehouse, Son & Morrison",15,90.6,15,,,New York,NY
+27,112,"E. Whitehouse, Son & Morrison",100,90.5,100,,,New York,NY
+27,112,"E. Whitehouse, Son & Morrison",20,90.25,20,,,New York,NY
+27,112,"E. Whitehouse, Son & Morrison",20,90.01,,20,,New York,NY
+27,112,"E. Whitehouse, Son & Morrison",10,89.02,,10,,New York,NY
+27,112,"E. Whitehouse, Son & Morrison",10,88.01,,10,,New York,NY
+27,112,"E. Whitehouse, Son & Morrison",15,88,,15,,New York,NY
+27,112,"E. Whitehouse, Son & Morrison",18,87,,18,,New York,NY
+27,113,George N. Farwell,5,90.25,5,,,Clairmont,NY
+27,114,Spencer K. Green,10,88,,10,,New York,NY
+27,115,"E. Whitehouse, Son & Morrison",50,90.17,50,,,New York,NY
+27,116,Timothy C. Leeds,20,90.06,,20,,New York,NY
+28,116,Timothy C. Leeds,20,88.06,,20,,New York,NY
+28,117,Thomas Griswold,4,88,,4,,New York,NY
+28,118,Clairmont Bank,10,90.25,10,,,Clairmont,NH
+28,119,G.W. Tew,5,80,,5,,Silver Creek,NY
+28,119,G.W. Tew,5,85,,5,,Silver Creek,NY
+28,120,"Clark, Dodge & Co.",60,90.75,60,,,New York,NY
+28,121,J.N. Phelps,60,90.01,,60,,New York,NY
+28,121,J.N. Phelps,20,88,,20,,New York,NY
+28,121,J.N. Phelps,20,86,,20,,New York,NY
+28,122,"George W. Patterson, Jr.",1,86.55,,1,,Corning,NY
+28,122,"George W. Patterson, Jr.",1,87.55,,1,,Corning,NY
+28,122,"George W. Patterson, Jr.",2,88.55,,2,,Corning,NY
+28,122,"George W. Patterson, Jr.",3,89.55,,3,,Corning,NY
+28,122,"George W. Patterson, Jr.",3,90.55,3,,,Corning,NY
+28,122,"George W. Patterson, Jr.",2,91.55,2,,,Corning,NY
+28,122,"George W. Patterson, Jr.",1,92.55,1,,,Corning,NY
+28,122,"George W. Patterson, Jr.",1,93.55,1,,,Corning,NY
+28,122,"George W. Patterson, Jr.",1,94.55,1,,,Corning,NY
+28,123,M. Tuska,6,85,,6,,New York,NY
+28,123,M. Tuska,3,87.5,,3,,New York,NY
+28,123,M. Tuska,3,88,,3,,New York,NY
+28,124,Tuller & Sutterly,8,91,8,,,Philadelphia,PA
+28,125,Benjamin C. White,7,90,,7,,Boston,MA
+28,126,James Egginton,2,90.5,2,,,Brooklyn,NY
+28,127,J.S. & W. Brown,5,80,,5,,New York,NY
+28,127,J.S. & W. Brown,5,85,,5,,New York,NY
+28,128,William Tilden,5,92.3,5,,,New York,NY
+28,129,Philadelphia Contribution Insurance Co.,40,93.5,40,,,Philadelphia,PA
+28,130,Third Avenue Savings Bank,25,85,,25,,New York,NY
+28,130,Third Avenue Savings Bank,25,87.5,,25,,New York,NY
+28,130,Third Avenue Savings Bank,25,90,,25,,New York,NY
+28,130,Third Avenue Savings Bank,25,91,25,,,New York,NY
+29,131,James Tuttle,30,91.25,30,,,Boston,MA
+29,132,James H. Van Allen,50,89,,50,,New York,NY
+29,132,James H. Van Allen,50,89.5,,50,,New York,NY
+29,133,A. Hamilton,2,90,,2,,Brooklyn,NY
+29,134,Charles Aug Davis,300,87.5,,300,,New York,NY
+29,135,Taylor Brothers,10,85,,10,,New York,NY
+29,135,Taylor Brothers,10,86,,10,,New York,NY
+29,135,Taylor Brothers,10,87,,10,,New York,NY
+29,135,Taylor Brothers,10,88,,10,,New York,NY
+29,136,Townsend & Co,30,78,,30,,Boston,MA
+29,137,Bank of the Republic,30,90.1,,30,,Boston,MA
+29,137,Bank of the Republic,25,91.1,25,,,Boston,MA
+29,137,Bank of the Republic,20,92.1,20,,,Boston,MA
+29,137,Bank of the Republic,15,93.1,15,,,Boston,MA
+29,137,Bank of the Republic,10,94.1,10,,,Boston,MA
+29,137,Bank of the Republic,10,95.1,10,,,Boston,MA
+29,137,Bank of the Republic,10,96.1,10,,,Boston,MA
+29,138,"S.H. Alden, president",60,90.03,,60,,Albany,NY
+29,138,"S.H. Alden, president",30,88,,30,,Albany,NY
+29,138,"S.H. Alden, president",30,87,,30,,Albany,NY
+29,139,John W. Champlin,1,90.5,1,,,Mabbettsville,NY
+29,139,John W. Champlin,1,88,,1,,Mabbettsville,NY
+29,140,John T. Johnson,100,90.53,100,,,New York,NY
+29,141,E.L. Bolles,3,90.4,3,,,New York,NY
+29,142,Jenkins Van Schaick,30,91.05,30,,,New York,NY
+29,143,R.R. Graves & Co,10,91,10,,,New York,NY
+29,144,Washington MIlls,20,80.01,,20,,New York,NY
+29,144,Washington MIlls,10,81.01,,10,,New York,NY
+29,144,Washington MIlls,10,82.01,,10,,New York,NY
+29,144,Washington MIlls,10,85.01,,10,,New York,NY
+29,145,Surette & Whitney,10,90.1,,10,,Boston,MA
+29,146,Amos P Tapley,5,87.5,,5,,Boston,MA
+29,147,Juan Clemente Las Casas,10,85,,10,,New York,NY
+29,147,Juan Clemente Las Casas,3,88,,3,,New York,NY
+29,147,Juan Clemente Las Casas,2,90,,2,,New York,NY
+29,148,C.F. Knowlson,5,90.1,,5,,New York,NY
+29,148,C.F. Knowlson,15,90.03,,15,,New York,NY
+29,148,C.F. Knowlson,15,90.05,,15,,New York,NY
+29,149,"Ward, Campbell & Co",200,90.27,200,,,New York,NY
+30,149,"Ward, Campbell & Co",100,90.55,100,,,New York,NY
+30,149,"Ward, Campbell & Co",100,90.6,100,,,New York,NY
+30,150,William Griswold,5,90.5,5,,,New York,NY
+30,151,Joseph Woodbridge,1,80,,1,,Brooklyn,NY
+30,152,C.E. Brewer,30,90.11,,30,,New York,NY
+30,152,C.E. Brewer,40,90.21,40,,,New York,NY
+30,152,C.E. Brewer,40,90.31,40,,,New York,NY
+30,152,C.E. Brewer,40,90.36,40,,,New York,NY
+30,153,M.M. Pownall,100,90.27,100,,,New York,NY
+30,154,F.P. James & Co.,10,90.17,10,,,New York,NY
+30,155,A.D. Williams,5,90.1,,5,,New York,NY
+30,155,A.D. Williams,5,89,,5,,New York,NY
+30,156,Mark A. Nicholls,10,90.18,10,,,Lockport,NY
+30,156,Mark A. Nicholls,10,90.25,10,,,Lockport,NY
+30,156,Mark A. Nicholls,5,90.5,5,,,Lockport,NY

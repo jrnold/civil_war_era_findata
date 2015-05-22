@@ -7,65 +7,65 @@
 "A. W. Spies","New York","NY",5000,104.75,"1864-06-16",2,6
 "A. W. Spies","New York","NY",2000,105,"1864-06-16",2,7
 "John Turner","New York","NY",3000,105.02,"1864-06-16",2,8
-"Irving Bank  ","New York","NY",10000,106,"1864-06-16",2,9
-"Starke Whitcom    ","Boston","MA",500,106.25,"1864-06-16",2,10
-"Starke Whitcom    ","Boston","MA",500,106.37,"1864-06-16",2,11
-"Starke Whitcom    ","Boston","MA",500,106.3,"1864-06-16",2,12
-"Starke Whitcom    ","Boston","MA",500,106.55,"1864-06-16",2,13
-"Starke Whitcom    ","Boston","MA",500,106.6,"1864-06-16",2,14
+"Irving Bank","New York","NY",10000,106,"1864-06-16",2,9
+"Starke Whitcom","Boston","MA",500,106.25,"1864-06-16",2,10
+"Starke Whitcom","Boston","MA",500,106.37,"1864-06-16",2,11
+"Starke Whitcom","Boston","MA",500,106.3,"1864-06-16",2,12
+"Starke Whitcom","Boston","MA",500,106.55,"1864-06-16",2,13
+"Starke Whitcom","Boston","MA",500,106.6,"1864-06-16",2,14
 "David Ellis","Boston","MA",2000,102,"1864-06-16",2,15
 "David Ellis","Boston","MA",2000,103,"1864-06-16",2,16
 "Henry W. Richards","Boston","MA",1000,106.1,"1864-06-16",2,17
 "Henry W. Richards","Boston","MA",1000,105.1,"1864-06-16",2,18
 "Daniel W. Laurence","Medford","MA",5000,105.5,"1864-06-16",2,19
 "Daniel W. Laurence","Medford","MA",5000,106,"1864-06-16",2,20
-"Daniel Laurence    ",,,5000,106,"1864-06-16",2,21
-"Daniel Laurence    ",,,5000,105,"1864-06-16",2,22
-"Lewis H. White ","Columbus ","OH",16000,107.5,"1864-06-16",2,23
-"Second National Bank ","Toledo","OH",10000,103,"1864-06-16",2,24
-"Second National Bank ","Toledo","OH",10000,104,"1864-06-16",2,25
-"Second National Bank ","Toledo","OH",14000,105,"1864-06-16",2,26
-"Second National Bank ","Toledo","OH",5000,105.5,"1864-06-16",2,27
-"Second National Bank ","Toledo","OH",5000,106,"1864-06-16",2,28
-"Second National Bank ","Toledo","OH",5000,106.2,"1864-06-16",2,29
-"Second National Bank ","Toledo","OH",8000,106.5,"1864-06-16",2,30
-"Second National Bank ","Toledo","OH",5000,106.7,"1864-06-16",2,31
-"Second National Bank ","Toledo","OH",5000,107,"1864-06-16",2,32
-"Second National Bank ","Toledo","OH",5000,107.55,"1864-06-16",2,33
-"Second National Bank ","Toledo","OH",5000,107.6,"1864-06-16",2,34
-"Second National Bank ","Toledo","OH",5090,108.5,"1864-06-16",2,35
+"Daniel Laurence",,,5000,106,"1864-06-16",2,21
+"Daniel Laurence",,,5000,105,"1864-06-16",2,22
+"Lewis H. White","Columbus","OH",16000,107.5,"1864-06-16",2,23
+"Second National Bank","Toledo","OH",10000,103,"1864-06-16",2,24
+"Second National Bank","Toledo","OH",10000,104,"1864-06-16",2,25
+"Second National Bank","Toledo","OH",14000,105,"1864-06-16",2,26
+"Second National Bank","Toledo","OH",5000,105.5,"1864-06-16",2,27
+"Second National Bank","Toledo","OH",5000,106,"1864-06-16",2,28
+"Second National Bank","Toledo","OH",5000,106.2,"1864-06-16",2,29
+"Second National Bank","Toledo","OH",8000,106.5,"1864-06-16",2,30
+"Second National Bank","Toledo","OH",5000,106.7,"1864-06-16",2,31
+"Second National Bank","Toledo","OH",5000,107,"1864-06-16",2,32
+"Second National Bank","Toledo","OH",5000,107.55,"1864-06-16",2,33
+"Second National Bank","Toledo","OH",5000,107.6,"1864-06-16",2,34
+"Second National Bank","Toledo","OH",5090,108.5,"1864-06-16",2,35
 "J. C. Jordan","Brunswick","ME",1000,105,"1864-06-16",2,36
-"Chatham Bank ","New York","NY",200000,102,"1864-06-16",2,37
+"Chatham Bank","New York","NY",200000,102,"1864-06-16",2,37
 "Thomas Brande","Elkhorn","WI",600,100.5,"1864-06-16",2,38
-"P. Gibson   ","Baltimore","MD",4000,106.6,"1864-06-16",2,39
-"P. Gibson ","Baltimore","MD",50000,105,"1864-06-16",2,40
-"Franklin Reed ","Bath","ME",5000,100.7,"1864-06-16",2,41
+"P. Gibson","Baltimore","MD",4000,106.6,"1864-06-16",2,39
+"P. Gibson","Baltimore","MD",50000,105,"1864-06-16",2,40
+"Franklin Reed","Bath","ME",5000,100.7,"1864-06-16",2,41
 "S. M. Shedd","Oberlin","OH",3000,104,"1864-06-16",2,42
 "Hershman & Gorman, Central Bank,","Dayton","OH",20000,106,"1864-06-16",2,43
 "Hershman & Gorman, Central Bank,","Dayton","OH",20000,106.5,"1864-06-16",2,44
 "Hershman & Gorman, Central Bank,","Dayton","OH",20000,107,"1864-06-16",2,45
-"William R. Frost  ","Boston","MA",10000,106,"1864-06-16",2,46
+"William R. Frost","Boston","MA",10000,106,"1864-06-16",2,46
 "J. K. Hall, Cashier for Granite Bank","Augusta","ME",16000,104,"1864-06-16",2,47
-"W. B. Shaw","Washington ","DC",2500,104.5,"1864-06-16",2,48
-"W. B. Shaw","Washington ","DC",2500,105,"1864-06-16",2,49
+"W. B. Shaw","Washington","DC",2500,104.5,"1864-06-16",2,48
+"W. B. Shaw","Washington","DC",2500,105,"1864-06-16",2,49
 "Charles R. Pise","Boston","MA",5000,105,"1864-06-16",2,50
 "R. L. & A. Stuart","New York","NY",60000,105,"1864-06-16",2,51
 "Charles H. Dodge","Boston","MA",3000,106,"1864-06-16",2,52
-"Edward C. Jones","New Bedford    ","MA",56000,106,"1864-06-16",2,53
+"Edward C. Jones","New Bedford","MA",56000,106,"1864-06-16",2,53
 "Second National Bank","Peoria","IL",30000,108.5,"1864-06-16",2,54
 "C. F. Hillyer, President Charter Oak Bank","Hartford","CT",30000,106.1,"1864-06-16",2,55
 "C. F. Hillyer, President Charter Oak Bank","Hartford","CT",50000,105.25,"1864-06-16",2,56
-"Jame E. Froiseth","Washington ","DC",800,105,"1864-06-16",2,57
+"Jame E. Froiseth","Washington","DC",800,105,"1864-06-16",2,57
 "Roswell S. Burroughs","Albion","NY",50000,105,"1864-06-16",2,58
 "Roswell S. Burroughs","Albion","NY",20000,104,"1864-06-16",2,59
 "Roswell S. Burroughs","Albion","NY",20000,109.5,"1864-06-16",2,60
 "Roswell S. Burroughs","Albion","NY",20000,102.56,"1864-06-16",2,61
 "Lathrop & Mott","New York","NY",3000,105,"1864-06-16",2,62
-"G. C. Beckwith ","Cambridge","MA",5000,104,"1864-06-16",2,63
-"G. C. Beckwith ","Cambridge","MA",5009,105,"1864-06-16",2,64
-"G. C. Beckwith ","Cambridge","MA",5990,106,"1864-06-16",2,65
-"Eudicatt King","Washington ","DC",4000,106,"1864-06-16",2,66
-"Eudicatt King","Washington ","DC",4000,105.5,"1864-06-16",2,67
+"G. C. Beckwith","Cambridge","MA",5000,104,"1864-06-16",2,63
+"G. C. Beckwith","Cambridge","MA",5009,105,"1864-06-16",2,64
+"G. C. Beckwith","Cambridge","MA",5990,106,"1864-06-16",2,65
+"Eudicatt King","Washington","DC",4000,106,"1864-06-16",2,66
+"Eudicatt King","Washington","DC",4000,105.5,"1864-06-16",2,67
 "Franklin Haven","Boston","MA",60000,105,"1864-06-16",2,68
 "Gilman Currier","Boston","MA",10000,105,"1864-06-16",2,69
 "Gilman Currier","Boston","MA",5000,105.25,"1864-06-16",2,70
@@ -78,7 +78,7 @@
 "Gilman Currier","Boston","MA",4000,107,"1864-06-16",2,77
 "Rev. R. J. Adams","Wallingford","CT",500,103.9,"1864-06-16",2,78
 "James H. C. Bool","Memphis","TN",10000,101,"1864-06-16",2,79
-"Thomas J. Abbott","Washington ","DC",2000,102,"1864-06-16",2,80
+"Thomas J. Abbott","Washington","DC",2000,102,"1864-06-16",2,80
 "B. G. Gayrette","Millbury","MA",500,109,"1864-06-16",2,81
 "F. W. Kellogg. M.C.",,"MI",2000,103,"1864-06-16",2,82
 "Bartlett Doe","Boston","MA",96000,105,"1864-06-16",2,83
@@ -116,14 +116,14 @@
 "Ninth National Bank","New York","NY",100000,105.5,"1864-06-16",2,115
 "Ninth National Bank","New York","NY",100000,106,"1864-06-16",2,116
 "Ninth National Bank","New York","NY",100000,106.6,"1864-06-16",2,117
-"E. S. S. Rouse   ","Mount Vernon","OH",1300,116,"1864-06-16",2,118
+"E. S. S. Rouse","Mount Vernon","OH",1300,116,"1864-06-16",2,118
 "First National Bank","Pittsburgh","PA",20000,100,"1864-06-16",2,119
 "First National Bank","Pittsburgh","PA",20000,101.5,"1864-06-16",2,120
 "First National Bank","Pittsburgh","PA",20000,102.5,"1864-06-16",2,121
 "First National Bank","Pittsburgh","PA",20000,103,"1864-06-16",2,122
 "First National Bank","Pittsburgh","PA",20600,104,"1864-06-16",2,123
 "First National Bank","Pittsburgh","PA",10000,105,"1864-06-16",2,124
-"Jeremiah Rogers","Washington ","DC",100,104,"1864-06-16",2,125
+"Jeremiah Rogers","Washington","DC",100,104,"1864-06-16",2,125
 "John T. Huss","Tiffin","OH",2600,104,"1864-06-16",2,126
 "U. S. Trust Company","New York","NY",28000,104.42,"1864-06-16",2,127
 "U. S. Trust Company","New York","NY",322000,103.02,"1864-06-16",2,128
@@ -144,11 +144,11 @@
 "Thomas Harris","Success","NY",1000,104,"1864-06-16",2,143
 "Thomas Harris","Success","NY",1000,105,"1864-06-16",2,144
 "Thomas Harris","Success","NY",300,106,"1864-06-16",2,145
-"George F. Waasman    ",,,1000,100,"1864-06-16",2,146
+"George F. Waasman",,,1000,100,"1864-06-16",2,146
 "Ward, Campbell & Co.","New York","NY",1175000,102.25,"1864-06-16",2,147
 "Ward, Campbell & Co.","New York","NY",15000,102.25,"1864-06-16",2,148
 "Ward, Campbell & Co.","New York","NY",60000,101.5,"1864-06-16",2,149
-"Ward, Campbell & Co., N. Y. on behalf of Grant & Son New-York  ","New York","NY",250000,102.25,"1864-06-16",2,150
+"Ward, Campbell & Co., N. Y. on behalf of Grant & Son New-York","New York","NY",250000,102.25,"1864-06-16",2,150
 "Gilman. Son & Co.","New York","NY",20000,103.26,"1864-06-16",2,151
 "Gilman. Son & Co.","New York","NY",25000,103.62,"1864-06-16",2,152
 "Gilman. Son & Co.","New York","NY",25000,103.76,"1864-06-16",2,153
@@ -158,19 +158,19 @@
 "Mutual Ben, Life Insurance Co.",,"NJ",50000,104.15,"1864-06-16",2,157
 "Mutual Ben, Life Insurance Co.",,"NJ",30000,104.65,"1864-06-16",2,158
 "Mutual Ben, Life Insurance Co.",,"NJ",50000,105.15,"1864-06-16",2,159
-"Mrs. Susan Wells   ","New York","NY",1700,105,"1864-06-16",2,160
+"Mrs. Susan Wells","New York","NY",1700,105,"1864-06-16",2,160
 "Colgate & Hoffman","New York","NY",106000,104,"1864-06-16",2,161
 "Colgate & Hoffman","New York","NY",25000,104.01,"1864-06-16",2,162
 "Colgate & Hoffman","New York","NY",150000,103.51,"1864-06-16",2,163
 "Colgate & Hoffman","New York","NY",125000,103.01,"1864-06-16",2,164
 "Colgate & Hoffman","New York","NY",100000,102.5,"1864-06-16",2,165
 "Colgate & Hoffman","New York","NY",206000,101,"1864-06-16",2,166
-"B. F. Romain ","New York","NY",5000,104.05,"1864-06-16",2,167
-"B. F. Romain ","New York","NY",5000,104.55,"1864-06-16",2,168
-"B. F. Romain ","New York","NY",5000,105.05,"1864-06-16",2,169
-"B. F. Romain ","New York","NY",5000,105.55,"1864-06-16",2,170
+"B. F. Romain","New York","NY",5000,104.05,"1864-06-16",2,167
+"B. F. Romain","New York","NY",5000,104.55,"1864-06-16",2,168
+"B. F. Romain","New York","NY",5000,105.05,"1864-06-16",2,169
+"B. F. Romain","New York","NY",5000,105.55,"1864-06-16",2,170
 "William Perkins for W.H. Perkins","Buffalo","NY",100,105,"1864-06-16",2,171
-"James H. Mills ","Buffalo","NY",2100,103,"1864-06-16",2,172
+"James H. Mills","Buffalo","NY",2100,103,"1864-06-16",2,172
 "James W Kerr","Rochester","NY",1000,100,"1864-06-16",2,173
 "James W Kerr","Rochester","NY",1000,101,"1864-06-16",2,174
 "James W Kerr","Rochester","NY",1000,102,"1864-06-16",2,175
@@ -193,18 +193,18 @@
 "G. H. Forster","New York","NY",7000,103.04,"1864-06-16",2,192
 "G. H. Forster","New York","NY",7000,102.15,"1864-06-16",2,193
 "Charles P. Gulick","New York","NY",1000,105.02,"1864-06-16",3,1
-"Chatham Bank ","New York","NY",7000,101.04,"1864-06-16",3,2
-"Chatham Bank ","New York","NY",8000,102.14,"1864-06-16",3,3
-"Chatham Bank ","New York","NY",7000,102.84,"1864-06-16",3,4
-"Chatham Bank ","New York","NY",8000,103.14,"1864-06-16",3,5
-"Chatham Bank ","New York","NY",3000,105.5,"1864-06-16",3,6
+"Chatham Bank","New York","NY",7000,101.04,"1864-06-16",3,2
+"Chatham Bank","New York","NY",8000,102.14,"1864-06-16",3,3
+"Chatham Bank","New York","NY",7000,102.84,"1864-06-16",3,4
+"Chatham Bank","New York","NY",8000,103.14,"1864-06-16",3,5
+"Chatham Bank","New York","NY",3000,105.5,"1864-06-16",3,6
 "E. Whitehouse, Son & Morrison","New York","NY",25000,104.16,"1864-06-16",3,7
 "E. Whitehouse, Son & Morrison","New York","NY",200000,104.05,"1864-06-16",3,8
 "E. Whitehouse, Son & Morrison","New York","NY",15000,103.7,"1864-06-16",3,9
 "E. Whitehouse, Son & Morrison","New York","NY",10000,103,"1864-06-16",3,10
 "E. Whitehouse, Son & Morrison","New York","NY",5000,102.5,"1864-06-16",3,11
 "Sixth National Bank","New York","NY",100000,106,"1864-06-16",3,12
-"William D. Murphy   ","New York","NY",5000,100,"1864-06-16",3,13
+"William D. Murphy","New York","NY",5000,100,"1864-06-16",3,13
 "Commander W. A. Parker, U.S.N",,,500,103,"1864-06-16",3,14
 "William H. Perry","New York","NY",500,105.5,"1864-06-16",3,15
 "Lockwood & Co",,,10000,104,"1864-06-16",3,16
@@ -212,25 +212,25 @@
 "Lockwood & Co",,,30000,104.35,"1864-06-16",3,18
 "Lockwood & Co",,,30000,104.76,"1864-06-16",3,19
 "William & John O'Brien","New York","NY",20000,106.53,"1864-06-16",3,20
-"Eli White    ","New York","NY",2500,103,"1864-06-16",3,21
+"Eli White","New York","NY",2500,103,"1864-06-16",3,21
 "Arctic Fire Insurance Co.","New York","NY",25000,103.26,"1864-06-16",3,22
 "Arctic Fire Insurance Co.","New York","NY",35000,103.56,"1864-06-16",3,23
 "Arctic Fire Insurance Co.","New York","NY",25000,105.16,"1864-06-16",3,24
 "Arctic Fire Insurance Co.","New York","NY",25000,105.3,"1864-06-16",3,25
 "Arctic Fire Insurance Co.","New York","NY",50000,102,"1864-06-16",3,26
-"Philip Spies & Co.    ","New York","NY",50000,103.05,"1864-06-16",3,27
-"Philip Spies & Co.    ","New York","NY",50000,103.65,"1864-06-16",3,28
-"Philip Spies & Co.    ","New York","NY",100000,104.08,"1864-06-16",3,29
-"Philip Spies & Co.    ","New York","NY",100000,104.32,"1864-06-16",3,30
-"Philip Spies & Co.    ","New York","NY",50000,104.77,"1864-06-16",3,31
-"Philip Spies & Co.    ","New York","NY",50000,105.33,"1864-06-16",3,32
-"Philip Spies & Co.    ","New York","NY",50000,105.63,"1864-06-16",3,33
-"Philip Spies & Co.    ","New York","NY",50000,106.06,"1864-06-16",3,34
-"Philip Spies & Co.    ","New York","NY",50000,106.63,"1864-06-16",3,35
-"Philip Spies & Co.    ","New York","NY",40000,105.63,"1864-06-16",3,36
-"Philip Spies & Co.    ","New York","NY",20000,106.27,"1864-06-16",3,37
-"Philip Spies & Co.    ","New York","NY",20000,106.48,"1864-06-16",3,38
-"Philip Spies & Co.    ","New York","NY",20000,106.83,"1864-06-16",3,39
+"Philip Spies & Co.","New York","NY",50000,103.05,"1864-06-16",3,27
+"Philip Spies & Co.","New York","NY",50000,103.65,"1864-06-16",3,28
+"Philip Spies & Co.","New York","NY",100000,104.08,"1864-06-16",3,29
+"Philip Spies & Co.","New York","NY",100000,104.32,"1864-06-16",3,30
+"Philip Spies & Co.","New York","NY",50000,104.77,"1864-06-16",3,31
+"Philip Spies & Co.","New York","NY",50000,105.33,"1864-06-16",3,32
+"Philip Spies & Co.","New York","NY",50000,105.63,"1864-06-16",3,33
+"Philip Spies & Co.","New York","NY",50000,106.06,"1864-06-16",3,34
+"Philip Spies & Co.","New York","NY",50000,106.63,"1864-06-16",3,35
+"Philip Spies & Co.","New York","NY",40000,105.63,"1864-06-16",3,36
+"Philip Spies & Co.","New York","NY",20000,106.27,"1864-06-16",3,37
+"Philip Spies & Co.","New York","NY",20000,106.48,"1864-06-16",3,38
+"Philip Spies & Co.","New York","NY",20000,106.83,"1864-06-16",3,39
 "East River Saving Institution","New York","NY",10000,104.8,"1864-06-16",3,40
 "East River Saving Institution","New York","NY",20000,105.05,"1864-06-16",3,41
 "East River Saving Institution","New York","NY",20000,105.1,"1864-06-16",3,42
@@ -272,34 +272,34 @@
 "Howes & Macy","New York","NY",10000,105.6,"1864-06-16",3,78
 "Howes & Macy","New York","NY",500,106.1,"1864-06-16",3,79
 "First National Bank","Pomeroy","OH",50000,100,"1864-06-16",3,80
-"T. J. Lake","Washington ","DC",4000,104,"1864-06-16",3,81
-"S. H. Platt","Washington ","DC",2000,107.01,"1864-06-16",3,82
+"T. J. Lake","Washington","DC",4000,104,"1864-06-16",3,81
+"S. H. Platt","Washington","DC",2000,107.01,"1864-06-16",3,82
 "Manhattan Saving Institution","New York","NY",50000,103.5,"1864-06-16",3,83
 "Manhattan Saving Institution","New York","NY",50000,103.5,"1864-06-16",3,84
 "Manhattan Saving Institution","New York","NY",50000,104,"1864-06-16",3,85
 "A. S. Tritt, Cashier","Fall River","MA",20000,104.55,"1864-06-16",3,86
-"Jay Cook & Co. for Mellen & Wood   ","Washington ","DC",40000,102,"1864-06-16",3,87
-"Jay Cook & Co. for Mellen & Wood   ","Washington ","DC",40000,100,"1864-06-16",3,88
-"Jay Cook & Co. for Clark, Dodge & Co    ","Washington ","DC",100000,105.25,"1864-06-16",3,89
-"Jay, Cook & Co.     ","Philadelphia","PA",2000000,104.005,"1864-06-16",3,90
-"Jay, Cook & Co.     ","Philadelphia","PA",500000,103.875,"1864-06-16",3,91
-"Jay, Cook & Co.     ","Philadelphia","PA",500000,104.12,"1864-06-16",3,92
-"Jay, Cook & Co.     ","Philadelphia","PA",500000,103.95,"1864-06-16",3,93
-"Jay, Cook & Co.     ","Philadelphia","PA",50000,104.25,"1864-06-16",3,94
-"Jay, Cook & Co.     ","Washington ","DC",125000,105.01,"1864-06-16",3,95
-"Jay, Cook & Co.     ","Washington ","DC",250000,105,"1864-06-16",3,96
-"Jay, Cook & Co.     ","Washington ","DC",5000,105.5,"1864-06-16",3,97
-"Jay, Cook & Co.     ","Washington ","DC",45000,105.5,"1864-06-16",3,98
-"Jay, Cook & Co.     ","Washington ","DC",25000,105.5,"1864-06-16",3,99
-"Jay, Cook & Co.     ","Washington ","DC",250000,105,"1864-06-16",3,100
-"Jay, Cook & Co.     ","Washington ","DC",70000,105.5,"1864-06-16",3,101
+"Jay Cook & Co. for Mellen & Wood","Washington","DC",40000,102,"1864-06-16",3,87
+"Jay Cook & Co. for Mellen & Wood","Washington","DC",40000,100,"1864-06-16",3,88
+"Jay Cook & Co. for Clark, Dodge & Co","Washington","DC",100000,105.25,"1864-06-16",3,89
+"Jay, Cook & Co.","Philadelphia","PA",2000000,104.005,"1864-06-16",3,90
+"Jay, Cook & Co.","Philadelphia","PA",500000,103.875,"1864-06-16",3,91
+"Jay, Cook & Co.","Philadelphia","PA",500000,104.12,"1864-06-16",3,92
+"Jay, Cook & Co.","Philadelphia","PA",500000,103.95,"1864-06-16",3,93
+"Jay, Cook & Co.","Philadelphia","PA",50000,104.25,"1864-06-16",3,94
+"Jay, Cook & Co.","Washington","DC",125000,105.01,"1864-06-16",3,95
+"Jay, Cook & Co.","Washington","DC",250000,105,"1864-06-16",3,96
+"Jay, Cook & Co.","Washington","DC",5000,105.5,"1864-06-16",3,97
+"Jay, Cook & Co.","Washington","DC",45000,105.5,"1864-06-16",3,98
+"Jay, Cook & Co.","Washington","DC",25000,105.5,"1864-06-16",3,99
+"Jay, Cook & Co.","Washington","DC",250000,105,"1864-06-16",3,100
+"Jay, Cook & Co.","Washington","DC",70000,105.5,"1864-06-16",3,101
 "Varmelye & Co.","New York","NY",632000,104,"1864-06-16",3,102
 "Varmelye & Co.","New York","NY",150000,103,"1864-06-16",3,103
 "Varmelye & Co.","New York","NY",100000,105.5,"1864-06-16",3,104
 "Varmelye & Co.","New York","NY",40000,105,"1864-06-16",3,105
 "Varmelye & Co.","New York","NY",45000,109,"1864-06-16",3,106
 "Varmelye & Co.","New York","NY",100000,103,"1864-06-16",3,107
-"Adam S. Hill","Washington ","DC",1000,105,"1864-06-16",3,108
+"Adam S. Hill","Washington","DC",1000,105,"1864-06-16",3,108
 "Mary Talcott","Hartford","CT",1000,100.5,"1864-06-16",3,109
 "State Bank","Troy","NY",10000,106.67,"1864-06-16",3,110
 "State Bank","Troy","NY",5000,106.3,"1864-06-16",3,111
@@ -323,7 +323,7 @@
 "Courtney & Mills","New York","NY",25000,103.5,"1864-06-16",3,129
 "Courtney & Mills","New York","NY",25000,103.9,"1864-06-16",3,130
 "Courtney & Mills","New York","NY",25000,102.5,"1864-06-16",3,131
-"Bonnd & Bailey  ","New York","NY",22000,105.1,"1864-06-16",3,132
+"Bonnd & Bailey","New York","NY",22000,105.1,"1864-06-16",3,132
 "S. S. Riker","New York","NY",25000,105.6,"1864-06-16",3,133
 "Underhill & Haven","New York","NY",5000,103.3,"1864-06-16",3,134
 "Underhill & Haven","New York","NY",5000,104.2,"1864-06-16",3,135
@@ -372,14 +372,14 @@
 "Culver Penn & Co.","New York","NY",200000,101.17,"1864-06-16",3,178
 "Culver Penn & Co.","New York","NY",100000,104.21,"1864-06-16",3,179
 "Culver Penn & Co.","New York","NY",100060,104.27,"1864-06-16",3,180
-"First National Bank","Washington ","DC",30000,105.5,"1864-06-16",3,181
-"First National Bank","Washington ","DC",50000,104,"1864-06-16",3,182
-"First National Bank","Washington ","DC",1000,106,"1864-06-16",3,183
-"First National Bank","Washington ","DC",1000,106.5,"1864-06-16",3,184
-"First National Bank","Washington ","DC",100600,104,"1864-06-16",3,185
-"First National Bank","Washington ","DC",10000,106,"1864-06-16",3,186
-"First National Bank","Washington ","DC",130000,104,"1864-06-16",3,187
-"First National Bank","Washington ","DC",100000,100,"1864-06-16",3,188
+"First National Bank","Washington","DC",30000,105.5,"1864-06-16",3,181
+"First National Bank","Washington","DC",50000,104,"1864-06-16",3,182
+"First National Bank","Washington","DC",1000,106,"1864-06-16",3,183
+"First National Bank","Washington","DC",1000,106.5,"1864-06-16",3,184
+"First National Bank","Washington","DC",100600,104,"1864-06-16",3,185
+"First National Bank","Washington","DC",10000,106,"1864-06-16",3,186
+"First National Bank","Washington","DC",130000,104,"1864-06-16",3,187
+"First National Bank","Washington","DC",100000,100,"1864-06-16",3,188
 "J. N. Pearce, Jr., Cashier","Lowell","MA",20000,105.625,"1864-06-16",3,189
 "J. N. Pearce, Jr., Cashier","Lowell","MA",20000,106,"1864-06-16",3,190
 "J. N. Pearce, Jr., Cashier","Lowell","MA",25000,106.063,"1864-06-16",4,1
@@ -402,7 +402,7 @@
 "Tradesmen's Bank","New York","NY",50000,106.05,"1864-06-16",4,18
 "First National Bank","Lowell","MA",30000,106,"1864-06-16",4,19
 "Jedadiah P. Sill, President","Cooperstown","NY",25000,106,"1864-06-16",4,20
-"St. Louis Domicile Savings and Loan Association    ","St. Louis","MO",5000,107,"1864-06-16",4,21
+"St. Louis Domicile Savings and Loan Association","St. Louis","MO",5000,107,"1864-06-16",4,21
 "H. Juerk","St. Louis","MO",1000,106,"1864-06-16",4,22
 "B. P. Smith","Pilot Knob","MO",5000,106,"1864-06-16",4,23
 "R. Hinckley","Belleville","IL",20000,100,"1864-06-16",4,24
@@ -431,14 +431,14 @@
 "J. & S. Ferguson","New York","NY",10000,105.75,"1864-06-16",4,47
 "J. & S. Ferguson","New York","NY",10000,106,"1864-06-16",4,48
 "Ralph Clark, Guardian","New York","NY",30000,105.11,"1864-06-16",4,49
-"W. D. Beliare & Co    ",,,20000,102.5,"1864-06-16",4,50
-"W. D. Beliare & Co    ",,,35000,103,"1864-06-16",4,51
-"W. D. Beliare & Co    ",,,25000,103,"1864-06-16",4,52
-"W. D. Beliare & Co    ",,,15000,104,"1864-06-16",4,53
-"W. D. Beliare & Co    ",,,5000,104.35,"1864-06-16",4,54
-"W. D. Beliare & Co    ",,,5000,104.5,"1864-06-16",4,55
-"W. D. Beliare & Co    ",,,5000,104.5,"1864-06-16",4,56
-"W. D. Beliare & Co    ",,,10000,103,"1864-06-16",4,57
+"W. D. Beliare & Co",,,20000,102.5,"1864-06-16",4,50
+"W. D. Beliare & Co",,,35000,103,"1864-06-16",4,51
+"W. D. Beliare & Co",,,25000,103,"1864-06-16",4,52
+"W. D. Beliare & Co",,,15000,104,"1864-06-16",4,53
+"W. D. Beliare & Co",,,5000,104.35,"1864-06-16",4,54
+"W. D. Beliare & Co",,,5000,104.5,"1864-06-16",4,55
+"W. D. Beliare & Co",,,5000,104.5,"1864-06-16",4,56
+"W. D. Beliare & Co",,,10000,103,"1864-06-16",4,57
 "Roswell Hascall","New York","NY",10000,106,"1864-06-16",4,58
 "Thomas S. Beals",,"NY",50000,105,"1864-06-16",4,59
 "Brothers McKun","Baltimore","MD",25000,105.25,"1864-06-16",4,60
@@ -459,8 +459,8 @@
 "E. J. Brochett","New York","NY",500,104.01,"1864-06-16",4,75
 "E. J. Brochett","New York","NY",500,103.67,"1864-06-16",4,76
 "E. J. Brochett","New York","NY",500,103.7,"1864-06-16",4,77
-"Cornelius Fogarty    ",,,5000,105,"1864-06-16",4,78
-"Cornelius Fogarty    ",,,5000,106,"1864-06-16",4,79
+"Cornelius Fogarty",,,5000,105,"1864-06-16",4,78
+"Cornelius Fogarty",,,5000,106,"1864-06-16",4,79
 "Henry Shaw","New York","NY",1500,105,"1864-06-16",4,80
 "Edward Helwig","New York","NY",500,105,"1864-06-16",4,81
 "C. Hayward","Attleborough","MA",50000,103,"1864-06-16",4,82
@@ -527,7 +527,7 @@
 "Commellia & Tillinghast","New York","NY",5000,104.25,"1864-06-16",4,143
 "Commellia & Tillinghast","New York","NY",6000,105.25,"1864-06-16",4,144
 "H. E. Tucker","St. Albans","VT",150,106,"1864-06-16",4,145
-"W. H. Crosby","Washington ","DC",500,100,"1864-06-16",4,146
+"W. H. Crosby","Washington","DC",500,100,"1864-06-16",4,146
 "J. H. Kimball, Treasurer","Bath","ME",50000,105,"1864-06-16",4,147
 "Joseph B. Dobbins","Trenton","NJ",500,106,"1864-06-16",4,148
 "Otis Daniels","Boston","MA",10000,105.05,"1864-06-16",4,149
@@ -574,13 +574,13 @@
 "First National Bank","Warwick","NY",5000,104.73,"1864-06-16",4,190
 "First National Bank","Warwick","NY",5900,105,"1864-06-16",4,191
 "First National Bank","Warwick","NY",5000,106,"1864-06-16",4,192
-"Third National Bank ","Boston","MA",25000,104.75,"1864-06-16",4,193
-"Third National Bank ","Boston","MA",65600,105,"1864-06-16",4,194
-"Third National Bank ","Boston","MA",25000,105.25,"1864-06-16",4,195
-"Third National Bank ","Boston","MA",85000,105.5,"1864-06-16",4,196
-"Third National Bank ","Boston","MA",71000,108,"1864-06-16",4,197
-"Third National Bank ","Boston","MA",15000,106.25,"1864-06-16",4,198
-"Third National Bank ","Boston","MA",60000,106.5,"1864-06-16",4,199
+"Third National Bank","Boston","MA",25000,104.75,"1864-06-16",4,193
+"Third National Bank","Boston","MA",65600,105,"1864-06-16",4,194
+"Third National Bank","Boston","MA",25000,105.25,"1864-06-16",4,195
+"Third National Bank","Boston","MA",85000,105.5,"1864-06-16",4,196
+"Third National Bank","Boston","MA",71000,108,"1864-06-16",4,197
+"Third National Bank","Boston","MA",15000,106.25,"1864-06-16",4,198
+"Third National Bank","Boston","MA",60000,106.5,"1864-06-16",4,199
 "William Miller","Indianapolis","IN",1500,106,"1864-06-16",4,200
 "T. C. Nesmith","Washoe",,560,104,"1864-06-16",4,201
 "Second National Bank","New York","NY",25600,103,"1864-06-16",4,202
@@ -628,8 +628,8 @@
 "Lockwood & Co.","New York","NY",10000,103.8,"1864-06-16",1,39
 "Lockwood & Co.","New York","NY",30000,106.05,"1864-06-16",1,40
 "First National Bank","Syracuse","NY",55000,104,"1864-06-16",1,41
-"Third National Bank ","Syracuse","NY",65000,104,"1864-06-16",1,42
-"Rittonhouse, Faut & Co.","Washington ","DC",300000,104,"1864-06-16",1,43
+"Third National Bank","Syracuse","NY",65000,104,"1864-06-16",1,42
+"Rittonhouse, Faut & Co.","Washington","DC",300000,104,"1864-06-16",1,43
 "The Germania Fire Insurance Co.","New York","NY",20000,104.5,"1864-06-16",1,44
 "The Germania Fire Insurance Co.","New York","NY",10000,104,"1864-06-16",1,45
 "First National Bank","Troy","OH",30000,108,"1864-06-16",1,46
@@ -745,7 +745,7 @@
 "Third National Bank","Cincinnati","OH",100000,106,"1864-06-19",1,53
 "Failis, Young & Co","Cincinnati","OH",7000,100,"1864-06-19",1,54
 "Failis, Young & Co","Cincinnati","OH",15000,105,"1864-06-19",1,55
-"L. S. Lawrence & Co. ","New York","NY",2000,105.5,"1864-06-19",1,56
+"L. S. Lawrence & Co.","New York","NY",2000,105.5,"1864-06-19",1,56
 "Second National Bank","Chicago","IL",25000,106.25,"1864-06-19",1,57
 "William Simpson","Cincinnati","OH",1000,108,"1864-06-19",1,58
 "W. H. Hubbard & Co.","New York","NY",5000,104.55,"1864-06-19",1,59
@@ -770,7 +770,7 @@
 "Henry Randall","New York","NY",6000,106,"1864-06-19",1,78
 "Dehon, Clark & Bridges","New York","NY",1000,106,"1864-06-19",1,79
 "Dehon, Clark & Bridges","New York","NY",25000,100,"1864-06-19",1,80
-"A. Brooks, Jr. ","Brunswick","ME",5000,107,"1864-06-19",1,81
+"A. Brooks, Jr.","Brunswick","ME",5000,107,"1864-06-19",1,81
 "Walden & Willard","New York","NY",10000,108,"1864-06-19",1,82
 "Walden & Willard","New York","NY",10000,104,"1864-06-19",1,83
 "Walden & Willard","New York","NY",10000,105,"1864-06-19",1,84
@@ -856,11 +856,11 @@
 "J. O. Fowler","New York","NY",5000,102.71,"1864-06-19",1,164
 "J. O. Fowler","New York","NY",5000,102.81,"1864-06-19",1,165
 "J. O. Fowler","New York","NY",5000,108.01,"1864-06-19",1,166
-"Atlantic Savings Bank ","New York","NY",20000,106,"1864-06-19",1,167
-"Atlantic Savings Bank ","New York","NY",20000,106.25,"1864-06-19",1,168
-"Atlantic Savings Bank ","New York","NY",20000,106.75,"1864-06-19",1,169
-"Atlantic Savings Bank ","New York","NY",20000,107,"1864-06-19",1,170
-"Atlantic Savings Bank ","New York","NY",20000,107.5,"1864-06-19",1,171
+"Atlantic Savings Bank","New York","NY",20000,106,"1864-06-19",1,167
+"Atlantic Savings Bank","New York","NY",20000,106.25,"1864-06-19",1,168
+"Atlantic Savings Bank","New York","NY",20000,106.75,"1864-06-19",1,169
+"Atlantic Savings Bank","New York","NY",20000,107,"1864-06-19",1,170
+"Atlantic Savings Bank","New York","NY",20000,107.5,"1864-06-19",1,171
 "J. P. Cooper","New York","NY",1000,106,"1864-06-19",1,172
 "J. P. Cooper","New York","NY",1000,106.5,"1864-06-19",1,173
 "J. P. Cooper","New York","NY",1000,106.69,"1864-06-19",1,174
@@ -1061,10 +1061,10 @@
 "S. Sterry Smith","Providence","RI",10000,105,"1864-06-19",2,151
 "Truman Beckwith","Providence","RI",20000,105,"1864-06-19",2,152
 "Mechanics' Bank  of New Bedford","New Bedford","MA",55000,105.5,"1864-06-19",2,153
-"Boston National Bank    ","Boston","MA",100000,105,"1864-06-19",2,154
-"Boston National Bank    ","Boston","MA",50000,104.25,"1864-06-19",2,155
-"Boston National Bank    ","Boston","MA",50000,104.5,"1864-06-19",2,156
-"Boston National Bank    ","Boston","MA",25000,104,"1864-06-19",2,157
+"Boston National Bank","Boston","MA",100000,105,"1864-06-19",2,154
+"Boston National Bank","Boston","MA",50000,104.25,"1864-06-19",2,155
+"Boston National Bank","Boston","MA",50000,104.5,"1864-06-19",2,156
+"Boston National Bank","Boston","MA",25000,104,"1864-06-19",2,157
 "Benkard & Hutton","New York","NY",50000,103.5,"1864-06-19",2,158
 "Benkard & Hutton","New York","NY",50000,103.25,"1864-06-19",2,159
 "Benkard & Hutton","New York","NY",40000,104,"1864-06-19",2,160
@@ -1085,11 +1085,11 @@
 "Rufus K. McHarg","New York","NY",5000,100.51,"1864-06-19",2,175
 "Rufus K. McHarg","New York","NY",5000,101.1,"1864-06-19",2,176
 "Rufus K. McHarg","New York","NY",5000,101.51,"1864-06-19",2,177
-"Rochester Savings' Bank    ","Rochester","NY",20000,105,"1864-06-19",2,178
-"Rochester Savings' Bank    ","Rochester","NY",20000,105.25,"1864-06-19",2,179
-"Rochester Savings' Bank    ","Rochester","NY",20000,105.5,"1864-06-19",2,180
-"Rochester Savings' Bank    ","Rochester","NY",20000,105.75,"1864-06-19",2,181
-"Rochester Savings' Bank    ","Rochester","NY",20000,106,"1864-06-19",2,182
+"Rochester Savings' Bank","Rochester","NY",20000,105,"1864-06-19",2,178
+"Rochester Savings' Bank","Rochester","NY",20000,105.25,"1864-06-19",2,179
+"Rochester Savings' Bank","Rochester","NY",20000,105.5,"1864-06-19",2,180
+"Rochester Savings' Bank","Rochester","NY",20000,105.75,"1864-06-19",2,181
+"Rochester Savings' Bank","Rochester","NY",20000,106,"1864-06-19",2,182
 "Bank of Fort Edward","Fort Edward","NY",50000,100.8,"1864-06-19",2,183
 "John Nurse","New York","NY",400,102,"1864-06-19",2,184
 "First National Bank","Brunswick","ME",25000,106,"1864-06-19",2,185
@@ -1197,13 +1197,13 @@
 "First National Bank","Lancaster","PA",5000,106.5,"1864-06-19",3,73
 "R. Woods","Cincinnati","OH",10000,100,"1864-06-19",3,74
 "First National Bank","Cuyohoga Falls","OH",75000,107,"1864-06-19",3,75
-"Gebhard Insurance Company    ","New York","NY",5000,104,"1864-06-19",3,76
-"Gebhard Insurance Company    ","New York","NY",5000,104.25,"1864-06-19",3,77
-"Gebhard Insurance Company    ","New York","NY",5000,104.5,"1864-06-19",3,78
-"Gebhard Insurance Company    ","New York","NY",5000,104.75,"1864-06-19",3,79
-"Gebhard Insurance Company    ","New York","NY",5000,105,"1864-06-19",3,80
-"Bank of Commerce    ",,,500000,105,"1864-06-19",3,81
-"Bowery Sayings Bank    ",,,500000,105.15,"1864-06-19",3,82
+"Gebhard Insurance Company","New York","NY",5000,104,"1864-06-19",3,76
+"Gebhard Insurance Company","New York","NY",5000,104.25,"1864-06-19",3,77
+"Gebhard Insurance Company","New York","NY",5000,104.5,"1864-06-19",3,78
+"Gebhard Insurance Company","New York","NY",5000,104.75,"1864-06-19",3,79
+"Gebhard Insurance Company","New York","NY",5000,105,"1864-06-19",3,80
+"Bank of Commerce",,,500000,105,"1864-06-19",3,81
+"Bowery Sayings Bank",,,500000,105.15,"1864-06-19",3,82
 "C. C. Baccus","New York","NY",2500,108.2,"1864-06-19",3,83
 "J. N. Perkins & Co.","New York","NY",25000,105.5,"1864-06-19",3,84
 "J. N. Perkins & Co.","New York","NY",25000,106,"1864-06-19",3,85
@@ -1231,12 +1231,12 @@
 "J. S. Robbins & Son","New York","NY",5000,106,"1864-06-19",3,107
 "J. S. Robbins & Son","New York","NY",15000,105,"1864-06-19",3,108
 "J. S. Robbins & Son","New York","NY",25000,104,"1864-06-19",3,109
-"Gebhard Insurance Company    ",,,5000,103,"1864-06-19",3,110
+"Gebhard Insurance Company",,,5000,103,"1864-06-19",3,110
 "S. C. Fisch","Hawley","PA",1500,105.5,"1864-06-19",3,111
 "W. F. Nisbit","New York","NY",10000,104,"1864-06-19",3,112
 "Jennings Piggolt","Washington","DC",1000,108,"1864-06-19",3,113
 "F. Buell","Washington","DC",400,102,"1864-06-19",3,114
-"James Baxter, Boston    ","Boston","MA",100,110,"1864-06-19",3,115
+"James Baxter, Boston","Boston","MA",100,110,"1864-06-19",3,115
 "R. B. Witt","Washington","DC",5000,105.5,"1864-06-19",3,116
 "James Baxter","Boston","MA",1000,106,"1864-06-19",3,117
 "C. H. Coy","Toledo","OH",5000,102,"1864-06-19",3,118
@@ -1323,15 +1323,15 @@
 "C. P. Buckingham","New York","NY",5000,105,"1864-06-19",3,199
 "First National Bank","Lockport","NY",50000,105.5,"1864-06-19",3,200
 "Henry G. Burger","New York","NY",500,100,"1864-06-19",3,201
-"F. B. Hastings    ","New York","NY",5000,104.25,"1864-06-19",3,202
-"F. B. Hastings    ","New York","NY",5000,104,"1864-06-19",3,203
-"F. B. Hastings    ","New York","NY",5000,104.5,"1864-06-19",3,204
-"F. B. Hastings    ","New York","NY",6000,104.75,"1864-06-19",3,205
-"F. B. Hastings    ","New York","NY",10000,105,"1864-06-19",3,206
-"F. B. Hastings    ","New York","NY",5000,105.75,"1864-06-19",3,207
-"F. B. Hastings    ","New York","NY",5000,105.5,"1864-06-19",3,208
-"F. B. Hastings    ","New York","NY",5000,105.25,"1864-06-19",3,209
-"F. B. Hastings    ","New York","NY",5000,106,"1864-06-19",3,210
+"F. B. Hastings","New York","NY",5000,104.25,"1864-06-19",3,202
+"F. B. Hastings","New York","NY",5000,104,"1864-06-19",3,203
+"F. B. Hastings","New York","NY",5000,104.5,"1864-06-19",3,204
+"F. B. Hastings","New York","NY",6000,104.75,"1864-06-19",3,205
+"F. B. Hastings","New York","NY",10000,105,"1864-06-19",3,206
+"F. B. Hastings","New York","NY",5000,105.75,"1864-06-19",3,207
+"F. B. Hastings","New York","NY",5000,105.5,"1864-06-19",3,208
+"F. B. Hastings","New York","NY",5000,105.25,"1864-06-19",3,209
+"F. B. Hastings","New York","NY",5000,106,"1864-06-19",3,210
 "Elijah F. Hall","Weymouth","MA",5000,102,"1864-06-19",3,211
 "Elijah F. Hall","Weymouth","MA",5000,103,"1864-06-19",3,212
 "First National Bank","Lockport","NY",50000,105.17,"1864-06-19",3,213
@@ -1426,10 +1426,10 @@
 "Hanna, Hart & Co.","Pittsburgh","PA",3000,106,"1864-06-19",4,70
 "Hanna, Hart & Co.","Pittsburgh","PA",20000,107,"1864-06-19",4,71
 "Hanna, Hart & Co.","Pittsburgh","PA",21500,108,"1864-06-19",4,72
-"New-Haven Bank    ","New Haven","CT",5000,105.3,"1864-06-19",4,73
-"New-Haven Bank    ","New Haven","CT",5000,105.55,"1864-06-19",4,74
-"New-Haven Bank    ","New Haven","CT",5000,106,"1864-06-19",4,75
-"New-Haven Bank    ","New Haven","CT",5000,106.3,"1864-06-19",4,76
+"New-Haven Bank","New Haven","CT",5000,105.3,"1864-06-19",4,73
+"New-Haven Bank","New Haven","CT",5000,105.55,"1864-06-19",4,74
+"New-Haven Bank","New Haven","CT",5000,106,"1864-06-19",4,75
+"New-Haven Bank","New Haven","CT",5000,106.3,"1864-06-19",4,76
 "William B. Whitney","Madison","IN",20000,105,"1864-06-19",4,77
 "J. Culbertson, Jr.","Madison","IN",500,105,"1864-06-19",4,78
 "Charles W. S. Carson","Holden","MA",500,105,"1864-06-19",4,79
@@ -1451,7 +1451,7 @@
 "C. Allen","Cincinnati","OH",6000,105.125,"1864-06-19",4,95
 "J. Rawson","Cincinnati","OH",25000,107,"1864-06-19",4,96
 "Union Bank","Fall River","MA",20000,106,"1864-06-19",4,97
-"H. W. Stowell","South Reading ","MA",1000,102.5,"1864-06-19",4,98
+"H. W. Stowell","South Reading","MA",1000,102.5,"1864-06-19",4,98
 "J. Cheasbro","De Kalb","IL",4000,105,"1864-06-19",4,99
 "Mary Livingston","New York","NY",700,103,"1864-06-19",4,100
 "H. G. Shuttleworth","New York","NY",25000,102.61,"1864-06-19",4,101
@@ -1512,10 +1512,10 @@
 "Edward F. Pratt","Milwaukee","WI",4500,100,"1864-06-19",4,156
 "S. P. Warner","Chicago","IL",1000,106.5,"1864-06-19",4,157
 "S. P. Warner","Chicago","IL",1000,107.5,"1864-06-19",4,158
-"Fourth National Bank of Chicago    ","Chicago","IL",50000,102,"1864-06-19",4,159
-"Fourth National Bank of Chicago    ","Chicago","IL",25000,104,"1864-06-19",4,160
-"Fourth National Bank of Chicago    ","Chicago","IL",25000,105,"1864-06-19",4,161
-"Fourth National Bank of Chicago    ","Chicago","IL",25000,106,"1864-06-19",4,162
+"Fourth National Bank of Chicago","Chicago","IL",50000,102,"1864-06-19",4,159
+"Fourth National Bank of Chicago","Chicago","IL",25000,104,"1864-06-19",4,160
+"Fourth National Bank of Chicago","Chicago","IL",25000,105,"1864-06-19",4,161
+"Fourth National Bank of Chicago","Chicago","IL",25000,106,"1864-06-19",4,162
 "Caleb Chase","Boston","MA",20000,105.5,"1864-06-19",4,163
 "H. Wenzell","Boston","MA",50000,103,"1864-06-19",4,164
 "Asa Richardson","Morrell","WI",500,105.25,"1864-06-19",4,165
