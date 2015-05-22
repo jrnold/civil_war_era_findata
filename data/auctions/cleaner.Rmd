@@ -1,0 +1,104 @@
+---
+title: "Cleaner"
+author: "Jeffrey B. Arnold"
+date: "05/22/2015"
+output: html_document
+---
+
+```{r}
+library("dplyr")
+library("jsonlite")
+library("readr")
+
+fill_na <- function(x, fill = 0) {
+  x[is.na(x)] <- fill
+  x
+}
+```
+
+# Auction
+
+```{r}
+clean_sixes_1860 <- function(file, auction_name) {
+  cleanerdata <- read_csv(file) %>%
+    select(- rejected) %>%
+    rename(price = value, name = bidder) %>%
+    mutate(accepted = fill_na(accepted))
+    
+  bidders <- cleanerdata %>%
+    group_by(name, city, state) %>%
+    summarize(price_mean = weighted.mean(price, amount)) %>% 
+    ungroup() %>%
+    arrange(-price_mean) %>%
+    mutate(bidder_num = row_number(), 
+           auction = auction_name)
+
+  bids <- cleanerdata %>%
+    left_join(bidders %>% select(- price_mean)) %>%
+    select( - name, - state, - city) %>%
+    group_by(bidder_num, price) %>%
+    summarize(amount = sum(amount), accepted = sum(accepted)) %>%
+    mutate(auction = auction_name,
+           coupon_yield = 6 / price)
+  list(bidders = bidders, bids = bids)
+}
+
+```
+
+```{r}
+auction1 <- clean_sixes_1860("loan_of_february_1860_1861-02-13.csv",
+                              "Sixes of Feb 1861, 1861-02-13")
+auction2 <- clean_sixes_1860("loan_of_february_1860_1861-03-22.csv",
+                              "Sixes of Feb 1861, 1861-03-22")
+auction3 <- clean_sixes_1860("loan_of_february_1860_1861-05-11.csv",
+                              "Sixes of Feb 1861, 1861-05-11")
+
+bidders <- bind_rows(auction1$bidders, auction2$bidders, auction3$bidders)
+bids <- bind_rows(auction1$bids, auction2$bids, auction3$bids)
+
+```
+
+Average value of the greenback between 1864-06-04, when the auction opened for bids,
+and 1864-06-15, when it closed.
+```{r eval = FALSE}
+read_csv("../greenbacks.csv") %>% filter(date >= as.Date("1864-06-04") & date <= as.Date("1864-06-15")) %>% na.omit() %>% summarize(value = mean(mean))
+```
+In gold dollars per greenback dollars:
+```{r}
+GREENBACK_PRICE <- 51.1765 / 100
+```
+Bids > 4 percent premium were accepted
+```{r}
+ACCEPT_PREMIUM <- 4
+```
+
+
+```{r}
+clean_sixes_1864 <- function(file, auction_name) {
+  cleanerdata <- read_csv(file) %>%
+    rename(name = bidder) %>%
+    mutate(price = bid * GREENBACK_PRICE,
+           accepted = amount * (bid > (100 + ACCEPT_PREMIUM)))
+    
+  bidders <- cleanerdata %>%
+    group_by(name, city, state) %>%
+    summarize(price_mean = weighted.mean(price, amount)) %>% 
+    ungroup() %>%
+    arrange(-price_mean) %>%
+    mutate(bidder_num = row_number(), 
+           auction = auction_name)
+
+  bids <- cleanerdata %>%
+    left_join(bidders %>% select(- price_mean)) %>%
+    select( - name, - state, - city) %>%
+    group_by(bidder_num, price) %>%
+    summarize(amount = sum(amount),
+              accepted = sum(accepted)) %>%
+    mutate(auction = auction_name,
+           coupon_yield = 6 / price)
+  list(bidders = bidders, bids = bids)
+}
+auction_18640615 <- clean_sixes_1864("sixes_of_1881_1864-06-04.csv", "Sixes of 1861, 1864-06-15")
+
+```
+
