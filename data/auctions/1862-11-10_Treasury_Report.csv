@@ -1,4 +1,4 @@
-bid_no,name,city,state,amount,bid,accepted,declined,[EMPTY],[EMPTY]
+bid_no,name,city,state,amount,bid,accepted,declined,page,row
 1,G. F Wonk & Co,Philadelphia,PA,5,4.125,5,,206,1
 1,G. F Wonk & Co,Philadelphia,PA,6,4,6,,206,2
 1,G. F Wonk & Co,Philadelphia,PA,10,3.75,10,,206,3
@@ -71,7 +71,6 @@ bid_no,name,city,state,amount,bid,accepted,declined,[EMPTY],[EMPTY]
 20,"Edward Haight, president",New York,NY,150,3.3,150,,206,70
 20,"Edward Haight, president",New York,NY,150,3.05,89.2,60.8,206,71
 21,James A. Cowing,New York,NY,25,3.55,25,,206,72
-21,James A. Cowing,New York,NY,,,,,207,1
 22,Samuel A. Way,Boston,MA,10,3.5,10,,207,2
 22,Samuel A. Way,Boston,MA,10,3,,10,207,3
 22,Samuel A. Way,Boston,MA,20,2.5,,20,207,4

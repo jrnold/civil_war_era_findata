@@ -156,9 +156,9 @@ make_bond_table_dist <- function(pattern, .list, prior_yrs = NULL, prior_n = 1) 
         minyr <- min(.data$year)
         maxyr <- max(.data$year)
         prior_yrs <- seq(minyr, maxyr, by = 1)
-    } 
+    }
     .prior <- data.frame(year = prior_yrs, wgt = 1 / length(prior_yrs) * prior_n)
-    (group_by(plyr::rbind.fill(.data, .prior), "year")
+    (group_by(plyr::rbind.fill(.data, .prior), year)
      %>% summarise(wgt = sum(wgt))
      %>% mutate(wgt = wgt / sum(wgt),
                 bond = sprintf(pattern, year))
@@ -169,7 +169,7 @@ calc_current_yield <- function(date, clean_price, cashflows, n) {
     next_coupon(date, cashflows)$coupon * n / clean_price
 }
 
-make_yields_etc <- 
+make_yields_etc <-
     function(date, bond, gold_rate, price_gold, adjust_gold, adjust_currency, is_clean, ..., bond_metadata)
 {
     metadata <- bond_metadata[[as.character(bond)]]

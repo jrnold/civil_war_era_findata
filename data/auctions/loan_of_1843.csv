@@ -1,4 +1,4 @@
-bidder,amount,premium,accepted
+bidder,amount,premium,accepted,late
 John Ward & Co.,6498,1,6498
 "Secretary of War, in trust for Indian tribes",50,1,50
 Southwark Bank,200,1,200
@@ -32,4 +32,6 @@ Timothy C. Leeds ,10,0,0
 "Provident Institution for Savings, Boston",123,0,0
 John W. Tredwell,20,0,0
 Thomas P. Hoopes ,10,0,0
-John J. Swift ,10,0,0
+John J. Swift,10,0,0
+Bank of the Metropolis,500,,0,1
+Henry Toland,1000,3.1,0,1

@@ -29,7 +29,7 @@ MATCH_BONDS[["California 7 per cents, 1870"]] <-
     function(date) make_bond_table("california_7pct_1870")
 
 MATCH_BONDS[["California 7 per cents, 1877"]] <-
-    function(date) make_bond_table("california_7pct_1877")    
+    function(date) make_bond_table("california_7pct_1877")
 
 #'
 #' The are many possible values of the Georgia issue. Denny & Co list 1868-1887.
@@ -42,7 +42,7 @@ MATCH_BONDS[["Georgia 6 per cents"]] <-
 #' For Indiana 5 percent bonds, the redemption date is unkonwn.
 #' So match it to virtual 5 percent bonds due over the entire range of bonds in the Bankers' data (1869-1892).
 #' For weights to assign to each issue, use the empirical distribution of redemptions:
-#' 
+#'
 #' - Kentucky: 1869-72
 #' - Missouri: 1872
 #' - North Carolina: 1873
@@ -51,7 +51,7 @@ MATCH_BONDS[["Georgia 6 per cents"]] <-
 #' - Tennessee: 1885-1892
 #' - Georgia: 1872
 #'
-indiana_lookup <- 
+indiana_lookup <-
     make_bond_table_dist("indiana_5pct_%d",
                          list(kentucky = 1869:1872,
                               missouri = 1872,
@@ -71,7 +71,7 @@ MATCH_BONDS[["Kentucky 6 per cents"]] <-
 #' So assume that the probability of a given redemption year is the empirical distribuiton
 #' of the known redemption years of those other state securities listed with it for all years
 #' it was listed in Bankers' Magazine (with some smoothing).
-#' 
+#'
 #'  - Kentucky: 1869-72
 #'  - Missouri: 1872
 #'  - North Carolina: 1873
@@ -79,7 +79,7 @@ MATCH_BONDS[["Kentucky 6 per cents"]] <-
 #'  - Virginia: 1885-1890
 #'  - Tennessee: 1885-1892
 
-louisiana_lookup <- 
+louisiana_lookup <-
     make_bond_table_dist("louisiana_6pct_%d",
                          list(kentucky = 1869:1872,
                               missouri = 1872,
@@ -91,7 +91,7 @@ MATCH_BONDS[["Louisiana 6 per cents"]] <- function(date) louisiana_lookup
 
 #' Denny and Co list 1868-1890, but [Bankers' Magazine 1857](http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA332) lists only 1872.
 MATCH_BONDS[["Missouri 6 per cents"]] <-
-        function(date) make_bond_table("missouri_6pct_1872") 
+        function(date) make_bond_table("missouri_6pct_1872")
 
 MATCH_BONDS[["North Carolina 6 per cents"]] <-
         function(date) make_bond_table("north_carolina_6pct_1873")
@@ -99,7 +99,7 @@ MATCH_BONDS[["North Carolina 6 per cents"]] <-
 MATCH_BONDS[["Ohio 6 per cents, 1875"]] <-
     function(date) make_bond_table("ohio_6pct_1875")
 
-MATCH_BONDS[["Ohio 6 per cents, 1886"]] <- 
+MATCH_BONDS[["Ohio 6 per cents, 1886"]] <-
     function(date) make_bond_table("ohio_6pct_1886")
 
 MATCH_BONDS[["Pennsylvania 5 per cents"]] <-
@@ -140,7 +140,7 @@ if (length(unmatched)) {
 ##     print(i)
 ##     plyr::splat(make_yields_etc)(.data[i, ], bond_metadata = bond_metadata)
 ## }
-     
+
 .data2 <-
     (plyr::mdply(.data, make_yields_etc,
                 bond_metadata = bond_metadata)

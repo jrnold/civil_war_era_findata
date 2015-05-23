@@ -14,7 +14,7 @@ Auction of October 22, 1860
 =================================
 
 :file: auctions/loan_of_1860.csv
-:call: 1860-09-?
+:call: 1860-09-08
 :opened: 1860-10-22
 
 An auction for the Loan of 1860 (Act of June 22, 1860) (`DeKnight p. 77 <http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA77>`__, `Bayley p. 75 <http://books.google.com/books?id=Ce4JAAAAIAAJ&printsec=frontcover&pg=PA75>`__, `p. 150  <http://books.google.com/books?id=Ce4JAAAAIAAJ&printsec=frontcover&pg=PA150>`__).
@@ -377,7 +377,7 @@ Issued in January 1861 (Sources: `Treasury Report <http://books.google.com/books
 November 10, 1862    
 ===========================
 
-:file: auctions/1862-11-10_Treasury_Report.csv
+:file: auctions/1862-11-10_Treasury_Report.csv 
 :Notice: Nov 10, 1862
 :Due: Nov 17, 1862
 

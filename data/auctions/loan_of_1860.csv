@@ -92,7 +92,7 @@
 "Gwynene & Day","New York","NY",50,0.26,482,
 "Gwynene & Day","New York","NY",50,0.31,482,
 "Clarkson & Co","New York","NY",21,0.01,482,
-"F. G. Blanchard","Brooklyn","",10,1.125,482,
+"F. G. Blanchard","Brooklyn","NY",10,1.125,482,
 "H. F. Vail","New York","NY",50,0.1,482,
 "Harrison Bank","","PA",19,0,482,1
 "Troy Savings Bank","New York","NY",20,0.5,482,
@@ -119,7 +119,7 @@
 "Bowery Savings Bank","New York","NY",100,0.51,483,
 "Bowery Savings Bank","New York","NY",100,0.76,483,
 "Bowery Savings Bank","New York","NY",100,0.91,483,
-"Bowery Savings Bank","New York","NY",1,,483,
+"Bowery Savings Bank","New York","NY",100,1,483,
 "John C. Green","New York","NY",600,0.55,483,
 "William Mertens","New York","NY",5,0.52,483,
 "Oerlichs & Co","New York","NY",5,1,483,

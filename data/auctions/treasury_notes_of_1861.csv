@@ -1,4 +1,4 @@
-page,bid_number,bidder,,value,accepted,rejected,city,state
+page,bid_number,bidder,amount,value,accepted,rejected,city,state
 51,1,Charles H. Baker,13,100.26,13,0,Philadelphia,PA
 51,2,Samuel S. White,2,100,2,0,Philadelphia,PA
 51,3,"Jay, Cooke & Co",200,100.16,200,0,Philadelphia,PA
@@ -14,10 +14,10 @@ page,bid_number,bidder,,value,accepted,rejected,city,state
 51,11,Wm. H. Marston,10,100.05,10,0,New York,NY
 51,12,Colgate & Hoffman,150,100,150,0,New York,NY
 51,12,Colgate & Hoffman,50,100.05,50,0,New York,NY
-51,13,James G. King's Sons,100,100,100,0,,
-51,14,"Read, Drexel & Co",185,100,185,0,,
-51,15,R.L. & A. Stuart,100,100,100,0,,
-51,15,R.L. & A. Stuart,10,100,10,0,,
+51,13,James G. King's Sons,100,100,100,0,New York,NY
+51,14,"Read, Drexel & Co",185,100,185,0,New York,NY
+51,15,R.L. & A. Stuart,100,100,100,0,New York,NY
+51,15,R.L. & A. Stuart,10,100,10,0,New York,NY
 51,16,"H. Howard, secretary",100,100,100,0,Buffalo,NY
 51,17,Institution for Savings,20,100,20,0,Roxbury,MA
 51,18,Bank of Commerce,2500,100,2500,0,New York,NY
