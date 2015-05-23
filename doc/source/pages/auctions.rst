@@ -75,7 +75,7 @@ October 22, 1860 for the Loan of 1860
 
 An auction for the Loan of 1860 (Act of June 22, 1860) (`DeKnight p. 77 <http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA77>`__, `Bayley p. 75 <http://books.google.com/books?id=Ce4JAAAAIAAJ&printsec=frontcover&pg=PA75>`__, `p. 150  <http://books.google.com/books?id=Ce4JAAAAIAAJ&printsec=frontcover&pg=PA150>`__).
 
-Bids were listed in the `Treasuary Report, 1861, No. 48, pp. 482-483 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1860.pdf#page=482>`__
+Bids were listed in the `Treasury Report, 1861, No. 48, pp. 482-483 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1860.pdf#page=482>`__
 
 The proposal read,
 
@@ -143,9 +143,9 @@ The proposal read,
 
 From `Bayley p. 75 <http://books.google.com/books?id=Ce4JAAAAIAAJ&printsec=frontcover&pg=PA75>`__:
 
-   Under this act the sum of $7,022,000 was borrowed, at 5 per cent. interest, the certificates selling at from par to 1.45 per cent. preminm.
+   Under this act the sum of $7,022,000 was borrowed, at 5 per cent. interest, the certificates selling at from par to 1.45 per cent. premium.
 
-   It would appear that the failure to realize the whole amount of the loan was caused by the political troubles that culminated in the war of the Rebellion. Bids were invited for $10,000,000 on September 8,1860, and the whole amount offered was speedily takeu. It soon became evident, however, that war was inevitable, and a commercial crisis ensued, during which a portion of the bidders forfeited their deposits, and the loan was withdrawn from the market after the amount stated above had been realized.
+   It would appear that the failure to realize the whole amount of the loan was caused by the political troubles that culminated in the war of the Rebellion. Bids were invited for $10,000,000 on September 8,1860, and the whole amount offered was speedily taken. It soon became evident, however, that war was inevitable, and a commercial crisis ensued, during which a portion of the bidders forfeited their deposits, and the loan was withdrawn from the market after the amount stated above had been realized.
 
     
 
@@ -487,7 +487,7 @@ This was an auction for 75 million in 6-percent stock payable in 1881.
 
 Aggregate amount of bids was about 75 million. The bids were between
 par and 8 per cent premium. The treasury accepted all bids above 4
-percent premium; totalling about 42 million dollars.
+percent premium; totaling about 42 million dollars.
 `Banker's Magazine, Vol XIV, July 1864
 <http://books.google.com/books?id=lGAmAQAAIAAJ&pg=PA1>`__, p. 1.
 The remaining bids 
@@ -508,7 +508,7 @@ The notice from `Banker's Magazine
   Treasury Department, August 30,1864.
 
   "Sealed offers will be received at this department, under the act of
-  March 8, 1868, until noon of Friday, the 9lh of September. 1864, for
+  March 8, 1868, until noon of Friday, the 9th of September. 1864, for
   bonds of the United States, to the amount of about thirty-one and a
   half millions of dollars, being the amount of unaccepted offers
   undisposed of under the notice of proposals for loan, dated 6th June
@@ -522,16 +522,14 @@ The bids were for nearly 73 millions.   `Banker's Magazine
 Some bids listed *NYT* Sep 11, 1864, p. 1. "News from Washington". Sep 10, 1864, p.1. Checked Sept
 9-13 and did not find any other bids.
 
-- NEWS FROM WASHINGTON. (1864, Sep 10). New York Times (1857-1922). Retrieved from http://search.proquest.com/docview/91838946?accountid=10747 (partial bids)
-- MONETARY AFFAIRS. (1864, Sep 10). New York Times (1857-1922). Retrieved from http://search.proquest.com/docview/91829810?accountid=10747
-- NEWS FROM WASHINGTON. (1864, Sep 11). New York Times (1857-1922). Retrieved from http://search.proquest.com/docview/91857909?accountid=10747 (partial bids)
-- THE VERY LATEST. (1864, Sep 12). Chicago Tribune (1860-1872). Retrieved from http://search.proquest.com/docview/175439682?accountid=10747
-- The new government loan--bids for nearly &73,000,000--names of successful bidders. (1864, Sep 12). The Boston Herald (1846-1865). Retrieved from http://search.proquest.com/docview/506580623?accountid=10747
-- NEWS FROM WASHINGTON. (1864, Sep 11). The New York Herald (1840-1865). Retrieved from http://search.proquest.com/docview/505717437?accountid=10747
-- NEWS FROM WASHINGTON. (1864, Sep 10). The New York Herald (1840-1865). Retrieved from http://search.proquest.com/docview/505713762?accountid=10747
+- NEWS FROM WASHINGTON. (1864, Sep 10). New York Times (1857-1922). Retrieved from http://search.proquest.com/docview/91838946 (partial bids)
+- MONETARY AFFAIRS. (1864, Sep 10). New York Times (1857-1922). Retrieved from http://search.proquest.com/docview/91829810
+- NEWS FROM WASHINGTON. (1864, Sep 11). New York Times (1857-1922). Retrieved from http://search.proquest.com/docview/91857909 (partial bids)
+- THE VERY LATEST. (1864, Sep 12). Chicago Tribune (1860-1872). Retrieved from http://search.proquest.com/docview/175439682
+- The new government loan--bids for nearly &73,000,000--names of successful bidders. (1864, Sep 12). The Boston Herald (1846-1865). Retrieved from http://search.proquest.com/docview/506580623
+- NEWS FROM WASHINGTON. (1864, Sep 11). The New York Herald (1840-1865). Retrieved from http://search.proquest.com/docview/505717437
+- NEWS FROM WASHINGTON. (1864, Sep 10). The New York Herald (1840-1865). Retrieved from http://search.proquest.com/docview/505713762
 
 
 
- ..  LocalWords:  lst ap th assignees centum indorsed ditional proximo
-..  LocalWords:  23d 2d 2lst 22d gress Centura annura fers Cen tura
-..  LocalWords:  undisposed
+..  LocalWords:  6's DeKnight Bayley 22d 23d 2d 2lst Bankers' NYT Sep
