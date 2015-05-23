@@ -6,20 +6,74 @@ The data contain bids and amounts from several Treasury auctions.
 
 Other auctions data to be included later
 
-- Sixes of 1848: `Treasury Report 1848, M., p. 325 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1848.pdf#page=52>`__
-- Loan of 1847: `Treasury Report 1847, No. 3, p. 215 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1847.pdf#page=98>`__
-- Loan of 1843  `Treasury Report 1843, Table E, p. 629 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1843.pd#page=34>`__
+1843 Auction
+=============
 
-Auction of October 22, 1860
-=================================
+Loan of 1843  `Treasury Report 1843, Table E, p. 629 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1843.pd#page=34>`__
+
+    Statement of Persons to whom was awarded the Stock of the Loan for seven
+millions of dollars, at five per cent, interest, payable in ten years from July 1,
+1843, with the terms.
+
+There were two late bids with the notes attached.
+
+   The two last bids were not received until after.the time for making offers had expired, arid
+   the arrangement had been dosed with those whose offers were accepted..
+
+The bid by "Bank of the Metropolis" was "Most favorable terms" and was late. In the data it is marked missing.
+
+1847 Auction for the Loan of 1847 (6's of 1867)
+================================================
+
+Loan of 1847: `Treasury Report 1847, No. 3, p. 215 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1847.pdf#page=98>`__
+
+The proposal read (`Treasury Report 1847, No. 5, p. 224 <https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1847.pdf#page=107>`__):
+
+    TREASURY DEPARTMENT, February 9, 1847.
+
+    Sealed proposals will be received, until the 10th day of April next,
+    inclusive, for a loan of eighteen millions of dollars, under the act of the
+    28th January, last, authorizing the issue of Treasury notes, &c., on
+    Treasury notes to be issued under said act, payable two years after the
+    date of said notes, with interest, at the rate of six per cent, per annum,
+    payable semi-annually. The bids, in all cases, must be unconditional,
+    and without any reference to the supposed bids of others, or they may
+    not be considered. The bids should state distinctly, in all cases, the
+    premium offered. No bids will be received below par.
+
+    To give an opportunity to all persons to participate in the investment
+    of funds in these notes, which, on account of the privilege of funding,
+    may hereafter be materially enhanced in value, bids will be received
+    for the lowest denomination of notes authorized by the law, as well as
+    for higher sums.
+
+    The Department reserves the right of fixing the periods when the
+    money must be paid, so as not to be required to anticipate the wants of
+    the Government, or allow any interest until the money is actually paid.
+    The money payable on the loan can be deposited with the Treasurer of
+    the United States, the Treasurer of the mint at Philadelphia or the
+    branch mint, at New Orleans, or with any of the Assistant Treasurers a
+    Boston, New York, Charleston, or St. Louis.
+
+    R. J. WALKER, Secretary of Treasury
+
+
+1848 Auction for the Loan of 1848 (6's of 1868)
+================================================
+
+Sixes of 1848: `Treasury Report 1848, M., p. 325 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1848.pdf#page=52>`__
+
+See `Treasury Report 1848, S., p. 336--337 <https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1848.pdf#page=63>`__ for the proposal.
+
+
+October 22, 1860 for the Loan of 1860
+======================================
 
 :file: auctions/loan_of_1860.csv
 :call: 1860-09-08
 :opened: 1860-10-22
 
 An auction for the Loan of 1860 (Act of June 22, 1860) (`DeKnight p. 77 <http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA77>`__, `Bayley p. 75 <http://books.google.com/books?id=Ce4JAAAAIAAJ&printsec=frontcover&pg=PA75>`__, `p. 150  <http://books.google.com/books?id=Ce4JAAAAIAAJ&printsec=frontcover&pg=PA150>`__).
-
-During the auction, concerns about the war increased and many bidders forfeited their deposits, and the loan was withdrawn from the market. Only 7,022,00 was issued.
 
 Bids were listed in the `Treasuary Report, 1861, No. 48, pp. 482-483 <http://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1860.pdf#page=482>`__
 
@@ -86,7 +140,14 @@ The proposal read,
     immediately directed to be returned to the unsuccessful bidders.
     
     HOWELL COBB, *Secretary of the Treasury*
-  
+
+From `Bayley p. 75 <http://books.google.com/books?id=Ce4JAAAAIAAJ&printsec=frontcover&pg=PA75>`__:
+
+   Under this act the sum of $7,022,000 was borrowed, at 5 per cent. interest, the certificates selling at from par to 1.45 per cent. preminm.
+
+   It would appear that the failure to realize the whole amount of the loan was caused by the political troubles that culminated in the war of the Rebellion. Bids were invited for $10,000,000 on September 8,1860, and the whole amount offered was speedily takeu. It soon became evident, however, that war was inevitable, and a commercial crisis ensued, during which a portion of the bidders forfeited their deposits, and the loan was withdrawn from the market after the amount stated above had been realized.
+
+    
 
 Auctions of the Sixes of 1881 issued under the Act of February 8, 1861
 ========================================================================
@@ -333,11 +394,15 @@ The notice of this issue, Treasury Report, pp. 52-53
     *Secretary of the Treasury*.
 
 
-Two Year Treasury Notes issued under Acts of February 8 and March 2, 1861.
+Auction of April 6, 1861 for Treasury Notes of 1861 (Two-Year)
 ===========================================================================
 
 An auction for six-percent two-year treasury notes approved under the acts of February 8, 1861 and March 2, 1861.
 The notice was on April 6, 1861, and bids were accepted until April 11, 1861.
+
+
+Authorized under the `Act of Dec 17, 1860 <http://books.google.com/books?id=Ce4JAAAAIAAJ&pg=PA75>`__.
+Issued in January 1861 (Sources: `Treasury Report <http://books.google.com/books?id=Ce4JAAAAIAAJ&pg=PA75>`__, `Bankers' Magazine <http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA670>`__). 
 
 Data from table No. 4 of Treasury Report of 1861, titled "Schedule of bids for United States treasury notes of $4,901,000, under notice of April 6, 1861, with the rate per centum amount accepted, and amount rejected.", pp. 51.
 
@@ -367,11 +432,6 @@ The notice is from p. 50.
   S. P . CHASE,
   *Secretary of the Treasury*.
 
-Treasury Notes of 1860
-===========================
-
-Authorized under the `Act of Dec 17, 1860 <http://books.google.com/books?id=Ce4JAAAAIAAJ&pg=PA75>`__.
-Issued in January 1861 (Sources: `Treasury Report <http://books.google.com/books?id=Ce4JAAAAIAAJ&pg=PA75>`__, `Bankers' Magazine <http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA670>`__). 
     
 
 November 10, 1862    

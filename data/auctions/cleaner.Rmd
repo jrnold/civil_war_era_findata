@@ -288,12 +288,13 @@ bids_18600908 <- auction_18600908 %>%
 
 # Auction of April 17, 1848
 
-Proposals invited on April 17, 1848 [Bayley, p. 146](https://books.google.com/books?id=Ce4JAAAAIAAJ&pg=PA146)
+Proposals invited on April 17, 1848 [Bayley, p. 146](https://books.google.com/books?id=Ce4JAAAAIAAJ&pg=PA146), closed on June 17, 1848.
 
 ```{r}
 auction_1848_meta <- 
   data_frame(name = "1848-04-17; Loan of 1848",
              announcement = as.Date("1848-04-17"),
+             close = as.Date("1848-06-17"),
              description = "Loan of 1848 (Sixes of 1848)")
 
 auction_1848 <- read_csv("loan_of_1848.csv") %>%
@@ -316,18 +317,17 @@ bids_1848  <- auction_1848  %>%
     arrange(bidder_num, price) %>%
     mutate(auction = "1848-04-1; Loan of 1848",
            coupon_yield = 6 / price,
-           ytm = make_auction_yields(price, "us_6pct_1868_jul", as.Date("1848-4-17")))
+           ytm = make_auction_yields(price, "us_6pct_1868_jul", as.Date("1848-6-17")))
 
 ```
 
 # Auction of Feb 9, 1847
 
-Proposals invited Feb 9, 1847 [Bayley, p. 146](https://books.google.com/books?id=Ce4JAAAAIAAJ&pg=PA146)
-
 ```{r}
 auction_1847_meta <- 
-  data_frame(name = "1848-02-09; Loan of 1847",
-             announcement = as.Date("1848-02-09"),
+  data_frame(name = "1847-02-09; Loan of 1847",
+             announcement = as.Date("1847-02-09"),
+             closed = as.Date("1847-04-10"),
              description = "1847-02-09; Loan of 1847")
 
 auction_1847 <- read_csv("loan_of_1847.csv") %>%
@@ -350,7 +350,7 @@ bids_1847 <- auction_1847  %>%
     arrange(bidder_num, price) %>%
     mutate(auction = "1847-02-09; Loan of 1847",
            coupon_yield = 6 / price,
-           yield = make_auction_yields(price, "us_6pct_1868_jan", as.Date("1847-2-9")))
+           yield = make_auction_yields(price, "us_6pct_1868_jan", as.Date("1847-4-10")))
 
 ```
 

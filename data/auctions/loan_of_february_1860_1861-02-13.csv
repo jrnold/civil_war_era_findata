@@ -336,10 +336,10 @@ page,bid_number,bidder,amount,value,accepted,rejected,errors,city,state
 29,141,E.L. Bolles,3,90.4,3,,,New York,NY
 29,142,Jenkins Van Schaick,30,91.05,30,,,New York,NY
 29,143,R.R. Graves & Co,10,91,10,,,New York,NY
-29,144,Washington MIlls,20,80.01,,20,,New York,NY
-29,144,Washington MIlls,10,81.01,,10,,New York,NY
-29,144,Washington MIlls,10,82.01,,10,,New York,NY
-29,144,Washington MIlls,10,85.01,,10,,New York,NY
+29,144,Washington Mills,20,80.01,,20,,New York,NY
+29,144,Washington Mills,10,81.01,,10,,New York,NY
+29,144,Washington Mills,10,82.01,,10,,New York,NY
+29,144,Washington Mills,10,85.01,,10,,New York,NY
 29,145,Surette & Whitney,10,90.1,,10,,Boston,MA
 29,146,Amos P Tapley,5,87.5,,5,,Boston,MA
 29,147,Juan Clemente Las Casas,10,85,,10,,New York,NY
