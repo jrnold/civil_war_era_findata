@@ -1,23 +1,26 @@
 #' Yields on Greenbacks held until 1879-1-1
 library("plyr")
-source("sources/scripts/R/misc.R")
+source("sources/scripts/R/finance.R")
 
 args <- commandArgs(TRUE)
-infile <- "data/greenbacks.csv"
 infile <- args[1]
 outfile <- args[2]
 
 greenbacks <-
-    mutate(read.csv(infile),
+    mutate(read_csv(infile),
            date = as.Date(date))
 
 MATURITY_DATE <- as.Date("1879-1-1")
 
 greenback_yields <-
     mutate(greenbacks,
-           maturity = (as.integer(difftime(MATURITY_DATE, date, units = "days"))) / 365,
-           low = - log(low / 100) / maturity,
-           high = - log(high / 100) / maturity,
-           mean = - log(mean / 100) / maturity)
+           actual_maturity = difftime_years(MATURITY_DATE, date),
+           actual_low = - log(low / 100) / actual_maturity,
+           actual_high = - log(high / 100) / actual_maturity,
+           actual_mean = - log(mean / 100) / actual_maturity,
+           implied_maturity_low = gold_redemp_date(date, high / 100),
+           implied_maturity_high = gold_redemp_date(date, low / 100),
+           implied_maturity_mean = gold_redemp_date(date, mean / 100)) %>%
+        select(date, matches("actual_"), matches("implied_"))
 
-write.csv2(greenback_yields, file = outfile)
+write_csv(greenback_yields, file = outfile)

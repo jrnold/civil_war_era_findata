@@ -6,15 +6,14 @@ source("sources/scripts/R/misc.R")
 
 args <- commandArgs(TRUE)
 src <- args[1]
-src <- "sources/data/merchants_magazine_us_paper.csv"
 dst <- args[2]
 
 greenbacks <-
-    (mutate(read.csv("data/greenbacks_fill.csv"),
+    (mutate(read_csv("data/greenbacks_fill.csv"),
             date = as.Date(date, "%Y-%m-%d"),
             gold_rate = 100 / mean)
      %>% select(date, gold_rate))
-merchants <- mutate(read.csv(src),
+merchants <- mutate(read_csv(src),
                      date = as.Date(date, "%Y-%m-%d"))
 merchants <- merge(merchants, greenbacks, by = "date", all.x = TRUE)
 # convert August demand notes from premium to price
@@ -31,4 +30,4 @@ merchants <-
             is_clean = fill_na(is_clean),
             registered = as.integer(grepl("Reg\\.", series)))
      %>% select(-value))
-write.csv2(merchants, file = dst)
+write_csv(merchants, file = dst)

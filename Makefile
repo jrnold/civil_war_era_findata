@@ -15,7 +15,7 @@ DATA += data/merchants_magazine_us_paper.csv
 DATA += data/merchants_magazine_us_paper_yields.csv
 DATA += data/merchants_magazine_us_paper_yields_2.csv
 DATA += data/greenback_yields.csv
-
+DATE += data/bankers_magazine_govt_state_loans_misc.csv
 
 all: build
 
@@ -41,3 +41,4 @@ data/merchants_magazine_us_paper.csv: merchants_magazine_us_paper.R sources/data
 data/merchants_magazine_us_paper_yields.csv: merchants_magazine_us_paper_yields.R data/merchants_magazine_us_paper.csv data/bond_metadata.json
 data/merchants_magazine_us_paper_yields_2.csv: merchants_magazine_us_paper_yields_2.R data/merchants_magazine_us_paper_yields.csv
 data/greenback_yields.csv: greenback_yields.R data/greenbacks.csv
+data/bankers_magazine_govt_state_loans_misc.csv: bankers_magazine_govt_state_loans_misc.R sources/data/bankers_magazine_govt_bonds_quotes_in_text.csv

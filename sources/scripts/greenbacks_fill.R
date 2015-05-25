@@ -11,7 +11,7 @@ src <- args[1]
 dst <- args[2]
 
 greenbacks <-
-  mutate(read.csv(src),
+  mutate(read_csv(src),
          mean = exp(ts_interpolate(log(mean), "trend")),
          low = exp(ts_interpolate(log(low), "trend")),
          high = exp(ts_interpolate(log(high), "trend")))

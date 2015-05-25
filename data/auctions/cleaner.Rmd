@@ -8,37 +8,42 @@ output: html_document
 ```{r}
 library("dplyr")
 library("jsonlite")
-library("readr")
-
-fill_na <- function(x, fill = 0) {
-  x[is.na(x)] <- fill
-  x
-}
 ```
 
 ```{r}
+source("../../sources/scripts/R/misc.R")
 source("../../sources/scripts/R/finance.R")
-bond_metadata <-
-    fromJSON("../bond_metadata.json",
-             simplifyDataFrame = FALSE)
+bond_metadata <- get_bond_metadata("../bond_metadata.json")
 
-make_auction_yields <- 
-    function(prices, bond, date)
+make_auction_yields <- function(prices, date, gold_rate, metadata)
 {
-    metadata <- bond_metadata[[as.character(bond)]]
-    issue_date <- metadata[["issue_date"]]
-    if (! is.na(issue_date) && ! is.null(issue_date)) {
-        issue_date <- as.Date(issue_date, format = "%Y-%m-%d")
+    # Cashflows keeping gold to currency = 1
+    cashflows_currency <- cashflows <- metadata$cashflows
+    # Cashflows assuming current gold rate
+    cashflows_gold <- gold_cashflows(cashflows, gold_rate)
+    # Cashflows assuming implied gold redemption
+    r <- 0.05
+    cashflows_currency2 <- gold_cashflows_redemp(cashflows, date, gold_rate, r)
+
+    if (gold_rate == 1) {
+      yields1 <- sapply(prices, function(price) {
+        as.numeric(yield_to_maturity2(price, date, cashflows_currency))
+      })
+      yields3 <- yields2 <- yields1
     } else {
-        issue_date <- NULL
+      yields1 <- sapply(prices, function(price) {
+        as.numeric(yield_to_maturity2(price / gold_rate, date, cashflows_gold))
+      })
+      yields2 <- sapply(prices, function(price) {
+        as.numeric(yield_to_maturity2(price, date, cashflows_currency2))
+      })
+      yields3 <- sapply(prices, function(price) {
+        as.numeric(yield_to_maturity2(price, date, cashflows_currency))
+      })
     }
-    cashflows <-
-        mutate(plyr::ldply(metadata[["cashflows"]],
-                           function(x) as.data.frame(x)),
-               date = as.Date(date, format="%Y-%m-%d"))
-    sapply(prices, function(price) {
-      as.numeric(yield_to_maturity2(price, date, cashflows))
-    })   
+    data_frame(ytm1 = yields1, 
+               ytm2 = yields2,
+               ytm3 = yields3)
 }
 
 ```
@@ -65,40 +70,44 @@ ACCEPT_PREMIUM <- 4
 
 
 ```{r}
-clean_sixes_1864 <- function(file, auction_name) {
-  cleanerdata <- read_csv(file) %>%
+auction_name <- "1864-06-15; Sixes of 1881"
+auction_1864 <- read_csv("sixes_of_1881_1864-06-04.csv") %>%
     rename(name = bidder) %>%
-    mutate(price = bid * GREENBACK_PRICE,
+    mutate(price = bid,
            accepted = amount * (bid > (100 + ACCEPT_PREMIUM)))
   
-  metadata <- data.frame(name = auction_name,
-                         announcement = as.Date("1864-06-04"),
-                         close = as.Date("1864-06-15"),
-                         description = "Sixes of 1881")
+auction_1864_meta <- data.frame(name = auction_name,
+                            announcement = as.Date("1864-06-04"),
+                            close = as.Date("1864-06-15"),
+                            description = "Sixes of 1881")
     
-  bidders <- cleanerdata %>%
-    group_by(name, city, state) %>%
-    summarize(price_mean = weighted.mean(price, amount)) %>% 
-    ungroup() %>%
-    arrange(-price_mean, name, city, state) %>%
-    mutate(bidder_num = row_number(), 
-           auction = auction_name)
+bidders_1864 <- auction_1864 %>%
+  group_by(name, city, state) %>%
+  summarize(price_mean =
+              weighted.mean(price, amount)) %>% 
+  ungroup() %>%
+  arrange(-price_mean, name, city, state) %>%
+  mutate(bidder_num = row_number(), 
+         auction = auction_name)
 
-  bids <- cleanerdata %>%
-    left_join(bidders %>% select(- price_mean)) %>%
-    select( - name, - state, - city) %>%
-    group_by(bidder_num, price) %>%
-    summarize(amount = sum(amount),
-              accepted = sum(accepted)) %>%
-    mutate(auction = auction_name,
-           coupon_yield = 6 / price,
-           yield = make_auction_yields(price, "us_6pct_1881_jul",
-                                       as.Date("1864-06-15")))
-  list(bidders = bidders, bids = bids,
-       metadata = metadata)
-}
-auction_1864 <-
-  clean_sixes_1864("sixes_of_1881_1864-06-04.csv", "1864-06-15; Sixes of 1881")
+bids_1864 <- auction_1864 %>%
+  left_join(bidders_1864 %>% select(- matches("price_")), 
+            by = c("name", "city", "state")) %>%             
+  select( - name, - state, - city) %>%
+  group_by(bidder_num, price) %>%
+  summarize(amount = sum(amount),
+            accepted = sum(accepted)) %>%
+  ungroup() %>%
+  rename(price_currency = price) %>%
+  mutate(auction = auction_name,
+         price_gold = price_currency * GREENBACK_PRICE,
+         current_yield1 = 6 / (price_currency * GREENBACK_PRICE),
+         current_yield2 = 6 / price_currency,
+         gold_rate = 1 / GREENBACK_PRICE) %>%
+  bind_cols(., make_auction_yields(.$price_currency,
+                                as.Date("1864-06-15"),
+                                1 / GREENBACK_PRICE, 
+                                bond_metadata[["us_6pct_1881_jul"]]))
 
 ```
 
@@ -108,12 +117,18 @@ auction_1864 <-
 Average value of the greenback between 1862-11-10, when the auction opened for bids,
 and 1864-11-17, when it closed.
 ```{r eval = FALSE}
-read_csv("../greenbacks.csv") %>% filter(date >= as.Date("1862-11-10") & date <= as.Date("1862-11-17")) %>% na.omit() %>% summarize(value = mean(mean))
+read_csv("../greenbacks.csv") %>%
+  filter(date >= as.Date("1862-11-10") & date <= as.Date("1862-11-17")) %>%
+  na.omit() %>%
+  summarize(value = mean(mean))
 ```
 In gold dollars per greenback dollars:
 ```{r}
 GREENBACK_PRICE <- 75.79099 / 100
 ```
+
+
+The option to convert into the 6's of 1881 is used since it implied as lower yield in general.
 
 ```{r}
 auction_18621110_meta <- 
@@ -124,7 +139,7 @@ auction_18621110_meta <-
 
 auction_18621110 <- read_csv("1862-11-10_Treasury_Report.csv") %>%
     mutate(accepted = fill_na(accepted),
-           price = (bid + 100) * GREENBACK_PRICE)
+           price = (bid + 100))
     
 bidders_18621110  <- auction_18621110 %>%
     group_by(name, city, state) %>%
@@ -135,16 +150,22 @@ bidders_18621110  <- auction_18621110 %>%
            auction = "1862-11-10; Seven-Thirties of 1861")
 
 bids_18621110  <- auction_18621110 %>%
-    left_join(bidders_18621110 %>% select(- price_mean)) %>%
+    left_join(bidders_18621110 %>% select(- price_mean),
+              by = c("name", "city", "state")) %>%
     select( - name, - state, - city) %>%
     group_by(bidder_num, price) %>%
     summarize(amount = sum(amount), accepted = sum(accepted)) %>%
     arrange(bidder_num, price) %>%
     mutate(auction = "1862-11-10; Seven-Thirties",
-           coupon_yield = 7.3 / price,
-           yield = pmin(make_auction_yields(price, "us_seven_thirties_1864_oct_option", as.Date("1862-11-17")),
-                        make_auction_yields(price, "us_seven_thirties_1864_oct", as.Date("1862-11-17"))))
-           
+           current_yield1 = 7.3 / (price * GREENBACK_PRICE),
+           current_yield2 = 7.3 / price,
+           price_gold = price * GREENBACK_PRICE,
+           gold_rate = 1 / GREENBACK_PRICE) %>%
+    rename(price_currency = price) %>%
+    bind_cols(., make_auction_yields(.$price_currency,
+              as.Date("1862-11-17"),
+              1 / GREENBACK_PRICE, 
+              bond_metadata[["us_seven_thirties_1864_oct_option"]]))
 
 ```
 
@@ -172,15 +193,20 @@ bidders_18610406  <- auction_18610406 %>%
            auction = "1861-04-06; Treasury Notes of 1861")
 
 bids_18610406  <- auction_18610406 %>%
-    left_join(bidders_18610406 %>% select(- price_mean)) %>%
+    left_join(bidders_18610406 %>% select(- price_mean),
+              by = c("name", "city", "state")) %>%
     select( - name, - state, - city) %>%
     group_by(bidder_num, price) %>%
     summarize(amount = sum(amount), accepted = sum(accepted)) %>%
     mutate(auction = "1861-04-06; Treasury Notes of 1861",
-           coupon_yield = 6 / price,
-           yield = make_auction_yields(price, "us_treasury_note_1861",
-                                       as.Date("1861-04-11"))
-           )
+           current_yield1 = 6 / price,
+           current_yield2 = current_yield1,
+           price_gold = price,
+           gold_rate = 1) %>%
+    rename(price_currency = price) %>%
+    bind_cols(., make_auction_yields(.$price_currency,
+              as.Date("1861-04-11"),
+              1, bond_metadata[["us_treasury_note_1861"]]))
 
 ```
 
@@ -188,7 +214,7 @@ bids_18610406  <- auction_18610406 %>%
 # Loan of Feb 1861
 
 ```{r}
-clean_sixes_1861 <- function(file, auction_name, date) {
+clean_sixes_1861 <- function(file, auction_name, date, metadata) {
   cleanerdata <- read_csv(file) %>%
     select(- rejected) %>%
     rename(price = value, name = bidder) %>%
@@ -203,13 +229,20 @@ clean_sixes_1861 <- function(file, auction_name, date) {
            auction = auction_name)
 
   bids <- cleanerdata %>%
-    left_join(bidders %>% select(- price_mean)) %>%
+    left_join(bidders %>% select(- price_mean),
+              by = c("name", "city", "state")) %>%
     select( - name, - state, - city) %>%
     group_by(bidder_num, price) %>%
     summarize(amount = sum(amount), accepted = sum(accepted)) %>%
     mutate(auction = auction_name,
-           coupon_yield = 6 / price,
-           yield = make_auction_yields(price, "us_6pct_1881_jan", date))
+           current_yield1 = 6 / price,
+           current_yield2 = current_yield1,
+           price_gold = price,
+           gold_rate = 1) %>%
+    rename(price_currency = price) %>%
+    bind_cols(., 
+              yield = make_auction_yields(.$price_currency, date, 1,
+                                          bond_metadata[["us_6pct_1881_jan"]]))
   list(bidders = bidders, bids = bids)
 }
 
@@ -274,14 +307,22 @@ bidders_18600908 <- auction_18600908 %>%
            auction = "1860-09-08; Loan of 1860")
 
 bids_18600908 <- auction_18600908 %>%
-    left_join(bidders_18600908 %>% select(- price_mean)) %>%
-    select( - name, - state, - city) %>%
-    group_by(bidder_num, price) %>%
-    summarize(amount = sum(amount), accepted = sum(accepted)) %>%
-    mutate(auction = "1860-09-08; Loan of 1860",
-           coupon_yield = 5 / price,
-           yield = make_auction_yields(price, "us_5pct_1871",
-                                       as.Date("1860-10-22")))
+  left_join(bidders_18600908 %>% select(- price_mean),
+            by = c("name", "city", "state")) %>%
+  select( - name, - state, - city) %>%
+  group_by(bidder_num, price) %>%
+  summarize(amount = sum(amount), accepted = sum(accepted)) %>%
+  mutate(auction = "1860-09-08; Loan of 1860",
+         current_yield1 = 5 / price,
+         current_yield2 = current_yield1,
+         gold_rate = 1,
+         price_gold = price) %>%
+  rename(price_currency = price) %>%
+  bind_cols(.,
+            make_auction_yields(.$price_currency,
+                                as.Date("1860-10-22"),
+                                1,
+                                bond_metadata[["us_5pct_1871"]]))
            
 
 ```
@@ -310,14 +351,21 @@ bidders_1848 <- auction_1848  %>%
            auction = "1848-04-17; Loan of 1848")
 
 bids_1848  <- auction_1848  %>%
-    left_join(bidders_1848  %>% select(- price_mean)) %>%
+    left_join(bidders_1848  %>% select(- price_mean),
+              by = "name") %>%
     select( - name) %>%
     group_by(bidder_num, price) %>%
     summarize(amount = sum(amount), accepted = sum(accepted)) %>%
     arrange(bidder_num, price) %>%
     mutate(auction = "1848-04-1; Loan of 1848",
-           coupon_yield = 6 / price,
-           ytm = make_auction_yields(price, "us_6pct_1868_jul", as.Date("1848-6-17")))
+           current_yield1 = 6 / price,
+           current_yield2 = current_yield1,
+           gold_rate = 1,
+           price_gold = price) %>%
+  rename(price_currency = price) %>%
+  bind_cols(., 
+            make_auction_yields(.$price_currency, as.Date("1848-6-17"), 1,
+                                bond_metadata[["us_6pct_1868_jul"]]))
 
 ```
 
@@ -343,14 +391,22 @@ bidders_1847 <- auction_1847  %>%
            auction = "1847-02-09; Loan of 1847")
 
 bids_1847 <- auction_1847  %>%
-    left_join(bidders_1847  %>% select(- price_mean)) %>%
+    left_join(bidders_1847  %>% select(- price_mean),
+              by = "name") %>%
     select( - name) %>%
     group_by(bidder_num, price) %>%
     summarize(amount = sum(amount), accepted = sum(accepted)) %>%
     arrange(bidder_num, price) %>%
     mutate(auction = "1847-02-09; Loan of 1847",
-           coupon_yield = 6 / price,
-           yield = make_auction_yields(price, "us_6pct_1868_jan", as.Date("1847-4-10")))
+           current_yield1 = 6 / price,
+           current_yield2 = current_yield1,
+           gold_rate = 1,
+           price_gold = price) %>%
+  rename(price_currency = price) %>%
+  bind_cols(.,
+            make_auction_yields(.$price_currency, 
+                                as.Date("1847-4-10"), 1,
+                                bond_metadata[["us_6pct_1868_jan"]]))
 
 ```
 
@@ -378,14 +434,22 @@ bidders_1843 <- auction_1843 %>%
            auction = "1843-04-02; Loan of 1843")
 
 bids_1843 <- auction_1843  %>%
-    left_join(bidders_1843  %>% select(- price_mean)) %>%
+    left_join(bidders_1843  %>% select(- price_mean),
+              by = "name") %>%
     select( - name) %>%
     group_by(bidder_num, price) %>%
     summarize(amount = sum(amount), accepted = sum(accepted)) %>%
     arrange(bidder_num, price) %>%
     mutate(auction = "1843-04-02; Loan of 1843",
-           coupon_yield = 5 / price,
-           yield = make_auction_yields(price, "us_5pct_1853", as.Date("1843-04-02")))
+           current_yield1 = 5 / price,
+           current_yield2 = current_yield1,
+           gold_rate = 1,
+           price_gold = price) %>%
+  rename(price_currency = price) %>%
+  bind_cols(., 
+            make_auction_yields(.$price_currency,
+                                as.Date("1843-04-02"), 1,
+                                bond_metadata[["us_5pct_1853"]]))
 
 ```
 
@@ -397,19 +461,22 @@ bidders <-
   bind_rows(auction_18610213$bidders,
             auction_18610322$bidders,
             auction_18610511$bidders,
-            auction_1864$bidders,
+            bidders_1864,
             bidders_18600908,
             bidders_18610406,
             bidders_18621110,
             bidders_1847,
             bidders_1848,
-            bidders_1843)
+            bidders_1843) %>%
+  mutate(institutional = 
+          grepl("(\\&|\\b(son|co(mpany)?|bro(thers?)?|insurance|bank|trustees?|savings|institution|others|cashier|president|executor)\\b)", name,
+                ignore.case = TRUE, perl = TRUE))
 
 bids <-
   bind_rows(auction_18610213$bids,
             auction_18610322$bids,
             auction_18610511$bids,
-            auction_1864$bids,
+            bids_1864,
             bids_18600908,
             bids_18610406,
             bids_18621110,
@@ -421,7 +488,7 @@ metadata <-
   bind_rows(auction_18610213_meta,
             auction_18610322_meta,
             auction_18610511_meta,
-            auction_1864$metadata,
+            auction_1864_meta,
             auction_18600908_meta,
             auction_18610406_meta,
             auction_18621110_meta,

@@ -1,13 +1,12 @@
 library("plyr")
 library("reshape2")
-library("RJSONIO")
 source("sources/scripts/R/misc.R")
 
 sysargs <- commandArgs(TRUE)
 infile <- sysargs[1]
 outfile <- sysargs[2]
 
-data1 <- read.csv(infile)
+data1 <- read_csv(infile)
 data2 <- ddply(data1, c("series", "date"),
              function(x) {
                  touse <- setdiff(names(x), c("bond", "series", "date", "wgt"))
@@ -16,4 +15,4 @@ data2 <- ddply(data1, c("series", "date"),
                  colwise(fun, touse)(x)
              })
 
-write.csv2(data2, file = outfile)
+write_csv(data2, file = outfile)
