@@ -516,20 +516,29 @@ The notice from `Banker's Magazine
   payable semi-annually in coin on the first days of July and January
   of each year, and redeemable after the 30th of June, 1881."
 
+- NEWS FROM WASHINGTON. (1864, Sep 10). New York Times (1857-1922) Retrieved from http://search.proquest.com/docview/91838946?accountid=14784
+
+   - The number of bids was about 800 (185 more than the previous auction).
+   - Bids were opened on Sept 9 and 10.
+   - The amount opened on Sept 9 was 62 million, offers between 4-5% premium amount to 26 million; 40,000 at 5-6%, 1 million at par.
+   - Lists some bids
+
+- MONETARY AFFAIRS. (1864, Sep 09). New York Times (1857-1922) Retrieved from http://search.proquest.com/docview/91863390?accountid=14784 Disucsses the auction; no details.
+
+- NEWS FROM WASHINGTON. (1864, Sep 11). New York Times (1857-1922) Retrieved from http://search.proquest.com/docview/91857909?accountid=14784
+
+  - Aggregate of the bids is 72,762,750
+  - Amount awarded is 32
+  - 90% of the awarded value was at over 4%; remainded divided pro rate among those who bid 4%
+  - Partial set of bids
+
+- MONETARY AFFAIRS. (1864, Sep 10). New York Times (1857-1922) Retrieved from http://search.proquest.com/docview/91829810?accountid=14784
+
+  - List of bids through the First National Bank of New York, Morris Ketchum (4th National Bank), and Ketchu, Son & Co.
+
 The bids were for nearly 73 millions.   `Banker's Magazine
 <http://books.google.com/books?pg=PA317&id=lGAmAQAAIAAJ>`__, states
 
 Some bids listed *NYT* Sep 11, 1864, p. 1. "News from Washington". Sep 10, 1864, p.1. Checked Sept
 9-13 and did not find any other bids.
 
-- NEWS FROM WASHINGTON. (1864, Sep 10). New York Times (1857-1922). Retrieved from http://search.proquest.com/docview/91838946 (partial bids)
-- MONETARY AFFAIRS. (1864, Sep 10). New York Times (1857-1922). Retrieved from http://search.proquest.com/docview/91829810
-- NEWS FROM WASHINGTON. (1864, Sep 11). New York Times (1857-1922). Retrieved from http://search.proquest.com/docview/91857909 (partial bids)
-- THE VERY LATEST. (1864, Sep 12). Chicago Tribune (1860-1872). Retrieved from http://search.proquest.com/docview/175439682
-- The new government loan--bids for nearly &73,000,000--names of successful bidders. (1864, Sep 12). The Boston Herald (1846-1865). Retrieved from http://search.proquest.com/docview/506580623
-- NEWS FROM WASHINGTON. (1864, Sep 11). The New York Herald (1840-1865). Retrieved from http://search.proquest.com/docview/505717437
-- NEWS FROM WASHINGTON. (1864, Sep 10). The New York Herald (1840-1865). Retrieved from http://search.proquest.com/docview/505713762
-
-
-
-..  LocalWords:  6's DeKnight Bayley 22d 23d 2d 2lst Bankers' NYT Sep
