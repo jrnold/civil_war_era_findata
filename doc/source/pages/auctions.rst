@@ -165,6 +165,13 @@ The notice was on February 13, 1861 and bids were accepted until February 23, 18
 
 The data is from Table No. 2, titled "UNDER NOTICE OF FEBRUARY IS 1861. Schedule of bids for loan of $8,000,000, under act of February 8, 1861, with the rate per centum., amount accepted, and amount rejected.", p. 20-30.
 
+For comparison, the 6's of 1867-8
+
+- Feb 8: 95, 0.068975
+- Feb 15: 95, 0.06920408
+- Feb 22: 94, 0.07127497
+- Mar 2: 94, 0.07154757
+
 Notice from The Treasury Report, pp 19.
 
   OFFICIAL.
@@ -235,6 +242,13 @@ The notice was on March 22, 1861 and bids were accepted until April 2, 1861.
 
 Data is from Table No 3, p. 32-49, titled "NOTICE, MARCH 22, 1861. Schedule of bids for loan of $8,000,000, under act of February 8, 1861, the rate per centum, amount accepted, and amount rejected."
 
+The prices of 6's
+
+- Mar 16: 94, 0.07155
+- Mar 23: 95.875, 0.068556
+- Mar 30: 98, 0.070644
+- Apr  6: 95, 0.0708848
+  
 The notice is from p. 31.
 
   *Proposals for a loan.*
@@ -312,6 +326,11 @@ The data on bids appear in a table Schedule No. 5. of Treasury in the Treasury R
 
 The data for the auction is from the US Treasury Report 1861, p. 54-58.
 
+The 6's of 1867-68
+
+- May 11: 89, 0.083967
+- May 18: 88.5, 0.085297
+- May 25: 88, 0.0866079
 
 The notice of this issue, Treasury Report, pp. 52-53
 
@@ -490,7 +509,7 @@ par and 8 per cent premium. The treasury accepted all bids above 4
 percent premium; totaling about 42 million dollars.
 `Banker's Magazine, Vol XIV, July 1864
 <http://books.google.com/books?id=lGAmAQAAIAAJ&pg=PA1>`__, p. 1.
-The remaining bids 
+The remaining bids
 
 Full set of bids were listed in *The New York Times* on June 16, 1864, p. 1 and Jun 19, 1864, p. 1. 
 
