@@ -195,3 +195,37 @@ California debt was the riskiest state debt during that period. It appears that 
 
 - Default in 1857 after the California supreme court ruled some of its debt unconstitutional, http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA158.
 
+Other Sources
+=================
+
+Mitchell - Municipal Bonds. Appendix A, p. 171
+
+During the American Civil War the New England States and Municipal Bond Index Included
+
+- Massachusetts
+- Bangor, ME 
+- Boston, MA
+- Hartford, CT
+- Portland, ME
+- Albany, NY
+- Maine
+- Vermont
+- Augusta, ME
+- Connecticut
+- Rhose Island  
+
+
+Exchange Rate
+===================
+
+London prices were quoted with respect to nominal nominal parity $4.4444 per poun; even as the true par divered from that value.
+This practice endured from the Act of July 31, 1789 until the Act of March 3, 1873 which stated that the new rate will be used at par and contracts written using 4.4444 as par would be null. See Officer *Between the Dollar-Sterling Gold Points: Exchange Rate Parity and Market*, p. 59.
+
+- Paris: francs per 100 dollars
+- Amsterdam: dollars per 100 Dutch guilders
+- Frankfort: dollars per 100 guilders S. German current
+- Hamburg: dollars per 100 mark banco
+- Berlin: dollars per 100 thalers Prussian current
+- Bremen: dollars per 100 rix dollars gold
+
+
