@@ -1,9 +1,4 @@
-library("dplyr")
-library("reshape2")
-library("jsonlite")
-library("magrittr")
-source("sources/scripts/R/finance.R")
-source("sources/scripts/R/misc.R")
+source(".init.R")
 
 # TODO: remove coupon payments for states during ACW
 # TODO: yields using assumed future redemption

@@ -1,8 +1,6 @@
 #' # Bond Metadata
 #'
-library("jsonlite")
-library("lubridate")
-library("dplyr")
+source(".init.R")
 
 #'
 #' This generates metadata about each bond issue.

@@ -1,8 +1,4 @@
-library("dplyr")
-library("reshape2")
-library("jsonlite")
-source("sources/scripts/R/misc.R")
-source("sources/scripts/R/finance.R")
+source(".init.R")
 
 sysargs <- commandArgs(TRUE)
 merchants_file <- sysargs[1]

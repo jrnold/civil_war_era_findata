@@ -1,6 +1,5 @@
 #' Yields on Greenbacks held until 1879-1-1
-library("plyr")
-source("sources/scripts/R/finance.R")
+source(".init.R")
 
 args <- commandArgs(TRUE)
 infile <- args[1]

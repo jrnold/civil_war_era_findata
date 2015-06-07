@@ -22,23 +22,27 @@ make_auction_yields <- function(prices, date, gold_rate, metadata)
     # Cashflows assuming current gold rate
     cashflows_gold <- gold_cashflows(cashflows, gold_rate)
     # Cashflows assuming implied gold redemption
-    r <- 0.05
-    cashflows_currency2 <- gold_cashflows_redemp(cashflows, date, gold_rate, r)
+    cashflows_currency2 <- gold_cashflows_redemp(cashflows, date, gold_rate, r=0.05)
+    cashflows_currency3 <- gold_cashflows_redemp(cashflows, date, gold_rate, r=0.06)
+
 
     if (gold_rate == 1) {
       yields1 <- sapply(prices, function(price) {
         as.numeric(yield_to_maturity2(price, date, cashflows_currency))
       })
-      yields3 <- yields2 <- yields1
+      yields4 <- yields3 <- yields2 <- yields1
     } else {
       yields1 <- sapply(prices, function(price) {
         as.numeric(yield_to_maturity2(price / gold_rate, date, cashflows_gold))
       })
       yields2 <- sapply(prices, function(price) {
-        as.numeric(yield_to_maturity2(price, date, cashflows_currency2))
+        as.numeric(yield_to_maturity2(price, date, cashflows_currency))
       })
       yields3 <- sapply(prices, function(price) {
-        as.numeric(yield_to_maturity2(price, date, cashflows_currency))
+        as.numeric(yield_to_maturity2(price, date, cashflows_currency2))
+      })
+	  yields4 <- sapply(prices, function(price) {
+        as.numeric(yield_to_maturity2(price, date, cashflows_currency3))
       })
     }
     data_frame(ytm1 = yields1, 

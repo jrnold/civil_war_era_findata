@@ -1,5 +1,4 @@
-library("dplyr")
-source("sources/scripts/R/misc.R")
+source(".init.R")
 
 args <- commandArgs(TRUE)
 src <- args[1]
