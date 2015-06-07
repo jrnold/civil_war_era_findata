@@ -195,3 +195,8 @@ California debt was the riskiest state debt during that period. It appears that 
 
 - Default in 1857 after the California supreme court ruled some of its debt unconstitutional, http://books.google.com/books?id=g2QmAQAAIAAJ&pg=PA158.
 
+Misc
+==================
+
+- Gold Yields described here:
+- Most bonds quoted are "flat" or "diry' This was the convetion of during that period, and can be observed in the data. Macaulay, A21. http://www.nber.org/chapters/c6350.pdf

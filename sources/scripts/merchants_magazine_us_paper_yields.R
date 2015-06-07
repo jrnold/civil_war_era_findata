@@ -105,6 +105,7 @@ for (i in seq_along(.data2)) {
   .data2[[i]] <- ret %>% select(bond, date, series, wgt, everything())
   p$tick()$print()
 }
+.data2 <- bind_rows(.data2)
 
 #'
 #' Add current yields for seven_thirties. This is handled separately because
@@ -114,32 +115,44 @@ for (i in seq_along(.data2)) {
 #' - (7.3 + 6) / 2 percent in the period before the last 3.65 coupon
 #' - 6 percent after the option exercised
 #'
-# touse <- (.data2[["bond"]] == "us_seven_thirties_1864_aug_option"
-#           & .data2[["date"]] < as.Date("1864-8-19"))
-# .data2[touse, "current_yield"] <- 7.3 / .data2$price_clean[touse]
-#
-# touse <- (.data2[["bond"]] == "us_seven_thirties_1864_aug_option"
-#           & .data2[["date"]] >= as.Date("1864-2-19")
-#           & .data2[["date"]] < as.Date("1864-8-19"))
-# .data2[touse, "current_yield"] <- 6.65 / .data2$price_clean[touse]
-#
-# touse <- (.data2[["bond"]] == "us_seven_thirties_1864_aug_option"
-#           & .data2[["date"]] >= as.Date("1864-8-19"))
-# .data2[touse, "current_yield"] <- 6 / .data2$price_clean[touse]
-#
-# touse <- (.data2[["bond"]] == "us_seven_thirties_1864_oct_option"
-#           & .data2[["date"]] < as.Date("1864-10-1"))
-# .data2[touse, "current_yield"] <- 7.3 / .data2$price_clean[touse]
-#
-# touse <- (.data2[["bond"]] == "us_seven_thirties_1864_oct_option"
-#           & .data2[["date"]] < as.Date("1864-10-1")
-#           & .data2[["date"]] >= as.Date("1864-4-1"))
-# .data2[touse, "current_yield"] <- 6.65 / .data2$price_clean[touse]
-#
-# touse <- (.data2[["bond"]] == "us_seven_thirties_1864_oct_option"
-#           & .data2[["date"]] >= as.Date("1864-10-1"))
-# .data2[touse, "current_yield"] <- 6 / .data2$price_clean[touse]
+touse <- (.data2[["bond"]] == "us_seven_thirties_1864_aug_option"
+          & .data2[["date"]] < as.Date("1864-8-19"))
+.data2[touse, "current_yield1"] <- 7.3 / .data2$price_clean[touse]
+.data2[touse, "current_yield2"] <- 7.3 / (.data2$price_clean[touse] * .data$gold_rate[touse]
+)
 
+touse <- (.data2[["bond"]] == "us_seven_thirties_1864_aug_option"
+          & .data2[["date"]] >= as.Date("1864-2-19")
+          & .data2[["date"]] < as.Date("1864-8-19"))
+.data2[touse, "current_yield1"] <- 6.65 / .data2$price_clean[touse]
+.data2[touse, "current_yield2"] <- 6.65 / (.data2$price_clean[touse] * .data2$gold_rate[touse]
+)
+
+touse <- (.data2[["bond"]] == "us_seven_thirties_1864_aug_option"
+          & .data2[["date"]] >= as.Date("1864-8-19"))
+.data2[touse, "current_yield1"] <- 6 / .data2$price_clean[touse]
+.data2[touse, "current_yield2"] <- 6 / (.data2$price_clean[touse] * .data2$gold_rate[touse]
+)
+
+
+touse <- (.data2[["bond"]] == "us_seven_thirties_1864_oct_option"
+          & .data2[["date"]] < as.Date("1864-10-1"))
+.data2[touse, "current_yield1"] <- 7.3 / .data2$price_clean[touse]
+.data2[touse, "current_yield2"] <- 7.3 / (.data2$price_clean[touse] * .data2$gold_rate[touse]
+)
+
+touse <- (.data2[["bond"]] == "us_seven_thirties_1864_oct_option"
+          & .data2[["date"]] < as.Date("1864-10-1")
+          & .data2[["date"]] >= as.Date("1864-4-1"))
+.data2[touse, "current_yield1"] <- 6.65 / .data2$price_clean[touse]
+.data2[touse, "current_yield2"] <- 6.65 / (.data2$price_clean[touse] * .data2$gold_rate[touse]
+)
+
+touse <- (.data2[["bond"]] == "us_seven_thirties_1864_oct_option"
+          & .data2[["date"]] >= as.Date("1864-10-1"))
+.data2[touse, "current_yield1"] <- 6 / .data2$price_clean[touse]
+.data2[touse, "current_yield2"] <- 6 / (.data2$price_clean[touse] * .data2$gold_rate[touse]
+)
 
 #'
 #' One year old (Certificates of Indebtedness)
@@ -158,8 +171,8 @@ for (i in seq_along(.data2)) {
 #' - Annual Report of the Treasury 1863, [p. 44-45](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf#page=52)
 #'
 #'
-make_yields_note <- function(date, maturity_date, interest,
-                             pays_gold, gold_rate, price_gold,
+make_yields_note <- function(maturity_date, interest, pays_gold,
+                             date,  gold_rate, price_gold,
                              adjust_gold, adjust_currency) {
   price <- price_gold + adjust_gold + adjust_currency / gold_rate
   price_currency <- price_gold * gold_rate
@@ -196,8 +209,31 @@ make_yields_note <- function(date, maturity_date, interest,
              maturity3 = maturity3)
 }
 
-oneyr_old <- NULL
-# 6, 12 months with wgt = 0.5
+make_yield_1yr_old <- function(.data, m, wgt) {
+    filter(.data, series == "1 year certificate, Old") %>%
+    rowwise() %>%
+    do({
+      maturity_date <- .$date + months(m)
+      out <- make_yields_note(
+        maturity_date,
+        interest = 0.06,
+        pays_gold = TRUE,
+        .$date,
+        .$gold_rate,
+        .$price_gold,
+        .$adjust_gold,
+        .$adjust_currency)
+      out[["date"]] <- .$date
+      out[["series"]] <- "1 year certificate, Old"
+      out[["bond"]] <- sprintf("us_cert_indebt_1862_%dmon", m)
+      out[["wgt"]] <- wgt
+      out
+    })
+}
+
+oneyr_old <-
+  bind_rows(make_yield_1yr_old(merchants, 6, 0.5),
+            make_yield_1yr_old(merchants, 12, 0.5))
 
 #'
 #' One Year New (Treasury Notes of 1863)
@@ -213,23 +249,33 @@ oneyr_old <- NULL
 #' - De Knight, [p. 88-89](http://books.google.com/books?id=0cQmAQAAMAAJ&pg=PA88)
 #' - Noll, Vol 8, [p. 304](http://www.franklinnoll.com/Vol_8.pdf#page=305)
 #' - Annual Report of the Treasury 1865, [p. 52-53](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1865.pdf#page=56)
-#'
-# oneyr_new <- merchants %>%
-#   filter(series == "1 year certificate, New") %>%
-#   rowwise() %>%
-#   do({
-#       make_yields_note(date = .$date,
-#                       maturity_date = .$date + 6 * 30,
-#                       interest = 0.05,
-#                       pays_gold = FALSE,
-#                       gold_rate = .$gold_rate,
-#                       price_gold = .$price_gold,
-#                       adjust_gold = .$adjust_gold,
-#                       adjust_currency = .$adjust_currency)
-#     out[["wgt"]] <- 0.5
-#   })
 
-# 6, 12 months with wgt = 0.5
+make_yield_1yr_new <- function(.data, m, wgt) {
+  filter(.data, series == "1 year certificate, New") %>%
+    rowwise() %>%
+    do({
+      maturity_date <- .$date + months(m)
+      out <- make_yields_note(
+        maturity_date,
+        interest = 0.05,
+        pays_gold = FALSE,
+        .$date,
+        .$gold_rate,
+        .$price_gold,
+        .$adjust_gold,
+        .$adjust_currency)
+      out[["date"]] <- .$date
+      out[["series"]] <- "1 year certificate, New"
+      out[["bond"]] <- sprintf("us_1yr_note_1863_%dmon", m)
+      out[["wgt"]] <- wgt
+      out
+    })
+}
+
+oneyr_new <-
+  bind_rows(make_yield_1yr_new(merchants, 6, 0.5),
+            make_yield_1yr_new(merchants, 12, 0.5))
+
 
 .data2 <-
     bind_rows(.data2, oneyr_old, oneyr_new) %>%
