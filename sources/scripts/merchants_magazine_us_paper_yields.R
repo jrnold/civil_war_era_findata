@@ -212,70 +212,95 @@ touse <- (.data[["bond"]] == "us_seven_thirties_1864_oct_option"
 #' - Annual Report of the Treasury 1863, [p. 44-45](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf#page=52)
 #'
 #'
+
+yield_note <- function(price, date, payout, maturity_date) {
+  m <- as.integer(difftime(maturity_date, date, units = "days")) / 365
+  y <- - log(price / payout) / m
+  list(yield = y,
+       duration = m,
+       convexity = m ^ 2,
+       maturity = m)
+}
+
 make_yields_note <- function(maturity_date, interest, pays_gold,
-                             date,  gold_rate, price_gold,
+                             date, gold_rate, price_gold,
                              adjust_gold, adjust_currency) {
   price <-
     price_gold + adjust_gold + adjust_currency / gold_rate
   price_currency <- price_gold * gold_rate
-  future_rate <- future_gold_rates(maturity_date, date, gold_rate)$gold_rate
-  payout_currency <- 100 * (1 + interest)
+  payout <- (1 + interest) * 100
   if (pays_gold) {
-    payout_gold <- payout_currency # in gold
-    payout_currency2 <- payout_currency * future_rate  # in currency
+    payout_gold <- payout # in gold
+    payout_currency <- payout_gold * gold_rate  # in currency
   } else {
-    payout_gold <- payout_currency / gold_rate # in gold
-    payout_currency2 <- payout_currency # in currency
+    payout_gold <-  payout / gold_rate
+    payout_currency <- payout # in currency
   }
-  maturity_time <- difftime_years(maturity_date, date)
-  ytm1 <- - log(price / payout_gold) / maturity_time
-  ytm2 <- - log(price_currency / payout_currency2 ) / maturity_time
-  ytm3 <- - log(price_currency / payout_currency ) / maturity_time
-  duration1 <- duration2 <- duration3 <- maturity_time
-  convexity1 <- convexity2 <- convexity3 <- maturity_time ^ 2
-  maturity1 <- maturity2 <- maturity3 <- maturity_time
+  # Yields in currency
+  yields1 <- yield_note(price_currency, date, payout_currency,
+                        maturity_date)
+  # Yields in gold
+  yields2 <- yield_note(price, date, payout_gold,
+                        maturity_date)
+  # Yields with redemption at 5%
+  yields3 <-
+    future_gold_rates(maturity_date, date, gold_rate, r = 0.04) %>%
+    yield_note(price, date, payout_currency * .$gold_rate, maturity_date)
+  # Yields with redemption at 4%
+  yields4 <-
+    future_gold_rates(maturity_date, date, gold_rate, r = 0.05) %>%
+    yield_note(price, date, payout_currency * .$gold_rate, maturity_date)
+  # Yields with redemption at 5%
+  yields5 <-
+    future_gold_rates(maturity_date, date, gold_rate, r = 0.06) %>%
+    yield_note(price, date, payout_currency * .$gold_rate, maturity_date)
+
   data.frame(price = price,
              price_clean = price,
              gold_rate = gold_rate,
-             ytm1 = ytm1,
-             duration1 = duration1,
-             convexity1 = convexity1,
-             maturity1 = maturity1,
-             ytm2 = ytm2,
-             duration2 = duration2,
-             convexity2 = convexity2,
-             maturity2 = maturity2,
-             ytm3 = ytm3,
-             duration3 = duration3,
-             convexity3 = convexity3,
-             maturity3 = maturity3)
-}
-
-make_yield_1yr_old <- function(.data, m, wgt) {
-    filter(.data, series == "1 year certificate, Old") %>%
-    rowwise() %>%
-    do({
-      maturity_date <- .$date + months(m)
-      out <- make_yields_note(
-        maturity_date,
-        interest = 0.06,
-        pays_gold = TRUE,
-        .$date,
-        .$gold_rate,
-        .$price_gold,
-        .$adjust_gold,
-        .$adjust_currency)
-      out[["date"]] <- .$date
-      out[["series"]] <- "1 year certificate, Old"
-      out[["bond"]] <- sprintf("us_cert_indebt_1862_%dmon", m)
-      out[["wgt"]] <- wgt
-      out
-    })
+             ytm1 = yields1$yield,
+             maturity1 = yields1$maturity,
+             duration1 = yields1$duration,
+             convexity1 = yields1$convexity,
+             ytm2 = yields2$yield,
+             maturity2 = yields2$maturity,
+             duration2 = yields2$duration,
+             convexity2 = yields2$convexity,
+             ytm3 = yields3$yield,
+             maturity3 = yields3$maturity,
+             duration3 = yields3$duration,
+             convexity3 = yields3$convexity,
+             ytm4 = yields4$yield,
+             maturity4 = yields4$maturity,
+             duration4 = yields4$duration,
+             convexity4 = yields4$convexity,
+             ytm5 = yields5$yield,
+             maturity5 = yields5$maturity,
+             duration5 = yields5$duration,
+             convexity5 = yields5$convexity)
 }
 
 oneyr_old <-
-  bind_rows(make_yield_1yr_old(merchants, 6, 0.5),
-            make_yield_1yr_old(merchants, 12, 0.5))
+  filter(.data, series == "1 year certificate, Old") %>%
+  rowwise() %>%
+  do({
+    maturity_date <- .$date + months(12)
+    out <- make_yields_note(
+      maturity_date,
+      interest = 0.06,
+      pays_gold = FALSE,
+      .$date,
+      .$gold_rate,
+      .$price_gold,
+      .$adjust_gold,
+      .$adjust_currency)
+    out[["date"]] <- .$date
+    out[["series"]] <- "1 year certificate, Old"
+    out[["bond"]] <- "us_1yr_note_1862"
+    out[["wgt"]] <- 1
+    out
+  })
+
 
 #'
 #' One Year New (Treasury Notes of 1863)
@@ -292,11 +317,11 @@ oneyr_old <-
 #' - Noll, Vol 8, [p. 304](http://www.franklinnoll.com/Vol_8.pdf#page=305)
 #' - Annual Report of the Treasury 1865, [p. 52-53](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1865.pdf#page=56)
 
-make_yield_1yr_new <- function(.data, m, wgt) {
+oneyr_new <-
   filter(.data, series == "1 year certificate, New") %>%
     rowwise() %>%
     do({
-      maturity_date <- .$date + months(m)
+      maturity_date <- .$date + months(12)
       out <- make_yields_note(
         maturity_date,
         interest = 0.05,
@@ -308,15 +333,11 @@ make_yield_1yr_new <- function(.data, m, wgt) {
         .$adjust_currency)
       out[["date"]] <- .$date
       out[["series"]] <- "1 year certificate, New"
-      out[["bond"]] <- sprintf("us_1yr_note_1863_%dmon", m)
-      out[["wgt"]] <- wgt
+      out[["bond"]] <- "us_1yr_note_1863"
+      out[["wgt"]] <- 1
       out
     })
-}
 
-oneyr_new <-
-  bind_rows(make_yield_1yr_new(merchants, 6, 0.5),
-            make_yield_1yr_new(merchants, 12, 0.5))
 
 
 .data <-

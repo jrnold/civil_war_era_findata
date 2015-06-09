@@ -309,24 +309,30 @@ make_yields_etc <-
                price_orig = price_gold,
                gold_rate = gold_rate,
                accrued_interest = accrued,
+
                current_yield1 = current_yield,
                current_yield2 = current_yield_currency,
+
                ytm1 = as.numeric(yields_currency),
                duration1 = attr(yields_currency, "duration"),
                convexity1 = attr(yields_currency, "convexity"),
                maturity1 = attr(yields_currency, "maturity"),
+
                ytm2 = as.numeric(yields_gold),
                duration2 = attr(yields_gold, "duration"),
                convexity2 = attr(yields_gold, "convexity"),
                maturity2 = attr(yields_gold, "maturity"),
+
                ytm3 = as.numeric(yields_currency3),
                duration3 = attr(yields_currency3, "duration"),
                convexity3 = attr(yields_currency3, "convexity"),
                maturity3 = attr(yields_currency3, "maturity"),
+
                ytm4 = as.numeric(yields_currency4),
                duration4 = attr(yields_currency4, "duration"),
                convexity4 = attr(yields_currency4, "convexity"),
                maturity4 = attr(yields_currency4, "maturity"),
+
                ytm5 = as.numeric(yields_currency5),
                duration5 = attr(yields_currency5, "duration"),
                convexity5 = attr(yields_currency5, "convexity"),

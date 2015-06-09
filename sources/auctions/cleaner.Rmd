@@ -6,44 +6,66 @@ output: html_document
 ---
 
 ```{r}
-library("dplyr")
-library("jsonlite")
-```
-
-```{r}
-source("../../sources/scripts/R/misc.R")
-source("../../sources/scripts/R/finance.R")
-bond_metadata <- get_bond_metadata("../bond_metadata.json")
+source("../../R/.init.R")
+bond_metadata <- get_bond_metadata("../../data/bond_metadata.json")
 
 make_auction_yields <- function(prices, date, gold_rate, metadata)
 {
-    cashflows_currency3 <- gold_cashflows_redemp(cashflows, date, gold_rate, r=0.06)
-
 
     if (gold_rate == 1) {
-      yields1 <- sapply(prices, function(price) {
-        metadata$cashflows %>%
-        as.numeric(yield_to_maturity2(price, date, .))
+      yields1 <- sapply(prices, function(price) {    
+        as.numeric(yield_to_maturity2(price, date, metadata$cashflows))
       })
-      yields6 <- yields5 <- yields4 <- yields3 <- yields2 <- yields1
+      data_frame(
+        ytm1 = yields1,
+        ytm2 = yields1,
+        ytm3 = yields1,
+        ytm4 = yields1,
+        ytm5 = yields1,
+        ytm6 = yields1)
     } else {
-      # Yields in currency
-      yields1 <- sapply(prices, function(price) {
-        as.numeric(yield_to_maturity2(price * gold_rate, date, cashflows))
-      })
-      yields2 <- sapply(prices, function(price) {
-        as.numeric(yield_to_maturity2(price, date, cashflows_currency))
-      })
-      yields3 <- sapply(prices, function(price) {
-        as.numeric(yield_to_maturity2(price, date, cashflows_currency2))
-      })
-	  yields4 <- sapply(prices, function(price) {
-        as.numeric(yield_to_maturity2(price, date, cashflows_currency3))
-      })
+      cashflows <- metadata$cashflows
+      data_frame(price = prices) %>%
+        rowwise() %>%
+        do({
+          yields1 <-
+            yield_to_maturity2(.$price * gold_rate, date, cashflows)
+          # yields using gold current price
+          yields2 <-
+            gold_cashflows(cashflows, gold_rate) %>%
+            yield_to_maturity2(.$price, date, .) %>%
+            as.numeric()
+          # yields using currency with implied gold redemption
+          yields3 <-
+            gold_cashflows_redemp(cashflows, date, gold_rate,
+                                  r = 0.04) %>%
+            yield_to_maturity2(.$price, date, .) %>%
+            as.numeric()
+          yields4 <-
+            gold_cashflows_redemp(cashflows, date, gold_rate,
+                                  r = 0.05) %>%
+            yield_to_maturity2(.$price, date, .) %>%
+            as.numeric()
+          # yields using currency with implied gold redemption
+          yields5 <-
+            gold_cashflows_redemp(cashflows, date, gold_rate,
+                                  r = 0.06) %>%
+            yield_to_maturity2(.$price, date, .) %>%
+            as.numeric()
+          yields6 <-
+            gold_cashflows_redemp(cashflows, date, gold_rate,
+                                  r = yields1) %>%
+            yield_to_maturity2(.$price, date, .) %>%
+            as.numeric()
+          data_frame(
+            ytm1 = yields1,
+            ytm2 = yields2,
+            ytm3 = yields3,
+            ytm4 = yields4,
+            ytm5 = yields5,
+            ytm6 = yields6)
+        })
     }
-    data_frame(ytm1 = yields1, 
-               ytm2 = yields2,
-               ytm3 = yields3)
 }
 
 ```
@@ -54,7 +76,7 @@ make_auction_yields <- function(prices, date, gold_rate, metadata)
 Average value of the greenback between 1864-06-04, when the auction opened for bids,
 and 1864-06-15, when it closed.
 ```{r eval = FALSE}
-read_csv("../greenbacks.csv") %>%
+read_csv("../../data/greenbacks.csv") %>%
   filter(date >= as.Date("1864-06-04") & date <= as.Date("1864-06-15")) %>%
   na.omit() %>%
   summarize(value = mean(mean))
@@ -104,10 +126,11 @@ bids_1864 <- auction_1864 %>%
          current_yield1 = 6 / (price_currency * GREENBACK_PRICE),
          current_yield2 = 6 / price_currency,
          gold_rate = 1 / GREENBACK_PRICE) %>%
-  bind_cols(., make_auction_yields(.$price_currency,
-                                as.Date("1864-06-15"),
-                                1 / GREENBACK_PRICE, 
-                                bond_metadata[["us_6pct_1881_jul"]]))
+  bind_cols(.,
+            make_auction_yields(prices = .$price_currency,
+                                date = as.Date("1864-06-15"),
+                                gold_rate = 1 / GREENBACK_PRICE, 
+                                metadata = bond_metadata[["us_6pct_1881_jul"]]))
 
 ```
 
@@ -117,7 +140,7 @@ bids_1864 <- auction_1864 %>%
 Average value of the greenback between 1862-11-10, when the auction opened for bids,
 and 1864-11-17, when it closed.
 ```{r eval = FALSE}
-read_csv("../greenbacks.csv") %>%
+read_csv("../../data/greenbacks.csv") %>%
   filter(date >= as.Date("1862-11-10") & date <= as.Date("1862-11-17")) %>%
   na.omit() %>%
   summarize(value = mean(mean))
@@ -469,8 +492,9 @@ bidders <-
             bidders_1848,
             bidders_1843) %>%
   mutate(institutional = 
-          grepl("(\\&|\\b(son|co(mpany)?|bro(thers?)?|insurance|bank|trustees?|savings|institution|others|cashier|president|executor)\\b)", name,
-                ignore.case = TRUE, perl = TRUE))
+          grepl("(\\&|\\b(son|co(mpany)?|bro(thers?)?|insurance|bank|trustees?|savings|institution|others|cashier|president|executor)\\b)",
+                name, ignore.case = TRUE, perl = TRUE))
+                
 
 bids <-
   bind_rows(auction_18610213$bids,
