@@ -1,6 +1,6 @@
 #' # Bond Metadata
 #'
-source(".init.R")
+source("R/.init.R")
 
 #'
 #' This generates metadata about each bond issue.

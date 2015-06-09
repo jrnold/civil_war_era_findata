@@ -1,4 +1,4 @@
-source(".init.R")
+source("R/.init.R")
 
 sysargs <- commandArgs(TRUE)
 merchants_file <- sysargs[1]
@@ -6,6 +6,7 @@ merchants_file <- "data/merchants_magazine_us_paper.csv"
 bond_metadata_file <- sysargs[2]
 bond_metadata_file <- "data/bond_metadata.json"
 outfile <- sysargs[3]
+outfile <- "data/merchants_magazine_us_paper_yields.csv"
 
 #' Load prerequisite data
 BOND_SERIES <- c("5's, 1874",
@@ -79,29 +80,73 @@ match_series_to_bonds <- function(series, date, ...) {
     MATCH_BONDS[[as.character(series)]](date)
 }
 
-.data <- plyr::mdply(merchants_bonds, match_series_to_bonds)
+.data <-
+  plyr::mdply(merchants_bonds, match_series_to_bonds) %>%
+  #slice(1:5000) %>%
+  rowwise() %>%
+  do({
+    ret <- make_yields_etc(date = .$date,
+                           bond = .$bond,
+                           gold_rate = .$gold_rate,
+                           price_gold = .$price_gold,
+                           adjust_gold = .$adjust_gold,
+                           adjust_currency = .$adjust_currency,
+                           is_clean = .$is_clean,
+                           metadata = bond_metadata[[.$bond]])
+    ret[["date"]] <- .$date
+    ret[["bond"]] <- .$bond
+    ret[["series"]] <- .$series
+    ret[["wgt"]] <- .$wgt
+    select(ret, bond, date, series, wgt, everything())
+  })
 
-.data2 <- vector(nrow(.data), mode = "list")
-p <- progress_estimated(nrow(.data))
-for (i in seq_along(.data2)) {
-  x <- .data[i, , drop = FALSE]
-  ret <- make_yields_etc(date = x$date,
-                         bond = x$bond,
-                         gold_rate = x$gold_rate,
-                         price_gold = x$price_gold,
-                         adjust_gold = x$adjust_gold,
-                         adjust_currency = x$adjust_currency,
-                         is_clean = x$is_clean,
-                         metadata = bond_metadata[[x$bond]])
-  ret[["date"]] <- x$date
-  ret[["bond"]] <- x$bond
-  ret[["series"]] <- x$series
-  ret[["wgt"]] <- x$wgt
+rfyields_date <- function(x) {
+  rate <- filter(x,
+                 series %in% c("6's, 1881 Coup.")) %>%
+    `[[`("ytm1") %>%
+    mean()
 
-  .data2[[i]] <- ret %>% select(bond, date, series, wgt, everything())
-  p$tick()$print()
+  ret <- vector(length = nrow(x), mode = "list")
+  for (i in seq_len(nrow(x))) {
+    .i <- x[i, , drop = FALSE]
+    if(.i$gold_rate != 1) {
+      yields <-
+        gold_cashflows_redemp(bond_metadata[[.i$bond]]$cashflows,
+                              .i$date,
+                              .i$gold_rate,
+                              r = rate) %>%
+        yield_to_maturity2(.i$price * .i$gold_rate, .i$date, .)
+      ret[[i]] <-
+        data_frame(govt_rate = rate,
+                   ytm6 = as.numeric(yields),
+                   duration6 = attr(yields, "duration"),
+                   convexity6 = attr(yields, "convexity"),
+                   maturity6 = attr(yields, "maturity"),
+                   date = .i$date,
+                   bond = .i$bond
+        )
+    } else {
+      ret[[i]] <-
+        data_frame(govt_rate = rate,
+                   ytm6 = .i$ytm1,
+                   duration6 = .i$duration1,
+                   convexity6 = .i$convexity1,
+                   maturity6 = .i$maturity1,
+                   date = .i$date,
+                   bond = .i$bond)
+    }
+  }
+  bind_rows(ret)
 }
-.data2 <- bind_rows(.data2)
+
+#' Get currency rate for the government for each time period
+yields6 <-
+  .data %>%
+  ungroup() %>%
+  group_by(date) %>%
+  do(rfyields_date(.))
+
+.data %<>% left_join(yields6, by = c("date", "bond"))
 
 #'
 #' Add current yields for seven_thirties. This is handled separately because
@@ -111,43 +156,43 @@ for (i in seq_along(.data2)) {
 #' - (7.3 + 6) / 2 percent in the period before the last 3.65 coupon
 #' - 6 percent after the option exercised
 #'
-touse <- (.data2[["bond"]] == "us_seven_thirties_1864_aug_option"
-          & .data2[["date"]] < as.Date("1864-8-19"))
-.data2[touse, "current_yield1"] <- 7.3 / .data2$price_clean[touse]
-.data2[touse, "current_yield2"] <- 7.3 / (.data2$price_clean[touse] * .data$gold_rate[touse]
+touse <- (.data[["bond"]] == "us_seven_thirties_1864_aug_option"
+          & .data[["date"]] < as.Date("1864-8-19"))
+.data[touse, "current_yield1"] <- 7.3 / .data$price_clean[touse]
+.data[touse, "current_yield2"] <- 7.3 / (.data$price_clean[touse] * .data$gold_rate[touse]
 )
 
-touse <- (.data2[["bond"]] == "us_seven_thirties_1864_aug_option"
-          & .data2[["date"]] >= as.Date("1864-2-19")
-          & .data2[["date"]] < as.Date("1864-8-19"))
-.data2[touse, "current_yield1"] <- 6.65 / .data2$price_clean[touse]
-.data2[touse, "current_yield2"] <- 6.65 / (.data2$price_clean[touse] * .data2$gold_rate[touse]
+touse <- (.data[["bond"]] == "us_seven_thirties_1864_aug_option"
+          & .data[["date"]] >= as.Date("1864-2-19")
+          & .data[["date"]] < as.Date("1864-8-19"))
+.data[touse, "current_yield1"] <- 6.65 / .data$price_clean[touse]
+.data[touse, "current_yield2"] <- 6.65 / (.data$price_clean[touse] * .data$gold_rate[touse]
 )
 
-touse <- (.data2[["bond"]] == "us_seven_thirties_1864_aug_option"
-          & .data2[["date"]] >= as.Date("1864-8-19"))
-.data2[touse, "current_yield1"] <- 6 / .data2$price_clean[touse]
-.data2[touse, "current_yield2"] <- 6 / (.data2$price_clean[touse] * .data2$gold_rate[touse]
+touse <- (.data[["bond"]] == "us_seven_thirties_1864_aug_option"
+          & .data[["date"]] >= as.Date("1864-8-19"))
+.data[touse, "current_yield1"] <- 6 / .data$price_clean[touse]
+.data[touse, "current_yield2"] <- 6 / (.data$price_clean[touse] * .data$gold_rate[touse]
 )
 
 
-touse <- (.data2[["bond"]] == "us_seven_thirties_1864_oct_option"
-          & .data2[["date"]] < as.Date("1864-10-1"))
-.data2[touse, "current_yield1"] <- 7.3 / .data2$price_clean[touse]
-.data2[touse, "current_yield2"] <- 7.3 / (.data2$price_clean[touse] * .data2$gold_rate[touse]
+touse <- (.data[["bond"]] == "us_seven_thirties_1864_oct_option"
+          & .data[["date"]] < as.Date("1864-10-1"))
+.data[touse, "current_yield1"] <- 7.3 / .data$price_clean[touse]
+.data[touse, "current_yield2"] <- 7.3 / (.data$price_clean[touse] * .data$gold_rate[touse]
 )
 
-touse <- (.data2[["bond"]] == "us_seven_thirties_1864_oct_option"
-          & .data2[["date"]] < as.Date("1864-10-1")
-          & .data2[["date"]] >= as.Date("1864-4-1"))
-.data2[touse, "current_yield1"] <- 6.65 / .data2$price_clean[touse]
-.data2[touse, "current_yield2"] <- 6.65 / (.data2$price_clean[touse] * .data2$gold_rate[touse]
+touse <- (.data[["bond"]] == "us_seven_thirties_1864_oct_option"
+          & .data[["date"]] < as.Date("1864-10-1")
+          & .data[["date"]] >= as.Date("1864-4-1"))
+.data[touse, "current_yield1"] <- 6.65 / .data$price_clean[touse]
+.data[touse, "current_yield2"] <- 6.65 / (.data$price_clean[touse] * .data$gold_rate[touse]
 )
 
-touse <- (.data2[["bond"]] == "us_seven_thirties_1864_oct_option"
-          & .data2[["date"]] >= as.Date("1864-10-1"))
-.data2[touse, "current_yield1"] <- 6 / .data2$price_clean[touse]
-.data2[touse, "current_yield2"] <- 6 / (.data2$price_clean[touse] * .data2$gold_rate[touse]
+touse <- (.data[["bond"]] == "us_seven_thirties_1864_oct_option"
+          & .data[["date"]] >= as.Date("1864-10-1"))
+.data[touse, "current_yield1"] <- 6 / .data$price_clean[touse]
+.data[touse, "current_yield2"] <- 6 / (.data$price_clean[touse] * .data$gold_rate[touse]
 )
 
 #'
@@ -170,7 +215,8 @@ touse <- (.data2[["bond"]] == "us_seven_thirties_1864_oct_option"
 make_yields_note <- function(maturity_date, interest, pays_gold,
                              date,  gold_rate, price_gold,
                              adjust_gold, adjust_currency) {
-  price <- price_gold + adjust_gold + adjust_currency / gold_rate
+  price <-
+    price_gold + adjust_gold + adjust_currency / gold_rate
   price_currency <- price_gold * gold_rate
   future_rate <- future_gold_rates(maturity_date, date, gold_rate)$gold_rate
   payout_currency <- 100 * (1 + interest)
@@ -273,8 +319,8 @@ oneyr_new <-
             make_yield_1yr_new(merchants, 12, 0.5))
 
 
-.data2 <-
-    bind_rows(.data2, oneyr_old, oneyr_new) %>%
-     mutate(registered = as.integer(grepl("_reg$", series)))
+.data <-
+    bind_rows(.data, oneyr_old, oneyr_new) %>%
+    mutate(registered = as.integer(grepl("_reg$", series)))
 
-write_csv(.data2, file = outfile)
+write_csv(.data, file = outfile)

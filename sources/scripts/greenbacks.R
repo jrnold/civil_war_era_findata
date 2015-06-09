@@ -1,5 +1,5 @@
 #' Preprocess ``greenbacks`` data
-source(".init.R")
+source("R/.init.R")
 args <- commandArgs(TRUE)
 src <- args[1]
 dst <- args[2]

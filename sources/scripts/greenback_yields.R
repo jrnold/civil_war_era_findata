@@ -1,5 +1,5 @@
-#' Yields on Greenbacks held until 1879-1-1
-source(".init.R")
+#' Implied yields and maturities of greenbacks
+source("R/.init.R")
 
 args <- commandArgs(TRUE)
 infile <- args[1]
@@ -17,9 +17,16 @@ greenback_yields <-
            actual_low = - log(low / 100) / actual_maturity,
            actual_high = - log(high / 100) / actual_maturity,
            actual_mean = - log(mean / 100) / actual_maturity,
-           implied_maturity_low = gold_redemp_date(date, high / 100),
-           implied_maturity_high = gold_redemp_date(date, low / 100),
-           implied_maturity_mean = gold_redemp_date(date, mean / 100)) %>%
+           implied_maturity_4pct_low = gold_redemp_date(date, high / 100, 0.04),
+           implied_maturity_4pct_high = gold_redemp_date(date, low / 100, 0.04),
+           implied_maturity_4pct_mean = gold_redemp_date(date, mean / 100, 0.04),
+           implied_maturity_5pct_low = gold_redemp_date(date, high / 100, 0.05),
+           implied_maturity_5pct_high = gold_redemp_date(date, low / 100, 0.05),
+           implied_maturity_5pct_mean = gold_redemp_date(date, mean / 100, 0.05),
+           implied_maturity_6pct_low = gold_redemp_date(date, high / 100, 0.06),
+           implied_maturity_6pct_high = gold_redemp_date(date, low / 100, 0.06),
+           implied_maturity_6pct_mean = gold_redemp_date(date, mean / 100, 0.06)) %>%
+
         select(date, matches("actual_"), matches("implied_"))
 
 write_csv(greenback_yields, file = outfile)

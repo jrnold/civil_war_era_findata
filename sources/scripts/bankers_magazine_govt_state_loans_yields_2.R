@@ -1,4 +1,4 @@
-source(".init.R")
+source("R/.init.R")
 
 sysargs <- commandArgs(TRUE)
 infile <- sysargs[1]

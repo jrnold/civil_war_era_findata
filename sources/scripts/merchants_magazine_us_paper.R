@@ -1,7 +1,7 @@
 #' Merchants' Magazine
 #'
 #' Adds price in gold. Gold prices come from ``greenbacks_fill``.
-source(".init.R")
+source("R/.init.R")
 
 args <- commandArgs(TRUE)
 src <- args[1]

@@ -91,14 +91,14 @@ yield_to_maturity <- function(price, x, m, interval = c(-1.5, 1.5), ...) {
     ytm <- try(uniroot(pvcashflows, interval = interval, ...)$root,
                silent = TRUE)
     if (!inherits(ytm, "try-error")) {
-      attr(ytm, "duration") <-  t(x * m) %*% exp(-m * ytm) / price
-      attr(ytm, "convexity") <- t(x * m^2) %*% exp(-m * ytm) / price
-      attr(ytm, "maturity") <- max(m)
+      attr(ytm, "duration") <-  as.numeric(t(x * m) %*% exp(-m * ytm) / price)
+      attr(ytm, "convexity") <- as.numeric(t(x * m^2) %*% exp(-m * ytm) / price)
+      attr(ytm, "maturity") <- as.numeric(max(m))
     } else {
-      ytm <- NA
-      attr(ytm, "duration") <-  NA
-      attr(ytm, "convexity") <- NA
-      attr(ytm, "maturity") <- NA
+      ytm <- NA_real_
+      attr(ytm, "duration") <-  NA_real_
+      attr(ytm, "convexity") <- NA_real_
+      attr(ytm, "maturity") <- NA_real_
     }
     ytm
 }
@@ -245,14 +245,8 @@ make_yields_etc <-
 {
     issue_date <- metadata[["issue_date"]]
     # Cashflows keeping gold to currency = 1
-    cashflows_currency <- cashflows <- metadata$cashflows
-    # Cashflows assuming current gold rate
-    cashflows_gold <- gold_cashflows(cashflows, gold_rate)
-    # Cashflows assuming implied gold redemption
-    cashflows_currency2 <- gold_cashflows_redemp(cashflows, date, gold_rate, r = 0.05)
-    cashflows_currency3 <- gold_cashflows_redemp(cashflows, date, gold_rate, r = 0.06)
+    cashflows <- metadata$cashflows
 
-    
     # Price in gold dollars
     accrued <- accrued_interest(date, cashflows, issue_date)
     price <- price_gold + adjust_gold + adjust_currency / gold_rate
@@ -265,53 +259,77 @@ make_yields_etc <-
     price_currency <- price * gold_rate
     price_clean_currency <- price_clean * gold_rate
 
+
     # yields using currency
     yields_currency <- yield_to_maturity2(price_currency, date,
-                                          cashflows_currency)
-    # yields using gold current price
-    yields_gold <- yield_to_maturity2(price, date, cashflows_gold)
-    # yields using currency with implied gold redemption
-    yields_currency2 <- yield_to_maturity2(price_currency, date,
-                                           cashflows_currency2)
-    # yields using currency with implied gold redemption
-    yields_currency3 <- yield_to_maturity2(price_currency, date,
-                                           cashflows_currency3)
-    
+                                          cashflows)
+    if (gold_rate != 1) {
+      # yields using gold current price
+      yields_gold <-
+        gold_cashflows(cashflows, gold_rate) %>%
+        yield_to_maturity2(price, date, .)
+      # yields using currency with implied gold redemption
+      yields_currency3 <-
+        gold_cashflows_redemp(cashflows, date, gold_rate,
+                              r = 0.04) %>%
+        yield_to_maturity2(price_currency, date, .)
+      yields_currency4 <-
+        gold_cashflows_redemp(cashflows, date, gold_rate,
+                              r = 0.05) %>%
+        yield_to_maturity2(price_currency, date, .)
+      # yields using currency with implied gold redemption
+      yields_currency5 <-
+        gold_cashflows_redemp(cashflows, date, gold_rate,
+                              r = 0.06) %>%
+        yield_to_maturity2(price_currency, date, .)
+    } else {
+      yields_gold <- yields_currency
+      yields_currency3 <- yields_currency
+      yields_currency4 <- yields_currency
+      yields_currency5 <- yields_currency
+    }
+
+
     # yields uing gold
     if ("periods" %in% names(metadata)
         && length(metadata$periods)
         && ! is.na(metadata$periods)) {
         current_yield <-
-          calc_current_yield(date, price_clean, cashflows_gold,
+          gold_cashflows(cashflows, gold_rate) %>%
+          calc_current_yield(date, price_clean, .,
                              length(metadata$periods))
         current_yield_currency <-
-          calc_current_yield(date, price_clean_currency, cashflows_currency,
+          calc_current_yield(date, price_clean_currency, cashflows,
                              length(metadata$periods))
     } else {
         current_yield <- current_yield_currency <- NA
     }
     data.frame(price = price,
                price_clean = price_clean,
+               price_orig = price_gold,
                gold_rate = gold_rate,
                accrued_interest = accrued,
                current_yield1 = current_yield,
                current_yield2 = current_yield_currency,
-               ytm1 = as.numeric(yields_gold),
-               duration1 = attr(yields_gold, "duration"),
-               convexity1 = attr(yields_gold, "convexity"),
-               maturity1 = attr(yields_gold, "maturity"),
-               ytm2 = as.numeric(yields_currency),
-               duration2 = attr(yields_currency, "duration"),
-               convexity2 = attr(yields_currency, "convexity"),
-               maturity2 = attr(yields_currency, "maturity"),
-               ytm3 = as.numeric(yields_currency2),
-               duration3 = attr(yields_currency2, "duration"),
-               convexity3 = attr(yields_currency2, "convexity"),
-               maturity3 = attr(yields_currency2, "maturity"),
-               ytm4 = as.numeric(yields_currency3),
-               duration4 = attr(yields_currency3, "duration"),
-               convexity4 = attr(yields_currency3, "convexity"),
-               maturity4 = attr(yields_currency3, "maturity")
+               ytm1 = as.numeric(yields_currency),
+               duration1 = attr(yields_currency, "duration"),
+               convexity1 = attr(yields_currency, "convexity"),
+               maturity1 = attr(yields_currency, "maturity"),
+               ytm2 = as.numeric(yields_gold),
+               duration2 = attr(yields_gold, "duration"),
+               convexity2 = attr(yields_gold, "convexity"),
+               maturity2 = attr(yields_gold, "maturity"),
+               ytm3 = as.numeric(yields_currency3),
+               duration3 = attr(yields_currency3, "duration"),
+               convexity3 = attr(yields_currency3, "convexity"),
+               maturity3 = attr(yields_currency3, "maturity"),
+               ytm4 = as.numeric(yields_currency4),
+               duration4 = attr(yields_currency4, "duration"),
+               convexity4 = attr(yields_currency4, "convexity"),
+               maturity4 = attr(yields_currency4, "maturity"),
+               ytm5 = as.numeric(yields_currency5),
+               duration5 = attr(yields_currency5, "duration"),
+               convexity5 = attr(yields_currency5, "convexity"),
+               maturity5 = attr(yields_currency5, "maturity")
                )
 }
-

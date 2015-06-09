@@ -200,3 +200,39 @@ Misc
 
 - Gold Yields described here:
 - Most bonds quoted are "flat" or "diry' This was the convetion of during that period, and can be observed in the data. Macaulay, A21. http://www.nber.org/chapters/c6350.pdf
+
+Yields of Bonds Accounting for Redemption
+==========================================
+
+The price of security $i$ at time $t$ in currency is $p_{i,t}$.
+Security $i$ at time $t$ has a price in currency :math:`p_{i,t}`,
+a schedule of :math:`n_{i,t}` future payments of amounts :math:`c_{i,t,j}`, at times :math:`s_{i,t,j}` where :math:`j = 1, \dots, n_{i,t}`.
+Let :math:`m_{i,t,j} = t - s_{i,t,j}`.
+The yield to maturity is defined as
+.. math::
+   r^* = \argmin_{r} (p_{i,t} - \sum_{j = 1}^{n_{i,t}} g_{s_{i,t,j}} c_{i,t,j} e^{- r m_{i,t,j}}
+
+To calculate the yield to maturity requires the price of gold in dollars for times :math:`s_{i,t,j}`.
+The path of future gold prices is calculated using the current price of gold, :math:`g_t` and a discount rate, :math:`r^{(g)}`, which should be a risk free rate, treating gold as a zero-coupon bond.
+Given the current price of gold and its discount rate, the redemption time for gold is
+.. math::
+   t^{(g)} = - \log g_t / r^{(g)}
+and the price of gold in dollars at future times is
+.. math::
+   g_{t'} =
+   \begin{cases}
+     e^{- r^{(g)} (t' - t^{(g)})}, 1) & \text{if $t' < t^{(g)}} \\
+     1 & \text{if $t' \geq t^{(g)}}
+   \end{cases}
+
+Yields to maturity (and associated statistics like duration and convexity) are calculate
+
+- "Currency yields". Let :math:`g_{t'} = 1` for all times.
+  This is equivalent to :math:`r^{(g)} = \infty` or :math:`t^{(g)} = t'`.
+- "Gold yields". Let :math:`g_{t'} = g_{t}` for all times.
+  This is equivalent to $r^{(g)} = 0$ or $t^{(g)} = \infty$.
+- Medium risk free rate: :math:`r^{(g)} = 0.05`.
+- Low risk free rate: :math:`r^{(g)} = 0.04`.
+- High risk free rate: :math:`r^{(g)} = 0.06`.
+- Currency yields of a long-run US coupon bond (U.S. 5's of 1874, 6's of 1868, 6's of 1881).
+  

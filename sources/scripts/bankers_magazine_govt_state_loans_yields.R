@@ -1,4 +1,4 @@
-source(".init.R")
+source("R/.init.R")
 
 # TODO: remove coupon payments for states during ACW
 # TODO: yields using assumed future redemption
@@ -9,6 +9,7 @@ bankers_file <- "data/bankers_magazine_govt_state_loans.csv"
 bond_metadata_file <- sysargs[2]
 bond_metadata_file <- "data/bond_metadata.json"
 outfile <- sysargs[3]
+outfile <- "data/bankers_magazine_govt_state_loans_yields.csv"
 
 #' Load prerequisite data
 bankers <-
@@ -129,30 +130,78 @@ if (length(unmatched)) {
   stop(sprintf("No entries for: %s", paste(unmatched, collapse = ", ")))
 }
 
-.data <- plyr::mdply(bankers,
-                     function(series, date, ...) {
-                       MATCH_BONDS[[as.character(series)]](date)
-                     })
+.data <-
+  plyr::mdply(bankers,
+              function(series, date, ...) {
+                MATCH_BONDS[[as.character(series)]](date)
+              }) %>%
+  #slice(1:5000) %>%
+  rowwise() %>%
+  do({
+    ret <- make_yields_etc(date = .$date,
+                           bond = .$bond,
+                           gold_rate = .$gold_rate,
+                           price_gold = .$price_gold,
+                           adjust_gold = .$adjust_gold,
+                           adjust_currency = .$adjust_currency,
+                           is_clean = .$is_clean,
+                           metadata = bond_metadata[[.$bond]])
+    ret[["date"]] <- .$date
+    ret[["bond"]] <- .$bond
+    ret[["series"]] <- .$series
+    ret[["wgt"]] <- .$wgt
+    select(ret, bond, date, series, wgt, everything())
+  })
 
-.data2 <- vector(nrow(.data), mode = "list")
-p <- progress_estimated(nrow(.data))
-for (i in seq_along(.data2)) {
-  x <- .data[i, , drop = FALSE]
-  ret <- make_yields_etc(date = x$date,
-                         bond = x$bond,
-                         gold_rate = x$gold_rate,
-                         price_gold = x$price_gold,
-                         adjust_gold = x$adjust_gold,
-                         adjust_currency = x$adjust_currency,
-                         is_clean = x$is_clean,
-                         metadata = bond_metadata[[x$bond]])
-  ret[["date"]] <- x$date
-  ret[["bond"]] <- x$bond
-  ret[["series"]] <- x$series
-  ret[["wgt"]] <- x$wgt
+rfyields_date <- function(x) {
+  rate <- filter(x,
+                 series %in% c("U.S. 6 per cents, 1867-8",
+                               "U.S. 6 per cents, 1881",
+                               "U.S. 6 per cents, 1874")) %>%
+    `[[`("ytm1") %>%
+    mean()
 
-  .data2[[i]] <- ret %>% select(bond, date, series, wgt, everything())
-  p$tick()$print()
+  ret <- vector(length = nrow(x), mode = "list")
+  for (i in seq_len(nrow(x))) {
+    .i <- x[i, , drop = FALSE]
+    if(.i$gold_rate != 1) {
+      yields <-
+        gold_cashflows_redemp(bond_metadata[[.i$bond]]$cashflows,
+                              .i$date,
+                              .i$gold_rate,
+                              r = rate) %>%
+        yield_to_maturity2(.i$price * .i$gold_rate, .i$date, .)
+      ret[[i]] <-
+        data_frame(govt_rate = rate,
+                   ytm6 = as.numeric(yields),
+                   duration6 = attr(yields, "duration"),
+                   convexity6 = attr(yields, "convexity"),
+                   maturity6 = attr(yields, "maturity"),
+                   date = .i$date,
+                   bond = .i$bond
+        )
+    } else {
+     ret[[i]] <-
+        data_frame(govt_rate = rate,
+                   ytm6 = .i$ytm1,
+                   duration6 = .i$duration1,
+                   convexity6 = .i$convexity1,
+                   maturity6 = .i$maturity1,
+                   date = .i$date,
+                   bond = .i$bond)
+    }
+  }
+  bind_rows(ret)
 }
 
-write_csv(bind_rows(.data2), file = outfile)
+#' Get currency rate for the government for each time period
+yields6 <-
+  .data %>%
+  #filter(date >= as.Date("1862-1-1")) %>%
+  ungroup() %>%
+  group_by(date) %>%
+  do(rfyields_date(.))
+
+.data %<>% left_join(yields6, by = c("date", "bond"))
+
+write_csv(.data, file = outfile)

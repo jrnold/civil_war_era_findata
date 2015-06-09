@@ -17,23 +17,19 @@ bond_metadata <- get_bond_metadata("../bond_metadata.json")
 
 make_auction_yields <- function(prices, date, gold_rate, metadata)
 {
-    # Cashflows keeping gold to currency = 1
-    cashflows_currency <- cashflows <- metadata$cashflows
-    # Cashflows assuming current gold rate
-    cashflows_gold <- gold_cashflows(cashflows, gold_rate)
-    # Cashflows assuming implied gold redemption
-    cashflows_currency2 <- gold_cashflows_redemp(cashflows, date, gold_rate, r=0.05)
     cashflows_currency3 <- gold_cashflows_redemp(cashflows, date, gold_rate, r=0.06)
 
 
     if (gold_rate == 1) {
       yields1 <- sapply(prices, function(price) {
-        as.numeric(yield_to_maturity2(price, date, cashflows_currency))
+        metadata$cashflows %>%
+        as.numeric(yield_to_maturity2(price, date, .))
       })
-      yields4 <- yields3 <- yields2 <- yields1
+      yields6 <- yields5 <- yields4 <- yields3 <- yields2 <- yields1
     } else {
+      # Yields in currency
       yields1 <- sapply(prices, function(price) {
-        as.numeric(yield_to_maturity2(price / gold_rate, date, cashflows_gold))
+        as.numeric(yield_to_maturity2(price * gold_rate, date, cashflows))
       })
       yields2 <- sapply(prices, function(price) {
         as.numeric(yield_to_maturity2(price, date, cashflows_currency))
