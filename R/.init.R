@@ -3,6 +3,8 @@ library("dplyr")
 library("magrittr")
 library("lubridate")
 
+#' Load the bond metadata json file while converting fields
+#' to correct types.
 get_bond_metadata <- function(file) {
     lapply(fromJSON(file),
            function(x) {
@@ -13,22 +15,28 @@ get_bond_metadata <- function(file) {
            })
 }
 
+#' Read csv files with better defaults
 read_csv <- function(...) {
     read.csv(..., stringsAsFactors = FALSE)
 }
+
+#' Write csv files with better defaults
 write_csv <- function(...) {
     write.csv(..., na = "", row.names = FALSE)
 }
 
+#' Fill in missing values
 fill_na <- function(x, fill=0) {
     x[is.na(x)] <- fill
     x
 }
 
+#' Exponent of the log mean
 exp_mean_log <- function(x, y) {
     exp(0.5 * (log(x) + log(y)))
 }
 
+#' Difference in years between two dates.
 difftime_years <- function(x, y) {
     as.integer(difftime(x, y, units = "days")) / 365
 }
@@ -39,7 +47,7 @@ ts_interpolate <- function (x, ...) {
     ifelse(is.na(x), xhat, x)
 }
 
-#' Is it the last day of month?
+#' Is a date the last day of month?
 last_dom <- function(x) {
     month(x) != month(x + days(1))
 }
@@ -91,18 +99,26 @@ yield_to_maturity <- function(price, x, m, interval = c(-1.5, 1.5), ...) {
     ytm <- try(uniroot(pvcashflows, interval = interval, ...)$root,
                silent = TRUE)
     if (!inherits(ytm, "try-error")) {
-      attr(ytm, "duration") <-  as.numeric(t(x * m) %*% exp(-m * ytm) / price)
-      attr(ytm, "convexity") <- as.numeric(t(x * m^2) %*% exp(-m * ytm) / price)
-      attr(ytm, "maturity") <- as.numeric(max(m))
+      list(yield = as.numeric(ytm),
+           duration = as.numeric(t(x * m) %*% exp(-m * ytm) / price),
+           convexity = as.numeric(t(x * m^2) %*% exp(-m * ytm) / price),
+           maturity = as.numeric(max(m)))
     } else {
-      ytm <- NA_real_
-      attr(ytm, "duration") <-  NA_real_
-      attr(ytm, "convexity") <- NA_real_
-      attr(ytm, "maturity") <- NA_real_
+      list(yield = NA_real_,
+           duration = NA_real_,
+           convexity = NA_real_,
+           maturity = as.numeric(max(m)))
     }
-    ytm
 }
 
+yield_to_maturity2 <- function(price, date, cashflows) {
+    cf <- normalize_cashflows(date, cashflows)
+    yield_to_maturity(price, cf$amount, cf$maturity)
+}
+
+
+
+#' Find the next date less than or equal to `x` in a `table` of dates.
 prev_date <- function(x, table) {
     indic <- which(table <= x)
     if (length(indic)) {
@@ -112,6 +128,7 @@ prev_date <- function(x, table) {
     }
 }
 
+#' Find the previous date to `x` in `table` of dates.
 next_date <- function(x, table) {
     indic <- which(x > table)
     if (length(indic)) {
@@ -121,10 +138,22 @@ next_date <- function(x, table) {
     }
 }
 
-#' @param gold_rate gold exchange rate: dollars per gold_dollar
+#' Convert dollar cashflows for a bond into gold dollars using
+#' `gold_rate` (dollars per gold dollar)
 gold_cashflows <- function(cashflows, gold_rate) {
     mutate(cashflows,
            amount = ifelse(specie, amount, amount / gold_rate))
+}
+
+
+#' Convert cashflows to gold dollars using (actual) future rates
+#'
+#' `gold_rate` should be a dataset with columns `date` and `gold_rate`.
+#'
+currency_cashflows_actual <- function(cashflows, gold_rate) {
+  left_join(cashflows, gold_rate, by = "date") %>%
+     mutate(gold_rate = fill_na(gold_rate, 1)) %>%
+     mutate(amount = ifelse(!specie, amount, amount * gold_rate))
 }
 
 #' Gold rate = dollars per gold dollar
@@ -140,20 +169,35 @@ future_gold_rates <- function(dates, current_date, gold_rate, r = 0.05,
                                float_date = as.Date("1862-1-1")) {
   redemp_date <- gold_redemp_date(current_date, gold_rate, r)
   times <- difftime_years(dates, current_date)
-  data.frame(date = dates,
+  data_frame(date = dates,
                     gold_rate = pmax(1, gold_rate * exp(- r * times))) %>%
     mutate(gold_rate = ifelse(date < as.Date(float_date), 1, gold_rate))
 }
 
-#' @param gold_rate gold exchange rate: dollars per gold_dollar
-#' @param redemp Gold redemption rate
-#' @param r Interest rate
+future_gold_rates_t <- function(dates, current_date, gold_rate, redemp_date,
+                                float_date = as.Date("1862-1-1")) {
+ r <- - log(1 / gold_rate) / difftime_years(redemp_date, current_date)
+ times <- difftime_years(dates, current_date)
+  data_frame(date = dates,
+             gold_rate = pmax(1, gold_rate * exp(- r * times))) %>%
+    mutate(gold_rate = ifelse(date < as.Date(float_date), 1, gold_rate))
+}
+
 gold_cashflows_redemp <- function(cashflows, current_date, gold_rate, r) {
   future_rates <- future_gold_rates(as.Date(cashflows$date),
                                     current_date, gold_rate, r)
   mutate(cashflows,
          amount = ifelse(specie, amount * future_rates$gold_rate, amount))
 }
+
+gold_cashflows_redemp_t <- function(cashflows, current_date, gold_rate,
+                                    redemp_date) {
+  future_rates <- future_gold_rates_t(as.Date(cashflows$date),
+                                      current_date, gold_rate, redemp_date)
+  mutate(cashflows,
+         amount = ifelse(specie, amount * future_rates$gold_rate, amount))
+}
+
 
 normalize_cashflows <- function(effectiveDate, cashflows) {
     (mutate(cashflows,
@@ -204,13 +248,8 @@ accrued_interest <- function(date, cashflows, issue_date = NULL) {
      * coupon_factor(date, cashflows, issue_date))
  }
 
-yield_to_maturity2 <- function(price, date, cashflows) {
-    cf <- normalize_cashflows(date, cashflows)
-    yield_to_maturity(price, cf$amount, cf$maturity)
-}
-
 make_bond_table <- function(bonds) {
-    data.frame(bond = bonds, wgt = 1 / length(bonds))
+    data_frame(bond = bonds, wgt = 1 / length(bonds))
 }
 
 make_bond_table_regex <- function(pattern, metadata) {
@@ -220,14 +259,14 @@ make_bond_table_regex <- function(pattern, metadata) {
 
 make_bond_table_dist <- function(pattern, .list, prior_yrs = NULL, prior_n = 1) {
     .data <- plyr::ldply(.list, function(x) {
-      data.frame(year = x, wgt = 1 / length(x))
+      data_frame(year = x, wgt = 1 / length(x))
       })
     if (is.null(prior_yrs)) {
         minyr <- min(.data$year)
         maxyr <- max(.data$year)
         prior_yrs <- seq(minyr, maxyr, by = 1)
     }
-    .prior <- data.frame(year = prior_yrs, wgt = 1 / length(prior_yrs) * prior_n)
+    .prior <- data_frame(year = prior_yrs, wgt = 1 / length(prior_yrs) * prior_n)
     (group_by(plyr::rbind.fill(.data, .prior), year)
      %>% summarise(wgt = sum(wgt))
      %>% mutate(wgt = wgt / sum(wgt),
@@ -241,7 +280,7 @@ calc_current_yield <- function(date, clean_price, cashflows, n) {
 
 make_yields_etc <-
     function(date, bond, gold_rate, price_gold, adjust_gold, adjust_currency,
-             is_clean, metadata)
+             is_clean, metadata, gold_rates_actual)
 {
     issue_date <- metadata[["issue_date"]]
     # Cashflows keeping gold to currency = 1
@@ -282,13 +321,23 @@ make_yields_etc <-
         gold_cashflows_redemp(cashflows, date, gold_rate,
                               r = 0.06) %>%
         yield_to_maturity2(price_currency, date, .)
+      # yields using actual redemption time
+      yields_currency6 <-
+        gold_cashflows_redemp_t(cashflows, date, gold_rate,
+                                redemp_date = as.Date("1879-1-1")) %>%
+        yield_to_maturity2(price_currency, date, .)
+
     } else {
       yields_gold <- yields_currency
       yields_currency3 <- yields_currency
       yields_currency4 <- yields_currency
       yields_currency5 <- yields_currency
+      yields_currency6 <- yields_currency
     }
 
+    yields_actual <-
+        currency_cashflows_actual(cashflows, gold_rates_actual) %>%
+        yield_to_maturity2(price_currency, date, .)
 
     # yields uing gold
     if ("periods" %in% names(metadata)
@@ -304,38 +353,43 @@ make_yields_etc <-
     } else {
         current_yield <- current_yield_currency <- NA
     }
-    data.frame(price = price,
+    data_frame(price = price,
                price_clean = price_clean,
                price_orig = price_gold,
                gold_rate = gold_rate,
                accrued_interest = accrued,
 
-               current_yield1 = current_yield,
-               current_yield2 = current_yield_currency,
+               current_yield_currency = current_yield,
+               current_yield_gold = current_yield_currency,
 
-               ytm1 = as.numeric(yields_currency),
-               duration1 = attr(yields_currency, "duration"),
-               convexity1 = attr(yields_currency, "convexity"),
-               maturity1 = attr(yields_currency, "maturity"),
+               ytm_currency = yields_currency$yield,
+               duration_currency = yields_currency$duration,
+               convexity_currency = yields_currency$convexity,
+               maturity = yields_currency$maturity,
 
-               ytm2 = as.numeric(yields_gold),
-               duration2 = attr(yields_gold, "duration"),
-               convexity2 = attr(yields_gold, "convexity"),
-               maturity2 = attr(yields_gold, "maturity"),
+               ytm_gold = yields_gold$yield,
+               duration_gold = yields_gold$duration,
+               convexity_gold = yields_gold$convexity,
 
-               ytm3 = as.numeric(yields_currency3),
-               duration3 = attr(yields_currency3, "duration"),
-               convexity3 = attr(yields_currency3, "convexity"),
-               maturity3 = attr(yields_currency3, "maturity"),
+               ytm_gold4pct = yields_currency3$yield,
+               duration_gold4pct = yields_currency3$duration,
+               convexity_gold4pct = yields_currency3$convexity,
 
-               ytm4 = as.numeric(yields_currency4),
-               duration4 = attr(yields_currency4, "duration"),
-               convexity4 = attr(yields_currency4, "convexity"),
-               maturity4 = attr(yields_currency4, "maturity"),
+               ytm_gold5pct = yields_currency4$yield,
+               duration_gold5pct = yields_currency4$duration,
+               convexity_gold5pct = yields_currency4$convexity,
 
-               ytm5 = as.numeric(yields_currency5),
-               duration5 = attr(yields_currency5, "duration"),
-               convexity5 = attr(yields_currency5, "convexity"),
-               maturity5 = attr(yields_currency5, "maturity")
+               ytm_gold6pct = yields_currency5$yield,
+               duration_gold6pct = yields_currency5$duration,
+               convexity_gold6pct = yields_currency5$convexity,
+
+               ytm_gold1879 = yields_currency6$yield,
+               duration_gold1879 = yields_currency6$duration,
+               convexity_gold1879 = yields_currency6$convexity,
+
+               ytm_actual = yields_actual$yield,
+               duration_actual = yields_actual$duration,
+               convexity_actual = yields_actual$convexity
+
                )
 }

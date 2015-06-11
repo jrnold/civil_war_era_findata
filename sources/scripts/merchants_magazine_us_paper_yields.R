@@ -14,6 +14,11 @@ BOND_SERIES <- c("5's, 1874",
                  sprintf("5-20's, %s", c("Reg.", "Coup.")),
                  "10-40's", "7 3-10, 3 years")
 
+gold_rates_actual <- read_csv("data/greenbacks_fill.csv") %>%
+    mutate(gold_rate = 100 / mean,
+           date = as.Date(date)) %>%
+    select(date, gold_rate)
+
 merchants <-
     (mutate(read_csv(merchants_file),
             date = as.Date(date, "%Y-%m-%d"))
@@ -34,7 +39,7 @@ MATCH_BONDS[["5's, 1874"]] <-
 
 MATCH_BONDS[["6's, 1881 Coup."]] <-
     function(date) {
-        data.frame(bond =
+        data_frame(bond =
                    sprintf("us_6pct_1881_%s", c("jan", "jul")),
                    wgt = c(0.089, 0.911))
     }
@@ -42,7 +47,7 @@ MATCH_BONDS[["6's, 1881 Coup."]] <-
 #' For the sixes of 1881 apply to Jan and July Sixes of 1881
 MATCH_BONDS[["6's, 1881 Reg."]] <-
     function(date) {
-        data.frame(bond =
+        data_frame(bond =
                    sprintf("us_6pct_1881_%s", c("jan", "jul")),
                    wgt = c(0.089, 0.911))
     }
@@ -92,7 +97,8 @@ match_series_to_bonds <- function(series, date, ...) {
                            adjust_gold = .$adjust_gold,
                            adjust_currency = .$adjust_currency,
                            is_clean = .$is_clean,
-                           metadata = bond_metadata[[.$bond]])
+                           metadata = bond_metadata[[.$bond]],
+                           gold_rates_actual = gold_rates_actual)
     ret[["date"]] <- .$date
     ret[["bond"]] <- .$bond
     ret[["series"]] <- .$series
@@ -103,7 +109,7 @@ match_series_to_bonds <- function(series, date, ...) {
 rfyields_date <- function(x) {
   rate <- filter(x,
                  series %in% c("6's, 1881 Coup.")) %>%
-    `[[`("ytm1") %>%
+    `[[`("ytm_currency") %>%
     mean()
 
   ret <- vector(length = nrow(x), mode = "list")
@@ -118,20 +124,18 @@ rfyields_date <- function(x) {
         yield_to_maturity2(.i$price * .i$gold_rate, .i$date, .)
       ret[[i]] <-
         data_frame(govt_rate = rate,
-                   ytm6 = as.numeric(yields),
-                   duration6 = attr(yields, "duration"),
-                   convexity6 = attr(yields, "convexity"),
-                   maturity6 = attr(yields, "maturity"),
+                   ytm_goldrf = yields$yield,
+                   duration_goldrf = yields$duration,
+                   convexity_goldrf = yields$convexity,
                    date = .i$date,
                    bond = .i$bond
         )
     } else {
       ret[[i]] <-
         data_frame(govt_rate = rate,
-                   ytm6 = .i$ytm1,
-                   duration6 = .i$duration1,
-                   convexity6 = .i$convexity1,
-                   maturity6 = .i$maturity1,
+                   ytm_goldrf = .i$ytm_currency,
+                   duration_goldrf = .i$duration_currency,
+                   convexity_goldrf = .i$convexity_currency,
                    date = .i$date,
                    bond = .i$bond)
     }
@@ -158,41 +162,41 @@ yields6 <-
 #'
 touse <- (.data[["bond"]] == "us_seven_thirties_1864_aug_option"
           & .data[["date"]] < as.Date("1864-8-19"))
-.data[touse, "current_yield1"] <- 7.3 / .data$price_clean[touse]
-.data[touse, "current_yield2"] <- 7.3 / (.data$price_clean[touse] * .data$gold_rate[touse]
+.data[touse, "current_yield_currency"] <- 7.3 / .data$price_clean[touse]
+.data[touse, "current_yield_gold"] <- 7.3 / (.data$price_clean[touse] * .data$gold_rate[touse]
 )
 
 touse <- (.data[["bond"]] == "us_seven_thirties_1864_aug_option"
           & .data[["date"]] >= as.Date("1864-2-19")
           & .data[["date"]] < as.Date("1864-8-19"))
-.data[touse, "current_yield1"] <- 6.65 / .data$price_clean[touse]
-.data[touse, "current_yield2"] <- 6.65 / (.data$price_clean[touse] * .data$gold_rate[touse]
+.data[touse, "current_yield_currency"] <- 6.65 / .data$price_clean[touse]
+.data[touse, "current_yield_gold"] <- 6.65 / (.data$price_clean[touse] * .data$gold_rate[touse]
 )
 
 touse <- (.data[["bond"]] == "us_seven_thirties_1864_aug_option"
           & .data[["date"]] >= as.Date("1864-8-19"))
-.data[touse, "current_yield1"] <- 6 / .data$price_clean[touse]
-.data[touse, "current_yield2"] <- 6 / (.data$price_clean[touse] * .data$gold_rate[touse]
+.data[touse, "current_yield_currency"] <- 6 / .data$price_clean[touse]
+.data[touse, "current_yield_gold"] <- 6 / (.data$price_clean[touse] * .data$gold_rate[touse]
 )
 
 
 touse <- (.data[["bond"]] == "us_seven_thirties_1864_oct_option"
           & .data[["date"]] < as.Date("1864-10-1"))
-.data[touse, "current_yield1"] <- 7.3 / .data$price_clean[touse]
-.data[touse, "current_yield2"] <- 7.3 / (.data$price_clean[touse] * .data$gold_rate[touse]
+.data[touse, "current_yield_currency"] <- 7.3 / .data$price_clean[touse]
+.data[touse, "current_yield_gold"] <- 7.3 / (.data$price_clean[touse] * .data$gold_rate[touse]
 )
 
 touse <- (.data[["bond"]] == "us_seven_thirties_1864_oct_option"
           & .data[["date"]] < as.Date("1864-10-1")
           & .data[["date"]] >= as.Date("1864-4-1"))
-.data[touse, "current_yield1"] <- 6.65 / .data$price_clean[touse]
-.data[touse, "current_yield2"] <- 6.65 / (.data$price_clean[touse] * .data$gold_rate[touse]
+.data[touse, "current_yield_currency"] <- 6.65 / .data$price_clean[touse]
+.data[touse, "current_yield_gold"] <- 6.65 / (.data$price_clean[touse] * .data$gold_rate[touse]
 )
 
 touse <- (.data[["bond"]] == "us_seven_thirties_1864_oct_option"
           & .data[["date"]] >= as.Date("1864-10-1"))
-.data[touse, "current_yield1"] <- 6 / .data$price_clean[touse]
-.data[touse, "current_yield2"] <- 6 / (.data$price_clean[touse] * .data$gold_rate[touse]
+.data[touse, "current_yield_currency"] <- 6 / .data$price_clean[touse]
+.data[touse, "current_yield_gold"] <- 6 / (.data$price_clean[touse] * .data$gold_rate[touse]
 )
 
 #'
@@ -214,7 +218,7 @@ touse <- (.data[["bond"]] == "us_seven_thirties_1864_oct_option"
 #'
 
 yield_note <- function(price, date, payout, maturity_date) {
-  m <- as.integer(difftime(maturity_date, date, units = "days")) / 365
+  m <- difftime_years(maturity_date, date)
   y <- - log(price / payout) / m
   list(yield = y,
        duration = m,
@@ -254,30 +258,37 @@ make_yields_note <- function(maturity_date, interest, pays_gold,
   yields5 <-
     future_gold_rates(maturity_date, date, gold_rate, r = 0.06) %>%
     yield_note(price, date, payout_currency * .$gold_rate, maturity_date)
+  yields6 <-
+    gold_cashflows_redemp_t(cashflows, date, gold_rate,
+                            redemp_date = as.Date("1879-1-1")) %>%
+    yield_note(price_currency, date, .)
 
-  data.frame(price = price,
+  yields_actual <-
+    currency_cashflows_actual(cashflows, gold_rates_actual) %>%
+    yield_note(price_currency, date, .)
+  
+  data_frame(price = price,
              price_clean = price,
              gold_rate = gold_rate,
-             ytm1 = yields1$yield,
-             maturity1 = yields1$maturity,
-             duration1 = yields1$duration,
-             convexity1 = yields1$convexity,
-             ytm2 = yields2$yield,
-             maturity2 = yields2$maturity,
-             duration2 = yields2$duration,
-             convexity2 = yields2$convexity,
-             ytm3 = yields3$yield,
-             maturity3 = yields3$maturity,
-             duration3 = yields3$duration,
-             convexity3 = yields3$convexity,
-             ytm4 = yields4$yield,
-             maturity4 = yields4$maturity,
-             duration4 = yields4$duration,
-             convexity4 = yields4$convexity,
-             ytm5 = yields5$yield,
-             maturity5 = yields5$maturity,
-             duration5 = yields5$duration,
-             convexity5 = yields5$convexity)
+             ytm_currency = yields1$yield,
+             maturity = yields$maturity,
+             duration_currency = yields1$duration,
+             convexity_currency = yields1$convexity,
+             ytm_gold = yields2$yield,
+             duration_gold = yields2$duration,
+             convexity_gold = yields2$convexity,
+             ytm_gold4pct = yields3$yield,
+             duration_gold4pct = yields3$duration,
+             convexity_gold4pct = yields3$convexity,
+             ytm_gold5pct = yields4$yield,
+             duration_gold5pct = yields4$duration,
+             convexity_gold5pct = yields4$convexity,
+             ytm_gold6pct = yields5$yield,
+             duration_gold6pct = yields5$duration,
+             convexity_gold6pct = yields5$convexity,
+             ytm_actual = yields_actual$yield,
+             duration_actual = yields_actual$duration,
+             convexity_actual = yields_actual$convexity)
 }
 
 oneyr_old <-
@@ -293,7 +304,8 @@ oneyr_old <-
       .$gold_rate,
       .$price_gold,
       .$adjust_gold,
-      .$adjust_currency)
+      .$adjust_currency,
+      gold_rate_actual = gold_rate_actual)         
     out[["date"]] <- .$date
     out[["series"]] <- "1 year certificate, Old"
     out[["bond"]] <- "us_1yr_note_1862"
@@ -330,15 +342,14 @@ oneyr_new <-
         .$gold_rate,
         .$price_gold,
         .$adjust_gold,
-        .$adjust_currency)
+        .$adjust_currency,
+        gold_rate_actual = gold_rate_actual) 
       out[["date"]] <- .$date
       out[["series"]] <- "1 year certificate, New"
       out[["bond"]] <- "us_1yr_note_1863"
       out[["wgt"]] <- 1
       out
     })
-
-
 
 .data <-
     bind_rows(.data, oneyr_old, oneyr_new) %>%
