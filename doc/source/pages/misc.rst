@@ -48,7 +48,7 @@ Missouri Bonds
 ==================
 
 The bonds issued by Missouri
-Interestingly, the *Bankers' Magazine* repeatedly questions their price as being higher than warrented by the economic fundamentals.
+Interestingly, the *Bankers' Magazine* repeatedly questions their price as being higher than warranted by the economic fundamentals.
 
 `Vol 10, p. 574, January 1856 <http://books.google.com/books?id=I1gmAQAAIAAJ&pg=PA574>`__
 
@@ -108,12 +108,12 @@ Interestingly, the *Bankers' Magazine* repeatedly questions their price as being
 `Vol 13, p. 318, October 1858 <http://books.google.com/books?id=HVomAQAAIAAJ&pg=PA318>`__
 
    For investment some prefer Indiana bonds to those of Missouri the
-   six per cents of the latter being below the five per centa ot the
-   former. This will appenr extraordinary when we view the repudiating
+   six per cents of the latter being below the five per cents to the
+   former. This will appear extraordinary when we view the repudiating
    character of Indiana loans and tho greater caution of Missouri in
    creating a State debt.
 
-Finanical Statement of Missouri, `Nov 1859 <http://books.google.com/books?id=H1smAQAAIAAJ&lr&pg=PA157>`__
+Financial Statement of Missouri, `Nov 1859 <http://books.google.com/books?id=H1smAQAAIAAJ&lr&pg=PA157>`__
 
    We feel impelled to lay this sketch of the finances of Missouri
    before our investing readers the more because it would appear that
@@ -199,7 +199,7 @@ Misc
 ==================
 
 - Gold Yields described here:
-- Most bonds quoted are "flat" or "diry' This was the convetion of during that period, and can be observed in the data. Macaulay, A21. http://www.nber.org/chapters/c6350.pdf
+- Most bonds quoted are "flat" or "dirty" This was the convention of during that period, and can be observed in the data. Macaulay, A21. http://www.nber.org/chapters/c6350.pdf
 
 Yields of Bonds Accounting for Redemption
 ==========================================
@@ -236,3 +236,31 @@ Yields to maturity (and associated statistics like duration and convexity) are c
 - High risk free rate: :math:`r^{(g)} = 0.06`.
 - Currency yields of a long-run US coupon bond (U.S. 5's of 1874, 6's of 1868, 6's of 1881).
   
+Notes on Exchange Rate quotation
+==================================
+
+
+`Merchants' Magazine <https://books.google.com/books?id=u11JAAAAMAAJ&pg=PA541>`__ (Dec 1862)
+
+    The mode of quoting sterling gives rise to much misconception in
+    relation to the exchange. Thus, the actual par of American for
+    British gold is $4.84 for a pound sterling, that is to say, the
+    exact quantity of pure gold in $4.84, is the same as in a
+    sovereign, or $4,844 gold dollars melted and coined would make
+    exactly 1,000 sovereigns, that is the actual par; but custom has
+    continued to call the £ $4.44, which was its value in Spanish
+    silver before there was any American coin. With the change in the
+    American coins, 9 1/2 per cent added upon the old dollar, $4.44 is
+    called the *par*. The price of bills at 145s., gives $6.44 as the
+    price in paper of the £, which is $4.84 in gold. Hence the paper
+    in which the quotation is made, has depreciated 26 per cent. On
+    Paris the quotation is different, the *par* is 5 francs 19 centimes
+    for $1 in gold, but the French will now only give 3 francs 85
+    centimes for one paper dollar, a decline of 1 franc 34 centimes or
+    26 per cent. In this case there is no fictitious premium on gold
+    or exchange, but the real decline of 26 per cent in the value of
+    the paper used here as a currency, and with that decline the
+    precious metals become daily scarcer.
+
+..  LocalWords:  6's Bankers' slaveholding centre Sep Dred A21 argmin
+..  LocalWords:  t' geq infty 5's Merchants' 145s
