@@ -393,3 +393,16 @@ make_yields_etc <-
 
                )
 }
+
+#' Time to payoff a loan with fixed payments
+#'
+#' @param r interest rate
+#' @param amount Amount of the loan
+#' @param payment Payment amount per period
+#' @return Number of payments to payoff a loan.
+#' 
+timetopayoff <- function(r, amount, payment, periods = 1) {
+    i <- r / periods
+    - log(1 - i * amount / payment) / log(1 + i) * periods
+}
+

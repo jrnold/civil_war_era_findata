@@ -637,7 +637,6 @@ bonds[["california_7pct_1870"]] <-
 #' Interest of 7 percent, payable semi-annually.
 #' Matures in 1877, unknown when it was issued.
 #'
-#'
 #' - Denny and Co.
 #'
 bonds[["california_7pct_1877"]] <-
@@ -935,43 +934,44 @@ for (year in 1885:1890) {
 #' ## Confederate
 #'
 
-## #' ## Confederate 5 million loan
-## #'
-## #' Act of Feb 28, 1861, Specie Loan
-## #'
-## #' :authorized: unlimited
-## #' :maturity: 10 years (9-1-1871), callable after 5 years
-## #' :interest: 8 per cent, coupons receivable for export dues
-## #' :total issued: 15 million
-## #'
+#' ## Confederate 5 million loan
+#'
+#' Act of Feb 28, 1861, Specie Loan
+#'
+#' :authorized: unlimited
+#' :maturity: 10 years (9-1-1871), callable after 5 years
+#' :interest: 8 per cent, coupons receivable for export dues
+#' :total issued: 15 million
+#'
 
-## for (year in 5:10) {
-##     bondname <- sprintf("confed_15mn_%d", year)
-##     bonds[[bondname]] <-
-##         list(cashflows = generate_cashflow_2(as.Date("1861-9-1"), year * 2, 4),
-##              interest = 0.08,
-##              periods = list(list(month = 3, day = 1), list(month = 9, day = 1)),
-##              issued = as.Date("1861-9-1"))
-## }
+for (year in 5:10) {
+    bondname <- sprintf("confed_15mn_%d", year)
+    bonds[[bondname]] <-
+        list(cashflows = generate_cashflow_2(as.Date("1861-9-1"), year * 2, 4),
+             interest = 0.08,
+             periods = list(list(month = 3, day = 1), list(month = 9, day = 1)),
+             issued = as.Date("1861-9-1"))
+}
 
-## #' Confederate 100 million
-## #' ------------------------
-## #'
-## #' Act of Aug 19, 1861
-## #'
-## #' :authorized: 100 mn
-## #' :maturity: various dates, Jul 1, 1864 (3 yrs)-Jul 1, 1881 (20 yrs)
-## #' :interest: 8 per cent in liue of authorized by Act of May 16, 1861
-## #' :total issued:  $99,570,550
+#' Confederate 100 million
+#' ------------------------
+#'
+#' Act of Aug 19, 1861
+#'
+#' :authorized: 100 mn
+#' :maturity: various dates, Jul 1, 1864 (3 yrs)-Jul 1, 1881 (20 yrs)
+#' :interest: 8 per cent in liue of authorized by Act of May 16, 1861
+#' :total issued:  $99,570,550
+#' 
 
-## for (year in 3:20) {
-##     bondname <- sprintf("confed_100mn_%d", year)
-##     bonds[[bondname]] <-
-##         list(cashflows = generate_cashflow_2(as.Date("1861-7-1"), year * 2, 4),
-##              interest = 0.08,
-##              periods = list(list(month = 1, day = 1), list(month = 7, day = 1)),
-##              issued = as.Date("1861-7-1"))
-## }
+for (year in 3:20) {
+    bondname <- sprintf("confed_100mn_%d", year)
+    bonds[[bondname]] <-
+        list(cashflows = generate_cashflow_2(as.Date("1861-7-1"), year * 2, 4),
+             interest = 0.08,
+             periods = list(list(month = 1, day = 1), list(month = 7, day = 1)),
+             issued = as.Date("1861-7-1"))
+}
 
 ## #' Confederate Sevens
 ## #' -------------------

@@ -11,8 +11,9 @@ source("../R/.init.R")
 bankers <- read_csv("../data/bankers_magazine_govt_state_loans_yields_2.csv") %>%
   mutate(date = as.Date(date))
 
-# greenbacks <- read_csv("../data/greenbacks_yields.csv") %>%
-  mutate(date = as.Date(date))
+greenbacks <- read_csv("../data/greenback_yields.csv") %>%
+  mutate(date = as.Date(date)) %>%
+  na.omit()
 
 ```
 
@@ -110,4 +111,26 @@ ggplot(bankers_groups_diff %>% filter(date >= as.Date("1861-1-1")),
   geom_line()
 ```
 
+## Richmond Market
+
+```{r}
+richmond <- read_csv("sources/data/richmond_mkt.csv") %>%
+  mutate(price_high = ifelse(is.na(price_high), price_low, price_high),
+         price_mean = exp_mean_log(price_low, price_high),
+         date = as.Date(date),
+         newspaper_date = as.Date(date))
+```
+
+100 mn loan
+
+```{r}
+write_csv(richmond, file = "richmond_mkt.csv")
+```
+
+
+```{r}
+ggplot(filter(richmond, grepl("confederate_100mn", asset)),
+       aes(x = date, y = price_mean)) +
+  geom_point()
+```
 
