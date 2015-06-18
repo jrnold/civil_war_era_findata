@@ -1,0 +1,69 @@
+url,page,year,country,denomination,weight,fineness,value,value_deduction
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1860.pdf,80,1860,England,"Pound or sovereign, new",0.2567,916.5,486.3,483.9
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1860.pdf,80,1860,England,"Pound or sovereign, average",20.256,915.5,484.8,482.4
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1860.pdf,80,1860,France,"Twenty francs, new",0.2075,899.5,386,384.1
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1860.pdf,80,1860,France,"Twenty francs, average",0.207,899,384.5,382.6
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1860.pdf,80,1860,"Germany, north",Ten thaler,0.427,895,790.5,786.1
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1860.pdf,80,1860,"Germany, north","Ten thaler, Prussian",0.427,903,800,796
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1860.pdf,80,1860,"Germany, south",Ducat,0.112,986,228.3,227.2
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1860.pdf,80,1860,Netherlands,Ten guilders,0.215,899,399,397
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1861.pdf,95,1861,England,"Pound or sovereign, new",0.2567,916.5,486.34,483.91
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1861.pdf,95,1861,England,"Pound or sovereign, average",0.256,915.5,484.48,482.06
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1861.pdf,95,1861,France,"Twenty francs, new",0.2075,899.5,385.83,383.91
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1861.pdf,95,1861,France,"Twenty francs, average",0.207,899,384.69,382.77
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1861.pdf,95,1861,"Germany, north",Ten thaler,0.427,895,790.01,786.06
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1861.pdf,95,1861,"Germany, north","Ten thaler, Prussian",0.427,903,797.07,793.09
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1861.pdf,95,1861,"Germany, north","Krone, (crown)",0.357,900,664.2,660.88
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1861.pdf,95,1861,"Germany, south",Ducat,0.112,986,228.28,227.14
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1861.pdf,95,1861,Netherlands,Ten guilders,0.215,899,399.56,397.57
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1861.pdf,95,1861,Prussia,New union crown (assumed),0.357,900,664.19,660.87
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1862.pdf,75,1862,England,"Pound or sovereign, new",0.2567,916.5,486.34,483.91
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1862.pdf,75,1862,England,"Pound or sovereign, average",0.256,915.5,484.48,482.06
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1862.pdf,75,1862,France,"Twenty francs, new",0.2075,899.5,385.83,383.91
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1862.pdf,75,1862,France,"Twenty francs, average",0.207,899,384.69,382.77
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1862.pdf,75,1862,"Germany, north",Ten thaler,0.427,895,790.01,786.06
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1862.pdf,75,1862,"Germany, north","Ten thaler, Prussian",0.427,903,797.07,793.09
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1862.pdf,75,1862,"Germany, north","Krone, (crown)",0.357,900,664.2,660.88
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1862.pdf,75,1862,"Germany, south",Ducat,0.112,986,228.28,227.14
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1862.pdf,75,1862,Netherlands,Ten guilders,0.215,899,399.56,397.57
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1862.pdf,75,1862,Prussia,New union crown (assumed),0.357,900,664.19,660.87
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1864.pdf,231,1864,England,"Pound or sovereign, new",0.2567,916.5,486.34,483.91
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1864.pdf,231,1864,England,"Pound or sovereign, average",0.2562,916,485.08,482.06
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1864.pdf,231,1864,France,"Twenty francs, new",0.2075,899.5,385.83,383.91
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1864.pdf,231,1864,France,"Twenty francs, average",0.207,899,384.69,382.77
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1864.pdf,231,1864,"Germany, north",Ten thaler,0.427,895,790.01,786.06
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1864.pdf,231,1864,"Germany, north","Ten thaler, Prussian",0.427,903,797.07,793.09
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1864.pdf,231,1864,"Germany, north","Krone, (crown)",0.357,900,664.2,660.88
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1864.pdf,231,1864,"Germany, south",Ducat,0.112,986,228.28,227.14
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1864.pdf,231,1864,Netherlands,Ten guilders,0.215,899,399.56,397.57
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1864.pdf,231,1864,Prussia,New union crown (assumed),0.357,900,664.19,660.87
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf,207,1863,England,"Pound or sovereign, new",0.2567,916.5,486.34,483.91
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf,207,1863,England,"Pound or sovereign, average",0.256,915.5,484.48,482.06
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf,207,1863,France,"Twenty francs, new",0.2075,899.5,385.83,383.91
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf,207,1863,France,"Twenty francs, average",0.207,899,384.69,382.77
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf,207,1863,"Germany, north",Ten thaler,0.427,895,790.01,786.06
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf,207,1863,"Germany, north","Ten thaler, Prussian",0.427,903,797.07,793.09
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf,207,1863,"Germany, north","Krone, (crown)",0.357,900,664.2,660.88
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf,207,1863,"Germany, south",Ducat,0.112,986,228.28,227.14
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf,207,1863,Netherlands,Ten guilders,0.215,899,399.56,397.57
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1863.pdf,207,1863,Prussia,New union crown (assumed),0.357,900,664.19,660.87
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1865.pdf,248,1865,England,"Pound or sovereign, new",0.2567,916.5,486.34,483.91
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1865.pdf,248,1865,England,"Pound or sovereign, average",0.2562,916,484.92,482.5
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1865.pdf,248,1865,France,"Twenty francs, new",0.2075,899.5,385.83,383.91
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1865.pdf,248,1865,France,"Twenty francs, average",0.207,899,384.69,382.77
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1865.pdf,248,1865,"Germany, north",Ten thaler,0.427,895,790.01,786.06
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1865.pdf,248,1865,"Germany, north","Ten thaler, Prussian",0.427,903,797.07,793.09
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1865.pdf,248,1865,"Germany, north","Krone, (crown)",0.357,900,664.2,660.88
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1865.pdf,248,1865,"Germany, south",Ducat,0.112,986,228.28,227.14
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1865.pdf,248,1865,Netherlands,Ten guilders,0.215,899,399.56,397.57
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1865.pdf,248,1865,Prussia,New union crown (assumed),0.357,900,664.19,660.87
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1866.pdf,248,1866,England,"Pound or sovereign, new",0.2567,916.5,486.34,483.91
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1866.pdf,248,1866,England,"Pound or sovereign, average",0.2562,916,484.92,482.5
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1866.pdf,248,1866,France,"Twenty francs, new",0.2075,899.5,385.83,383.91
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1866.pdf,248,1866,France,"Twenty francs, average",0.207,899,384.69,382.77
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1866.pdf,248,1866,"Germany, north",Ten thaler,0.427,895,790.01,786.06
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1866.pdf,248,1866,"Germany, north","Ten thaler, Prussian",0.427,903,797.07,793.09
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1866.pdf,248,1866,"Germany, north","Krone, (crown)",0.357,900,664.2,660.88
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1866.pdf,248,1866,"Germany, south",Ducat,0.112,986,228.28,227.14
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1866.pdf,248,1866,Netherlands,Ten guilders,0.215,899,399.56,397.57
+https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1866.pdf,248,1866,Prussia,New union crown (assumed),0.357,900,664.19,660.87
