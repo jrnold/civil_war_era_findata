@@ -1,0 +1,136 @@
+---
+title: "Analysis"
+author: "Jeffrey B. Arnold"
+date: "06/09/2015"
+output: html_document
+---
+
+```{r}
+source("../R/.init.R")
+
+bankers <- read_csv("../data/bankers_magazine_govt_state_loans_yields_2.csv") %>%
+  mutate(date = as.Date(date))
+
+greenbacks <- read_csv("../data/greenback_yields.csv") %>%
+  mutate(date = as.Date(date)) %>%
+  na.omit()
+
+```
+
+
+```{r}
+library("ggplot2")
+library("tidyr")
+
+groupings <-
+  c("California 7 per cents, 1870" = "Calif", 
+    "California 7 per cents, 1877" = "Calif", 
+    "Georgia 6 per cents" = "South", 
+    "Indiana 5 per cents" = "North", 
+    "Indiana 6 per cents" = "North", 
+    "Kentucky 6 per cents" = "Border", 
+    "Louisiana 6 per cents" = "South", 
+    "Missouri 6 per cents" = "Border", 
+    "North Carolina 6 per cents" = "South", 
+    "Ohio 6 per cents, 1875" = "North", 
+    "Ohio 6 per cents, 1886" = "North", 
+    "Pennsylvania 5 per cents" = "North", 
+    "Tennessee 6 per cents" = "South", 
+    "U.S. 5 per cents, 1874" = "US", 
+    "U.S. 6 per cents, 1867-8" = "US",
+    "U.S. 6 per cents, 1881" = "US", 
+    "Virginia 6 per cents" = "South"
+    )
+
+bankers_ytm <- bankers %>%
+  select(date, series, matches("ytm")) %>%
+  gather(yield, value, - date, - series)
+
+bankers_groups_ytm <- bankers_ytm %>%
+  mutate(group = plyr::revalue(series, groupings)) %>%
+  group_by(group, date, yield) %>%
+  summarise(value = mean(value, na.rm = TRUE))
+
+bankers_groups_diff <- bankers_groups_ytm %>%
+  spread(group, value) %>%
+  mutate(diff_s_n = South - North,
+         diff_s_us = South - US,
+         diff_n_us = North - US) %>%
+  select(date, diff_s_n, diff_s_us, diff_n_us, yield) %>%
+  gather(variable, value, - date, - yield)
+```
+
+```{r}
+ggplot(bankers_ytm %>% filter(date >= as.Date("1861-1-1")),
+       aes(x = date, y = value, colour = yield)) +
+  geom_line() +
+  facet_wrap( ~ series, ncol = 2)
+
+```
+
+```{r}
+ggplot(bankers_ytm %>% filter(date >= as.Date("1861-1-1"),
+                              series == "U.S. 6 per cents, 1881"),
+       aes(x = date, y = value, colour = yield)) +
+  geom_line()
+
+```
+
+```{r}
+```{r}
+ggplot(bankers %>% filter(date >= as.Date("1861-1-1"),
+                              series == "U.S. 6 per cents, 1881"),
+       aes(x = date, y = price)) +
+  geom_line()
+
+```
+```
+
+
+```{r}
+
+ggplot(bankers_groups_ytm %>% filter(date >= as.Date("1861-1-1")),
+       aes(x = date, y = value, colour = group)) +
+  geom_line() +
+  facet_wrap( ~ yield, ncol = 2)
+
+```
+
+```{r}
+ggplot(bankers %>% filter(date >= as.Date("1861-1-1")),
+       aes(x = date, y = value, colour = group)) +
+  geom_line() +
+  facet_wrap( ~ yield, ncol = 2)
+```
+
+
+```{r}
+ggplot(bankers_groups_diff %>% filter(date >= as.Date("1861-1-1")),
+       aes(x = date, y = value, colour = variable)) +
+  facet_wrap( ~ yield) +
+  geom_line()
+```
+
+## Richmond Market
+
+```{r}
+richmond <- read_csv("sources/data/richmond_mkt.csv") %>%
+  mutate(price_high = ifelse(is.na(price_high), price_low, price_high),
+         price_mean = exp_mean_log(price_low, price_high),
+         date = as.Date(date),
+         newspaper_date = as.Date(date))
+```
+
+100 mn loan
+
+```{r}
+write_csv(richmond, file = "richmond_mkt.csv")
+```
+
+
+```{r}
+ggplot(filter(richmond, grepl("confederate_100mn", asset)),
+       aes(x = date, y = price_mean)) +
+  geom_point()
+```
+

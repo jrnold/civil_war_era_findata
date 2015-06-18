@@ -2,9 +2,7 @@
 #'
 #' Uses greenback data from ``greeenbacks``. Fills in missing
 #' data using the smoothed values of a ``StructTS`` local level model.
-library(plyr)
-source("sources/scripts/R/finance.R")
-source("sources/scripts/R/misc.R")
+source("R/.init.R")
 
 args <- commandArgs(TRUE)
 src <- args[1]

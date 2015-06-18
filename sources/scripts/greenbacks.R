@@ -1,6 +1,5 @@
 #' Preprocess ``greenbacks`` data
-library(plyr)
-source("sources/scripts/R/misc.R")
+source("R/.init.R")
 args <- commandArgs(TRUE)
 src <- args[1]
 dst <- args[2]

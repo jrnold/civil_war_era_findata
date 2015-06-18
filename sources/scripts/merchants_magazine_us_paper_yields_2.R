@@ -1,18 +1,14 @@
-library("plyr")
-library("reshape2")
-source("sources/scripts/R/misc.R")
+source("R/.init.R")
 
 sysargs <- commandArgs(TRUE)
 infile <- sysargs[1]
+infile <- "data/merchants_magazine_us_paper_yields.csv"
 outfile <- sysargs[2]
+outfile <- "data/merchants_magazine_us_paper_yields_2.csv"
 
-data1 <- read_csv(infile)
-data2 <- ddply(data1, c("series", "date"),
-             function(x) {
-                 touse <- setdiff(names(x), c("bond", "series", "date", "wgt"))
-                 wgt <- x[["wgt"]]
-                 fun <- function(y) weighted.mean(y, wgt)
-                 colwise(fun, touse)(x)
-             })
-
+data2 <-
+  read_csv(infile) %>%
+  group_by(series, date) %>%
+  summarise_each(funs(weighted.mean(., wgt)),
+                  - bond, - series, - date, - wgt)
 write_csv(data2, file = outfile)

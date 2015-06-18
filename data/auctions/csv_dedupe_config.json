@@ -1,6 +1,0 @@
-{
-    "field_names": ["name", "city", "state"],
-    "field_definition" : [{"field" : "name", "type" : "String"},
-                          {"field" : "city", "type" : "String", "Has Missing" : true},
-                          {"field" : "state", "type" : "Exact", "Has Missing" : true}]
-}

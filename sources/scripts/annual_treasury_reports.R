@@ -188,13 +188,13 @@
 
 #' Data Frame
 #' ============
-DATA <- mutate(ldply(names(.data),
-                     function(i) {
-                         x <- ldply(.data[[i]], data.frame)
-                         x[["report"]] <- as.Date(i, "%Y-%m-%d")
-                         x
-                     }),
+DATA <- mutate(plyr::ldply(names(.data),
+                           function(i) {
+                               x <- ldply(.data[[i]], data.frame)
+                               x[["report"]] <- as.Date(i, "%Y-%m-%d")
+                               x
+                           }),
                resources = balance + receipts + loans,
                diff = resources - expenditures)
 
-write.csv(DATA, file = commandArgs(TRUE)[1])
+write_csv(DATA, file = commandArgs(TRUE)[1])

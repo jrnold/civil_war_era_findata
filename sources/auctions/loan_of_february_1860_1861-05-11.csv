@@ -1,0 +1,150 @@
+page,bid_number,bidder,amount,value,accepted,rejected,errors,city,state
+54,1,Cammann & Co,50,85,50,,,New York,NY
+54,1,Cammann & Co,10,85.25,10,,,New York,NY
+54,2,Louisa Frisbie,1,86,1,,,New York,NY
+54,3,Marine Bank,10,85,10,,,New York,NY
+54,4,"E.W. Dunham, president",50,85,50,,,New York,NY
+54,7,Eli Lewis,5,87.5,5,,,Philadelphia,PA
+54,8,United States Life Insurance Company,10,85,10,,,New York,NY
+54,9,Joseph Lawrence,25,85,25,,,New York,NY
+54,10,Pacific Bank,20,85,20,,,New York,NY
+54,11,Importers and Traders' Bank,50,85,50,,,New York,NY
+54,12,American Exchange Bank,195,85,195,,,New York,NY
+54,13,American Exchange Bank,630,86,630,,,New York,NY
+54,14,"Livermore, Clems & Mason",15,85,15,,,New York,NY
+54,14,"Livermore, Clems & Mason",15,85.2,15,,,New York,NY
+54,14,"Livermore, Clems & Mason",10,85.25,10,,,New York,NY
+54,14,"Livermore, Clems & Mason",15,85.25,15,,,New York,NY
+54,14,"Livermore, Clems & Mason",10,85.27,10,,,New York,NY
+54,14,"Livermore, Clems & Mason",10,85.3,10,,,New York,NY
+54,16,Bank of North America,25,85,25,,,New York,NY
+54,17,Ocean Bank,50,85,50,,,New York,NY
+54,18,Irving Bank,20,85,20,,,New York,NY
+54,19,Phoenix Bank,200,85,200,,,New York,NY
+54,20,North River Bank,10,85,10,,,New York,NY
+54,21,William Tilden,15,85.5,15,,,New York,NY
+54,22,Mutual Life Insurance Company,200,86,200,,,New York,NY
+54,23,Bank of America,200,85,200,,,New York,NY
+55,24,James Gallatin,45,86,45,,,New York,NY
+55,25,Manhattan Company,300,85,300,,,New York,NY
+55,26,M.S. Robbins & Son,80,86,80,,,New York,NY
+55,27,Meigs & Greenleaf,10,86,10,,,New York,NY
+55,28,Continental Bank,50,85,50,,,New York,NY
+55,29,Bank of New York,200,85,200,,,New York,NY
+55,30,"R.W. Howes, president",50,85,50,,,New York,NY
+55,31,National Bank,200,86,200,,,New York,NY
+55,32,Sidney Brooks,25,86.5,25,,,New York,NY
+55,33,"Henry F. Vail, for others",200,85,200,,,New York,NY
+55,34,Robert L. Kennedy,50,85,50,,,New York,NY
+55,35,Theodore Dehon,25,86.5,25,,,New York,NY
+55,37,Peoples' Bank of City of New York,25,85,25,,,New York,NY
+55,37,Peoples' Bank of City of New York,15,86,15,,1,New York,NY
+55,38,Market Bank,50,85.5,50,,,New York,NY
+55,39,S.H. Wheeler,2,85.71,2,,,New York,NY
+55,40,East River Bank,5,85,5,,,New York,NY
+55,41,Oriental Bank,20,85,20,,,New York,NY
+55,42,"Drexel & Co, Farmers and Mechanics' Bank",50,85,50,,,Philadelphia,PA
+55,42,"Drexel & Co, Farmers and Mechanics' Bank",50,86,50,,,Philadelphia,PA
+55,42,"Drexel & Co, Western Bank",25,88,25,,,Philadelphia,PA
+55,42,"Drexel & Co, Jay, Cooke & Co.",23,85,23,,,Philadelphia,PA
+55,42,"Drexel & Co, Jacob Jeanes, M.D.",5,88,5,,,Philadelphia,PA
+55,42,"Drexel & Co, Joseph T. Jeanes",5,88,5,,,Philadelphia,PA
+55,42,"Drexel & Co, Dr Rivinius",1,88,1,,,Philadelphia,PA
+55,43,E.W. Clarke & Co,5,85,5,,,Philadelphia,PA
+55,43,E.W. Clarke & Co,5,87,5,,,Philadelphia,PA
+55,44,C. Sherman,1,89.05,1,,,Philadelphia,PA
+55,44,C. Sherman,1,89.1,1,,,Philadelphia,PA
+55,44,C. Sherman,1,89.15,1,,,Philadelphia,PA
+55,44,C. Sherman,1,89.2,1,,,Philadelphia,PA
+55,44,C. Sherman,1,89.25,1,,,Philadelphia,PA
+55,44,C. Sherman,1,89.3,1,,,Philadelphia,PA
+55,44,C. Sherman,1,89.35,1,,,Philadelphia,PA
+55,44,C. Sherman,1,89.4,1,,,Philadelphia,PA
+55,44,C. Sherman,1,89.45,1,,,Philadelphia,PA
+55,44,C. Sherman,1,89.5,1,,,Philadelphia,PA
+55,44,C. Sherman,1,89.55,1,,,Philadelphia,PA
+55,45,John C. Rives,20,87,20,,,Washington,DC
+56,50,Seventh Ward Bank,28,85,28,,,New York,NY
+56,51,Heman L. White,3,85,3,,,New York,NY
+56,52,H.C. Thatcher,1,85,1,,,Boston,MA
+56,52,H.C. Thatcher,1,84,,1,,Boston,MA
+56,47,William E. Brown,1,81,,1,,New York,NY
+56,47,William E. Brown,2,83,,2,,New York,NY
+56,47,William E. Brown,1,85,1,,,New York,NY
+56,46,"William Beals, Jr.",5,85,5,,,Boston,MA
+56,46,"William Beals, Jr.",5,86,5,,,Boston,MA
+56,46,"William Beals, Jr.",5,86.25,5,,,Boston,MA
+56,46,"William Beals, Jr.",5,86.375,5,,,Boston,MA
+56,46,"William Beals, Jr.",5,86.5,5,,,Boston,MA
+56,46,"William Beals, Jr.",5,86.75,5,,,Boston,MA
+56,46,"William Beals, Jr.",5,87,5,,,Boston,MA
+56,46,"William Beals, Jr.",5,87.25,5,,,Boston,MA
+56,54,George L. Lovett,5,85,5,,,Boston,MA
+56,54,George L. Lovett,5,86,5,,,Boston,MA
+56,55,Nathaniel Tracy,10,85,10,,,Boston,MA
+56,56,B. De la Pierre,1,93,1,,,New York,NY
+56,57,"Brewster, Sweet & Co",20,85.05,20,,,Boston,MA
+56,57,"Brewster, Sweet & Co",20,84.55,,20,,Boston,MA
+56,57,"Brewster, Sweet & Co",15,85.06,15,,,Boston,MA
+56,57,"Brewster, Sweet & Co",15,84.26,,15,,Boston,MA
+56,58,Safety Fund Bank,10,85,10,,,Boston,MA
+56,58,Safety Fund Bank,10,86.5,10,,,Boston,MA
+56,58,Safety Fund Bank,20,86,20,,,Boston,MA
+56,58,Safety Fund Bank,10,87,10,,,Boston,MA
+56,58,William H. Hill,10,85,10,,,Boston,MA
+56,58,William H. Hill,5,86,5,,,Boston,MA
+56,58,William H. Hill,5,86,5,,,Boston,MA
+56,58,Otis Daniell,15,85,15,,,Boston,MA
+56,58,Otis Daniell,10,86,10,,,Boston,MA
+57,58,Otis Daniell,5,86,5,,,Boston,MA
+57,59,J. Benkendorff,15,85.75,15,,,New York,NY
+57,60,Bull's Head Bank,5,85,5,,,New York,NY
+57,63,Nassau Bank,10,86,10,,,New York,NY
+57,63,Nassau Bank,30,85,30,,,New York,NY
+57,63,Nassau Bank,10,85.5,10,,,New York,NY
+57,61,New York Country Bank,20,85,20,,,New York,NY
+57,62,William H. Hoople,10,85,10,,,New York,NY
+57,66,Niagara Fire Insurance Company,12,86,12,,,New York,NY
+57,65,George W. Kirtland,2,86.5,2,,,New York,NY
+57,64,Tradesman Bank,35,85.51,35,,,New York,NY
+57,64,Tradesman Bank,30,86.01,30,,,New York,NY
+57,67,Bank of the Commonwealth,10,85,10,,,New York,NY
+57,68,Merchants' Bank of New York,20,86,20,,,New York,NY
+57,69,Citizens' Bank,20,85,20,,,New York,NY
+57,70,Bank of Commerce,550,86,550,,,New York,NY
+57,71,Merchants' Bank of New York,200,85,200,,,New York,NY
+57,72,Charles E. Brewer,20,85.05,20,,,New York,NY
+57,73,City Bank of New York,50,85,50,,,New York,NY
+57,74,Bank of the State of New York,50,85,50,,,New York,NY
+57,75,Great Western Insurance Company,50,85,50,,,New York,NY
+57,76,"Ketchum, Son & Co. and others",1875,85.05,1875,,,New York,NY
+57,77,Manufacturers and Merchants' Bank,10,85,10,,,New York,NY
+57,78,B.F. Wheelright,20,85,20,,,New York,NY
+57,79,James R. Langdon,10,85.25,10,,,Montpelier,VT
+57,80,Charles Knapp,15,85.25,15,,,New York,NY
+57,81,Carpenter & Vermilye,25,85.26,25,,,New York,NY
+57,82,Grocers' Bank,10,85,10,,,New York,NY
+57,83,C.M. Mather,1,90,1,,,New York,NY
+57,84,Chemical Bank,50,85,50,,,New York,NY
+57,85,Ticonic Bank,5,87,5,,,,ME
+57,49,J.G. Hanson,2,84,,2,,New York,NY
+57,48,Samuel Brooke,2,82,,2,,New York,NY
+57,53,James McGinnis,2,60,,2,,Philadelphia,PA
+57,15,F.L. Richmond,25,83,,25,,New York,NY
+57,5,Charles H. Delavan,20,84,,20,,New York,NY
+57,5,Charles H. Delavan,20,84.25,,20,,New York,NY
+57,5,Charles H. Delavan,20,84.5,,20,,New York,NY
+57,6,Evander Childs,1,84,,1,,New York,NY
+58,6,S.L. Evans,1,85,1,,,Washington,DC
+58,6,Nathaniel Tracy ,15,85,15,,,Boston,MA
+58,6,Charles H. Russell,50,85,50,,,New York,NY
+58,6,William V. Beady,8,85,8,,,New York,NY
+58,6,John Q. Jones,30,85,30,,,New York,NY
+58,6,William H. Hoople,10,85,10,,,New York,NY
+58,6,T.C. Chardavoyne,10,85,10,,,New York,NY
+58,6,Gabriel Mead,3,85,3,,,New York,NY
+58,6,James Gallatin,50,85,50,,,New York,NY
+58,6,Chatham Bank,10,85,10,,,New York,NY
+58,6,Henry F. Vail,100,85,100,,,New York,NY
+58,6,American Exchange Bank,196,85,196,,,New York,NY
+58,6,"Livermore, Clews & Mason",25,85,25,,,New York,NY
