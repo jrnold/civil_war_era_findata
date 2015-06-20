@@ -29,3 +29,4 @@ merchants <- read_csv("sources/data/Merchants_FX_data.csv") %>%
          currency = (date >= as.Date("1862-1-1")) &
            (date < as.Date("1864-10-22")))
 
+write_csv(merchants, file = "data/merchants_exchange_rates.csv")

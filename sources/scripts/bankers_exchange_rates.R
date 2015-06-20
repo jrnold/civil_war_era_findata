@@ -33,3 +33,4 @@ bankers <- read_csv("sources/data/bankers_magazine_fx_data.csv") %>%
 
 
 
+write_csv(bankers, file = "data/bankers_magazine_exchange_rates.csv")

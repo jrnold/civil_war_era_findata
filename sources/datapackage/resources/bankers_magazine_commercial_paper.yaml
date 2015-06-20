@@ -1,0 +1,19 @@
+path: "data/bankers_magazine_commercial_paper.csv"
+description: >-
+  Commercial paper (short-term interest rates) appearing in *Bankers' Magazine* 1859-1862
+
+schema:
+  fields:
+    - id: description
+      type: string
+      description: Description of the type of rate.
+    - id: date
+      type: date
+      description: Date
+    - id: rate_low
+      type: number
+      description: Interest rate, low quotation.
+    - id: rate_high
+      type: number
+      description: Interest rate, high quotation.
+  

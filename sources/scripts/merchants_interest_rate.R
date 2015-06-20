@@ -1,5 +1,5 @@
 #' Merchants' Magazine Short Run Interest Rate
-#' 
+#'
 
 FILE <- "sources/data/Merchants_Commercial_Paper_Data.csv"
 
@@ -8,3 +8,5 @@ merchants <- read_csv(FILE) %>%
   gather(type, rate, - date, - issue, - url) %>%
   filter(rate != "") %>%
   separate(rate, c("rate_low", "rate_high"), sep = " *@ *", convert = TRUE)
+
+write_csv(merchants, file = "data/merchants_commercial_paper.csv")
