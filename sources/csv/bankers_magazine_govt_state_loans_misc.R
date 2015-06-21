@@ -1,10 +1,12 @@
-source("R/.init.R")
+source("R/init.R")
 
-args <- commandArgs(TRUE)
-src <- args[1]
-dst <- args[2]
+dst <- commandArgs(TRUE)[1]
 
-greenbacks <- (mutate(read_csv("data/greenbacks_fill.csv"),
+### depends: sources/data/bankers_magazine_govt_bonds_quotes_in_text.csv data/greenbacks_fill.csv
+src <- "sources/data/bankers_magazine_govt_bonds_quotes_in_text.csv"
+greenbacks_fill_file <- "data/greenbacks_fill.csv"
+
+greenbacks <- (mutate(read_csv(greenbacks_fill_file),
                       date = as.Date(date, "%Y-%m-%d"),
                       gold_rate = 100 / mean)
                %>% select(date, gold_rate))

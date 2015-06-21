@@ -1,9 +1,9 @@
 #' Implied yields and maturities of greenbacks
-source("R/.init.R")
+source("R/init.R")
 
-args <- commandArgs(TRUE)
-infile <- args[1]
-outfile <- args[2]
+### depends: data/greenbacks.csv
+infile <- "data/greenbacks.csv"
+outfile <- commandArgs(TRUE)[1]
 
 greenbacks <-
     mutate(read_csv(infile),

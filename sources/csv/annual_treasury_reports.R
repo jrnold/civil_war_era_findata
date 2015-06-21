@@ -1,6 +1,10 @@
 #' ---------------------------
 #' Treasury Report
 #' ---------------------------
+#'
+source("R/init.R")
+
+dst <- commandArgs(TRUE)[1]
 
 .data <- list()
 
@@ -190,11 +194,11 @@
 #' ============
 DATA <- mutate(plyr::ldply(names(.data),
                            function(i) {
-                               x <- ldply(.data[[i]], data.frame)
+                               x <- plyr::ldply(.data[[i]], data.frame)
                                x[["report"]] <- as.Date(i, "%Y-%m-%d")
                                x
                            }),
                resources = balance + receipts + loans,
                diff = resources - expenditures)
 
-write_csv(DATA, file = commandArgs(TRUE)[1])
+write_csv(DATA, file = dst)

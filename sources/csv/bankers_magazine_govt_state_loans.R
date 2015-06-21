@@ -1,11 +1,14 @@
 #' Bankers magazine
 #'
 #' Adds price in gold. Gold prices come from ``greenbacks_fill``.
-source("R/.init.R")
+source("R/init.R")
 
 args <- commandArgs(TRUE)
-src <- args[1]
-dst <- args[2]
+dst <- args[1]
+
+### depends: sources/data/bankers_magazine_govt_state_loans.csv data/greenbacks_fill.csv
+src <- "sources/data/bankers_magazine_govt_state_loans.csv"
+greenbacks_fill_file <- "data/greenbacks_fill.csv"
 
 #' Southern states do not pay interest after 1861.
 #' Assume that their prices are "clean"
@@ -21,7 +24,7 @@ clean_series <- function(series, date, is_clean) {
     is_clean
 }
 
-greenbacks <- (mutate(read_csv("data/greenbacks_fill.csv"),
+greenbacks <- (mutate(read_csv(greenbacks_fill_file),
                       date = as.Date(date, "%Y-%m-%d"),
                       gold_rate = 100 / mean)
                %>% select(date, gold_rate))

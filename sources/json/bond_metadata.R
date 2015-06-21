@@ -1,6 +1,6 @@
 #' # Bond Metadata
 #'
-source("R/.init.R")
+source("R/init.R")
 
 #'
 #' This generates metadata about each bond issue.
@@ -929,7 +929,6 @@ for (year in 1885:1890) {
 }
 
 
-
 #'
 #' ## Confederate
 #'
@@ -944,14 +943,14 @@ for (year in 1885:1890) {
 #' :total issued: 15 million
 #'
 
-for (year in 5:10) {
-    bondname <- sprintf("confed_15mn_%d", year)
-    bonds[[bondname]] <-
-        list(cashflows = generate_cashflow_2(as.Date("1861-9-1"), year * 2, 4),
-             interest = 0.08,
-             periods = list(list(month = 3, day = 1), list(month = 9, day = 1)),
-             issued = as.Date("1861-9-1"))
-}
+## for (year in 5:10) {
+##     bondname <- sprintf("confed_15mn_%d", year)
+##     bonds[[bondname]] <-
+##         list(cashflows = generate_cashflow_years(as.Date("1861-9-1"), year * 2, 4),
+##              interest = 0.08,
+##              periods = list(list(month = 3, day = 1), list(month = 9, day = 1)),
+##              issued = as.Date("1861-9-1"))
+## }
 
 #' Confederate 100 million
 #' ------------------------
@@ -964,49 +963,14 @@ for (year in 5:10) {
 #' :total issued:  $99,570,550
 #' 
 
-for (year in 3:20) {
-    bondname <- sprintf("confed_100mn_%d", year)
-    bonds[[bondname]] <-
-        list(cashflows = generate_cashflow_2(as.Date("1861-7-1"), year * 2, 4),
-             interest = 0.08,
-             periods = list(list(month = 1, day = 1), list(month = 7, day = 1)),
-             issued = as.Date("1861-7-1"))
-}
-
-## #' Confederate Sevens
-## #' -------------------
-## #'
-## #' Only issue that had 7 per cent rate was by the Feb 20, 1863 Funding Loan.
-## #'
-## #' Just calculate using Jan / Jul interest payments even though they seem to depend
-## #' on the issue date of the bond.
-## #'
-## #' :authorized:
-## #' :maturity: 5 years, but Congress could defer payment up to 30 yrs at the same rate of interest.
-## #' :interest: 8 percent bonds sold until April 21, 1863 and 7 per cent bonds until Aug 1, 1863.
-## #' :issued: 8 percent: 96 million , 7 percent 76 million.
-
-## for (year in 5:30) {
-##     bondname <- sprintf("confed_7_%d", year)
+## for (year in 3:20) {
+##     bondname <- sprintf("confed_100mn_%d", year)
 ##     bonds[[bondname]] <-
-##         list(cashflows = generate_cashflow_2(as.Date("1863-7-1"), year * 2, 4),
+##         list(cashflows = generate_cashflow_2(as.Date("1861-7-1"), year * 2, 4),
 ##              interest = 0.08,
 ##              periods = list(list(month = 1, day = 1), list(month = 7, day = 1)),
-##              issued = as.Date("1863-4-21"))
+##              issued = as.Date("1861-7-1"))
 ## }
-
-#' Confederate 7'30s
-#' --------------------
-#'
-#' Act of April 17, 1862
-#'
-#' :authorized: up to 165 million in lieu of April 12 (18) 1862 bonds
-#' :denomination: 100 or higher
-#' :maturity: 6 months after peace
-#' :interest rate: 2 cents per day per 100
-#' :total issued: 128,241,400
-## No fixed maturity, so cannot calculate
-
 
 #' Richmond
 #' ------------

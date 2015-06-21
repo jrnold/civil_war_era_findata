@@ -1,17 +1,16 @@
-source("R/.init.R")
+source("R/init.R")
 
 # TODO: remove coupon payments for states during ACW
 # TODO: yields using assumed future redemption
 
-sysargs <- commandArgs(TRUE)
-bankers_file <- sysargs[1]
+### depends: data/bankers_magazine_govt_state_loans.csv data/bond_metadata.json data/greenbacks_fill.csv
 bankers_file <- "data/bankers_magazine_govt_state_loans.csv"
-bond_metadata_file <- sysargs[2]
 bond_metadata_file <- "data/bond_metadata.json"
-outfile <- sysargs[3]
-outfile <- "data/bankers_magazine_govt_state_loans_yields.csv"
+greenback_fill_file <- "data/greenbacks_fill.csv"
+outfile <- commandArgs(TRUE)[1]
+outfile <- "foo.csv"
 
-gold_rates_actual <- read_csv("data/greenbacks_fill.csv") %>%
+gold_rates_actual <- read_csv(greenback_fill_file) %>%
     mutate(gold_rate = 100 / mean,
            date = as.Date(date)) %>%
     select(date, gold_rate)
@@ -135,30 +134,28 @@ if (length(unmatched)) {
   stop(sprintf("No entries for: %s", paste(unmatched, collapse = ", ")))
 }
 
-.data <-
-  plyr::mdply(bankers,
-              function(series, date, ...) {
-                MATCH_BONDS[[as.character(series)]](date)
-              }) %>%
-  #slice(1:5000) %>%
-  rowwise() %>%
-  do({
-    ret <- make_yields_etc(date = .$date,
-                           bond = .$bond,
-                           gold_rate = .$gold_rate,
-                           price_gold = .$price_gold,
-                           adjust_gold = .$adjust_gold,
-                           adjust_currency = .$adjust_currency,
-                           is_clean = .$is_clean,
-                           metadata = bond_metadata[[.$bond]],
+match_bonds_all <- function(x, MATCH_BONDS, bond_metadata) {
+  all_bonds <- MATCH_BONDS[[as.character(x$series)]](x$date)
+  retlist <- vector(mode = "list", length = nrow(all_bonds))
+  for (i in seq_along(all_bonds$bond)) {
+    bond <- all_bonds$bond[i]
+    ret <- make_yields_etc(date = x$date,
+                           bond = bond,
+                           gold_rate = x$gold_rate,
+                           price_gold = x$price_gold,
+                           adjust_gold = x$adjust_gold,
+                           adjust_currency = x$adjust_currency,
+                           is_clean = x$is_clean,
+                           metadata = bond_metadata[[bond]],
                            gold_rates_actual = gold_rates_actual)
-
-    ret[["date"]] <- .$date
-    ret[["bond"]] <- .$bond
-    ret[["series"]] <- .$series
-    ret[["wgt"]] <- .$wgt
-    select(ret, bond, date, series, wgt, everything())
-  })
+    ret[["date"]] <- x$date
+    ret[["bond"]] <- all_bonds$bond[i]
+    ret[["series"]] <- x$series
+    ret[["wgt"]] <- all_bonds$wgt[i]
+    retlist[[i]] <- select(ret, bond, date, series, wgt, everything())
+  }
+  bind_rows(retlist)
+}
 
 rfyields_date <- function(x) {
   rate <- filter(x,
@@ -187,7 +184,7 @@ rfyields_date <- function(x) {
                    bond = .i$bond
         )
     } else {
-     ret[[i]] <-
+      ret[[i]] <-
         data_frame(govt_rate = rate,
                    ytm_goldrf = .i$ytm_currency,
                    duration_goldrf = .i$duration_currency,
@@ -199,14 +196,17 @@ rfyields_date <- function(x) {
   bind_rows(ret)
 }
 
-#' Get currency rate for the government for each time period
-yields6 <-
-  .data %>%
-  #filter(date >= as.Date("1862-1-1")) %>%
-  ungroup() %>%
-  group_by(date) %>%
-  do(rfyields_date(.))
+bankers %<>% group_by(date)
+first_date <- TRUE
+for (dt in unique(as.character(bankers$date))) {
+  print(dt)
+  .data <- filter(bankers, date == as.character(dt)) %>%
+    rowwise() %>%
+    do(match_bonds_all(., MATCH_BONDS, bond_metadata)) #%>%
+#     left_join(rfyields_date(.), by = c("bond", "date"))
+#   readr::write_csv(.data,
+#                    outfile,
+#                    append = ! first_date)
+  first_date <- FALSE
+}
 
-.data %<>% left_join(yields6, by = c("date", "bond"))
-
-write_csv(.data, file = outfile)

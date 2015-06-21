@@ -1,10 +1,8 @@
-source("R/.init.R")
+source("R/init.R")
 
-sysargs <- commandArgs(TRUE)
-infile <- sysargs[1]
+### depends: data/merchants_magazine_us_paper_yields.csv
 infile <- "data/merchants_magazine_us_paper_yields.csv"
-outfile <- sysargs[2]
-outfile <- "data/merchants_magazine_us_paper_yields_2.csv"
+outfile <- commandArgs(TRUE)[1]
 
 data2 <-
   read_csv(infile) %>%

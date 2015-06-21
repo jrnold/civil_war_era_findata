@@ -5,39 +5,31 @@ YAMLFILES = $(shell find sources/datapackage -type f -name '*.yaml')
 vpath %.R sources/scripts/
 vpath %.py sources/scripts/
 
-DATA = data/bond_metadata.json
-DATA += data/greenbacks.csv
-DATA += data/greenbacks_fill.csv
-DATA += data/bankers_magazine_govt_state_loans.csv
-DATA += data/bankers_magazine_govt_state_loans_yields.csv
-DATA += data/bankers_magazine_govt_state_loans_yields_2.csv
-DATA += data/merchants_magazine_us_paper.csv
-DATA += data/merchants_magazine_us_paper_yields.csv
-DATA += data/merchants_magazine_us_paper_yields_2.csv
-DATA += data/greenback_yields.csv
-DATE += data/bankers_magazine_govt_state_loans_misc.csv
+CSV_SRC = $(wildcard sources/csv/*.R)
+CSV_DATA = $(addprefix data/,$(patsubst %.R,%.csv,$(notdir $(CSV_SRC))))
+JSON_SRC = $(wildcard sources/json/*.R)
+JSON_DATA = $(addprefix data/,$(patsubst %.R,%.json,$(notdir $(JSON_SRC))))
 
 all: build
 
-build: $(DATA) datapackage.json 
+build: $(CSV_DATA) $(JSON_DATA) datapackage.json
+	@echo $(CSV_DATA)
+	@echo $(JSON_DATA)
 
-data/%.csv: %.R
-	$(R) $^ $@
+# automatic dependency generation
+sources/csv/%.mk: sources/csv/%.R
+	$(R) depends.R $<
 
-data/%.json: %.R
-	$(R) $^ $@
+sources/json/%.mk: sources/json/%.R
+	$(R) depends.R $<
+
+data/%.csv: sources/csv/%.R
+	$(R) $< $@
+
+data/%.json: sources/json/%.R
+	$(R) $< $@
 
 datapackage.json: datapackage.py $(YAMLFILES)
 	$(PYTHON)  $< sources/datapackage $@
 
-data/bond_metadata.json: bond_metadata.R
-data/greenbacks.csv: greenbacks.R sources/data/greenbacks.csv
-data/greenbacks_fill.csv: greenbacks_fill.R data/greenbacks.csv
-data/bankers_magazine_govt_state_loans.csv: bankers_magazine_govt_state_loans.R sources/data/bankers_magazine_govt_state_loans.csv
-data/bankers_magazine_govt_state_loans_yields.csv: bankers_magazine_govt_state_loans_yields.R data/bankers_magazine_govt_state_loans.csv data/bond_metadata.json data/greenbacks_fill.csv
-data/bankers_magazine_govt_state_loans_yields_2.csv: bankers_magazine_govt_state_loans_yields_2.R data/bankers_magazine_govt_state_loans_yields.csv
-data/merchants_magazine_us_paper.csv: merchants_magazine_us_paper.R sources/data/merchants_magazine_us_paper.csv
-data/merchants_magazine_us_paper_yields.csv: merchants_magazine_us_paper_yields.R data/merchants_magazine_us_paper.csv data/bond_metadata.json data/greenbacks_fill.csv
-data/merchants_magazine_us_paper_yields_2.csv: merchants_magazine_us_paper_yields_2.R data/merchants_magazine_us_paper_yields.csv
-data/greenback_yields.csv: greenback_yields.R data/greenbacks.csv
-data/bankers_magazine_govt_state_loans_misc.csv: bankers_magazine_govt_state_loans_misc.R sources/data/bankers_magazine_govt_bonds_quotes_in_text.csv 
+include $(CSV_SRC:.R=.mk) $(JSON_SRC:.R=.mk)

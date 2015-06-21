@@ -1,12 +1,9 @@
-source("R/.init.R")
+source("R/init.R")
 
-sysargs <- commandArgs(TRUE)
-merchants_file <- sysargs[1]
+### depends: data/merchants_magazine_us_paper.csv data/bond_metadata.json
 merchants_file <- "data/merchants_magazine_us_paper.csv"
-bond_metadata_file <- sysargs[2]
 bond_metadata_file <- "data/bond_metadata.json"
-outfile <- sysargs[3]
-outfile <- "data/merchants_magazine_us_paper_yields.csv"
+outfile <- commandArgs(TRUE)[1]
 
 #' Load prerequisite data
 BOND_SERIES <- c("5's, 1874",

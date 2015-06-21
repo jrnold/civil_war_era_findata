@@ -1,10 +1,8 @@
-source("R/.init.R")
+source("R/init.R")
 
-sysargs <- commandArgs(TRUE)
-infile <- sysargs[1]
+### depends: data/bankers_magazine_govt_state_loans_yields.csv
 infile <- "data/bankers_magazine_govt_state_loans_yields.csv"
-outfile <- sysargs[2]
-outfile <- "data/bankers_magazine_govt_state_loans_yields_2.csv"
+outfile <- commandArgs(TRUE)[1]
 
 data1 <- read_csv(infile)
 touse <- setdiff(names(data1), c("bond", "series", "date", "wgt"))

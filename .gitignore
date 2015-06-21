@@ -1,6 +1,7 @@
 /doc/build/
 auto/
 .Rhistory
-*.csv#
-
-*.csv#
+*#
+.#*#
+*.mk
+*~

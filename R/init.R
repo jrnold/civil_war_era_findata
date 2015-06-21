@@ -1,7 +1,11 @@
+suppressPackageStartupMessages({
 library("jsonlite")
+library("lubridate")
 library("dplyr")
 library("magrittr")
-library("lubridate")
+                                        # imports from plyr
+})
+
 
 #' Load the bond metadata json file while converting fields
 #' to correct types.

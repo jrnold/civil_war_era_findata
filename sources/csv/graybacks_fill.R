@@ -2,15 +2,13 @@
 #'
 #' Uses greenback data from ``greeenbacks``. Fills in missing
 #' data using the smoothed values of a ``StructTS`` local level model.
-source("R/.init.R")
+source("R/init.R")
 
-args <- commandArgs(TRUE)
-srcs <- args[1:3]
+### depends: data/grayback_ecm.csv data/grayback_mccandless.csv data/grayback_weidenmier_2002.csv
 srcs <- c("data/grayback_ecm.csv",
           "data/grayback_mccandless.csv",
           "data/grayback_weidenmier_2002.csv")
-dst <- args[4]
-dst <- c("data/grayback_fill.csv")
+dst <- commandArgs(TRUE)[1]
 
 graybacks_ecm <- read_csv(srcs[1]) %>%
   mutate(log_price = log(price / 100),
