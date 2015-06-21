@@ -4,8 +4,8 @@
 #' data using the smoothed values of a ``StructTS`` local level model.
 source("R/init.R")
 
-src <- "data/greenbacks.csv"
 dst <- commandArgs(TRUE)[1]
+src <- "data/greenbacks.csv"
 
 greenbacks <-
   mutate(read_csv(src),

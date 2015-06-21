@@ -1,1221 +1,265 @@
 {
-  "licenses": [
-    {
-      "id": "odc-by",
-      "url": "http://opendatacommons.org/licenses/by/"
-    }
-  ],
-  "name": "civil_war_era_findata",
-  "sources": [
-    {
-      "name": "EH.net Greenback.series",
-      "web": "http://eh.net/databases/greenback/"
-    },
-    {
-      "name": "Mitchell, Wesley C., 1908. \"Gold, Prices, and Wages Under the Greenback Standard.\" The University Press.",
-      "web": "http://books.google.com/books?id=fqkRAAAAYAAJ"
-    },
-    {
-      "name": "Mitchell, Wesley C., 1903. \"A history of the greenbacks: with special reference to the economic consequences of their issue: 1862-65.\" Chicago: University of Chicago Press.",
-      "web": "http://books.google.com/books?id=ElAuAAAAYAAJ"
-    },
-    {
-      "name": "Ball, Douglas, 1991. \"Financial Failure and Confederate Defeat.\" University of Illinois Press. ISBN: 9780252017551",
-      "web": "http://books.google.com/books?id=lq92AAAAMAAJ"
-    },
-    {
-      "name": "Bankers' Magazine and Statistical Register"
-    },
-    {
-      "name": "The Merchants' Magazine and Commercial Review"
-    },
-    {
-      "name": "Burdekin, Richard C.K. and Farrokh K. Langdana, \"War Finance in the Southern Confederacy: 1861-1865\", *Explorations in Economic History*, 30, pp 352-376"
-    },
-    {
-      "name": "McCandless, George T., Jr. 1996. \"Money, Expectations, and the U.S. Civil War\" *American Economic Review*, 86.3, pp. 661-671.",
-      "web": "http://www.jstor.org/stable/2118219"
-    },
-    {
-      "name": "Gregor W. Smith and R. Todd Smith (1997). Greenback-Gold Returns and Expectations of Resumption, 1862-1879. The Journal of Economic History, 57, pp 697-717. doi:10.1017/S0022050700019100.",
-      "web": "http://journals.cambridge.org/article_S0022050700019100"
-    },
-    {
-      "name": "U. S. Department of the Treasury, (1861) \"Annual Report of the Secretary of the Treasury on the State of the Finances, July 4, 1861\".",
-      "url": "https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1861_2.pdf"
-    },
-    {
-      "name": "Godfrey, J.M. (1978) \"Monetary Expansion in the Confederacy\""
-    }
-  ],
-  "homepage": "https://github.com/jrnold/civil_war_era_findata",
-  "maintainers": [
-    {
-      "name": "Jeffrey B. Arnold",
-      "email": "jeffrey.arnold@gmail.com"
-    }
-  ],
   "resources": [
     {
-      "path": "data/annual_report_treasury_news.csv",
-      "description": "For all Annual Reports of the Treasury issued during the Civil War, the dates on which New York markets responded.\n",
+      "description": "\nExchange rates (New York) appearing in *Bankers' Magazine* 1859-1863\nThe *Bankers' Magazine* published exchange rate data for New York on London, Paris, Amsterdam, Bremen, Hamburg, and Frankfort between 1859 and 1863.",
+      "name": "bankers_magazine_exchange_rates",
+      "path": "data/bankers_magazine_exchange_rates.yaml",
       "schema": {
         "fields": [
           {
-            "description": "Name of the treasury report. This corresponds to the url \"https://fraser.stlouisfed.org/docs/publications/treasar/%s.pdf\"\n",
-            "type": "string",
-            "id": "treasury_report"
+            "description": "Issue of the *Bankers' Magazine*",
+            "id": "issue",
+            "type": "date"
           },
           {
-            "description": "Date on the report",
-            "type": "date",
-            "id": "treasury_report_date"
-          },
-          {
-            "description": "Date on which the New York market responded to the news in the treasury report.",
-            "type": "date",
-            "id": "market_news_date"
-          },
-          {
-            "description": "Citation to New York Times article used to justify the coding of ``market_news_date``.\n",
-            "type": "string",
-            "id": "news_source"
-          }
-        ]
-      },
-      "name": "annual_report_treasury_news"
-    },
-    {
-      "path": "data/grayback_mccandless.csv",
-      "description": "Price of Gold in Confederate Currency (Graybacks) from McCandless\n\nBiweekly grayback price series from McCandless (1996), Appendix Table\n1, p. 669.\n\n    The data for the South comes from a newspaper column (of unknown\n    origin) found glued into a blank back page of the Virginia State\n    Library's copy of Ernest A. Smith's (1901) The History of the\n    Confederate Treasury.\n\n    As best I can tell, this Southern data set has not been used\n    before. The standardreference is from the Hammond papers, a copy\n    of a card issued by the Wm. B. Isaacs & Co., bankers with monthly\n    prices for the North on one side and for the South on the\n    other. This is the source of the frequently referenced Southern\n    prices in Todd's Confederate Finance. An additional source of\n    Southern prices is from a letter to the New York Evening Post of\n    August 4, 1896 where prices are given for every 10 days. The\n    author of the letter is identified only as E. C. M. The data from\n    the Isaccs and ECM sources are similar to what I use.\n\nWeidenmier (2002) discusses problems with this series, contrasting it \nwith his data.\n\n    Problems with the grayback series is that it reports constant prices\n    for weeks at a time, is of unknown origin for an unknown market, is\n    inconsistent with the New York Evening Post price series (On Jan 1,\n    1865 the Post lists a price of 34 for 1 while McCandless reports 60\n    for 1), and it is unclear whether they are bid or ask prices. \\textcite{Weidenmier2002}\n",
-      "sources": [
-        {
-          "name": "McCandless, George T., Jr. 1996, \"Money, Expectations, and the U.S. Civil War\", *American Economic Review*",
-          "url": "http://www.jstor.org/stable/2118219"
-        }
-      ],
-      "schema": {
-        "fields": [
-          {
-            "description": "Date",
-            "type": "date",
-            "id": "date"
-          },
-          {
-            "description": "Price of gold in Confederate dollars",
-            "type": "price",
-            "id": "price"
-          }
-        ]
-      },
-      "name": "grayback_ecm"
-    },
-    {
-      "path": "data/events_smith_smith.csv",
-      "description": "\nWar news and wartime financial news\n\nEvents from Smith and Smith (1997), \"Table 1: War News\" (p. 706) and \"Table 2:\nWartime Financial News\" (p. 707).\n\nThe set of events are constructed from those events mentioned in Mitchell (1903), pt. 2, chapter 3, as influencing the price of gold.\n",
-      "sources": [
-        {
-          "name": "Gregor W. Smith and R. Todd Smith (1997). Greenback-Gold Returns and Expectations of Resumption, 1862-1879. The Journal of Economic History, 57, pp 697-717. doi:10.1017/S0022050700019100.",
-          "web": "http://journals.cambridge.org/article_S0022050700019100"
-        }
-      ],
-      "schema": {
-        "fields": [
-          {
-            "description": "If true, then war or diplomatic news, else financial news",
-            "id": "war_news",
-            "type": "boolean"
-          },
-          {
-            "description": "Event identification number. Unique within `war_news`. Same as the row number in the original table.",
-            "id": "event_number",
-            "type": "integer"
-          },
-          {
-            "description": "Event start date",
-            "type": "date",
-            "id": "start_date"
-          },
-          {
-            "description": "Event end date",
-            "type": "date",
-            "id": "end_date"
-          },
-          {
-            "description": "If true, then a Union defat, adverse rumor, or news of difficulties in Union finances, such as further issues of greenbacks. If False, then a Union victory, favorable political news, or improvements in Union public finances.",
-            "type": "boolean",
-            "id": "unfavorable"
-          }
-        ]
-      },
-      "name": "events_smith_smith"
-    },
-    {
-      "path": "data/dewey1918_deficit_1862_1865.csv",
-      "description": "United States receipts and expenditures, 1862-1865\n\nTable on page 330 of Dewey (1918)\n",
-      "sources": [
-        {
-          "name": "Dewy, Davis Rich (1918), \"Financial History of the United States\", p. 330",
-          "url": "http://books.google.com/books?id=l3oaAAAAMAAJ&pg=PA330"
-        }
-      ],
-      "schema": {
-        "fields": [
-          {
-            "description": "Year",
-            "type": "number",
-            "id": "year"
-          },
-          {
-            "description": "Receipts in taxes (millions of dollars)",
-            "type": "number",
-            "id": "receipts_taxes"
-          },
-          {
-            "description": "Receipts, miscellanoues (including sales of public land) (millions of dollars)",
-            "type": "number",
-            "id": "receipts_miscellanoues"
-          },
-          {
-            "description": "Receipts, total (millions of dollars)",
-            "type": "number",
-            "id": "receipts_total"
-          },
-          {
-            "description": "Expenditures (millions of dollars)",
-            "type": "number",
-            "id": "expenditures"
-          },
-          {
-            "description": "Deficit (millions of dollars)",
-            "type": "number",
-            "id": "deficit"
-          }
-        ]
-      },
-      "name": "dewey1918_deficit_1862_1865"
-    },
-    {
-      "path": "data/bond_metadata.json",
-      "description": "Bond Metadata\n\nContains issue dates, coupon periods, maturity, cashflow, etc. data about bond issues for which there is price data.\n\n- Many quoted price series may correspond to multiple bond similar issues. \n- Callable bonds (10-40s and 5-20s) have multiple entries, one for a potential call in each year.\n- Metadata on state bonds is rather scarce. \n  Sometimes a range of years is known; in which case, there is a bond issue for each year.\n  If no range is known, then a bond issue for each potential year is used (based on the empirical distribution of all bonds for which maturity years are known).\n\nThe data are an ``object``, with an \nEach bond issue is an ``object`` containting the following entries.\n\n- ``cashflows``: ``object``\n  - ``date``: ``array``. Date of cashflow. %Y-%m-%d.\n  - ``cashflows``: ``array``. amount of cashflow in gold dollars\n- ``interest``: ``number``. Annual interest rate\n- ``periods``: ``array``. Each entry is an ``object`` with keys ``month`` and ``day`` for the month and day of a periodic payment.\n- ``issue_date``: Date of issue. %Y-%m-%d.\n- ``maturity_date``: Date of maturity. %Y-%m-%d.\n- ``call``: For callable bonds, ``TRUE`` if a date before maturity, ``FALSE`` if maturity.\n",
-      "format": "json",
-      "name": "bond_metadata"
-    },
-    {
-      "path": "data/burdekin_langdana_war.csv",
-      "description": "Confederate War News from Burdekin and Langdana (1993)\n\nThis is set to +1 for 1863Q3 after Chancellorsville and during Lee's\nMaryland campaign, -1 for 1862Q2 (Peninsula Campaign), 1863:4 (Gettysburg and Vicksburg) and 1864:1 (costly battle of Chickamagua).  Their guideline for constructing the dummy was Schwab (1901, ch 9) major 'crises of confidence' in Richmond. The dummy variable is set to 0 in 1864:2 and 1864:3 due to the stalled Overland and Petersburg campaigns and the nomination of McClellan. \n\nThese data extend the original data by setting it to -1 for 1864Q4 and 1865Q1 although the Burdekin and Langdana analysis stops in 1864Q3 due to a lack of data in other variables.\n",
-      "source": "Burdekin and Langdana (1993), p. 367-368.",
-      "schema": {
-        "fields": [
-          {
-            "id": "year",
-            "type": "integer"
-          },
-          {
-            "id": "quarter",
-            "type": "integer"
-          },
-          {
-            "description": "Equal to -1 if the war trend is favoring the Union, +1 if it favoring the Confederacy, and 0 otherwise.",
-            "type": "integer",
-            "id": "war"
-          }
-        ]
-      },
-      "name": "burdekin_langdana_1993_war"
-    },
-    {
-      "path": "data/martin_sterling_exchange_1862_1870.csv",
-      "schema": {
-        "fields": [
-          {
-            "label": "Year",
-            "id": "year",
-            "type": "integer"
-          },
-          {
-            "label": "Month",
-            "id": "month",
-            "type": "integer"
-          },
-          {
-            "label": "Monthly",
-            "id": "low",
-            "type": "number"
-          },
-          {
-            "label": "Monthly high",
-            "id": "high",
-            "type": "number"
-          },
-          {
-            "label": "Quoted in Gold",
-            "id": "gold",
-            "type": "boolean",
-            "description": "Whether quoted in gold or currency"
-          }
-        ]
-      },
-      "name": "martin_sterlin_exchange_1862_1870",
-      "description": "Rate of exchange on England, at New York, for Banker's bills (60 days) with monthly high and low values from 1862 to 1870.\n",
-      "source": {
-        "name": "Martin, G. Joseph. \"Seventy-three Years' History of the Boston Stock Market, from Januay 1, 1798, to January 1, 1871\", Boston, p. 27\n",
-        "url": "http://books.google.com/books?id=g5jyU-B-nikC&pg=PA27"
-      },
-      "title": "Rate of Exchange on England at New York (Monthly, 1862-1870)"
-    },
-    {
-      "path": "data/mitchell_events.csv",
-      "description": "Mitchell's Factors Which Affected the Gold Price of the Currency\n\nThe events listed by Mitchell (1903) as having impacts on specie value of greenbacks.\n",
-      "source": "Mitchell (1903), Part II, Chapter 3.2, pp 199-207.",
-      "schema": {
-        "fields": [
-          {
-            "description": "Category of the event.\nOne of \"money supply\", \"finance\", \"politics\", \"foreign affairs\", or \"war\"",
-            "type": "string",
-            "id": "category"
-          },
-          {
-            "description": "Start date of the event (when news reaches the market)",
-            "type": "date",
-            "id": "start_date"
-          },
-          {
-            "description": "End date of the event (when news reaches the market)\nThis may be missing if the news is incorporated in one day.",
-            "type": "date",
-            "id": "end_date"
-          },
-          {
-            "description": "Description of the event",
-            "type": "string",
-            "id": "description"
-          },
-          {
-            "description": "Page in Mitchell (1903) on which the event is described",
-            "type": "string",
-            "id": "page"
-          },
-          {
-            "description": "If true, then the event was good for the Union (rise in the price of currency in gold)",
-            "type": "boolean",
-            "id": "good"
-          }
-        ]
-      },
-      "name": "mitchell_events"
-    },
-    {
-      "path": "data/merchants_magazine_us_paper_yields.csv",
-      "description": "Yield data for U.S. government bonds 1862-1865.\n\nFor the price series listed in ``merchants_magazine_state_govt_loans``, calculate clean and dirty prices, accrued interest, yields, duration, convexity, and  maturity.\n\nThe price quotations in the original source do not uniquely match a bond issue, so each price series may be matched to multiple bonds.\n",
-      "schema": {
-        "fields": [
-          {
-            "description": "Date of the price",
-            "type": "date",
-            "id": "date"
-          },
-          {
-            "description": "Name of the price series",
-            "type": "string",
-            "id": "series"
-          },
-          {
-            "description": "Exchange rate for gold (gold dollars per dollar) used to convert currency prices to gold prices.",
-            "type": "number",
-            "id": "gold_rate"
-          },
-          {
-            "description": "\nName of the bond issue used to calculate yields, etc. Due to ambiguity in how bond  were quoted in this era, a single series can match multiple bonds.",
-            "type": "string",
-            "id": "bond"
-          },
-          {
-            "description": "\nWeights to use when aggregating the multiple bond issues assigned to a price series.",
-            "type": "number",
-            "id": "wgt"
-          },
-          {
-            "description": "Dirty price of bond in gold dollars",
-            "type": "number",
-            "id": "price"
-          },
-          {
-            "description": "Clean price of bond in gold dollars",
-            "type": "number",
-            "id": "price_clean"
-          },
-          {
-            "description": "Accrued interest in gold dollars",
-            "type": "number",
-            "id": "accrued_interest"
-          },
-          {
-            "description": "Current yield. Coupon payments per year / clean price",
-            "type": "number",
-            "id": "current_yield"
-          },
-          {
-            "description": "\nYield to maturity\nThe yield to maturity is calculated using continuous compounding and actual days.",
-            "type": "number",
-            "id": "ytm"
-          },
-          {
-            "description": "Macualay (modified) duration",
-            "type": "number",
-            "id": "duration"
-          },
-          {
-            "description": "Bond convexity",
-            "type": "number",
-            "id": "convexity"
-          },
-          {
-            "description": "Maturity (years)",
-            "type": "number",
-            "id": "maturity"
-          },
-          {
-            "description": "\nIs the price series for a registered bond. In the source, separate prices were quoted for coupon and registered bonds for the 6's of 1881 and Five-twenties. In general, coupon bonds had higher prices than registered bonds due to higher liquidity.",
-            "type": "boolean",
-            "id": "registered"
-          }
-        ]
-      },
-      "name": "merchants_magazine_us_paper_yields"
-    },
-    {
-      "path": "homer_sylla_table_42.csv",
-      "schema": {
-        "fields": [
-          {
-            "label": "Year",
-            "id": "year",
-            "type": "integer"
-          },
-          {
-            "label": "U.S. 6s of 1848-1868, Annual Average Price",
-            "id": "us_6pct_1848_1868_price_avg",
-            "source": "Table 42, p. 305",
-            "type": "number"
-          },
-          {
-            "label": "U.S. 6s of 1848-1868, Annual Average Current Yield, %",
-            "id": "us_6pct_1848_1868_yield_avg",
-            "source": "Table 42, p. 305",
-            "type": "number"
-          },
-          {
-            "label": "U.S. 6s of 1848-1868, Annual Average Redemption Yield, %",
-            "id": "us_6pct_1848_1868_ytm_avg",
-            "type": "number",
-            "source": "Table 42, p. 305",
-            "description": "-1 used for negative yields"
-          },
-          {
-            "label": "U.S. 6s of 1848-1868, Annual High Price",
-            "id": "us_6pct_1848_1868_price_high",
-            "source": "Table 42, p. 305",
-            "type": "number"
-          },
-          {
-            "label": "U.S. 6s of 1848-1868, Annual Low Price",
-            "id": "us_6pct_1848_1868_price_low",
-            "source": "Table 42, p. 305",
-            "type": "number"
-          },
-          {
-            "label": "U.S. 6s of 1861-1881, Annual Average Price",
-            "id": "us_6pct_1861_1881_price_avg",
-            "source": "Table 42, p. 305",
-            "type": "number"
-          },
-          {
-            "label": "U.S. 6s of 1861-1881, Annual Average Current Yield, %",
-            "id": "us_6pct_1861_1881_yield_avg",
-            "source": "Table 42, p. 305",
-            "type": "number"
-          },
-          {
-            "label": "U.S. 6s of 1861-1881, Annual Average Redemption Yield, %",
-            "id": "us_6pct_1861_1881_ytm_avg",
-            "type": "number",
-            "source": "Table 42, p. 305",
-            "description": "-1 used for negative yields"
-          },
-          {
-            "label": "U.S. 6s of 1861-1881, Annual High Price",
-            "id": "us_6pct_1861_1881_price_high",
-            "source": "Table 42, p. 305",
-            "type": "number"
-          },
-          {
-            "label": "U.S. 6s of 1861-1881, Annual Low Price",
-            "id": "us_6pct_1861_1881_price_low",
-            "source": "Table 42, p. 305",
-            "type": "number"
-          },
-          {
-            "label": "U.S. Refunding 4 1/2s of 1891, Annual Average Price",
-            "id": "us_4_half_pct_1891_price_avg",
-            "source": "Table 42, p. 305",
-            "type": "number"
-          },
-          {
-            "label": "U.S. Refunding 4 1/2s of 1891, Annual Average Current Yield, %",
-            "id": "us_4_half_pct_1891_yield_avg",
-            "source": "Table 42, p. 305",
-            "type": "number"
-          },
-          {
-            "label": "U.S. Refunding 4 1/2s of 1891, Annual Average Redemption Yield, %",
-            "id": "us_4_half_pct_1891_ytm_avg",
-            "type": "number",
-            "source": "Table 42, p. 305",
-            "description": "-1 used for negative yields"
-          },
-          {
-            "label": "U.S. Refunding 4 1/2s of 1891, Annual High Price",
-            "id": "us_4_half_pct_1891_price_high",
-            "source": "Table 42, p. 305",
-            "type": "number"
-          },
-          {
-            "label": "U.S. Refunding 4 1/2s of 1891, Annual Low Price",
-            "id": "us_4_half_pct_1891_price_low",
-            "source": "Table 42, p. 305",
-            "type": "number"
-          },
-          {
-            "label": "U.S. 5s of 1858-1874, Annual Average Price",
-            "id": "us_5pct_1858_1874_price_avg",
-            "source": "Table 42, p. 305",
-            "type": "number"
-          },
-          {
-            "label": "U.S. 5s of 1858-1874, Annual Average Current Yield, %",
-            "id": "us_5pct_1858_1874_yield_avg",
-            "source": "Table 42, p. 305",
-            "type": "number"
-          },
-          {
-            "label": "U.S. 5s of 1858-1874, Annual Average Redemption Yield, %",
-            "id": "us_5pct_1858_1874_ytm_avg",
-            "source": "Table 42, p. 305",
-            "type": "number"
-          },
-          {
-            "label": "U.S. 5s of 1858-1874, Annual High Price",
-            "id": "us_5pct_1858_1874_price_high",
-            "source": "Table 42, p. 305",
-            "type": "number"
-          },
-          {
-            "label": "U.S. 5s of 1858-1874, Annual Low Price",
-            "id": "us_5pct_1858_1874_price_low",
-            "source": "Table 42, p. 305",
-            "type": "number"
-          },
-          {
-            "label": "U.S. 5s of 1864-1874 (10-40s), Annual Average Price",
-            "id": "us_5pct_1864_1874_price_avg",
-            "source": "Table 42, p. 305-306",
-            "type": "number"
-          },
-          {
-            "label": "U.S. 5s of 1864-1874 (10-40s), Annual Average Current Yield, %",
-            "id": "us_5pct_1864_1874_yield_avg",
-            "source": "Table 42, p. 305-306",
-            "type": "number"
-          },
-          {
-            "label": "U.S. 5s of 1864-1874 (10-40s), Annual Average Redemption Yield, %",
-            "id": "us_5pct_1864_1874_ytm_avg",
-            "type": "number",
-            "source": "Table 42, p. 305-306",
-            "description": "-1 used for negative yields"
-          },
-          {
-            "label": "U.S. 5s of 1864-1874 (10-40s), Annual High Price",
-            "id": "us_5pct_1864_1874_price_high",
-            "source": "Table 42, p. 305-306",
-            "type": "number"
-          },
-          {
-            "label": "U.S. 5s of 1864-1874 (10-40s), Annual Low Price",
-            "id": "us_5pct_1864_1874_price_low",
-            "source": "Table 42, p. 305-306",
-            "type": "number"
-          },
-          {
-            "label": "U.S. Refunding 4s of 1907, Annual Average Price",
-            "id": "us_4pct_1907_price_avg",
-            "source": "Table 42, p. 306",
-            "type": "number"
-          },
-          {
-            "label": "U.S. Refunding 4s of 1907, Annual Average Current Yield, %",
-            "id": "us_4pct_1907_yield_avg",
-            "source": "Table 42, p. 306",
-            "type": "number"
-          },
-          {
-            "label": "U.S. Refunding 4s of 1907, Annual Average Redemption Yield, %",
-            "id": "us_4pct_1907_ytm_avg",
-            "source": "Table 42, p. 306",
-            "type": "number"
-          },
-          {
-            "label": "U.S. Refunding 4s of 1907, Annual High Price",
-            "id": "us_4pct_1907_price_high",
-            "source": "Table 42, p. 306",
-            "type": "number"
-          },
-          {
-            "label": "U.S. Refunding 4s of 1907, Annual Low Price",
-            "id": "us_4pct_1907_price_low",
-            "source": "Table 42, p. 306",
-            "type": "number"
-          },
-          {
-            "label": "New England Municipal Bond Yields, Annual Average %",
-            "id": "new_england_yield_avg",
-            "source": "Table 42, p. 306",
-            "type": "number"
-          },
-          {
-            "label": "New England Municipal Bond Yields, Low Quarter %",
-            "id": "new_england_yield_low",
-            "source": "Table 42, p. 306",
-            "type": "number"
-          },
-          {
-            "label": "New England Municipal Bond Yields, High Quarter %",
-            "id": "new_england_yield_high",
-            "source": "Table 42, p. 306",
-            "type": "number"
-          },
-          {
-            "label": "Adjusted Average of Higher-Grade Railroad Bond Yields, Annual Average %",
-            "id": "railroad_yield_avg",
-            "source": "Table 42, p. 306",
-            "type": "number"
-          },
-          {
-            "label": "Adjusted Average of Higher-Grade Railroad Bond Yields, Low Month %",
-            "id": "railroad_yield_low",
-            "source": "Table 42, p. 306",
-            "type": "number"
-          },
-          {
-            "label": "Adjusted Average of Higher-Grade Railroad Bond Yields, High Month %",
-            "id": "railroad_yield_high",
-            "source": "Table 42, p. 306",
-            "type": "number"
-          }
-        ]
-      },
-      "name": "homer_sylla_table_42",
-      "description": "\nSources: For government bonds: *The Financial Review Annual*, 1921, Wm. B. Dana Co., pp 221-232. New England municipal and high-grade railroad bond averages from Frederick Macaulay, *The Movements of Interest Rates, Bond Yields and Stock Prices*, New York, 1938, NBER, A142ff, A174ff.\n",
-      "sources": [
-        {
-          "name": "Homer, Sydney and Richard Sylla (2005) *A History of Interest Rates*, Wiley, Table 42, pp. 305-306."
-        }
-      ],
-      "title": "Prices and Yields of Long Term High Grade U.S. Bonds: 1860-1879"
-    },
-    {
-      "path": "data/grayback_weidenmier_2002.csv",
-      "description": "Price of gold in Confederate Dollars (Graybacks) from Weidenmier (2002)\n\nThis price series is from the same sources as `grayback_weidenmier_2`,\nbut only includes Richmond prices, is higher frequency (weekly rather\nthan biweekly), and includes a longer range of dates. \n\nFrom Weidenmier (2002), p. 878\n\n   An extensive search of more than a dozen newspapers yielded a\n   series of 486 grayback prices from public auctions and private\n   brokerage trades in Richmond between May 27, 1861, and February 15,\n   1865.\n\nFrom Weidenmier (2002), footnote 2, p. 878\n\n    All quotes are taken from Richmond except during some\n    stretches in the summer and fall of 1864 when Richmond\n    newspapers stopped reporting money prices. These periods are\n    filled in by gold price quotations from the nearby Wilmington,\n    North Carolina, money market, whose prices were often quoted\n    in the Richmond newspapers.  Newspapers from Petersburg, North\n    Carolina, Virginia,Mobile, Alabama, Wilmington, Virginia,\n    Raleigh, North Carolina, Lynchburg, Augusta, Georgia,\n    Columbus, Georgia, and Charleston, South Carolina, were also\n    examined for price quotes from the Richmond market(see\n    Appendix).Often, these papers would quote trades not reported\n    in the Richmond newspapers.  In addition, secondary markets\n    existed in most of these cities, although these gold exchanges\n    tended to be considerably less liquid than the Richmond\n    market.\n\nFrom Weidenmier (2002), p. 890,\n\n    Grayback/gold price quotations were taken from the following\n    newspapers:Richmond Dispatch, Richmond Examiner, Richmond\n    Whig, Richmond Enquirer, Petersburg Express,\n    Wilmington Journal, Columbus Daily-Sun,\n    Charleston Mercury,Lynchburg Virginian,and the Mobile\n    Tribune.Richmondgrayback/gold price quotations were also\n    cross-checked against prices in the Raleigh, Augusta,and Mobile\n    gold markets using the following newspapers: Raleigh\n    Weekly Register, Mobile Tribune,Mobile Advertiser and Register,\n    and Augusta Daily Constitutionalist.  \n",
-      "sources": [
-        {
-          "name": "Weidenmier, Marc D., 2002. \"Turning Points in the U. S. Civil War: Views from the Grayback Market\", Southern Economic Journal.\n",
-          "url": "http://www.jstor.org/stable/1061497."
-        }
-      ],
-      "schema": {
-        "fields": [
-          {
-            "description": "Date",
-            "type": "date",
-            "id": "date"
-          },
-          {
-            "description": "Price of gold in Confederate dollars in Richmond",
-            "type": "number",
-            "id": "price"
-          },
-          {
-            "description": "Prices were not reported in the Richmond newspapers for these\nparticular dates. The gaps were filled in with grayback/ gold\nprice quotations from the Wilmington,North Carolina,money\nmarket.All Wilmington gold prices quotations are taken from the\nWilmington Daily Journal.\n",
-            "type": "boolean",
-            "id": "wilmington"
-          },
-          {
-            "description": "Grayback/gold price quotations were unavailable for these\nparticular weeks. The grayback price of gold has been for dates\nassuming a constant price from the last available trade.\ninterpolated these particular \n",
-            "type": "boolean",
-            "id": "imputed"
-          }
-        ]
-      },
-      "name": "grayback_weidenmier_2002"
-    },
-    {
-      "path": "data/mitchell_price_index.csv",
-      "description": "Mitchell (1903) price index, 1860-1865 (quarterly)",
-      "source": "Mitchell (1903), Tables XIII and XIV",
-      "schema": {
-        "fields": [
-          {
-            "id": "year",
-            "type": "integer"
-          },
-          {
-            "description": "In the original table months are listed: January, April, July and October.",
-            "type": "integer",
-            "id": "quarter"
-          },
-          {
-            "description": "Price index. Before averaging series for different varieties of the same commodity",
-            "type": "number",
-            "id": "index1"
-          },
-          {
-            "description": "Price index. After averaging series for different varieties of the same commodity",
-            "type": "number",
-            "id": "index2"
-          },
-          {
-            "description": "Price index, fter averaging also series for cotton and cotton textiles",
-            "type": "number",
-            "id": "index3"
-          },
-          {
-            "description": "Like index3, but using median instead of mean.",
-            "type": "number",
-            "id": "index4"
-          }
-        ]
-      },
-      "name": "mitchell_price_index"
-    },
-    {
-      "path": "data/michell_avg_interest_rates_per_year.csv",
-      "description": "Interest rates in New York Money Market, 1860-1865, average rates per year",
-      "source": "Mitchell (1903, p. 367), Table LVIII.I. http://books.google.com/books?id=ElAuAAAAYAAJ&dq=mitchell%201903&pg=PA367",
-      "schema": {
-        "fields": [
-          {
-            "id": "year",
-            "type": "integer"
-          },
-          {
-            "id": "call_elliott",
-            "type": "number"
-          },
-          {
-            "id": "call_newspapers",
-            "type": "number"
-          },
-          {
-            "id": "sixty_days_elliott",
-            "type": "number"
-          },
-          {
-            "id": "prime_fisher",
-            "type": "number"
-          }
-        ]
-      },
-      "name": "mitchell_avg_interest_rates_per_year"
-    },
-    {
-      "path": "data/martin_sterling_exchange_1835_1861.csv",
-      "schema": {
-        "fields": [
-          {
-            "label": "Year",
-            "id": "year",
-            "type": "integer"
-          },
-          {
-            "label": "Month",
-            "id": "month",
-            "type": "integer"
-          },
-          {
-            "description": "Premium in gold dollars for exchange on England at New York, Banker's bills, 60 days.\n",
-            "type": "number",
-            "premium": "Premium on exchange",
-            "id": "price"
-          },
-          {
-            "id": "notes",
-            "premium": "Notes",
-            "type": "string"
-          }
-        ]
-      },
-      "name": "martin_sterling_exchange_1835_1861",
-      "description": "Rate of exchange on England, at New York, for Banker's bills (60 days), \"on or about the 1st of month\"\nfrom Jan 1, 1835 to Dec 1, 1861.\n",
-      "source": {
-        "name": "Martin, G. Joseph. \"Seventy-three Years' History of the Boston Stock Market, from Januay 1, 1798, to January 1, 1871\", Boston, p. 27\n"
-      },
-      "title": "Rate of Exchange on England at New York (1835-1861)"
-    },
-    {
-      "path": "data/holidays.csv",
-      "description": "New York market holidays (1860-1879)\n\nThe list of holidays largely comes from the days Mitchell (1908). It is extended back to 1860. During this era, the market appears to have been open on Saturdays, and the only regularly observed holidays were Christmas, New Years, Independence Day and sometimes Thanksgiving (after 1862).",
-      "schema": {
-        "fields": [
-          {
+            "description": "Date of the quotation.",
             "id": "date",
             "type": "date"
           },
           {
-            "id": "description",
+            "description": "URL to the source (on Google Books).",
+            "id": "url",
+            "type": "string"
+          },
+          {
+            "description": "City",
+            "id": "city",
+            "type": "string"
+          },
+          {
+            "description": "Exchange rate, low quotation. These rates are in different units depending on the city. See the field `type`.",
+            "id": "rate_low",
+            "type": "number"
+          },
+          {
+            "description": "Exchange rate, high quotation. These rates are in different units depending on the city. See the field `type`.",
+            "id": "rate_high",
+            "type": "number"
+          },
+          {
+            "description": "Type of exchange rate. In some cases a description of the units of the exchange rate; For London, there are different rates for different types of collateral.",
+            "id": "type",
             "type": "string"
           }
         ]
-      },
-      "name": "holidays"
+      }
     },
     {
-      "path": "data/grayback_burdekin_weidenmier_2001.csv",
-      "description": "Price of gold in Confederate Dollars from Burdekin and Weidenmier (2001)\n\nBiweekly series of the price of a gold dollar in\nConfederate paper dollars in Richmond and Houston, from `Eh.net\nBiweekly Data on the Confederate Note Price of a Gold Dollar in\nRichmond and Houston\n<http://eh.net/files/databases/weidenmier.finance.confederacy.us.goldata.xls>`_\nand used in [BurdekinWeidenmier2001]_.\n",
       "sources": [
         {
-          "name": "Weidenmier, Marc D., 2002. \"Turning Points in the U. S. Civil War: Views from the Grayback Market\", Southern Economic Journal\n",
-          "url": "http://www.jstor.org/stable/1061497."
+          "name": "United States. Dept. of the Treasury, (1866), Annual Report of the Secretary of the Treasury on the State of the Finances, December 3, 1866",
+          "url": "http://fraser.stlouisfed.org/publication/?pid=194"
         }
       ],
+      "description": "List of acts to issue debt to fund the Civil War.\n",
+      "name": "civil_war_debt_acts",
+      "path": "data/civil_war_debt_acts.csv",
       "schema": {
         "fields": [
           {
-            "description": "Date",
-            "type": "date",
-            "id": "date"
+            "description": "Name of the act",
+            "id": "act",
+            "type": "string"
           },
           {
-            "description": "Price of gold in Confederate dollars in Richmond",
-            "type": "number",
-            "id": "richmond"
+            "description": "Date the act was approved",
+            "id": "date",
+            "type": "date"
           },
           {
-            "description": "Price of gold in Confederate dollars in Houston (old series)",
-            "type": "number",
-            "id": "houston_old"
+            "description": "Authorized increase in interest-bearing debt in (millions of dollars).\n",
+            "id": "interest",
+            "type": "number"
           },
           {
-            "description": "Price of gold in Confederate dollars in Houston (new series)",
-            "type": "number",
-            "id": "houston_new"
+            "description": "Authorized increase in non-interest bearing debt in (millions of dollars).\n",
+            "id": "non_interest",
+            "type": "number"
           }
         ]
-      },
-      "name": "grayback_burdekin_weidenmier_2001"
+      }
     },
     {
-      "path": "data/bankers_magazine_state_govt_loans.csv",
-      "description": "Price data for U.S. government and state bonds 1855-1865.\n\nThese data appear in tables in the *Notes on the Money Market* section \nof the *Bankers' Magazine* for volumes 10-19. The description of the tables\nnoted that these were \"the highest cash prices offered ... for the Government \nand leading state securities in the market.\" `June 22, 1864 <http://books.google.com/books?id=lGAmAQAAIAAJ&pg=PA78>`__.\n\nThe prices appear are nominal (not gold) dollars, and were dirty prices for the most part.\n",
+      "description": "Interest rates in New York Money Market, 1860-1865 average rates per month for call loans",
+      "name": "mitchell_avg_interest_rates_per_month",
+      "source": "Mitchell (1903, p. 367) Table LVIII.II. http://books.google.com/books?id=ElAuAAAAYAAJ&dq=mitchell%201903&pg=PA367",
+      "path": "data/michell_avg_interest_rates_per_month.csv",
       "schema": {
         "fields": [
           {
-            "description": "Date of the price",
-            "type": "date",
-            "id": "date"
+            "id": "year",
+            "type": "integer"
           },
           {
-            "description": "Name of the price series",
-            "type": "string",
-            "id": "series"
+            "id": "month",
+            "type": "integer"
           },
           {
-            "description": "Date of the issue from which the price data come.",
-            "type": "date",
-            "id": "issue"
-          },
-          {
-            "description": "Google books URL to the source of the data.",
-            "type": "string",
-            "id": "url"
-          },
-          {
-            "description": "Volume of Bankers' Magazine from the the data come",
-            "type": "integer",
-            "id": "volume"
-          },
-          {
-            "description": "1 if the price is known to be a clean price, otherwise assumed to be a dirty price",
-            "type": "boolean",
-            "id": "is_clean"
-          },
-          {
-            "description": "Manual price adjustment of bond in gold dollars; used to clean prices beyond accrued interest",
-            "type": "number",
-            "id": "adjust_gold"
-          },
-          {
-            "description": "Manual price adjustment of bond in nominal dollars; used to clean prices beyond accrued interest",
-            "type": "number",
-            "id": "adjust_currency"
-          },
-          {
-            "description": "Notes",
-            "type": "string",
-            "id": "notes"
-          },
-          {
-            "description": "Exchange rate of nominal dollars per gold dollar. Used to convert from nominal price to gold price",
-            "type": "number",
-            "id": "gold_rate"
-          },
-          {
-            "description": "Price of bond in nominal dollars. Face value = 100",
-            "type": "number",
-            "id": "price_currency"
-          },
-          {
-            "description": "Price of bond in gold dollars",
-            "type": "number",
-            "id": "price_gold"
+            "id": "rate",
+            "type": "number"
           }
         ]
-      },
-      "name": "bankers_magazine_state_govt_loans"
+      }
     },
     {
-      "path": "data/bankers_magazine_state_govt_loans_yields.csv",
-      "description": "Yield data for U.S. government and state bonds 1855-1865.\n\nFor the price series listed in ``bankers_magazine_state_govt_loans``, calculate clean and dirty prices, accrued interest, yields, duration, and maturity.\n\nThe price quotations in the original source do not uniquely match a bond issue, so each price series may be matched to multiple bonds.\n",
-      "schema": {
-        "fields": [
-          {
-            "description": "Date of the price",
-            "type": "date",
-            "id": "date"
-          },
-          {
-            "description": "Name of the price series",
-            "type": "string",
-            "id": "series"
-          },
-          {
-            "description": "Exchange rate for gold (gold dollars per dollar) used to convert currency prices to gold prices.",
-            "type": "number",
-            "id": "gold_rate"
-          },
-          {
-            "description": "\nName of the bond issue used to calculate yields, etc. Due to ambiguity in how bond  were quoted in this era, a single series can match multiple bonds.",
-            "type": "string",
-            "id": "bond"
-          },
-          {
-            "description": "\nProbability weight to use when aggregating the multiple bond issues assigned to a price series.",
-            "type": "number",
-            "id": "wgt"
-          },
-          {
-            "description": "Dirty price of bond in gold dollars",
-            "type": "number",
-            "id": "price"
-          },
-          {
-            "description": "Clean price of bond in gold dollars",
-            "type": "number",
-            "id": "price_clean"
-          },
-          {
-            "description": "Accrued interest in gold dollars",
-            "type": "number",
-            "id": "accrued_interest"
-          },
-          {
-            "description": "Yield to maturity\n\nThe yield to maturity is calculated using continuous compounding and actual days.\n",
-            "type": "number",
-            "id": "ytm"
-          },
-          {
-            "description": "Macualay (modified) duration",
-            "type": "number",
-            "id": "duration"
-          },
-          {
-            "description": "Bond convexity",
-            "type": "number",
-            "id": "convexity"
-          },
-          {
-            "description": "Maturity (years)",
-            "type": "number",
-            "id": "maturity"
-          }
-        ]
-      },
-      "name": "bankers_magazine_state_govt_loans_yields"
-    },
-    {
-      "path": "data/ball1991_us_war_financing.csv",
-      "schema": {
-        "fields": [
-          {
-            "description": "Start date",
-            "type": "date",
-            "id": "start_date"
-          },
-          {
-            "description": "End date",
-            "type": "date",
-            "id": "end_date"
-          },
-          {
-            "description": "War Department expenditures in millions\n\nFor periods Feb 18, 1862 and later, \"includes cumulative arrearages of $50 million\nin 1862; $100 million in 1863, $200 million in 1864, and $313 million in 1865\n",
-            "type": "number",
-            "id": "war"
-          },
-          {
-            "description": "Navy Department expenditures in millions",
-            "type": "number",
-            "id": "navy"
-          },
-          {
-            "description": "Civil Department expenditures in millions",
-            "type": "number",
-            "id": "civil"
-          },
-          {
-            "description": "Public debt expenditures in millions\n\nExcludes cancellation of treasury notes funded into bonds; including interest on \nthe public debt and redemption of call certificates, due bonds, note issues, and the like.\n",
-            "type": "number",
-            "id": "public_debt"
-          },
-          {
-            "description": "Total expenditures in millions",
-            "type": "number",
-            "id": "total"
-          }
-        ]
-      },
-      "keywords": [
-        "Confederate States of America",
-        "Fiscal policy",
-        "Government spending"
-      ],
-      "name": "ball1991_confederate_expenditures",
-      "description": "Confederate Expenditures\n\nIn Ball (1991), this is Table 24. \"Confederate Expenditures\".\nThe original note to the table:\n\n   Sources: Raphael P. Thian, Reports of the Secretary of the Secretary of the Treasury of the\n   Confederate States of America 1861-1865 (Washington, D.C.: Privately published, 1878),\n   Reports dated March 14, 1862, January 10, 1862, April 11, 1863, May 2, 1864, November 7,\n   1864, pp. 61, 99, 177, 257, 353.\n",
-      "sources": [
-        {
-          "name": "Ball, Douglas, 1991. \"Financial Failure and Confederate Defeat.\" University of Illinois Press. ISBN: 9780252017551, Table 24, p. 259"
-        }
-      ]
-    },
-    {
-      "path": "data/dewey1918_expenditures_1862_1865.csv",
-      "description": "United States expenditures 1862-1865\n\nTable on page 329 of Dewey (1918)\n",
       "sources": [
         {
           "name": "Dewy, Davis Rich (1918), \"Financial History of the United States\", p. 329",
           "url": "http://books.google.com/books?id=l3oaAAAAMAAJ"
         }
       ],
+      "description": "United States expenditures 1862-1865\n\nTable on page 329 of Dewey (1918)\n",
+      "name": "dewey1918_expenditures_1862_1865",
+      "path": "data/dewey1918_expenditures_1862_1865.csv",
       "schema": {
         "fields": [
           {
             "description": "year",
-            "type": "number",
-            "id": "year"
+            "id": "year",
+            "type": "number"
           },
           {
             "description": "War department expenditures (millions of dollars)",
-            "type": "number",
-            "id": "war"
+            "id": "war",
+            "type": "number"
           },
           {
             "description": "Navy department expenditures (millions of dollars)",
-            "type": "number",
-            "id": "navy"
+            "id": "navy",
+            "type": "number"
           },
           {
             "description": "Miscellaneous expenditures, including Indians and Pensions (millions of dollars)",
-            "type": "number",
-            "id": "miscellaneous"
+            "id": "miscellaneous",
+            "type": "number"
           },
           {
             "description": "Interest expenditures (millions of dollars)",
-            "type": "number",
-            "id": "interest"
+            "id": "interest",
+            "type": "number"
           },
           {
             "description": "Total expenditures (millions of dollars)",
-            "type": "number",
-            "id": "total"
+            "id": "total",
+            "type": "number"
           }
         ]
-      },
-      "name": "dewey1918_expenditures_1862_1865"
+      }
     },
     {
-      "path": "data/confederate_bonds.csv",
-      "description": "Confederate interest rates 1861-1865\n\nInterest rates from Table 2 in Davis and Pecquet (1990).\n\nThe note from the original data  (p. 147) reads\n\n  Five price series form the basis for the calculations used in this article. The five series\n  are the Confederate dollar prices of a gold dollar; bonds from the $100 million loan;\n  bonds from the $15 million loan; Virginia state bonds; and Richmond city bonds. The\n  data come from market reports in Richmond newspapers, including the Richmond\n  Whig, the Richmond Sentinel, the Richmond Enquirer, and the Richmond Dispatch. We\n  also have some quotations for railroad bonds from these papers. The data for the\n  summer months of 1864 come from the Wilmington Journal of Wilmington, NC, due to\n  a lack of bond price quotations in the Richmond market. The bond quotations were\n  taken from reports as near as possible to mid-month. Gold price quotations were taken\n  nearest the date of bond quotation from the $100 million loan. When a range was given\n  we took the upper bound for the long-term rate, and when more than one quote was\n  available on a particular maturity date or on gold an average was taken. The gold prices\n  for two dates-August 1863 and October 1864-were obtained by interpolation using\n  data from Richard Todd as a guide.\n\n  In order to calculate yields to maturity it is necessary to have a maturity date. The day\n  and month of maturity were not known for any issue so we used mid-year, July 1. The\n  $15 million loan matured in 1871. There were various maturity dates for the other issues.\n  For the $100 million loan there were many maturity dates. When maturity dates were\n  reported we used the issues that matured in 1881, or the year nearest to that date\n  because it was the most often reported. For about the first year and a half of the period\n  under study the maturity dates on bonds from the $100 million loan were unspecified.\n  We took this to mean that the yield curve was flat and so used 1881 as the maturity date.\n  The maturity date was seldom given for the Virginia state and Richmond city bonds, so\n  we chose the year 1887. In that year some bonds did mature, and it was roughly the\n  average maturity date for the dated long-term issues that we do have. Some experimen-\n  tation with alternative dates revealed that the arguments and conclusions of the text are\n  not sensitive to different maturity dates.\n\n  The actual market date was used in the calculation of the yield to maturity. All of the\n  raw data are available on request from the authors. The data used to construct the\n  diagrams are presented in Table 2.\n",
       "sources": [
         {
-          "name": "Davis, George K. and Gary M. Pecquet, \"Interest Rates in the Civil War South\", *The Journal of Economic History*, 50.1, pp 133-148",
-          "url": "http://www.jstor.org/stable/2123441"
+          "name": "Weidenmier, Marc D., 2002. \"Turning Points in the U. S. Civil War: Views from the Grayback Market\", Southern Economic Journal.\n",
+          "url": "http://www.jstor.org/stable/1061497."
         }
       ],
+      "description": "Price of gold in Confederate Dollars (Graybacks) from Weidenmier (2002)\n\nThis price series is from the same sources as `grayback_weidenmier_2`,\nbut only includes Richmond prices, is higher frequency (weekly rather\nthan biweekly), and includes a longer range of dates. \n\nFrom Weidenmier (2002), p. 878\n\n   An extensive search of more than a dozen newspapers yielded a\n   series of 486 grayback prices from public auctions and private\n   brokerage trades in Richmond between May 27, 1861, and February 15,\n   1865.\n\nFrom Weidenmier (2002), footnote 2, p. 878\n\n    All quotes are taken from Richmond except during some\n    stretches in the summer and fall of 1864 when Richmond\n    newspapers stopped reporting money prices. These periods are\n    filled in by gold price quotations from the nearby Wilmington,\n    North Carolina, money market, whose prices were often quoted\n    in the Richmond newspapers.  Newspapers from Petersburg, North\n    Carolina, Virginia,Mobile, Alabama, Wilmington, Virginia,\n    Raleigh, North Carolina, Lynchburg, Augusta, Georgia,\n    Columbus, Georgia, and Charleston, South Carolina, were also\n    examined for price quotes from the Richmond market(see\n    Appendix).Often, these papers would quote trades not reported\n    in the Richmond newspapers.  In addition, secondary markets\n    existed in most of these cities, although these gold exchanges\n    tended to be considerably less liquid than the Richmond\n    market.\n\nFrom Weidenmier (2002), p. 890,\n\n    Grayback/gold price quotations were taken from the following\n    newspapers:Richmond Dispatch, Richmond Examiner, Richmond\n    Whig, Richmond Enquirer, Petersburg Express,\n    Wilmington Journal, Columbus Daily-Sun,\n    Charleston Mercury,Lynchburg Virginian,and the Mobile\n    Tribune.Richmondgrayback/gold price quotations were also\n    cross-checked against prices in the Raleigh, Augusta,and Mobile\n    gold markets using the following newspapers: Raleigh\n    Weekly Register, Mobile Tribune,Mobile Advertiser and Register,\n    and Augusta Daily Constitutionalist.  \n",
+      "name": "grayback_weidenmier_2002",
+      "path": "data/grayback_weidenmier_2002.csv",
       "schema": {
         "fields": [
           {
             "description": "Date",
-            "type": "date",
-            "id": "date"
+            "id": "date",
+            "type": "date"
           },
           {
-            "description": "$100 Million Bonds (Gold Yield)",
-            "type": "number",
-            "id": "bond100"
+            "description": "Price of gold in Confederate dollars in Richmond",
+            "id": "price",
+            "type": "number"
           },
           {
-            "description": "$15 Million Bonds (Gold Yield)",
-            "type": "number",
-            "id": "bond15"
+            "description": "Prices were not reported in the Richmond newspapers for these\nparticular dates. The gaps were filled in with grayback/ gold\nprice quotations from the Wilmington,North Carolina,money\nmarket.All Wilmington gold prices quotations are taken from the\nWilmington Daily Journal.\n",
+            "id": "wilmington",
+            "type": "boolean"
           },
           {
-            "description": "Richmond Bonds (Gold Yield)",
-            "type": "number",
-            "id": "richmond"
-          },
-          {
-            "description": "Virginia Bonds (Gold Yield)",
-            "type": "number",
-            "id": "virginia"
-          },
-          {
-            "description": "Interest Rate; yield is the Confederate Dollar Yield on the $100 million loan.",
-            "type": "number",
-            "id": "rate"
-          },
-          {
-            "description": "Gold price",
-            "type": "number",
-            "id": "gold"
+            "description": "Grayback/gold price quotations were unavailable for these\nparticular weeks. The grayback price of gold has been for dates\nassuming a constant price from the last available trade.\ninterpolated these particular \n",
+            "id": "imputed",
+            "type": "boolean"
           }
         ]
-      },
-      "name": "confederate_bonds"
+      }
     },
     {
-      "path": "data/merchants_magazine_us_paper_yields_2.csv",
-      "description": "Yield data for U.S. government bonds 1862-1865.\n\nFor the price series listed in ``merchants_magazine_state_govt_loans_2``, the weighted mean of each variable aggregated by ``series`` and ``date``.\n",
+      "description": "Price data for U.S. government and state bonds 1855-1865.\n\nThese data appear in tables in the *Notes on the Money Market* section \nof the *Bankers' Magazine* for volumes 10-19. The description of the tables\nnoted that these were \"the highest cash prices offered ... for the Government \nand leading state securities in the market.\" `June 22, 1864 <http://books.google.com/books?id=lGAmAQAAIAAJ&pg=PA78>`__.\n\nThe prices appear are nominal (not gold) dollars, and were dirty prices for the most part.\n",
+      "name": "bankers_magazine_state_govt_loans",
+      "path": "data/bankers_magazine_state_govt_loans.csv",
       "schema": {
         "fields": [
           {
             "description": "Date of the price",
-            "type": "date",
-            "id": "date"
+            "id": "date",
+            "type": "date"
           },
           {
             "description": "Name of the price series",
-            "type": "string",
-            "id": "series"
+            "id": "series",
+            "type": "string"
           },
           {
-            "description": "Exchange rate for gold (gold dollars per dollar) used to convert currency prices to gold prices.",
-            "type": "number",
-            "id": "gold_rate"
+            "description": "Date of the issue from which the price data come.",
+            "id": "issue",
+            "type": "date"
           },
           {
-            "description": "Dirty price of bond in gold dollars",
-            "type": "number",
-            "id": "price"
+            "description": "Google books URL to the source of the data.",
+            "id": "url",
+            "type": "string"
           },
           {
-            "description": "Clean price of bond in gold dollars",
-            "type": "number",
-            "id": "price_clean"
+            "description": "Volume of Bankers' Magazine from the the data come",
+            "id": "volume",
+            "type": "integer"
           },
           {
-            "description": "Accrued interest in gold dollars",
-            "type": "number",
-            "id": "accrued_interest"
+            "description": "1 if the price is known to be a clean price, otherwise assumed to be a dirty price",
+            "id": "is_clean",
+            "type": "boolean"
           },
           {
-            "description": "Current yield. Coupon payments per year / clean price",
-            "type": "number",
-            "id": "current_yield"
+            "description": "Manual price adjustment of bond in gold dollars; used to clean prices beyond accrued interest",
+            "id": "adjust_gold",
+            "type": "number"
           },
           {
-            "description": "\nYield to maturity\nThe yield to maturity is calculated using continuous compounding and actual days.",
-            "type": "number",
-            "id": "ytm"
+            "description": "Manual price adjustment of bond in nominal dollars; used to clean prices beyond accrued interest",
+            "id": "adjust_currency",
+            "type": "number"
           },
           {
-            "description": "Macualay (modified) duration",
-            "type": "number",
-            "id": "duration"
+            "description": "Notes",
+            "id": "notes",
+            "type": "string"
           },
           {
-            "description": "Bond convexity",
-            "type": "number",
-            "id": "convexity"
+            "description": "Exchange rate of nominal dollars per gold dollar. Used to convert from nominal price to gold price",
+            "id": "gold_rate",
+            "type": "number"
           },
           {
-            "description": "Maturity (years)",
-            "type": "number",
-            "id": "maturity"
+            "description": "Price of bond in nominal dollars. Face value = 100",
+            "id": "price_currency",
+            "type": "number"
           },
           {
-            "description": "\nIs the price series for a registered bond. In the source, separate prices were quoted for coupon and registered bonds for the 6's of 1881 and Five-twenties. In general, coupon bonds had higher prices than registered bonds due to higher liquidity.",
-            "type": "boolean",
-            "id": "registered"
+            "description": "Price of bond in gold dollars",
+            "id": "price_gold",
+            "type": "number"
           }
         ]
-      },
-      "name": "merchants_magazine_us_paper_yields_2"
+      }
     },
     {
-      "path": "data/confederate_expenditures.csv",
-      "description": "Confederate States of America expenditure",
-      "source": "Ball (1991), p. 259.",
-      "schema": {
-        "fields": [
-          {
-            "description": "Start date of expenditures period",
-            "type": "date",
-            "id": "start_date"
-          },
-          {
-            "description": "End date of expenditures period",
-            "type": "date",
-            "id": "end_date"
-          },
-          {
-            "description": "War department expenditures (millions). This includes a cumulative average of 50 million in 1862, 100 million in 1863, 200 million in 1864, and 313 million in 1865.",
-            "type": "number",
-            "id": "war"
-          },
-          {
-            "description": "Naval department expenditures (millions)",
-            "type": "number",
-            "id": "navy"
-          },
-          {
-            "description": "Civil department expenditures (millions)",
-            "type": "number",
-            "id": "civil"
-          },
-          {
-            "description": "Public debt servicing (millions). This excludes cancecellation of treasury notes funded into bonds; including interest in the public debt and redemption of call certificates, due bonds, note issues, and the like.",
-            "type": "number",
-            "id": "public_debt"
-          },
-          {
-            "description": "Total expenditures. Equal to `war` + `navy` + `civil` + `public_debt`.",
-            "type": "number",
-            "id": "total"
-          }
-        ]
-      },
-      "name": "confederate_expenditures"
-    },
-    {
+      "sources": [
+        {
+          "name": "Homer, Sydney and Richard Sylla (2005) *A History of Interest Rates*, Wiley, Table 41, pp. 300-301."
+        }
+      ],
+      "name": "homer_sylla_table_41",
       "path": "homer_sylla_table_41.csv",
+      "description": "High and low prices from Joseph G. Martin, *Martin's Boston Stock Market*, Boston 1886, p. 127.",
+      "title": "Prices and Yields of Long Term High Grade U.S. Bond: 1830-1859",
       "schema": {
         "fields": [
           {
@@ -1230,11 +274,11 @@
             "type": "number"
           },
           {
-            "label": "U.S. 3s of 1790, Annual Average Current Yield %",
-            "id": "us_3pct_1790_yield_avg",
+            "description": "In 1830, if redemption in 1833 was certain, yield at 92.25 was 5.85%",
             "type": "number",
+            "id": "us_3pct_1790_yield_avg",
             "source": "Table 41, p. 300",
-            "description": "In 1830, if redemption in 1833 was certain, yield at 92.25 was 5.85%"
+            "label": "U.S. 3s of 1790, Annual Average Current Yield %"
           },
           {
             "label": "U.S. 3s of 1790, Annual High Price",
@@ -1423,292 +467,142 @@
             "type": "number"
           }
         ]
-      },
-      "name": "homer_sylla_table_41",
-      "description": "High and low prices from Joseph G. Martin, *Martin's Boston Stock Market*, Boston 1886, p. 127.",
-      "sources": [
-        {
-          "name": "Homer, Sydney and Richard Sylla (2005) *A History of Interest Rates*, Wiley, Table 41, pp. 300-301."
-        }
-      ],
-      "title": "Prices and Yields of Long Term High Grade U.S. Bond: 1830-1859"
+      }
     },
     {
-      "path": "data/bankers_magazine_state_govt_loans_yields_2.csv",
-      "description": "Yield data for U.S. government and state bonds 1855-1865.\n\nThis table aggregates the data in ``bankers_magazine_state_govt_loans_yields_2.csv`` by ``series``.\nEach variable is the weighted mean (using the ``wgt`` column) by ``series`` and ``date``.\n",
+      "description": "Confederate States of America expenditure",
+      "name": "confederate_expenditures",
+      "source": "Ball (1991), p. 259.",
+      "path": "data/confederate_expenditures.csv",
       "schema": {
         "fields": [
           {
-            "description": "Name of the price series",
-            "type": "string",
-            "id": "series"
+            "description": "Start date of expenditures period",
+            "id": "start_date",
+            "type": "date"
           },
           {
-            "description": "Date of the price",
-            "type": "date",
-            "id": "date"
+            "description": "End date of expenditures period",
+            "id": "end_date",
+            "type": "date"
           },
           {
-            "description": "Exchange rate for gold (gold dollars per dollar) used to convert currency prices to gold prices.",
-            "type": "number",
-            "id": "gold_rate"
+            "description": "War department expenditures (millions). This includes a cumulative average of 50 million in 1862, 100 million in 1863, 200 million in 1864, and 313 million in 1865.",
+            "id": "war",
+            "type": "number"
           },
           {
-            "description": "Dirty price of bond in gold dollars",
-            "type": "number",
-            "id": "price"
+            "description": "Naval department expenditures (millions)",
+            "id": "navy",
+            "type": "number"
           },
           {
-            "description": "Clean price of bond in gold dollars",
-            "type": "number",
-            "id": "price_clean"
+            "description": "Civil department expenditures (millions)",
+            "id": "civil",
+            "type": "number"
           },
           {
-            "description": "Accrued interest in gold dollars",
-            "type": "number",
-            "id": "accrued_interest"
+            "description": "Public debt servicing (millions). This excludes cancecellation of treasury notes funded into bonds; including interest in the public debt and redemption of call certificates, due bonds, note issues, and the like.",
+            "id": "public_debt",
+            "type": "number"
           },
           {
-            "description": "Yield to maturity\n\nThe yield to maturity is calculated using continuous compounding and actual days.\n",
-            "type": "number",
-            "id": "ytm"
-          },
-          {
-            "description": "Macualay (modified) duration",
-            "type": "number",
-            "id": "duration"
-          },
-          {
-            "description": "Bond convexity",
-            "type": "number",
-            "id": "convexity"
-          },
-          {
-            "description": "Maturity (years)",
-            "type": "number",
-            "id": "maturity"
+            "description": "Total expenditures. Equal to `war` + `navy` + `civil` + `public_debt`.",
+            "id": "total",
+            "type": "number"
           }
         ]
-      },
-      "name": "bankers_magazine_state_govt_loans_yields_2"
+      }
     },
     {
-      "path": "homer_sylla_table_38.csv",
-      "schema": {
-        "fields": [
-          {
-            "label": "Year",
-            "id": "year",
-            "type": "integer"
-          },
-          {
-            "label": "Federal Government Bonds, New Issue Yields, % (low)",
-            "id": "federal_govt_new_low",
-            "type": "number"
-          },
-          {
-            "label": "Federal Government Bonds, New Issue Yields, % (high)",
-            "id": "federal_govt_new_high",
-            "type": "number"
-          },
-          {
-            "id": "federal_govt_mkt",
-            "title": "Federal Government Bonds, Selected Market Yields %",
-            "type": "number"
-          },
-          {
-            "label": "New England Municipal Bond Yields, %",
-            "id": "new_england_municipal",
-            "type": "number",
-            "description": "Before 1857, Massachusetts or Boston 5s. After 1857, Macaulay's *Average of New England Municipals*.\n"
-          },
-          {
-            "label": "High Grade Railroad Bond Yields, %",
-            "id": "railroad bonds",
-            "type": "number"
-          },
-          {
-            "label": "New York Real Estate Morgages, %",
-            "id": "new_york_city_mortgages",
-            "type": "number",
-            "description": "From *Real Estate Analyst*. Row Wenzlick Research Corp of St. Louis."
-          }
-        ]
-      },
-      "name": "homer_sylla_table_38",
-      "description": "Long and Short Interest Rates for the U.S. in the Eighteenth and Nineteenth Centuries\nfrom Homer and Sylla (2005), *A History of Interest Rates*.\n",
-      "sources": [
-        {
-          "name": "< Homer, Sydney and Richard Sylla (2005) *A History of Interest Rates*, Wiley, Table 38, pp. 282-283."
-        }
-      ],
-      "title": "Summary of Long-Term High-Grade American Bond Yields: Nineteenth Century"
-    },
-    {
-      "path": "data/martin_sterling_exchange_yearly.csv",
-      "schema": {
-        "fields": [
-          {
-            "label": "Year",
-            "id": "year",
-            "type": "integer"
-          },
-          {
-            "label": "Yearly Low",
-            "id": "low",
-            "type": "number"
-          },
-          {
-            "label": "Yearly high",
-            "id": "high",
-            "type": "number"
-          },
-          {
-            "label": "Quoted in Gold",
-            "id": "gold",
-            "type": "boolean",
-            "description": "Whether quoted in gold or currency"
-          }
-        ]
-      },
-      "name": "martin_sterling_exchange_yearly",
-      "description": "Rate of exchange on England, at New York, for Banker's bills (60 days) with yearly high and low values\nfrom 1835 to 1870.\n",
+      "name": "martin_sterlin_exchange_1862_1870",
+      "path": "data/martin_sterling_exchange_1862_1870.csv",
+      "description": "Rate of exchange on England, at New York, for Banker's bills (60 days) with monthly high and low values from 1862 to 1870.\n",
+      "title": "Rate of Exchange on England at New York (Monthly, 1862-1870)",
       "source": {
         "name": "Martin, G. Joseph. \"Seventy-three Years' History of the Boston Stock Market, from Januay 1, 1798, to January 1, 1871\", Boston, p. 27\n",
         "url": "http://books.google.com/books?id=g5jyU-B-nikC&pg=PA27"
       },
-      "title": "Rate of Exchange on England at New York (Yearly, 1835-1870)"
+      "schema": {
+        "fields": [
+          {
+            "label": "Year",
+            "id": "year",
+            "type": "integer"
+          },
+          {
+            "label": "Month",
+            "id": "month",
+            "type": "integer"
+          },
+          {
+            "label": "Monthly",
+            "id": "low",
+            "type": "number"
+          },
+          {
+            "label": "Monthly high",
+            "id": "high",
+            "type": "number"
+          },
+          {
+            "description": "Whether quoted in gold or currency",
+            "type": "boolean",
+            "id": "gold",
+            "label": "Quoted in Gold"
+          }
+        ]
+      }
     },
     {
-      "path": "data/godfrey1978_us_war_financing.csv",
-      "description": "Sources of financing of the Revolutionary War, War of 1812, and Civil War\n",
+      "description": "Mitchell (1903) price index, 1860-1865 (quarterly)",
+      "name": "mitchell_price_index",
+      "source": "Mitchell (1903), Tables XIII and XIV",
+      "path": "data/mitchell_price_index.csv",
+      "schema": {
+        "fields": [
+          {
+            "id": "year",
+            "type": "integer"
+          },
+          {
+            "description": "In the original table months are listed: January, April, July and October.",
+            "id": "quarter",
+            "type": "integer"
+          },
+          {
+            "description": "Price index. Before averaging series for different varieties of the same commodity",
+            "id": "index1",
+            "type": "number"
+          },
+          {
+            "description": "Price index. After averaging series for different varieties of the same commodity",
+            "id": "index2",
+            "type": "number"
+          },
+          {
+            "description": "Price index, fter averaging also series for cotton and cotton textiles",
+            "id": "index3",
+            "type": "number"
+          },
+          {
+            "description": "Like index3, but using median instead of mean.",
+            "id": "index4",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
       "sources": [
         {
-          "name": "Godfrey, J.M. (1978) \"Monetary Expansion in the Confederacy\", p. 35"
+          "name": "Davis, George K. and Gary M. Pecquet, \"Interest Rates in the Civil War South\", *The Journal of Economic History*, 50.1, pp 133-148",
+          "url": "http://www.jstor.org/stable/2123441"
         }
       ],
-      "schema": {
-        "fields": [
-          {
-            "description": "War name",
-            "type": "string",
-            "id": "war"
-          },
-          {
-            "description": "Percentage of war financed by taxes",
-            "type": "number",
-            "id": "taxes"
-          },
-          {
-            "description": "Percentage of war financed by loans",
-            "type": "currency",
-            "id": "loans"
-          },
-          {
-            "description": "Percentage of war financed by currency issues",
-            "type": "number",
-            "id": "taxes"
-          },
-          {
-            "description": "Percentage of war financed by other means",
-            "type": "number",
-            "id": "taxes"
-          }
-        ]
-      },
-      "name": "godfrey1978_us_war_financing"
-    },
-    {
-      "path": "data/bankers_magazine_notes_from_money_market_url.csv",
-      "description": "URL's of the \"Notes from the Money Market\" sections of the *Bankers' Magazine*\n\nIn the *Bankers' Magazine* most financial data appeared in tables in a section\ntitled \"Notes from the Money Market\". This table contains Google Books URLs to \neach section for volumes 10-20 (1855-1866)\n",
-      "schema": {
-        "fields": [
-          {
-            "description": "Date of Notes from the Money Market section.",
-            "type": "date",
-            "id": "date"
-          },
-          {
-            "description": "Volume of the Bankers' Magazine",
-            "type": "integer",
-            "id": "volume"
-          },
-          {
-            "description": "Google Books URL to the first page of that section",
-            "type": "string",
-            "id": "url"
-          }
-        ]
-      },
-      "name": "bankers_magazine_notes_from_money_market_url"
-    },
-    {
-      "path": "bankers_magazine_govt_bonds_quotes_in_text.yaml",
-      "description": "Quotes of government, state and city bonds appearing in the text of the \"Notes from the Money Market\" (1855-1866)\n\nAlthough quotes for government and state bonds appeared in tables in the \"Notes from the Money Market section\" often other, presumably less traded, assets were quoted in the text of the section.  \n",
-      "schema": {
-        "fields": [
-          {
-            "description": "Date on the byline of the \"Notes from the Money Market\" section.\n",
-            "type": "date",
-            "id": "date"
-          },
-          {
-            "description": "Volume of the Bankers' Magazine",
-            "type": "integer",
-            "id": "volume"
-          },
-          {
-            "description": "URL to the Bankers' Magazine page of the article in which the quotation appears.",
-            "type": "string",
-            "id": "url"
-          },
-          {
-            "description": "The name of the bond similar to how it appeared in the text.",
-            "type": "string",
-            "id": "description"
-          },
-          {
-            "description": "The name of th issuer of the bond. \"US\" or the name of the state or city.\n",
-            "type": "string",
-            "id": "issuer"
-          },
-          {
-            "id": "price_string",
-            "descripton": "String form of the price. Either a number, or something 100 @ 101 in which the first number is the low or bid price, and the second number is the high or ask price.\n",
-            "type": "string"
-          },
-          {
-            "description": "Low price (in nominal dollars)",
-            "type": "number",
-            "id": "low_price"
-          },
-          {
-            "description": "High price (in nominal dollars)",
-            "type": "number",
-            "id": "high_price"
-          },
-          {
-            "description": "Occastionally the Bankers Magazine included ad hoc tables of quotations of bonds not usually quoted. This field is true if the quotation appeared in one of those tables.\n",
-            "type": "boolean",
-            "id": "table"
-          },
-          {
-            "description": "Comment",
-            "type": "string",
-            "id": "comment"
-          },
-          {
-            "description": "An attempt to match the quotation to specific bond issues. Incomplete and preliminary.",
-            "type": "string",
-            "id": "asset"
-          }
-        ]
-      },
-      "name": "bankers_magazine_govt_bonds_quotes_in_text"
-    },
-    {
-      "path": "data/greenbacks_fill.csv",
-      "name": "greenbacks_fill",
+      "description": "Confederate interest rates 1861-1865\n\nInterest rates from Table 2 in Davis and Pecquet (1990).\n\nThe note from the original data  (p. 147) reads\n\n  Five price series form the basis for the calculations used in this article. The five series\n  are the Confederate dollar prices of a gold dollar; bonds from the $100 million loan;\n  bonds from the $15 million loan; Virginia state bonds; and Richmond city bonds. The\n  data come from market reports in Richmond newspapers, including the Richmond\n  Whig, the Richmond Sentinel, the Richmond Enquirer, and the Richmond Dispatch. We\n  also have some quotations for railroad bonds from these papers. The data for the\n  summer months of 1864 come from the Wilmington Journal of Wilmington, NC, due to\n  a lack of bond price quotations in the Richmond market. The bond quotations were\n  taken from reports as near as possible to mid-month. Gold price quotations were taken\n  nearest the date of bond quotation from the $100 million loan. When a range was given\n  we took the upper bound for the long-term rate, and when more than one quote was\n  available on a particular maturity date or on gold an average was taken. The gold prices\n  for two dates-August 1863 and October 1864-were obtained by interpolation using\n  data from Richard Todd as a guide.\n\n  In order to calculate yields to maturity it is necessary to have a maturity date. The day\n  and month of maturity were not known for any issue so we used mid-year, July 1. The\n  $15 million loan matured in 1871. There were various maturity dates for the other issues.\n  For the $100 million loan there were many maturity dates. When maturity dates were\n  reported we used the issues that matured in 1881, or the year nearest to that date\n  because it was the most often reported. For about the first year and a half of the period\n  under study the maturity dates on bonds from the $100 million loan were unspecified.\n  We took this to mean that the yield curve was flat and so used 1881 as the maturity date.\n  The maturity date was seldom given for the Virginia state and Richmond city bonds, so\n  we chose the year 1887. In that year some bonds did mature, and it was roughly the\n  average maturity date for the dated long-term issues that we do have. Some experimen-\n  tation with alternative dates revealed that the arguments and conclusions of the text are\n  not sensitive to different maturity dates.\n\n  The actual market date was used in the calculation of the yield to maturity. All of the\n  raw data are available on request from the authors. The data used to construct the\n  diagrams are presented in Table 2.\n",
+      "name": "confederate_bonds",
+      "path": "data/confederate_bonds.csv",
       "schema": {
         "fields": [
           {
@@ -1717,27 +611,354 @@
             "type": "date"
           },
           {
-            "description": "Daily high price (gold dollars per 100 greenbacks)",
-            "id": "high",
+            "description": "$100 Million Bonds (Gold Yield)",
+            "id": "bond100",
             "type": "number"
           },
           {
-            "description": "Daily low price (gold dollars per 100 greenbacks)",
-            "id": "low",
+            "description": "$15 Million Bonds (Gold Yield)",
+            "id": "bond15",
             "type": "number"
           },
           {
-            "description": "Daily mean price (gold dollars per 100 greenbacks)\n\nThe mean is calculated as exp(0.5 * (log(low) + log(high)))\n",
-            "id": "mean",
+            "description": "Richmond Bonds (Gold Yield)",
+            "id": "richmond",
+            "type": "number"
+          },
+          {
+            "description": "Virginia Bonds (Gold Yield)",
+            "id": "virginia",
+            "type": "number"
+          },
+          {
+            "description": "Interest Rate; yield is the Confederate Dollar Yield on the $100 million loan.",
+            "id": "rate",
+            "type": "number"
+          },
+          {
+            "description": "Gold price",
+            "id": "gold",
             "type": "number"
           }
         ]
-      },
-      "description": "Daily price of greenbacks in gold in New York (1862-1879) with imputed missing values.\n\nThis table uses the data from ``greenbacks`` and fills in the missing observations using a the smoothed values of a local level model.\n"
+      }
     },
     {
-      "path": "data/greenbacks.csv",
+      "description": "Price data for U.S. bonds and notes from the Merchants Magazine, 1862-1865\n\nThese data appear in tables entitled \"Prices United States Paper\" appearing\nin the section \"Commercial Chronicle and Review\" of the *Merchants' Magazine\nand Commercial Review*. \n\nThe Merhcants' Magazine only began quoting prices of US paper in 1862.\n",
+      "name": "merchants_magazine_us_paper",
+      "path": "data/merchants_magazine_us_paper.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "Name of the bond",
+            "id": "bond",
+            "type": "string"
+          },
+          {
+            "description": "Date of the price",
+            "id": "date",
+            "type": "date"
+          },
+          {
+            "description": "Journal issue, e.g. \"Jan 1862\", from which the price data come.",
+            "type": "string",
+            "id": "journal_issue",
+            "label": "Journal issue"
+          },
+          {
+            "description": "Google books URL to the source of the data.",
+            "id": "url",
+            "type": "string"
+          },
+          {
+            "description": "Any notes about the data",
+            "id": "notes",
+            "type": "string"
+          },
+          {
+            "description": "Price of bond in nominal dollars. Face value = 100.",
+            "id": "price_currency",
+            "type": "number"
+          },
+          {
+            "description": "Price of bond in gold dollars.",
+            "id": "price_gold",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "description": "For all Annual Reports of the Treasury issued during the Civil War, the dates on which New York markets responded.\n",
+      "name": "annual_report_treasury_news",
+      "path": "data/annual_report_treasury_news.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "Name of the treasury report. This corresponds to the url \"https://fraser.stlouisfed.org/docs/publications/treasar/%s.pdf\"\n",
+            "id": "treasury_report",
+            "type": "string"
+          },
+          {
+            "description": "Date on the report",
+            "id": "treasury_report_date",
+            "type": "date"
+          },
+          {
+            "description": "Date on which the New York market responded to the news in the treasury report.",
+            "id": "market_news_date",
+            "type": "date"
+          },
+          {
+            "description": "Citation to New York Times article used to justify the coding of ``market_news_date``.\n",
+            "id": "news_source",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Mitchell's Factors Which Affected the Gold Price of the Currency\n\nThe events listed by Mitchell (1903) as having impacts on specie value of greenbacks.\n",
+      "name": "mitchell_events",
+      "source": "Mitchell (1903), Part II, Chapter 3.2, pp 199-207.",
+      "path": "data/mitchell_events.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "Category of the event.\nOne of \"money supply\", \"finance\", \"politics\", \"foreign affairs\", or \"war\"",
+            "id": "category",
+            "type": "string"
+          },
+          {
+            "description": "Start date of the event (when news reaches the market)",
+            "id": "start_date",
+            "type": "date"
+          },
+          {
+            "description": "End date of the event (when news reaches the market)\nThis may be missing if the news is incorporated in one day.",
+            "id": "end_date",
+            "type": "date"
+          },
+          {
+            "description": "Description of the event",
+            "id": "description",
+            "type": "string"
+          },
+          {
+            "description": "Page in Mitchell (1903) on which the event is described",
+            "id": "page",
+            "type": "string"
+          },
+          {
+            "description": "If true, then the event was good for the Union (rise in the price of currency in gold)",
+            "id": "good",
+            "type": "boolean"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Yield data for U.S. government and state bonds 1855-1865.\n\nFor the price series listed in ``bankers_magazine_state_govt_loans``, calculate clean and dirty prices, accrued interest, yields, duration, and maturity.\n\nThe price quotations in the original source do not uniquely match a bond issue, so each price series may be matched to multiple bonds.\n",
+      "name": "bankers_magazine_state_govt_loans_yields",
+      "path": "data/bankers_magazine_state_govt_loans_yields.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "Date of the price",
+            "id": "date",
+            "type": "date"
+          },
+          {
+            "description": "Name of the price series",
+            "id": "series",
+            "type": "string"
+          },
+          {
+            "description": "Exchange rate for gold (gold dollars per dollar) used to convert currency prices to gold prices.",
+            "id": "gold_rate",
+            "type": "number"
+          },
+          {
+            "description": "\nName of the bond issue used to calculate yields, etc. Due to ambiguity in how bond  were quoted in this era, a single series can match multiple bonds.",
+            "id": "bond",
+            "type": "string"
+          },
+          {
+            "description": "\nProbability weight to use when aggregating the multiple bond issues assigned to a price series.",
+            "id": "wgt",
+            "type": "number"
+          },
+          {
+            "description": "Dirty price of bond in gold dollars",
+            "id": "price",
+            "type": "number"
+          },
+          {
+            "description": "Clean price of bond in gold dollars",
+            "id": "price_clean",
+            "type": "number"
+          },
+          {
+            "description": "Accrued interest in gold dollars",
+            "id": "accrued_interest",
+            "type": "number"
+          },
+          {
+            "description": "Yield to maturity\n\nThe yield to maturity is calculated using continuous compounding and actual days.\n",
+            "id": "ytm",
+            "type": "number"
+          },
+          {
+            "description": "Macualay (modified) duration",
+            "id": "duration",
+            "type": "number"
+          },
+          {
+            "description": "Bond convexity",
+            "id": "convexity",
+            "type": "number"
+          },
+          {
+            "description": "Maturity (years)",
+            "id": "maturity",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "sources": [
+        {
+          "name": "Ball, Douglas, 1991. \"Financial Failure and Confederate Defeat.\" University of Illinois Press. ISBN: 9780252017551, Table 24, p. 259"
+        }
+      ],
+      "path": "data/ball1991_us_war_financing.csv",
+      "keywords": [
+        "Confederate States of America",
+        "Fiscal policy",
+        "Government spending"
+      ],
+      "description": "Confederate Expenditures\n\nIn Ball (1991), this is Table 24. \"Confederate Expenditures\".\nThe original note to the table:\n\n   Sources: Raphael P. Thian, Reports of the Secretary of the Secretary of the Treasury of the\n   Confederate States of America 1861-1865 (Washington, D.C.: Privately published, 1878),\n   Reports dated March 14, 1862, January 10, 1862, April 11, 1863, May 2, 1864, November 7,\n   1864, pp. 61, 99, 177, 257, 353.\n",
+      "name": "ball1991_confederate_expenditures",
+      "schema": {
+        "fields": [
+          {
+            "description": "Start date",
+            "id": "start_date",
+            "type": "date"
+          },
+          {
+            "description": "End date",
+            "id": "end_date",
+            "type": "date"
+          },
+          {
+            "description": "War Department expenditures in millions\n\nFor periods Feb 18, 1862 and later, \"includes cumulative arrearages of $50 million\nin 1862; $100 million in 1863, $200 million in 1864, and $313 million in 1865\n",
+            "id": "war",
+            "type": "number"
+          },
+          {
+            "description": "Navy Department expenditures in millions",
+            "id": "navy",
+            "type": "number"
+          },
+          {
+            "description": "Civil Department expenditures in millions",
+            "id": "civil",
+            "type": "number"
+          },
+          {
+            "description": "Public debt expenditures in millions\n\nExcludes cancellation of treasury notes funded into bonds; including interest on \nthe public debt and redemption of call certificates, due bonds, note issues, and the like.\n",
+            "id": "public_debt",
+            "type": "number"
+          },
+          {
+            "description": "Total expenditures in millions",
+            "id": "total",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Bond Metadata\n\nContains issue dates, coupon periods, maturity, cashflow, etc. data about bond issues for which there is price data.\n\n- Many quoted price series may correspond to multiple bond similar issues. \n- Callable bonds (10-40s and 5-20s) have multiple entries, one for a potential call in each year.\n- Metadata on state bonds is rather scarce. \n  Sometimes a range of years is known; in which case, there is a bond issue for each year.\n  If no range is known, then a bond issue for each potential year is used (based on the empirical distribution of all bonds for which maturity years are known).\n\nThe data are an ``object``, with an \nEach bond issue is an ``object`` containting the following entries.\n\n- ``cashflows``: ``object``\n  - ``date``: ``array``. Date of cashflow. %Y-%m-%d.\n  - ``cashflows``: ``array``. amount of cashflow in gold dollars\n- ``interest``: ``number``. Annual interest rate\n- ``periods``: ``array``. Each entry is an ``object`` with keys ``month`` and ``day`` for the month and day of a periodic payment.\n- ``issue_date``: Date of issue. %Y-%m-%d.\n- ``maturity_date``: Date of maturity. %Y-%m-%d.\n- ``call``: For callable bonds, ``TRUE`` if a date before maturity, ``FALSE`` if maturity.\n",
+      "name": "bond_metadata",
+      "path": "data/bond_metadata.json",
+      "format": "json"
+    },
+    {
+      "description": "Yield data for U.S. government bonds 1862-1865.\n\nFor the price series listed in ``merchants_magazine_state_govt_loans_2``, the weighted mean of each variable aggregated by ``series`` and ``date``.\n",
+      "name": "merchants_magazine_us_paper_yields_2",
+      "path": "data/merchants_magazine_us_paper_yields_2.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "Date of the price",
+            "id": "date",
+            "type": "date"
+          },
+          {
+            "description": "Name of the price series",
+            "id": "series",
+            "type": "string"
+          },
+          {
+            "description": "Exchange rate for gold (gold dollars per dollar) used to convert currency prices to gold prices.",
+            "id": "gold_rate",
+            "type": "number"
+          },
+          {
+            "description": "Dirty price of bond in gold dollars",
+            "id": "price",
+            "type": "number"
+          },
+          {
+            "description": "Clean price of bond in gold dollars",
+            "id": "price_clean",
+            "type": "number"
+          },
+          {
+            "description": "Accrued interest in gold dollars",
+            "id": "accrued_interest",
+            "type": "number"
+          },
+          {
+            "description": "Current yield. Coupon payments per year / clean price",
+            "id": "current_yield",
+            "type": "number"
+          },
+          {
+            "description": "\nYield to maturity\nThe yield to maturity is calculated using continuous compounding and actual days.",
+            "id": "ytm",
+            "type": "number"
+          },
+          {
+            "description": "Macualay (modified) duration",
+            "id": "duration",
+            "type": "number"
+          },
+          {
+            "description": "Bond convexity",
+            "id": "convexity",
+            "type": "number"
+          },
+          {
+            "description": "Maturity (years)",
+            "id": "maturity",
+            "type": "number"
+          },
+          {
+            "description": "\nIs the price series for a registered bond. In the source, separate prices were quoted for coupon and registered bonds for the 6's of 1881 and Five-twenties. In general, coupon bonds had higher prices than registered bonds due to higher liquidity.",
+            "id": "registered",
+            "type": "boolean"
+          }
+        ]
+      }
+    },
+    {
       "description": "Daily price of greenbacks in gold in New York (1862-1879)\nThe price of greenbacks comes from Mitchel (1908), which was put in machine format by Willard et. al. and made available on http://eh.net/databases/greenback/. The data here correct several mistakes in that data.",
+      "name": "greenbacks",
+      "path": "data/greenbacks.csv",
       "schema": {
         "fields": [
           {
@@ -1761,115 +982,45 @@
             "type": "string"
           },
           {
-            "id": "mean",
-            "description": "Daily mean price (gold dollars per 100 greenbacks)\n\nThe mean is calculated as exp(0.5 * (log(low) + log(high)))\n"
+            "description": "Daily mean price (gold dollars per 100 greenbacks)\n\nThe mean is calculated as exp(0.5 * (log(low) + log(high)))\n",
+            "id": "mean"
           }
         ]
-      },
-      "name": "greenbacks"
+      }
     },
     {
-      "path": "data/civil_war_debt_acts.csv",
-      "description": "List of acts to issue debt to fund the Civil War.\n",
-      "sources": [
-        {
-          "name": "United States. Dept. of the Treasury, (1866), Annual Report of the Secretary of the Treasury on the State of the Finances, December 3, 1866",
-          "url": "http://fraser.stlouisfed.org/publication/?pid=194"
-        }
-      ],
+      "description": "Commercial paper (short-term interest rates) appearing in *Bankers' Magazine* 1859-1862",
+      "name": "bankers_magazine_commercial_paper",
+      "path": "data/bankers_magazine_commercial_paper.csv",
       "schema": {
         "fields": [
           {
-            "description": "Name of the act",
-            "type": "string",
-            "id": "act"
+            "description": "Description of the type of rate.",
+            "id": "description",
+            "type": "string"
           },
           {
-            "description": "Date the act was approved",
-            "type": "date",
-            "id": "date"
+            "description": "Date",
+            "id": "date",
+            "type": "date"
           },
           {
-            "description": "Authorized increase in interest-bearing debt in (millions of dollars).\n",
-            "type": "number",
-            "id": "interest"
+            "description": "Interest rate, low quotation.",
+            "id": "rate_low",
+            "type": "number"
           },
           {
-            "description": "Authorized increase in non-interest bearing debt in (millions of dollars).\n",
-            "type": "number",
-            "id": "non_interest"
+            "description": "Interest rate, high quotation.",
+            "id": "rate_high",
+            "type": "number"
           }
         ]
-      },
-      "name": "civil_war_debt_acts"
+      }
     },
     {
-      "path": "data/events_mccandless.csv",
-      "description": "Major military and non-military events of the Civil War\n\nAppendix Tables 2 \"Major military events of Civil War\" and 3 \"Major non-military events of the Civil War\" in McCandless (1996), p. 670.\n\nThe sources of these events are \n\n- Pratt, Fletcher. Ordeal by Fire. New York: William Sloane, 1948.\n- Catton, Bruce. The Civil War. New York: Fairfax, 1971.\n- Guinnane, Timothy W. and Rosen, Harvey S. and Willard, Kristen L, \"Turning Points in the Civil War: Views from the Greenback Market. American Economic Review. 1996.\n",
-      "schema": {
-        "fields": [
-          {
-            "description": "Military or non-military event",
-            "type": "boolean",
-            "id": "military"
-          },
-          {
-            "description": "Event number (unique within military and non-military categories); corresponding to row in the table.",
-            "type": "integer",
-            "id": "number"
-          },
-          {
-            "description": "Time period of the event",
-            "type": "string",
-            "id": "time-period"
-          },
-          {
-            "description": "Event description",
-            "type": "string",
-            "id": "event_name"
-          },
-          {
-            "description": "Did the event favor the North in the war?",
-            "type": "boolean",
-            "id": "north"
-          },
-          {
-            "description": "Was there uncertainty about whether the event favored the north?",
-            "type": "boolean",
-            "id": "question"
-          },
-          {
-            "description": "Source of event was Catton (1971)",
-            "type": "boolean",
-            "id": "catton"
-          },
-          {
-            "description": "Source of event was Pratt (1948)",
-            "type": "boolean",
-            "id": "pratt"
-          },
-          {
-            "description": "Source of event was Guinnane et al (1996)",
-            "type": "boolean",
-            "id": "guinnane"
-          },
-          {
-            "description": "Start date of event",
-            "type": "date",
-            "id": "start_date"
-          },
-          {
-            "description": "End date of event",
-            "type": "date",
-            "id": "end_date"
-          }
-        ]
-      },
-      "name": "events_mccandless"
-    },
-    {
-      "path": "data/greenback_yields.csv",
       "description": "Yield of a greenback held until specie conversion on 1879-1-1",
+      "name": "greenbacks_yields",
+      "path": "data/greenback_yields.csv",
       "schema": {
         "fields": [
           {
@@ -1888,62 +1039,172 @@
             "type": "number"
           },
           {
-            "id": "mean",
-            "description": "Yield to maturity of daily mean price"
+            "description": "Yield to maturity of daily mean price",
+            "id": "mean"
           }
         ]
-      },
-      "name": "greenbacks_yields"
+      }
     },
     {
-      "path": "data/merchants_magazine_us_paper.csv",
-      "description": "Price data for U.S. bonds and notes from the Merchants Magazine, 1862-1865\n\nThese data appear in tables entitled \"Prices United States Paper\" appearing\nin the section \"Commercial Chronicle and Review\" of the *Merchants' Magazine\nand Commercial Review*. \n\nThe Merhcants' Magazine only began quoting prices of US paper in 1862.\n",
+      "description": "URL's of the \"Notes from the Money Market\" sections of the *Bankers' Magazine*\n\nIn the *Bankers' Magazine* most financial data appeared in tables in a section\ntitled \"Notes from the Money Market\". This table contains Google Books URLs to \neach section for volumes 10-20 (1855-1866)\n",
+      "name": "bankers_magazine_notes_from_money_market_url",
+      "path": "data/bankers_magazine_notes_from_money_market_url.csv",
       "schema": {
         "fields": [
           {
-            "description": "Name of the bond",
-            "type": "string",
-            "id": "bond"
+            "description": "Date of Notes from the Money Market section.",
+            "id": "date",
+            "type": "date"
           },
           {
-            "description": "Date of the price",
-            "type": "date",
-            "id": "date"
+            "description": "Volume of the Bankers' Magazine",
+            "id": "volume",
+            "type": "integer"
           },
           {
-            "label": "Journal issue",
-            "id": "journal_issue",
-            "type": "string",
-            "description": "Journal issue, e.g. \"Jan 1862\", from which the price data come."
-          },
-          {
-            "description": "Google books URL to the source of the data.",
-            "type": "string",
-            "id": "url"
-          },
-          {
-            "description": "Any notes about the data",
-            "type": "string",
-            "id": "notes"
-          },
-          {
-            "description": "Price of bond in nominal dollars. Face value = 100.",
-            "type": "number",
-            "id": "price_currency"
-          },
-          {
-            "description": "Price of bond in gold dollars.",
-            "type": "number",
-            "id": "price_gold"
+            "description": "Google Books URL to the first page of that section",
+            "id": "url",
+            "type": "string"
           }
         ]
-      },
-      "name": "merchants_magazine_us_paper"
+      }
     },
     {
-      "path": "data/michell_avg_interest_rates_per_month.csv",
-      "description": "Interest rates in New York Money Market, 1860-1865 average rates per month for call loans",
-      "source": "Mitchell (1903, p. 367) Table LVIII.II. http://books.google.com/books?id=ElAuAAAAYAAJ&dq=mitchell%201903&pg=PA367",
+      "description": "Yield data for U.S. government bonds 1862-1865.\n\nFor the price series listed in ``merchants_magazine_state_govt_loans``, calculate clean and dirty prices, accrued interest, yields, duration, convexity, and  maturity.\n\nThe price quotations in the original source do not uniquely match a bond issue, so each price series may be matched to multiple bonds.\n",
+      "name": "merchants_magazine_us_paper_yields",
+      "path": "data/merchants_magazine_us_paper_yields.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "Date of the price",
+            "id": "date",
+            "type": "date"
+          },
+          {
+            "description": "Name of the price series",
+            "id": "series",
+            "type": "string"
+          },
+          {
+            "description": "Exchange rate for gold (gold dollars per dollar) used to convert currency prices to gold prices.",
+            "id": "gold_rate",
+            "type": "number"
+          },
+          {
+            "description": "\nName of the bond issue used to calculate yields, etc. Due to ambiguity in how bond  were quoted in this era, a single series can match multiple bonds.",
+            "id": "bond",
+            "type": "string"
+          },
+          {
+            "description": "\nWeights to use when aggregating the multiple bond issues assigned to a price series.",
+            "id": "wgt",
+            "type": "number"
+          },
+          {
+            "description": "Dirty price of bond in gold dollars",
+            "id": "price",
+            "type": "number"
+          },
+          {
+            "description": "Clean price of bond in gold dollars",
+            "id": "price_clean",
+            "type": "number"
+          },
+          {
+            "description": "Accrued interest in gold dollars",
+            "id": "accrued_interest",
+            "type": "number"
+          },
+          {
+            "description": "Current yield. Coupon payments per year / clean price",
+            "id": "current_yield",
+            "type": "number"
+          },
+          {
+            "description": "\nYield to maturity\nThe yield to maturity is calculated using continuous compounding and actual days.",
+            "id": "ytm",
+            "type": "number"
+          },
+          {
+            "description": "Macualay (modified) duration",
+            "id": "duration",
+            "type": "number"
+          },
+          {
+            "description": "Bond convexity",
+            "id": "convexity",
+            "type": "number"
+          },
+          {
+            "description": "Maturity (years)",
+            "id": "maturity",
+            "type": "number"
+          },
+          {
+            "description": "\nIs the price series for a registered bond. In the source, separate prices were quoted for coupon and registered bonds for the 6's of 1881 and Five-twenties. In general, coupon bonds had higher prices than registered bonds due to higher liquidity.",
+            "id": "registered",
+            "type": "boolean"
+          }
+        ]
+      }
+    },
+    {
+      "sources": [
+        {
+          "name": "< Homer, Sydney and Richard Sylla (2005) *A History of Interest Rates*, Wiley, Table 38, pp. 282-283."
+        }
+      ],
+      "name": "homer_sylla_table_38",
+      "path": "homer_sylla_table_38.csv",
+      "description": "Long and Short Interest Rates for the U.S. in the Eighteenth and Nineteenth Centuries\nfrom Homer and Sylla (2005), *A History of Interest Rates*.\n",
+      "title": "Summary of Long-Term High-Grade American Bond Yields: Nineteenth Century",
+      "schema": {
+        "fields": [
+          {
+            "label": "Year",
+            "id": "year",
+            "type": "integer"
+          },
+          {
+            "label": "Federal Government Bonds, New Issue Yields, % (low)",
+            "id": "federal_govt_new_low",
+            "type": "number"
+          },
+          {
+            "label": "Federal Government Bonds, New Issue Yields, % (high)",
+            "id": "federal_govt_new_high",
+            "type": "number"
+          },
+          {
+            "id": "federal_govt_mkt",
+            "title": "Federal Government Bonds, Selected Market Yields %",
+            "type": "number"
+          },
+          {
+            "description": "Before 1857, Massachusetts or Boston 5s. After 1857, Macaulay's *Average of New England Municipals*.\n",
+            "type": "number",
+            "id": "new_england_municipal",
+            "label": "New England Municipal Bond Yields, %"
+          },
+          {
+            "label": "High Grade Railroad Bond Yields, %",
+            "id": "railroad bonds",
+            "type": "number"
+          },
+          {
+            "description": "From *Real Estate Analyst*. Row Wenzlick Research Corp of St. Louis.",
+            "type": "number",
+            "id": "new_york_city_mortgages",
+            "label": "New York Real Estate Morgages, %"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Interest rates in New York Money Market, 1860-1865, average rates per year",
+      "name": "mitchell_avg_interest_rates_per_year",
+      "source": "Mitchell (1903, p. 367), Table LVIII.I. http://books.google.com/books?id=ElAuAAAAYAAJ&dq=mitchell%201903&pg=PA367",
+      "path": "data/michell_avg_interest_rates_per_year.csv",
       "schema": {
         "fields": [
           {
@@ -1951,20 +1212,832 @@
             "type": "integer"
           },
           {
+            "id": "call_elliott",
+            "type": "number"
+          },
+          {
+            "id": "call_newspapers",
+            "type": "number"
+          },
+          {
+            "id": "sixty_days_elliott",
+            "type": "number"
+          },
+          {
+            "id": "prime_fisher",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "sources": [
+        {
+          "name": "McCandless, George T., Jr. 1996, \"Money, Expectations, and the U.S. Civil War\", *American Economic Review*",
+          "url": "http://www.jstor.org/stable/2118219"
+        }
+      ],
+      "description": "Price of Gold in Confederate Currency (Graybacks) from McCandless\n\nBiweekly grayback price series from McCandless (1996), Appendix Table\n1, p. 669.\n\n    The data for the South comes from a newspaper column (of unknown\n    origin) found glued into a blank back page of the Virginia State\n    Library's copy of Ernest A. Smith's (1901) The History of the\n    Confederate Treasury.\n\n    As best I can tell, this Southern data set has not been used\n    before. The standardreference is from the Hammond papers, a copy\n    of a card issued by the Wm. B. Isaacs & Co., bankers with monthly\n    prices for the North on one side and for the South on the\n    other. This is the source of the frequently referenced Southern\n    prices in Todd's Confederate Finance. An additional source of\n    Southern prices is from a letter to the New York Evening Post of\n    August 4, 1896 where prices are given for every 10 days. The\n    author of the letter is identified only as E. C. M. The data from\n    the Isaccs and ECM sources are similar to what I use.\n\nWeidenmier (2002) discusses problems with this series, contrasting it \nwith his data.\n\n    Problems with the grayback series is that it reports constant prices\n    for weeks at a time, is of unknown origin for an unknown market, is\n    inconsistent with the New York Evening Post price series (On Jan 1,\n    1865 the Post lists a price of 34 for 1 while McCandless reports 60\n    for 1), and it is unclear whether they are bid or ask prices. \\textcite{Weidenmier2002}\n",
+      "name": "grayback_ecm",
+      "path": "data/grayback_mccandless.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "Date",
+            "id": "date",
+            "type": "date"
+          },
+          {
+            "description": "Price of gold in Confederate dollars",
+            "id": "price",
+            "type": "price"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Yield data for U.S. government and state bonds 1855-1865.\n\nThis table aggregates the data in ``bankers_magazine_state_govt_loans_yields_2.csv`` by ``series``.\nEach variable is the weighted mean (using the ``wgt`` column) by ``series`` and ``date``.\n",
+      "name": "bankers_magazine_state_govt_loans_yields_2",
+      "path": "data/bankers_magazine_state_govt_loans_yields_2.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "Name of the price series",
+            "id": "series",
+            "type": "string"
+          },
+          {
+            "description": "Date of the price",
+            "id": "date",
+            "type": "date"
+          },
+          {
+            "description": "Exchange rate for gold (gold dollars per dollar) used to convert currency prices to gold prices.",
+            "id": "gold_rate",
+            "type": "number"
+          },
+          {
+            "description": "Dirty price of bond in gold dollars",
+            "id": "price",
+            "type": "number"
+          },
+          {
+            "description": "Clean price of bond in gold dollars",
+            "id": "price_clean",
+            "type": "number"
+          },
+          {
+            "description": "Accrued interest in gold dollars",
+            "id": "accrued_interest",
+            "type": "number"
+          },
+          {
+            "description": "Yield to maturity\n\nThe yield to maturity is calculated using continuous compounding and actual days.\n",
+            "id": "ytm",
+            "type": "number"
+          },
+          {
+            "description": "Macualay (modified) duration",
+            "id": "duration",
+            "type": "number"
+          },
+          {
+            "description": "Bond convexity",
+            "id": "convexity",
+            "type": "number"
+          },
+          {
+            "description": "Maturity (years)",
+            "id": "maturity",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "name": "martin_sterling_exchange_1835_1861",
+      "path": "data/martin_sterling_exchange_1835_1861.csv",
+      "description": "Rate of exchange on England, at New York, for Banker's bills (60 days), \"on or about the 1st of month\"\nfrom Jan 1, 1835 to Dec 1, 1861.\n",
+      "title": "Rate of Exchange on England at New York (1835-1861)",
+      "source": {
+        "name": "Martin, G. Joseph. \"Seventy-three Years' History of the Boston Stock Market, from Januay 1, 1798, to January 1, 1871\", Boston, p. 27\n"
+      },
+      "schema": {
+        "fields": [
+          {
+            "label": "Year",
+            "id": "year",
+            "type": "integer"
+          },
+          {
+            "label": "Month",
             "id": "month",
             "type": "integer"
           },
           {
-            "id": "rate",
+            "description": "Premium in gold dollars for exchange on England at New York, Banker's bills, 60 days.\n",
+            "id": "price",
+            "premium": "Premium on exchange",
+            "type": "number"
+          },
+          {
+            "id": "notes",
+            "premium": "Notes",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "sources": [
+        {
+          "name": "Weidenmier, Marc D., 2002. \"Turning Points in the U. S. Civil War: Views from the Grayback Market\", Southern Economic Journal\n",
+          "url": "http://www.jstor.org/stable/1061497."
+        }
+      ],
+      "description": "Price of gold in Confederate Dollars from Burdekin and Weidenmier (2001)\n\nBiweekly series of the price of a gold dollar in\nConfederate paper dollars in Richmond and Houston, from `Eh.net\nBiweekly Data on the Confederate Note Price of a Gold Dollar in\nRichmond and Houston\n<http://eh.net/files/databases/weidenmier.finance.confederacy.us.goldata.xls>`_\nand used in [BurdekinWeidenmier2001]_.\n",
+      "name": "grayback_burdekin_weidenmier_2001",
+      "path": "data/grayback_burdekin_weidenmier_2001.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "Date",
+            "id": "date",
+            "type": "date"
+          },
+          {
+            "description": "Price of gold in Confederate dollars in Richmond",
+            "id": "richmond",
+            "type": "number"
+          },
+          {
+            "description": "Price of gold in Confederate dollars in Houston (old series)",
+            "id": "houston_old",
+            "type": "number"
+          },
+          {
+            "description": "Price of gold in Confederate dollars in Houston (new series)",
+            "id": "houston_new",
             "type": "number"
           }
         ]
+      }
+    },
+    {
+      "description": "Confederate War News from Burdekin and Langdana (1993)\n\nThis is set to +1 for 1863Q3 after Chancellorsville and during Lee's\nMaryland campaign, -1 for 1862Q2 (Peninsula Campaign), 1863:4 (Gettysburg and Vicksburg) and 1864:1 (costly battle of Chickamagua).  Their guideline for constructing the dummy was Schwab (1901, ch 9) major 'crises of confidence' in Richmond. The dummy variable is set to 0 in 1864:2 and 1864:3 due to the stalled Overland and Petersburg campaigns and the nomination of McClellan. \n\nThese data extend the original data by setting it to -1 for 1864Q4 and 1865Q1 although the Burdekin and Langdana analysis stops in 1864Q3 due to a lack of data in other variables.\n",
+      "name": "burdekin_langdana_1993_war",
+      "source": "Burdekin and Langdana (1993), p. 367-368.",
+      "path": "data/burdekin_langdana_war.csv",
+      "schema": {
+        "fields": [
+          {
+            "id": "year",
+            "type": "integer"
+          },
+          {
+            "id": "quarter",
+            "type": "integer"
+          },
+          {
+            "description": "Equal to -1 if the war trend is favoring the Union, +1 if it favoring the Confederacy, and 0 otherwise.",
+            "id": "war",
+            "type": "integer"
+          }
+        ]
+      }
+    },
+    {
+      "sources": [
+        {
+          "name": "Godfrey, J.M. (1978) \"Monetary Expansion in the Confederacy\", p. 35"
+        }
+      ],
+      "description": "Sources of financing of the Revolutionary War, War of 1812, and Civil War\n",
+      "name": "godfrey1978_us_war_financing",
+      "path": "data/godfrey1978_us_war_financing.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "War name",
+            "id": "war",
+            "type": "string"
+          },
+          {
+            "description": "Percentage of war financed by taxes",
+            "id": "taxes",
+            "type": "number"
+          },
+          {
+            "description": "Percentage of war financed by loans",
+            "id": "loans",
+            "type": "currency"
+          },
+          {
+            "description": "Percentage of war financed by currency issues",
+            "id": "taxes",
+            "type": "number"
+          },
+          {
+            "description": "Percentage of war financed by other means",
+            "id": "taxes",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "description": "New York market holidays (1860-1879)\n\nThe list of holidays largely comes from the days Mitchell (1908). It is extended back to 1860. During this era, the market appears to have been open on Saturdays, and the only regularly observed holidays were Christmas, New Years, Independence Day and sometimes Thanksgiving (after 1862).",
+      "name": "holidays",
+      "path": "data/holidays.csv",
+      "schema": {
+        "fields": [
+          {
+            "id": "date",
+            "type": "date"
+          },
+          {
+            "id": "description",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "martin_sterling_exchange_yearly",
+      "path": "data/martin_sterling_exchange_yearly.csv",
+      "description": "Rate of exchange on England, at New York, for Banker's bills (60 days) with yearly high and low values\nfrom 1835 to 1870.\n",
+      "title": "Rate of Exchange on England at New York (Yearly, 1835-1870)",
+      "source": {
+        "name": "Martin, G. Joseph. \"Seventy-three Years' History of the Boston Stock Market, from Januay 1, 1798, to January 1, 1871\", Boston, p. 27\n",
+        "url": "http://books.google.com/books?id=g5jyU-B-nikC&pg=PA27"
       },
-      "name": "mitchell_avg_interest_rates_per_month"
+      "schema": {
+        "fields": [
+          {
+            "label": "Year",
+            "id": "year",
+            "type": "integer"
+          },
+          {
+            "label": "Yearly Low",
+            "id": "low",
+            "type": "number"
+          },
+          {
+            "label": "Yearly high",
+            "id": "high",
+            "type": "number"
+          },
+          {
+            "description": "Whether quoted in gold or currency",
+            "type": "boolean",
+            "id": "gold",
+            "label": "Quoted in Gold"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Major military and non-military events of the Civil War\n\nAppendix Tables 2 \"Major military events of Civil War\" and 3 \"Major non-military events of the Civil War\" in McCandless (1996), p. 670.\n\nThe sources of these events are \n\n- Pratt, Fletcher. Ordeal by Fire. New York: William Sloane, 1948.\n- Catton, Bruce. The Civil War. New York: Fairfax, 1971.\n- Guinnane, Timothy W. and Rosen, Harvey S. and Willard, Kristen L, \"Turning Points in the Civil War: Views from the Greenback Market. American Economic Review. 1996.\n",
+      "name": "events_mccandless",
+      "path": "data/events_mccandless.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "Military or non-military event",
+            "id": "military",
+            "type": "boolean"
+          },
+          {
+            "description": "Event number (unique within military and non-military categories); corresponding to row in the table.",
+            "id": "number",
+            "type": "integer"
+          },
+          {
+            "description": "Time period of the event",
+            "id": "time-period",
+            "type": "string"
+          },
+          {
+            "description": "Event description",
+            "id": "event_name",
+            "type": "string"
+          },
+          {
+            "description": "Did the event favor the North in the war?",
+            "id": "north",
+            "type": "boolean"
+          },
+          {
+            "description": "Was there uncertainty about whether the event favored the north?",
+            "id": "question",
+            "type": "boolean"
+          },
+          {
+            "description": "Source of event was Catton (1971)",
+            "id": "catton",
+            "type": "boolean"
+          },
+          {
+            "description": "Source of event was Pratt (1948)",
+            "id": "pratt",
+            "type": "boolean"
+          },
+          {
+            "description": "Source of event was Guinnane et al (1996)",
+            "id": "guinnane",
+            "type": "boolean"
+          },
+          {
+            "description": "Start date of event",
+            "id": "start_date",
+            "type": "date"
+          },
+          {
+            "description": "End date of event",
+            "id": "end_date",
+            "type": "date"
+          }
+        ]
+      }
+    },
+    {
+      "sources": [
+        {
+          "name": "Dewy, Davis Rich (1918), \"Financial History of the United States\", p. 330",
+          "url": "http://books.google.com/books?id=l3oaAAAAMAAJ&pg=PA330"
+        }
+      ],
+      "description": "United States receipts and expenditures, 1862-1865\n\nTable on page 330 of Dewey (1918)\n",
+      "name": "dewey1918_deficit_1862_1865",
+      "path": "data/dewey1918_deficit_1862_1865.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "Year",
+            "id": "year",
+            "type": "number"
+          },
+          {
+            "description": "Receipts in taxes (millions of dollars)",
+            "id": "receipts_taxes",
+            "type": "number"
+          },
+          {
+            "description": "Receipts, miscellanoues (including sales of public land) (millions of dollars)",
+            "id": "receipts_miscellanoues",
+            "type": "number"
+          },
+          {
+            "description": "Receipts, total (millions of dollars)",
+            "id": "receipts_total",
+            "type": "number"
+          },
+          {
+            "description": "Expenditures (millions of dollars)",
+            "id": "expenditures",
+            "type": "number"
+          },
+          {
+            "description": "Deficit (millions of dollars)",
+            "id": "deficit",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Quotes of government, state and city bonds appearing in the text of the \"Notes from the Money Market\" (1855-1866)\n\nAlthough quotes for government and state bonds appeared in tables in the \"Notes from the Money Market section\" often other, presumably less traded, assets were quoted in the text of the section.  \n",
+      "name": "bankers_magazine_govt_bonds_quotes_in_text",
+      "path": "bankers_magazine_govt_bonds_quotes_in_text.yaml",
+      "schema": {
+        "fields": [
+          {
+            "description": "Date on the byline of the \"Notes from the Money Market\" section.\n",
+            "id": "date",
+            "type": "date"
+          },
+          {
+            "description": "Volume of the Bankers' Magazine",
+            "id": "volume",
+            "type": "integer"
+          },
+          {
+            "description": "URL to the Bankers' Magazine page of the article in which the quotation appears.",
+            "id": "url",
+            "type": "string"
+          },
+          {
+            "description": "The name of the bond similar to how it appeared in the text.",
+            "id": "description",
+            "type": "string"
+          },
+          {
+            "description": "The name of th issuer of the bond. \"US\" or the name of the state or city.\n",
+            "id": "issuer",
+            "type": "string"
+          },
+          {
+            "descripton": "String form of the price. Either a number, or something 100 @ 101 in which the first number is the low or bid price, and the second number is the high or ask price.\n",
+            "id": "price_string",
+            "type": "string"
+          },
+          {
+            "description": "Low price (in nominal dollars)",
+            "id": "low_price",
+            "type": "number"
+          },
+          {
+            "description": "High price (in nominal dollars)",
+            "id": "high_price",
+            "type": "number"
+          },
+          {
+            "description": "Occastionally the Bankers Magazine included ad hoc tables of quotations of bonds not usually quoted. This field is true if the quotation appeared in one of those tables.\n",
+            "id": "table",
+            "type": "boolean"
+          },
+          {
+            "description": "Comment",
+            "id": "comment",
+            "type": "string"
+          },
+          {
+            "description": "An attempt to match the quotation to specific bond issues. Incomplete and preliminary.",
+            "id": "asset",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Daily price of greenbacks in gold in New York (1862-1879) with imputed missing values.\n\nThis table uses the data from ``greenbacks`` and fills in the missing observations using a the smoothed values of a local level model.\n",
+      "name": "greenbacks_fill",
+      "path": "data/greenbacks_fill.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "Date",
+            "id": "date",
+            "type": "date"
+          },
+          {
+            "description": "Daily high price (gold dollars per 100 greenbacks)",
+            "id": "high",
+            "type": "number"
+          },
+          {
+            "description": "Daily low price (gold dollars per 100 greenbacks)",
+            "id": "low",
+            "type": "number"
+          },
+          {
+            "description": "Daily mean price (gold dollars per 100 greenbacks)\n\nThe mean is calculated as exp(0.5 * (log(low) + log(high)))\n",
+            "id": "mean",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "sources": [
+        {
+          "name": "Homer, Sydney and Richard Sylla (2005) *A History of Interest Rates*, Wiley, Table 42, pp. 305-306."
+        }
+      ],
+      "name": "homer_sylla_table_42",
+      "path": "homer_sylla_table_42.csv",
+      "description": "\nSources: For government bonds: *The Financial Review Annual*, 1921, Wm. B. Dana Co., pp 221-232. New England municipal and high-grade railroad bond averages from Frederick Macaulay, *The Movements of Interest Rates, Bond Yields and Stock Prices*, New York, 1938, NBER, A142ff, A174ff.\n",
+      "title": "Prices and Yields of Long Term High Grade U.S. Bonds: 1860-1879",
+      "schema": {
+        "fields": [
+          {
+            "label": "Year",
+            "id": "year",
+            "type": "integer"
+          },
+          {
+            "label": "U.S. 6s of 1848-1868, Annual Average Price",
+            "id": "us_6pct_1848_1868_price_avg",
+            "source": "Table 42, p. 305",
+            "type": "number"
+          },
+          {
+            "label": "U.S. 6s of 1848-1868, Annual Average Current Yield, %",
+            "id": "us_6pct_1848_1868_yield_avg",
+            "source": "Table 42, p. 305",
+            "type": "number"
+          },
+          {
+            "description": "-1 used for negative yields",
+            "type": "number",
+            "id": "us_6pct_1848_1868_ytm_avg",
+            "source": "Table 42, p. 305",
+            "label": "U.S. 6s of 1848-1868, Annual Average Redemption Yield, %"
+          },
+          {
+            "label": "U.S. 6s of 1848-1868, Annual High Price",
+            "id": "us_6pct_1848_1868_price_high",
+            "source": "Table 42, p. 305",
+            "type": "number"
+          },
+          {
+            "label": "U.S. 6s of 1848-1868, Annual Low Price",
+            "id": "us_6pct_1848_1868_price_low",
+            "source": "Table 42, p. 305",
+            "type": "number"
+          },
+          {
+            "label": "U.S. 6s of 1861-1881, Annual Average Price",
+            "id": "us_6pct_1861_1881_price_avg",
+            "source": "Table 42, p. 305",
+            "type": "number"
+          },
+          {
+            "label": "U.S. 6s of 1861-1881, Annual Average Current Yield, %",
+            "id": "us_6pct_1861_1881_yield_avg",
+            "source": "Table 42, p. 305",
+            "type": "number"
+          },
+          {
+            "description": "-1 used for negative yields",
+            "type": "number",
+            "id": "us_6pct_1861_1881_ytm_avg",
+            "source": "Table 42, p. 305",
+            "label": "U.S. 6s of 1861-1881, Annual Average Redemption Yield, %"
+          },
+          {
+            "label": "U.S. 6s of 1861-1881, Annual High Price",
+            "id": "us_6pct_1861_1881_price_high",
+            "source": "Table 42, p. 305",
+            "type": "number"
+          },
+          {
+            "label": "U.S. 6s of 1861-1881, Annual Low Price",
+            "id": "us_6pct_1861_1881_price_low",
+            "source": "Table 42, p. 305",
+            "type": "number"
+          },
+          {
+            "label": "U.S. Refunding 4 1/2s of 1891, Annual Average Price",
+            "id": "us_4_half_pct_1891_price_avg",
+            "source": "Table 42, p. 305",
+            "type": "number"
+          },
+          {
+            "label": "U.S. Refunding 4 1/2s of 1891, Annual Average Current Yield, %",
+            "id": "us_4_half_pct_1891_yield_avg",
+            "source": "Table 42, p. 305",
+            "type": "number"
+          },
+          {
+            "description": "-1 used for negative yields",
+            "type": "number",
+            "id": "us_4_half_pct_1891_ytm_avg",
+            "source": "Table 42, p. 305",
+            "label": "U.S. Refunding 4 1/2s of 1891, Annual Average Redemption Yield, %"
+          },
+          {
+            "label": "U.S. Refunding 4 1/2s of 1891, Annual High Price",
+            "id": "us_4_half_pct_1891_price_high",
+            "source": "Table 42, p. 305",
+            "type": "number"
+          },
+          {
+            "label": "U.S. Refunding 4 1/2s of 1891, Annual Low Price",
+            "id": "us_4_half_pct_1891_price_low",
+            "source": "Table 42, p. 305",
+            "type": "number"
+          },
+          {
+            "label": "U.S. 5s of 1858-1874, Annual Average Price",
+            "id": "us_5pct_1858_1874_price_avg",
+            "source": "Table 42, p. 305",
+            "type": "number"
+          },
+          {
+            "label": "U.S. 5s of 1858-1874, Annual Average Current Yield, %",
+            "id": "us_5pct_1858_1874_yield_avg",
+            "source": "Table 42, p. 305",
+            "type": "number"
+          },
+          {
+            "label": "U.S. 5s of 1858-1874, Annual Average Redemption Yield, %",
+            "id": "us_5pct_1858_1874_ytm_avg",
+            "source": "Table 42, p. 305",
+            "type": "number"
+          },
+          {
+            "label": "U.S. 5s of 1858-1874, Annual High Price",
+            "id": "us_5pct_1858_1874_price_high",
+            "source": "Table 42, p. 305",
+            "type": "number"
+          },
+          {
+            "label": "U.S. 5s of 1858-1874, Annual Low Price",
+            "id": "us_5pct_1858_1874_price_low",
+            "source": "Table 42, p. 305",
+            "type": "number"
+          },
+          {
+            "label": "U.S. 5s of 1864-1874 (10-40s), Annual Average Price",
+            "id": "us_5pct_1864_1874_price_avg",
+            "source": "Table 42, p. 305-306",
+            "type": "number"
+          },
+          {
+            "label": "U.S. 5s of 1864-1874 (10-40s), Annual Average Current Yield, %",
+            "id": "us_5pct_1864_1874_yield_avg",
+            "source": "Table 42, p. 305-306",
+            "type": "number"
+          },
+          {
+            "description": "-1 used for negative yields",
+            "type": "number",
+            "id": "us_5pct_1864_1874_ytm_avg",
+            "source": "Table 42, p. 305-306",
+            "label": "U.S. 5s of 1864-1874 (10-40s), Annual Average Redemption Yield, %"
+          },
+          {
+            "label": "U.S. 5s of 1864-1874 (10-40s), Annual High Price",
+            "id": "us_5pct_1864_1874_price_high",
+            "source": "Table 42, p. 305-306",
+            "type": "number"
+          },
+          {
+            "label": "U.S. 5s of 1864-1874 (10-40s), Annual Low Price",
+            "id": "us_5pct_1864_1874_price_low",
+            "source": "Table 42, p. 305-306",
+            "type": "number"
+          },
+          {
+            "label": "U.S. Refunding 4s of 1907, Annual Average Price",
+            "id": "us_4pct_1907_price_avg",
+            "source": "Table 42, p. 306",
+            "type": "number"
+          },
+          {
+            "label": "U.S. Refunding 4s of 1907, Annual Average Current Yield, %",
+            "id": "us_4pct_1907_yield_avg",
+            "source": "Table 42, p. 306",
+            "type": "number"
+          },
+          {
+            "label": "U.S. Refunding 4s of 1907, Annual Average Redemption Yield, %",
+            "id": "us_4pct_1907_ytm_avg",
+            "source": "Table 42, p. 306",
+            "type": "number"
+          },
+          {
+            "label": "U.S. Refunding 4s of 1907, Annual High Price",
+            "id": "us_4pct_1907_price_high",
+            "source": "Table 42, p. 306",
+            "type": "number"
+          },
+          {
+            "label": "U.S. Refunding 4s of 1907, Annual Low Price",
+            "id": "us_4pct_1907_price_low",
+            "source": "Table 42, p. 306",
+            "type": "number"
+          },
+          {
+            "label": "New England Municipal Bond Yields, Annual Average %",
+            "id": "new_england_yield_avg",
+            "source": "Table 42, p. 306",
+            "type": "number"
+          },
+          {
+            "label": "New England Municipal Bond Yields, Low Quarter %",
+            "id": "new_england_yield_low",
+            "source": "Table 42, p. 306",
+            "type": "number"
+          },
+          {
+            "label": "New England Municipal Bond Yields, High Quarter %",
+            "id": "new_england_yield_high",
+            "source": "Table 42, p. 306",
+            "type": "number"
+          },
+          {
+            "label": "Adjusted Average of Higher-Grade Railroad Bond Yields, Annual Average %",
+            "id": "railroad_yield_avg",
+            "source": "Table 42, p. 306",
+            "type": "number"
+          },
+          {
+            "label": "Adjusted Average of Higher-Grade Railroad Bond Yields, Low Month %",
+            "id": "railroad_yield_low",
+            "source": "Table 42, p. 306",
+            "type": "number"
+          },
+          {
+            "label": "Adjusted Average of Higher-Grade Railroad Bond Yields, High Month %",
+            "id": "railroad_yield_high",
+            "source": "Table 42, p. 306",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "sources": [
+        {
+          "web": "http://journals.cambridge.org/article_S0022050700019100",
+          "name": "Gregor W. Smith and R. Todd Smith (1997). Greenback-Gold Returns and Expectations of Resumption, 1862-1879. The Journal of Economic History, 57, pp 697-717. doi:10.1017/S0022050700019100."
+        }
+      ],
+      "description": "\nWar news and wartime financial news\n\nEvents from Smith and Smith (1997), \"Table 1: War News\" (p. 706) and \"Table 2:\nWartime Financial News\" (p. 707).\n\nThe set of events are constructed from those events mentioned in Mitchell (1903), pt. 2, chapter 3, as influencing the price of gold.\n",
+      "name": "events_smith_smith",
+      "path": "data/events_smith_smith.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "If true, then war or diplomatic news, else financial news",
+            "id": "war_news",
+            "type": "boolean"
+          },
+          {
+            "description": "Event identification number. Unique within `war_news`. Same as the row number in the original table.",
+            "id": "event_number",
+            "type": "integer"
+          },
+          {
+            "description": "Event start date",
+            "id": "start_date",
+            "type": "date"
+          },
+          {
+            "description": "Event end date",
+            "id": "end_date",
+            "type": "date"
+          },
+          {
+            "description": "If true, then a Union defat, adverse rumor, or news of difficulties in Union finances, such as further issues of greenbacks. If False, then a Union victory, favorable political news, or improvements in Union public finances.",
+            "id": "unfavorable",
+            "type": "boolean"
+          }
+        ]
+      }
+    }
+  ],
+  "maintainers": [
+    {
+      "email": "jeffrey.arnold@gmail.com",
+      "name": "Jeffrey B. Arnold"
+    }
+  ],
+  "name": "civil_war_era_findata",
+  "last_modified": "2015-06-21T14:19:41.080454",
+  "sources": [
+    {
+      "web": "http://eh.net/databases/greenback/",
+      "name": "EH.net Greenback.series"
+    },
+    {
+      "web": "http://books.google.com/books?id=fqkRAAAAYAAJ",
+      "name": "Mitchell, Wesley C., 1908. \"Gold, Prices, and Wages Under the Greenback Standard.\" The University Press."
+    },
+    {
+      "web": "http://books.google.com/books?id=ElAuAAAAYAAJ",
+      "name": "Mitchell, Wesley C., 1903. \"A history of the greenbacks: with special reference to the economic consequences of their issue: 1862-65.\" Chicago: University of Chicago Press."
+    },
+    {
+      "web": "http://books.google.com/books?id=lq92AAAAMAAJ",
+      "name": "Ball, Douglas, 1991. \"Financial Failure and Confederate Defeat.\" University of Illinois Press. ISBN: 9780252017551"
+    },
+    {
+      "name": "Bankers' Magazine and Statistical Register"
+    },
+    {
+      "name": "The Merchants' Magazine and Commercial Review"
+    },
+    {
+      "name": "Burdekin, Richard C.K. and Farrokh K. Langdana, \"War Finance in the Southern Confederacy: 1861-1865\", *Explorations in Economic History*, 30, pp 352-376"
+    },
+    {
+      "web": "http://www.jstor.org/stable/2118219",
+      "name": "McCandless, George T., Jr. 1996. \"Money, Expectations, and the U.S. Civil War\" *American Economic Review*, 86.3, pp. 661-671."
+    },
+    {
+      "web": "http://journals.cambridge.org/article_S0022050700019100",
+      "name": "Gregor W. Smith and R. Todd Smith (1997). Greenback-Gold Returns and Expectations of Resumption, 1862-1879. The Journal of Economic History, 57, pp 697-717. doi:10.1017/S0022050700019100."
+    },
+    {
+      "name": "U. S. Department of the Treasury, (1861) \"Annual Report of the Secretary of the Treasury on the State of the Finances, July 4, 1861\".",
+      "url": "https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1861_2.pdf"
+    },
+    {
+      "name": "Godfrey, J.M. (1978) \"Monetary Expansion in the Confederacy\""
     }
   ],
   "version": "9.0.0",
+  "homepage": "https://github.com/jrnold/civil_war_era_findata",
   "description": "Miscellaneous financial and economic data from the during the U.S. Civil War\n\nThis is by no means a complete collection of available data, but consists of some datasets that I found or collected for my own research.",
-  "last_modified": "2015-05-22T18:25:49.450098",
-  "title": "Civil War (US) Era Financial Market Data"
+  "title": "Civil War (US) Era Financial Market Data",
+  "licenses": [
+    {
+      "id": "odc-by",
+      "url": "http://opendatacommons.org/licenses/by/"
+    }
+  ]
 }

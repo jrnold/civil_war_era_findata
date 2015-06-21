@@ -32,4 +32,4 @@ data/%.json: sources/json/%.R
 datapackage.json: datapackage.py $(YAMLFILES)
 	$(PYTHON)  $< sources/datapackage $@
 
-include $(CSV_SRC:.R=.mk) $(JSON_SRC:.R=.mk)
+-include $(CSV_SRC:.R=.mk) $(JSON_SRC:.R=.mk)
