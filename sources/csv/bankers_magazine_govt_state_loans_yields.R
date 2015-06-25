@@ -157,56 +157,55 @@ match_bonds_all <- function(x, MATCH_BONDS, bond_metadata) {
   bind_rows(retlist)
 }
 
-rfyields_date <- function(x) {
-  rate <- filter(x,
-                 series %in% c("U.S. 6 per cents, 1867-8",
-                               "U.S. 6 per cents, 1881",
-                               "U.S. 6 per cents, 1874")) %>%
-    `[[`("ytm_currency") %>%
-    mean()
-
-  ret <- vector(length = nrow(x), mode = "list")
-  for (i in seq_len(nrow(x))) {
-    .i <- x[i, , drop = FALSE]
-    if(.i$gold_rate != 1) {
-      yields <-
-        gold_cashflows_redemp(bond_metadata[[.i$bond]]$cashflows,
-                              .i$date,
-                              .i$gold_rate,
-                              r = rate) %>%
-        yield_to_maturity2(.i$price * .i$gold_rate, .i$date, .)
-      ret[[i]] <-
-        data_frame(govt_rate = rate,
-                   ytm_goldrf = yields$yield,
-                   duration_goldrf = yields$duration,
-                   convexity_goldrf = yields$convexity,
-                   date = .i$date,
-                   bond = .i$bond
-        )
-    } else {
-      ret[[i]] <-
-        data_frame(govt_rate = rate,
-                   ytm_goldrf = .i$ytm_currency,
-                   duration_goldrf = .i$duration_currency,
-                   convexity_goldrf = .i$convexity_currency,
-                   date = .i$date,
-                   bond = .i$bond)
-    }
-  }
-  bind_rows(ret)
-}
+# rfyields_date_one <- function(x, rate) {
+#   if(x$gold_rate != 1) {
+#     yields <-
+#       gold_cashflows_redemp(bond_metadata[[x$bond]]$cashflows,
+#                             x$date,
+#                             x$gold_rate,
+#                             r = rate) %>%
+#       yield_to_maturity2(x$price * x$gold_rate, x$date, .)
+#       data_frame(govt_rate = rate,
+#                  ytm_goldrf = yields$yield,
+#                  duration_goldrf = yields$duration,
+#                  convexity_goldrf = yields$convexity,
+#                  date = x$date,
+#                  bond = x$bond
+#       )
+#   } else {
+#       data_frame(govt_rate = rate,
+#                  ytm_goldrf = x$ytm_currency,
+#                  duration_goldrf = x$duration_currency,
+#                  convexity_goldrf = x$convexity_currency,
+#                  date = x$date,
+#                  bond = x$bond)
+#   }
+# }
+#
+# rfyields <- function(x) {
+#   filter(x, series %in% c("U.S. 6 per cents, 1867-8",
+#                          "U.S. 6 per cents, 1881",
+#                          "U.S. 6 per cents, 1874")) %>%
+#     group_by(date) %>%
+#     summarize(govt_rate = exp(mean(log(ytm_currency))))
+# }
+#
+# rfyields_date <- function(x, rates) {
+#
+#     rowwise() %>%
+#     do(rfyields_date_one(.)) %>%
+#     group_by(bond, date)
+# }
 
 bankers %<>% group_by(date)
 first_date <- TRUE
 for (dt in unique(as.character(bankers$date))) {
-  print(dt)
-  .data <- filter(bankers, date == as.character(dt)) %>%
-    rowwise() %>%
-    do(match_bonds_all(., MATCH_BONDS, bond_metadata)) #%>%
-#     left_join(rfyields_date(.), by = c("bond", "date"))
-#   readr::write_csv(.data,
-#                    outfile,
-#                    append = ! first_date)
-  first_date <- FALSE
+ print(dt)
+ .data <- filter(bankers, date == as.character(dt))
+ for (i in seq_len(nrow(.data))) {
+   .data2 <- match_bonds_all(.data[i, , drop = TRUE], MATCH_BONDS, bond_metadata)
+   readr::write_csv(.data2, outfile, append = ! first_date)
+   first_date <- FALSE
+ }
 }
 

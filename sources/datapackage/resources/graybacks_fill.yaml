@@ -1,0 +1,16 @@
+path: data/graybacks_fill.csv
+description: >-
+  Daily price of Graybacks in gold in Richmond with imputed missing values.
+
+  This dataset creates a dataset with a complete series of prices of graybacks with by imputing the missing values.
+  It uses ``grayback_weidenmier_2002``, ``grayback_ecm``, and ``graybacks_mccandless``, and fits a structural time series model (R functions ``tsSmooth`` and ``tsFilter``) to the log price.
+
+schema:
+  fields:
+    - id: date
+      type: date
+      description: Date
+    - id: price
+      type: number
+      description: Price of gold in graybacks.
+

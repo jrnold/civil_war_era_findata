@@ -1,0 +1,48 @@
+path: data/grayback_yields.csv
+description: >-
+  Implied yields of Graybacks
+
+  This paper
+  It uses ``grayback_weidenmier_2002``, ``grayback_ecm``, and ``graybacks_mccandless``, and fits a structural time series model (R functions ``tsSmooth`` and ``tsFilter``) to the log price.
+
+schema:
+  fields:
+    - id: date
+      type: date
+      description: Date
+    - id: src
+      type: string
+      description: Source of the price. "ECM" for the ECM price series, "McCandless" for McCandless (1997), and "Wiedenmier" for Wiedenmier (2002).
+    - id: price
+      type: number
+      description: Price of gold in graybacks.
+    - id: yield_1879
+      type: number
+      description: >-
+        Implied yield to maturity for a grayback if it were redeemed in 1879 (like the greenback),
+        $r = - \log(p) / m$ where $r$ is the yield to maturity, $p$ is the price, and $m$ it the difference in years between the current data and Jan 1, 1879.
+    - id: implied_maturity_5pct
+      type: number
+      description: >-
+        Implied maturity of the Grayback notes with a risk free interest rate of 5%.
+        This treats the Grayback notes as risk-free zero-coupon notes, with an unknown redemption date.
+        The maturity is calculated as $m = - \log(p) / r$.
+
+    - id: implied_maturity_6pct
+      type: number
+      description: >-
+        Implied maturity of the Grayback notes with a risk free interest rate of 6%.
+        Calculated as in ``implied_maturity_5pct``, but with $r = 0.06$.
+        
+    - id: implied_maturity_7pct
+      type: number
+      description: >-
+        Implied maturity of the Grayback notes with a risk free interest rate of 7%.
+        Calculated as in ``implied_maturity_5pct``, but with $r = 0.07$.
+
+    - id: implied_maturity_8pct
+      type: number
+      description: >-
+        Implied maturity of the Grayback notes with a risk free interest rate of 8%.
+        Calculated as in ``implied_maturity_5pct``, but with $r = 0.08$.
+
