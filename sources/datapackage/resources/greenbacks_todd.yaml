@@ -1,0 +1,21 @@
+path: "data/grayback_todd.csv"
+description: >-
+  Monthly Grayback Prices from Todd, *Confederate Finance*
+
+  Data from Todd, *Confederate Finance*, Appdendix C. The caption of the table reads
+
+    Table showing average value of one dollar in gold in New York as compared with United States
+    currency during each monthy of the war, from January 1862 to April 1862. From tables compiled
+    by Wm. B. Isaacs and Co., Bankers, Richmond, Va., found in James H. Hammond Papers.
+
+sources:
+  - name: "Todd, R.C., 2009. *Confederate Finance*, http://books.google.com/books?id=MVc1DTf4zsEC."
+    url: http://books.google.com/books?id=MVc1DTf4zsEC.
+schema:
+  fields:
+    - id: date
+      type: date
+      description: Date
+    - id: price
+      type: price
+      description: Price of gold in Confederate dollars

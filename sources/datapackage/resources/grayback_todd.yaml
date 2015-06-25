@@ -1,0 +1,23 @@
+path: "data/grayback_todd.csv"
+description: |
+  Monthly Grayback Prices from Todd *Confederate Finance*
+
+  Data from Appendix C, p. 198. The caption of the table reads.
+
+      Table showing average value of one dollar in gold
+      in Richmond as compared with Confederate Treasury Notes during each
+      month of the War, from May 1861 to April 1, 1865
+      From tables compiled by Wm. B. Isaacs & Co, Bankers, Richmond, Va. 
+      found in James H. Hammond Papers. 
+
+sources:
+  - name: "Todd, R.C., 2009. *Confederate Finance*, http://books.google.com/books?id=MVc1DTf4zsEC."
+    url: http://books.google.com/books?id=MVc1DTf4zsEC.
+schema:
+  fields:
+    - id: date
+      type: date
+      description: Date
+    - id: price
+      type: price
+      description: Price of gold in Confederate dollars

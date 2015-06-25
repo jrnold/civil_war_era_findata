@@ -197,6 +197,7 @@ match_bonds_all <- function(x, MATCH_BONDS, bond_metadata) {
 #     group_by(bond, date)
 # }
 
+#' This part has been rewritten in an attempt to avoid a segfault bug in (dplyr? )
 bankers %<>% group_by(date)
 first_date <- TRUE
 for (dt in unique(as.character(bankers$date))) {
