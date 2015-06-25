@@ -8,7 +8,6 @@ bankers_file <- "data/bankers_magazine_govt_state_loans.csv"
 bond_metadata_file <- "data/bond_metadata.json"
 greenback_fill_file <- "data/greenbacks_fill.csv"
 outfile <- commandArgs(TRUE)[1]
-outfile <- "foo.csv"
 
 gold_rates_actual <- read_csv(greenback_fill_file) %>%
     mutate(gold_rate = 100 / mean,
