@@ -1,0 +1,16 @@
+path: data/graybacks_fill.csv
+description: >-
+  Daily price of Graybacks in gold in Richmond with imputed missing values.
+
+  This table uses the data ``grayback_weidenmier_2002``, ``grayback_ecm``, and ``graybacks_mccandless``,
+  and fits a structural time series model (R functions ``tsSmooth`` and ``tsFilter``) to it.
+
+schema:
+  fields:
+    - id: date
+      type: date
+      description: Date
+    - id: log_price
+      type: number
+      description: Log price of gold in graybacks.
+
