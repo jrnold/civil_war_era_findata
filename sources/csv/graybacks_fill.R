@@ -38,10 +38,10 @@ graybacks_fill <-
                        log_price = tsSmooth(StructTS(filter(graybacks,
                            date <= as.Date("1865-4-26")) %>%
                       `[[`("log_price"))) %>% `[`( , 1)),
-            filter(graybacks, date > as.Date("1865-4-26")))
+            filter(graybacks, date > as.Date("1865-4-26"))) %>%
+  mutate(price = exp(log_price)) %>%
+  select(- log_price)
+
 
 write_csv(graybacks_fill, file = dst)
 
-
-
-write.csv(greenbacks, file=dst)

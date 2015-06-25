@@ -22,7 +22,7 @@ create_series <- function(x, registered) {
 
 graybacks_fill <- read_csv(graybacks_fill_file) %>%
   mutate(date = as.Date(date)) %>%
-  mutate(gold_rate = exp(log_price)) %>%
+  rename(gold_rate = price) %>%
   select(date, gold_rate)
 
 ASSETS_TOUSE = c("confederate_15mn", "confederate_100mn",

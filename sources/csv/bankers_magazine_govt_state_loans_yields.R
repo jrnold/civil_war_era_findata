@@ -200,14 +200,12 @@ match_bonds_all <- function(x, MATCH_BONDS, bond_metadata) {
 bankers %<>% group_by(date)
 first_date <- TRUE
 for (dt in unique(as.character(bankers$date))) {
-  print(dt)
-  .data <- filter(bankers, date == as.character(dt)) %>%
-    rowwise() %>%
-    do(match_bonds_all(., MATCH_BONDS, bond_metadata)) %>%
-    ungroup() %>%
-    group_by(bond, date)
-  #.data %<>% left_join(rfyields_date(.), by = c("bond", "date"))
-  readr::write_csv(.data, outfile, append = ! first_date)
-  first_date <- FALSE
+ print(dt)
+ .data <- filter(bankers, date == as.character(dt))
+ for (i in seq_len(nrow(.data))) {
+   .data2 <- match_bonds_all(.data[i, , drop = TRUE], MATCH_BONDS, bond_metadata)
+   readr::write_csv(.data2, outfile, append = ! first_date)
+   first_date <- FALSE
+ }
 }
 

@@ -12,9 +12,9 @@ library("magrittr")
 get_bond_metadata <- function(file) {
     lapply(fromJSON(file),
            function(x) {
-               x[["cashflows"]] %<>% mutate(date = as.Date(date))
-               x[["maturity_date"]] %<>% as.Date()
-               x[["issue_date"]] %<>% as.Date()
+               x[["cashflows"]] <- mutate(x[["cashflows"]], date = as.Date(date))
+               x[["maturity_date"]] <- as.Date(x[["maturity_date"]])
+               x[["issue_date"]] <- as.Date(x[["issue_date"]])
                x
            })
 }
@@ -170,12 +170,12 @@ gold_redemp_date <- function(current_date, gold_rate, r = 0.05) {
 }
 
 future_gold_rates <- function(dates, current_date, gold_rate, r = 0.05,
-                               float_date = as.Date("1862-1-1")) {
+                              float_date = as.Date("1862-1-1")) {
   redemp_date <- gold_redemp_date(current_date, gold_rate, r)
   times <- difftime_years(dates, current_date)
-  data_frame(date = dates,
-                    gold_rate = pmax(1, gold_rate * exp(- r * times))) %>%
-    mutate(gold_rate = ifelse(date < as.Date(float_date), 1, gold_rate))
+  mutate(data_frame(date = dates,
+                    gold_rate = pmax(1, gold_rate * exp(- r * times))),
+         gold_rate = ifelse(date < as.Date(float_date), 1, gold_rate))
 }
 
 future_gold_rates_t <- function(dates, current_date, gold_rate, redemp_date,

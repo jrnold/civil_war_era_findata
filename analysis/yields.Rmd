@@ -134,3 +134,27 @@ ggplot(filter(richmond, grepl("confederate_100mn", asset)),
   geom_point()
 ```
 
+The probability of Confederate victory calculated using the grayback.
+Suppose that a time of redemption and risk free interest rate is known, and that the bill only gets redeemed in victory, then the probability of victory ($\pi$) is
+$$
+p & \pi e^{-r t} + (1 - \pi) 0 \\
+\pi & \frac{p}{e^{-r t}}
+$$
+
+```{r}
+graybacks_pr_victory <- read_csv("data/graybacks_fill.csv") %>%
+  rowwise() %>%
+  do({
+    x <- expand.grid(r = c(0.05, 0.06, 0.07, 0.08),
+                     tm = 1:6) %>%
+      mutate(rt = paste(r, "*", tm))
+    x$pr <- pmin(1 / exp(.$log_price) / with(x, exp(-r * tm)), 1)
+    x$date <- as.Date(.$date)
+    x
+  })
+
+ggplot(graybacks_fill, aes(x = date, y = pr, group = rt, colour = factor(tm))) +
+  geom_line()
+
+```
+
