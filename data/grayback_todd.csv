@@ -1,4 +1,4 @@
-date,mean,low,high
+date,price_mean,price_low,price_high
 1861-05-01,1.10,,
 1861-06-01,1.10,,
 1861-07-01,1.10,,

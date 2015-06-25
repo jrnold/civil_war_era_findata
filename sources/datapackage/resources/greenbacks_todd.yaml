@@ -1,6 +1,6 @@
-path: "data/grayback_todd.csv"
+path: "data/greenbacks_todd.csv"
 description: >-
-  Monthly Grayback Prices from Todd, *Confederate Finance*
+  Monthly Price of Gold in Greenbacks from Todd, *Confederate Finance*
 
   Data from Todd, *Confederate Finance*, Appdendix C. The caption of the table reads
 
@@ -15,7 +15,7 @@ schema:
   fields:
     - id: date
       type: date
-      description: Date
+      description: Date. Prices are monthly averages, so the first day of the month is used.
     - id: price
       type: price
-      description: Price of gold in Confederate dollars
+      description: U.S. currency per gold dollar. Monthly average.

@@ -8,7 +8,10 @@ description: |
       in Richmond as compared with Confederate Treasury Notes during each
       month of the War, from May 1861 to April 1, 1865
       From tables compiled by Wm. B. Isaacs & Co, Bankers, Richmond, Va. 
-      found in James H. Hammond Papers. 
+      found in James H. Hammond Papers.
+
+  For some months the mean price is given.
+  For other months the low and high prices are given.
 
 sources:
   - name: "Todd, R.C., 2009. *Confederate Finance*, http://books.google.com/books?id=MVc1DTf4zsEC."
@@ -18,6 +21,12 @@ schema:
     - id: date
       type: date
       description: Date
-    - id: price
+    - id: price_mean
       type: price
-      description: Price of gold in Confederate dollars
+      description: Price of gold dollar in Confederate dollars (mean)
+    - id: price_low
+      type: price
+      description: Price of gold dollar in Confederate dollars (high)
+    - id: price_high
+      type: price
+      description: Price of gold dollar in Confederate dollars (low)
