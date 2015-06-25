@@ -5,3 +5,4 @@ auto/
 .#*#
 *.mk
 *~
+/node_modules/
