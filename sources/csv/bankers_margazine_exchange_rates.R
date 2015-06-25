@@ -22,10 +22,13 @@ bankers <- read_csv(src) %>%
          date = as.Date(date)) %>%
   left_join(greenbacks, by = "date") %>%
   mutate(gold_rate = fill_na(gold_rate, 100) / 100,
-         rate_low = ifelse(city == "Paris", 100 / rate_high, rate_low),
-         rate_high = ifelse(city == "Paris", 100 / rate_low, rate_high),
+         # Paris
+         rate_low = ifelse(city == "Paris", 100 / rate_low, rate_low),
+         rate_high = ifelse(city == "Paris", 100 / rate_high, rate_high),
+         # London
          rate_low = ifelse(city == "London", rate_low * 4.44, rate_low),
          rate_high = ifelse(city == "London", rate_high * 4.44, rate_high),
+         # Convert to gold
          rate_low = rate_low * gold_rate,
          rate_high = rate_high * gold_rate,
          type = ifelse(city == "London", type, "")

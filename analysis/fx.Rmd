@@ -6,33 +6,33 @@ output: html_document
 ---
 
 ```{r}
-source("../R/.init.R")
-library("readr")
+source("../R/init.R")
 ```
 
 There is exchange rate data available from the *Merchants' Magazine* and 
 *Bankers' Magazine* for this era.
 
-```{r bankers_fx}
+```{r}
 bankers_fx <- read_csv("../data/bankers_magazine_exchange_rates.csv") %>%
-  mutate(date = as.Date(date),
-         city_type = paste(city, type),
-         rate_mean = 0.5 * (rate_low + rate_high))
-greenbacks <- read_csv("../data/greenbacks_fill.csv") %>%
-  mutate(date = as.Date(date))
-
-bankers_fx %<>% left_join(greenbacks, by = "date") %>%
-  mutate(mean = ifelse(date < as.Date("1862-1-1"), 1, mean),
-         rate_mean = ifelse(city == "Paris", 1 / rate_mean, rate_mean))
-
-ggplot(data = bankers_fx, aes(y = rate_mean, x = date)) +
-  geom_line() +
-  facet_wrap(~ city_type, scales = "free_y")
-
-
+  filter(! city == "London" | type == "bankers' bills") %>%
+  mutate(rate = 0.5 * (rate_low + rate_high)) %>% 
+  select(date, city, rate)
+  
 ```
 
 ```{r}
-merchants_fx <- read_csv("../data/merchants_exchange_rates.csv")
+merchants_fx <- read_csv("../data/merchants_magazine_exchange_rates.csv") %>% 
+  mutate(rate = 0.5 * (rate_low + rate_high)) %>% 
+  select(date, city, rate)
 ```
+
+```{r}
+fxrates <- bind_rows(merchants_fx, bankers_fx) %>%
+  mutate(date = as.Date(date))
+ggplot(fxrates, aes(x = date, y = rate)) +
+  geom_point() + 
+  geom_smooth() +
+  facet_wrap(~ city, scales = "free_y")
+```
+
 

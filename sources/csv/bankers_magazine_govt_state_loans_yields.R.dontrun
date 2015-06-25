@@ -199,6 +199,8 @@ match_bonds_all <- function(x, MATCH_BONDS, bond_metadata) {
 
 bankers %<>% group_by(date)
 first_date <- TRUE
+bankers <- filter(bankers, date >= as.Date("1863-02-28"))
+first_date <- FALSE
 for (dt in unique(as.character(bankers$date))) {
  print(dt)
  .data <- filter(bankers, date == as.character(dt))
