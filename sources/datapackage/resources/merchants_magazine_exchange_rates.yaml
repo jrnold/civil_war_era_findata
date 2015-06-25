@@ -1,32 +1,27 @@
-path: "data/bankers_magazine_exchange_rates.yaml"
+path: "data/merchants_magazine_exchange_rates.yaml"
 description: >-
-  
-  Exchange rates (New York) appearing in *Bankers' Magazine* 1859-1863
 
-  The *Bankers' Magazine* published exchange rate data for New York on
-  London, Paris, Amsterdam, Bremen, Hamburg, and Frankfort between 1859 and 1863.
+  Exchange rates (New York) appearing in *Merchants' Magazine* 1860-1866.
+
+  The *Merchants' Magazine* published exchange rate data for New York on
+  London, Paris, Amsterdam, Berlin, Hamburg, and Frankfort between 1860 and 1866.
 
   The units of the quotations are in U.S. gold dollars per
 
-  :London: 100 Pound sterling
   :Amsterdam: 100 Dutch guilders
-  :Bremen: 100 rixdollars gold
+  :Berlin: 100 thalers Prussian current
   :Frankfort: 100 guilders South German current
   :Hamburg: 100 mark (marc) banco
+  :London: 100 Pound sterling
   :Paris: 100 francs
 
-  See Denzel, *History of Exchange Rates*, p. 404, for more information.
-    
+  See Denzel, *History of Exchange Rates*, p. 404, for more information on U.S. exchange rates.
 
 schema:
   fields:
     - id: city
       type: string
       description: City
-    - id: type
-      type: string
-      description: >-
-        Type of exchange rate. In the case of London, there are different rates for different classes of collateral.
     - id: date
       type: date
       description: Date of the quotation.
@@ -39,10 +34,13 @@ schema:
     - id: gold_rate
       type: number
       description: U.S. gold dollars per U.S. currency dollar for that date.
+    - id: comment
+      type: string
+      description: Any commentson the data
     - id: url
       type: string
       description: URL to the source (on Google Books).
     - id: issue
-      type: date
-      description: "Issue of the *Bankers' Magazine* from which the data came."
+      type: string
+      description: "Issue of the *Merchants' Magazine* from which the data came."
         
