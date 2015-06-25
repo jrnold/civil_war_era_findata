@@ -17,6 +17,8 @@ create_series <- function(x, registered) {
   y[grepl("north_carolina_8", x)] <- "north_carolina_8pct"
   y[grepl("north_carolina_6_old", x)] <- "north_carolina_6pct_old"
   y[grepl("north_carolina_6_new", x)] <- "north_carolina_6pct_new"
+  y[grepl("richmond", x)] <- "richmond"
+  y[grepl("petersburg", x)] <- "petersburg"
   y
 }
 
@@ -26,7 +28,8 @@ graybacks_fill <- read_csv(graybacks_fill_file) %>%
   select(date, gold_rate)
 
 ASSETS_TOUSE = c("confederate_15mn", "confederate_100mn",
-                 "virginia", "north_carolina")
+                 "virginia", "north_carolina", "richmond",
+                 "petersburg")
 
 
 richmond <- read_csv(src) %>%
@@ -43,7 +46,8 @@ richmond <- read_csv(src) %>%
                           8, NA),
          interest = ifelse(series %in% c("north_carolina_6pct_old",
                                          "north_carolina_6pct_new",
-                                         "virginia_coup", "virginia_reg"),
+                                         "virginia_coup", "virginia_reg",
+                                         "petersburg", "richmond"),
                            6, interest),
          current_yield_gold = interest /
            (0.5 * (price_gold_low + price_gold_high)),
