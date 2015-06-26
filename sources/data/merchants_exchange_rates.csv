@@ -383,7 +383,7 @@ date,url,issue,city,rate_low,rate_high,currency,comment
 1864-05-28,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA65,Jan 1865,Paris,2.8125,2.775,TRUE,
 1864-06-04,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Paris,2.7225,2.685,TRUE,
 1864-06-11,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Paris,2.65,2.6,TRUE,
-1864-06-18,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Paris,2.64,2.88,TRUE,
+1864-06-18,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Paris,2.88,2.64,TRUE,reversed high and low
 1864-06-25,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Paris,2.375,2.415,TRUE,
 1864-07-02,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Paris,2.15,1.925,TRUE,
 1864-07-09,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Paris,1.95,1.875,TRUE,
@@ -396,7 +396,7 @@ date,url,issue,city,rate_low,rate_high,currency,comment
 1864-09-03,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Paris,2.15,2.05,TRUE,
 1864-09-10,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Paris,2.25,2.2,TRUE,
 1864-09-17,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Paris,2.3125,2.275,TRUE,
-1864-09-24,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Paris,2.475,2.35,TRUE,
+1864-09-24,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Paris,2.475,2.35,TRUE,assume typo; replace 1.475 with 2.475
 1864-10-01,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Paris,2.75,2.6875,TRUE,
 1864-10-08,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Paris,2.7,2.6,TRUE,
 1864-10-15,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Paris,2.55,2.45,TRUE,

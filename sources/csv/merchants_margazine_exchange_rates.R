@@ -44,6 +44,7 @@ greenbacks <- read_csv(greenbacks_fill_file) %>%
 #   geom_pointrange() +
 #   facet_wrap(~ city, scales = "free_y")
 #
+# Checked London, Berlin, Frankfort, Hamurg
 # .data_data_range <-
 #   group_by(.data, city) %>%
 #   summarize(rate_low = min(rate_low), rate_high = max(rate_high)) %>%
