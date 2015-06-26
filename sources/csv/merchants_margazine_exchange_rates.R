@@ -1,6 +1,7 @@
 #' Cleaning Merchants' Magazine Exchange Rates
 #'
 source("R/init.R")
+library("assertthat")
 
 #' output
 dst <- commandArgs(TRUE)[1]

@@ -27,7 +27,7 @@ bankers <- read_csv(src) %>%
          rate_low = ifelse(city == "Paris", 100 / rate_low, rate_low),
          rate_high = ifelse(city == "Paris", 100 / rate_high, rate_high),
          # London
-         rate_low = ifelse(city == "London", rate_low * 4.44, rate_low),
+         rate_low = ifelse(city == "Londons", rate_low * 4.44, rate_low),
          rate_high = ifelse(city == "London", rate_high * 4.44, rate_high),
          # Convert to gold
          rate_low = rate_low * gold_rate,
