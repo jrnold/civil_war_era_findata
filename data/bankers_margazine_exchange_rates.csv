@@ -1,0 +1,333 @@
+"city","type","date","rate_low","rate_high","gold_rate","url","issue"
+"London","bankers' bills",1859-05-26,444,445.11,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"London","bankers' bills",1859-06-26,489.51,491.73,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"London","bankers' bills",1859-07-26,487.845,488.4,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"London","bankers' bills",1859-08-26,489.51,490.065,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"London","bankers' bills",1859-09-26,489.51,490.065,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"London","bankers' bills",1859-10-26,488.4,489.51,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"London","bankers' bills",1859-11-26,487.845,488.4,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"London","bankers' bills",1859-12-26,486.18,486.735,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"London","bankers' bills",1860-04-24,482.85,483.96,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-01-22
+"London","bankers' bills",1860-04-24,483.96,484.515,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-02-22
+"London","bankers' bills",1860-04-24,482.85,483.405,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-03-24
+"London","bankers' bills",1860-04-24,484.515,485.07,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-04-24
+"London","bankers' bills",1860-08-25,486.735,487.29,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-05-25
+"London","bankers' bills",1860-08-25,487.29,487.845,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-06-25
+"London","bankers' bills",1860-08-25,487.845,488.4,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-07-24
+"London","bankers' bills",1860-08-25,487.845,488.4,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-08-24
+"London","bankers' bills",1860-12-24,486.18,487.29,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-09-25
+"London","bankers' bills",1860-12-24,482.85,480.075,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-10-20
+"London","bankers' bills",1860-12-24,461.76,466.2,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-11-24
+"London","bankers' bills",1860-12-24,459.54,463.98,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-12-24
+"London","bankers' bills",1861-04-25,468.42,471.75,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-01-24
+"London","bankers' bills",1861-04-25,468.42,470.64,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-02-22
+"London","bankers' bills",1861-04-25,477.3,478.41,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-03-23
+"London","bankers' bills",1861-04-25,471.75,472.86,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-04-20
+"London","bankers' bills",1861-08-24,468.42,471.75,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-05-22
+"London","bankers' bills",1861-08-24,468.42,469.53,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-06-24
+"London","bankers' bills",1861-08-24,476.19,478.41,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-07-24
+"London","bankers' bills",1861-08-24,476.745,478.41,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-08-24
+"London","bankers' bills",1861-12-28,479.52,481.74,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-09-24
+"London","bankers' bills",1861-12-28,477.3,479.52,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-10-24
+"London","bankers' bills",1861-12-28,483.96,486.18,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-11-21
+"London","bankers' bills",1861-12-28,490.62,491.73,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-12-24
+"London","bankers' bills",1862-04-24,493.993420277871,498.36504346617,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-01-24
+"London","bankers' bills",1862-04-24,496.17923187202,498.36504346617,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-02-22
+"London","bankers' bills",1862-04-24,487.435985495421,489.621797089571,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-03-24
+"London","bankers' bills",1862-04-24,489.621797089571,490.714702886646,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-04-22
+"London","bankers' bills",1862-08-23,437.750519814527,438.2310363017,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-05-22
+"London","bankers' bills",1862-08-23,451.685497942542,453.607563891234,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-06-22
+"London","bankers' bills",1862-08-23,505.503344505909,507.4254104546,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-07-23
+"London","bankers' bills",1862-08-23,489.165783942029,492.048882865067,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-08-23
+"London","bankers' bills",1862-11-24,439.105175532672,440.807133577373,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-09-23
+"London","bankers' bills",1862-11-24,493.567832963081,500.375665141882,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-10-23
+"London","bankers' bills",1862-11-24,490.163916873681,493.567832963081,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-11-24
+"London","bankers' bills",1863-01-24,432.3090099991,434.541242408734,0.670340062953125,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656",1863-12-24
+"London","bankers' bills",1863-01-24,477.697735661656,482.162200480924,0.670340062953125,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656",1863-01-24
+"London","mercantile bills",1859-05-26,483.96,488.4,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"London","mercantile bills",1859-06-26,487.29,489.51,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"London","mercantile bills",1859-07-26,486.18,487.845,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"London","mercantile bills",1859-08-26,486.18,488.955,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"London","mercantile bills",1859-09-26,486.18,488.955,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"London","mercantile bills",1859-10-26,485.07,488.4,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"London","mercantile bills",1859-11-26,487.29,487.845,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"London","mercantile bills",1859-12-26,485.07,486.18,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"London","mercantile bills",1860-04-24,481.185,482.85,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-01-22
+"London","mercantile bills",1860-04-24,482.85,483.405,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-02-22
+"London","mercantile bills",1860-04-24,480.63,482.295,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-03-24
+"London","mercantile bills",1860-04-24,481.74,483.96,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-04-24
+"London","mercantile bills",1860-08-25,483.96,486.18,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-05-25
+"London","mercantile bills",1860-08-25,485.07,487.29,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-06-25
+"London","mercantile bills",1860-08-25,485.07,487.29,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-07-24
+"London","mercantile bills",1860-08-25,481.74,485.07,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-08-24
+"London","mercantile bills",1860-12-24,481.74,486.18,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-09-25
+"London","mercantile bills",1860-12-24,477.3,481.74,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-10-20
+"London","mercantile bills",1860-12-24,444,461.76,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-11-24
+"London","mercantile bills",1860-12-24,444,452.88,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-12-24
+"London","mercantile bills",1861-04-25,461.76,463.98,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-01-24
+"London","mercantile bills",1861-04-25,463.98,466.2,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-02-22
+"London","mercantile bills",1861-04-25,472.86,477.3,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-03-23
+"London","mercantile bills",1861-04-25,466.2,470.64,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-04-20
+"London","mercantile bills",1861-08-24,466.2,470.64,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-05-22
+"London","mercantile bills",1861-08-24,463.98,466.2,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-06-24
+"London","mercantile bills",1861-08-24,469.53,472.86,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-07-24
+"London","mercantile bills",1861-08-24,472.86,476.19,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-08-24
+"London","mercantile bills",1861-12-28,477.3,479.52,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-09-24
+"London","mercantile bills",1861-12-28,475.08,477.3,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-10-24
+"London","mercantile bills",1861-12-28,479.52,483.96,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-11-21
+"London","mercantile bills",1861-12-28,486.18,487.29,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-12-24
+"London","mercantile bills",1862-04-24,489.621797089571,493.993420277871,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-01-24
+"London","mercantile bills",1862-04-24,489.621797089571,493.993420277871,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-02-22
+"London","mercantile bills",1862-04-24,478.692739118822,480.878550712971,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-03-24
+"London","mercantile bills",1862-04-24,487.435985495421,492.900514480796,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-04-22
+"London","mercantile bills",1862-08-23,435.347937378663,436.789486840182,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-05-22
+"London","mercantile bills",1862-08-23,449.76343199385,451.685497942542,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-06-22
+"London","mercantile bills",1862-08-23,499.737146659834,501.659212608525,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-07-23
+"London","mercantile bills",1862-08-23,484.3606190703,488.204750967684,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-08-23
+"London","mercantile bills",1862-11-24,437.403217487972,439.105175532672,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-09-23
+"London","mercantile bills",1862-11-24,486.76000078428,493.567832963081,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-10-23
+"London","mercantile bills",1862-11-24,483.35608469488,486.76000078428,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-11-24
+"London","mercantile bills",1863-01-24,428.58862264971,431.564932529222,0.670340062953125,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656",1863-12-24
+"London","mercantile bills",1863-01-24,473.233270842388,476.2095807219,0.670340062953125,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656",1863-01-24
+"London","with bills of lading",1859-05-26,481.74,483.96,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"London","with bills of lading",1859-06-26,483.96,486.18,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"London","with bills of lading",1859-07-26,483.96,486.18,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"London","with bills of lading",1859-08-26,483.96,486.18,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"London","with bills of lading",1859-09-26,483.96,486.18,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"London","with bills of lading",1859-10-26,483.96,487.29,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"London","with bills of lading",1859-11-26,483.96,486.18,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"London","with bills of lading",1859-12-26,481.74,483.96,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"London","with bills of lading",1860-04-24,477.3,479.52,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-01-22
+"London","with bills of lading",1860-04-24,477.3,479.52,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-02-22
+"London","with bills of lading",1860-04-24,475.08,480.63,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-03-24
+"London","with bills of lading",1860-04-24,475.08,481.74,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-04-24
+"London","with bills of lading",1860-08-25,479.52,483.96,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-05-25
+"London","with bills of lading",1860-08-25,481.74,486.18,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-06-25
+"London","with bills of lading",1860-08-25,481.74,485.07,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-07-24
+"London","with bills of lading",1860-08-25,475.08,483.96,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-08-24
+"London","with bills of lading",1860-12-24,479.52,481.74,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-09-25
+"London","with bills of lading",1860-12-24,470.64,477.3,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-10-20
+"London","with bills of lading",1860-12-24,452.88,461.76,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-11-24
+"London","with bills of lading",1860-12-24,444,452.88,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-12-24
+"London","with bills of lading",1861-04-25,457.32,461.76,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-01-24
+"London","with bills of lading",1861-04-25,457.32,461.76,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-02-22
+"London","with bills of lading",1861-04-25,470.64,475.08,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-03-23
+"London","with bills of lading",1861-04-25,466.2,468.42,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-04-20
+"London","with bills of lading",1861-08-24,459.54,463.98,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-05-22
+"London","with bills of lading",1861-08-24,455.1,461.76,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-06-24
+"London","with bills of lading",1861-08-24,463.98,468.42,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-07-24
+"London","with bills of lading",1861-08-24,466.2,470.64,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-08-24
+"London","with bills of lading",1861-12-28,472.86,475.08,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-09-24
+"London","with bills of lading",1861-12-28,466.2,470.64,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-10-24
+"London","with bills of lading",1861-12-28,475.08,477.3,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-11-21
+"London","with bills of lading",1861-12-28,479.52,481.74,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-12-24
+"London","with bills of lading",1862-04-24,476.506927524672,480.878550712971,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-01-24
+"London","with bills of lading",1862-04-24,480.878550712971,485.250173901271,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-02-22
+"London","with bills of lading",1862-04-24,478.692739118822,480.878550712971,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-03-24
+"London","with bills of lading",1862-04-24,480.878550712971,485.250173901271,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-04-22
+"London","with bills of lading",1862-08-23,432.464838455625,434.386904404317,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-05-22
+"London","with bills of lading",1862-08-23,443.997234147775,447.841366045159,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-06-22
+"London","with bills of lading",1862-08-23,495.89301476245,497.815080711142,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-07-23
+"London","with bills of lading",1862-08-23,482.438553121609,484.3606190703,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-08-23
+"London","with bills of lading",1862-11-24,435.701259443272,437.403217487972,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-09-23
+"London","with bills of lading",1862-11-24,483.35608469488,486.76000078428,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-10-23
+"London","with bills of lading",1862-11-24,476.548252516078,479.952168605479,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-11-24
+"London","with bills of lading",1863-01-24,426.356390240076,429.332700119588,0.670340062953125,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656",1863-12-24
+"London","with bills of lading",1863-01-24,470.256960962876,476.2095807219,0.670340062953125,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656",1863-01-24
+"Paris","",1859-05-26,19.6078431372549,19.6560196560197,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"Paris","",1859-06-26,19.6078431372549,19.6560196560197,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"Paris","",1859-07-26,19.3330111164814,19.4174757281553,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"Paris","",1859-08-26,19.4174757281553,19.5121951219512,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"Paris","",1859-09-26,19.4174757281553,19.5121951219512,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"Paris","",1859-10-26,19.4174757281553,19.5121951219512,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"Paris","",1859-11-26,19.4174757281553,19.4836824159766,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"Paris","",1859-12-26,19.3704600484261,19.4174757281553,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"Paris","",1860-04-24,19.2771084337349,19.3003618817853,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-01-22
+"Paris","",1860-04-24,19.3610842207164,19.4174757281553,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-02-22
+"Paris","",1860-04-24,19.3236714975845,19.3704600484261,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-03-24
+"Paris","",1860-04-24,19.4174757281553,19.3704600484261,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-04-24
+"Paris","",1860-08-25,19.4884287454324,19.5121951219512,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-05-25
+"Paris","",1860-08-25,19.4884287454324,19.5121951219512,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-06-25
+"Paris","",1860-08-25,19.4741966893866,19.559902200489,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-07-24
+"Paris","",1860-08-25,19.4741966893866,19.559902200489,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-08-24
+"Paris","",1860-12-24,19.4174757281553,19.5121951219512,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-09-25
+"Paris","",1860-12-24,19.3236714975845,19.3704600484261,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-10-20
+"Paris","",1860-12-24,18.8679245283019,19.047619047619,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-11-24
+"Paris","",1860-12-24,18.348623853211,18.6915887850467,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-12-24
+"Paris","",1861-04-25,18.5185185185185,18.8679245283019,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-01-24
+"Paris","",1861-04-25,18.6915887850467,18.7793427230047,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-02-22
+"Paris","",1861-04-25,18.9214758751183,19.047619047619,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-03-23
+"Paris","",1861-04-25,18.6915887850467,18.8679245283019,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-04-20
+"Paris","",1861-08-24,18.348623853211,19.047619047619,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-05-22
+"Paris","",1861-08-24,18.5185185185185,18.6219739292365,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-06-24
+"Paris","",1861-08-24,18.8679245283019,18.957345971564,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-07-24
+"Paris","",1861-08-24,18.5185185185185,18.8679245283019,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-08-24
+"Paris","",1861-12-28,18.6046511627907,18.8679245283019,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-09-24
+"Paris","",1861-12-28,18.5614849187935,18.6915887850467,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-10-24
+"Paris","",1861-12-28,19.047619047619,19.4174757281553,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-11-21
+"Paris","",1861-12-28,19.4174757281553,19.6078431372549,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-12-24
+"Paris","",1862-04-24,19.4970260828639,19.8909053976692,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-01-24
+"Paris","",1862-04-24,19.4970260828639,19.7909510991885,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-02-22
+"Paris","",1862-04-24,19.305878768326,19.6919963436925,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-03-24
+"Paris","",1862-04-24,19.305878768326,19.4970260828639,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-04-22
+"Paris","",1862-08-23,17.4029240680127,17.5350981748584,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-05-22
+"Paris","",1862-08-23,17.9905552703093,18.1794324909949,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-06-22
+"Paris","",1862-08-23,19.9033441927272,20.1347784275264,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-07-23
+"Paris","",1862-08-23,19.4560780310929,19.7896107973402,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-08-23
+"Paris","",1862-11-24,17.3253732854917,17.6240866180002,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-09-23
+"Paris","",1862-11-24,19.1661941970752,19.9129290359223,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-10-23
+"Paris","",1862-11-24,19.6576350739233,19.9129290359223,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-11-24
+"Paris","",1863-01-24,17.1882067423878,17.2434742881833,0.670340062953125,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656",1863-12-24
+"Paris","",1863-01-24,19.3181574338076,19.4301467522645,0.670340062953125,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656",1863-01-24
+"Amsterdam","",1859-05-26,42.5,42.75,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"Amsterdam","",1859-06-26,42.25,42.625,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"Amsterdam","",1859-07-26,42.25,42.5,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"Amsterdam","",1859-08-26,42.125,42.25,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"Amsterdam","",1859-09-26,42.5,42.25,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"Amsterdam","",1859-10-26,42.5,42.25,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"Amsterdam","",1859-11-26,42,42.125,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"Amsterdam","",1859-12-26,41.5,41.75,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"Amsterdam","",1860-04-24,41.25,41.5,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-01-22
+"Amsterdam","",1860-04-24,41.5,41.75,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-02-22
+"Amsterdam","",1860-04-24,41.5,41.75,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-03-24
+"Amsterdam","",1860-04-24,41.375,41.75,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-04-24
+"Amsterdam","",1860-08-25,41.75,41.875,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-05-25
+"Amsterdam","",1860-08-25,41.75,42,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-06-25
+"Amsterdam","",1860-08-25,41.625,41.75,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-07-24
+"Amsterdam","",1860-08-25,41.75,41.875,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-08-24
+"Amsterdam","",1860-12-24,41.625,41.75,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-09-25
+"Amsterdam","",1860-12-24,41.625,41.375,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-10-20
+"Amsterdam","",1860-12-24,40.5,40.75,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-11-24
+"Amsterdam","",1860-12-24,40,40.25,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-12-24
+"Amsterdam","",1861-04-25,40.5,40.75,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-01-24
+"Amsterdam","",1861-04-25,40,40.75,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-02-22
+"Amsterdam","",1861-04-25,40,40.75,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-03-23
+"Amsterdam","",1861-04-25,39.5,40,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-04-20
+"Amsterdam","",1861-08-24,39,40,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-05-22
+"Amsterdam","",1861-08-24,39,39.75,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-06-24
+"Amsterdam","",1861-08-24,40.75,41,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-07-24
+"Amsterdam","",1861-08-24,39.625,40.25,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-08-24
+"Amsterdam","",1861-12-28,39.5,40,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-09-24
+"Amsterdam","",1861-12-28,40.125,40.25,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-10-24
+"Amsterdam","",1861-12-28,40.625,40.75,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-11-21
+"Amsterdam","",1861-12-28,41.5,41.75,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-12-24
+"Amsterdam","",1862-04-24,42.3377921389389,42.8300920475312,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-01-24
+"Amsterdam","",1862-04-24,43.0762420018274,42.3377921389389,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-02-22
+"Amsterdam","",1862-04-24,43.0762420018274,42.3377921389389,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-03-24
+"Amsterdam","",1862-04-24,41.8454922303466,42.3377921389389,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-04-22
+"Amsterdam","",1862-08-23,37.0127564444004,37.2292053124963,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-05-22
+"Amsterdam","",1862-08-23,37.878551916784,38.5278985210717,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-06-22
+"Amsterdam","",1862-08-23,41.9910804106063,42.8568758829899,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-07-23
+"Amsterdam","",1862-08-23,40.9088360701267,41.3417338063185,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-08-23
+"Amsterdam","",1862-11-24,36.7990928583844,37.5657406262674,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-09-23
+"Amsterdam","",1862-11-24,41.015655581741,42.1656272335655,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-10-23
+"Amsterdam","",1862-11-24,42.1656272335655,42.3572891755363,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-11-24
+"Amsterdam","",1863-01-24,37.0362884781602,37.3714585096367,0.670340062953125,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656",1863-12-24
+"Amsterdam","",1863-01-24,40.2204037771875,40.8907438401406,0.670340062953125,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656",1863-01-24
+"Bremen","",1859-05-26,79.75,80,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"Bremen","",1859-06-26,80.5,80.5,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"Bremen","",1859-07-26,79.5,79.75,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"Bremen","",1859-08-26,79.24,79.5,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"Bremen","",1859-09-26,79.25,79.5,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"Bremen","",1859-10-26,79.75,79.5,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"Bremen","",1859-11-26,79.75,79.875,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"Bremen","",1859-12-26,79.5,79.625,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"Bremen","",1860-04-24,78.875,79,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-01-22
+"Bremen","",1860-04-24,78.75,78.875,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-02-22
+"Bremen","",1860-04-24,78.5,78.75,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-03-24
+"Bremen","",1860-04-24,78.75,79,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-04-24
+"Bremen","",1860-08-25,78.75,79,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-05-25
+"Bremen","",1860-08-25,78.75,79,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-06-25
+"Bremen","",1860-08-25,79.25,79.5,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-07-24
+"Bremen","",1860-08-25,79.5,79.75,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-08-24
+"Bremen","",1860-12-24,79.5,79.625,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-09-25
+"Bremen","",1860-12-24,78.75,79,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-10-20
+"Bremen","",1860-12-24,76,76.5,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-11-24
+"Bremen","",1860-12-24,76,76.25,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-12-24
+"Bremen","",1861-04-25,76.5,76.75,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-01-24
+"Bremen","",1861-04-25,76.75,77,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-02-22
+"Bremen","",1861-04-25,77.5,78,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-03-23
+"Bremen","",1861-04-25,76.75,77,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-04-20
+"Bremen","",1861-08-24,77,78,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-05-22
+"Bremen","",1861-08-24,75.25,76.25,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-06-24
+"Bremen","",1861-08-24,77.75,78,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-07-24
+"Bremen","",1861-08-24,75.5,77,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-08-24
+"Bremen","",1861-12-28,76.5,77.5,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-09-24
+"Bremen","",1861-12-28,77.25,77.5,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-10-24
+"Bremen","",1861-12-28,79.25,79.5,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-11-21
+"Bremen","",1861-12-28,80,80.5,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-12-24
+"Bremen","",1862-04-24,80.244885100547,80.7371850091393,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-01-24
+"Bremen","",1862-04-24,81.721784826324,81.9679347806201,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-02-22
+"Bremen","",1862-04-24,79.2602852833624,79.7525851919547,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-03-24
+"Bremen","",1862-04-24,79.7525851919547,79.9987351462509,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-04-22
+"Bremen","",1862-08-23,70.995228735458,71.2116776035539,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-05-22
+"Bremen","",1862-08-23,72.7268196802253,73.376166284513,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-06-22
+"Bremen","",1862-08-23,80.0860811954862,81.8176721402534,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-07-23
+"Bremen","",1862-08-23,78.5709391188148,79.6531834592943,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-08-23
+"Bremen","",1862-11-24,70.5315946452368,71.2982424131198,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-09-23
+"Bremen","",1862-11-24,78.1980723240669,79.7313678598329,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-10-23
+"Bremen","",1862-11-24,80.4980156277159,80.8813395116575,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-11-24
+"Bremen","",1863-01-24,70.3857066100781,70.7208766415547,0.670340062953125,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656",1863-12-24
+"Bremen","",1863-01-24,77.0891072396094,78.4297873655156,0.670340062953125,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656",1863-01-24
+"Hamburg","",1859-05-26,37.5,37.75,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"Hamburg","",1859-06-26,37.625,37.75,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"Hamburg","",1859-07-26,37,37.25,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"Hamburg","",1859-08-26,37.125,37.25,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327",1859-09-26
+"Hamburg","",1859-09-26,37.125,37.25,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"Hamburg","",1859-10-26,35.875,37.5,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"Hamburg","",1859-11-26,37,37.5,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"Hamburg","",1859-12-26,36.75,36.78,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575",1859-12-27
+"Hamburg","",1860-04-24,36.625,36.75,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-01-22
+"Hamburg","",1860-04-24,36.375,36.75,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-02-22
+"Hamburg","",1860-04-24,36.375,36.75,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-03-24
+"Hamburg","",1860-04-24,36.75,36.875,1,"http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918",1860-04-24
+"Hamburg","",1860-08-25,37,37.125,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-05-25
+"Hamburg","",1860-08-25,36.75,37,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-06-25
+"Hamburg","",1860-08-25,37,37.125,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-07-24
+"Hamburg","",1860-08-25,37,37.125,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253",1860-08-24
+"Hamburg","",1860-12-24,36.875,37,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-09-25
+"Hamburg","",1860-12-24,36.5,36.75,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-10-20
+"Hamburg","",1860-12-24,38.5,38.5,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-11-24
+"Hamburg","",1860-12-24,35,35.5,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589",1860-12-24
+"Hamburg","",1861-04-25,35.5,36,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-01-24
+"Hamburg","",1861-04-25,35.5,35.75,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-02-22
+"Hamburg","",1861-04-25,36,36.25,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-03-23
+"Hamburg","",1861-04-25,35.5,35.75,1,"http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918",1861-04-20
+"Hamburg","",1861-08-24,35,35.75,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-05-22
+"Hamburg","",1861-08-24,34.75,35.25,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-06-24
+"Hamburg","",1861-08-24,35.75,36,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-07-24
+"Hamburg","",1861-08-24,35,35.5,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239",1861-08-24
+"Hamburg","",1861-12-28,35,35.5,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-09-24
+"Hamburg","",1861-12-28,35.5,35.75,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-10-24
+"Hamburg","",1861-12-28,35.75,36,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-11-21
+"Hamburg","",1861-12-28,36.75,37,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-12-24
+"Hamburg","",1862-04-24,37.4147930530158,37.9070929616081,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-01-24
+"Hamburg","",1862-04-24,37.1686430987196,37.4147930530158,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-02-22
+"Hamburg","",1862-04-24,36.4301932358312,36.6763431901273,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-03-24
+"Hamburg","",1862-04-24,36.6763431901273,36.7994181672754,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-04-22
+"Hamburg","",1862-08-23,32.6837790824822,32.9002279505781,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-05-22
+"Hamburg","",1862-08-23,33.7660234229617,34.1989211591535,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-06-22
+"Hamburg","",1862-08-23,37.6621030486881,38.5278985210717,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-07-23
+"Hamburg","",1862-08-23,36.7963075763045,37.2292053124963,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-08-23
+"Hamburg","",1862-11-24,32.1992062510864,32.9658540189694,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-09-23
+"Hamburg","",1862-11-24,36.0324450905014,37.5657406262674,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-10-23
+"Hamburg","",1862-11-24,33.1575159609401,33.3491779029109,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-11-24
+"Hamburg","",1863-01-24,32.3439080374883,33.0142481004414,0.670340062953125,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656",1863-12-24
+"Hamburg","",1863-01-24,35.8631933679922,36.5335334309453,0.670340062953125,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656",1863-01-24
+"Frankfort","",1861-12-28,40.25,40.5,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-09-24
+"Frankfort","",1861-12-28,40.25,43.375,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-10-24
+"Frankfort","",1861-12-28,41,41.5,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-11-21
+"Frankfort","",1861-12-28,41.75,41,1,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559",1861-12-24
+"Frankfort","",1862-04-24,42.3377921389389,42.5839420932351,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-01-24
+"Frankfort","",1862-04-24,42.5839420932351,42.8300920475312,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-02-22
+"Frankfort","",1862-04-24,41.8454922303466,42.0916421846428,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-03-24
+"Frankfort","",1862-04-24,41.8454922303466,42.0916421846428,0.984599817184626,"http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909",1862-04-22
+"Frankfort","",1862-08-23,37.0127564444004,37.2292053124963,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-05-22
+"Frankfort","",1862-08-23,38.6361229551197,38.7443473891676,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-06-22
+"Frankfort","",1862-08-23,42.2075292787022,42.640427014894,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-07-23
+"Frankfort","",1862-08-23,41.1252849382226,41.5581826744144,0.865795472383634,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239",1862-08-23
+"Frankfort","",1862-11-24,37.3740786842967,37.7574025682382,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-09-23
+"Frankfort","",1862-11-24,41.782303349624,42.548951117507,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-10-23
+"Frankfort","",1862-11-24,42.1656272335655,42.548951117507,0.766647767883009,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478",1862-11-24
+"Frankfort","",1863-01-24,37.0362884781602,37.3714585096367,0.670340062953125,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656",1863-12-24
+"Frankfort","",1863-01-24,41.5610839030937,42.2314239660469,0.670340062953125,"http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656",1863-01-24
