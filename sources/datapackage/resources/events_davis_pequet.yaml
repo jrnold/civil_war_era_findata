@@ -1,0 +1,25 @@
+path: data/events_pequet_davis_kanago.csv
+description: >-
+  Major Confederate Financial Events from Pequet, Davis and Kango (2004)
+
+  These are major financial events used in the quantitative analysis of the price of North Carolina Bank Notes
+  in Pequet, Davis, and Kango, *Southern Economic Journal*, 2004.  See the descriptions on p. 627--628.
+
+  In their analyses, the second funding act was not used because it went into effect shortly after the Confederate military defeats in
+  July 1863 (Gettysburg, Vicksburg).
+  
+references:
+  - name: >-
+      Pecquet, Gary, George Davis, and Bryce Kanago. 2004. "The Emancipation Proclamation, Confederate Expectations, and the Price of Southern Bank Notes." Southern Economic Journal 70(3): 616-30.
+    url: http://www.jstor.org/stable/4135334
+schema:
+  fields:
+    - id: event
+      description: Event name
+      type: string
+    - id: date
+      description: Date of the event
+      type: date
+    - id: depreciate
+      type: boolean
+      description: Was the event expected to appreciate or depreciate the Confederate currency?
