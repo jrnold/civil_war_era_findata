@@ -2,7 +2,8 @@ path: "data/confederate_bonds.csv"
 description: |
   Confederate interest rates 1861-1865
 
-  Interest rates from Table 2 in Davis and Pecquet (1990).
+  Data on the gold yields of multiple Confederate bonds between January 1862 and
+  December 1864 from [DavisPecquet1990]_, Table 2, p. 148.
 
   The note from the original data  (p. 147) reads
 
