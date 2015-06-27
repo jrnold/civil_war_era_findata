@@ -20,10 +20,10 @@ schema:
       description: Date
     - id: richmond
       type: number
-      description: Price of gold in Confederate dollars in Richmond
+      description: Price of a gold dollar in Confederate dollars in Richmond
     - id: houston_old
       type: number
-      description: Price of gold in Confederate dollars in Houston (old series)
+      description: Price of a gold dollar in Confederate dollars in Houston (old series)
     - id: houston_new
       type: number
-      description: Price of gold in Confederate dollars in Houston (new series)
+      description: Price of a gold dollar in Confederate dollars in Houston (new series)

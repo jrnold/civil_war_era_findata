@@ -1,333 +1,333 @@
-issue,date,url,city,rate_low,rate_high,type
-9/26/1859,1859-05-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,100,100.25,bankers' bills
-9/26/1859,1859-06-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,110.25,110.75,bankers' bills
-9/26/1859,1859-07-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,109.875,110,bankers' bills
-9/26/1859,1859-08-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,110.25,110.375,bankers' bills
-12/27/1859,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,110.25,110.375,bankers' bills
-12/27/1859,1859-10-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,110,110.25,bankers' bills
-12/27/1859,1859-11-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,109.875,110,bankers' bills
-12/27/1859,1859-12-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,109.5,109.625,bankers' bills
-1/22/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,108.75,109,bankers' bills
-2/22/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,109,109.125,bankers' bills
-3/24/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,108.75,108.875,bankers' bills
-4/24/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,109.125,109.25,bankers' bills
-5/25/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,109.625,109.75,bankers' bills
-6/25/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,109.75,109.875,bankers' bills
-7/24/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,109.875,110,bankers' bills
-8/24/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,109.875,110,bankers' bills
-9/25/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,109.5,109.75,bankers' bills
-10/20/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,108.75,108.125,bankers' bills
-11/24/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,104,105,bankers' bills
-12/24/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,103.5,104.5,bankers' bills
-1/24/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,105.5,106.25,bankers' bills
-2/22/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,105.5,106,bankers' bills
-3/23/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,107.5,107.75,bankers' bills
-4/20/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,106.25,106.5,bankers' bills
-5/22/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,105.5,106.25,bankers' bills
-6/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,105.5,105.75,bankers' bills
-7/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,107.25,107.75,bankers' bills
-8/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,107.375,107.75,bankers' bills
-9/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,108,108.5,bankers' bills
-10/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,107.5,108,bankers' bills
-11/21/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,109,109.5,bankers' bills
-12/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,110.5,110.75,bankers' bills
-1/24/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,113,114,bankers' bills
-2/22/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,113.5,114,bankers' bills
-3/24/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,111.5,112,bankers' bills
-4/22/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,112,112.25,bankers' bills
-5/22/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,113.875,114,bankers' bills
-6/22/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,117.5,118,bankers' bills
-7/23/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,131.5,132,bankers' bills
-8/23/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,127.25,128,bankers' bills
-9/23/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,London,129,129.5,bankers' bills
-10/23/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,London,145,147,bankers' bills
-11/24/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,London,144,145,bankers' bills
-12/24/1863,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,London,145.25,146,bankers' bills
-1/24/1863,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,London,160.5,162,bankers' bills
-9/26/1859,1859-05-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,109,110,mercantile bills
-9/26/1859,1859-06-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,109.75,110.25,mercantile bills
-9/26/1859,1859-07-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,109.5,109.875,mercantile bills
-9/26/1859,1859-08-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,109.5,110.125,mercantile bills
-12/27/1859,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,109.5,110.125,mercantile bills
-12/27/1859,1859-10-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,109.25,110,mercantile bills
-12/27/1859,1859-11-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,109.75,109.875,mercantile bills
-12/27/1859,1859-12-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,109.25,109.5,mercantile bills
-1/22/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,108.375,108.75,mercantile bills
-2/22/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,108.75,108.875,mercantile bills
-3/24/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,108.25,108.625,mercantile bills
-4/24/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,108.5,109,mercantile bills
-5/25/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,109,109.5,mercantile bills
-6/25/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,109.25,109.75,mercantile bills
-7/24/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,109.25,109.75,mercantile bills
-8/24/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,108.5,109.25,mercantile bills
-9/25/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,108.5,109.5,mercantile bills
-10/20/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,107.5,108.5,mercantile bills
-11/24/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,100,104,mercantile bills
-12/24/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,100,102,mercantile bills
-1/24/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,104,104.5,mercantile bills
-2/22/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,104.5,105,mercantile bills
-3/23/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,106.5,107.5,mercantile bills
-4/20/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,105,106,mercantile bills
-5/22/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,105,106,mercantile bills
-6/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,104.5,105,mercantile bills
-7/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,105.75,106.5,mercantile bills
-8/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,106.5,107.25,mercantile bills
-9/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,107.5,108,mercantile bills
-10/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,107,107.5,mercantile bills
-11/21/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,108,109,mercantile bills
-12/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,109.5,109.75,mercantile bills
-1/24/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,112,113,mercantile bills
-2/22/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,112,113,mercantile bills
-3/24/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,109.5,110,mercantile bills
-4/22/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,111.5,112.75,mercantile bills
-5/22/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,113.25,113.625,mercantile bills
-6/22/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,117,117.5,mercantile bills
-7/23/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,130,130.5,mercantile bills
-8/23/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,126,127,mercantile bills
-9/23/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,London,128.5,129,mercantile bills
-10/23/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,London,143,145,mercantile bills
-11/24/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,London,142,143,mercantile bills
-12/24/1863,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,London,144,145,mercantile bills
-1/24/1863,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,London,159,160,mercantile bills
-9/26/1859,1859-05-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,108.5,109,with bills of lading
-9/26/1859,1859-06-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,109,109.5,with bills of lading
-9/26/1859,1859-07-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,109,109.5,with bills of lading
-9/26/1859,1859-08-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,109,109.5,with bills of lading
-12/27/1859,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,109,109.5,with bills of lading
-12/27/1859,1859-10-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,109,109.75,with bills of lading
-12/27/1859,1859-11-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,109,109.5,with bills of lading
-12/27/1859,1859-12-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,108.5,109,with bills of lading
-1/22/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,107.5,108,with bills of lading
-2/22/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,107.5,108,with bills of lading
-3/24/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,107,108.25,with bills of lading
-4/24/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,107,108.5,with bills of lading
-5/25/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,108,109,with bills of lading
-6/25/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,108.5,109.5,with bills of lading
-7/24/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,108.5,109.25,with bills of lading
-8/24/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,107,109,with bills of lading
-9/25/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,108,108.5,with bills of lading
-10/20/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,106,107.5,with bills of lading
-11/24/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,102,104,with bills of lading
-12/24/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,100,102,with bills of lading
-1/24/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,103,104,with bills of lading
-2/22/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,103,104,with bills of lading
-3/23/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,106,107,with bills of lading
-4/20/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,105,105.5,with bills of lading
-5/22/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,103.5,104.5,with bills of lading
-6/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,102.5,104,with bills of lading
-7/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,104.5,105.5,with bills of lading
-8/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,105,106,with bills of lading
-9/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,106.5,107,with bills of lading
-10/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,105,106,with bills of lading
-11/21/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,107,107.5,with bills of lading
-12/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,108,108.5,with bills of lading
-1/24/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,109,110,with bills of lading
-2/22/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,110,111,with bills of lading
-3/24/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,109.5,110,with bills of lading
-4/22/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,110,111,with bills of lading
-5/22/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,112.5,113,with bills of lading
-6/22/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,115.5,116.5,with bills of lading
-7/23/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,129,129.5,with bills of lading
-8/23/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,125.5,126,with bills of lading
-9/23/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,London,128,128.5,with bills of lading
-10/23/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,London,142,143,with bills of lading
-11/24/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,London,140,141,with bills of lading
-12/24/1863,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,London,143.25,144.25,with bills of lading
-1/24/1863,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,London,158,160,with bills of lading
-9/26/1859,1859-05-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Paris,5.1,5.0875,bankers' bills
-9/26/1859,1859-06-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Paris,5.1,5.0875,bankers' bills
-9/26/1859,1859-07-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Paris,5.1725,5.15,bankers' bills
-9/26/1859,1859-08-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Paris,5.15,5.125,bankers' bills
-12/27/1859,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Paris,5.15,5.125,bankers' bills
-12/27/1859,1859-10-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Paris,5.15,5.125,bankers' bills
-12/27/1859,1859-11-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Paris,5.15,5.1325,bankers' bills
-12/27/1859,1859-12-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Paris,5.1625,5.15,bankers' bills
-1/22/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Paris,5.1875,5.18125,bankers' bills
-2/22/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Paris,5.165,5.15,bankers' bills
-3/24/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Paris,5.175,5.1625,bankers' bills
-4/24/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Paris,5.15,5.1625,bankers' bills
-5/25/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Paris,5.13125,5.125,bankers' bills
-6/25/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Paris,5.13125,5.125,bankers' bills
-7/24/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Paris,5.135,5.1125,bankers' bills
-8/24/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Paris,5.135,5.1125,bankers' bills
-9/25/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Paris,5.15,5.125,bankers' bills
-10/20/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Paris,5.175,5.1625,bankers' bills
-11/24/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Paris,5.3,5.25,bankers' bills
-12/24/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Paris,5.45,5.35,bankers' bills
-1/24/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Paris,5.4,5.3,bankers' bills
-2/22/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Paris,5.35,5.325,bankers' bills
-3/23/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Paris,5.285,5.25,bankers' bills
-4/20/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Paris,5.35,5.3,bankers' bills
-5/22/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Paris,5.45,5.25,bankers' bills
-6/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Paris,5.4,5.37,bankers' bills
-7/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Paris,5.3,5.275,bankers' bills
-8/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Paris,5.4,5.3,bankers' bills
-9/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Paris,5.375,5.3,bankers' bills
-10/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Paris,5.3875,5.35,bankers' bills
-11/21/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Paris,5.25,5.15,bankers' bills
-12/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Paris,5.15,5.1,bankers' bills
-1/24/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Paris,5.05,4.95,bankers' bills
-2/22/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Paris,5.05,4.975,bankers' bills
-3/24/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Paris,5.1,5,bankers' bills
-4/22/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Paris,5.1,5.05,bankers' bills
-5/22/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Paris,4.975,4.9375,bankers' bills
-6/22/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Paris,4.8125,4.7625,bankers' bills
-7/23/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Paris,4.35,4.3,bankers' bills
-8/23/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Paris,4.45,4.375,bankers' bills
-9/23/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Paris,4.425,4.35,bankers' bills
-10/23/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Paris,4,3.85,bankers' bills
-11/24/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Paris,3.9,3.85,bankers' bills
-12/24/1863,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Paris,3.9,3.8875,bankers' bills
-1/24/1863,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Paris,3.47,3.45,bankers' bills
-9/26/1859,1859-05-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Amsterdam,42.5,42.75,per guilder
-9/26/1859,1859-06-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Amsterdam,42.25,42.625,per guilder
-9/26/1859,1859-07-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Amsterdam,42.25,42.5,per guilder
-9/26/1859,1859-08-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Amsterdam,42.125,42.25,per guilder
-12/27/1859,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Amsterdam,42.5,42.25,per guilder
-12/27/1859,1859-10-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Amsterdam,42.5,42.25,per guilder
-12/27/1859,1859-11-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Amsterdam,42,42.125,per guilder
-12/27/1859,1859-12-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Amsterdam,41.5,41.75,per guilder
-1/22/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Amsterdam,41.25,41.5,per guilder
-2/22/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Amsterdam,41.5,41.75,per guilder
-3/24/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Amsterdam,41.5,41.75,per guilder
-4/24/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Amsterdam,41.375,41.75,per guilder
-5/25/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Amsterdam,41.75,41.875,per guilder
-6/25/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Amsterdam,41.75,42,per guilder
-7/24/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Amsterdam,41.625,41.75,per guilder
-8/24/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Amsterdam,41.75,41.875,per guilder
-9/25/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Amsterdam,41.625,41.75,per guilder
-10/20/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Amsterdam,41.625,41.375,per guilder
-11/24/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Amsterdam,40.5,40.75,per guilder
-12/24/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Amsterdam,40,40.25,per guilder
-1/24/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Amsterdam,40.5,40.75,per guilder
-2/22/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Amsterdam,40,40.75,per guilder
-3/23/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Amsterdam,40,40.75,per guilder
-4/20/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Amsterdam,39.5,40,per guilder
-5/22/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Amsterdam,39,40,per guilder
-6/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Amsterdam,39,39.75,per guilder
-7/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Amsterdam,40.75,41,per guilder
-8/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Amsterdam,39.625,40.25,per guilder
-9/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Amsterdam,39.5,40,per guilder
-10/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Amsterdam,40.125,40.25,per guilder
-11/21/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Amsterdam,40.625,40.75,per guilder
-12/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Amsterdam,41.5,41.75,per guilder
-1/24/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Amsterdam,43,43.5,per guilder
-2/22/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Amsterdam,43.75,43,per guilder
-3/24/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Amsterdam,43.75,43,per guilder
-4/22/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Amsterdam,42.5,43,per guilder
-5/22/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Amsterdam,42.75,43,per guilder
-6/22/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Amsterdam,43.75,44.5,per guilder
-7/23/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Amsterdam,48.5,49.5,per guilder
-8/23/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Amsterdam,47.25,47.75,per guilder
-9/23/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Amsterdam,48,49,per guilder
-10/23/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Amsterdam,53.5,55,per guilder
-11/24/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Amsterdam,55,55.25,per guilder
-12/24/1863,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Amsterdam,55.25,55.75,per guilder
-1/24/1863,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Amsterdam,60,61,per guilder
-9/26/1859,1859-05-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Bremen,79.75,80,per rix dollar
-9/26/1859,1859-06-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Bremen,80.5,80.5,per rix dollar
-9/26/1859,1859-07-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Bremen,79.5,79.75,per rix dollar
-9/26/1859,1859-08-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Bremen,79.24,79.5,per rix dollar
-12/27/1859,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Bremen,79.25,79.5,per rix dollar
-12/27/1859,1859-10-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Bremen,79.75,79.5,per rix dollar
-12/27/1859,1859-11-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Bremen,79.75,79.875,per rix dollar
-12/27/1859,1859-12-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Bremen,79.5,79.625,per rix dollar
-1/22/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Bremen,78.875,79,per rix dollar
-2/22/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Bremen,78.75,78.875,per rix dollar
-3/24/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Bremen,78.5,78.75,per rix dollar
-4/24/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Bremen,78.75,79,per rix dollar
-5/25/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Bremen,78.75,79,per rix dollar
-6/25/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Bremen,78.75,79,per rix dollar
-7/24/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Bremen,79.25,79.5,per rix dollar
-8/24/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Bremen,79.5,79.75,per rix dollar
-9/25/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Bremen,79.5,79.625,per rix dollar
-10/20/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Bremen,78.75,79,per rix dollar
-11/24/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Bremen,76,76.5,per rix dollar
-12/24/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Bremen,76,76.25,per rix dollar
-1/24/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Bremen,76.5,76.75,per rix dollar
-2/22/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Bremen,76.75,77,per rix dollar
-3/23/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Bremen,77.5,78,per rix dollar
-4/20/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Bremen,76.75,77,per rix dollar
-5/22/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Bremen,77,78,per rix dollar
-6/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Bremen,75.25,76.25,per rix dollar
-7/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Bremen,77.75,78,per rix dollar
-8/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Bremen,75.5,77,per rix dollar
-9/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Bremen,76.5,77.5,per rix dollar
-10/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Bremen,77.25,77.5,per rix dollar
-11/21/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Bremen,79.25,79.5,per rix dollar
-12/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Bremen,80,80.5,per rix dollar
-1/24/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Bremen,81.5,82,per rix dollar
-2/22/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Bremen,83,83.25,per rix dollar
-3/24/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Bremen,80.5,81,per rix dollar
-4/22/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Bremen,81,81.25,per rix dollar
-5/22/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Bremen,82,82.25,per rix dollar
-6/22/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Bremen,84,84.75,per rix dollar
-7/23/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Bremen,92.5,94.5,per rix dollar
-8/23/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Bremen,90.75,92,per rix dollar
-9/23/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Bremen,92,93,per rix dollar
-10/23/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Bremen,102,104,per rix dollar
-11/24/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Bremen,105,105.5,per rix dollar
-12/24/1863,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Bremen,105,105.5,per rix dollar
-1/24/1863,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Bremen,115,117,per rix dollar
-9/26/1859,1859-05-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Hamburg,37.5,37.75,per marc banco
-9/26/1859,1859-06-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Hamburg,37.625,37.75,per marc banco
-9/26/1859,1859-07-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Hamburg,37,37.25,per marc banco
-9/26/1859,1859-08-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Hamburg,37.125,37.25,per marc banco
-12/27/1859,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Hamburg,37.125,37.25,per marc banco
-12/27/1859,1859-10-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Hamburg,35.875,37.5,per marc banco
-12/27/1859,1859-11-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Hamburg,37,37.5,per marc banco
-12/27/1859,1859-12-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Hamburg,36.75,36.78,per marc banco
-1/22/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Hamburg,36.625,36.75,per marc banco
-2/22/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Hamburg,36.375,36.75,per marc banco
-3/24/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Hamburg,36.375,36.75,per marc banco
-4/24/1860,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Hamburg,36.75,36.875,per marc banco
-5/25/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Hamburg,37,37.125,per marc banco
-6/25/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Hamburg,36.75,37,per marc banco
-7/24/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Hamburg,37,37.125,per marc banco
-8/24/1860,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Hamburg,37,37.125,per marc banco
-9/25/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Hamburg,36.875,37,per marc banco
-10/20/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Hamburg,36.5,36.75,per marc banco
-11/24/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Hamburg,38.5,38.5,per marc banco
-12/24/1860,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Hamburg,35,35.5,per marc banco
-1/24/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Hamburg,35.5,36,per marc banco
-2/22/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Hamburg,35.5,35.75,per marc banco
-3/23/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Hamburg,36,36.25,per marc banco
-4/20/1861,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Hamburg,35.5,35.75,per marc banco
-5/22/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Hamburg,35,35.75,per marc banco
-6/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Hamburg,34.75,35.25,per marc banco
-7/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Hamburg,35.75,36,per marc banco
-8/24/1861,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Hamburg,35,35.5,per marc banco
-9/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Hamburg,35,35.5,per marc banco
-10/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Hamburg,35.5,35.75,per marc banco
-11/21/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Hamburg,35.75,36,per marc banco
-12/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Hamburg,36.75,37,per marc banco
-1/24/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Hamburg,38,38.5,per marc banco
-2/22/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Hamburg,37.75,38,per marc banco
-3/24/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Hamburg,37,37.25,per marc banco
-4/22/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Hamburg,37.25,37.375,per marc banco
-5/22/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Hamburg,37.75,38,per marc banco
-6/22/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Hamburg,39,39.5,per marc banco
-7/23/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Hamburg,43.5,44.5,per marc banco
-8/23/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Hamburg,42.5,43,per marc banco
-9/23/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Hamburg,42,43,per marc banco
-10/23/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Hamburg,47,49,per marc banco
-11/24/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Hamburg,43.25,43.5,per marc banco
-12/24/1863,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Hamburg,48.25,49.25,per marc banco
-1/24/1863,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Hamburg,53.5,54.5,per marc banco
-9/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Frankfort,40.25,40.5,per florin
-10/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Frankfort,40.25,43.375,per florin
-11/21/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Frankfort,41,41.5,per florin
-12/24/1861,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Frankfort,41.75,41,per florin
-1/24/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Frankfort,43,43.25,per florin
-2/22/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Frankfort,43.25,43.5,per florin
-3/24/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Frankfort,42.5,42.75,per florin
-4/22/1862,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Frankfort,42.5,42.75,per florin
-5/22/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Frankfort,42.75,43,per florin
-6/22/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Frankfort,44.625,44.75,per florin
-7/23/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Frankfort,48.75,49.25,per florin
-8/23/1862,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Frankfort,47.5,48,per florin
-9/23/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Frankfort,48.75,49.25,per florin
-10/23/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Frankfort,54.5,55.5,per florin
-11/24/1862,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Frankfort,55,55.5,per florin
-12/24/1863,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Frankfort,55.25,55.75,per florin
-1/24/1863,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Frankfort,62,63,per florin
+date,issue,url,city,rate_low,rate_high,type,comments
+1859-05-26,1859-08-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Amsterdam,42.5,42.75,per guilder,
+1859-06-26,1859-08-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Amsterdam,42.25,42.625,per guilder,
+1859-07-26,1859-08-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Amsterdam,42.25,42.5,per guilder,
+1859-08-26,1859-08-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Amsterdam,42.125,42.25,per guilder,
+1859-09-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Amsterdam,42.125,42.25,per guilder,reversed low and high values
+1859-10-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Amsterdam,42,42.25,per guilder,
+1859-11-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Amsterdam,42,42.125,per guilder,
+1859-12-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Amsterdam,41.5,41.75,per guilder,
+1860-01-22,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Amsterdam,41.25,41.5,per guilder,
+1860-02-22,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Amsterdam,41.5,41.75,per guilder,
+1860-03-24,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Amsterdam,41.5,41.75,per guilder,
+1860-04-24,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Amsterdam,41.375,41.75,per guilder,
+1860-05-25,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Amsterdam,41.75,41.875,per guilder,
+1860-06-25,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Amsterdam,41.75,42,per guilder,
+1860-07-24,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Amsterdam,41.625,41.75,per guilder,
+1860-08-24,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Amsterdam,41.75,41.875,per guilder,
+1860-09-25,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Amsterdam,41.625,41.75,per guilder,
+1860-10-20,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Amsterdam,41.375,41.375,per guilder,
+1860-11-24,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Amsterdam,40.5,40.75,per guilder,
+1860-12-24,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Amsterdam,40,40.25,per guilder,
+1861-01-24,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Amsterdam,40.5,40.75,per guilder,
+1861-02-22,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Amsterdam,40,40.75,per guilder,
+1861-03-23,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Amsterdam,40,40.75,per guilder,
+1861-04-20,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Amsterdam,39.5,40,per guilder,
+1861-05-22,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Amsterdam,39,40,per guilder,
+1861-06-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Amsterdam,39,39.75,per guilder,
+1861-07-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Amsterdam,40.75,41,per guilder,
+1861-08-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Amsterdam,39.625,40.25,per guilder,
+1861-09-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Amsterdam,39.5,40,per guilder,
+1861-10-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Amsterdam,40.125,40.25,per guilder,
+1861-11-21,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Amsterdam,40.625,40.75,per guilder,
+1861-12-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Amsterdam,41.5,41.75,per guilder,
+1862-01-24,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Amsterdam,43,43.5,per guilder,
+1862-02-22,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Amsterdam,42.75,43,per guilder,
+1862-03-24,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Amsterdam,42.75,43,per guilder,
+1862-04-22,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Amsterdam,42.5,43,per guilder,
+1862-05-22,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Amsterdam,42.75,43,per guilder,
+1862-06-22,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Amsterdam,43.75,44.5,per guilder,
+1862-07-23,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Amsterdam,48.5,49.5,per guilder,
+1862-08-23,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Amsterdam,47.25,47.75,per guilder,
+1862-09-23,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Amsterdam,48,49,per guilder,
+1862-10-23,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Amsterdam,53.5,55,per guilder,
+1862-11-24,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Amsterdam,55,55.25,per guilder,
+1862-12-24,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Amsterdam,55.25,55.75,per guilder,
+1863-01-24,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Amsterdam,60,61,per guilder,
+1859-05-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Bremen,79.75,80,per rix dollar,
+1859-06-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Bremen,80.5,80.5,per rix dollar,
+1859-07-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Bremen,79.5,79.75,per rix dollar,
+1859-08-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Bremen,79.24,79.5,per rix dollar,
+1859-09-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Bremen,79.25,79.5,per rix dollar,
+1859-10-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Bremen,79.75,79.875,per rix dollar,
+1859-11-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Bremen,79.75,79.875,per rix dollar,
+1859-12-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Bremen,79.5,79.625,per rix dollar,
+1860-01-22,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Bremen,78.875,79,per rix dollar,
+1860-02-22,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Bremen,78.75,78.875,per rix dollar,
+1860-03-24,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Bremen,78.5,78.75,per rix dollar,
+1860-04-24,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Bremen,78.75,79,per rix dollar,
+1860-05-25,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Bremen,78.75,79,per rix dollar,
+1860-06-25,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Bremen,78.75,79,per rix dollar,
+1860-07-24,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Bremen,79.25,79.5,per rix dollar,
+1860-08-24,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Bremen,79.5,79.75,per rix dollar,
+1860-09-25,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Bremen,79.5,79.625,per rix dollar,
+1860-10-20,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Bremen,78.75,79,per rix dollar,
+1860-11-24,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Bremen,76,76.5,per rix dollar,
+1860-12-24,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Bremen,76,76.25,per rix dollar,
+1861-01-24,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Bremen,76.5,76.75,per rix dollar,
+1861-02-22,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Bremen,76.75,77,per rix dollar,
+1861-03-23,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Bremen,77.5,78,per rix dollar,
+1861-04-20,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Bremen,76.75,77,per rix dollar,
+1861-05-22,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Bremen,77,78,per rix dollar,
+1861-06-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Bremen,75.25,76.25,per rix dollar,
+1861-07-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Bremen,77.75,78,per rix dollar,
+1861-08-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Bremen,75.5,77,per rix dollar,
+1861-09-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Bremen,76.5,77.5,per rix dollar,
+1861-10-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Bremen,77.25,77.5,per rix dollar,
+1861-11-21,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Bremen,79.25,79.5,per rix dollar,
+1861-12-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Bremen,80,80.5,per rix dollar,
+1862-01-24,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Bremen,81.5,82,per rix dollar,
+1862-02-22,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Bremen,83,83.25,per rix dollar,
+1862-03-24,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Bremen,80.5,81,per rix dollar,
+1862-04-22,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Bremen,81,81.25,per rix dollar,
+1862-05-22,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Bremen,82,82.25,per rix dollar,
+1862-06-22,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Bremen,84,84.75,per rix dollar,
+1862-07-23,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Bremen,92.5,94.5,per rix dollar,
+1862-08-23,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Bremen,90.75,92,per rix dollar,
+1862-09-23,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Bremen,92,93,per rix dollar,
+1862-10-23,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Bremen,102,104,per rix dollar,
+1862-11-24,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Bremen,105,105.5,per rix dollar,
+1862-12-24,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Bremen,105,105.5,per rix dollar,
+1863-01-24,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Bremen,115,117,per rix dollar,
+1861-09-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Frankfort,40.25,40.5,per florin,
+1861-10-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Frankfort,40.25,43.375,per florin,
+1861-11-21,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Frankfort,41,41.5,per florin,
+1861-12-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Frankfort,41.75,42,per florin,
+1862-01-24,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Frankfort,43,43.25,per florin,
+1862-02-22,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Frankfort,43.25,43.5,per florin,
+1862-03-24,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Frankfort,42.5,42.75,per florin,
+1862-04-22,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Frankfort,42.5,42.75,per florin,
+1862-05-22,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Frankfort,42.75,43,per florin,
+1862-06-22,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Frankfort,44.625,44.75,per florin,
+1862-07-23,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Frankfort,48.75,49.25,per florin,
+1862-08-23,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Frankfort,47.5,48,per florin,
+1862-09-23,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Frankfort,48.75,49.25,per florin,
+1862-10-23,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Frankfort,54.5,55.5,per florin,
+1862-11-24,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Frankfort,55,55.5,per florin,
+1862-12-24,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Frankfort,55.25,55.75,per florin,
+1863-01-24,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Frankfort,62,63,per florin,
+1859-05-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Hamburg,37.5,37.75,per marc banco,
+1859-06-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Hamburg,37.625,37.75,per marc banco,
+1859-07-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Hamburg,37,37.25,per marc banco,
+1859-08-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Hamburg,37.125,37.25,per marc banco,
+1859-09-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Hamburg,37.125,37.25,per marc banco,
+1859-10-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Hamburg,35.875,37.5,per marc banco,
+1859-11-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Hamburg,37,37.5,per marc banco,
+1859-12-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Hamburg,36.75,36.78,per marc banco,
+1860-01-22,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Hamburg,36.625,36.75,per marc banco,
+1860-02-22,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Hamburg,36.375,36.75,per marc banco,
+1860-03-24,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Hamburg,36.375,36.75,per marc banco,
+1860-04-24,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Hamburg,36.75,36.875,per marc banco,
+1860-05-25,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Hamburg,37,37.125,per marc banco,
+1860-06-25,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Hamburg,36.75,37,per marc banco,
+1860-07-24,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Hamburg,37,37.125,per marc banco,
+1860-08-24,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Hamburg,37,37.125,per marc banco,
+1860-09-25,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Hamburg,36.875,37,per marc banco,
+1860-10-20,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Hamburg,36.5,36.75,per marc banco,
+1860-11-24,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Hamburg,38.5,38.5,per marc banco,
+1860-12-24,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Hamburg,35,35.5,per marc banco,
+1861-01-24,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Hamburg,35.5,36,per marc banco,
+1861-02-22,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Hamburg,35.5,35.75,per marc banco,
+1861-03-23,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Hamburg,36,36.25,per marc banco,
+1861-04-20,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Hamburg,35.5,35.75,per marc banco,
+1861-05-22,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Hamburg,35,35.75,per marc banco,
+1861-06-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Hamburg,34.75,35.25,per marc banco,
+1861-07-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Hamburg,35.75,36,per marc banco,
+1861-08-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Hamburg,35,35.5,per marc banco,
+1861-09-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Hamburg,35,35.5,per marc banco,
+1861-10-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Hamburg,35.5,35.75,per marc banco,
+1861-11-21,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Hamburg,35.75,36,per marc banco,
+1861-12-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Hamburg,36.75,37,per marc banco,
+1862-01-24,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Hamburg,38,38.5,per marc banco,
+1862-02-22,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Hamburg,37.75,38,per marc banco,
+1862-03-24,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Hamburg,37,37.25,per marc banco,
+1862-04-22,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Hamburg,37.25,37.375,per marc banco,
+1862-05-22,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Hamburg,37.75,38,per marc banco,
+1862-06-22,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Hamburg,39,39.5,per marc banco,
+1862-07-23,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Hamburg,43.5,44.5,per marc banco,
+1862-08-23,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Hamburg,42.5,43,per marc banco,
+1862-09-23,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Hamburg,42,43,per marc banco,
+1862-10-23,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Hamburg,47,49,per marc banco,
+1862-11-24,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Hamburg,43.25,43.5,per marc banco,
+1862-12-24,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Hamburg,48.25,49.25,per marc banco,
+1863-01-24,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Hamburg,53.5,54.5,per marc banco,
+1859-05-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,100,100.25,bankers' bills,
+1859-05-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,109,110,mercantile bills,
+1859-05-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,108.5,109,with bills of lading,
+1859-06-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,110.25,110.75,bankers' bills,
+1859-06-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,109.75,110.25,mercantile bills,
+1859-06-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,109,109.5,with bills of lading,
+1859-07-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,109.875,110,bankers' bills,
+1859-07-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,109.5,109.875,mercantile bills,
+1859-07-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,109,109.5,with bills of lading,
+1859-08-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,110.25,110.375,bankers' bills,
+1859-08-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,109.5,110.125,mercantile bills,
+1859-08-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,London,109,109.5,with bills of lading,
+1859-09-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,110.25,110.375,bankers' bills,
+1859-09-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,109.5,110.125,mercantile bills,
+1859-09-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,109,109.5,with bills of lading,
+1859-10-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,110,110.25,bankers' bills,
+1859-10-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,109.25,110,mercantile bills,
+1859-10-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,109,109.75,with bills of lading,
+1859-11-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,109.875,110,bankers' bills,
+1859-11-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,109.75,109.875,mercantile bills,
+1859-11-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,109,109.5,with bills of lading,
+1859-12-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,109.5,109.625,bankers' bills,
+1859-12-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,109.25,109.5,mercantile bills,
+1859-12-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,London,108.5,109,with bills of lading,
+1860-01-22,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,108.75,109,bankers' bills,
+1860-01-22,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,108.375,108.75,mercantile bills,
+1860-01-22,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,107.5,108,with bills of lading,
+1860-02-22,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,109,109.125,bankers' bills,
+1860-02-22,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,108.75,108.875,mercantile bills,
+1860-02-22,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,107.5,108,with bills of lading,
+1860-03-24,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,108.75,108.875,bankers' bills,
+1860-03-24,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,108.25,108.625,mercantile bills,
+1860-03-24,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,107,108.25,with bills of lading,
+1860-04-24,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,109.125,109.25,bankers' bills,
+1860-04-24,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,108.5,109,mercantile bills,
+1860-04-24,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,London,107,108.5,with bills of lading,
+1860-05-25,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,109.625,109.75,bankers' bills,
+1860-05-25,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,109,109.5,mercantile bills,
+1860-05-25,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,108,109,with bills of lading,
+1860-06-25,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,109.75,109.875,bankers' bills,
+1860-06-25,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,109.25,109.75,mercantile bills,
+1860-06-25,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,108.5,109.5,with bills of lading,
+1860-07-24,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,109.875,110,bankers' bills,
+1860-07-24,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,109.25,109.75,mercantile bills,
+1860-07-24,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,108.5,109.25,with bills of lading,
+1860-08-24,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,109.875,110,bankers' bills,
+1860-08-24,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,108.5,109.25,mercantile bills,
+1860-08-24,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,London,107,109,with bills of lading,
+1860-09-25,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,109.5,109.75,bankers' bills,
+1860-09-25,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,108.5,109.5,mercantile bills,
+1860-09-25,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,108,108.5,with bills of lading,
+1860-10-20,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,108.125,108.75,bankers' bills,reversed low and high values
+1860-10-20,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,107.5,108.5,mercantile bills,
+1860-10-20,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,106,107.5,with bills of lading,
+1860-11-24,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,104,105,bankers' bills,
+1860-11-24,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,100,104,mercantile bills,
+1860-11-24,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,102,104,with bills of lading,
+1860-12-24,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,103.5,104.5,bankers' bills,
+1860-12-24,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,100,102,mercantile bills,
+1860-12-24,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,London,100,102,with bills of lading,
+1861-01-24,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,105.5,106.25,bankers' bills,
+1861-01-24,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,104,104.5,mercantile bills,
+1861-01-24,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,103,104,with bills of lading,
+1861-02-22,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,105.5,106,bankers' bills,
+1861-02-22,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,104.5,105,mercantile bills,
+1861-02-22,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,103,104,with bills of lading,
+1861-03-23,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,107.5,107.75,bankers' bills,
+1861-03-23,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,106.5,107.5,mercantile bills,
+1861-03-23,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,106,107,with bills of lading,
+1861-04-20,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,106.25,106.5,bankers' bills,
+1861-04-20,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,105,106,mercantile bills,
+1861-04-20,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,London,105,105.5,with bills of lading,
+1861-05-22,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,105.5,106.25,bankers' bills,
+1861-05-22,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,105,106,mercantile bills,
+1861-05-22,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,103.5,104.5,with bills of lading,
+1861-06-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,105.5,105.75,bankers' bills,
+1861-06-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,104.5,105,mercantile bills,
+1861-06-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,102.5,104,with bills of lading,
+1861-07-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,107.25,107.75,bankers' bills,
+1861-07-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,105.75,106.5,mercantile bills,
+1861-07-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,104.5,105.5,with bills of lading,
+1861-08-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,107.375,107.75,bankers' bills,
+1861-08-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,106.5,107.25,mercantile bills,
+1861-08-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,London,105,106,with bills of lading,
+1861-09-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,108,108.5,bankers' bills,
+1861-09-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,107.5,108,mercantile bills,
+1861-09-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,106.5,107,with bills of lading,
+1861-10-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,107.5,108,bankers' bills,
+1861-10-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,107,107.5,mercantile bills,
+1861-10-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,105,106,with bills of lading,
+1861-11-21,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,109,109.5,bankers' bills,
+1861-11-21,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,108,109,mercantile bills,
+1861-11-21,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,107,107.5,with bills of lading,
+1861-12-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,110.5,110.75,bankers' bills,
+1861-12-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,109.5,109.75,mercantile bills,
+1861-12-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,London,108,108.5,with bills of lading,
+1862-01-24,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,113,114,bankers' bills,
+1862-01-24,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,112,113,mercantile bills,
+1862-01-24,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,109,110,with bills of lading,
+1862-02-22,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,113.5,114,bankers' bills,
+1862-02-22,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,112,113,mercantile bills,
+1862-02-22,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,110,111,with bills of lading,
+1862-03-24,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,111.5,112,bankers' bills,
+1862-03-24,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,109.5,110,mercantile bills,
+1862-03-24,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,109.5,110,with bills of lading,
+1862-04-22,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,112,112.25,bankers' bills,
+1862-04-22,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,111.5,112.75,mercantile bills,
+1862-04-22,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,London,110,111,with bills of lading,
+1862-05-22,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,113.875,114,bankers' bills,
+1862-05-22,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,113.25,113.625,mercantile bills,
+1862-05-22,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,112.5,113,with bills of lading,
+1862-06-22,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,117.5,118,bankers' bills,
+1862-06-22,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,117,117.5,mercantile bills,
+1862-06-22,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,115.5,116.5,with bills of lading,
+1862-07-23,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,131.5,132,bankers' bills,
+1862-07-23,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,130,130.5,mercantile bills,
+1862-07-23,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,129,129.5,with bills of lading,
+1862-08-23,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,127.25,128,bankers' bills,
+1862-08-23,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,126,127,mercantile bills,
+1862-08-23,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,London,125.5,126,with bills of lading,
+1862-09-23,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,London,129,129.5,bankers' bills,
+1862-09-23,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,London,128.5,129,mercantile bills,
+1862-09-23,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,London,128,128.5,with bills of lading,
+1862-10-23,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,London,145,147,bankers' bills,
+1862-10-23,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,London,143,145,mercantile bills,
+1862-10-23,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,London,142,143,with bills of lading,
+1862-11-24,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,London,144,145,bankers' bills,
+1862-11-24,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,London,142,143,mercantile bills,
+1862-11-24,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,London,140,141,with bills of lading,
+1862-12-24,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,London,145.25,146,bankers' bills,
+1862-12-24,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,London,144,145,mercantile bills,
+1862-12-24,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,London,143.25,144.25,with bills of lading,
+1863-01-24,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,London,160.5,162,bankers' bills,
+1863-01-24,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,London,159,160,mercantile bills,
+1863-01-24,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,London,158,160,with bills of lading,
+1859-05-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Paris,5.1,5.0875,bankers' bills,
+1859-06-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Paris,5.1,5.0875,bankers' bills,
+1859-07-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Paris,5.1725,5.15,bankers' bills,
+1859-08-26,1859-09-26,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA327,Paris,5.15,5.125,bankers' bills,
+1859-09-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Paris,5.15,5.125,bankers' bills,
+1859-10-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Paris,5.15,5.125,bankers' bills,
+1859-11-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Paris,5.15,5.1325,bankers' bills,
+1859-12-26,1859-12-27,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA575,Paris,5.1625,5.15,bankers' bills,
+1860-01-22,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Paris,5.1875,5.18125,bankers' bills,
+1860-02-22,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Paris,5.165,5.15,bankers' bills,
+1860-03-24,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Paris,5.175,5.1625,bankers' bills,
+1860-04-24,1860-04-24,http://books.google.com/books?id=H1smAQAAIAAJ&pg=PA918,Paris,5.1625,5.15,bankers' bills,reversed low and high values
+1860-05-25,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Paris,5.13125,5.125,bankers' bills,
+1860-06-25,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Paris,5.13125,5.125,bankers' bills,
+1860-07-24,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Paris,5.135,5.1125,bankers' bills,
+1860-08-24,1860-08-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA253,Paris,5.135,5.1125,bankers' bills,
+1860-09-25,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Paris,5.15,5.125,bankers' bills,
+1860-10-20,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Paris,5.175,5.1625,bankers' bills,
+1860-11-24,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Paris,5.3,5.25,bankers' bills,
+1860-12-24,1860-12-24,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA589,Paris,5.45,5.35,bankers' bills,
+1861-01-24,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Paris,5.4,5.3,bankers' bills,
+1861-02-22,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Paris,5.35,5.325,bankers' bills,
+1861-03-23,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Paris,5.285,5.25,bankers' bills,
+1861-04-20,1861-04-25,http://books.google.com/books?id=KVwmAQAAIAAJ&pg=PA918,Paris,5.35,5.3,bankers' bills,
+1861-05-22,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Paris,5.45,5.25,bankers' bills,
+1861-06-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Paris,5.4,5.37,bankers' bills,
+1861-07-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Paris,5.3,5.275,bankers' bills,
+1861-08-24,1861-08-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA239,Paris,5.4,5.3,bankers' bills,
+1861-09-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Paris,5.375,5.3,bankers' bills,
+1861-10-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Paris,5.3875,5.35,bankers' bills,
+1861-11-21,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Paris,5.25,5.15,bankers' bills,
+1861-12-24,1861-12-28,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA559,Paris,5.15,5.1,bankers' bills,
+1862-01-24,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Paris,5.05,4.95,bankers' bills,
+1862-02-22,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Paris,5.05,4.975,bankers' bills,
+1862-03-24,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Paris,5.1,5,bankers' bills,
+1862-04-22,1862-04-24,http://books.google.com/books?id=B10mAQAAIAAJ&pg=PA909,Paris,5.1,5.05,bankers' bills,
+1862-05-22,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Paris,4.975,4.9375,bankers' bills,
+1862-06-22,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Paris,4.8125,4.7625,bankers' bills,
+1862-07-23,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Paris,4.35,4.3,bankers' bills,
+1862-08-23,1862-08-23,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA239,Paris,4.45,4.375,bankers' bills,
+1862-09-23,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Paris,4.425,4.35,bankers' bills,
+1862-10-23,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Paris,4,3.85,bankers' bills,
+1862-11-24,1862-11-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA478,Paris,3.9,3.85,bankers' bills,
+1862-12-24,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Paris,3.9,3.8875,bankers' bills,
+1863-01-24,1863-01-24,http://books.google.com/books?id=tF0mAQAAIAAJ&pg=PA656,Paris,3.47,3.45,bankers' bills,

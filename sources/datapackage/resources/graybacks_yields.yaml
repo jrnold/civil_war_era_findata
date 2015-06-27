@@ -15,7 +15,7 @@ schema:
       description: Source of the price. "ECM" for the ECM price series, "McCandless" for McCandless (1997), and "Wiedenmier" for Wiedenmier (2002).
     - id: price
       type: number
-      description: Price of gold in graybacks.
+      description: Price of a gold dollar in Confederate dollars.
     - id: yield_1879
       type: number
       description: >-

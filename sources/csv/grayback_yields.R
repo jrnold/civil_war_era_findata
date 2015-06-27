@@ -13,7 +13,7 @@ dst <- commandArgs(TRUE)[1]
 graybacks_ecm <- read_csv(srcs[1]) %>%
   select(- hard_to_read) %>%
   mutate(src = "ECM",
-         price = price / 100)
+         price = price)
 graybacks_mccandless <- read_csv(srcs[2]) %>%
   mutate(src = "McCandless")
 graybacks_weidenmier <- read_csv(srcs[3]) %>%

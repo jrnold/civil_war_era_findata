@@ -12,5 +12,5 @@ schema:
       description: Date
     - id: price
       type: number
-      description: Price of gold in graybacks.
+      description: Price of gold a gold dollar in Confederate dollars.
 

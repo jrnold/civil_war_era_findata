@@ -40,4 +40,4 @@ schema:
       description: Date
     - id: price
       type: price
-      description: Price of gold in Confederate dollars
+      description: Price of a gold dollar in Confederate dollars

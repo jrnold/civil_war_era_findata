@@ -11,10 +11,10 @@
       "description": "Date"
       "type": "date"
     - "id": "high"
-      "description": "Daily high price (gold dollars per 100 greenbacks)"
+      "description": "Gold dollars per 100 greenbacks; daily high"
       type: number
     - "id": "low"
-      description: "Daily low price (gold dollars per 100 greenbacks)"
+      description: "Gold dollars per 100 greenbacks; daily low"
       type: number
     - "id": "mean"
       description: |

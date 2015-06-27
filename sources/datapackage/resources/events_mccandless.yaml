@@ -2,7 +2,22 @@ path: data/events_mccandless.csv
 description: >-
   Major military and non-military events of the Civil War from McCandless (1996)
 
-  Appendix Tables 2 "Major military events of Civil War" and 3 "Major non-military events of the Civil War" in McCandless (1996), p. 670.
+  Appendix Tables 2 "Major military events of Civil War" and 3 "Major non-military events of the Civil War" in McCandless (1996), p. 670:
+
+    Included in the list are all events noted as \"Important\", major or
+    decisive Catton (1971), Pratt (1948), Guinnane et al. (1993).
+
+  The original tables use vague terms such as \"late\" or \"early\".
+  I added exact *start_date* and *end_date* values as follows,
+
+  - Fall of New Orleans
+    http://en.wikipedia.org/wiki/Capture_of_New_Orleans lists the dates
+    of April 25 to May 1.
+  - Seven Days Battles: http://en.wikipedia.org/wiki/Seven_Days_Battle
+    Battle of Oak Grove on June 25 to Battle of Malvern Hill on July 1
+  - Since no exact date was given for the \"Re-election of Lincoln
+    certain\", and it does not correspond to a discrete event, I just
+    estimated it as the second half of October.
 
   The sources of these events are 
 

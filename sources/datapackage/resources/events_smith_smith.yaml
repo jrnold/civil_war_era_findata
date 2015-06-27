@@ -4,10 +4,29 @@ description: |
   War news and wartime financial news
 
   Events from Smith and Smith (1997), "Table 1: War News" (p. 706) and "Table 2:
-  Wartime Financial News" (p. 707).
+  Wartime Financial News" (p. 707). These events
+  are those mentioned in [Mitchell1903]_, Part 2, Chapter 3 as
+  having influenced the price of greenbacks in gold.
 
-  The set of events are constructed from those events mentioned in Mitchell (1903), pt. 2, chapter 3, as influencing the price of gold.
+  Note to Table 1, 
 
+      The dummy variable dw takes the value of positive one at news of
+      Union defeats or adverse rumors, listed in the left column. It takes
+      the value of negative one at Union victories (or favorable political
+      news), listed in the right column.  Source: Mitchell, History, pt. 2,
+      chap. 3.
+
+  Note to Table 2,
+
+      Notes: The dummy variable Stakes the value of positive one at
+      news of difficulties in Union finances, such as further issues of
+      greenbacks, listed in the left column. It takes the value of negative
+      one at news of favorable developments in Union public finance, listed
+      in the right column.  Source: Mitchell, History, pt. 2, chap. 3.
+
+  - [Mitchell1903]_, Part 2, Chapter 3
+  - [SmithSmith1997]_
+  
 sources:
   - name: "Gregor W. Smith and R. Todd Smith (1997). Greenback-Gold Returns and Expectations of Resumption, 1862-1879. The Journal of Economic History, 57, pp 697-717. doi:10.1017/S0022050700019100."
     web: "http://journals.cambridge.org/article_S0022050700019100"

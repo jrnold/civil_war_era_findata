@@ -1,5 +1,198 @@
-"path": "data/greenbacks.csv"
-"description": "Daily price of greenbacks in gold in New York (1862-1879)\nThe price of greenbacks comes from Mitchel (1908), which was put in machine format by Willard et. al. and made available on http://eh.net/databases/greenback/. The data here correct several mistakes in that data."
+path: "data/greenbacks.csv"
+description: >-
+  Daily price of greenbacks in gold in New York (1862-1879)
+  
+  The price of greenbacks comes from Mitchel (1908),
+  which was put in machine format by Willard et. al. and made available on http://eh.net/databases/greenback/.
+  The data here correct several mistakes in that data.
+
+  Wesley Mitchell's (1903) daily series of the price of a gold dollar in
+  greenbacks in New York.
+
+  Note from Mitchell (1903), p. 423
+
+      Explanatory Note. There are two well-authenticated tables that
+      show the average monthly and yearly value of currency in gold
+      during the Civil War: (1) a table published by the American
+      Almanac (see, e.g., issue of 1889, p. 3(1); (2) a table
+      prepared by the Bureau of Statistics (Finance, Commerce and
+      Immigration of the United States, Series of 1895--96, No. 4,
+      p. 518). For the years 1862--65 these tables are identical; the
+      figures given below are taken from the second. This table was
+      prepared by Mr. E B. Elliott, actuary of tho treasury, in the
+      following manner: four dally quotations of the rates of gold
+      at New York, viz., the opening, highest, lowest, and closing
+      prices, were recorded; from them a daily average was made, and
+      from these average daily prices was prepared the average rate
+      for each month.
+
+      The table of daily highest and lowest prices is based, for the
+      reasons assigned in the text (Part II, chap, iii, sec. i), upon
+      the tables given in the Report of the Chamber of Commerce of the
+      State of New York for 1865-66, Part II, pp. 130-33. The figures
+      for the first eleven days of January, 1862, however, are supplied
+      from the daily reports of the premium on gold in the New York
+      Commercial Advertiser.
+
+  Daily series of the price of a gold dollar in greenbacks in New York
+  from Wesley C. Mitchell *Gold, Prices, and Wages under the Greenback
+  Standard*, Appendix, Table 1: "Daily highest and lowest premium on
+  gold and price of greenbacks in gold", pp. 288--338.
+
+  Mitchell's more extensive discussion of these data on p. 185-187.
+
+      The price of gold in currency, as determined by transactions in these
+      New York markets, was regularly reported by telegraph in all
+      considerable towns of the United States, and everywhere accepted as
+      authoritative. There is no necessity for taking account of the premium
+      on gold in other places, because local markets were dominated by the
+      New York quotations. The money columns of the daily newspapers and the
+      weekly or monthly issues of the financial journals gave full reports
+      of current fluctuations, and more permanent records were made by the
+      compilation of a number of tables showing the highest and lowest
+      prices each day for a series of years. Such tables may be found in
+      *Hunt's Merchants' Magazine*, the *Commercial and Financial Chronicle*,
+      the *Bankers' Magazine*, and the annual *Reports of the Chamber of
+      Commerce of the State of New York*.
+
+      All of these tables appear to be constructed in the same general
+      manner from the recorded transactions of the most important of the
+      New York markets. From January 13, 1862, to June 20, 1864, they
+      are based upon sales at the stock exchange. On June 21 the "gold
+      bill" went into effect and stopped all dealing in gold outside the
+      private offices of brokers. From this time until the repeal of the
+      "gold bill" by the act of July 2, there was no organized market,
+      and the quotations are those ruling on the street. After the
+      repeal, transactions in gold on the stock exchange were
+      infrequent, and most of the business was done in the "gold room."
+      From July 1864 on, therefore, the tables are based upon the latter
+      market.
+
+      In studying the fluctuations in the gold value of the paper
+      currency it is necessary to go back to these records of the daily
+      premium. As the differences between the tables mentioned are
+      slight, it matters little which set is accepted as a basis for the
+      investigation. I have decided to use the tables published in the
+      chamber of commerce reports, not only because of the official
+      character of the source from which they are taken, but also
+      because they contain fewer obvious errors of the press than some
+      of the others. To adapt them better to the purposes of the present
+      chapter I have altered their form. As published, the tables show
+      the highest and lowest price paid each day in currency for $100 in
+      gold. This form of statement gives the impression that the
+      fluctuations were due to extraordinary changes in the valuation at
+      which gold was held by the community, whereas in fact they were
+      due mainly to changes in the community's valuation of the notes of
+      the government. When the market quotation was 200 the explanation,
+      of course, was not that men esteemed gold twice as highly as they
+      had done in 1861, but rather that they esteemed the paper currency
+      but half as highly as they had when it was redeemable in specie. A
+      much juster impression of the significance of the change in the
+      relative values of gold and paper money is therefore given by
+      quoting currency at a discount in gold than by quoting gold at a
+      premium in paper; by saying, to use a numerical example, that $100
+      in greenbacks was-worth $50 in gold, than by saying that $100 in
+      gold was worth $200 in greenbacks. For this reason the chamber of
+      commerce tables for the years 1862 to 1865 have been converted
+      into tables showing the highest and lowest daily prices of
+      currency in gold. These tables, given in full in the Appendix,
+      furnish a basis for studying the remarkable changes in the gold
+      value of the currency during the Civil War.
+
+  The original data source for Mitchell is the *Report of the Chamber of
+  Commerce*, which can be found at
+  http://books.google.com/books?id=9X8pAAAAYAAJ. 
+
+  This data in this table was taken from `EH.net Greenback Series
+  <http://eh.net/databases/greenback/>`. The associated documentation reads,
+
+      We did not collect the data in the usual sense; we simply copied it from the tables in:
+
+      Mitchell, Wesley C., 1903. A history of the Greenbacks. Chicago: University of Chicago Press.
+
+  However, Mitchell (1903) only includes greenback prices from 1862-1865
+  on pp. 425-428. they must have actually copied it from Mitchell (1908) which 
+  has prices from 1903-1908.
+
+  Mitchell (1908, p. 2-3) discusses the data,
+
+      The prices of gold in these various exchanges were regularly reported
+      in the financial columns of the daily papers-often in much detail. The
+      financial journals-such as *Hunt's Merchants' Magazine*, the *Bankers'
+      Magazine*, and the *Commercial and Financial Chronicle* --- usually
+      contented themselves with publishing the opening, highest, lowest, and
+      closing prices for each day. At intervals they compiled summary tables
+      of daily highest and lowest prices for months or years. Similar tables
+      were included in the statistical reports of such bodies as the Chamber
+      of Commerce of the State of New York, and in the almanacs issued by
+      various newspapers.
+
+      A more detailed record of the price of gold was preserved for most of
+      the years of the paper standard in an annual publication issued by
+      Mr. J. C. Mersereau, Register of the Gold Exchange, under the title
+      "American Gold, 1862-(date of issue)." This little volume usually gave
+      for the preceding year the quotation for gold at ten o'clock and every
+      quarter hour thereafter until three in the afternoon of each business
+      day, and in all cases it gave the highest and lowest prices for every
+      business day from January 13, 1862, when gold was first quoted on the
+      Stock Exchange to the end of the previous year.  
+
+      The tables of daily highest and lowest prices of gold found in the
+      most important of these sources---namely: the *Commercial and Financial
+      Chronicle*, the *Reports of the Chamber of Commerce of the State of
+      New York*, and Mersereau's *American Gold* --- are in close agreement
+      with each other. Numerous small discrepancies exist --- the quotations
+      frequently vary by an eighth, sometimes by a quarter; but it matters
+      little which set of tables is followed. Since Mersereau was the
+      official register of the Gold Exchange, however, his tables take
+      precedence in authority. Accordingly, Table 1, in the appendix, which
+      gives the daily highest and lowest prices of gold, is based on
+      "*American Gold*, 1862-1878''—the latest issue of Mersereau's annual I
+      have been able to find. To guard against repeating the typographical
+      errors which occur in Mersereau's table I have collated it with the
+      Chamber of Commerce table and made several corrections. Since
+      Mersereau's table is not available for 1878, the Chamber of Commerce
+      figures, checked by those of the Commercial and Financial Chronicle,
+      are used for the last year of the paper standard. To save space the
+      premium on gold is given, instead of the price of gold in currency;
+      and, to facilitate study of the depreciation in the specie value of
+      the currency, columns have been added giving the prices of greenbacks
+      in gold corresponding to the daily highest and lowest premiums on gold
+      in greenbacks.
+
+      Mersereau does not state explicitly from what markets his quotations
+      are taken; but comparison with other reports indicate that they refer
+      to the Stock Exchange for January 13, 1862, to June 20, 1864, and
+      thereafter to the Gold Exchange, except for the first part of October,
+      1869, when the Gold Exchange was closed and dealings were conducted on
+      the Stock Exchange. The data for January 1-11, 1862, I have supplied
+      from the financial columns of New York daily papers.
+
+  The original data in Mitchell includes columns for "Premium on gold"
+  and "Price of Greenbacks in Gold". The Willard, et. al. version only
+  includes the greenback prices column.
+
+  I was not able to find a full-text version of the original source of
+  Mitchell's data, "American Gold" by J.C. Mersereau on Google books
+  (October 2011).
+
+  [Mitchell1903]_ (p. 425-428) includes a similar table of greenback
+  prices in gold for the years 1862-1865, which uses *Report of the
+  Chamber of Commerce of the of New York* for 1865-66, Part II,
+  pp. 130-33 as its source.
+
+references:
+  - name: >-
+      Mitchell, Wesley Clair, 1908. *Gold, Prices, and Wages Under the Greenback Standard*, 
+    url: http://books.google.com/books?id=d3crAAAAYAAJ.
+  - name: EH.net Greenback series
+    url: http://eh.net/databases/greenback/
+  - name: >-
+      Willard, Kristen L. and Guinnane, Timothy W. and Rosen, Harvey S. 1996.
+      "Turning Points in the Civil War: Views from the Greenback Market", 
+      *American Economic Review*
+    url: http://www.jstor.org/stable/2118316
+
 "schema": 
   fields:
     - "id": "date"
@@ -15,7 +208,8 @@
       comment: "If data are missing, the reason for the missing data, e.g. Sunday or a holiday."
       type: string
     - "id": "mean"
-      description: |
+      description: >-
+
         Daily mean price (gold dollars per 100 greenbacks)
-        
-        The mean is calculated as exp(0.5 * (log(low) + log(high)))
+        The mean is calculated as $\\exp(0.5 * (\\log(low) + \\log(high)))$.
+
