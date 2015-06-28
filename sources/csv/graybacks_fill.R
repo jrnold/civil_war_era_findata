@@ -11,7 +11,7 @@ srcs <- c("data/grayback_ecm.csv",
 dst <- commandArgs(TRUE)[1]
 
 graybacks_ecm <- read_csv(srcs[1]) %>%
-  mutate(log_price = log(price / 100),
+  mutate(log_price = log(price),
          date = as.Date(date)) %>%
   select(date, log_price)
 graybacks_mccandless <- read_csv(srcs[2]) %>%
