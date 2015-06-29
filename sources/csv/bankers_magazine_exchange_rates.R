@@ -38,24 +38,24 @@ bankers <- read_csv(src) %>%
          gold_rate, url, issue)
 
 
-#' Checks on the data
-assert_that(all(bankers$rate_low <= bankers$rate_high))
+## #' Checks on the data
+## assert_that(all(bankers$rate_low <= bankers$rate_high))
 
-#'
-bankers_data_range <-
-  group_by(bankers, city) %>%
-  summarize(rate_low = min(rate_low), rate_high = max(rate_high)) %>%
-  left_join(
-  bind_rows(data_frame(city = "Amsterdam", rate_low_ = 30, rate_high_ = 50),
-            data_frame(city = "Bremen", rate_low_ = 65, rate_high_ = 85),
-            data_frame(city = "Frankfort", rate_low_ = 35, rate_high_ = 45),
-            data_frame(city = "Hamburg", rate_low_ = 30, rate_high_ = 40),
-            data_frame(city = "London", rate_low_ = 415, rate_high_ = 515),
-            data_frame(city = "Paris", rate_low_ = 15, rate_high_ = 25)),
-  by = c("city"))
+## #'
+## bankers_data_range <-
+##   group_by(bankers, city) %>%
+##   summarize(rate_low = min(rate_low), rate_high = max(rate_high)) %>%
+##   left_join(
+##   bind_rows(data_frame(city = "Amsterdam", rate_low_ = 30, rate_high_ = 50),
+##             data_frame(city = "Bremen", rate_low_ = 65, rate_high_ = 85),
+##             data_frame(city = "Frankfort", rate_low_ = 35, rate_high_ = 45),
+##             data_frame(city = "Hamburg", rate_low_ = 30, rate_high_ = 40),
+##             data_frame(city = "London", rate_low_ = 415, rate_high_ = 515),
+##             data_frame(city = "Paris", rate_low_ = 15, rate_high_ = 25)),
+##   by = c("city"))
 
-assert_that(all(bankers_data_range$rate_low_ < bankers_data_range$rate_low))
-assert_that(all(bankers_data_range$rate_high_ > bankers_data_range$rate_high))
+## assert_that(all(bankers_data_range$rate_low_ < bankers_data_range$rate_low))
+## assert_that(all(bankers_data_range$rate_high_ > bankers_data_range$rate_high))
 assert_that(all(bankers$date <= as.Date("1863-12-24")))
 assert_that(all(bankers$date >= as.Date("1859-05-26")))
 

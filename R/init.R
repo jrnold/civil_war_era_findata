@@ -357,6 +357,7 @@ make_yields_etc <-
     } else {
         current_yield <- current_yield_currency <- NA
     }
+
     data_frame(price = price,
                price_clean = price_clean,
                price_orig = price_gold,
@@ -394,7 +395,6 @@ make_yields_etc <-
                ytm_actual = yields_actual$yield,
                duration_actual = yields_actual$duration,
                convexity_actual = yields_actual$convexity
-
                )
 }
 
