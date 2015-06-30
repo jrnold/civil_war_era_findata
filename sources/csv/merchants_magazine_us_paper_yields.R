@@ -95,7 +95,7 @@ match_series_to_bonds <- function(series, date, ...) {
                            adjust_currency = .$adjust_currency,
                            is_clean = .$is_clean,
                            metadata = bond_metadata[[.$bond]],
-                           gold_rates_actual = gold_rates_actual)
+                           gold_rates_actual)
     ret[["date"]] <- .$date
     ret[["bond"]] <- .$bond
     ret[["series"]] <- .$series
@@ -103,42 +103,42 @@ match_series_to_bonds <- function(series, date, ...) {
     select(ret, bond, date, series, wgt, everything())
   })
 
-rfyields_date <- function(x) {
-  rate <- filter(x,
-                 series %in% c("6's, 1881 Coup.")) %>%
-    `[[`("ytm_currency") %>%
-    mean()
-
-  ret <- vector(length = nrow(x), mode = "list")
-  for (i in seq_len(nrow(x))) {
-    .i <- x[i, , drop = FALSE]
-    if(.i$gold_rate != 1) {
-      yields <-
-        gold_cashflows_redemp(bond_metadata[[.i$bond]]$cashflows,
-                              .i$date,
-                              .i$gold_rate,
-                              r = rate) %>%
-        yield_to_maturity2(.i$price * .i$gold_rate, .i$date, .)
-      ret[[i]] <-
-        data_frame(govt_rate = rate,
-                   ytm_goldrf = yields$yield,
-                   duration_goldrf = yields$duration,
-                   convexity_goldrf = yields$convexity,
-                   date = .i$date,
-                   bond = .i$bond
-        )
-    } else {
-      ret[[i]] <-
-        data_frame(govt_rate = rate,
-                   ytm_goldrf = .i$ytm_currency,
-                   duration_goldrf = .i$duration_currency,
-                   convexity_goldrf = .i$convexity_currency,
-                   date = .i$date,
-                   bond = .i$bond)
-    }
-  }
-  bind_rows(ret)
-}
+# rfyields_date <- function(x) {
+#   rate <- filter(x,
+#                  series %in% c("6's, 1881 Coup.")) %>%
+#     `[[`("ytm_currency") %>%
+#     mean()
+#
+#   ret <- vector(length = nrow(x), mode = "list")
+#   for (i in seq_len(nrow(x))) {
+#     .i <- x[i, , drop = FALSE]
+#     if(.i$gold_rate != 1) {
+#       yields <-
+#         gold_cashflows_redemp(bond_metadata[[.i$bond]]$cashflows,
+#                               .i$date,
+#                               .i$gold_rate,
+#                               r = rate) %>%
+#         yield_to_maturity2(.i$price * .i$gold_rate, .i$date, .)
+#       ret[[i]] <-
+#         data_frame(govt_rate = rate,
+#                    ytm_goldrf = yields$yield,
+#                    duration_goldrf = yields$duration,
+#                    convexity_goldrf = yields$convexity,
+#                    date = .i$date,
+#                    bond = .i$bond
+#         )
+#     } else {
+#       ret[[i]] <-
+#         data_frame(govt_rate = rate,
+#                    ytm_goldrf = .i$ytm_currency,
+#                    duration_goldrf = .i$duration_currency,
+#                    convexity_goldrf = .i$convexity_currency,
+#                    date = .i$date,
+#                    bond = .i$bond)
+#     }
+#   }
+#   bind_rows(ret)
+# }
 
 #' Get currency rate for the government for each time period
 # yields6 <-
@@ -223,9 +223,14 @@ yield_note <- function(price, date, payout, maturity_date) {
        maturity = m)
 }
 
-make_yields_note <- function(maturity_date, interest, pays_gold,
-                             date, gold_rate, price_gold,
-                             adjust_gold, adjust_currency) {
+make_yields_note <- function(maturity_date,
+                             interest,
+                             pays_gold,
+                             date,
+                             gold_rate,
+                             price_gold,
+                             adjust_gold,
+                             adjust_currency) {
   price <-
     price_gold + adjust_gold + adjust_currency / gold_rate
   price_currency <- price_gold * gold_rate
@@ -295,15 +300,14 @@ oneyr_old <-
   do({
     maturity_date <- .$date + months(12)
     out <- make_yields_note(
-      maturity_date,
+      maturity_date = maturity_date,
       interest = 0.06,
       pays_gold = FALSE,
-      .$date,
-      .$gold_rate,
-      .$price_gold,
-      .$adjust_gold,
-      .$adjust_currency,
-      gold_rate_actual = gold_rate_actual)
+      date = .$date,
+      gold_rate = .$gold_rate,
+      price_gold = .$price_gold,
+      adjust_gold = .$adjust_gold,
+      adjust_currency = .$adjust_currency)
     out[["date"]] <- .$date
     out[["series"]] <- "1 year certificate, Old"
     out[["bond"]] <- "us_1yr_note_1862"
@@ -333,15 +337,14 @@ oneyr_new <-
     do({
       maturity_date <- .$date + months(12)
       out <- make_yields_note(
-        maturity_date,
+        maturity_date = maturity_date,
         interest = 0.05,
         pays_gold = FALSE,
-        .$date,
-        .$gold_rate,
-        .$price_gold,
-        .$adjust_gold,
-        .$adjust_currency,
-        gold_rate_actual = gold_rate_actual)
+        date = .$date,
+        gold_rate = .$gold_rate,
+        price_gold = .$price_gold,
+        adjust_gold = .$adjust_gold,
+        adjust_currency = .$adjust_currency)
       out[["date"]] <- .$date
       out[["series"]] <- "1 year certificate, New"
       out[["bond"]] <- "us_1yr_note_1863"
