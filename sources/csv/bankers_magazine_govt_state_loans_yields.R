@@ -19,12 +19,12 @@ gold_rates_actual <- read_csv(greenback_fill_file) %>%
     select(date, gold_rate)
 
 #' Load prerequisite data
-sixes_1868 <- read_csv(bankers_misc_file) %>%
-  filter(grepl("us_6pct_1868_*", asset)) %>%
-  mutate(series = "U.S. 6 per cents, 1867-8",
-         date = as.Date(date, "%Y-%m-%d")) %>%
-  select(date, series, price_gold, gold_rate) %>%
-  mutate(is_clean = 0, adjust_gold = 0, adjust_currency = 0)
+## sixes_1868 <- read_csv(bankers_misc_file) %>%
+##   filter(grepl("us_6pct_1868_*", asset)) %>%
+##   mutate(series = "U.S. 6 per cents, 1867-8",
+##          date = as.Date(date, "%Y-%m-%d")) %>%
+##   select(date, series, price_gold, gold_rate) %>%
+##   mutate(is_clean = 0, adjust_gold = 0, adjust_currency = 0)
 
 bankers <-
   (mutate(read_csv(bankers_file),
@@ -32,7 +32,6 @@ bankers <-
    %>% select(date, series, is_clean, adjust_gold,
               adjust_currency, price_gold, gold_rate)
    %>% filter(!is.na(price_gold))
-   %>% bind_rows(sixes_1868)
   )
 
 
