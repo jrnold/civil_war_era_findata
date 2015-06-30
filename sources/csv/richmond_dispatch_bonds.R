@@ -38,7 +38,8 @@ richmond <- read_csv(src) %>%
   filter(grepl(paste("(", ASSETS_TOUSE, ")", collapse = "|", sep = ""),
                asset)) %>%
   left_join(graybacks_fill, by = "date") %>%
-  mutate(price_gold_low = price_low / gold_rate,
+  mutate(gold_rate = ifelse(date < as.Date("1861-1-1"), 1, gold_rate),
+         price_gold_low = price_low / gold_rate,
          price_gold_high = price_high / gold_rate,
          series = create_series(asset, registered)) %>%
   mutate(interest = ifelse(series %in% c("confederate_15mn", "confederate_100mn",

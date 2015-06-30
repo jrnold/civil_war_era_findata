@@ -141,13 +141,13 @@ rfyields_date <- function(x) {
 }
 
 #' Get currency rate for the government for each time period
-yields6 <-
-  .data %>%
-  ungroup() %>%
-  group_by(date) %>%
-  do(rfyields_date(.))
-
-.data %<>% left_join(yields6, by = c("date", "bond"))
+# yields6 <-
+#   .data %>%
+#   ungroup() %>%
+#   group_by(date) %>%
+#   do(rfyields_date(.))
+#
+# .data %<>% left_join(yields6, by = c("date", "bond"))
 
 #'
 #' Add current yields for seven_thirties. This is handled separately because
@@ -255,6 +255,7 @@ make_yields_note <- function(maturity_date, interest, pays_gold,
   yields5 <-
     future_gold_rates(maturity_date, date, gold_rate, r = 0.06) %>%
     yield_note(price, date, payout_currency * .$gold_rate, maturity_date)
+  # Actual Yields
   yields6 <-
     gold_cashflows_redemp_t(cashflows, date, gold_rate,
                             redemp_date = as.Date("1879-1-1")) %>%
@@ -263,7 +264,7 @@ make_yields_note <- function(maturity_date, interest, pays_gold,
   yields_actual <-
     currency_cashflows_actual(cashflows, gold_rates_actual) %>%
     yield_note(price_currency, date, .)
-  
+
   data_frame(price = price,
              price_clean = price,
              gold_rate = gold_rate,
@@ -302,7 +303,7 @@ oneyr_old <-
       .$price_gold,
       .$adjust_gold,
       .$adjust_currency,
-      gold_rate_actual = gold_rate_actual)         
+      gold_rate_actual = gold_rate_actual)
     out[["date"]] <- .$date
     out[["series"]] <- "1 year certificate, Old"
     out[["bond"]] <- "us_1yr_note_1862"
@@ -340,7 +341,7 @@ oneyr_new <-
         .$price_gold,
         .$adjust_gold,
         .$adjust_currency,
-        gold_rate_actual = gold_rate_actual) 
+        gold_rate_actual = gold_rate_actual)
       out[["date"]] <- .$date
       out[["series"]] <- "1 year certificate, New"
       out[["bond"]] <- "us_1yr_note_1863"

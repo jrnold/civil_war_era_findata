@@ -136,6 +136,9 @@ if (length(unmatched)) {
 match_bonds_all <- function(x, MATCH_BONDS, bond_metadata) {
   all_bonds <- MATCH_BONDS[[as.character(x$series)]](x$date)
   retlist <- vector(mode = "list", length = nrow(all_bonds))
+  if (nrow(all_bonds) == 0) {
+    cat(sprintf("Bonds not found for %s %s\n", x$series, x$date))
+  }
   for (i in seq_along(all_bonds$bond)) {
     bond <- all_bonds$bond[i]
     ret <- make_yields_etc(date = x$date,
@@ -198,16 +201,19 @@ match_bonds_all <- function(x, MATCH_BONDS, bond_metadata) {
 
 #' This part has been rewritten in an attempt to avoid a segfault bug in (dplyr? )
 bankers %<>% group_by(date)
-first_date <- TRUE
+first_row <- TRUE
 # bankers <- filter(bankers, date >= as.Date("1863-02-28"))
 # first_date <- FALSE
 for (dt in unique(as.character(bankers$date))) {
- print(dt)
  .data <- filter(bankers, date == as.character(dt))
  for (i in seq_len(nrow(.data))) {
-   .data2 <- match_bonds_all(.data[i, , drop = TRUE], MATCH_BONDS, bond_metadata)
-   readr::write_csv(.data2, outfile, append = ! first_date)
-   first_date <- FALSE
+   .data2 <- match_bonds_all(tbl_df(.data)[i, ], MATCH_BONDS, bond_metadata)
+   write.table(.data2, outfile,
+               sep = ",", dec = ".", qmethod = "double",
+               col.names = first_row, row.names = FALSE,
+               append = ! first_row)
+   first_row <- FALSE
  }
 }
+
 
