@@ -226,7 +226,8 @@ yield_note <- function(price, date, payout, m) {
 
 make_yields_note <- function(maturity,
                              interest,
-                             pays_gold,
+                             interest_gold = TRUE,
+                             principal_gold = TRUE,
                              date,
                              gold_rate,
                              price_gold,
@@ -237,41 +238,56 @@ make_yields_note <- function(maturity,
   price <-
     price_gold + adjust_gold + adjust_currency / gold_rate
   price_currency <- price_gold * gold_rate
-  payout <- (1 + interest) * 100
-  if (pays_gold) {
+    payout <- function(gold_rate, rate, interest_gold, principal_gold) {
+        if (principal_gold) {
+            principal <- 100 * gold_rate
+        } else {
+            principal <- 100
+        }
+        if (interest_gold) {
+            interest <- 100 * rate * gold_rate
+        } else {
+            interest <- 100 * rate
+        }
+        principal + interest
+    }
     
     # Yields in currency
-    yields1 <- yield_note(price_currency, date, payout, maturity)
+    yields1 <- yield_note(price_currency, date, payout(1, interest, interest_gold,
+                                                       principal_gold), maturity)
     
     # Yields in gold
-    yields2 <- yield_note(price_currency, date, payout * gold_rate, maturity)
+    yields2 <- yield_note(price_currency, date, payout(gold_rate, interest, 
+                                                       interest_gold,
+                                                       principal_gold), maturity)
     
     # Yields with redemption at 4%
     yields3 <-
       future_gold_rates(maturity_date, date, gold_rate, r = 0.04) %>%
-      {yield_note(price_currency, date, payout_currency * .$gold_rate, maturity)}
+      {yield_note(price_currency, date, payout(.$gold_rate,
+                                               interest,
+                                               interest_gold, 
+                                               principal_gold), maturity)}
     # Yields with redemption at 5%
     yields4 <-
       future_gold_rates(maturity_date, date, gold_rate, r = 0.05) %>%
-      {yield_note(price_currency, date, payout_currency * .$gold_rate, maturity)}
+      {yield_note(price_currency, date, payout(.$gold_rate,
+                                               interest,
+                                               interest_gold, 
+                                               principal_gold), maturity)}
     # Yields with redemption at 6%
     yields5 <-
       future_gold_rates(maturity_date, date, gold_rate, r = 0.06) %>%
-      {yield_note(price_currency, date, payout_currency * .$gold_rate, maturity)}
+      {yield_note(price_currency, date, payout(.$gold_rate,
+                                               interest,
+                                               interest_gold, 
+                                               principal_gold), maturity)}
     
     yields_actual <-
       filter(gold_rates_actual, date == round(as.Date(maturity_date)))$gold_rate %>%
-      {yield_note(price_currency, date, payout_currency * ., maturity)}
-  } else {
-    # Yields in currency
-    yields1 <- yield_note(price_currency, date, payout, maturity)
-    yields2 <- yields1
-    yields3 <- yields1
-    yields4 <- yields1
-    yields5 <- yields1
-    yields_actual <- yields1
-    
-  }
+      {yield_note(price_currency, date, payout(., interest, 
+                                               interest_gold, principal_gold), 
+                  maturity)}
   data_frame(price = price,
              price_clean = price,
              gold_rate = gold_rate,
@@ -303,7 +319,8 @@ oneyr_old <-
     out <- make_yields_note(
       maturity = 1,
       interest = 0.06,
-      pays_gold = FALSE,
+      interest_gold = FALSE,
+      principal_gold = TRUE,
       date = .$date,
       gold_rate = .$gold_rate,
       price_gold = .$price_gold,
@@ -339,7 +356,8 @@ oneyr_new <-
       out <- make_yields_note(
         maturity = 1,
         interest = 0.05,
-        pays_gold = FALSE,
+        interest_gold = FALSE,
+        principal_gold = FALSE,
         date = .$date,
         gold_rate = .$gold_rate,
         price_gold = .$price_gold,
