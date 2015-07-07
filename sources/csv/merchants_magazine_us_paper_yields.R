@@ -1,5 +1,4 @@
 source("R/init.R")
-library("magrittr")
 
 ### depends: data/merchants_magazine_us_paper.csv data/bond_metadata.json
 merchants_file <- "data/merchants_magazine_us_paper.csv"
@@ -11,7 +10,6 @@ BOND_SERIES <- c("5's, 1874",
                  sprintf("6's, 1881 %s", c("Reg.", "Coup.")),
                  sprintf("5-20's, %s", c("Reg.", "Coup.")),
                  "10-40's", "7 3-10, 3 years")
-                 
 
 gold_rates_actual <- read_csv("data/greenbacks_fill.csv") %>%
     mutate(gold_rate = 100 / mean,
@@ -216,7 +214,8 @@ touse <- (.data[["bond"]] == "us_seven_thirties_1864_oct_option"
 #'
 #'
 
-yield_note <- function(price, date, payout, m) {
+yield_note <- function(price, date, payout, maturity_date) {
+  m <- difftime_years(maturity_date, date)
   y <- - log(price / payout) / m
   list(yield = y,
        duration = m,
@@ -224,75 +223,58 @@ yield_note <- function(price, date, payout, m) {
        maturity = m)
 }
 
-make_yields_note <- function(maturity,
+make_yields_note <- function(maturity_date,
                              interest,
-                             interest_gold = TRUE,
-                             principal_gold = TRUE,
+                             pays_gold,
                              date,
                              gold_rate,
                              price_gold,
                              adjust_gold,
                              adjust_currency) {
-  
-  maturity_date <- date + days(maturity * 365)
   price <-
     price_gold + adjust_gold + adjust_currency / gold_rate
   price_currency <- price_gold * gold_rate
-    payout <- function(gold_rate, rate, interest_gold, principal_gold) {
-        if (principal_gold) {
-            principal <- 100 * gold_rate
-        } else {
-            principal <- 100
-        }
-        if (interest_gold) {
-            interest <- 100 * rate * gold_rate
-        } else {
-            interest <- 100 * rate
-        }
-        principal + interest
-    }
-    
-    # Yields in currency
-    yields1 <- yield_note(price_currency, date, payout(1, interest, interest_gold,
-                                                       principal_gold), maturity)
-    
-    # Yields in gold
-    yields2 <- yield_note(price_currency, date, payout(gold_rate, interest, 
-                                                       interest_gold,
-                                                       principal_gold), maturity)
-    
-    # Yields with redemption at 4%
-    yields3 <-
-      future_gold_rates(maturity_date, date, gold_rate, r = 0.04) %>%
-      {yield_note(price_currency, date, payout(.$gold_rate,
-                                               interest,
-                                               interest_gold, 
-                                               principal_gold), maturity)}
-    # Yields with redemption at 5%
-    yields4 <-
-      future_gold_rates(maturity_date, date, gold_rate, r = 0.05) %>%
-      {yield_note(price_currency, date, payout(.$gold_rate,
-                                               interest,
-                                               interest_gold, 
-                                               principal_gold), maturity)}
-    # Yields with redemption at 6%
-    yields5 <-
-      future_gold_rates(maturity_date, date, gold_rate, r = 0.06) %>%
-      {yield_note(price_currency, date, payout(.$gold_rate,
-                                               interest,
-                                               interest_gold, 
-                                               principal_gold), maturity)}
-    
-    yields_actual <-
-      filter(gold_rates_actual, date == round(as.Date(maturity_date)))$gold_rate %>%
-      {yield_note(price_currency, date, payout(., interest, 
-                                               interest_gold, principal_gold), 
-                  maturity)}
+  payout <- (1 + interest) * 100
+  if (pays_gold) {
+    payout_gold <- payout # in gold
+    payout_currency <- payout_gold * gold_rate  # in currency
+  } else {
+    payout_gold <-  payout / gold_rate
+    payout_currency <- payout # in currency
+  }
+  # Yields in currency
+  yields1 <- yield_note(price_currency, date, payout_currency,
+                        maturity_date)
+  # Yields in gold
+  yields2 <- yield_note(price, date, payout_gold,
+                        maturity_date)
+  # Yields with redemption at 5%
+  yields3 <-
+    future_gold_rates(maturity_date, date, gold_rate, r = 0.04) %>%
+    yield_note(price, date, payout_currency * .$gold_rate, maturity_date)
+  # Yields with redemption at 4%
+  yields4 <-
+    future_gold_rates(maturity_date, date, gold_rate, r = 0.05) %>%
+    yield_note(price, date, payout_currency * .$gold_rate, maturity_date)
+  # Yields with redemption at 5%
+  yields5 <-
+    future_gold_rates(maturity_date, date, gold_rate, r = 0.06) %>%
+    yield_note(price, date, payout_currency * .$gold_rate, maturity_date)
+  # Actual Yields
+  yields6 <-
+    gold_cashflows_redemp_t(cashflows, date, gold_rate,
+                            redemp_date = as.Date("1879-1-1")) %>%
+    yield_note(price_currency, date, .)
+
+  yields_actual <-
+    currency_cashflows_actual(cashflows, gold_rates_actual) %>%
+    yield_note(price_currency, date, .)
+
   data_frame(price = price,
              price_clean = price,
              gold_rate = gold_rate,
              ytm_currency = yields1$yield,
-             maturity = maturity,
+             maturity = yields$maturity,
              duration_currency = yields1$duration,
              convexity_currency = yields1$convexity,
              ytm_gold = yields2$yield,
@@ -313,14 +295,14 @@ make_yields_note <- function(maturity,
 }
 
 oneyr_old <-
-  filter(merchants, series == "1 year certificate, Old") %>%
+  filter(.data, series == "1 year certificate, Old") %>%
   rowwise() %>%
   do({
+    maturity_date <- .$date + months(12)
     out <- make_yields_note(
-      maturity = 1,
+      maturity_date = maturity_date,
       interest = 0.06,
-      interest_gold = FALSE,
-      principal_gold = TRUE,
+      pays_gold = FALSE,
       date = .$date,
       gold_rate = .$gold_rate,
       price_gold = .$price_gold,
@@ -350,14 +332,14 @@ oneyr_old <-
 #' - Annual Report of the Treasury 1865, [p. 52-53](https://fraser.stlouisfed.org/docs/publications/treasar/AR_TREASURY_1865.pdf#page=56)
 
 oneyr_new <-
-  filter(merchants, series == "1 year certificate, New") %>%
+  filter(.data, series == "1 year certificate, New") %>%
     rowwise() %>%
     do({
+      maturity_date <- .$date + months(12)
       out <- make_yields_note(
-        maturity = 1,
+        maturity_date = maturity_date,
         interest = 0.05,
-        interest_gold = FALSE,
-        principal_gold = FALSE,
+        pays_gold = FALSE,
         date = .$date,
         gold_rate = .$gold_rate,
         price_gold = .$price_gold,

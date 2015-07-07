@@ -8,14 +8,14 @@ from os.path import join, splitext, basename
 import sys
 
 def main(src, dst):
-    with open(join(src, 'root.yaml'), 'r') as f:
+    with open(join(src, 'root.yaml'), 'r', encoding = 'utf-8') as f:
         print("reading root.yaml")
         data = yaml.load(f)
         data['last_modified'] = datetime.datetime.today().isoformat()
     data['resources'] = []
     for filename in glob.glob('%s/resources/*.yaml' % src):
         print("reading %s" % filename)
-        with open(filename, 'r') as f:
+        with open(filename, 'r', encoding = 'utf-8') as f:
             name = splitext(basename(filename))[0]
             res = yaml.load(f)
             ## add name

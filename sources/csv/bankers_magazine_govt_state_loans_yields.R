@@ -18,13 +18,19 @@ gold_rates_actual <- read_csv(greenback_fill_file) %>%
            date = as.Date(date)) %>%
     select(date, gold_rate)
 
+#' The *Bankers' Magazine* regularly reports prices for the 6's of 1868 until 
+#' Sept 1861, but then occasionally reports the price in its text thereafter.
+#' Include these later prices along with the original data in order to give
+#' a more complete series.
+sixes_1868 <- read_csv(bankers_misc_file) %>%
+  filter(grepl("us_6pct_1868_*", asset)) %>%
+  mutate(series = "U.S. 6 per cents, 1867-8",
+         date = as.Date(date, "%Y-%m-%d")) %>%
+  select(date, series, price_gold, gold_rate) %>%
+  mutate(is_clean = 0, adjust_gold = 0, adjust_currency = 0)
+
 #' Load prerequisite data
-## sixes_1868 <- read_csv(bankers_misc_file) %>%
-##   filter(grepl("us_6pct_1868_*", asset)) %>%
-##   mutate(series = "U.S. 6 per cents, 1867-8",
-##          date = as.Date(date, "%Y-%m-%d")) %>%
-##   select(date, series, price_gold, gold_rate) %>%
-##   mutate(is_clean = 0, adjust_gold = 0, adjust_currency = 0)
+
 
 bankers <-
   (mutate(read_csv(bankers_file),
