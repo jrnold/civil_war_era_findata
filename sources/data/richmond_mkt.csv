@@ -1,4 +1,4 @@
-issue,date,description,asset,registered,coupons_on,interest_suspended,issuer,price_low,price_high,original_text,url,comment,past_due
+newspaper_date,date,description,asset,registered,coupons_on,interest_suspended,issuer,price_low,price_high,original_text,url,comment,past_due
 1860-11-01,1860-11-01,Lynchburg City Bonds,lynchburg,0,0,0,Lynchburg,90,90,"Lynchburg City Bonds, last sales $90--no recent sales.",http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A2006.05.0002%3Aarticle%3Dpos%3D89,,0
 1860-11-01,1860-11-01,Norfolk CIty Bonds,norfolk,0,0,0,Norfolk,78,78,"Norfolk City Bonds, last sales $78--no recent sales.",http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A2006.05.0002%3Aarticle%3Dpos%3D89,,0
 1860-11-01,1860-11-01,Petersburg City Bonds,petersburg,0,0,0,Petersburg,90,90,"Petersburg City Bonds, last sales $90--no recent sales.",http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A2006.05.0002%3Aarticle%3Dpos%3D89,,0
