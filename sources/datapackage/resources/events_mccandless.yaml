@@ -1,6 +1,6 @@
 path: data/events_mccandless.csv
-description: |
-  Major military and non-military events of the Civil War
+description: >-
+  Major military and non-military events of the Civil War from McCandless (1996)
 
   Appendix Tables 2 "Major military events of Civil War" and 3 "Major non-military events of the Civil War" in McCandless (1996), p. 670:
 
@@ -25,6 +25,10 @@ description: |
   - Catton, Bruce. The Civil War. New York: Fairfax, 1971.
   - Guinnane, Timothy W. and Rosen, Harvey S. and Willard, Kristen L, "Turning Points in the Civil War: Views from the Greenback Market. American Economic Review. 1996.
 
+references:
+  - name: >-
+      George T. McCandless, Jr. 1996. "Money, Expectations, and the U.S. Civil War." The American Economic Review 86(3): 661-71.
+    url: http://www.jstor.org/stable/2118219
 schema:
   fields:
     - id: military

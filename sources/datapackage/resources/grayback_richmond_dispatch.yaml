@@ -1,0 +1,36 @@
+path: "data/grayback_richmond_dispatch.csv"
+description: |
+    Price of gold in Confederate Dollars (Graybacks) from the Richmond Dispach.
+
+    Price series of quotations for the price of gold in Confederate currency in Richmond
+    from the newspaper, *The Richmond Times Dispatch*.
+
+sources:
+  - name: >-
+      *The Richmond Times Dispatch*, various issues between 1860-1865.
+    url: >-
+      http://www.perseus.tufts.edu/hopper/collection?collection=Perseus%3Acollection%3ARichTimes
+schema:
+  fields:
+    - id: date
+      type: date
+      description: Date
+    - id: price_low
+      type: number
+      description: Price of gold in Confederate dollars (low or bid price)
+    - id: price_high
+      type: number
+      description: Price of gold in Confederate dollars (high or ask price)
+    - id: newspaper_date
+      type: date
+      description: Date of the newspaper article in which the quotation appeared.
+    - id: description
+      type: string
+      description: Description of the asset as used in the original source.
+    - id: original_text
+      type: string
+      description: Full text of the paragraph containing the quote.
+    - id: url
+      type: string
+      description: URL of the source.
+      

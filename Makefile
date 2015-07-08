@@ -18,10 +18,10 @@ build: $(CSV_DATA) $(JSON_DATA) datapackage.json
 
 # automatic dependency generation
 sources/csv/%.mk: sources/csv/%.R
-	$(R) depends.R $<
+	$(R) makedepends.R $<
 
 sources/json/%.mk: sources/json/%.R
-	$(R) depends.R $<
+	$(R) makedepends.R $<
 
 data/%.csv: sources/csv/%.R
 	$(R) $< $@

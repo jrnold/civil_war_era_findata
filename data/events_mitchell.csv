@@ -1,0 +1,54 @@
+"category","start_date","end_date","description","page","good"
+"money supply","1862-06-13",,"Secretary of treasury requests Congress authorize a second issue of the United States notes",199,0
+"money supply","1862-08-09",,"Final vote on the second legal tender act",199,0
+"money supply","1862-01-04",,"Rumor that the annual finance report would recommend another issue of US notes",199,0
+"money supply","1862-12-05",,"Denial of the rumor that there would be another issue of US notes",199,1
+"money supply","1862-12-09",,"Thaddeus Stevens introduces a bill providing for an issue of $200 million in US notes","199-200",0
+"money supply","1863-01-08",,"Committee of Ways and Means submitted a measure authorizing the issue of 300 million of US notes",200,0
+"money supply","1863-01-14",,"House of Representative passes a joint resolution for the issue of 100 million to secure the immediate payment of the army and navy",200,0
+"money supply","1863-01-26",,"3rd legal tender act passed and sent to the Senate",200,0
+"money supply","1863-02-28",,"House passes 3rd legal tender act",200,0
+"money supply","1863-03-03",,"3rd legal tender act becomes law",200,1
+"finance","1862-01-06",,"Treasury report recommends a national bank currency as preferrable to government notes",201,1
+"finance",1863-12-11,,"Treasury report; the estimated expenditures so far exceeded receipts that he was obliged to ask for a loan of 900 million.",201,0
+"finance","1864-12-07",,"Treasury report is disappointing",201,0
+"finance","1865-12-06",,"Treasury report recommends a speedy resumption of specie payments","201-201",1
+"finance","1863-03-25",,"Jay Cooke's success as agent of the government in obtaiing subscriptionf for five-twenty bonds at the rate of 2 million a day.",202,1
+"finance","1863-10-22",,"Report that a foreign loan had been obtained",202,1
+"finance","1863-10-23",,"Report of a foreign loan discredited",202,0
+"finance","1864-09-10",,"Loan of 32.5 million subscribed twice over",202,1
+"finance","1864-06-03",,"Resignation of the assistant treasurer in New York",202,0
+"finance","1865-07-01",,"Resignation of Chase and Senator Fessenden's appointment to Secretary of Treasury",202,1
+"finance","1865-03-08",,"McCulloch nominated for Treasury",202,1
+"politics","1864-08-31",,"Democratic party nominates McClellan",205,0
+"politics","1864-10-11",,"New York World reports that Democrats would carry Pennsylvania in elections",205,0
+"politics","1864-11-09",,"Lincoln re-elected",206,0
+"foreign affairs","1862-07-30",,"Lord Palmerston's speech interpreted to mean that the British government had no intention of intervening",206,1
+"foreign affairs","1863-02-10",,"Rumor that the French emperor was attempting to bring about a conference between North and South",206,1
+"foreign affairs","1865-06-19",,"Withdrawl by England of the recognition it had accorded the Confederacy as a belligerent",207,1
+"foreign affairs","1864-05-03",,"Le Moniteur publishes a convention assuring the stay of French troops in Mexico",207,0
+"foreign affairs","1865-06-05",,"Napoleon urged to remove his troops",207,0
+"foreign affairs","1865-11-07",,"Cabinet notifies the French government that sending further troops to Mexico would be met with disapprobation",207,0
+"war rumor","1862-09-03",,"False story that Stonewall Jackson was marching on Baltimore with 40,000 men",204,0
+"war rumor","1864-07-22",,"Rumor that Atlanta had been evacuated by the Confederates",204,0
+"war rumor","1864-09-28",,"False rumor of the fall of Petersburg",205,1
+"war rumor","1865-03-16",,"False story of the evacuation of Richmond",205,1
+"peace rumor","1865-01-19",,"Report that Blair was in Richmond",205,1
+"peace rumor","1865-01-31",,"News that three Confederate commissioners were within Union lines",205,1
+"peace rumor","1865-02-04",,"News that the peace conference would accomplish nothing",205,0
+"war","1863-05-03",,"Favorable reports about Chancellorsville",203,1
+"war","1863-05-04",,"Adverse reports about Chancellorsville",203,0
+"war","1863-05-06",,"Partial confirmation of the bad news regarding Chancellorsville",203,0
+"war","1863-05-07",,"All uncertainty about the disaster at Chancellorsville removed",203,0
+"war","1863-06-11","1863-06-16","Lee invades the North",203,0
+"war","1863-09-19","1863-09-21","Chickamagua",203,0
+"war","1864-04-25",,"Confederates capture Plymouth, NC",203,0
+"war",1864-12-28,,"General Butler's failure to take Fort Fisher",203,0
+"war",1864-04-01,,"Knowledge of the ill success of the Yazoo river expedition",203,0
+"war",1863-07-06,,"Gettysburg",204,1
+"war",1864-07-05,,"Vicksburg",204,1
+"war",1864-07-15,,"Port Hudson",204,1
+"war",1864-11-24,1864-11-27,"Grant's series of victories at Chattanooga",204,1
+"war",1864-09-21,1864-09-22,"Victory of Sheridan over Early at Opequan Creek and two days later at Fisher's Hill",204,1
+"war",1864-09-03,,"Sherman's capture of Atlanta",204,1
+"war",1865-03-15,,"News that Sherman had reached Laurel Hill, N.C.",204,1

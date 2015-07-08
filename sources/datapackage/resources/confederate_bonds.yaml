@@ -49,19 +49,19 @@ schema:
       description: Date
     - id: bond100
       type: number
-      description: $100 Million Bonds (Gold Yield)
+      description: Interest rate (percent) for $100 Million Loan bonds.
     - id: bond15
       type: number
-      description: $15 Million Bonds (Gold Yield)
+      description: Interest rate (percent) for $15 Million Loan bonds.
     - id: richmond
       type: number
-      description: Richmond Bonds (Gold Yield)
+      description: Interest rate (percent) for the city of Richmond bonds (Gold Yield).
     - id: virginia
       type: number
-      description: Virginia Bonds (Gold Yield)
+      description: Interest rate (percent) for the state of Virginia bonds (Gold Yield)
     - id: rate
       type: number
-      description: Interest Rate; yield is the Confederate Dollar Yield on the $100 million loan.
+      description: Interest Rate (percent). This is defined as the Confederate dollar yield on the $100 million loan.
     - id: gold
       type: number
-      description: Gold price
+      description: Price of gold in Confederate dollars.

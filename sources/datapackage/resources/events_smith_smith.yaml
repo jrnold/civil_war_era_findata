@@ -46,4 +46,9 @@ schema:
       description: "Event end date"
     - id: unfavorable
       type: boolean
-      description: "If true, then a Union defat, adverse rumor, or news of difficulties in Union finances, such as further issues of greenbacks. If False, then a Union victory, favorable political news, or improvements in Union public finances."
+      description: >-
+
+        If true, then a Union defeat, adverse rumor, or news of
+        difficulties in Union finances, such as further issues of
+        greenbacks. If False, then a Union victory, favorable
+        political news, or improvements in Union public finances.

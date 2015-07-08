@@ -5,13 +5,12 @@ source("R/init.R")
 
 ### depends: data/bankers_magazine_govt_state_loans.csv
 bankers_file <- "data/bankers_magazine_govt_state_loans.csv"
-### depends: data/bond_metadata.json
+### depends: data/bankers_magazine_govt_state_loans_misc.csv
 bond_metadata_file <- "data/bond_metadata.json"
-### depends: data/greenbacks_fill.csv
+### depends: data/bankers_magazine_govt_state_loans_misc.csv
 greenback_fill_file <- "data/greenbacks_fill.csv"
 ### depends: data/bankers_magazine_govt_state_loans_misc.csv
 bankers_misc_file <- "data/bankers_magazine_govt_state_loans_misc.csv"
-
 
 outfile <- commandArgs(TRUE)[1]
 
@@ -20,13 +19,28 @@ gold_rates_actual <- read_csv(greenback_fill_file) %>%
            date = as.Date(date)) %>%
     select(date, gold_rate)
 
+#' The *Bankers' Magazine* regularly reports prices for the 6's of 1868 until 
+#' Sept 1861, but then occasionally reports the price in its text thereafter.
+#' Include these later prices along with the original data in order to give
+#' a more complete series.
+sixes_1868 <- read_csv(bankers_misc_file) %>%
+  filter(grepl("us_6pct_1868_*", asset)) %>%
+  mutate(series = "U.S. 6 per cents, 1867-8",
+         date = as.Date(date, "%Y-%m-%d")) %>%
+  select(date, series, price_gold, gold_rate) %>%
+  mutate(is_clean = 0, adjust_gold = 0, adjust_currency = 0)
+
 #' Load prerequisite data
+
+
 bankers <-
   (mutate(read_csv(bankers_file),
           date = as.Date(date, "%Y-%m-%d"))
    %>% select(date, series, is_clean, adjust_gold,
               adjust_currency, price_gold, gold_rate)
-   %>% filter(!is.na(price_gold)))
+   %>% filter(!is.na(price_gold))
+  )
+
 
 bond_metadata <- get_bond_metadata(bond_metadata_file)
 
@@ -213,7 +227,16 @@ first_row <- TRUE
 for (dt in unique(as.character(bankers$date))) {
  .data <- filter(bankers, date == as.character(dt))
  for (i in seq_len(nrow(.data))) {
-   .data2 <- match_bonds_all(tbl_df(.data)[i, ], MATCH_BONDS, bond_metadata)
+    .data2 <- match_bonds_all(tbl_df(.data)[i, ], MATCH_BONDS, bond_metadata)
+#    # round data to reasonable levels
+#    for (i in grep("(current_yield|ytm_|duration_|convexity_|maturity|gold_rate)",
+#                   names(.data2))) {
+#      .data2[[i]] <- round(.data2[[i]], 5)
+#    }
+#    .data2[["accrued_interest"]] <- round(.data2[["accrued_interest"]], 3)
+#    for (i in grep("price", names(.data2))) {
+#      .data2[[i]] <- round(.data2[[i]], 3)
+#    }
    write.table(.data2, outfile,
                sep = ",", dec = ".", qmethod = "double",
                col.names = first_row, row.names = FALSE,

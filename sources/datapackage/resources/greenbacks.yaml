@@ -1,5 +1,5 @@
 path: "data/greenbacks.csv"
-description: >
+description: >-
   Daily price of greenbacks in gold in New York (1862-1879)
   
   The price of greenbacks comes from Mitchel (1908),
@@ -16,8 +16,8 @@ description: >
       during the Civil War: (1) a table published by the American
       Almanac (see, e.g., issue of 1889, p. 3(1); (2) a table
       prepared by the Bureau of Statistics (Finance, Commerce and
-      Immigration of the United States, Series of 1895-96, No. 4,
-      p. 518). For the years 1X62-65 these tables are identical; the
+      Immigration of the United States, Series of 1895--96, No. 4,
+      p. 518). For the years 1862--65 these tables are identical; the
       figures given below are taken from the second. This table was
       prepared by Mr. E B. Elliott, actuary of tho treasury, in the
       following manner: four dally quotations of the rates of gold
@@ -29,7 +29,7 @@ description: >
       The table of daily highest and lowest prices is based, for the
       reasons assigned in the text (Part II, chap, iii, sec. i), upon
       the tables given in the Report of the Chamber of Commerce of the
-      State of New York for 1865-66, Part II, pp. 130-33. The figures
+      State of New York for 1865-66, Part II, pp. 130--33. The figures
       for the first eleven days of January, 1862, however, are supplied
       from the daily reports of the premium on gold in the New York
       Commercial Advertiser.
@@ -37,9 +37,9 @@ description: >
   Daily series of the price of a gold dollar in greenbacks in New York
   from Wesley C. Mitchell *Gold, Prices, and Wages under the Greenback
   Standard*, Appendix, Table 1: "Daily highest and lowest premium on
-  gold and price of greenbacks in gold", pp. 288-338.
+  gold and price of greenbacks in gold", pp. 288--338.
 
-  Mitchell's more extensive discussion of these data on p. 185-187.
+  Mitchell's more extensive discussion of these data on p. 185--187.
 
       The price of gold in currency, as determined by transactions in these
       New York markets, was regularly reported by telegraph in all
@@ -117,9 +117,9 @@ description: >
   Mitchell (1908, p. 2-3) discusses the data,
 
       The prices of gold in these various exchanges were regularly reported
-      in the financial columns of the daily papers—often in much detail. The
-      financial journals—such as *Hunt's Merchants' Magazine*, the *Bankers'
-      Magazine*, and the *Commercial and Financial Chronicle* — usually
+      in the financial columns of the daily papers-often in much detail. The
+      financial journals-such as *Hunt's Merchants' Magazine*, the *Bankers'
+      Magazine*, and the *Commercial and Financial Chronicle* --- usually
       contented themselves with publishing the opening, highest, lowest, and
       closing prices for each day. At intervals they compiled summary tables
       of daily highest and lowest prices for months or years. Similar tables
@@ -138,10 +138,10 @@ description: >
       Stock Exchange to the end of the previous year.  
 
       The tables of daily highest and lowest prices of gold found in the
-      most important of these sources—namely: the *Commercial and Financial
+      most important of these sources---namely: the *Commercial and Financial
       Chronicle*, the *Reports of the Chamber of Commerce of the State of
-      New York*, and Mersereau's *American Gold* —are in close agreement
-      with each other. Numerous small discrepancies exist—the quotations
+      New York*, and Mersereau's *American Gold* --- are in close agreement
+      with each other. Numerous small discrepancies exist --- the quotations
       frequently vary by an eighth, sometimes by a quarter; but it matters
       little which set of tables is followed. Since Mersereau was the
       official register of the Gold Exchange, however, his tables take
@@ -208,7 +208,8 @@ references:
       comment: "If data are missing, the reason for the missing data, e.g. Sunday or a holiday."
       type: string
     - "id": "mean"
-      description: |
+      description: >-
+
         Daily mean price (gold dollars per 100 greenbacks)
-        
-        The mean is calculated as exp(0.5 * (log(low) + log(high)))
+        The mean is calculated as $\\exp(0.5 * (\\log(low) + \\log(high)))$.
+
