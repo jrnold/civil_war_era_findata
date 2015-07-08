@@ -3,10 +3,16 @@ source("R/init.R")
 # TODO: remove coupon payments for states during ACW
 # TODO: yields using assumed future redemption
 
-### depends: data/bankers_magazine_govt_state_loans.csv data/bond_metadata.json data/greenbacks_fill.csv
+### depends: data/bankers_magazine_govt_state_loans.csv
 bankers_file <- "data/bankers_magazine_govt_state_loans.csv"
+### depends: data/bond_metadata.json
 bond_metadata_file <- "data/bond_metadata.json"
+### depends: data/greenbacks_fill.csv
 greenback_fill_file <- "data/greenbacks_fill.csv"
+### depends: data/bankers_magazine_govt_state_loans_misc.csv
+bankers_misc_file <- "data/bankers_magazine_govt_state_loans_misc.csv"
+
+
 outfile <- commandArgs(TRUE)[1]
 
 gold_rates_actual <- read_csv(greenback_fill_file) %>%
