@@ -1,0 +1,42 @@
+path: "data/wells_production.csv"
+description: |
+description: |
+  Products of Capital and Labor in the United States 1839-1859 (Wells 1865)
+
+  Table titled "Products of Capital and Labor in the United States" on p. 77 of
+  of John G. Wells (1865),  *Wells' Illustarated National Hand-book: Embracing a Complete History of the
+  Compendium of the Political History of the United States, from the Original Formation of the
+  Government to the Present Time*.
+  
+source:
+  - name: >-
+      John G. Wells. 1865. *Wells' Illustarated National Hand-book: Embracing a Complete History of the
+      Compendium of the Political History of the United States, from the Original Formation of the 
+      Government to the Present Time*. B.W. Hitchcock.
+    url: https://books.google.com/books?id=M0JHAQAAMAAJ
+
+schema:
+  fields:
+    - id: year
+      type: integer
+      description: Year
+    - id: population
+      type: integer
+      label: Population
+      description: Population of the United States
+    - id: valuation
+      label: Valuation
+      type: integer
+    - id: pop_increase
+      label: Increase of population per cent
+      type: number
+    - id: valuation_increase
+      label: Increase of valuation per cent
+      type: number
+    - id: amount_per_person
+      label: Amount to each person
+      type: number
+    - id: increase_pct_per_capita
+      label: Increase per cent per capita
+      type: number
+      
