@@ -6,8 +6,6 @@ output: html_document
 ---
 
 ```{r}
-source("../R/.init.R")
-
 bankers <- read_csv("../data/bankers_magazine_govt_state_loans_yields_2.csv") %>%
   mutate(date = as.Date(date))
 
@@ -77,15 +75,12 @@ ggplot(bankers_ytm %>% filter(date >= as.Date("1861-1-1"),
 ```
 
 ```{r}
-```{r}
 ggplot(bankers %>% filter(date >= as.Date("1861-1-1"),
                               series == "U.S. 6 per cents, 1881"),
        aes(x = date, y = price)) +
   geom_line()
 
 ```
-```
-
 
 ```{r}
 

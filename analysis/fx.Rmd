@@ -5,10 +5,6 @@ date: "June 20, 2015"
 output: html_document
 ---
 
-```{r}
-source("../R/init.R")
-```
-
 There is exchange rate data available from the *Merchants' Magazine* and 
 *Bankers' Magazine* for this era.
 
