@@ -1,0 +1,35 @@
+---
+title: "Auctions of the 6’s of 1881"
+author: "Jeffrey Arnold"
+date: "September 7, 2015"
+output: html_document
+---
+
+The sixes of 1881 were authorized by an act in February 1861, prior to the American Civil War, to pay for a government budget deficit unrelated to what would be the war.
+What makes them interesting is that they were auctioned off over three auctions: Feb 13, Mar 22, and May 11. 
+Two of these auctions were before the Battle of Fort Sumter, and one was after.
+Thus you can see investors bidding on the same asset just before and just after the start of the war.
+
+```{r}
+library("dplyr")
+library("ggplot2")
+
+bids <- read.csv("../sources/auctions/bids.csv", stringsAsFactors = FALSE) %>%
+  filter(grepl("Loan of Feb 1861", auction))
+
+head(select(bidder_num, price_currency, amount, accepted), bids)
+
+bidders <- read.csv("../sources/auctions/bidders.csv", stringsAsFactors = FALSE) %>%
+  filter(grepl("Loan of Feb 1861", auction))
+
+head(bidders)
+```
+
+A summary of the bids (one point for each bidder, with their average bid)
+```{r}
+ggplot(bidders, aes(x = auction, y = price_mean)) +
+  geom_boxplot() + 
+  coord_flip()
+```
+
+

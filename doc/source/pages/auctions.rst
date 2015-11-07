@@ -193,7 +193,7 @@ Notice from The Treasury Report, pp 19.
   thereof is deposited with a depository of the United States, subject to
   the order of the Secretary of the Treasury. The certificate of such
   deposit must accompany each proposal. The offers must be unconditional,
-  without reference to other offers, and must state the. sum
+  without reference to other offers, and must state the sum
   offered for each hundred dollars of such stock.
 
   The proposals should be indorsed on the outside, "Proposals for
@@ -365,7 +365,7 @@ The notice of this issue, Treasury Report, pp. 52-53
     On the receipt here of the proper certificates showing such deposit,
     certificates of inscribed stock will be issued to the successful bidders
     or their assignees for the amounts to which they may be entitled, in
-    sums of one thousand, five thousand^ and ten thousand dollars each,
+    sums of one thousand, five thousand and ten thousand dollars each,
     as may be required. Inscribed stock so issued Will carry interest from
     the date of such deposit, and will be transferable on the books of the
     treasury, agreeably to the regulations of the department.

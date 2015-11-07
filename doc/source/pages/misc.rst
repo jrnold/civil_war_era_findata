@@ -32,8 +32,7 @@ From `June 1861 Bankers' Bond <http://books.google.com/books?id=KVwmAQAAIAAJ&pg=
    of interest on all bonds due by this State to individuals or
    corporations in non-slaveholding Stales until present hostilities
    between the North and South shall cease." The resolution was referred
-   to the Judiciary Committee. Interest on a part of the State debt fell
-   due on the first of April but all coupons when presented at the Bank
+   to the Judiciary Committee. Interest on a part of the State debt fell   due on the first of April but all coupons when presented at the Bank
    of the Republic in this city, have been returned to the owners with
    tho remark, "No funds."
 
