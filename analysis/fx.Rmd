@@ -5,30 +5,259 @@ date: "June 20, 2015"
 output: html_document
 ---
 
+```{r}
+library("dplyr")
+library("readr")
+library("ggplot2")
+
+MIN_DATE <- as.Date("1859-05-26")
+MAX_DATE <- as.Date("1865-12-29")
+CITIES <- c("London", "Paris", "Amsterdam", "Frankfort", "Hamburg", "Berlin", 
+"Bremen")
+```
+
+
 There is exchange rate data available from the *Merchants' Magazine* and 
 *Bankers' Magazine* for this era.
 
 ```{r}
-bankers_fx <- read_csv("../data/bankers_magazine_exchange_rates.csv") %>%
+bankers_fx <- read.csv("data/bankers_magazine_exchange_rates.csv",
+                       stringsAsFactors = FALSE) %>%
   filter(! city == "London" | type == "bankers' bills") %>%
   mutate(rate = 0.5 * (rate_low + rate_high)) %>% 
-  select(date, city, rate)
+  select(date, city, rate, rate_low, rate_high, gold_rate)
   
 ```
 
 ```{r}
-merchants_fx <- read_csv("../data/merchants_magazine_exchange_rates.csv") %>% 
+merchants_fx <- read.csv("data/merchants_magazine_exchange_rates.csv",
+                         stringsAsFactors = FALSE) %>% 
   mutate(rate = 0.5 * (rate_low + rate_high)) %>% 
-  select(date, city, rate)
+  select(date, city, rate, rate_low, rate_high, gold_rate)
+
+```
+
+
+Clean data; filter major outliers.
+
+```{r}
+MAX_RESID <- 3
+
+fxrates <- bind_rows(merchants_fx, bankers_fx) %>%
+  mutate(date = as.Date(date)) %>%
+  filter(date >= MIN_DATE,
+         date <= MAX_DATE,
+         city %in% CITIES) %>%
+  group_by(city) %>%
+  mutate(lograte_mean = mean(log(rate)),
+         lograte_sd = sd(log(rate)),
+         lograte_standard = (log(rate) - lograte_mean) / lograte_sd) %>%
+  arrange(city, date) %>%
+  group_by(city) %>%
+  do({
+    resids <- StructTS(log(.[["rate"]]))[["residuals"]]
+    .[abs(resids) < 4, ]
+  }) %>%
+  mutate(time = as.integer(date - MIN_DATE) + 1,
+         variable = as.integer(factor(city, levels = CITIES)))
+
+```
+
+Exchange rates in terms of U.S. dollars per foreign currency: 
+```{r}
+ggplot(fxrates, aes(x = date, y = rate / gold_rate,
+                    ymin = rate_low / gold_rate,
+                    ymax = rate_high / gold_rate)) +
+  geom_ribbon(alpha = 0.6) +
+  geom_line() +
+  facet_wrap(~ city, ncol = 2, scales = "free_y")
+```
+
+But the gold rate follows the same pattern:
+```{r}
+ggplot(fxrates, aes(x = date, y = 1 / gold_rate)) +
+  geom_line()
+
+```
+
+The patterns are far flatter in terms of gold dollars per foreign currency
+```{r}
+ggplot(fxrates, aes(x = date, y = rate, ymin = rate_low, ymax = rate_high)) +
+  geom_ribbon(alpha = 0.6) +
+  geom_line() +
+  facet_wrap(~ city, ncol = 2, scales = "free_y")
+```
+
+
+
+```{r}
+ggplot(fxrates, aes(x = date, y = lograte_standard, colour = city)) +
+  geom_point() + 
+  geom_line()
+
+```
+
+
+```{r}
+library("rstan")
+
+model1 <- rstan::stan_model("analysis/model1.stan")
+
+stan_data <- within(list(), {
+  y <- log(fxrates$rate)
+  y_obs <- length(y)
+  y_times <- fxrates$time
+  y_variable <- fxrates$variable
+  N <- as.integer(MAX_DATE - MIN_DATE) + 1
+  M <- max(fxrates$variable)
+  
+  lambda_par_n <- M - 1L
+  lambda_par_idx <- 2:M
+  lambda_obs_n <- 1L
+  lambda_obs_idx <- array(1L)
+  lambda_obs_val <- array(1)
+  
+  mu_par_n <- M - 1L
+  mu_par_idx <- 2:M
+  mu_obs_n <- 1L
+  mu_obs_idx <- array(1L)
+  mu_obs_val <- array(0)
+
+    
+  theta_init_mean <- mean(log(filter(fxrates, city == "London")$rate))
+  theta_init_sd <- sd(log(filter(fxrates, city == "London")$rate)) * 2
+  
+  nu <- 6
+})
+
+# stan_init <- within(list(), {
+#   omega <- rnorm(stan_data$N, 0, 1)
+#   lambda_par <- rep(1, )
+# })
+
+ret1 <- rstan::optimizing(model1, data = stan_data, iter = 10^10,
+                          as_vector = FALSE)
+plot(ret1[["par"]][["theta"]])
+
+stan_data2 <- within(stan_data, {
+  y <- fxrates$lograte_standard
+  theta_init_mean <- 0
+  theta_init_sd <- 5
+})
+# model1a_init <- list(readRDS("model1a_init.rds"))
+model1a <- stan_model("analysis/model1a.stan")
+# ret1a <- sampling(model1a, data = stan_data2, 
+#                   init = model1a_init, chains = 1, iter = 500)
+ret1a <- rstan::optimizing(model1a, data = stan_data2, iter = 10^10,
+                           as_vector = FALSE)
+plot(ret1a[["par"]][["theta"]], type = "l")
+
 ```
 
 ```{r}
-fxrates <- bind_rows(merchants_fx, bankers_fx) %>%
-  mutate(date = as.Date(date))
-ggplot(fxrates, aes(x = date, y = rate)) +
-  geom_point() + 
-  geom_smooth() +
-  facet_wrap(~ city, scales = "free_y")
+##' Generate new startvals from stanfit object
+##'
+##' Given the results of a MCMC run stored in a \code{stanfit} object,
+##' generate a values to use as initial values for another run.
+##'
+##' @param x \code{stanfit} object
+##' @param .FUN \code{function} to generate starting values from
+##' the parameter samples.
+##' @return \code{list} of \code{array} objects for each parameter.
+##' @export
+stanfit_get_new_startvals <- function(x, .FUN=mean) {
+  pars <- x@model_pars
+  ret <- list()
+  for (i in pars) {
+    parvals <- extract(x, i)[[1]]
+    ret[[i]] <- 
+      if (length(dim(parvals)) > 1) {
+         apply(parvals, seq_along(dim(parvals))[-1], .FUN)
+      } else {
+        .FUN(parvals)
+      }
+  }
+  ret
+}
+
+stanfit_get_iter <- function(obj, iter, chain) {
+  relist(vapply(obj@sim[["samples"]][[chain]], function(x) x[iter],
+                FUN.VALUE = 0),
+         stanfit_create_skeleton(obj))
+}
+
+stanfit_get_last_iter <- function(obj, chain = NA) {
+  get_last_iter <- function(samples) {
+    last_iter <- length(samples[[1]])
+    relist(vapply(samples, function(x) x[last_iter], FUN.VALUE = 0),
+           stanfit_create_skeleton(obj))
+  }
+  lapply(obj@sim[["samples"]], get_last_iter)
+}
+
+stanfit_get_random_iter <- function(obj, size = 1, replace = FALSE,
+                                    wgt = FALSE, inverse = FALSE,
+                                    by_chain = FALSE) {
+  ret <- as.array(obj)
+  parnames <- dimnames(ret)[[3]]
+  dim(ret) <- c(prod(dim(ret)[1:2]), dim(ret)[3])
+  colnames(ret) <- parnames
+  if (wgt) {
+    prob <- ret[ , "lp__"]
+    if (inverse) prob <- 1 / prob
+  } else {
+    prob <- NULL
+  }
+  iters <- base::sample.int(nrow(ret), size = size, replace = replace,
+                            prob = prob)
+  skeleton <- stanfit_create_skeleton(obj)
+  lapply(iters, function(i, x, skeleton) relist(x[i, ], skeleton),
+         x = ret, skeleton = skeleton)
+}
+
+# adapted from rstan:::create_skeleton
+stanfit_create_skeleton <- function(obj) {
+  pars <- obj@model_pars
+  dims <- obj@par_dims
+  lst <- lapply(seq_along(pars), function(i) {
+    len_dims <- length(dims[[i]])
+    if (len_dims < 1)
+      return(0)
+    return(array(0, dim = dims[[i]]))
+  })
+  names(lst) <- pars
+  lst
+}
+
+#' Create a set of initial values from the posterior means of chains from
+#' a previous run.
+stanfit_init_posterior_means <- function(obj, one_chain = FALSE) {
+  postmeans <- get_posterior_mean(obj)
+  skeleton <- stanfit_create_skeleton(obj)
+  if (! one_chain) {
+    lapply(1:(ncol(postmeans) - 1),
+           function(i) {
+             relist(postmeans[ , i],
+                    skeleton = skeleton)
+           })
+  } else {
+    list(relist(postmeans[ , ncol(postmeans)], skeleton))
+  }
+}
+
+
+# Define Generics related to stanfit objects
+setMethod("[[", "stanfit",
+          function(x, i, j, ...) {
+            rstan::extract(x, i[1], permuted = TRUE)[[1]]
+          })
+
+setMethod("$", "stanfit",
+          function(x, name) {
+            x[[name]]
+          })
+
 ```
+
 
 

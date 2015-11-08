@@ -829,7 +829,7 @@ date,url,issue,city,rate_low,rate_high,currency,comment
 1864-06-04,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Frankfort,77.5,74.25,TRUE,
 1864-06-11,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Frankfort,78,79,TRUE,
 1864-06-18,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Frankfort,80,80.5,TRUE,
-1864-07-09,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Frankfort,200,215,TRUE,quote is suspicious
+1864-07-09,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Frankfort,100,115,TRUE,Original quote was 200-215
 1864-07-23,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Frankfort,101,103,TRUE,
 1864-07-30,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Frankfort,98,100,TRUE,
 1864-08-06,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Frankfort,103,105,TRUE,
@@ -1286,7 +1286,7 @@ date,url,issue,city,rate_low,rate_high,currency,comment
 1864-08-27,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Berlin,178,180,TRUE,
 1864-09-03,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Berlin,170,180,TRUE,
 1864-09-10,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Berlin,166,167,TRUE,
-1864-10-15,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Berlin,138,142,TRUE,quot is correct
+1864-10-15,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Berlin,138,142,TRUE,quote is correct
 1864-10-22,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Berlin,71,72,FALSE,
 1864-10-29,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Berlin,71.5,72,FALSE,
 1864-11-05,http://books.google.com/books?id=Wl9JAAAAMAAJ&pg=PA66,Jan 1865,Berlin,70.75,72,FALSE,

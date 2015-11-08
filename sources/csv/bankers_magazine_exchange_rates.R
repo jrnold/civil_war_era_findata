@@ -6,6 +6,8 @@ library("assertthat")
 #' output
 dst <- commandArgs(TRUE)[1]
 
+DOLLARS_PER_POUND <- 4.44
+
 #' Source files
 #'
 ### depends: sources/data/bankers_magazine_exchange_rates.csv
@@ -18,6 +20,8 @@ greenbacks <- read_csv(greenbacks_fill_file) %>%
          gold_rate = mean) %>%
   select(date, gold_rate)
 
+#' Put all data in terms of dollars per x
+#'
 bankers <- read_csv(src) %>%
   mutate(issue = as.Date(issue),
          date = as.Date(date)) %>%
@@ -27,8 +31,10 @@ bankers <- read_csv(src) %>%
          rate_low = ifelse(city == "Paris", 100 / rate_low, rate_low),
          rate_high = ifelse(city == "Paris", 100 / rate_high, rate_high),
          # London
-         rate_low = ifelse(city == "Londons", rate_low * 4.44, rate_low),
-         rate_high = ifelse(city == "London", rate_high * 4.44, rate_high),
+         rate_low = ifelse(city == "London", rate_low * DOLLARS_PER_POUND,
+                           rate_low),
+         rate_high = ifelse(city == "London", rate_high * DOLLARS_PER_POUND,
+                            rate_high),
          # Convert to gold
          rate_low = rate_low * gold_rate,
          rate_high = rate_high * gold_rate,

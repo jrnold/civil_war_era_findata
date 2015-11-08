@@ -6,6 +6,8 @@ library("assertthat")
 #' output
 dst <- commandArgs(TRUE)[1]
 
+DOLLARS_PER_POUND <- 4.44
+
 #' Source files
 #'
 ### depends: sources/data/merchants_exchange_rates.csv
@@ -29,8 +31,10 @@ greenbacks <- read_csv(greenbacks_fill_file) %>%
   mutate(gold_rate = fill_na(gold_rate, 100) / 100,
          rate_low = ifelse(city == "Paris", 100 / rate_low, rate_low),
          rate_high = ifelse(city == "Paris", 100 / rate_high, rate_high),
-         rate_low = ifelse(city == "London", rate_low * 4.44, rate_low),
-         rate_high = ifelse(city == "London", rate_high * 4.44, rate_high),
+         rate_low = ifelse(city == "London", rate_low * DOLLARS_PER_POUND,
+                           rate_low),
+         rate_high = ifelse(city == "London", rate_high * DOLLARS_PER_POUND,
+                            rate_high),
          rate_low = ifelse(currency, rate_low * gold_rate, rate_low),
          rate_high = ifelse(currency, rate_high * gold_rate, rate_high),
          currency = as.integer(currency)
