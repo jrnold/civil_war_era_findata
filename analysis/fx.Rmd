@@ -65,12 +65,13 @@ fxrates <- bind_rows(merchants_fx, bankers_fx) %>%
 
 Exchange rates in terms of U.S. dollars per foreign currency: 
 ```{r}
-ggplot(fxrates, aes(x = date, y = rate / gold_rate,
+{ggplot(fxrates, aes(x = date, y = rate / gold_rate,
                     ymin = rate_low / gold_rate,
                     ymax = rate_high / gold_rate)) +
   geom_ribbon(alpha = 0.6) +
   geom_line() +
-  facet_wrap(~ city, ncol = 2, scales = "free_y")
+  facet_wrap(~ city, ncol = 2, scales = "free_y")} %>%
+  plotsave("figure/")
 ```
 
 But the gold rate follows the same pattern:
