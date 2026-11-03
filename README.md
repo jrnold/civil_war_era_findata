@@ -1,6 +1,7 @@
 # Civil War (U.S.) Era Financial and Economic Data
 
 [![Data: ODC-BY](https://img.shields.io/badge/data-ODC--BY-lightgrey.svg)](http://opendatacommons.org/licenses/by/)
+[![Code: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 
 Miscellaneous financial and economic datasets from the period around the U.S. Civil War gathered from a variety of sources.
 
@@ -14,3 +15,8 @@ This dataset follows something like
 - MAJOR version: changes to existing data
 - MINOR version: new data that does not alter existing data
 - PATCH version: changes which don't affect the data.
+
+## License
+
+- Data: [ODC-BY](http://opendatacommons.org/licenses/by/), as declared in `datapackage.json`.
+- Code: [MIT](LICENSE).
