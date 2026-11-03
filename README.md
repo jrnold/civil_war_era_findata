@@ -1,5 +1,7 @@
 # Civil War (U.S.) Era Financial and Economic Data
 
+[![Data: ODC-BY](https://img.shields.io/badge/data-ODC--BY-lightgrey.svg)](http://opendatacommons.org/licenses/by/)
+
 Miscellaneous financial and economic datasets from the period around the U.S. Civil War gathered from a variety of sources.
 
 This is by no means a complete collection of available data, but consists of some datasets that I found or collected for my own research.
